@@ -1,0 +1,36 @@
+Source: cppreference-doc
+Priority: extra
+Maintainer: p12 <tir5c3@yahoo.co.uk>
+Build-Depends: debhelper (>= 7.0.50~), xsltproc, httrack, wget, python, qt4-dev-tools
+Standards-Version: 3.9.3
+Section: doc
+Homepage: http://en.cppreference.com/w/Cppreference:Archives
+
+Package: cppreference-doc-en
+Section: oldlibs
+Architecture: all
+Depends: cppreference-doc-en-html, ${misc:Depends}
+Recommends:
+Description: C++ standard library reference manual for English language
+ (transitional package)
+
+Package: cppreference-doc-en-html
+Section: doc
+Architecture: all
+Depends: ttf-dejavu-core, ${misc:Depends}
+Replaces: cppreference-doc-en (<<20120227)
+Breaks: cppreference-doc-en (<<20120227)
+Recommends:
+Description: C and C++ standard library reference manual for English language
+ A version of online C and C++ standard library reference manual available at
+ en.cppreference.com, suitable for viewing offline. Devhelp variant.
+
+Package: cppreference-doc-en-qch
+Section: doc
+Architecture: all
+Depends: ttf-dejavu-core, ${misc:Depends}
+Recommends:
+Suggests: qt-dev4-tools
+Description: C++ standard library reference manual for English language
+ A version of online C++ standard library reference manual available at
+ en.cppreference.com, suitable for viewing offline. Qt Help variant.
