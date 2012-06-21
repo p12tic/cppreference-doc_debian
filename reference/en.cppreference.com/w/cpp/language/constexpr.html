@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/language/constexpr by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:46:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>constexpr specifier (since C++11) - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/language/constexpr", "wgTitle": "cpp/language/constexpr", "wgCurRevisionId": 34048, "wgArticleId": 689, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo with reason", "Todo without reason"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_constexpr action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Fconstexpr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="constexpr.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/constexpr&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="constexpr.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">constexpr specifier <span class="t-mark">(since C++11)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../iteratorhtml.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.html" title="cpp/language"> C++ language</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  General topics
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../preprocessor.html" title="cpp/preprocessor"> Preprocessor</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../comment.html" title="cpp/comments" class="mw-redirect"> Comments</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../keyword.html" title="cpp/keyword"> Keywords</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="ascii.html" title="cpp/language/ascii"> ASCII chart</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="escape.html" title="cpp/language/escape"> Escape sequences</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="history.html" title="cpp/language/history"> History of C++</a>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Flow control
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Conditional execution statements
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="if.html" title="cpp/language/if"> <tt>if</tt> statement</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="switch.html" title="cpp/language/switch"> <tt>switch</tt> statement</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Iteration statements
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="for.html" title="cpp/language/for"> <tt>for</tt> loop</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="range-for.html" title="cpp/language/range-for"> range-<tt>for</tt> loop</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="while.html" title="cpp/language/while"> <tt>while</tt> loop</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="do.html" title="cpp/language/do"> <tt>do-while</tt> loop</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Jump statements
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="continue.html" title="cpp/language/continue"> <tt>continue</tt> statement</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="break.html" title="cpp/language/break"> <tt>break</tt> statement</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="goto.html" title="cpp/language/goto"> <tt>goto</tt> statement</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="return.html" title="cpp/language/return"> <tt>return</tt> statement</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Functions
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="function.html" title="cpp/language/function"> function declaration</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="lambda.html" title="cpp/language/lambda"> lambda function declaration</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="function_template.html" title="cpp/language/function template"> function template </a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="inline.html" title="cpp/language/inline"> inline specifier</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="except_spec.html" title="cpp/language/except spec"> exception specifications</a> <span class="t-mark">(deprecated)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="noexcept_spec.html" title="cpp/language/noexcept spec"> noexcept specifier</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Exceptions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="throw.html" title="cpp/language/throw"> throw expression</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="try_catch.html" title="cpp/language/try catch"> try-catch block</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Namespaces
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="namespace.html" title="cpp/language/namespace"> namespace declaration</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="namespace_alias.html" title="cpp/language/namespace alias"> namespace aliases</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Types
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="types.html" title="cpp/language/types"> fundamental types</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="classhtml.html" title="cpp/language/class"> compound types</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="enum.html" title="cpp/language/enum"> enumeration types</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="union.html" title="cpp/language/union"> union types</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="function.html" title="cpp/language/function"> function types</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="decltype.html" title="cpp/language/decltype"> <tt>decltype</tt> specifier</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Specifiers
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="cv.html" title="cpp/language/cv"> cv specifiers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration specifiers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <strong class="selflink"> constexpr specifier</strong> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="auto.html" title="cpp/language/auto"> auto specifier</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="alignashtml.html" title="cpp/language/alignas"> alignas specifier</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Literals
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="integer_literal.html" title="cpp/language/integer literal"> integer literals</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="character_literal.html" title="cpp/language/character literal"> character literals</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="floating_literal.html" title="cpp/language/floating literal"> floating-point literals</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="string_literal.html" title="cpp/language/string literal"> string literals</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="bool_literal.html" title="cpp/language/bool literal"> boolean literals</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="nullptrhtml.html" title="cpp/language/nullptr"> nullptr</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="user_literal.html" title="cpp/language/user literal"> user-defined</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Expressions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="value_category.html" title="cpp/language/value category"> value categories</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="eval_order.html" title="cpp/language/eval order"> order of evaluation</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="operators.html" title="cpp/language/operators"> operators</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="operator_precedence.html" title="cpp/language/operator precedence"> operator precedence</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="operator_alternative.html" title="cpp/language/operator alternative"> alternative representations</a>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Utilities
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Types
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="typedef.html" title="cpp/language/typedef"> <tt>typedef</tt> declaration</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="type_alias.html" title="cpp/language/type alias"> type alias declaration</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/attributes&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/attributes (page does not exist)"> attributes</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Casts
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="implicit_cast.html" title="cpp/language/implicit cast"> implicit conversions</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="const_cast.html" title="cpp/language/const cast"> <tt>const_cast</tt> conversion</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="static_cast.html" title="cpp/language/static cast"> <tt>static_cast</tt> conversion</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="dynamic_cast.html" title="cpp/language/dynamic cast"> <tt>dynamic_cast</tt> conversion</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast"> <tt>reinterpret_cast</tt> conversion</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="explicit_cast.html" title="cpp/language/explicit cast"> C-style and functional cast</a>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Memory allocation
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="new.html" title="cpp/language/new"> <tt>new</tt> expression</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="delete.html" title="cpp/language/delete"> <tt>delete</tt> expression</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Classes
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="classhtml.html" title="cpp/language/class"> class declaration</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="this.html" title="cpp/language/this"> <tt>this</tt> pointer</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="access.html" title="cpp/language/access"> access specifiers</a>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="friend.html" title="cpp/language/friend"> friend specifier</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="initializer_listhtml.html" title="cpp/language/initializer list"> initializer lists</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Class-specific function properties
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="virtual.html" title="cpp/language/virtual"> virtual function</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="override.html" title="cpp/language/override"> override specifier</a>  <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="final.html" title="cpp/language/final"> final specifier</a>  <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="explicit.html" title="cpp/language/explicit"> explicit</a>  <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="static.html" title="cpp/language/static"> static</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Special member functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="default_constructorhtml.html" title="cpp/language/default constructor"> default constructor</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="copy_constructor.html" title="cpp/language/copy constructor"> copy constructor</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="move_constructor.html" title="cpp/language/move constructor"> move constructor</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/as_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/as operator (page does not exist)"> copy assignment</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/move_operator&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/move operator (page does not exist)"> move assignment</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="destructor.html" title="cpp/language/destructor"> destructor</a>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5"> Templates
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="class_template.html" title="cpp/language/class template"> class template </a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="function_template.html" title="cpp/language/function template"> function template </a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="template_specialization.html" title="cpp/language/template specialization"> template specialization</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/parameter_pack&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/parameter pack (page does not exist)"> parameter packs</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Miscellaneous
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="asm.html" title="cpp/language/asm"> Inline assembly</a>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<dl><dd><ul><li><tt><b>constexpr</b></tt> - specifies that the value of a variable or function can be computed at compile time
+</li></ul>
+</dd></dl>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=1" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span></h3>
+<p><tt>constexpr</tt> specifier declares that it is possible to evaluate the value of the function or variable at compile time, they then can be used where only compile time constants are allowed. <span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> implies <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span>.
+</p><p><b><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> variables</b> must satisfy the following requirements:
+</p>
+<dl><dd><ul><li> it must be immediately constructed or assigned a value.
+</li><li> the constructor parameters or the value to be assigned must contain only literal values, <tt>constexpr</tt> variables and functions.
+</li><li> the constructor used to construct the object (either implicit or explicit) must satisfy the requirements of <tt>constexpr</tt> constructor. In the case of explicit constructor, it must have <span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> specified. 
+</li></ul>
+</dd></dl>
+<p><b><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> functions</b> must satisfy the following requirements:
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: links literal + static_assert </td></tr></table>
+<dl><dd><ul><li> it must not be virtual
+</li><li> its return type must be literal type
+</li><li> each of its parameters must be literal types
+</li><li> the function body must be either deleted or defaulted or contain only the following:
+</li></ul>
+<dl><dd><ul><li> null statements
+</li><li> <span class="mw-geshi cpp source-cpp">static_assert</span> declarations
+</li><li> <a href="typedef.html" title="cpp/language/typedef"><tt>typedef</tt></a> declarations and alias declarations that do not define classes or enumerations
+</li><li> using declarations
+</li><li> using directives
+</li><li> exactly one <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/return_statement&amp;action=edit&amp;redlink=1" class="new" title="cpp/language/return statement (page does not exist)">return statement</a> that contains only literal values, <tt>constexpr</tt> variables and functions.
+</li></ul>
+</dd></dl>
+</dd></dl>
+<p><b><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> constructor</b> must satisfy the following requirements:
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=2" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
+<p><a href="../keyword/constexpr.html" title="cpp/keywords/constexpr" class="mw-redirect"><tt>constexpr</tt></a>
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<p>
+Definition of a constexpr function which computes factorials and a literal type that extends string literals
+ </p><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;stdexcept&gt;</span>
+&#160;
+<span class="co1">// constexpr functions use recursion rather than iteration</span>
+<span class="kw4">constexpr</span> <span class="kw4">int</span> factorial<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">return</span> n <span class="sy1">&lt;=</span> <span class="nu0">1</span> <span class="sy4">?</span> <span class="nu0">1</span> <span class="sy4">:</span> <span class="br0">&#40;</span>n <span class="sy2">*</span> factorial<span class="br0">&#40;</span>n<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// literal class</span>
+<span class="kw1">class</span> conststr <span class="br0">&#123;</span>
+    <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span> p<span class="sy4">;</span>
+    <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz<span class="sy4">;</span>
+ <span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> N<span class="sy1">&gt;</span>
+    <span class="kw4">constexpr</span> conststr<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>a<span class="br0">&#41;</span><span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="sy4">:</span> p<span class="br0">&#40;</span>a<span class="br0">&#41;</span>, sz<span class="br0">&#40;</span>N<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+    <span class="co1">// constexpr functions signal errors by throwing exceptions from operator&#160;?:</span>
+    <span class="kw4">constexpr</span> <span class="kw4">char</span> operator<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">return</span> n <span class="sy1">&lt;</span> sz <span class="sy4">?</span> p<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy4">:</span> <span class="kw1">throw</span> <a href="../error/out_of_range.html"><span class="kw613">std::<span class="me2">out_of_range</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw4">constexpr</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> sz<span class="sy4">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="kw4">constexpr</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> countlower<span class="br0">&#40;</span>conststr s, <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n <span class="sy1">=</span> <span class="nu0">0</span>,
+                                             <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> c <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">return</span> n <span class="sy1">==</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy4">?</span> c <span class="sy4">:</span>
+           s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy1">&gt;=</span> <span class="st0">'a'</span> <span class="sy3">&amp;&amp;</span> s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy1">&lt;=</span> <span class="st0">'z'</span> <span class="sy4">?</span> countlower<span class="br0">&#40;</span>s, n<span class="sy2">+</span><span class="nu0">1</span>, c<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy4">:</span>
+           countlower<span class="br0">&#40;</span>s, n<span class="sy2">+</span><span class="nu0">1</span>, c<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// output function that requires a compile-time constant, for testing</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> n<span class="sy1">&gt;</span> <span class="kw1">struct</span> constN <span class="br0">&#123;</span>
+    constN<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;4! = &quot;</span> <span class="sy4">;</span>
+    constN<span class="sy1">&lt;</span>factorial<span class="br0">&#40;</span><span class="nu0">4</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> out1<span class="sy4">;</span> <span class="co1">// computed at compile time</span>
+&#160;
+    <span class="kw4">volatile</span> <span class="kw4">int</span> k <span class="sy1">=</span> <span class="nu0">8</span><span class="sy4">;</span>
+    <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> k <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;! = &quot;</span> <span class="sy1">&lt;&lt;</span> factorial<span class="br0">&#40;</span>k<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// computed at run time</span>
+&#160;
+    <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Number of lowercase letters in <span class="es1">\&quot;</span>Hello, world!<span class="es1">\&quot;</span> is &quot;</span><span class="sy4">;</span>
+    constN<span class="sy1">&lt;</span>countlower<span class="br0">&#40;</span><span class="st0">&quot;Hello, world!&quot;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> out2<span class="sy4">;</span> <span class="co1">// implicitly converted to conststr</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">4! = 24
+8! = 40320
+Number of lowercase letters in &quot;Hello, world!&quot; is 9</pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1601/1000000
+Post-expand include size: 69575/2097152 bytes
+Template argument size: 31935/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:689-0!*!0!!*!*!* and timestamp 20120616023300 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=34048">http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=34048</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_with_reason" title="Category:Todo with reason">Todo with reason</a></li><li><a href="http://en.cppreference.com/w/Category:Todo_without_reason" title="Category:Todo without reason">Todo without reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="http://en.cppreference.com/w/Help:Contents" title="The place to find out">Help</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/constexpr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/constexpr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=34048" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2012, at 14:10.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,540 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 1.881 secs. -->        
+	</body>
+<!-- Cached 20120616023301 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/language/constexpr by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:46:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/types/integer by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:55:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Fixed width integer types (since C++11) - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/types/integer", "wgTitle": "cpp/types/integer", "wgCurRevisionId": 34895, "wgArticleId": 2031, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo with reason"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_types_integer action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Ftypes%2Finteger" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="integer.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/types/integer&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="integer.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Fixed width integer types <span class="t-mark">(since C++11)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../types.html" title="cpp/types">types</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../iteratorhtml.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits)
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../memory.html" title="cpp/memory"> Dynamic memory management</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../error.html" title="cpp/error"> Error handling</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility/program.html" title="cpp/utility/program"> Program utilities</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility/variadic.html" title="cpp/utility/variadic"> Variadic functions</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../chrono.html" title="cpp/chrono"> Date and time</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility/functional.html" title="cpp/utility/functional"> Function objects</a>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/initializer_list.html" title="cpp/utility/initializer list">initializer_list</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/bitset.html" title="cpp/utility/bitset">bitset</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/hash.html" title="cpp/utility/hash">hash</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Relational operators
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp">rel_ops::operator!=<br />rel_ops::operator&gt;<br />rel_ops::operator&lt;=<br />rel_ops::operator&gt;=</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Pairs and tuples
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/pairhtml.html" title="cpp/utility/pair">pair</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/tuplehtml.html" title="cpp/utility/tuple">tuple</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/piecewise_construct_t.html" title="cpp/utility/piecewise construct t">piecewise_construct_t</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/piecewise_construct.html" title="cpp/utility/piecewise construct">piecewise_construct</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Swap, forward and move
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/swap.html" title="cpp/algorithm/swap">swap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/forward.html" title="cpp/utility/forward">forward</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/move.html" title="cpp/utility/move">move</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept">move_if_noexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/declval.html" title="cpp/utility/declval">declval</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../types.html" title="cpp/types"> Type support</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Basic types
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../language/types.html" title="cpp/language/types"> Fundamental types</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <strong class="selflink"> Fixed width integer types</strong> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ptrdiff_t.html" title="cpp/types/ptrdiff t">ptrdiff_t</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="size_t.html" title="cpp/types/size t">size_t</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="max_align_t.html" title="cpp/types/max align t">max_align_t</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="nullptr_t.html" title="cpp/types/nullptr t">nullptr_t</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="offsetof.html" title="cpp/types/offsetof">offsetof</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="NULL.html" title="cpp/types/NULL">NULL</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Numeric limits
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="numeric_limits.html" title="cpp/types/numeric limits">numeric_limits</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="climits.html" title="cpp/types/climits">C numeric limits interface</a>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Runtime type information
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="type_info.html" title="cpp/types/type info">type_info</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="type_index.html" title="cpp/types/type index">type_index</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="bad_typeid.html" title="cpp/types/bad typeid">bad_typeid</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="bad_cast.html" title="cpp/types/bad cast">bad_cast</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Type traits
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Primary type categories
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_void.html" title="cpp/types/is void">is_void</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_array.html" title="cpp/types/is array">is_array</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_pointer.html" title="cpp/types/is pointer">is_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_enumhtml.html" title="cpp/types/is enum">is_enum</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_union.html" title="cpp/types/is union">is_union</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_class.html" title="cpp/types/is class">is_class</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_function.html" title="cpp/types/is function">is_function</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_object.html" title="cpp/types/is object">is_object</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_scalar.html" title="cpp/types/is scalar">is_scalar</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_compound.html" title="cpp/types/is compound">is_compound</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_integral.html" title="cpp/types/is integral">is_integral</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_floating_point.html" title="cpp/types/is floating point">is_floating_point</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_fundamental.html" title="cpp/types/is fundamental">is_fundamental</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_arithmetic.html" title="cpp/types/is arithmetic">is_arithmetic</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_reference.html" title="cpp/types/is reference">is_reference</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_lvalue_reference.html" title="cpp/types/is lvalue reference">is_lvalue_reference</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_rvalue_referencehtml.html" title="cpp/types/is rvalue reference">is_rvalue_reference</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_member_pointerhtml.html" title="cpp/types/is member pointer">is_member_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_member_object_pointer.html" title="cpp/types/is member object pointer">is_member_object_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_member_function_pointerhtml.html" title="cpp/types/is member function pointer">is_member_function_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+</table>
+</div>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Type properties
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_const.html" title="cpp/types/is const">is_const</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_volatile.html" title="cpp/types/is volatile">is_volatile</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_pod.html" title="cpp/types/is pod">is_pod</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_empty.html" title="cpp/types/is empty">is_empty</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_polymorphic.html" title="cpp/types/is polymorphic">is_polymorphic</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_abstract.html" title="cpp/types/is abstract">is_abstract</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_trivial.html" title="cpp/types/is trivial">is_trivial</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_trivially_copyable.html" title="cpp/types/is trivially copyable">is_trivially_copyable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_standard_layout.html" title="cpp/types/is standard layout">is_standard_layout</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_literal_type.html" title="cpp/types/is literal type">is_literal_type</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_signed.html" title="cpp/types/is signed">is_signed</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_unsigned.html" title="cpp/types/is unsigned">is_unsigned</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Supported operations
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_constructible.html" title="cpp/types/is constructible">is_constructible<br />is_trivially_constructible<br />is_nothrow_constructible</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_default_constructiblehtml.html" title="cpp/types/is default constructible">is_default_constructible<br />is_trivially_default_constructible<br />is_nothrow_default_constructible</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_copy_constructible.html" title="cpp/types/is copy constructible">is_copy_constructible<br />is_trivially_copy_constructible<br />is_nothrow_copy_constructible</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_move_constructible.html" title="cpp/types/is move constructible">is_move_constructible<br />is_trivially_move_constructible<br />is_nothrow_move_constructible</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_assignable.html" title="cpp/types/is assignable">is_assignable<br />is_trivially_assignable<br />is_nothrow_assignable</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_copy_assignable.html" title="cpp/types/is copy assignable">is_copy_assignable<br />is_trivially_copy_assignable<br />is_nothrow_copy_assignable</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_move_assignable.html" title="cpp/types/is move assignable">is_move_assignable<br />is_trivially_move_assignable<br />is_nothrow_move_assignable</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_destructible.html" title="cpp/types/is destructible">is_destructible<br />is_trivially_destructible<br />is_nothrow_destructible</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="has_virtual_destructor.html" title="cpp/types/has virtual destructor">has_virtual_destructor</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Relationships and property queries
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_same.html" title="cpp/types/is same">is_same</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_base_of.html" title="cpp/types/is base of">is_base_of</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="is_convertible.html" title="cpp/types/is convertible">is_convertible</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="alignment_of.html" title="cpp/types/alignment of">alignment_of</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="rank.html" title="cpp/types/rank">rank</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="extent.html" title="cpp/types/extent">extent</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Type modifications
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove_cv.html" title="cpp/types/remove cv">remove_cv<br />remove_const<br />remove_volatile</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="add_cv.html" title="cpp/types/add cv">add_cv<br />add_const<br />add_volatile</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="make_signed.html" title="cpp/types/make signed">make_signed</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="make_unsigned.html" title="cpp/types/make unsigned">make_unsigned</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove_reference.html" title="cpp/types/remove reference">remove_reference</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="add_reference.html" title="cpp/types/add reference">add_lvalue_reference<br />add_rvalue_reference</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove_pointer.html" title="cpp/types/remove pointer">remove_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="add_pointerhtml.html" title="cpp/types/add pointer">add_pointer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove_extenthtml.html" title="cpp/types/remove extent">remove_extent</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove_all_extents.html" title="cpp/types/remove all extents">remove_all_extents</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Type transformations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="aligned_storage.html" title="cpp/types/aligned storage">aligned_storage</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="aligned_union.html" title="cpp/types/aligned union">aligned_union</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="decay.html" title="cpp/types/decay">decay</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="enable_if.html" title="cpp/types/enable if">enable_if</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="conditional.html" title="cpp/types/conditional">conditional</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="common_type.html" title="cpp/types/common type">common_type</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="underlying_type.html" title="cpp/types/underlying type">underlying_type</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="result_of.html" title="cpp/types/result of">result_of</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Type trait constants
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="integral_constant.html" title="cpp/types/integral constant">integral_constant</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Types"><span class="tocnumber">1</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Macro_constants"><span class="tocnumber">2</span> <span class="toctext">Macro constants</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Signed_integers_:_minimum_value"><span class="tocnumber">2.1</span> <span class="toctext">Signed integers&#160;: minimum value</span></a></li>
+<li class="toclevel-2"><a href="#Signed_integers_:_maximum_value"><span class="tocnumber">2.2</span> <span class="toctext">Signed integers&#160;: maximum value</span></a></li>
+<li class="toclevel-2"><a href="#Unsigned_integers_:_maximum_value"><span class="tocnumber">2.3</span> <span class="toctext">Unsigned integers&#160;: maximum value</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Format_macro_constants"><span class="tocnumber">3</span> <span class="toctext">Format macro constants</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Format_constants_for_the_std::fprintf_family_of_functions"><span class="tocnumber">3.1</span> <span class="toctext">Format constants for the std::fprintf family of functions</span></a></li>
+<li class="toclevel-2"><a href="#Format_constants_for_the_std::fscanf_family_of_functions"><span class="tocnumber">3.2</span> <span class="toctext">Format constants for the std::fscanf family of functions</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit&amp;section=1" title="Edit section: Types">edit</a>]</span> <span class="mw-headline" id="Types">Types</span></h3>
+<table class="t-dcl-list-begin">
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;cstdint&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>int8_t</tt><br /><tt>int16_t</tt><br /><tt>int32_t</tt><br /><tt>int64_t</tt>
+</td>
+<td>  signed integer type with width of<br /> exactly 8, 16, 32 and 64 bits respectively<br />with no padding bits and using 2's complement for negative values<br />(provided only if the implementation directly supports the type)
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>int_fast8_t</tt><br /><tt>int_fast16_t</tt><br /><tt>int_fast32_t</tt><br /><tt>int_fast64_t</tt>
+</td>
+<td>  fastest signed signed integer type with width of<br /> at least 8, 16, 32 and 64 bits respectively
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>int_least8_t</tt><br /><tt>int_least16_t</tt><br /><tt>int_least32_t</tt><br /><tt>int_least64_t</tt>
+</td>
+<td>  smallest signed integer type with width of<br /> at least 8, 16, 32 and 64 bits respectively
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>intmax_t</tt>
+</td>
+<td>  maximum width integer type
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>intptr_t</tt>
+</td>
+<td>  integer type capable of holding a pointer
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>uint8_t</tt><br /><tt>uint16_t</tt><br /><tt>uint32_t</tt><br /><tt>uint64_t</tt>
+</td>
+<td>  unsigned integer type with width of<br /> exactly 8, 16, 32 and 64 bits respectively <br />(provided only if the implementation directly supports the type)
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>uint_fast8_t</tt><br /><tt>uint_fast16_t</tt><br /><tt>uint_fast32_t</tt><br /><tt>uint_fast64_t</tt>
+</td>
+<td>  fastest unsigned unsigned integer type with width of<br /> at least 8, 16, 32 and 64 bits respectively
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>uint_least8_t</tt><br /><tt>uint_least16_t</tt><br /><tt>uint_least32_t</tt><br /><tt>uint_least64_t</tt>
+</td>
+<td>  smallest unsigned integer type with width of<br /> at least 8, 16, 32 and 64 bits respectively
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>uintmax_t</tt>
+</td>
+<td>  maximum width unsigned integer type
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <tt>uintptr_t</tt>
+</td>
+<td>  unsigned integer type capable of holding a pointer
+</td></tr>
+
+</table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit&amp;section=2" title="Edit section: Macro constants">edit</a>]</span> <span class="mw-headline" id="Macro_constants">Macro constants</span></h3>
+<table class="t-dcl-list-begin">
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;cstdint&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Signed_integers_:_minimum_value">  Signed integers&#160;: minimum value </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT8_MIN<br />INT16_MIN<br />INT32_MIN<br />INT64_MIN</div></div>
+</td>
+<td>    minimum value of an object of type <span class="mw-geshi cpp source-cpp">int8_t</span>, <span class="mw-geshi cpp source-cpp">int16_t</span>, <span class="mw-geshi cpp source-cpp">int32_t</span>, <span class="mw-geshi cpp source-cpp">int64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT_FAST8_MIN<br />INT_FAST16_MIN<br />INT_FAST32_MIN<br />INT_FAST64_MIN</div></div>
+</td>
+<td>    minimum value of an object of type <span class="mw-geshi cpp source-cpp">int_fast8_t</span>, <span class="mw-geshi cpp source-cpp">int_fast16_t</span>, <span class="mw-geshi cpp source-cpp">int_fast32_t</span>, <span class="mw-geshi cpp source-cpp">int_fast64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT_LEAST8_MIN<br />INT_LEAST16_MIN<br />INT_LEAST32_MIN<br />INT_LEAST64_MIN</div></div>
+</td>
+<td>    minimum value of an object of type <span class="mw-geshi cpp source-cpp">int_least8_t</span>, <span class="mw-geshi cpp source-cpp">int_least16_t</span>, <span class="mw-geshi cpp source-cpp">int_least32_t</span>, <span class="mw-geshi cpp source-cpp">int_least64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INTPTR_MIN</div></div>
+</td>
+<td>   minimum value of an object of type <span class="mw-geshi cpp source-cpp">intptr_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INTMAX_MIN</div></div>
+</td>
+<td>   minimum value of an object of type <span class="mw-geshi cpp source-cpp">intmax_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Signed_integers_:_maximum_value">  Signed integers&#160;: maximum value </span></h5>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT8_MAX<br />INT16_MAX<br />INT32_MAX<br />INT64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">int8_t</span>, <span class="mw-geshi cpp source-cpp">int16_t</span>, <span class="mw-geshi cpp source-cpp">int32_t</span>, <span class="mw-geshi cpp source-cpp">int64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT_FAST8_MAX<br />INT_FAST16_MAX<br />INT_FAST32_MAX<br />INT_FAST64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">int_fast8_t</span>, <span class="mw-geshi cpp source-cpp">int_fast16_t</span>, <span class="mw-geshi cpp source-cpp">int_fast32_t</span>, <span class="mw-geshi cpp source-cpp">int_fast64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INT_LEAST8_MAX<br />INT_LEAST16_MAX<br />INT_LEAST32_MAX<br />INT_LEAST64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">int_least8_t</span>, <span class="mw-geshi cpp source-cpp">int_least16_t</span>, <span class="mw-geshi cpp source-cpp">int_least32_t</span>, <span class="mw-geshi cpp source-cpp">int_least64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INTPTR_MAX</div></div>
+</td>
+<td>   maximum value of an object of type <span class="mw-geshi cpp source-cpp">intptr_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>INTMAX_MAX</div></div>
+</td>
+<td>   maximum value of an object of type <span class="mw-geshi cpp source-cpp">intmax_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Unsigned_integers_:_maximum_value">  Unsigned integers&#160;: maximum value </span></h5>
+</td></tr>
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>UINT8_MAX<br />UINT16_MAX<br />UINT32_MAX<br />UINT64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">uint8_t</span>, <span class="mw-geshi cpp source-cpp">uint16_t</span>, <span class="mw-geshi cpp source-cpp">uint32_t</span>, <span class="mw-geshi cpp source-cpp">uint64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>UINT_FAST8_MAX<br />UINT_FAST16_MAX<br />UINT_FAST32_MAX<br />UINT_FAST64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">uint_fast8_t</span>, <span class="mw-geshi cpp source-cpp">uint_fast16_t</span>, <span class="mw-geshi cpp source-cpp">uint_fast32_t</span>, <span class="mw-geshi cpp source-cpp">uint_fast64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>UINT_LEAST8_MAX<br />UINT_LEAST16_MAX<br />UINT_LEAST32_MAX<br />UINT_LEAST64_MAX</div></div>
+</td>
+<td>    maximum value of an object of type <span class="mw-geshi cpp source-cpp">uint_least8_t</span>, <span class="mw-geshi cpp source-cpp">uint_least16_t</span>, <span class="mw-geshi cpp source-cpp">uint_least32_t</span>, <span class="mw-geshi cpp source-cpp">uint_least64_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>UINTPTR_MAX</div></div>
+</td>
+<td>   maximum value of an object of type <span class="mw-geshi cpp source-cpp">uintptr_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>UINTMAX_MAX</div></div>
+</td>
+<td>   maximum value of an object of type <span class="mw-geshi cpp source-cpp">uintmax_t</span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+</table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;action=edit&amp;section=3" title="Edit section: Format macro constants">edit</a>]</span> <span class="mw-headline" id="Format_macro_constants">Format macro constants</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: will look better as a table </td></tr></table>
+<table class="t-dcl-list-begin">
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;cinttypes&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Format_constants_for_the_std::fprintf_family_of_functions">  Format constants for the <span class="mw-geshi cpp source-cpp"><a href="../io/c/fprintf.html"><span class="kw1504">std::<span class="me2">fprintf</span></span></a></span> family of functions </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRId8<br />PRId16<br />PRId32<br />PRId64<br />PRIdLEAST8<br />PRIdLEAST16<br />PRIdLEAST32<br />PRIdLEAST64<br />PRIdFAST8<br />PRIdFAST16<br />PRIdFAST32<br />PRIdFAST64<br />PRIdMAX<br />PRIdPTR</div></div>
+</td>
+<td>   format conversion specifier to output a signed decimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw106">std::<span class="me2">int8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw107">std::<span class="me2">int16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw108">std::<span class="me2">int32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw109">std::<span class="me2">int64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>intmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a></span> respectively, equivalent to <tt>%d</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRIi8<br />PRIi16<br />PRIi32<br />PRIi64<br />PRIiLEAST8<br />PRIiLEAST16<br />PRIiLEAST32<br />PRIiLEAST64<br />PRIiFAST8<br />PRIiFAST16<br />PRIiFAST32<br />PRIiFAST64<br />PRIiMAX<br />PRIiPTR</div></div>
+</td>
+<td>   format conversion specifier to output a signed decimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw106">std::<span class="me2">int8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw107">std::<span class="me2">int16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw108">std::<span class="me2">int32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw109">std::<span class="me2">int64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>intmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a></span> respectively, equivalent to <tt>%i</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRIu8<br />PRIu16<br />PRIu32<br />PRIu64<br />PRIuLEAST8<br />PRIuLEAST16<br />PRIuLEAST32<br />PRIuLEAST64<br />PRIuFAST8<br />PRIuFAST16<br />PRIuFAST32<br />PRIuFAST64<br />PRIuMAX<br />PRIuPTR</div></div>
+</td>
+<td>   format conversion specifier to output an unsigned decimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%u</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRIo8<br />PRIo16<br />PRIo32<br />PRIo64<br />PRIoLEAST8<br />PRIoLEAST16<br />PRIoLEAST32<br />PRIoLEAST64<br />PRIoFAST8<br />PRIoFAST16<br />PRIoFAST32<br />PRIoFAST64<br />PRIoMAX<br />PRIoPTR</div></div>
+</td>
+<td>   format conversion specifier to output an unsigned octal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%o</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRIx8<br />PRIx16<br />PRIx32<br />PRIx64<br />PRIxLEAST8<br />PRIxLEAST16<br />PRIxLEAST32<br />PRIxLEAST64<br />PRIxFAST8<br />PRIxFAST16<br />PRIxFAST32<br />PRIxFAST64<br />PRIxMAX<br />PRIxPTR</div></div>
+</td>
+<td>   format conversion specifier to output an unsigned hexadecimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%x</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>PRIX8<br />PRIX16<br />PRIX32<br />PRIX64<br />PRIXLEAST8<br />PRIXLEAST16<br />PRIXLEAST32<br />PRIXLEAST64<br />PRIXFAST8<br />PRIXFAST16<br />PRIXFAST32<br />PRIXFAST64<br />PRIXMAX<br />PRIXPTR</div></div>
+</td>
+<td>   format conversion specifier to output an unsigned uppercase hexadecimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%X</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Format_constants_for_the_std::fscanf_family_of_functions">  Format constants for the <span class="mw-geshi cpp source-cpp"><a href="../io/c/fscanf.html"><span class="kw1498">std::<span class="me2">fscanf</span></span></a></span> family of functions </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNd8<br />SCNd16<br />SCNd32<br />SCNd64<br />SCNdLEAST8<br />SCNdLEAST16<br />SCNdLEAST32<br />SCNdLEAST64<br />SCNdFAST8<br />SCNdFAST16<br />SCNdFAST32<br />SCNdFAST64<br />SCNdMAX<br />SCNdPTR</div></div>
+</td>
+<td>   format conversion specifier to input a signed decimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw106">std::<span class="me2">int8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw107">std::<span class="me2">int16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw108">std::<span class="me2">int32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw109">std::<span class="me2">int64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>intmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a></span> respectively, equivalent to <tt>%d</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNi8<br />SCNi16<br />SCNi32<br />SCNi64<br />SCNiLEAST8<br />SCNiLEAST16<br />SCNiLEAST32<br />SCNiLEAST64<br />SCNiFAST8<br />SCNiFAST16<br />SCNiFAST32<br />SCNiFAST64<br />SCNiMAX<br />SCNiPTR</div></div>
+</td>
+<td>   format conversion specifier to input a signed decimal/octal/hexadecimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw106">std::<span class="me2">int8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw107">std::<span class="me2">int16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw108">std::<span class="me2">int32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw109">std::<span class="me2">int64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>intmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a></span> respectively, equivalent to <tt>%i</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNu8<br />SCNu16<br />SCNu32<br />SCNu64<br />SCNuLEAST8<br />SCNuLEAST16<br />SCNuLEAST32<br />SCNuLEAST64<br />SCNuFAST8<br />SCNuFAST16<br />SCNuFAST32<br />SCNuFAST64<br />SCNuMAX<br />SCNuPTR</div></div>
+</td>
+<td>   format conversion specifier to input an unsigned decimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%u</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNo8<br />SCNo16<br />SCNo32<br />SCNo64<br />SCNoLEAST8<br />SCNoLEAST16<br />SCNoLEAST32<br />SCNoLEAST64<br />SCNoFAST8<br />SCNoFAST16<br />SCNoFAST32<br />SCNoFAST64<br />SCNoMAX<br />SCNoPTR</div></div>
+</td>
+<td>   format conversion specifier to input an unsigned octal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%o</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNx8<br />SCNx16<br />SCNx32<br />SCNx64<br />SCNxLEAST8<br />SCNxLEAST16<br />SCNxLEAST32<br />SCNxLEAST64<br />SCNxFAST8<br />SCNxFAST16<br />SCNxFAST32<br />SCNxFAST64<br />SCNxMAX<br />SCNxPTR</div></div>
+</td>
+<td>   format conversion specifier to input an unsigned hexadecimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%x</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div>SCNX8<br />SCNX16<br />SCNX32<br />SCNX64<br />SCNXLEAST8<br />SCNXLEAST16<br />SCNXLEAST32<br />SCNXLEAST64<br />SCNXFAST8<br />SCNXFAST16<br />SCNXFAST32<br />SCNXFAST64<br />SCNXMAX<br />SCNXPTR</div></div>
+</td>
+<td>   format conversion specifier to input an unsigned uppercase hexadecimal integer value of type <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a></span>, <span class="mw-geshi cpp source-cpp">std<span class="sy4">:</span>uintmax_t</span>, <span class="mw-geshi cpp source-cpp"><a href="integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a></span> respectively, equivalent to <tt>%X</tt> for <span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span>  <br /> <span class="t-mark">(macro constant)</span>
+</td></tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 9935/1000000
+Post-expand include size: 249607/2097152 bytes
+Template argument size: 129205/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2031-0!*!0!!en!*!* and timestamp 20120616194242 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;oldid=34895">http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;oldid=34895</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="http://en.cppreference.com/w/Help:Contents" title="The place to find out">Help</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/types/integer" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/types/integer" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/types/integer&amp;oldid=34895" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2012, at 15:13.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,337 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 29.219 secs. -->        
+	</body>
+<!-- Cached 20120616194245 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/types/integer by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:55:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

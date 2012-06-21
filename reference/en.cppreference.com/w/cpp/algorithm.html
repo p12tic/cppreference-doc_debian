@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/algorithm by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 16:59:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Algorithms library - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;action=edit" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/algorithm", "wgTitle": "cpp/algorithm", "wgCurRevisionId": 33419, "wgArticleId": 721, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id:
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_algorithm action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Falgorithm" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="algorithm.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="algorithm.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Algorithms library</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <strong class="selflink"> Algorithms library</strong>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="iteratorhtml.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"> Algorithm library</strong><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Functions
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Non-modifying sequence operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/all_any_none_of.html" title="cpp/algorithm/all any none of">all_of<br />any_of<br />none_of</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/for_each.html" title="cpp/algorithm/for each">for_each</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/count.html" title="cpp/algorithm/count">count<br />count_if</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/mismatchhtml.html" title="cpp/algorithm/mismatch">mismatch</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/equal.html" title="cpp/algorithm/equal">equal</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/find.html" title="cpp/algorithm/find">find<br />find_if<br />find_if_not</a></td><td><br /><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/find_end.html" title="cpp/algorithm/find end">find_end</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/find_first_of.html" title="cpp/algorithm/find first of">find_first_of</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/adjacent_find.html" title="cpp/algorithm/adjacent find">adjacent_find</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/search.html" title="cpp/algorithm/search">search</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/search_n.html" title="cpp/algorithm/search n">search_n</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Modifying sequence operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/copy.html" title="cpp/algorithm/copy">copy<br />copy_if</a></td><td><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/copy_n.html" title="cpp/algorithm/copy n">copy_n</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/copy_backwardhtml.html" title="cpp/algorithm/copy backward">copy_backward</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/move.html" title="cpp/algorithm/move">move</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/move_backward.html" title="cpp/algorithm/move backward">move_backward</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/fill.html" title="cpp/algorithm/fill">fill</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/fill_n.html" title="cpp/algorithm/fill n">fill_n</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/transform.html" title="cpp/algorithm/transform">transform</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/generate.html" title="cpp/algorithm/generate">generate</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/generate_nhtml.html" title="cpp/algorithm/generate n">generate_n</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/remove.html" title="cpp/algorithm/remove">remove<br />remove_if</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/remove_copyhtml.html" title="cpp/algorithm/remove copy">remove_copy<br />remove_copy_if</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/replacehtml.html" title="cpp/algorithm/replace">replace<br />replace_if</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/replace_copy.html" title="cpp/algorithm/replace copy">replace_copy<br />replace_copy_if</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/swap.html" title="cpp/algorithm/swap">swap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/swap_ranges.html" title="cpp/algorithm/swap ranges">swap_ranges</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/iter_swap.html" title="cpp/algorithm/iter swap">iter_swap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/reversehtml.html" title="cpp/algorithm/reverse">reverse</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/reverse_copy.html" title="cpp/algorithm/reverse copy">reverse_copy</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/rotate.html" title="cpp/algorithm/rotate">rotate</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/rotate_copyhtml.html" title="cpp/algorithm/rotate copy">rotate_copy</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/random_shuffle.html" title="cpp/algorithm/random shuffle">random_shuffle<br />shuffle</a></td><td>&#160;<br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/unique.html" title="cpp/algorithm/unique">unique</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/unique_copyhtml.html" title="cpp/algorithm/unique copy">unique_copy</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Partitioning operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_partitioned.html" title="cpp/algorithm/is partitioned">is_partitioned</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partition.html" title="cpp/algorithm/partition">partition</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partition_copyhtml.html" title="cpp/algorithm/partition copy">partition_copy</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/stable_partition.html" title="cpp/algorithm/stable partition">stable_partition</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partition_point.html" title="cpp/algorithm/partition point">partition_point</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Sorting operations (on sorted ranges)
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_sorted.html" title="cpp/algorithm/is sorted">is_sorted</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_sorted_untilhtml.html" title="cpp/algorithm/is sorted until">is_sorted_until</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/sort.html" title="cpp/algorithm/sort">sort</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partial_sort.html" title="cpp/algorithm/partial sort">partial_sort</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partial_sort_copyhtml.html" title="cpp/algorithm/partial sort copy">partial_sort_copy</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/stable_sort.html" title="cpp/algorithm/stable sort">stable_sort</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/nth_element.html" title="cpp/algorithm/nth element">nth_element</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Binary search operations (on sorted ranges)
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/lower_boundhtml.html" title="cpp/algorithm/lower bound">lower_bound</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/upper_bound.html" title="cpp/algorithm/upper bound">upper_bound</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/binary_search.html" title="cpp/algorithm/binary search">binary_search</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/equal_rangehtml.html" title="cpp/algorithm/equal range">equal_range</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Set operations (on sorted ranges)
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/merge.html" title="cpp/algorithm/merge">merge</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/inplace_merge.html" title="cpp/algorithm/inplace merge">inplace_merge</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/includeshtml.html" title="cpp/algorithm/includes">includes</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/set_difference.html" title="cpp/algorithm/set difference">set_difference</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/set_intersection.html" title="cpp/algorithm/set intersection">set_intersection</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/set_symmetric_difference.html" title="cpp/algorithm/set symmetric difference">set_symmetric_difference</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/set_unionhtml.html" title="cpp/algorithm/set union">set_union</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Heap operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_heap.html" title="cpp/algorithm/is heap">is_heap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_heap_until.html" title="cpp/algorithm/is heap until">is_heap_until</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/make_heap.html" title="cpp/algorithm/make heap">make_heap</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/push_heaphtml.html" title="cpp/algorithm/push heap">push_heap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/pop_heap.html" title="cpp/algorithm/pop heap">pop_heap</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/sort_heap.html" title="cpp/algorithm/sort heap">sort_heap</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Minimum/maximum operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/maxhtml.html" title="cpp/algorithm/max">max</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/max_element.html" title="cpp/algorithm/max element">max_element</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/min.html" title="cpp/algorithm/min">min</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/min_elementhtml.html" title="cpp/algorithm/min element">min_element</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/minmax.html" title="cpp/algorithm/minmax">minmax</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/minmax_element.html" title="cpp/algorithm/minmax element">minmax_element</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/lexicographical_comparehtml.html" title="cpp/algorithm/lexicographical compare">lexicographical_compare</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/is_permutation.html" title="cpp/algorithm/is permutation">is_permutation</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/next_permutation.html" title="cpp/algorithm/next permutation">next_permutation</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/prev_permutation.html" title="cpp/algorithm/prev permutation">prev_permutation</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Numeric operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/iotahtml.html" title="cpp/algorithm/iota">iota</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate">accumulate</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product">inner_product</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/adjacent_differencehtml.html" title="cpp/algorithm/adjacent difference">adjacent_difference</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum">partial_sum</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  C library
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/qsort.html" title="cpp/algorithm/qsort">qsort</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list-begin" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="algorithm/bsearchhtml.html" title="cpp/algorithm/bsearch">bsearch</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+</table>
+</div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-list-begin">
+
+<tr>
+<td colspan="2"> <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Non-modifying_sequence_operations"><span class="tocnumber">1</span> <span class="toctext">Non-modifying sequence operations</span></a></li>
+<li class="toclevel-1"><a href="#Modifying_sequence_operations"><span class="tocnumber">2</span> <span class="toctext">Modifying sequence operations</span></a></li>
+<li class="toclevel-1"><a href="#Partitioning_operations"><span class="tocnumber">3</span> <span class="toctext">Partitioning operations</span></a></li>
+<li class="toclevel-1"><a href="#Sorting_operations_.28on_sorted_ranges.29"><span class="tocnumber">4</span> <span class="toctext">Sorting operations (on sorted ranges)</span></a></li>
+<li class="toclevel-1"><a href="#Binary_search_operations_.28on_sorted_ranges.29"><span class="tocnumber">5</span> <span class="toctext">Binary search operations (on sorted ranges)</span></a></li>
+<li class="toclevel-1"><a href="#Set_operations_.28on_sorted_ranges.29"><span class="tocnumber">6</span> <span class="toctext">Set operations (on sorted ranges)</span></a></li>
+<li class="toclevel-1"><a href="#Heap_operations"><span class="tocnumber">7</span> <span class="toctext">Heap operations</span></a></li>
+<li class="toclevel-1"><a href="#Minimum.2Fmaximum_operations"><span class="tocnumber">8</span> <span class="toctext">Minimum/maximum operations</span></a></li>
+<li class="toclevel-1"><a href="#Numeric_operations"><span class="tocnumber">9</span> <span class="toctext">Numeric operations</span></a></li>
+<li class="toclevel-1"><a href="#C_library"><span class="tocnumber">10</span> <span class="toctext">C library</span></a></li>
+</ul>
+</td></tr></table>
+<h5> <span class="mw-headline" id="Non-modifying_sequence_operations">  Non-modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/all_any_none_of.html" title="cpp/algorithm/all any none of"> all_of<br />any_of<br />none_of</a></div><div><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   checks if a predicate is <span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span> for all, any or none of the elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_all_any_none_of&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/for_each.html" title="cpp/algorithm/for each"> for_each</a></div></div>
+</td>
+<td>   applies a function to a range of elements <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_for_each&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/count.html" title="cpp/algorithm/count"> count<br />count_if</a></div></div>
+</td>
+<td>   returns the number of elements satisfying specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_count&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/mismatchhtml.html" title="cpp/algorithm/mismatch"> mismatch</a></div></div>
+</td>
+<td>   finds the first position where two ranges differ  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_mismatch&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/equal.html" title="cpp/algorithm/equal"> equal</a></div></div>
+</td>
+<td>   determines if two sets of elements are the same  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_equal&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/find.html" title="cpp/algorithm/find"> find<br />find_if<br />find_if_not</a></div><div><br /><br /><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   finds the first element satisfying specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_find&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/find_end.html" title="cpp/algorithm/find end"> find_end</a></div></div>
+</td>
+<td>   finds the last sequence of elements in a certain range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_find_end&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/find_first_of.html" title="cpp/algorithm/find first of"> find_first_of</a></div></div>
+</td>
+<td>   searches for any one of a set of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_find_first_of&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/adjacent_find.html" title="cpp/algorithm/adjacent find"> adjacent_find</a></div></div>
+</td>
+<td>   finds two identical (or some other relationship) items adjacent to each other  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_adjacent_find&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/search.html" title="cpp/algorithm/search"> search</a></div></div>
+</td>
+<td>   searches for a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_search&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/search_n.html" title="cpp/algorithm/search n"> search_n</a></div></div>
+</td>
+<td>   searches for a number consecutive copies of an element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_search_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations">  Modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/copy.html" title="cpp/algorithm/copy"> copy<br />copy_if</a></div><div><br /><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   copies a range of elements to a new location  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/copy_n.html" title="cpp/algorithm/copy n"> copy_n</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   copies a number of elements to a new location  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_copy_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/copy_backwardhtml.html" title="cpp/algorithm/copy backward"> copy_backward</a></div></div>
+</td>
+<td>   copies a range of elements in backwards order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_copy_backward&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/move.html" title="cpp/algorithm/move"> move</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   moves a range of elements to a new location  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_move&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/move_backward.html" title="cpp/algorithm/move backward"> move_backward</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   moves a range of elements to a new location in backwards order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_move_backward&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/fill.html" title="cpp/algorithm/fill"> fill</a></div></div>
+</td>
+<td>   assigns a range of elements a certain value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_fill&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/fill_n.html" title="cpp/algorithm/fill n"> fill_n</a></div></div>
+</td>
+<td>   assigns a value to a number of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_fill_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/transform.html" title="cpp/algorithm/transform"> transform</a></div></div>
+</td>
+<td>   applies a function to a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_transform&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/generate.html" title="cpp/algorithm/generate"> generate</a></div></div>
+</td>
+<td>   saves the result of a function in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_generate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/generate_nhtml.html" title="cpp/algorithm/generate n"> generate_n</a></div></div>
+</td>
+<td>   saves the result of N applications of a function  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_generate_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/remove.html" title="cpp/algorithm/remove"> remove<br />remove_if</a></div></div>
+</td>
+<td>   removes elements satisfying specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_remove&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/remove_copyhtml.html" title="cpp/algorithm/remove copy"> remove_copy<br />remove_copy_if</a></div></div>
+</td>
+<td>   copies a range of elements omitting those that satisfy specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_remove_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/replacehtml.html" title="cpp/algorithm/replace"> replace<br />replace_if</a></div></div>
+</td>
+<td>   replaces all values satisfying specific criteria with another value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_replace&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/replace_copy.html" title="cpp/algorithm/replace copy"> replace_copy<br />replace_copy_if</a></div></div>
+</td>
+<td>   copies a range, replacing elements satisfying specific criteria with another value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_replace_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/swap.html" title="cpp/algorithm/swap"> swap</a></div></div>
+</td>
+<td>   swaps the values of two objects  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_swap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/swap_ranges.html" title="cpp/algorithm/swap ranges"> swap_ranges</a></div></div>
+</td>
+<td>   swaps two ranges of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_swap_ranges&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/iter_swap.html" title="cpp/algorithm/iter swap"> iter_swap</a></div></div>
+</td>
+<td>   swaps the elements pointed to by two iterators  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_iter_swap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/reversehtml.html" title="cpp/algorithm/reverse"> reverse</a></div></div>
+</td>
+<td>   reverses the order elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_reverse&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/reverse_copy.html" title="cpp/algorithm/reverse copy"> reverse_copy</a></div></div>
+</td>
+<td>   creates a copy of a range that is reversed  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_reverse_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/rotate.html" title="cpp/algorithm/rotate"> rotate</a></div></div>
+</td>
+<td>   rotates the order of elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_rotate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/rotate_copyhtml.html" title="cpp/algorithm/rotate copy"> rotate_copy</a></div></div>
+</td>
+<td>   copies and rotate a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_rotate_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/random_shuffle.html" title="cpp/algorithm/random shuffle"> random_shuffle<br />shuffle</a></div><div>&#160;<br /><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   randomly re-orders elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_random_shuffle&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/unique.html" title="cpp/algorithm/unique"> unique</a></div></div>
+</td>
+<td>   removes consecutive duplicate elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_unique&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/unique_copyhtml.html" title="cpp/algorithm/unique copy"> unique_copy</a></div></div>
+</td>
+<td>   creates a copy of some range of elements that contains no consecutive duplicates  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_unique_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Partitioning_operations">  Partitioning operations </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_partitioned.html" title="cpp/algorithm/is partitioned"> is_partitioned</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   determines if the range is partitioned by the given predicate  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_partitioned&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partition.html" title="cpp/algorithm/partition"> partition</a></div></div>
+</td>
+<td>   divides a range of elements into two groups  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partition&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partition_copyhtml.html" title="cpp/algorithm/partition copy"> partition_copy</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   copies a range dividing the elements into two groups  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partition_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/stable_partition.html" title="cpp/algorithm/stable partition"> stable_partition</a></div></div>
+</td>
+<td>   divides elements into two groups while preserving their relative order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_stable_partition&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partition_point.html" title="cpp/algorithm/partition point"> partition_point</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   locates the partition point of a partitioned range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partition_point&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Sorting_operations_.28on_sorted_ranges.29">  Sorting operations (on sorted ranges) </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_sorted.html" title="cpp/algorithm/is sorted"> is_sorted</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   checks whether a range is sorted into ascending order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_sorted&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_sorted_untilhtml.html" title="cpp/algorithm/is sorted until"> is_sorted_until</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   finds the largest sorted subrange  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_sorted_until&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/sort.html" title="cpp/algorithm/sort"> sort</a></div></div>
+</td>
+<td>   sorts a range into ascending order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partial_sort.html" title="cpp/algorithm/partial sort"> partial_sort</a></div></div>
+</td>
+<td>   sorts the first N elements of a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partial_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partial_sort_copyhtml.html" title="cpp/algorithm/partial sort copy"> partial_sort_copy</a></div></div>
+</td>
+<td>   copies and partially sorts a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partial_sort_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/stable_sort.html" title="cpp/algorithm/stable sort"> stable_sort</a></div></div>
+</td>
+<td>   sorts a range of elements while preserving order between equal elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_stable_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/nth_element.html" title="cpp/algorithm/nth element"> nth_element</a></div></div>
+</td>
+<td>   partially sorts the given range making sure that it is partitioned by the given element  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_nth_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Binary_search_operations_.28on_sorted_ranges.29">  Binary search operations (on sorted ranges) </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/lower_boundhtml.html" title="cpp/algorithm/lower bound"> lower_bound</a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>not less</i> than the given value <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_lower_bound&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/upper_bound.html" title="cpp/algorithm/upper bound"> upper_bound</a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>greater</i> than a certain value <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_upper_bound&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/binary_search.html" title="cpp/algorithm/binary search"> binary_search</a></div></div>
+</td>
+<td>   determines if an element exists in a certain range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_binary_search&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/equal_rangehtml.html" title="cpp/algorithm/equal range"> equal_range</a></div></div>
+</td>
+<td>   returns range of elements matching a specific key <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_equal_range&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Set_operations_.28on_sorted_ranges.29">  Set operations (on sorted ranges) </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/merge.html" title="cpp/algorithm/merge"> merge</a></div></div>
+</td>
+<td>   merges two sorted ranges  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_merge&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/inplace_merge.html" title="cpp/algorithm/inplace merge"> inplace_merge</a></div></div>
+</td>
+<td>   merges two ordered ranges in-place  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_inplace_merge&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/includeshtml.html" title="cpp/algorithm/includes"> includes</a></div></div>
+</td>
+<td>   returns true if one set is a subset of another  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_includes&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/set_difference.html" title="cpp/algorithm/set difference"> set_difference</a></div></div>
+</td>
+<td>   computes the difference between two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_set_difference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/set_intersection.html" title="cpp/algorithm/set intersection"> set_intersection</a></div></div>
+</td>
+<td>   computes the intersection of two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_set_intersection&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/set_symmetric_difference.html" title="cpp/algorithm/set symmetric difference"> set_symmetric_difference</a></div></div>
+</td>
+<td>   computes the symmetric difference between two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_set_symmetric_difference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/set_unionhtml.html" title="cpp/algorithm/set union"> set_union</a></div></div>
+</td>
+<td>   computes the union of two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_set_union&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Heap_operations">  Heap operations </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_heap.html" title="cpp/algorithm/is heap"> is_heap</a></div></div>
+</td>
+<td>   checks if the given range is a heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_heap_until.html" title="cpp/algorithm/is heap until"> is_heap_until</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   finds the largest subrange that is heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_heap_until&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/make_heap.html" title="cpp/algorithm/make heap"> make_heap</a></div></div>
+</td>
+<td>   creates a heap out of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_make_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/push_heaphtml.html" title="cpp/algorithm/push heap"> push_heap</a></div></div>
+</td>
+<td>   adds an element to a heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_push_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/pop_heap.html" title="cpp/algorithm/pop heap"> pop_heap</a></div></div>
+</td>
+<td>   removes the largest element from a heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_pop_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/sort_heap.html" title="cpp/algorithm/sort heap"> sort_heap</a></div></div>
+</td>
+<td>   turns a heap into a sorted range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_sort_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Minimum.2Fmaximum_operations">  Minimum/maximum operations </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;algorithm&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/maxhtml.html" title="cpp/algorithm/max"> max</a></div></div>
+</td>
+<td>   returns the larger of two elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_max&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/max_element.html" title="cpp/algorithm/max element"> max_element</a></div></div>
+</td>
+<td>   returns the largest element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_max_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/min.html" title="cpp/algorithm/min"> min</a></div></div>
+</td>
+<td>   returns the smaller of two elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_min&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/min_elementhtml.html" title="cpp/algorithm/min element"> min_element</a></div></div>
+</td>
+<td>   returns the smallest element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_min_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/minmax.html" title="cpp/algorithm/minmax"> minmax</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   returns the larger and the smaller of two elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_minmax&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/minmax_element.html" title="cpp/algorithm/minmax element"> minmax_element</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   returns the smallest and the largest element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_minmax_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/lexicographical_comparehtml.html" title="cpp/algorithm/lexicographical compare"> lexicographical_compare</a></div></div>
+</td>
+<td>   returns true if one range is lexicographically less than another  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_lexicographical_compare&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/is_permutation.html" title="cpp/algorithm/is permutation"> is_permutation</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   determines if a sequence is a permutation of another sequence  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_is_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/next_permutation.html" title="cpp/algorithm/next permutation"> next_permutation</a></div></div>
+</td>
+<td>   generates the next greater lexicographic permutation of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_next_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/prev_permutation.html" title="cpp/algorithm/prev permutation"> prev_permutation</a></div></div>
+</td>
+<td>   generates the next smaller lexicographic permutation of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_prev_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Numeric_operations">  Numeric operations </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;numeric&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/iotahtml.html" title="cpp/algorithm/iota"> iota</a></div><div><span class="t-mark">(C++11)</span></div></div>
+</td>
+<td>   fills a range with successive increments of the starting value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_iota&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate"> accumulate</a></div></div>
+</td>
+<td>   sums up a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_accumulate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product"> inner_product</a></div></div>
+</td>
+<td>   computes the inner product of two ranges of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_inner_product&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/adjacent_differencehtml.html" title="cpp/algorithm/adjacent difference"> adjacent_difference</a></div></div>
+</td>
+<td>   computes the differences between adjacent elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_adjacent_difference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum"> partial_sum</a></div></div>
+</td>
+<td>   computes the partial sum of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_partial_sum&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="C_library">  C library </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-header">
+<td colspan="2"> <div>Defined in header <tt>&lt;cstdlib&gt;</tt> </div>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/qsort.html" title="cpp/algorithm/qsort"> qsort</a></div></div>
+</td>
+<td>   sorts a range of elements with unspecified type <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_qsort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2" class="t-dcl-list-sep">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="algorithm/bsearchhtml.html" title="cpp/algorithm/bsearch"> bsearch</a></div></div>
+</td>
+<td>   searches an array for an element of unspecified type <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dcl_list_bsearch&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!--
+NewPP limit report
+Preprocessor node count: 16883/1000000
+Post-expand include size: 764231/2097152 bytes
+Template argument size: 184548/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:721-0!*!0!!en!*!* and timestamp 20120615222848 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;oldid=33419">http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;oldid=33419</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="http://en.cppreference.com/w/Help:Contents" title="The place to find out">Help</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;oldid=33419" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm" title="cpp/algorithm" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2012, at 13:13.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 63,947 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 4.208 secs. -->
+	</body>
+<!-- Cached 20120615222850 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/algorithm by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 17:07:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>
