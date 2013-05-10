@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/language/template_specialization by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:50:30 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/language/template_specialization by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:12:19 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>Template specialization - cppreference.com</title>
@@ -21,7 +21,7 @@
 /* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/language/template_specialization", "wgTitle": "cpp/language/template specialization", "wgCurRevisionId": 22934, "wgArticleId": 5143, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo without reason"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/language/template_specialization", "wgTitle": "cpp/language/template specialization", "wgCurRevisionId": 43939, "wgArticleId": 5143, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo without reason"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
 }
 </script><script>if(window.mw){
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -79,10 +79,6 @@
 .cpp.source-cpp span.xtra { display:block; }
 
 /*]]>*/
-</style>
-<style type="text/css">/*<![CDATA[*/
-@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
-/*]]>*/
 </style><style type="text/css">/*<![CDATA[*/
 .source-text {line-height: normal;}
 .source-text li, .source-text pre {
@@ -106,10 +102,6 @@
 .text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
 .text.source-text span.xtra { display:block; }
 
-/*]]>*/
-</style>
-<style type="text/css">/*<![CDATA[*/
-@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
 <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_template_specialization action-view skin-cppreference2">
@@ -219,19 +211,20 @@
 </p>
 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;action=edit&amp;section=1" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3ofAh-TTNtgmY-BBheAITF-5ElFirs7DPW6EPhIlLMCKQ84OLPwjXjOX5senfLe5VmXYHIHt5NCScmFtE_Y1M9AcplE9HChBwQHesshlO0jYsRMkuSVJ41NAlb6pjOI-loKEo2SkhEI6789_5SBKqiUy6t_T0R_vXqhDVuTBaSqtXmLnvTL4FLN4lTo5-PwAR3YE-2WXgQ1N6io0Q5lLbqPs7BLEr2Fl3kmVJ4XqexTMCVe6Q9XSq8qEy5ntXkvFZyfuBrHm-_AP6LGwlggfNIr4m-hiuagN4h6x6UHL6HVYK-FexZnuLMEYRHToEPi4CfWDKQb_SYFBTvCgpy0TC1DVzAE=' class='external text'>run this code</a></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 &#160;
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
 <span class="kw1">struct</span> C
 <span class="br0">&#123;</span>
-  <span class="kw4">void</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am generic<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+  <span class="kw4">void</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am generic<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="co1">// Specialization for T=int</span>
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
 <span class="kw1">struct</span> C<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span>
 <span class="br0">&#123;</span>
-  <span class="kw4">void</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am specialized for int<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+  <span class="kw4">void</span> print<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am specialized for int<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> 
@@ -239,7 +232,7 @@
 &#160;
 <span class="co1">// Specialization for T=double</span>
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
-<span class="kw4">void</span> func<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1418">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am func&lt;double&gt;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+<span class="kw4">void</span> func<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I am func&lt;double&gt;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
@@ -257,12 +250,13 @@
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">I am generic
 I am specialized for int
-I am func&lt;double&gt;</pre></div></div>
+I am func&lt;double&gt;</pre></div></div> 
+</div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;action=edit&amp;section=2" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="class_template.html" title="cpp/language/class template"> Class template</a></div></div>
@@ -271,8 +265,8 @@ I am func&lt;double&gt;</pre></div></div>
 </td></tr>
 
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="function_template.html" title="cpp/language/function template"> Function template</a></div></div>
@@ -284,17 +278,17 @@ I am func&lt;double&gt;</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 441/1000000
-Post-expand include size: 3556/2097152 bytes
-Template argument size: 2674/2097152 bytes
+Preprocessor node count: 472/1000000
+Post-expand include size: 3931/2097152 bytes
+Template argument size: 3798/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5143-0!*!0!!*!*!* and timestamp 20120613063857 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5143-0!*!0!!*!*!* and timestamp 20130414142306 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=22934">http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=22934</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=43939">http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=43939</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_without_reason" title="Category:Todo without reason">Todo without reason</a></li></ul></div></div>                    <!-- /catlinks -->
@@ -312,16 +306,21 @@ Expensive parser function count: 0/100
                         <div id="cpp-navigation">
             <h5>Navigation</h5>
             <ul>
-<li id="n-mainpage-description"><a href="../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="http://en.cppreference.com/w/Help:Contents" title="The place to find out">Help</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
         </div>
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/template_specialization" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/template_specialization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=22934" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/template_specialization" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/template_specialization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_specialization&amp;oldid=43939" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
         </div>
-                            <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 19 April 2012, at 17:40.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 442 times.</li>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/template_specialization" title="cpp/language/template specialization" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 November 2012, at 21:19.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 662 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -356,10 +355,10 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 <script type="text/javascript">
 var pageTracker = _gat._getTracker("UA-2828341-1");
 pageTracker._trackPageview();
-</script><!-- Served in 0.514 secs. -->        
+</script><!-- Served in 0.454 secs. -->        
 	</body>
-<!-- Cached 20120613063857 -->
+<!-- Cached 20130414142307 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/language/template_specialization by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 18:50:30 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/language/template_specialization by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:12:19 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 </html>

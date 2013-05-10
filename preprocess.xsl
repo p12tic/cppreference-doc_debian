@@ -35,8 +35,9 @@
   </xsl:template>
 
   <!-- remove useless UI elements-->
-  <xsl:template match="//div[@class='noprint']"/>
-  <xsl:template match="//span[@class='noprint']"/>
+  <xsl:template match="//*[contains(@class, 'noprint ')]"/>
+  <xsl:template match="//*[contains(@class, ' noprint')]"/>
+  <xsl:template match="//*[@class='noprint']"/>
 
   <!-- remove 'See also' links between C and C++ parts of the documentation -->
   <xsl:template match="
@@ -74,14 +75,6 @@
       ]
     ]"/>
 
-  <!-- remove template edit links -->
-  <xsl:template match="
-    //tr[
-      @class = 't-dcl-list-item'
-    ]/td/span[
-      contains(@class, 'editsection')
-    ]"/>
-
   <!-- remove external links to unused resources -->
   <xsl:template match="/html/head/link[@rel = 'alternate']"/>
   <xsl:template match="/html/head/link[@rel = 'search']"/>
@@ -89,18 +82,29 @@
   <xsl:template match="/html/head/link[@rel = 'EditURI']"/>
 
   <!-- remove Google Analytics scripts -->
-  <xsl:template match="/html/head/script[contains(text(),'google-analytics.com/ga.js')]"/>
-  <xsl:template match="/html/head/script[contains(text(),'pageTracker')]"/>
+  <xsl:template match="/html/body/script[contains(text(),'google-analytics.com/ga.js')]"/>
+  <xsl:template match="/html/body/script[contains(@src, 'google-analytics.com/ga.js')]"/>
+  <xsl:template match="/html/body/script[contains(text(),'pageTracker')]"/>
 
   <!-- update links to resources: -->
   <xsl:template match="//@href | //@src">
-    <xsl:attribute name="{name()}">
+    <xsl:variable name="fixed_url">
       <xsl:choose>
         <xsl:when test="contains(.,'../../upload.cppreference.com/mwiki/')">
           <xsl:value-of select="str:replace(.,'../../upload.cppreference.com/mwiki/','../common/')"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="str:replace(.,'../mwiki/','../common/')"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:attribute name="{name()}">
+      <xsl:choose>
+        <xsl:when test="contains($fixed_url, '.css?') or contains($fixed_url, '.php?')">
+          <xsl:copy-of select="substring-before($fixed_url,'?')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="$fixed_url"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:18:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>std::basic_streambuf::basic_streambuf - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/io/basic_streambuf/basic_streambuf", "wgTitle": "cpp/io/basic streambuf/basic streambuf", "wgCurRevisionId": 46166, "wgArticleId": 9699, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo no example"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_basic_streambuf_basic_streambuf action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fbasic+streambuf%2Fbasic+streambuf" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="basic_streambuf.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_streambuf/basic_streambuf&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="basic_streambuf.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::basic_streambuf::</span>basic_streambuf</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a> | <a href="../../io.html" title="cpp/io">io</a> | <a href="../basic_streambuf.html" title="cpp/io/basic streambuf">basic streambuf</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../header.html" title="cpp/header"> Standard library headers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../c.html" title="cpp/io/c"> C-style I/O</a>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Buffers
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">basic_filebuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringbuf.html" title="cpp/io/basic stringbuf">basic_stringbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstreambuf.html" title="cpp/io/strstreambuf">strstreambuf</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Streams
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Abstractions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ios_base.html" title="cpp/io/ios base">ios_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ios.html" title="cpp/io/basic ios">basic_ios</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istream.html" title="cpp/io/basic istream">basic_istream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostream.html" title="cpp/io/basic ostream">basic_ostream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_iostream.html" title="cpp/io/basic iostream">basic_iostream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  File I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ifstream.html" title="cpp/io/basic ifstream">basic_ifstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ofstream.html" title="cpp/io/basic ofstream">basic_ofstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_fstream.html" title="cpp/io/basic fstream">basic_fstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  String I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istringstream.html" title="cpp/io/basic istringstream">basic_istringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostringstream.html" title="cpp/io/basic ostringstream">basic_ostringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringstream.html" title="cpp/io/basic stringstream">basic_stringstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Array I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../istrstream.html" title="cpp/io/istrstream">istrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ostrstream.html" title="cpp/io/ostrstream">ostrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstream.html" title="cpp/io/strstream">strstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Types
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamoff.html" title="cpp/io/streamoff">streamoff</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamsize.html" title="cpp/io/streamsize">streamsize</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../fpos.html" title="cpp/io/fpos">fpos</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Error category interface
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../iostream_category.html" title="cpp/io/iostream category">iostream_category</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../io_errc.html" title="cpp/io/io errc">io_errc</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../basic_streambuf.html" title="cpp/io/basic streambuf"><code>std::basic_streambuf</code></a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Public member functions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="_basic_streambuf.html" title="cpp/io/basic streambuf/~basic streambuf">basic_streambuf::~basic_streambuf</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Locales
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubimbue.html" title="cpp/io/basic streambuf/pubimbue">basic_streambuf::pubimbue</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="getloc.html" title="cpp/io/basic streambuf/getloc">basic_streambuf::getloc</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Positioning
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubsetbuf.html" title="cpp/io/basic streambuf/pubsetbuf">basic_streambuf::pubsetbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubseekoff.html" title="cpp/io/basic streambuf/pubseekoff">basic_streambuf::pubseekoff</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubseekpos.html" title="cpp/io/basic streambuf/pubseekpos">basic_streambuf::pubseekpos</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubsync.html" title="cpp/io/basic streambuf/pubsync">basic_streambuf::pubsync</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Get area
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="in_avail.html" title="cpp/io/basic streambuf/in avail">basic_streambuf::in_avail</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="snextc.html" title="cpp/io/basic streambuf/snextc">basic_streambuf::snextc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sbumpc.html" title="cpp/io/basic streambuf/sbumpc">basic_streambuf::sbumpc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sgetc.html" title="cpp/io/basic streambuf/sgetc">basic_streambuf::sgetc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sgetn.html" title="cpp/io/basic streambuf/sgetn">basic_streambuf::sgetn</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Put area
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sputc.html" title="cpp/io/basic streambuf/sputc">basic_streambuf::sputc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sputn.html" title="cpp/io/basic streambuf/sputn">basic_streambuf::sputn</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Putback
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sputbackc.html" title="cpp/io/basic streambuf/sputbackc">basic_streambuf::sputbackc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sungetc.html" title="cpp/io/basic streambuf/sungetc">basic_streambuf::sungetc</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Protected member functions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">basic_streambuf::basic_streambuf</strong></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/operator%3D&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/basic streambuf/operator= (page does not exist)">basic_streambuf::operator=</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/swap&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/basic streambuf/swap (page does not exist)">basic_streambuf::swap</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Locales
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubimbue.html" title="cpp/io/basic streambuf/pubimbue">basic_streambuf::imbue</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Positioning
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubsetbuf.html" title="cpp/io/basic streambuf/pubsetbuf">basic_streambuf::setbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubseekoff.html" title="cpp/io/basic streambuf/pubseekoff">basic_streambuf::seekoff</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubseekpos.html" title="cpp/io/basic streambuf/pubseekpos">basic_streambuf::seekpos</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pubsync.html" title="cpp/io/basic streambuf/pubsync">basic_streambuf::sync</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Get area
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="showmanyc.html" title="cpp/io/basic streambuf/showmanyc">basic_streambuf::showmanyc</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="underflow.html" title="cpp/io/basic streambuf/underflow">basic_streambuf::underflow</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="uflow.html" title="cpp/io/basic streambuf/uflow">basic_streambuf::uflow</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sgetn.html" title="cpp/io/basic streambuf/sgetn">basic_streambuf::xsgetn</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="gptr.html" title="cpp/io/basic streambuf/gptr">basic_streambuf::eback<br />basic_streambuf::gptr<br />basic_streambuf::egptr</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="gbump.html" title="cpp/io/basic streambuf/gbump">basic_streambuf::gbump</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setg.html" title="cpp/io/basic streambuf/setg">basic_streambuf::setg</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Put area
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sputn.html" title="cpp/io/basic streambuf/sputn">basic_streambuf::xsputn</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="overflow.html" title="cpp/io/basic streambuf/overflow">basic_streambuf::overflow</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pptr.html" title="cpp/io/basic streambuf/pptr">basic_streambuf::pbase<br />basic_streambuf::pptr<br />basic_streambuf::epptr</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pbump.html" title="cpp/io/basic streambuf/pbump">basic_streambuf::pbump</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setp.html" title="cpp/io/basic streambuf/setp">basic_streambuf::setp</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Putback
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pbackfail.html" title="cpp/io/basic streambuf/pbackfail">basic_streambuf::pbackfail</a></td></tr></table>
+</td></tr>
+
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_streambuf/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-ddcl-list">
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
+basic_streambuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td class="t-ddcl-list-item-nopad">  </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
+basic_streambuf<span class="br0">&#40;</span><span class="kw4">const</span> basic_streambuf<span class="sy3">&amp;</span> rhs<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark">(since C++11)</span> </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+</table>
+<div class="t-li1"><span class="t-li">1)</span> Constructs the <code>basic_streambuf</code> object, initializes the six pointer members (<code>eback()</code>, <code>gptr()</code>, <code>egptr()</code>, <code>pbase()</code>, <code>pptr()</code>, and <code>epptr()</code>) to null pointer values, and the locale member to <span class="mw-geshi cpp source-cpp"><a href="../../locale/locale.html"><span class="kw1565">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span>, a copy of the global C++ locale at the time of construction.</div>
+<div class="t-li1"><span class="t-li">2)</span> Constructs a copy of <code>rhs</code>, initializing the six pointers and the locale object with the copies of the values held by <code>rhs</code>. Note that this is a shallow copy: the pointers of the newly-constructed basic_streambuf are pointing into the same character array as the pointers of <code>rhs</code>.</div>
+<p>Both constructors are protected, and are only called by the concrete streambuf classes, such as <span class="mw-geshi cpp source-cpp"><a href="../basic_filebuf.html"><span class="kw1341">std::<span class="me2">basic_filebuf</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../basic_stringbuf.html"><span class="kw1342">std::<span class="me2">basic_stringbuf</span></span></a></span>, or <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstreambuf</span></span>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Notes"><span class="tocnumber">2</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-param-list">
+
+
+<tr class="t-param-list-item">
+<td>  rhs
+</td>
+<td> -
+</td>
+<td>  a streambuf object to copy
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>Until C++11, it was unspecified whether <code>basic_streambuf</code> or any of its derived classes is <a href="../../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a> (<a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-closed.html#421">LWG issue 421</a>), and different C++ library implementations provided different options.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: no example </td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="../basic_filebuf/basic_filebuf.html" title="cpp/io/basic filebuf/basic filebuf"> (constructor)</a></div></div>
+</td>
+<td>  constructs a basic_filebuf object <br /> <span class="t-mark">(public member function of <code>std::basic_filebuf</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_filebuf/dcl_list_basic_filebuf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="../basic_stringbuf/basic_stringbuf.html" title="cpp/io/basic stringbuf/basic stringbuf"> (constructor)</a></div></div>
+</td>
+<td>  constructs a basic_stringbuf object <br /> <span class="t-mark">(public member function of <code>std::basic_stringbuf</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_stringbuf/dcl_list_constructor&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="../strstreambuf/strstreambuf.html" title="cpp/io/strstreambuf/strstreambuf"> (constructor)</a></div></div>
+</td>
+<td>  constructs a strstreambuf object <br /> <span class="t-mark">(public member function of <code>std::strstreambuf</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstreambuf/dcl_list_strstreambuf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5263/1000000
+Post-expand include size: 104355/2097152 bytes
+Template argument size: 20317/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9699-0!*!0!!en!*!* and timestamp 20130414145422 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;oldid=46166">http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;oldid=46166</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_no_example" title="Category:Todo no example">Todo no example</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/basic_streambuf/basic_streambuf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/basic_streambuf/basic_streambuf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/basic_streambuf&amp;oldid=46166" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf" title="cpp/io/basic streambuf/basic streambuf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 19 February 2013, at 21:10.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 96 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 1.609 secs. -->        
+	</body>
+<!-- Cached 20130414145423 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/basic_streambuf/basic_streambuf by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:18:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>
