@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/manip/flush by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:18:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>std::flush - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/io/manip/flush", "wgTitle": "cpp/io/manip/flush", "wgCurRevisionId": 42719, "wgArticleId": 4675, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_manip_flush action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fmanip%2Fflush" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="flush.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/manip/flush&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="flush.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>flush</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a> | <a href="../../io.html" title="cpp/io">io</a> | <a href="../manip.html" title="cpp/io/manip">manip</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../header.html" title="cpp/header"> Standard library headers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../c.html" title="cpp/io/c"> C-style I/O</a>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Buffers
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">basic_filebuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringbuf.html" title="cpp/io/basic stringbuf">basic_stringbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstreambuf.html" title="cpp/io/strstreambuf">strstreambuf</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Streams
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Abstractions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ios_base.html" title="cpp/io/ios base">ios_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ios.html" title="cpp/io/basic ios">basic_ios</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istream.html" title="cpp/io/basic istream">basic_istream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostream.html" title="cpp/io/basic ostream">basic_ostream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_iostream.html" title="cpp/io/basic iostream">basic_iostream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  File I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ifstream.html" title="cpp/io/basic ifstream">basic_ifstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ofstream.html" title="cpp/io/basic ofstream">basic_ofstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_fstream.html" title="cpp/io/basic fstream">basic_fstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  String I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istringstream.html" title="cpp/io/basic istringstream">basic_istringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostringstream.html" title="cpp/io/basic ostringstream">basic_ostringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringstream.html" title="cpp/io/basic stringstream">basic_stringstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Array I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../istrstream.html" title="cpp/io/istrstream">istrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ostrstream.html" title="cpp/io/ostrstream">ostrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstream.html" title="cpp/io/strstream">strstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Types
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamoff.html" title="cpp/io/streamoff">streamoff</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamsize.html" title="cpp/io/streamsize">streamsize</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../fpos.html" title="cpp/io/fpos">fpos</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Error category interface
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../iostream_category.html" title="cpp/io/iostream category">iostream_category</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../io_errc.html" title="cpp/io/io errc">io_errc</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../manip.html" title="cpp/io/manip">Input/output manipulators</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Floating-point formatting
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="showpoint.html" title="cpp/io/manip/showpoint">showpoint<br />noshowpoint</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setprecision.html" title="cpp/io/manip/setprecision">setprecision</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fixed.html" title="cpp/io/manip/fixed">fixed<br />scientific<br />hexfloat<br />defaultfloat</a></td><td><br /><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Integer formatting
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setbase.html" title="cpp/io/manip/setbase">setbase</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="showbase.html" title="cpp/io/manip/showbase">showbase<br />noshowbase</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="hex.html" title="cpp/io/manip/hex">dec<br />hex<br />oct</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Boolean formatting
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="boolalpha.html" title="cpp/io/manip/boolalpha">boolalpha<br />noboolalpha</a></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Field width and fill control
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setfill.html" title="cpp/io/manip/setfill">setfill</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setw.html" title="cpp/io/manip/setw">setw</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="left.html" title="cpp/io/manip/left">internal<br />left<br />right</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Other formatting
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="showpos.html" title="cpp/io/manip/showpos">showpos<br />noshowpos</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="uppercase.html" title="cpp/io/manip/uppercase">uppercase<br />nouppercase</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Whitespace processing
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ws.html" title="cpp/io/manip/ws">ws</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ends.html" title="cpp/io/manip/ends">ends</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="skipws.html" title="cpp/io/manip/skipws">skipws<br />noskipws</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Output flushing
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">flush</strong></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="endl.html" title="cpp/io/manip/endl">endl</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="unitbuf.html" title="cpp/io/manip/unitbuf">unitbuf<br />nounitbuf</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Status flags manipulation
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="resetiosflags.html" title="cpp/io/manip/resetiosflags">resetiosflags</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setiosflags.html" title="cpp/io/manip/setiosflags">setiosflags</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Time and money I/O
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="get_money.html" title="cpp/io/manip/get money">get_money</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="get_time.html" title="cpp/io/manip/get time">get_time</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="put_money.html" title="cpp/io/manip/put money">put_money</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="put_time.html" title="cpp/io/manip/put time">put_time</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-ddcl-list">
+<tr class="t-ddcl-list-header">
+<td> <div>Defined in header <code><a href="../../header/ostream.html" title="cpp/header/ostream">&lt;ostream&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td class="t-ddcl-list-item-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits <span class="sy1">&gt;</span><br />
+<a href="../basic_ostream.html"><span class="kw1388">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> flush<span class="br0">&#40;</span> <a href="../basic_ostream.html"><span class="kw1388">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> os <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-ddcl-list-item-nopad">  </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+</table>
+<p>Flushes the output sequence <code>os</code> as if by calling <span class="mw-geshi cpp source-cpp">os.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span>. 
+</p><p>This is an output-only I/O manipulator, it may be called with an expression such as <span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> <a href="flush.html"><span class="kw1459">std::<span class="me2">flush</span></span></a></span> for any <code>out</code> of type <span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1388">std::<span class="me2">basic_ostream</span></span></a></span>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes"><span class="tocnumber">1</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Return_value"><span class="tocnumber">3</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>This manipulator may be used to produce an incomplete line of output immediately, e.g. when displaying output from a long-running process, logging activity of multiple threads or logging activity of a program that may crash unexpectedly. An explicit flush of <span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a></span> is also necessary before a call to <span class="mw-geshi cpp source-cpp"><a href="../../utility/program/system.html"><span class="kw818">std::<span class="me2">system</span></span></a></span>, if the spawned process performs any screen I/O (a common example is <span class="mw-geshi cpp source-cpp"><a href="../../utility/program/system.html"><span class="kw818">std::<span class="me2">system</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;pause&quot;</span><span class="br0">&#41;</span></span> on Windows). In most other usual interactive I/O scenarios, <span class="mw-geshi cpp source-cpp"><a href="endl.html"><span class="kw1460">std::<span class="me2">endl</span></span></a></span> is redundant when used with <span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a></span> because any input from <span class="mw-geshi cpp source-cpp"><a href="../basic_istream.html"><span class="kw1425">std::<span class="me2">cin</span></span></a></span>, output to <span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1429">std::<span class="me2">cerr</span></span></a></span>, or program termination forces a call to <span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a>.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span>. 
+</p><p>When a complete line of output needs to be flushed, the <span class="mw-geshi cpp source-cpp"><a href="endl.html"><span class="kw1460">std::<span class="me2">endl</span></span></a></span> manipulator may be used.
+</p><p>When every output operation needs to be flushed, the <span class="mw-geshi cpp source-cpp"><a href="unitbuf.html"><span class="kw1445">std::<span class="me2">unitbuf</span></span></a></span> manipulator may be used.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit&amp;section=2" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-param-list">
+
+
+<tr class="t-param-list-item">
+<td>  os
+</td>
+<td> -
+</td>
+<td>  reference to output stream
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit&amp;section=3" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<p><code>os</code> (reference to the stream after manipulation)
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><p> Without std::flush, the output would be the same, but may not appear in real time.
+ </p><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3p_A-8XSNthHZd50P1INcquf4-MIVKiI54YKsjAAwId2gmQ1pOHMTLRNTAW2Vcn_DJzdFK1-9qON7_KK5wMTVeRlnpEs9hElEs9fm7cfQ1TuDQD1l8N8_BaEAcUYqFiZtlglkZU8fHsBTwvbWi9l0v303yGdMlhVk12FEiloVQrpVVsT8NPCDxxZga4P8AfCiXrLBIPjkXiq9zfsLmVgxJrSNvo1qRU7igBmKq79TjV0TtMt9aPZq-9QzGDVRYhuak1nP0dO_4n7gEN6ZIpe8Zd9SL_5xek-cLdlF6yS6_1hFDmC_R_iG-xoE8yeiZdFbSRTywxof4ASYRu7Pouq-qcB_IUswTxqmyL_hSJDhL9eMD7blN99_sw4YrvZ5LrTHFSgCXqILHbQpwbsXczUX6Us0nF0NMTL' class='external text'>run this code</a></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;chrono&gt;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> Diff<span class="sy1">&gt;</span>
+<span class="kw4">void</span> log_progress<span class="br0">&#40;</span>Diff d<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <a href="../basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;..(&quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../../chrono/duration/duration_cast.html"><span class="kw844">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../chrono/duration.html"><span class="kw840">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">milliseconds</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span>.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; ms)..&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="flush.html"><span class="kw1459">std::<span class="me2">flush</span></span></a><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">volatile</span> <span class="kw4">int</span> sink<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">auto</span> t1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">::</span><span class="me2">high_resolution_clock</span><span class="sy4">::</span><span class="me2">now</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> j<span class="sy1">&lt;</span><span class="nu0">5</span><span class="sy4">;</span> <span class="sy2">++</span>j<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> n<span class="sy1">&lt;</span><span class="nu0">10000</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> m<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> m<span class="sy1">&lt;</span><span class="nu0">20000</span><span class="sy4">;</span> <span class="sy2">++</span>m<span class="br0">&#41;</span>
+                sink <span class="sy2">+</span><span class="sy1">=</span> m<span class="sy2">*</span>n<span class="sy4">;</span> <span class="co1">// do some work</span>
+        <span class="kw4">auto</span> now <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">::</span><span class="me2">high_resolution_clock</span><span class="sy4">::</span><span class="me2">now</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        log_progress<span class="br0">&#40;</span>now <span class="sy2">-</span> t1<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <a href="../basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">..(450 ms)....(901 ms)....(1350 ms)....(1800 ms)....(2250 ms)..</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="unitbuf.html" title="cpp/io/manip/unitbuf"> unitbuf<br />nounitbuf</a></div></div>
+</td>
+<td>   controls whether output is flushed after each operation <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/dcl_list_unitbuf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="endl.html" title="cpp/io/manip/endl"> endl</a></div></div>
+</td>
+<td>   outputs <span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es1">\n</span>'</span></span> and flushes the output stream <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/dcl_list_endl&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="../basic_ostream/flush.html" title="cpp/io/basic ostream/flush"> flush</a></div></div>
+</td>
+<td>   synchronizes with the underlying storage device <br /> <span class="t-mark">(public member function of <code>std::basic_ostream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ostream/dcl_list_flush&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 3969/1000000
+Post-expand include size: 89736/2097152 bytes
+Template argument size: 17501/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4675-0!*!0!!en!*!* and timestamp 20130414150031 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;oldid=42719">http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;oldid=42719</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/manip/flush" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/manip/flush" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/flush&amp;oldid=42719" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/manip/flush" title="cpp/io/manip/flush" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 November 2012, at 17:14.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 440 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 2.398 secs. -->        
+	</body>
+<!-- Cached 20130414150031 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/manip/flush by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:18:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

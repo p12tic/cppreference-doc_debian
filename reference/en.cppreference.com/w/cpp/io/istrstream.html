@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/istrstream by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:17:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>std::istrstream - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/io/istrstream", "wgTitle": "cpp/io/istrstream", "wgCurRevisionId": 45399, "wgArticleId": 4696, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_istrstream action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fistrstream" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="istrstream.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/istrstream&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="istrstream.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>istrstream</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../io.html" title="cpp/io">io</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../header.html" title="cpp/header"> Standard library headers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../iterator.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="c.html" title="cpp/io/c"> C-style I/O</a>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Buffers
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_filebuf.html" title="cpp/io/basic filebuf">basic_filebuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_stringbuf.html" title="cpp/io/basic stringbuf">basic_stringbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strstreambuf.html" title="cpp/io/strstreambuf">strstreambuf</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Streams
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Abstractions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ios_base.html" title="cpp/io/ios base">ios_base</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_ios.html" title="cpp/io/basic ios">basic_ios</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_istream.html" title="cpp/io/basic istream">basic_istream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_ostream.html" title="cpp/io/basic ostream">basic_ostream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_iostream.html" title="cpp/io/basic iostream">basic_iostream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  File I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_ifstream.html" title="cpp/io/basic ifstream">basic_ifstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_ofstream.html" title="cpp/io/basic ofstream">basic_ofstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_fstream.html" title="cpp/io/basic fstream">basic_fstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  String I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_istringstream.html" title="cpp/io/basic istringstream">basic_istringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_ostringstream.html" title="cpp/io/basic ostringstream">basic_ostringstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="basic_stringstream.html" title="cpp/io/basic stringstream">basic_stringstream</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Array I/O
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">istrstream</strong></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ostrstream.html" title="cpp/io/ostrstream">ostrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strstream.html" title="cpp/io/strstream">strstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Types
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="streamoff.html" title="cpp/io/streamoff">streamoff</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="streamsize.html" title="cpp/io/streamsize">streamsize</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fpos.html" title="cpp/io/fpos">fpos</a></td></tr></table>
+</td></tr>
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Error category interface
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="iostream_category.html" title="cpp/io/iostream category">iostream_category</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="io_errc.html" title="cpp/io/io errc">io_errc</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"><tt>std::istrstream</tt></strong><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Member functions
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream/istrstream&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/istrstream/istrstream (page does not exist)">istrstream::istrstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream/%7Eistrstream&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/istrstream/~istrstream (page does not exist)">istrstream::~istrstream</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="istrstream/rdbuf.html" title="cpp/io/istrstream/rdbuf">istrstream::rdbuf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="istrstream/str.html" title="cpp/io/istrstream/str">istrstream::str</a></td></tr></table>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/istrstream/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-ddcl-list">
+<tr class="t-ddcl-list-header">
+<td> <div>Defined in header <code><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/strstream&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/strstream (page does not exist)">&lt;strstream&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> istrstream <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_istream.html"><span class="kw1397">std::<span class="me2">istream</span></span></a></span></div></td>
+<td class="t-ddcl-list-item-nopad">  </td>
+<td> <span class="t-mark">(deprecated)</span> </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+</table>
+<p>The class <code>istrstream</code> implements input operations on array-backed streams. It essentially wraps a raw array I/O device implementation (<span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstreambuf</span></span>) into the higher-level interface of <span class="mw-geshi cpp source-cpp"><a href="basic_istream.html"><span class="kw1383">std::<span class="me2">basic_istream</span></span></a></span>. 
+</p><p>The typical implementation of <code>istrstream</code> holds only one non-derived data member: an object of type <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstreambuf</span></span>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes"><span class="tocnumber">1</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Member_functions"><span class="tocnumber">2</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-1"><a href="#Inherited_from_std::basic_istream"><span class="tocnumber">3</span> <span class="toctext">Inherited from   std::basic_istream</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Member_functions_2"><span class="tocnumber">3.1</span> <span class="toctext">Member functions</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Formatted_input"><span class="tocnumber">3.1.1</span> <span class="toctext">Formatted input</span></a></li>
+<li class="toclevel-3"><a href="#Unformatted_input"><span class="tocnumber">3.1.2</span> <span class="toctext">Unformatted input</span></a></li>
+<li class="toclevel-3"><a href="#Positioning"><span class="tocnumber">3.1.3</span> <span class="toctext">Positioning</span></a></li>
+<li class="toclevel-3"><a href="#Miscellaneous"><span class="tocnumber">3.1.4</span> <span class="toctext">Miscellaneous</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Member_classes"><span class="tocnumber">3.2</span> <span class="toctext">Member classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Inherited_from_std::basic_ios"><span class="tocnumber">4</span> <span class="toctext">Inherited from   std::basic_ios</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Member_types"><span class="tocnumber">4.1</span> <span class="toctext">Member types</span></a>
+<ul>
+<li class="toclevel-3"><a href="#State_functions"><span class="tocnumber">4.1.1</span> <span class="toctext">State functions</span></a></li>
+<li class="toclevel-3"><a href="#Formatting"><span class="tocnumber">4.1.2</span> <span class="toctext">Formatting</span></a></li>
+<li class="toclevel-3"><a href="#Miscellaneous_2"><span class="tocnumber">4.1.3</span> <span class="toctext">Miscellaneous</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Inherited_from_std::ios_base"><span class="tocnumber">5</span> <span class="toctext">Inherited from   std::ios_base</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Member_functions_3"><span class="tocnumber">5.1</span> <span class="toctext">Member functions</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Formatting_2"><span class="tocnumber">5.1.1</span> <span class="toctext">Formatting</span></a></li>
+<li class="toclevel-3"><a href="#Locales"><span class="tocnumber">5.1.2</span> <span class="toctext">Locales</span></a></li>
+<li class="toclevel-3"><a href="#Internal_extensible_array"><span class="tocnumber">5.1.3</span> <span class="toctext">Internal extensible array</span></a></li>
+<li class="toclevel-3"><a href="#Miscellaneous_3"><span class="tocnumber">5.1.4</span> <span class="toctext">Miscellaneous</span></a></li>
+<li class="toclevel-3"><a href="#Member_classes_2"><span class="tocnumber">5.1.5</span> <span class="toctext">Member classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Member_types_and_constants"><span class="tocnumber">5.2</span> <span class="toctext">Member types and constants</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p><code>istrstream</code> has been deprecated since C++98, <span class="mw-geshi cpp source-cpp"><a href="basic_istringstream.html"><span class="kw1405">std::<span class="me2">istringstream</span></span></a></span> and <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array_source">boost::iostreams::array_source</a> are the recommended replacements.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit&amp;section=2" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream/istrstream&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/istrstream/istrstream (page does not exist)"> (constructor)</a></div></div>
+</td>
+<td>  constructs an strstream, optionally allocating the buffer <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/dcl_list_constructor&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream/%7Eistrstream&amp;action=edit&amp;redlink=1" class="new" title="cpp/io/istrstream/~istrstream (page does not exist)"> (destructor)</a></div><div><span class="t-cmark">[virtual]</span></div></div>
+</td>
+<td>  destructs a strstream, optionally deallocating the buffer <br /> <span class="t-mark">(virtual public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/dcl_list_destructor&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="istrstream/rdbuf.html" title="cpp/io/istrstream/rdbuf"> rdbuf</a></div></div>
+</td>
+<td>   obtains a pointer to the associated strstreambuf <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/dcl_list_rdbuf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="istrstream/str.html" title="cpp/io/istrstream/str"> str</a></div></div>
+</td>
+<td>   accesses the output buffer <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/dcl_list_str&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<div class="t-inherited">
+<h2> <span class="mw-headline" id="Inherited_from_std::basic_istream">Inherited from  <a href="basic_istream.html" title="cpp/io/basic istream"> <span style="font-size:0.7em; line-height:130%">std::</span>basic_istream</a> </span></h2>
+<h3> <span class="mw-headline" id="Member_functions_2">Member functions</span></h3>
+<table class="t-dcl-list">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Formatted_input">  Formatted input </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/operator_gtgt.html" title="cpp/io/basic istream/operator gtgt"> operator&gt;&gt;</a></div></div>
+</td>
+<td>   extracts formatted data <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_operator_gtgt&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Unformatted_input">  Unformatted input </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/get.html" title="cpp/io/basic istream/get"> get</a></div></div>
+</td>
+<td>   extracts characters <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_get&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/peek.html" title="cpp/io/basic istream/peek"> peek</a></div></div>
+</td>
+<td>   reads the next character without extracting it <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_peek&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/unget.html" title="cpp/io/basic istream/unget"> unget</a></div></div>
+</td>
+<td>   unextracts a character <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_unget&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/putback.html" title="cpp/io/basic istream/putback"> putback</a></div></div>
+</td>
+<td>   puts character into input stream <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_putback&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/getline.html" title="cpp/io/basic istream/getline"> getline</a></div></div>
+</td>
+<td>   extracts characters until the given character is found <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_getline&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/ignore.html" title="cpp/io/basic istream/ignore"> ignore</a></div></div>
+</td>
+<td>   extracts and discards characters until the given character is found <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_ignore&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/read.html" title="cpp/io/basic istream/read"> read</a></div></div>
+</td>
+<td>   extracts blocks of characters <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_read&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/readsome.html" title="cpp/io/basic istream/readsome"> readsome</a></div></div>
+</td>
+<td>   extracts already available blocks of characters <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_readsome&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/gcount.html" title="cpp/io/basic istream/gcount"> gcount</a></div></div>
+</td>
+<td>   returns number of characters extracted by last unformatted input operation <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_gcount&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Positioning">  Positioning </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/tellg.html" title="cpp/io/basic istream/tellg"> tellg</a></div></div>
+</td>
+<td>   returns the input position indicator <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_tellg&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/seekg.html" title="cpp/io/basic istream/seekg"> seekg</a></div></div>
+</td>
+<td>   sets the input position indicator <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_seekg&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Miscellaneous">  Miscellaneous </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/sync.html" title="cpp/io/basic istream/sync"> sync</a></div></div>
+</td>
+<td>   synchronizes with the underlying storage device <br /> <span class="t-mark">(public member function of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_sync&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<h3> <span class="mw-headline" id="Member_classes">Member classes</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_istream/sentry.html" title="cpp/io/basic istream/sentry"> sentry</a></div></div>
+</td>
+<td>   implements basic logic for preparation of the stream for input operations <br /> <span class="t-mark">(public member class of <code>std::basic_istream</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/dcl_list_sentry&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<p><br />
+</p>
+</div>
+<div class="t-inherited">
+<h2> <span class="mw-headline" id="Inherited_from_std::basic_ios">Inherited from  <a href="basic_ios.html" title="cpp/io/basic ios"> <span style="font-size:0.7em; line-height:130%">std::</span>basic_ios</a> </span></h2>
+<h3> <span class="mw-headline" id="Member_types">Member types</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <code>char_type</code>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">CharT</span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <code>traits_type</code>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">Traits</span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <code>int_type</code>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">int_type</span></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <code>pos_type</code>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">pos_type</span></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <code>off_type</code>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">off_type</span></span>
+</td></tr>
+
+</table>
+<table class="t-dcl-list">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="State_functions">  State functions </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/good.html" title="cpp/io/basic ios/good"> good</a></div></div>
+</td>
+<td>   checks if no error has occurred i.e. I/O operations are available <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_good&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/eof.html" title="cpp/io/basic ios/eof"> eof</a></div></div>
+</td>
+<td>   checks if end-of-file has been reached <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_eof&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/fail.html" title="cpp/io/basic ios/fail"> fail</a></div></div>
+</td>
+<td>   checks if a recoverable error has occurred <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_fail&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/bad.html" title="cpp/io/basic ios/bad"> bad</a></div></div>
+</td>
+<td>   checks if a non-recoverable error has occurred <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_bad&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/operator%21.html" title="cpp/io/basic ios/operator!"> operator!</a></div></div>
+</td>
+<td>   checks if an error has occurred (synonym of <a href="basic_ios/fail.html" title="cpp/io/basic ios/fail"><tt>fail()</tt></a>) <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_operator!&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/operator_bool.html" title="cpp/io/basic ios/operator bool"> operator void*<br />operator bool</a></div><div><span class="t-mark">(until C++11)</span><br /><span class="t-mark">(since C++11)</span></div></div>
+</td>
+<td>  checks if no error has occurred (synonym of <span class="mw-geshi cpp source-cpp"><span class="sy3">!</span>fail<span class="br0">&#40;</span><span class="br0">&#41;</span></span>) <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_operator_bool&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/rdstate.html" title="cpp/io/basic ios/rdstate"> rdstate</a></div></div>
+</td>
+<td>   returns state flags <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_rdstate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/setstate.html" title="cpp/io/basic ios/setstate"> setstate</a></div></div>
+</td>
+<td>   sets state flags <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_setstate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/clear.html" title="cpp/io/basic ios/clear"> clear</a></div></div>
+</td>
+<td>   clears error and eof flags <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_clear&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Formatting">  Formatting </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/copyfmt.html" title="cpp/io/basic ios/copyfmt"> copyfmt</a></div></div>
+</td>
+<td>   copies formatting information <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_copyfmt&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/fill.html" title="cpp/io/basic ios/fill"> fill</a></div></div>
+</td>
+<td>   manages the fill character <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_fill&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Miscellaneous_2">  Miscellaneous </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/exceptions.html" title="cpp/io/basic ios/exceptions"> exceptions</a></div></div>
+</td>
+<td>   manages exception mask <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_exceptions&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/imbue.html" title="cpp/io/basic ios/imbue"> imbue</a></div></div>
+</td>
+<td>   sets the locale <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_imbue&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/rdbuf.html" title="cpp/io/basic ios/rdbuf"> rdbuf</a></div></div>
+</td>
+<td>   manages associated stream buffer <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_rdbuf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/tie.html" title="cpp/io/basic ios/tie"> tie</a></div></div>
+</td>
+<td>   manages tied stream <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_tie&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/narrow.html" title="cpp/io/basic ios/narrow"> narrow</a></div></div>
+</td>
+<td>   narrows characters <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_narrow&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="basic_ios/widen.html" title="cpp/io/basic ios/widen"> widen</a></div></div>
+</td>
+<td>   widens characters <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dcl_list_widen&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+</div>
+<div class="t-inherited">
+<h2> <span class="mw-headline" id="Inherited_from_std::ios_base">Inherited from  <a href="ios_base.html" title="cpp/io/ios base"> <span style="font-size:0.7em; line-height:130%">std::</span>ios_base</a> </span></h2>
+<h3> <span class="mw-headline" id="Member_functions_3">Member functions</span></h3>
+<table class="t-dcl-list">
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Formatting_2">  Formatting </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/flags.html" title="cpp/io/ios base/flags"> flags</a></div></div>
+</td>
+<td>   manages format flags  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_flags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/setf.html" title="cpp/io/ios base/setf"> setf</a></div></div>
+</td>
+<td>   sets specific format flag  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_setf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/unsetf.html" title="cpp/io/ios base/unsetf"> unsetf</a></div></div>
+</td>
+<td>   clears specific format flag  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_unsetf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/precision.html" title="cpp/io/ios base/precision"> precision</a></div></div>
+</td>
+<td>   manages decimal precision of floating point operations  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_precision&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/width.html" title="cpp/io/ios base/width"> width</a></div></div>
+</td>
+<td>   manages field width <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_width&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Locales">  Locales </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/imbue.html" title="cpp/io/ios base/imbue"> imbue</a></div></div>
+</td>
+<td>   sets locale  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_imbue&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/getloc.html" title="cpp/io/ios base/getloc"> getloc</a></div></div>
+</td>
+<td>   returns current locale  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_getloc&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Internal_extensible_array">  Internal extensible array </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/xalloc.html" title="cpp/io/ios base/xalloc"> xalloc</a></div><div><span class="t-cmark">[static]</span></div></div>
+</td>
+<td>   returns a program-wide unique integer that is safe to use as index to pword() and iword()  <br /> <span class="t-mark">(public static member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_xalloc&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/iword.html" title="cpp/io/ios base/iword"> iword</a></div></div>
+</td>
+<td>   resizes the private storage if necessary and access to the <span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span> element at the given index <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iword&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/pword.html" title="cpp/io/ios base/pword"> pword</a></div></div>
+</td>
+<td>   resizes the private storage if necessary and access to the <span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span> element at the given index <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_pword&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Miscellaneous_3">  Miscellaneous </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/register_callback.html" title="cpp/io/ios base/register callback"> register_callback</a></div></div>
+</td>
+<td>   registers event callback function  <br /> <span class="t-mark">(public member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_register_callback&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/sync_with_stdio.html" title="cpp/io/ios base/sync with stdio"> sync_with_stdio</a></div><div><span class="t-cmark">[static]</span></div></div>
+</td>
+<td>   sets whether C++ and C IO libraries are interoperable  <br /> <span class="t-mark">(public static member function of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_sync_with_stdio&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Member_classes_2">  Member classes </span></h5>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/failure.html" title="cpp/io/ios base/failure"> failure</a></div></div>
+</td>
+<td>   stream exception  <br /> <span class="t-mark">(public member class of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_failure&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/Init.html" title="cpp/io/ios base/Init"> Init</a></div></div>
+</td>
+<td>   initializes standard stream objects  <br /> <span class="t-mark">(public member class of <code>std::ios_base</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_Init&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<table class="t-dcl-list">
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Member_types_and_constants"> Member types and constants</span></h3>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Type
+</td>
+<td>  Explanation
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"> openmode</a></div></div>
+</td>
+<td>   stream open mode type
+<p>The following constants are also defined:
+</p>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Constant
+</td>
+<td>  Explanation<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>app</tt></a>
+</td>
+<td>  seek to the end of stream before each write<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>binary</tt></a>
+</td>
+<td>  open in binary mode<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>in</tt></a>
+</td>
+<td>  open for reading<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>out</tt></a>
+</td>
+<td>  open for writing<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>trunc</tt></a>
+</td>
+<td>  discard the contents of the stream when opening<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>ate</tt></a>
+</td>
+<td>  seek to the end of stream immediately after open<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+</table> <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"> fmtflags</a></div></div>
+</td>
+<td>   formatting flags type
+<p>The following constants are also defined:
+</p>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Constant
+</td>
+<td>  Explanation<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>dec</tt></a>
+</td>
+<td>  use decimal base for integer I/O<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>oct</tt></a>
+</td>
+<td>  use octal base for integer I/O<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>hex</tt></a>
+</td>
+<td>  use hexadecimal base for integer I/O<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>basefield</tt></a>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">dec<span class="sy3">|</span>oct<span class="sy3">|</span>hex<span class="sy3">|</span><span class="nu0">0</span></span>. Useful for masking operations<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>left</tt></a>
+</td>
+<td>   left adjustment (adds fill characters to the right) <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>right</tt></a>
+</td>
+<td>  right adjustment (adds fill characters to the left) <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>internal</tt></a>
+</td>
+<td>  internal adjustment (adds fill characters to the internal designated point) <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>adjustfield</tt></a>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">left<span class="sy3">|</span>right<span class="sy3">|</span>internal</span>. Useful for masking operations <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>scientific</tt></a>
+</td>
+<td>   generate floating point types using scientific notation, or hex notation if combined with fixed <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>fixed</tt></a>
+</td>
+<td>  generate floating point types using fixed notation, or hex notation if combined with scientific <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>floatfield</tt></a>
+</td>
+<td>  <span class="mw-geshi cpp source-cpp">scientific<span class="sy3">|</span>fixed<span class="sy3">|</span><span class="br0">&#40;</span>scientific<span class="sy3">|</span>fixed<span class="br0">&#41;</span><span class="sy3">|</span><span class="nu0">0</span></span>. Useful for masking operations <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>boolalpha</tt></a>
+</td>
+<td>   insert and extract <span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span> type in alphanumeric format <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showbase</tt></a>
+</td>
+<td>  generate a prefix indicating the numeric base for integer output, require the currency indicator in monetary I/O <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showpoint</tt></a>
+</td>
+<td>  generate a decimal-point character unconditionally for floating-point number output <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showpos</tt></a>
+</td>
+<td>  generate a <span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span> character for non-negative numeric output <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>skipws</tt></a>
+</td>
+<td>  skip leading whitespace before certain input operations <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>unitbuf</tt></a>
+</td>
+<td>  flush the output after each output operation <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>uppercase</tt></a>
+</td>
+<td>  replace certain lowercase letters with their uppercase<br />equivalents in certain output output operations <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+</table> <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/iostate.html" title="cpp/io/ios base/iostate"> iostate</a></div></div>
+</td>
+<td>   state of the stream type
+<p>The following constants are also defined:
+</p>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Constant
+</td>
+<td>  Explanation<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/iostate.html" title="cpp/io/ios base/iostate"><tt>goodbit</tt></a>
+</td>
+<td>  no error <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/iostate.html" title="cpp/io/ios base/iostate"><tt>badbit</tt></a>
+</td>
+<td>  irrecoverable stream error <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/iostate.html" title="cpp/io/ios base/iostate"><tt>failbit</tt></a>
+</td>
+<td>  input/output operation failed (formatting or extraction error) <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/iostate.html" title="cpp/io/ios base/iostate"><tt>eofbit</tt></a>
+</td>
+<td>  associated input sequence has reached end-of-file <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+</table> <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_iostate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/seekdir.html" title="cpp/io/ios base/seekdir"> seekdir</a></div></div>
+</td>
+<td>   seeking direction type
+<p>The following constants are also defined:
+</p>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Constant
+</td>
+<td>  Explanation<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_seekdir&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/seekdir.html" title="cpp/io/ios base/seekdir"><tt>beg</tt></a>
+</td>
+<td>  the beginning of a stream <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_seekdir&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/seekdir.html" title="cpp/io/ios base/seekdir"><tt>end</tt></a>
+</td>
+<td>  the ending of a stream <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_seekdir&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <a href="ios_base/seekdir.html" title="cpp/io/ios base/seekdir"><tt>cur</tt></a>
+</td>
+<td>  the current position of stream position indicator <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_seekdir&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+</table> <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_seekdir&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/event.html" title="cpp/io/ios base/event"> event</a></div></div>
+</td>
+<td>   specifies event type <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_event&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="ios_base/event_callback.html" title="cpp/io/ios base/event callback"> event_callback</a></div></div>
+</td>
+<td>   callback function type <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dcl_list_event_callback&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+</div>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13438/1000000
+Post-expand include size: 517994/2097152 bytes
+Template argument size: 150179/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4696-0!*!0!!en!*!* and timestamp 20130207031806 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;oldid=45399">http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;oldid=45399</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/istrstream" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/istrstream" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;oldid=45399" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 December 2012, at 06:30.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 654 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 4.103 secs. -->        
+	</body>
+<!-- Cached 20130207031806 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/io/istrstream by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:17:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

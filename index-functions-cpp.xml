@@ -418,8 +418,8 @@
     <const name="DBL_MAX_10_EXP" link="cpp/types/climits"/>
     <const name="LDBL_MAX_10_EXP" link="cpp/types/climits"/>
 
-    <const name="FLT_ROUNDS" link="cpp/types/climits"/>
-    <const name="FLT_EVAL_METHOD" link="cpp/types/climits"/>
+    <const name="FLT_ROUNDS" link="cpp/types/climits/FLT_ROUNDS"/>
+    <const name="FLT_EVAL_METHOD" link="cpp/types/climits/FLT_EVAL_METHOD"/>
 
         <!-- RTTI -->
 
@@ -571,20 +571,39 @@
     <class name="std::random_access_iterator_tag" link="cpp/iterator/iterator_tags"/>
     <class name="std::iterator" link="cpp/iterator/iterator"/>
 
-    <class name="std::reverse_iterator" link="cpp/iterator/reverse_iterator"/>
-    <class name="std::move_iterator" link="cpp/iterator/move_iterator"/>
+    <class name="std::reverse_iterator" link="cpp/iterator/reverse_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::move_iterator" link="cpp/iterator/move_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::back_insert_iterator" link="cpp/iterator/back_insert_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::front_insert_iterator" link="cpp/iterator/front_insert_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::insert_iterator" link="cpp/iterator/insert_iterator">
+        <!-- todo -->
+    </class>
+
     <function name="std::make_move_iterator" link="cpp/iterator/make_move_iterator"/>
-    <class name="std::back_insert_iterator" link="cpp/iterator/back_insert_iterator"/>
     <function name="std::back_inserter" link="cpp/iterator/back_inserter"/>
-    <class name="std::front_insert_iterator" link="cpp/iterator/front_insert_iterator"/>
     <function name="std::front_inserter" link="cpp/iterator/front_inserter"/>
-    <class name="std::insert_iterator" link="cpp/iterator/insert_iterator"/>
     <function name="std::inserter" link="cpp/iterator/inserter"/>
 
-    <class name="std::istream_iterator" link="cpp/iterator/istream_iterator"/>
-    <class name="std::istreambuf_iterator" link="cpp/iterator/istreambuf_iterator"/>
-    <class name="std::ostream_iterator" link="cpp/iterator/ostream_iterator"/>
-    <class name="std::ostreambuf_iterator" link="cpp/iterator/ostreambuf_iterator"/>
+    <class name="std::istream_iterator" link="cpp/iterator/istream_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::istreambuf_iterator" link="cpp/iterator/istreambuf_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::ostream_iterator" link="cpp/iterator/ostream_iterator">
+        <!-- todo -->
+    </class>
+    <class name="std::ostreambuf_iterator" link="cpp/iterator/ostreambuf_iterator">
+        <!-- todo -->
+    </class>
 
     <function name="std::advance" link="cpp/iterator/advance"/>
     <function name="std::distance" link="cpp/iterator/distance"/>
@@ -756,7 +775,7 @@
         <function name="operator="/>
         <function name="reset"/>
         <function name="swap"/>
-        <function name="uset_count"/>
+        <function name="use_count"/>
         <function name="expired"/>
         <function name="lock"/>
         <function name="owner_before"/>
@@ -793,8 +812,8 @@
     </class>
 
     <class name="std::default_delete" link="cpp/memory/default_delete">
-        <constructor/>
-        <function name="operator()"/>
+        <constructor link="."/>
+        <function name="operator()" link="."/>
     </class>
 
     <function name="std::declare_reachable" link="cpp/memory/gc/declare_reachable"/>
@@ -882,12 +901,13 @@
     <typedef name="std::exception_ptr" link="cpp/error/exception_ptr"/>
     <function name="std::make_exception_ptr" link="cpp/error/make_exception_ptr"/>
     <function name="std::current_exception" link="cpp/error/current_exception"/>
+    <function name="std::rethrow_exception" link="cpp/error/rethrow_exception"/>
     <function name="std::nested_exception" link="cpp/error/nested_exception"/>
     <function name="std::throw_with_nested" link="cpp/error/throw_with_nested"/>
     <function name="std::rethrow_if_nested" link="cpp/error/rethrow_if_nested"/>
 
     <function name="std::terminate" link="cpp/error/terminate"/>
-    <typedef name="std::terminate_handler" link="cpp/error/terminated_handler"/>
+    <typedef name="std::terminate_handler" link="cpp/error/terminate_handler"/>
     <function name="std::get_terminate" link="cpp/error/get_terminate"/>
     <function name="std::set_terminate" link="cpp/error/set_terminate"/>
 
@@ -1011,7 +1031,7 @@
     <function name="std::make_error_condition" link="cpp/error/make_error_condition"/>
     <function name="std::is_error_condition_enum" link="cpp/error/is_error_condition_enum"/>
 
-    <class name="std::err_c" link="cpp/error/err_c">
+    <class name="std::errc" link="cpp/error/errc">
         <const name="address_family_not_supported" link="."/>
         <const name="address_in_use" link="."/>
         <const name="address_not_available" link="."/>
@@ -1172,8 +1192,8 @@
     <const name="SIGTERM" link="cpp/utility/program/SIG_types"/>
 
     <function name="std::longjmp" link="cpp/utility/program/longjmp"/>
-    <function name="std::setjmp" link="cpp/utility/program/setjmp"/>
-    <typedef name="jmp_buf" link="cpp/utility/program/jmp_buf"/>
+    <function name="setjmp" link="cpp/utility/program/setjmp"/>
+    <typedef name="std::jmp_buf" link="cpp/utility/program/jmp_buf"/>
 
     <!--=======================================================================-->
     <!-- cpp/chrono -->
@@ -1200,7 +1220,7 @@
         <specialization name="std::common_type" link="common_type"/>
     </class>
 
-    <function name="std::time_point_cast" link="cpp/chrono/time_point/time_point_cast"/>
+    <function name="std::chrono::time_point_cast" link="cpp/chrono/time_point/time_point_cast"/>
 
     <class name="std::chrono::duration" link="cpp/chrono/duration">
         <constructor/>
@@ -1225,6 +1245,12 @@
         <function name="operator/=" link="operator_arith3"/>
         <function name="operator%=" link="operator_arith3"/>
 
+        <overload name="operator+" link="operator_arith4"/>
+        <overload name="operator-" link="operator_arith4"/>
+        <overload name="operator*" link="operator_arith4"/>
+        <overload name="operator/" link="operator_arith4"/>
+        <overload name="operator%" link="operator_arith4"/>
+
         <overload name="operator==" link="operator_cmp"/>
         <overload name="operator!=" link="operator_cmp"/>
         <overload name="operator&lt;" link="operator_cmp"/>
@@ -1244,11 +1270,17 @@
 
     <function name="std::chrono::duration_cast" link="cpp/chrono/duration/duration_cast"/>
 
-    <class name="std::chrono::treat_as_floating_point" link="cpp/chrono/duration/treat_as_floating_point"><!--todo--></class>
-    <class name="std::chrono::duration_values" link="cpp/chrono/duration/duration_values"><!--todo--></class>
+    <class name="std::chrono::treat_as_floating_point" link="cpp/chrono/duration/treat_as_floating_point">
+    </class>
+
+    <class name="std::chrono::duration_values" link="cpp/chrono/duration/duration_values">
+        <function name="zero"/>
+        <function name="min"/>
+        <function name="max"/>
+    </class>
 
     <class name="std::chrono::system_clock" link="cpp/chrono/system_clock">
-        <const name="is_steady"/>
+        <const name="is_steady" link="."/>
         <function name="now"/>
         <function name="to_time_t"/>
         <function name="from_time_t"/>
@@ -1260,7 +1292,7 @@
     </class>
 
     <class name="std::chrono::high_resolution_clock" link="cpp/chrono/high_resolution_clock">
-        <const name="is_steady"/>
+        <const name="is_steady" link="."/>
         <function name="now"/>
     </class>
 
@@ -1290,6 +1322,9 @@
     <class name="std::bitset" link="cpp/utility/bitset">
         <constructor/>
         <destructor/>
+
+        <class name="reference"/>
+
         <function name="operator="/>
         <function name="operator==" link="operator_cmp"/>
         <function name="operator!=" link="operator_cmp"/>
@@ -1321,8 +1356,8 @@
         <overload name="operator&amp;" link="operator_logic2"/>
         <overload name="operator|" link="operator_logic2"/>
         <overload name="operator^" link="operator_logic2"/>
-        <overload name="operator&lt;lt;" link="operator_lltltgtgt2"/>
-        <overload name="operator&gt;gt;" link="operator_lltltgtgt2"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt2"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt2"/>
 
         <specialization name="std::hash" link="hash"/>
     </class>
@@ -1350,7 +1385,7 @@
         <function name="operator()" link="."/>
     </class>
 
-    <class name="std::negates" link="cpp/utility/functional/negates">
+    <class name="std::negate" link="cpp/utility/functional/negate">
         <function name="operator()" link="."/>
     </class>
 
@@ -1482,6 +1517,9 @@
     </class>
 
     <function name="std::make_pair" link="cpp/utility/pair/make_pair"/>
+
+    <class name="std::piecewise_construct_t" link="cpp/utility/piecewise_construct_t"></class>
+    <const name="std::piecewise_construct" link="cpp/utility/piecewise_construct"/>
 
     <class name="std::tuple" link="cpp/utility/tuple">
         <constructor/>
@@ -1692,7 +1730,7 @@
 
         <function name="empty"/>
         <function name="size"/>
-        <function name="length"/>
+        <function name="length" link="size"/>
         <function name="max_size"/>
         <function name="reserve"/>
         <function name="capacity"/>
@@ -1894,7 +1932,7 @@
         <function name="emplace_back"/>
         <function name="pop_back"/>
         <function name="push_front"/>
-        <function name="pemplace_front"/>
+        <function name="emplace_front"/>
         <function name="pop_front"/>
         <function name="resize"/>
         <function name="swap"/>
@@ -2101,6 +2139,8 @@
     </class>
 
     <class name="std::map" link="cpp/container/map">
+        <class name="value_compare"/>
+
         <constructor/>
         <destructor/>
         <function name="operator="/>
@@ -2149,8 +2189,11 @@
     </class>
 
     <class name="std::multimap" link="cpp/container/multimap">
+        <class name="value_compare"/>
+
         <constructor/>
         <destructor/>
+
         <function name="operator="/>
         <function name="get_allocator"/>
 
@@ -2219,10 +2262,10 @@
         <function name="find"/>
         <function name="equal_range"/>
 
-        <function name="begin(int)"/>
-        <function name="cbegin(int)" link="begin(int)"/>
-        <function name="end(int)"/>
-        <function name="cend(int)" link="end(int)"/>
+        <function name="begin(int)" link="begin2"/>
+        <function name="cbegin(int)" link="begin2"/>
+        <function name="end(int)" link="end2"/>
+        <function name="cend(int)" link="end2"/>
 
         <function name="bucket_count"/>
         <function name="max_bucket_count"/>
@@ -2269,10 +2312,10 @@
         <function name="find"/>
         <function name="equal_range"/>
 
-        <function name="begin(int)"/>
-        <function name="cbegin(int)" link="begin(int)"/>
-        <function name="end(int)"/>
-        <function name="cend(int)" link="end(int)"/>
+        <function name="begin(int)" link="begin2"/>
+        <function name="cbegin(int)" link="begin2"/>
+        <function name="end(int)" link="end2"/>
+        <function name="cend(int)" link="end2"/>
 
         <function name="bucket_count"/>
         <function name="max_bucket_count"/>
@@ -2321,10 +2364,10 @@
         <function name="find"/>
         <function name="equal_range"/>
 
-        <function name="begin(int)"/>
-        <function name="cbegin(int)" link="begin(int)"/>
-        <function name="end(int)"/>
-        <function name="cend(int)" link="end(int)"/>
+        <function name="begin(int)" link="begin2"/>
+        <function name="cbegin(int)" link="begin2"/>
+        <function name="end(int)" link="end2"/>
+        <function name="cend(int)" link="end2"/>
 
         <function name="bucket_count"/>
         <function name="max_bucket_count"/>
@@ -2371,10 +2414,10 @@
         <function name="find"/>
         <function name="equal_range"/>
 
-        <function name="begin(int)"/>
-        <function name="cbegin(int)" link="begin(int)"/>
-        <function name="end(int)"/>
-        <function name="cend(int)" link="end(int)"/>
+        <function name="begin(int)" link="begin2"/>
+        <function name="cbegin(int)" link="begin2"/>
+        <function name="end(int)" link="end2"/>
+        <function name="cend(int)" link="end2"/>
 
         <function name="bucket_count"/>
         <function name="max_bucket_count"/>
@@ -2557,6 +2600,14 @@
     <const name="HUGE_VAL" link="cpp/numeric/math/HUGE_VAL"/>
     <const name="HUGE_VALF" link="cpp/numeric/math/HUGE_VAL"/>
     <const name="HUGE_VALL" link="cpp/numeric/math/HUGE_VAL"/>
+
+    <const name="INFINITY" link="cpp/numeric/math/INFINITY"/>
+    <const name="NAN" link="cpp/numeric/math/NAN"/>
+
+    <const name="math_errhandling" link="cpp/numeric/math/math_errhandling"/>
+    <const name="MATH_ERRNO" link="cpp/numeric/math/math_errhandling"/>
+    <const name="MATH_ERREXCEPT" link="cpp/numeric/math/math_errhandling"/>
+
     <const name="FP_INFINITE" link="cpp/numeric/math/FP_categories"/>
     <const name="FP_NAN" link="cpp/numeric/math/FP_categories"/>
     <const name="FP_NORMAL" link="cpp/numeric/math/FP_categories"/>
@@ -2656,12 +2707,112 @@
 
     <!-- cpp/numeric/random -->
 
-    <class name="std::linear_congruential_engine" link="cpp/numeric/random/linear_congruential_engine"><!--todo--></class>
-    <class name="std::mersenne_twister_engine" link="cpp/numeric/random/mersenne_twister_engine"><!--todo--></class>
-    <class name="std::subtract_with_carry_engine" link="cpp/numeric/random/subtract_with_carry_engine"><!--todo--></class>
-    <class name="std::discard_block_engine" link="cpp/numeric/random/discard_block_engine"><!--todo--></class>
-    <class name="std::independent_bits_engine" link="cpp/numeric/random/independent_bits_engine"><!--todo--></class>
-    <class name="std::shuffle_order_engine" link="cpp/numeric/random/shuffle_order_engine"><!--todo--></class>
+    <class name="std::linear_congruential_engine" link="cpp/numeric/random/linear_congruential_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::mersenne_twister_engine" link="cpp/numeric/random/mersenne_twister_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::subtract_with_carry_engine" link="cpp/numeric/random/subtract_with_carry_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::discard_block_engine" link="cpp/numeric/random/discard_block_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="base"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::independent_bits_engine" link="cpp/numeric/random/independent_bits_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="base"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::shuffle_order_engine" link="cpp/numeric/random/shuffle_order_engine">
+        <constructor/>
+        <function name="seed"/>
+        <function name="base"/>
+        <function name="operator()"/>
+        <function name="discard"/>
+        <function name="min"/>
+        <function name="max"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <!--todo mem objects-->
+    </class>
+
+    <class name="std::random_device" link="cpp/numeric/random/random_device">
+        <constructor/>
+        <function name="operator()"/>
+        <function name="min"/>
+        <function name="max"/>
+        <function name="entropy"/>
+    </class>
 
     <typedef name="std::minstd_rand0" alias="std::linear_congruential_engine"/>
     <typedef name="std::minstd_rand" alias="std::linear_congruential_engine"/>
@@ -2676,9 +2827,16 @@
 
     <function name="std::srand" link="cpp/numeric/random/srand"/>
     <function name="std::rand" link="cpp/numeric/random/rand"/>
-    <const name="MAX_RANDOM" link="cpp/numeric/random/MAX_RANDOM"/>
+    <const name="RAND_MAX" link="cpp/numeric/random/RAND_MAX"/>
 
     <function name="std::generate_canonical" link="cpp/numeric/random/generate_canonical"/>
+
+    <class name="std::seed_seq" link="cpp/numeric/random/seed_seq">
+        <constructor/>
+        <function name="generate"/>
+        <function name="size"/>
+        <function name="param"/>
+    </class>
 
     <class name="std::uniform_int_distribution" link="cpp/numeric/random/uniform_int_distribution">
         <constructor/>
@@ -2932,7 +3090,7 @@
     <function name="std::partial_sort" link="cpp/algorithm/partial_sort"/>
     <function name="std::partial_sort_copy" link="cpp/algorithm/partial_sort_copy"/>
     <function name="std::stable_sort" link="cpp/algorithm/stable_sort"/>
-    <function name="std::nht_element" link="cpp/algorithm/nth_element"/>
+    <function name="std::nth_element" link="cpp/algorithm/nth_element"/>
 
     <function name="std::lower_bound" link="cpp/algorithm/lower_bound"/>
     <function name="std::upper_bound" link="cpp/algorithm/upper_bound"/>
@@ -3033,8 +3191,51 @@
         <function name="pbackfail"/>
     </class>
 
-    <class name="std::basic_filebuf" link="cpp/io/basic_filebuf"><!--TODO--></class>
-    <class name="std::basic_stringbuf" link="cpp/io/basic_stringbuf"><!--TODO--></class>
+    <class name="std::basic_filebuf" link="cpp/io/basic_filebuf">
+        <inherits name="std::basic_streambuf"/>
+
+        <constructor/>
+        <destructor/>
+
+        <function name="operator="/>
+        <function name="swap"/>
+        <function name="str"/>
+
+        <function name="is_open"/>
+        <function name="open"/>
+        <function name="close"/>
+
+        <function name="showmanyc"/>
+        <function name="underflow"/>
+        <function name="uflow"/>
+        <function name="pbackfail"/>
+        <function name="overflow"/>
+        <function name="setbuf"/>
+        <function name="seekoff"/>
+        <function name="seekpos"/>
+        <function name="sync"/>
+        <function name="imbue"/>
+
+        <overload name="std::swap" link="swap2"/>
+    </class>
+
+    <class name="std::basic_stringbuf" link="cpp/io/basic_stringbuf">
+        <inherits name="std::basic_streambuf"/>
+
+        <constructor/>
+        <function name="operator="/>
+        <function name="swap"/>
+        <function name="str"/>
+
+        <function name="underflow"/>
+        <function name="pbackfail"/>
+        <function name="overflow"/>
+        <function name="setbuf"/>
+        <function name="seekoff"/>
+        <function name="seekpos"/>
+
+        <overload name="std::swap" link="swap2"/>
+    </class>
 
     <class name="std::ios_base" link="cpp/io/ios_base">
         <constructor/>
@@ -3451,10 +3652,6 @@
 
     <!-- cpp/locale -->
 
-    <function name="std::setlocale" link="cpp/locale/setlocale"/>
-    <function name="std::localeconv" link="cpp/locale/localeconv"/>
-    <class name="std::lconv" link="cpp/locale/lconv"/>
-
     <class name="std::locale" link="cpp/locale/locale">
         <constructor/>
         <destructor/>
@@ -3477,6 +3674,399 @@
     <class name="std::locale::facet" link="cpp/locale/locale/facet">
         <constructor/>
     </class>
+
+    <function name="std::use_facet" link="cpp/locale/use_facet"/>
+    <function name="std::has_facet" link="cpp/locale/has_facet"/>
+
+    <class name="std::wstring_convert" link="cpp/locale/wstring_convert">
+        <constructor/>
+        <destructor/>
+        <function name="from_bytes"/>
+        <function name="to_bytes"/>
+        <function name="converted"/>
+        <function name="state"/>
+    </class>
+
+    <class name="std::wbuffer_convert" link="cpp/locale/wbuffer_convert">
+        <constructor/>
+        <destructor/>
+        <function name="rdbuf"/>
+        <function name="state"/>
+    </class>
+
+    <class name="std::ctype_base" link="cpp/locale/ctype_base">
+        <typedef name="mask" link="."/>
+        <const name="space" link="."/>
+        <const name="print" link="."/>
+        <const name="cntrl" link="."/>
+        <const name="upper" link="."/>
+        <const name="lower" link="."/>
+        <const name="alpha" link="."/>
+        <const name="digit" link="."/>
+        <const name="punct" link="."/>
+        <const name="xdigit" link="."/>
+        <const name="blank" link="."/>
+        <const name="alnum" link="."/>
+        <const name="graph" link="."/>
+    </class>
+
+    <class name="std::codecvt_base" link="cpp/locale/codecvt_base">
+        <enum name="result" link="."/>
+        <const name="ok" link="."/>
+        <const name="partial" link="."/>
+        <const name="error" link="."/>
+        <const name="noconv" link="."/>
+    </class>
+
+    <class name="std::messages_base" link="cpp/locale/messages_base">
+        <typedef name="catalog" link="."/>
+    </class>
+
+    <class name="std::time_base" link="cpp/locale/time_base">
+        <enum name="dateorder" link="."/>
+        <const name="no_order" link="."/>
+        <const name="dmy" link="."/>
+        <const name="mdy" link="."/>
+        <const name="ymd" link="."/>
+        <const name="ydm" link="."/>
+    </class>
+
+    <class name="std::money_base" link="cpp/locale/money_base">
+        <enum name="part" link="."/>
+        <const name="none" link="."/>
+        <const name="space" link="."/>
+        <const name="symbol" link="."/>
+        <const name="sign" link="."/>
+        <const name="value" link="."/>
+        <class name="pattern" link="."/>
+    </class>
+
+    <class name="std::ctype" link="cpp/locale/ctype">
+        <inherits name="std::ctype_base"/>
+
+        <constructor/>
+        <destructor/>
+        <function name="is"/>
+        <function name="scan_is"/>
+        <function name="toupper"/>
+        <function name="tolower"/>
+        <function name="widen"/>
+        <function name="narrow"/>
+
+        <!-- protected -->
+        <function name="do_is" link="is"/>
+        <function name="do_scan_is" link="scan_is"/>
+        <function name="do_toupper" link="toupper"/>
+        <function name="do_tolower" link="tolower"/>
+        <function name="do_widen" link="widen"/>
+        <function name="do_narrow" link="narrow"/>
+
+        <!-- todo id -->
+    </class>
+
+    <!-- todo ctype<char> -->
+
+    <class name="std::codecvt" link="cpp/locale/codecvt">
+        <inherits name="std::codecvt_base"/>
+
+        <typedef name="intern_type" link="."/>
+        <typedef name="extern_type" link="."/>
+        <typedef name="state_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="out"/>
+        <function name="in"/>
+        <function name="unshift"/>
+        <function name="encoding"/>
+        <function name="always_noconv"/>
+        <function name="length"/>
+        <function name="max_length"/>
+
+        <!-- protected -->
+        <function name="do_out" link="out"/>
+        <function name="do_in" link="in"/>
+        <function name="do_unshift" link="unshift"/>
+        <function name="do_encoding" link="encoding"/>
+        <function name="do_always_noconv" link="always_noconv"/>
+        <function name="do_length" link="length"/>
+        <function name="do_max_length" link="max_length"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::collate" link="cpp/locale/collate">
+        <typedef name="char_type" link="."/>
+        <typedef name="string_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="compare"/>
+        <function name="transform"/>
+        <function name="hash"/>
+
+        <!-- protected -->
+        <function name="do_compare" link="compare"/>
+        <function name="do_transform" link="transform"/>
+        <function name="do_hash" link="hash"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::messages" link="cpp/locale/messages">
+        <inherits name="std::messages_base"/>
+
+        <typedef name="char_type" link="."/>
+        <typedef name="string_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="open"/>
+        <function name="get"/>
+        <function name="close"/>
+
+        <!-- protected -->
+        <function name="do_open" link="open"/>
+        <function name="do_get" link="get"/>
+        <function name="do_close" link="close"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::time_get" link="cpp/locale/time_get">
+        <inherits name="std::time_base"/>
+
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="date_order"/>
+        <function name="get_time"/>
+        <function name="get_date"/>
+        <function name="get_weekday"/>
+        <function name="get_monthname"/>
+        <function name="get_year"/>
+        <function name="get"/>
+
+        <!-- protected -->
+        <function name="do_date_order" link="date_order"/>
+        <function name="do_get_time" link="get_time"/>
+        <function name="do_get_date" link="get_date"/>
+        <function name="do_get_weekday" link="get_weekday"/>
+        <function name="do_get_monthname" link="get_monthname"/>
+        <function name="do_get_year" link="get_year"/>
+        <function name="do_get" link="get"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::time_put" link="cpp/locale/time_put">
+        <inherits name="std::time_base"/>
+
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="put"/>
+
+        <!-- protected -->
+        <function name="do_put" link="put"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::num_get" link="cpp/locale/num_get">
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="get"/>
+
+        <!-- protected -->
+        <function name="do_get" link="get"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::num_put" link="cpp/locale/num_put">
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="put"/>
+
+        <!-- protected -->
+        <function name="do_put" link="put"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::numpunct" link="cpp/locale/numpunct">
+        <typedef name="char_type" link="."/>
+        <typedef name="string_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="decimal_point"/>
+        <function name="thousands_sep"/>
+        <function name="grouping"/>
+        <function name="truename" link="truefalsename"/>
+        <function name="falsename" link="truefalsename"/>
+
+        <!-- protected -->
+        <function name="do_decimal_point" link="decimal_point"/>
+        <function name="do_thousands_sep" link="thousands_sep"/>
+        <function name="do_grouping" link="grouping"/>
+        <function name="do_truename" link="truefalsename"/>
+        <function name="do_falsename" link="truefalsename"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::money_get" link="cpp/locale/money_get">
+        <inherits name="std::money_base"/>
+
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+        <typedef name="string_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="get"/>
+
+        <!-- protected -->
+        <function name="do_get" link="get"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::money_put" link="cpp/locale/money_put">
+        <inherits name="std::money_base"/>
+
+        <typedef name="char_type" link="."/>
+        <typedef name="iter_type" link="."/>
+        <typedef name="string_type" link="."/>
+
+        <constructor/>
+        <destructor/>
+        <function name="put"/>
+
+        <!-- protected -->
+        <function name="do_put" link="put"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::moneypunct" link="cpp/locale/moneypunct">
+        <typedef name="char_type" link="."/>
+        <typedef name="string_type" link="."/>
+        <inherits name="std::money_base"/>
+
+        <constructor/>
+        <destructor/>
+        <function name="decimal_point"/>
+        <function name="thousands_sep"/>
+        <function name="grouping"/>
+        <function name="curr_symbol"/>
+        <function name="positive_sign"/>
+        <function name="negative_sign"/>
+        <function name="frac_digits"/>
+        <function name="pos_format"/>
+        <function name="neg_format"/>
+
+        <!-- protected -->
+        <function name="do_decimal_point" link="decimal_point"/>
+        <function name="do_thousands_sep" link="thousands_sep"/>
+        <function name="do_grouping" link="grouping"/>
+        <function name="do_curr_symbol" link="curr_symbol"/>
+        <function name="do_positive_sign" link="positive_sign"/>
+        <function name="do_negative_sign" link="negative_sign"/>
+        <function name="do_frac_digits" link="frac_digits"/>
+        <function name="do_pos_format" link="pos_format"/>
+        <function name="do_neg_format" link="neg_format"/>
+
+        <!-- todo id -->
+    </class>
+
+    <class name="std::ctype_byname" link="cpp/locale/ctype_byname">
+        <inherits name="std::ctype"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::codecvt_byname" link="cpp/locale/codecvt_byname">
+        <inherits name="std::codecvt"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::messages_byname" link="cpp/locale/messages_byname">
+        <inherits name="std::messages"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::collate_byname" link="cpp/locale/collate_byname">
+        <inherits name="std::collate"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::time_get_byname" link="cpp/locale/time_get_byname">
+        <inherits name="std::time_get"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::time_put_byname" link="cpp/locale/time_put_byname">
+        <inherits name="std::time_put"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::numpunct_byname" link="cpp/locale/numpunct_byname">
+        <inherits name="std::numpunct"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::moneypunct_byname" link="cpp/locale/moneypunct_byname">
+        <inherits name="std::moneypunct"/>
+        <constructor/>
+        <destructor/>
+    </class>
+
+    <class name="std::codecvt_utf8" link="cpp/locale/codecvt_utf8">
+        <inherits name="std::codecvt"/>
+    </class>
+    <class name="std::codecvt_utf16" link="cpp/locale/codecvt_utf16">
+        <inherits name="std::codecvt"/>
+    </class>
+    <class name="std::codecvt_utf8_utf16" link="cpp/locale/codecvt_utf8_utf16">
+        <inherits name="std::codecvt"/>
+    </class>
+
+    <enum name="std::codecvt_mode" link="cpp/locale/codecvt_mode"/>
+    <const name="std::consume_header" link="cpp/locale/codecvt_mode"/>
+    <const name="std::generate_header" link="cpp/locale/codecvt_mode"/>
+    <const name="std::little_endian" link="cpp/locale/codecvt_mode"/>
+
+    <!-- c localization facilities -->
+
+    <function name="std::setlocale" link="cpp/locale/setlocale"/>
+    <function name="std::localeconv" link="cpp/locale/localeconv"/>
+    <class name="std::lconv" link="cpp/locale/lconv"/>
+
+    <const name="LC_ALL" link="cpp/locale/LC_categories"/>
+    <const name="LC_COLLATE" link="cpp/locale/LC_categories"/>
+    <const name="LC_CTYPE" link="cpp/locale/LC_categories"/>
+    <const name="LC_MONETARY" link="cpp/locale/LC_categories"/>
+    <const name="LC_NUMERIC" link="cpp/locale/LC_categories"/>
+    <const name="LC_TIME" link="cpp/locale/LC_categories"/>
 
     <!-- cpp/regex -->
 
@@ -3548,7 +4138,14 @@
     <function name="std::regex_replace" link="cpp/regex/regex_replace"/>
 
     <class name="std::regex_iterator" link="cpp/regex/regex_iterator">
-        <!-- todo -->
+        <constructor/>
+        <function name="operator="/>
+        <function name="operator==" link="operator_cmp"/>
+        <function name="operator!=" link="operator_cmp"/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="operator++" link="operator_arith"/>
+        <function name="operator++(int)" link="operator_arith"/>
     </class>
 
     <typedef name="std::cregex_iterator" alias="std::regex_iterator"/>
@@ -3557,7 +4154,14 @@
     <typedef name="std::wsregex_iterator" alias="std::regex_iterator"/>
 
     <class name="std::regex_token_iterator" link="cpp/regex/regex_token_iterator">
-        <!-- todo -->
+        <constructor/>
+        <function name="operator="/>
+        <function name="operator==" link="operator_cmp"/>
+        <function name="operator!=" link="operator_cmp"/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="operator++" link="operator_arith"/>
+        <function name="operator++(int)" link="operator_arith"/>
     </class>
 
     <typedef name="std::cregex_token_iterator" alias="std::regex_token_iterator"/>
@@ -3565,14 +4169,25 @@
     <typedef name="std::sregex_token_iterator" alias="std::regex_token_iterator"/>
     <typedef name="std::wsregex_token_iterator" alias="std::regex_token_iterator"/>
 
-    <class name="std::regex_error" link="cpp/regex_error">
+    <class name="std::regex_error" link="cpp/regex/regex_error">
         <inherits name="std::runtime_error"/>
         <constructor/>
         <function name="code"/>
     </class>
 
     <class name="std::regex_traits" link="cpp/regex/regex_traits">
-        <!-- todo -->
+        <constructor/>
+        <function name="length"/>
+        <function name="translate"/>
+        <function name="translate_nocase"/>
+        <function name="transform"/>
+        <function name="transform_primary"/>
+        <function name="lookup_collatename"/>
+        <function name="lookup_classname"/>
+        <function name="isctype"/>
+        <function name="value"/>
+        <function name="imbue"/>
+        <function name="getloc"/>
     </class>
 
     <enum name="std::regex_constants::syntax_option_type" link="cpp/regex/syntax_option_type"/>
@@ -3620,7 +4235,32 @@
     <!-- cpp/atomic -->
 
     <class name="std::atomic" link="cpp/atomic/atomic">
-        <!-- todo -->
+        <constructor/>
+        <function name="operator="/>
+        <function name="is_lock_free"/>
+        <function name="store"/>
+        <function name="load"/>
+        <function name="operator T"/>
+        <function name="exchange"/>
+        <function name="compare_exchange_strong" link="compare_exchange"/>
+        <function name="compare_exchange_weak" link="compare_exchange"/>
+
+        <function name="fetch_add"/>
+        <function name="fetch_sub"/>
+        <function name="fetch_and"/>
+        <function name="fetch_or"/>
+        <function name="fetch_xor"/>
+
+        <function name="operator++" link="operator_arith"/>
+        <function name="operator++(int)" link="operator_arith"/>
+        <function name="operator--" link="operator_arith"/>
+        <function name="operator--(int)" link="operator_arith"/>
+
+        <function name="operator+=" link="operator_arith2"/>
+        <function name="operator-=" link="operator_arith2"/>
+        <function name="operator&amp;=" link="operator_arith2"/>
+        <function name="operator|=" link="operator_arith2"/>
+        <function name="operator^=" link="operator_arith2"/>
     </class>
 
     <function name="std::atomic_is_lock_free" link="cpp/atomic/atomic_is_lock_free"/>
@@ -3698,7 +4338,15 @@
 
     <class name="std::thread::id" link="cpp/thread/thread/id">
         <constructor/>
-        <!--todo-->
+        <function name="operator==" link="operator_cmp"/>
+        <function name="operator!=" link="operator_cmp"/>
+        <function name="operator&lt;" link="operator_cmp"/>
+        <function name="operator&lt;=" link="operator_cmp"/>
+        <function name="operator&gt;" link="operator_cmp"/>
+        <function name="operator&gt;=" link="operator_cmp"/>
+        <function name="operator&lt;&lt;" link="operator_ltlt"/>
+
+        <specialization name="std::hash" link="hash"/>
     </class>
 
     <function name="std::this_thread::get_id" link="cpp/thread/get_id"/>
@@ -3741,6 +4389,14 @@
         <function name="unlock"/>
         <function name="native_handle"/>
     </class>
+
+    <class name="std::defer_lock_t" link="cpp/thread/lock_tag_t"/>
+    <class name="std::try_to_lock_t" link="cpp/thread/lock_tag_t"/>
+    <class name="std::adopt_lock_t" link="cpp/thread/lock_tag_t"/>
+
+    <const name="std::defer_lock" link="cpp/thread/lock_tag"/>
+    <const name="std::try_to_lock" link="cpp/thread/lock_tag"/>
+    <const name="std::adopt_lock" link="cpp/thread/lock_tag"/>
 
     <class name="std::lock_guard" link="cpp/thread/lock_guard">
         <constructor/>
@@ -3868,5 +4524,36 @@
     </class>
 
     <function name="std::async" link="cpp/thread/async"/>
+
+    <enum name="std::launch" link="cpp/thread/launch">
+        <const name="async" link="."/>
+        <const name="deferred" link="."/>
+    </enum>
+
+    <enum name="std::future_status" link="cpp/thread/future_status">
+        <const name="ready" link="."/>
+        <const name="timeout" link="."/>
+        <const name="deferred" link="."/>
+    </enum>
+
+    <class name="std::future_error" link="cpp/thread/future_error">
+        <inherits name="std::logic_error"/>
+        <constructor/>
+        <function name="code"/>
+        <function name="what"/>
+    </class>
+
+    <function name="std::future_category" link="cpp/thread/future_category"/>
+
+    <enum name="std::future_errc" link="cpp/thread/future_errc">
+        <const name="broken_promise" link="."/>
+        <const name="future_already_retrieved" link="."/>
+        <const name="promise_already_satisfied" link="."/>
+        <const name="no_state" link="."/>
+
+        <specialization name="std::is_error_code_enum" link="is_error_code_enum"/>
+        <overload name="std::make_error_code" link="make_error_code"/>
+        <overload name="std::make_error_condition" link="make_error_condition"/>
+    </enum>
 
 </index>

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/c/numeric/math/atan2 by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:20:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>atan2 - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "c/numeric/math/atan2", "wgTitle": "c/numeric/math/atan2", "wgCurRevisionId": 43553, "wgArticleId": 6293, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["Todo no example"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #0000dd;}
+.c.source-c .kw2 {color: #0000ff;}
+.c.source-c .kw3 {color: #0000dd;}
+.c.source-c .kw4 {color: #0000ff;}
+.c.source-c .co1 {color: #909090;}
+.c.source-c .co2 {color: #339900;}
+.c.source-c .coMULTI {color: #ff0000; font-style: italic;}
+.c.source-c .es0 {color: #008000; font-weight: bold;}
+.c.source-c .es1 {color: #008000; font-weight: bold;}
+.c.source-c .es2 {color: #008000; font-weight: bold;}
+.c.source-c .es3 {color: #008000; font-weight: bold;}
+.c.source-c .es4 {color: #008000; font-weight: bold;}
+.c.source-c .es5 {color: #008000; font-weight: bold;}
+.c.source-c .br0 {color: #008000;}
+.c.source-c .sy0 {color: #008000;}
+.c.source-c .sy1 {color: #000080;}
+.c.source-c .sy2 {color: #000040;}
+.c.source-c .sy3 {color: #000040;}
+.c.source-c .sy4 {color: #008080;}
+.c.source-c .st0 {color: #008000;}
+.c.source-c .nu0 {color: #000080;}
+.c.source-c .nu6 {color:#000080;}
+.c.source-c .nu8 {color:#000080;}
+.c.source-c .nu12 {color:#000080;}
+.c.source-c .nu16 {color:#000080;}
+.c.source-c .nu17 {color:#000080;}
+.c.source-c .nu18 {color:#000080;}
+.c.source-c .nu19 {color:#000080;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-c_numeric_math_atan2 action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=c%2Fnumeric%2Fmath%2Fatan2" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="atan2.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:c/numeric/math/atan2&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="atan2.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">atan2</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../c.html" title="c">c</a> | <a href="../../numeric.html" title="c/numeric">numeric</a> | <a href="../math.html" title="c/numeric/math">math</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../c.html" title="c"> C</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../../language.html" title="c/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../header.html" title="c/header"> Standard Library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../types.html" title="c/types"> Type support</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../memory.html" title="c/memory"> Dynamic memory management</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../error.html" title="c/error"> Error handling</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../program.html" title="c/program"> Program utilities</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../chrono.html" title="c/chrono"> Date and time utilities</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../string.html" title="c/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../algorithm.html" title="c/algorithm"> Algorithms</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../numeric.html" title="c/numeric"> Numerics</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../io.html" title="c/io"> Input/output support</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../locale.html" title="c/locale"> Localization support</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../thread.html" title="c/thread"> Thread support</a> <span class="t-mark">(C11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../../atomic.html" title="c/atomic"> Atomic operations</a> <span class="t-mark">(C11)</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="c/numeric"> Numerics</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5">  <a href="../math.html" title="c/numeric/math">Common mathematical functions</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../fenv.html" title="c/numeric/fenv">Floating-point environment</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../complexhtml.html" title="c/numeric/complex">Complex number arithmetics</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../random.html" title="c/numeric/random">Random number generation</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../tgmath.html" title="c/numeric/tgmath">Type-generic math</a>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../math.html" title="c/numeric/math"> Common mathematical functions</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Functions
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Basic operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="abs.html" title="c/numeric/math/abs">abs<br />labs<br />llabs<br />imaxabs</a></td><td><br /><br /><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fabs.html" title="c/numeric/math/fabs">fabs</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="div.html" title="c/numeric/math/div">div<br />ldiv<br />lldiv<br />imaxdiv</a></td><td><br /><br /><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fmod.html" title="c/numeric/math/fmod">fmod</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remainder.html" title="c/numeric/math/remainder">remainder</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remquo.html" title="c/numeric/math/remquo">remquo</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fma.html" title="c/numeric/math/fma">fma</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fmax.html" title="c/numeric/math/fmax">fmax</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fmin.html" title="c/numeric/math/fmin">fmin</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fdim.html" title="c/numeric/math/fdim">fdim</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="nan.html" title="c/numeric/math/nan">nan<br />nanf<br />nanl</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Exponential functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="exp.html" title="c/numeric/math/exp">exp</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="exp2.html" title="c/numeric/math/exp2">exp2</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="expm1.html" title="c/numeric/math/expm1">expm1</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="log.html" title="c/numeric/math/log">log</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="log10.html" title="c/numeric/math/log10">log10</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="log1p.html" title="c/numeric/math/log1p">log1p</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="log2.html" title="c/numeric/math/log2">log2</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Power functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sqrt.html" title="c/numeric/math/sqrt">sqrt</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="cbrt.html" title="c/numeric/math/cbrt">cbrt</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="hypot.html" title="c/numeric/math/hypot">hypot</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pow.html" title="c/numeric/math/pow">pow</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Trigonometric and hyperbolic functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sin.html" title="c/numeric/math/sin">sin</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="cos.html" title="c/numeric/math/cos">cos</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tan.html" title="c/numeric/math/tan">tan</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="asin.html" title="c/numeric/math/asin">asin</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="acos.html" title="c/numeric/math/acos">acos</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="atan.html" title="c/numeric/math/atan">atan</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">atan2</strong></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="sinh.html" title="c/numeric/math/sinh">sinh</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="cosh.html" title="c/numeric/math/cosh">cosh</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tanh.html" title="c/numeric/math/tanh">tanh</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="asinh.html" title="c/numeric/math/asinh">asinh</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="acosh.html" title="c/numeric/math/acosh">acosh</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="atanh.html" title="c/numeric/math/atanh">atanh</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Error and gamma functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="erf.html" title="c/numeric/math/erf">erf</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="erfc.html" title="c/numeric/math/erfc">erfc</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="lgamma.html" title="c/numeric/math/lgamma">lgamma</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tgamma.html" title="c/numeric/math/tgamma">tgamma</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Nearest integer floating point operations
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ceil.html" title="c/numeric/math/ceil">ceil</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="floor.html" title="c/numeric/math/floor">floor</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="round.html" title="c/numeric/math/round">round<br />lround<br />llround</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="trunc.html" title="c/numeric/math/trunc">trunc</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="nearbyint.html" title="c/numeric/math/nearbyint">nearbyint</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="rint.html" title="c/numeric/math/rint">rint<br />lrint<br />llrint</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Floating point manipulation functions
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ldexp.html" title="c/numeric/math/ldexp">ldexp</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="scalbn.html" title="c/numeric/math/scalbn">scalbn<br />scalbln</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ilogb.html" title="c/numeric/math/ilogb">ilogb</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="logb.html" title="c/numeric/math/logb">logb</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="frexp.html" title="c/numeric/math/frexp">frexp</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="modf.html" title="c/numeric/math/modf">modf</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="nextafter.html" title="c/numeric/math/nextafter">nextafter<br />nexttoward</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="copysign.html" title="c/numeric/math/copysign">copysign</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Classification
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fpclassify.html" title="c/numeric/math/fpclassify">fpclassify</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isfinite.html" title="c/numeric/math/isfinite">isfinite</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isinf.html" title="c/numeric/math/isinf">isinf</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isnan.html" title="c/numeric/math/isnan">isnan</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isnormal.html" title="c/numeric/math/isnormal">isnormal</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="signbit.html" title="c/numeric/math/signbit">signbit</a></td><td><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Macro constants
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="HUGE_VAL.html" title="c/numeric/math/HUGE VAL">HUGE_VALF<br />HUGE_VAL<br />HUGE_VALL</a></td><td><span class="t-mark">(C99)</span><br /><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="FP_categories.html" title="c/numeric/math/FP categories">FP_NORMAL<br />FP_SUBNORMAL<br />FP_ZERO<br />FP_INFINITE<br />FP_NAN</a></td><td><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span><br /><span class="t-mark">(C99)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/math/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-ddcl-list">
+<tr class="t-ddcl-list-header">
+<td> <div>Defined in header <code>&lt;math.h&gt;</code>
+ </div></td>
+<td></td>
+<td></td>
+</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi c source-c"><span class="kw4">float</span> &#160; &#160; &#160; atan2f<span class="br0">&#40;</span> <span class="kw4">float</span> y, <span class="kw4">float</span> x <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-ddcl-list-item-nopad">  </td>
+<td> <span class="t-mark">(since C99)</span> </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi c source-c"><span class="kw4">double</span> &#160; &#160; &#160;<a href="atan2.html"><span class="kw675">atan2</span></a><span class="br0">&#40;</span> <span class="kw4">double</span> y, <span class="kw4">double</span> x <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-ddcl-list-item-nopad">  </td>
+<td> <span class="t-mark">(since C99)</span> </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+<tr class="t-ddcl-list-item">
+<td> <div><span class="mw-geshi c source-c"><span class="kw4">long</span> <span class="kw4">double</span> atan2l<span class="br0">&#40;</span> <span class="kw4">long</span> <span class="kw4">double</span> y, <span class="kw4">long</span> <span class="kw4">double</span> x <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-ddcl-list-item-nopad">  </td>
+<td> <span class="t-mark">(since C99)</span> </td>
+</tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
+</table>
+<p>Computes the inverse tangent of <code>y/x</code> using the signs of arguments to correctly determine quadrant. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-param-list">
+
+
+<tr class="t-param-list-item">
+<td>  x, y
+</td>
+<td> -
+</td>
+<td>  floating point value
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>Arc tangent of <code>y/x</code> in radians in the range of <code>[-&#960;; &#960;]</code> radians.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: no example </td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="atan.html" title="c/numeric/math/atan"> atan</a></div></div>
+</td>
+<td>  computes arc tangent (<span class="texhtml" style="white-space: nowrap;">arctan(x)</span>) <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/math/dcl_list_atan&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="asin.html" title="c/numeric/math/asin"> asin</a></div></div>
+</td>
+<td>   computes arc sine (<span class="texhtml" style="white-space: nowrap;">arcsin(x)</span>) <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/math/dcl_list_asin&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="acos.html" title="c/numeric/math/acos"> acos</a></div></div>
+</td>
+<td>  computes arc cosine (<span class="texhtml" style="white-space: nowrap;">arccos(x)</span>)  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/math/dcl_list_acos&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <div class="t-dcl-member-div"><div><a href="tan.html" title="c/numeric/math/tan"> tan</a></div></div>
+</td>
+<td>   computes tangent (<span class="texhtml" style="white-space: nowrap;">tan(x)</span>) <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/numeric/math/dcl_list_tan&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td colspan="2"> <div class="t-dcl-list-see"><span><a href="../../../cpp/numeric/math/atan2.html" title="cpp/numeric/math/atan2">C++ documentation</a></span> for <span class="t-dcl-list-see-monospace"><span>atan2</span></span></div>
+</td></tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5022/1000000
+Post-expand include size: 115457/2097152 bytes
+Template argument size: 21428/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6293-0!*!0!!en!*!* and timestamp 20130414144907 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;oldid=43553">http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;oldid=43553</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_no_example" title="Category:Todo no example">Todo no example</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/numeric/math/atan2" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/numeric/math/atan2" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/numeric/math/atan2&amp;oldid=43553" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/numeric/math/atan2" title="c/numeric/math/atan2" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 November 2012, at 20:07.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 118 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 0.055 secs. -->        
+	</body>
+<!-- Cached 20130414150221 -->
+
+<!-- Mirrored from en.cppreference.com/w/c/numeric/math/atan2 by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:20:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/memory/shared_ptr by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 19:13:22 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/memory/shared_ptr by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:22 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::shared_ptr - cppreference.com</title>
@@ -21,7 +21,7 @@
 /* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/memory/shared_ptr", "wgTitle": "cpp/memory/shared ptr", "wgCurRevisionId": 34275, "wgArticleId": 2177, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/memory/shared_ptr", "wgTitle": "cpp/memory/shared ptr", "wgCurRevisionId": 47150, "wgArticleId": 2177, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
 }
 </script><script>if(window.mw){
 	mw.loader.load(["mediawiki.page.startup"]);
@@ -78,10 +78,6 @@
 .cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
 .cpp.source-cpp span.xtra { display:block; }
 
-/*]]>*/
-</style>
-<style type="text/css">/*<![CDATA[*/
-@import "http://en.cppreference.com/mwiki/index.php?title=MediaWiki:Geshi.css&amp;usemsgcache=yes&amp;action=raw&amp;ctype=text/css&amp;smaxage=18000";
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
 <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_memory_shared_ptr action-view skin-cppreference2 cpp-navbar">
@@ -188,10 +184,14 @@
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
                     <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list-begin" cellpadding="0" style="line-height:1.1em;">
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
 
 <tr>
 <td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../header.html" title="cpp/header"> Standard library headers</a>
 </td></tr>
 
 <tr>
@@ -215,7 +215,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5">  <a href="../iteratorhtml.html" title="cpp/iterator"> Iterators library</a>
+<td colspan="5">  <a href="../iterator.html" title="cpp/iterator"> Iterators library</a>
 </td></tr>
 
 <tr>
@@ -242,8 +242,8 @@
 <td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
 </td></tr>
 </table>
-</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list-begin" cellpadding="0" style="">
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
 
 <tr>
 <td colspan="5">  <a href="../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits)
@@ -254,7 +254,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5">  <a href="../error.html" title="cpp/error"> Error handling</a>
+<td colspan="5">  <a href="../errorhtml.html" title="cpp/error"> Error handling</a>
 </td></tr>
 
 <tr>
@@ -262,7 +262,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5">  <a href="../utility/variadic.html" title="cpp/utility/variadic"> Variadic functions</a>
+<td colspan="5">  <a href="../utility/variadichtml.html" title="cpp/utility/variadic"> Variadic functions</a>
 </td></tr>
 
 <tr>
@@ -298,11 +298,11 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/pairhtml.html" title="cpp/utility/pair">pair</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/pair.html" title="cpp/utility/pair">pair</a></td></tr></table>
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/tuplehtml.html" title="cpp/utility/tuple">tuple</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/tuple.html" title="cpp/utility/tuple">tuple</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 <tr>
@@ -337,11 +337,43 @@
 <td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../utility/declval.html" title="cpp/utility/declval">declval</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 </table>
-</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../memory.html" title="cpp/memory"> Dynamic memory management</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list-begin" cellpadding="0" style="">
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../memory.html" title="cpp/memory"> Dynamic memory management</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
 
 <tr class="t-sb-list-h1">
-<td colspan="5">  <a href="new.html" title="cpp/memory/new">Low level memory management</a>
+<td colspan="5">  Smart pointers
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="unique_ptr.html" title="cpp/memory/unique ptr">unique_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">shared_ptr</strong></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="weak_ptr.html" title="cpp/memory/weak ptr">weak_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="auto_ptr.html" title="cpp/memory/auto ptr">auto_ptr</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="owner_less.html" title="cpp/memory/owner less">owner_less</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="enable_shared_from_this.html" title="cpp/memory/enable shared from this">enable_shared_from_this</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="bad_weak_ptr.html" title="cpp/memory/bad weak ptr">bad_weak_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="default_delete.html" title="cpp/memory/default delete">default_delete</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 
@@ -354,7 +386,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="allocator_traitshtml.html" title="cpp/memory/allocator traits">allocator_traits</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="allocator_traits.html" title="cpp/memory/allocator traits">allocator_traits</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 <tr>
@@ -383,7 +415,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="uninitialized_copy_nhtml.html" title="cpp/memory/uninitialized copy n">uninitialized_copy_n</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="uninitialized_copy_n.html" title="cpp/memory/uninitialized copy n">uninitialized_copy_n</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 <tr>
@@ -404,43 +436,6 @@
 
 <tr>
 <td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="return_temporary_buffer.html" title="cpp/memory/return temporary buffer">return_temporary_buffer</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Smart pointers
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="unique_ptrhtml.html" title="cpp/memory/unique ptr">unique_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">shared_ptr</strong></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="weak_ptr.html" title="cpp/memory/weak ptr">weak_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="auto_ptr.html" title="cpp/memory/auto ptr">auto_ptr</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="owner_less.html" title="cpp/memory/owner less">owner_less</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="enable_shared_from_this.html" title="cpp/memory/enable shared from this">enable_shared_from_this</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="bad_weak_ptr.html" title="cpp/memory/bad weak ptr">bad_weak_ptr</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="default_deletehtml.html" title="cpp/memory/default delete">default_delete</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 
@@ -469,7 +464,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="gc/get_pointer_safetyhtml.html" title="cpp/memory/gc/get pointer safety">get_pointer_safety</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="gc/get_pointer_safety.html" title="cpp/memory/gc/get pointer safety">get_pointer_safety</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
 </td></tr>
 
 
@@ -491,7 +486,7 @@
 
 
 <tr class="t-sb-list-h1">
-<td colspan="5">  C Library
+<td colspan="5">  <a href="c.html" title="cpp/memory/c">C Library</a>
 </td></tr>
 <tr>
 <td>
@@ -499,10 +494,10 @@
 <tr>
 <td>
 <div>
-<table class="t-sb-list-begin" cellpadding="0" style="">
+<table class="t-sb-list" cellpadding="0" style="">
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="c/mallochtml.html" title="cpp/memory/c/malloc">malloc</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="c/malloc.html" title="cpp/memory/c/malloc">malloc</a></td></tr></table>
 </td></tr>
 
 <tr>
@@ -513,7 +508,7 @@
 </td>
 <td>
 <div>
-<table class="t-sb-list-begin" cellpadding="0" style="">
+<table class="t-sb-list" cellpadding="0" style="">
 
 <tr>
 <td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="c/realloc.html" title="cpp/memory/c/realloc">realloc</a></td></tr></table>
@@ -525,9 +520,14 @@
 </table>
 </div>
 </td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  <a href="new.html" title="cpp/memory/new">Low level memory management</a>
+</td></tr>
 </table>
-</div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"><tt>std::shared_ptr</tt></strong><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list-begin" cellpadding="0" style="">
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"><code>std::shared_ptr</code></strong><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
 
 <tr class="t-sb-list-h1">
 <td colspan="5">  Member functions
@@ -538,7 +538,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/_shared_ptrhtml.html" title="cpp/memory/shared ptr/~shared ptr">shared_ptr::~shared_ptr</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/_shared_ptr.html" title="cpp/memory/shared ptr/~shared ptr">shared_ptr::~shared_ptr</a></td></tr></table>
 </td></tr>
 
 <tr>
@@ -555,7 +555,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/swaphtml.html" title="cpp/memory/shared ptr/swap">shared_ptr::swap</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/swap.html" title="cpp/memory/shared ptr/swap">shared_ptr::swap</a></td></tr></table>
 </td></tr>
 
 
@@ -576,7 +576,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/uniquehtml.html" title="cpp/memory/shared ptr/unique">shared_ptr::unique</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/unique.html" title="cpp/memory/shared ptr/unique">shared_ptr::unique</a></td></tr></table>
 </td></tr>
 
 <tr>
@@ -597,7 +597,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/make_sharedhtml.html" title="cpp/memory/shared ptr/make shared">make_shared</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/make_shared.html" title="cpp/memory/shared ptr/make shared">make_shared</a></td></tr></table>
 </td></tr>
 
 <tr>
@@ -609,7 +609,7 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/get_deleterhtml.html" title="cpp/memory/shared ptr/get deleter">get_deleter</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/get_deleter.html" title="cpp/memory/shared ptr/get deleter">get_deleter</a></td></tr></table>
 </td></tr>
 
 <tr>
@@ -621,31 +621,38 @@
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/atomic_access&amp;action=edit&amp;redlink=1" class="new" title="cpp/memory/shared ptr/atomic access (page does not exist)">atomic_is_lock_free<br />atomic_load<br />atomic_load_explicit<br />atomic_store<br />atomic_store_explicit<br />atomic_exchange<br />atomic_exchange_explicit</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/atomic.html" title="cpp/memory/shared ptr/atomic">atomic_is_lock_free<br />atomic_load<br />atomic_load_explicit<br />atomic_store<br />atomic_store_explicit<br />atomic_exchange<br />atomic_exchange_explicit<br />atomic_compare_exchange_weak<br />atomic_compare_exchange_strong<br />atomic_compare_exchange_weak_explicit<br />atomic_compare_exchange_strong_explicit</a></td></tr></table>
 </td></tr>
 
 <tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/hashhtml.html" title="cpp/memory/shared ptr/hash">std::hash</a></td></tr></table>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="shared_ptr/hash.html" title="cpp/memory/shared ptr/hash">std::hash</a></td></tr></table>
 </td></tr>
 </table>
-</div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<table class="t-ddcl-list-begin">
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-ddcl-list">
 <tr class="t-ddcl-list-header">
-<td> <div>Defined in header <tt>&lt;memory&gt;</tt>
+<td> <div>Defined in header <code><a href="../header/memory.html" title="cpp/header/memory">&lt;memory&gt;</a></code>
  </div></td>
-<td />
-</td><td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep" /></tr>
+<td></td>
+<td></td>
+</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
 <tr class="t-ddcl-list-item">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span> <span class="kw1">class</span> shared_ptr<span class="sy4">;</span></span></div></td>
 <td class="t-ddcl-list-item-nopad">  </td>
 <td> <span class="t-mark">(since C++11)</span> </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep" /></tr>
+<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
 </table>
-<p><tt>std::shared_ptr</tt> is a smart pointer that retains shared ownership of an object through a pointer. Several <tt>shared_ptr</tt> objects may own the same object; the object is destroyed when the last remaining <tt>shared_ptr</tt> pointing to it is destroyed or reset. The object is destroyed using <a href="../language/delete.html" title="cpp/language/delete"><tt>delete-expression</tt></a> or a custom deleter that is supplied to <tt>shared_ptr</tt> during construction.
-</p><p>A <tt>shared_ptr</tt> may also own no objects, in which case it is called <i>empty</i>.
-</p><p><tt>shared_ptr</tt> meets the requirements of <a href="../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><tt>CopyConstructible</tt></a> and <a href="../concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><tt>CopyAssignable</tt></a>.
+<p><code>std::shared_ptr</code> is a smart pointer that retains shared ownership of an object through a pointer. Several <code>shared_ptr</code> objects may own the same object. The object is destroyed and its memory deallocated when either of the following happens:
+</p>
+<ul><li> the last remaining <code>shared_ptr</code> owning the object is destroyed.
+</li></ul>
+<ul><li> the last remaining <code>shared_ptr</code> owning the object is assigned another pointer via <a href="shared_ptr/operator%3d.html" title="cpp/memory/shared ptr/operator="><code>operator=()</code></a> or <a href="shared_ptr/reset.html" title="cpp/memory/shared ptr/reset"><code>reset()</code></a>. 
+</li></ul>
+<p>The object is destroyed using <a href="../language/delete.html" title="cpp/language/delete"><tt>delete-expression</tt></a> or a custom deleter that is supplied to <code>shared_ptr</code> during construction.
+</p><p>A <code>shared_ptr</code> can share ownership of an object while storing a pointer to another object. This feature can be used to point to member objects while owning the object they belong to.
+</p><p>A <code>shared_ptr</code> may also own no objects, in which case it is called <i>empty</i>.
+</p><p><code>shared_ptr</code> meets the requirements of <a href="../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a> and <a href="../concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><code>CopyAssignable</code></a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -658,14 +665,15 @@
 </li>
 <li class="toclevel-1 tocsection-3"><a href="#Non-member_functions"><span class="tocnumber">3</span> <span class="toctext">Non-member functions</span></a></li>
 <li class="toclevel-1 tocsection-4"><a href="#Helper_classes"><span class="tocnumber">4</span> <span class="toctext">Helper classes</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="#Implementation_notes"><span class="tocnumber">5</span> <span class="toctext">Implementation notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Implementation_notes"><span class="tocnumber">6</span> <span class="toctext">Implementation notes</span></a></li>
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=1" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-hitem">
 <td>  Member type
@@ -674,8 +682,8 @@
 </td></tr>
 
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <span class="mw-geshi cpp source-cpp">element_type</span>
@@ -685,33 +693,33 @@
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=2" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="shared_ptr/shared_ptr.html" title="cpp/memory/shared ptr/shared ptr"> (constructor)</a></div></div>
 </td>
-<td>  constructs new <tt>shared_ptr</tt> <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_constructor&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  constructs new <code>shared_ptr</code> <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_constructor&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="shared_ptr/_shared_ptrhtml.html" title="cpp/memory/shared ptr/~shared ptr"> (destructor)</a></div></div>
+<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="shared_ptr/_shared_ptr.html" title="cpp/memory/shared ptr/~shared ptr"> (destructor)</a></div></div>
 </td>
-<td>  destructs the owned object if no more <tt>shared_ptr</tt>s link to it <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_destructor&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  destructs the owned object if no more <code>shared_ptr</code>s link to it <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_destructor&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/operator%3d.html" title="cpp/memory/shared ptr/operator="> operator=</a></div></div>
 </td>
-<td>   assigns the <tt>shared_ptr</tt>  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator%3D&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   assigns the <code>shared_ptr</code>  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator%3D&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -719,8 +727,8 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Modifiers">  Modifiers </span></h5>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/reset.html" title="cpp/memory/shared ptr/reset"> reset</a></div></div>
@@ -728,11 +736,11 @@
 <td>   replaces the managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_reset&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/swaphtml.html" title="cpp/memory/shared ptr/swap"> swap</a></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/swap.html" title="cpp/memory/shared ptr/swap"> swap</a></div></div>
 </td>
 <td>   swaps the managed objects  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_swap&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
@@ -742,8 +750,8 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Observers">  Observers </span></h5>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/get.html" title="cpp/memory/shared ptr/get"> get</a></div></div>
@@ -751,8 +759,8 @@
 <td>   returns a pointer to the managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_get&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/operator_.html" title="cpp/memory/shared ptr/operator*"> operator*<br />operator-&gt;</a></div></div>
@@ -760,26 +768,26 @@
 <td>   dereferences pointer to the managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator*&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/use_count.html" title="cpp/memory/shared ptr/use count"> use_count</a></div></div>
 </td>
-<td>   returns the number of <tt>shared_ptr</tt> objects referring to the same managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_use_count&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   returns the number of <code>shared_ptr</code> objects referring to the same managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_use_count&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/uniquehtml.html" title="cpp/memory/shared ptr/unique"> unique</a></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/unique.html" title="cpp/memory/shared ptr/unique"> unique</a></div></div>
 </td>
-<td>   checks whether the managed object is managed only by the current <tt>shared_ptr</tt> instance  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_unique&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   checks whether the managed object is managed only by the current <code>shared_ptr</code> instance  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_unique&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/operator_bool.html" title="cpp/memory/shared ptr/operator bool"> operator bool</a></div></div>
@@ -787,8 +795,8 @@
 <td>   checks if there is associated managed object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator_bool&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/owner_before.html" title="cpp/memory/shared ptr/owner before"> owner_before</a></div></div>
@@ -797,19 +805,19 @@
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=3" title="Edit section: Non-member functions">edit</a>]</span> <span class="mw-headline" id="Non-member_functions">Non-member functions</span></h3>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/make_sharedhtml.html" title="cpp/memory/shared ptr/make shared"> make_shared</a></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/make_shared.html" title="cpp/memory/shared ptr/make shared"> make_shared</a></div></div>
 </td>
 <td>   creates a shared pointer that manages a new object <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_make_shared&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/allocate_shared.html" title="cpp/memory/shared ptr/allocate shared"> allocate_shared</a></div></div>
@@ -817,8 +825,8 @@
 <td>   creates a shared pointer that manages a new object allocated using an allocator <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_allocate_shared&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/pointer_cast.html" title="cpp/memory/shared ptr/pointer cast"> static_pointer_cast<br />dynamic_pointer_cast<br />const_pointer_cast</a></div></div>
@@ -826,26 +834,26 @@
 <td>   applies <a href="../language/static_cast.html" title="cpp/language/static cast"><tt>static_cast</tt></a>, <a href="../language/dynamic_cast.html" title="cpp/language/dynamic cast"><tt>dynamic_cast</tt></a> or <a href="../language/const_cast.html" title="cpp/language/const cast"><tt>const_cast</tt></a> to the type of the managed object <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_pointer_cast&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/get_deleterhtml.html" title="cpp/memory/shared ptr/get deleter"> get_deleter</a></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/get_deleter.html" title="cpp/memory/shared ptr/get deleter"> get_deleter</a></div></div>
 </td>
 <td>   returns the deleter of specified type, if owned  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_get_deleter&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/operator_cmp.html" title="cpp/memory/shared ptr/operator cmp"> operator==<br />operator!=<br />operator&lt;<br />operator&lt;=<br />operator&gt;<br />operator&gt;=</a></div></div>
 </td>
-<td>   compares with another <tt>shared_ptr</tt> or with <span class="mw-geshi cpp source-cpp">nullptr</span>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator_cmp&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   compares with another <code>shared_ptr</code> or with <span class="mw-geshi cpp source-cpp">nullptr</span>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator_cmp&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/operator_ltlt.html" title="cpp/memory/shared ptr/operator ltlt"> operator&lt;&lt;</a></div></div>
@@ -853,55 +861,73 @@
 <td>   outputs the value of the managed pointer to an output stream <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_operator_ltlt&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
 <td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/swap2.html" title="cpp/memory/shared ptr/swap2"> std::swap<span class="t-dcl-small">(std::shared_ptr)</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
 </td>
-<td>   specializes the <span class="mw-geshi cpp source-cpp"><a href="../algorithm/swap.html"><span class="kw1274">std::<span class="me2">swap</span></span></a></span> algorithm  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_swap2&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   specializes the <span class="mw-geshi cpp source-cpp"><a href="../algorithm/swap.html"><span class="kw1283">std::<span class="me2">swap</span></span></a></span> algorithm  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_swap2&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr/atomic&amp;action=edit&amp;redlink=1" class="new" title="cpp/memory/shared ptr/atomic (page does not exist)"> std::atomic_is_lock_free<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_load<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_load_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_store<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_store_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_exchange<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_exchange_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_weak<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_strong<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_weak_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_strong_explicit<span class="t-dcl-small">(std::shared_ptr)</span></a></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/atomic.html" title="cpp/memory/shared ptr/atomic"> std::atomic_is_lock_free<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_load<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_load_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_store<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_store_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_exchange<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_exchange_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_weak<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_strong<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_weak_explicit<span class="t-dcl-small">(std::shared_ptr)</span><br />std::atomic_compare_exchange_strong_explicit<span class="t-dcl-small">(std::shared_ptr)</span></a></div></div>
 </td>
 <td>   specializes atomic operations  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_atomic&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=4" title="Edit section: Helper classes">edit</a>]</span> <span class="mw-headline" id="Helper_classes">Helper classes</span></h3>
-<table class="t-dcl-list-begin">
+<table class="t-dcl-list">
 
-<tr>
-<td colspan="2" class="t-dcl-list-sep">
+<tr class="t-dcl-list-sep">
+<td colspan="2">
 </td></tr>
 <tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/hashhtml.html" title="cpp/memory/shared ptr/hash"> std::hash<span class="t-dcl-small">&lt;std::shared_ptr&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<td>  <div class="t-dcl-member-div"><div><a href="shared_ptr/hash.html" title="cpp/memory/shared ptr/hash"> std::hash<span class="t-dcl-small">&lt;std::shared_ptr&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="shared_ptr.html"><span class="kw581">std::<span class="me2">shared_ptr</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">shared_ptr</span></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=5" title="Edit section: Implementation notes">edit</a>]</span> <span class="mw-headline" id="Implementation_notes">Implementation notes</span></h3>
-<p>In a typical implementation, <span class="mw-geshi cpp source-cpp"><a href="shared_ptr.html"><span class="kw581">std::<span class="me2">shared_ptr</span></span></a></span> holds a pointer to the referenced object and a pointer to <i>control block</i>, which is a dynamically-allocated object that holds a pointer to the managed object, the deleter, the allocator, the number of <tt>shared_ptr</tt>s that own the managed object, and the number of <tt>weak_ptr</tt>s that refer to the managed object. When <tt>shared_ptr</tt> is created by calling <span class="mw-geshi cpp source-cpp"><a href="shared_ptr/make_sharedhtml.html"><span class="kw582">std::<span class="me2">make_shared</span></span></a></span> or <span class="mw-geshi cpp source-cpp"><a href="shared_ptr/allocate_shared.html"><span class="kw583">std::<span class="me2">allocate_shared</span></span></a></span>, the control block holds the managed object directly, as a data member. The pointer held by the <tt>shared_ptr</tt> directly is the one returned by <a href="shared_ptr/get.html" title="cpp/memory/shared ptr/get"><tt>get()</tt></a>, while the pointer/object held by the control block is the one that will be deleted when the number of shared owners reaches zero: these pointers are not necessarily equal. The destructor of <tt>shared_ptr</tt> decrements the number of shared owners of the control block, and if that reaches zero, the control block calls the destructor of the managed object, but the control block does not deallocate itself until the <span class="mw-geshi cpp source-cpp"><a href="weak_ptr.html"><span class="kw587">std::<span class="me2">weak_ptr</span></span></a></span> counter reaches zero as well.
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>The ownership of an object can only be shared with another <code>shared_ptr</code> by copy constructing or copy assigning its value to another <code>shared_ptr</code>. Constructing a new <code>shared_ptr</code> using the raw underlying pointer leads to undefined behavior.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;action=edit&amp;section=6" title="Edit section: Implementation notes">edit</a>]</span> <span class="mw-headline" id="Implementation_notes">Implementation notes</span></h3>
+<p>In a typical implementation, <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">shared_ptr</span></span> holds only two pointers:
+</p>
+<ul><li> a pointer to the managed object
+</li><li> a pointer to <i>control block</i>
+</li></ul>
+<p>The control block is a dynamically-allocated object that holds:
+</p>
+<ul><li> either a pointer to the managed object or the managed object itself
+</li><li> the deleter (type-erased)
+</li><li> the allocator (type-erased)
+</li><li> the number of <code>shared_ptr</code>s that own the managed object
+</li><li> the number of <code>weak_ptr</code>s that refer to the managed object
+</li></ul>
+<p>When <code>shared_ptr</code> is created by calling <span class="mw-geshi cpp source-cpp"><a href="shared_ptr/make_shared.html"><span class="kw581">std::<span class="me2">make_shared</span></span></a></span> or <span class="mw-geshi cpp source-cpp"><a href="shared_ptr/allocate_shared.html"><span class="kw582">std::<span class="me2">allocate_shared</span></span></a></span>, the memory for both the control block and the managed object is created with a single allocation. The managed object is constructed in-place in a data member of the control block. When <code>shared_ptr</code> is created via one of the <code>shared_ptr</code> constructors, the managed object and the control block must be allocated separately.  In this case, the control block stores a pointer to the managed object.
+</p><p>The pointer held by the <code>shared_ptr</code> directly is the one returned by <a href="shared_ptr/get.html" title="cpp/memory/shared ptr/get"><code>get()</code></a>, while the pointer/object held by the control block is the one that will be deleted when the number of shared owners reaches zero.  These pointers are not necessarily equal.
+</p><p>The destructor of <code>shared_ptr</code> decrements the number of shared owners of the control block. If that counter reaches zero, the control block calls the destructor of the managed object. The control block does not deallocate itself until the <span class="mw-geshi cpp source-cpp"><a href="weak_ptr.html"><span class="kw586">std::<span class="me2">weak_ptr</span></span></a></span> counter reaches zero as well.
 </p>
 <!-- 
 NewPP limit report
-Preprocessor node count: 8157/1000000
-Post-expand include size: 307448/2097152 bytes
-Template argument size: 100986/2097152 bytes
+Preprocessor node count: 7449/1000000
+Post-expand include size: 207211/2097152 bytes
+Template argument size: 44585/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2177-0!*!0!!en!*!* and timestamp 20120616195531 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2177-0!*!0!!en!*!* and timestamp 20130425113749 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=34275">http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=34275</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=47150">http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=47150</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -919,16 +945,21 @@ Expensive parser function count: 0/100
                         <div id="cpp-navigation">
             <h5>Navigation</h5>
             <ul>
-<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="http://en.cppreference.com/w/Help:Contents" title="The place to find out">Help</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
         </div>
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/memory/shared_ptr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/memory/shared_ptr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=34275" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/memory/shared_ptr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/memory/shared_ptr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/memory/shared_ptr&amp;oldid=47150" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
         </div>
-                            <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 15 June 2012, at 14:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 16,425 times.</li>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/memory/shared_ptr" title="cpp/memory/shared ptr" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 April 2013, at 04:37.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 17,113 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -963,10 +994,10 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 <script type="text/javascript">
 var pageTracker = _gat._getTracker("UA-2828341-1");
 pageTracker._trackPageview();
-</script><!-- Served in 3.494 secs. -->        
+</script><!-- Served in 0.055 secs. -->        
 	</body>
-<!-- Cached 20120616195534 -->
+<!-- Cached 20130425114503 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/memory/shared_ptr by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 19 Jun 2012 19:15:20 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/memory/shared_ptr by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:25 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 </html>

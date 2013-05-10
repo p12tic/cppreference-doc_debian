@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/concept/NullablePointer by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>C++ concepts: NullablePointer (since C++11) - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
+<script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/concept/NullablePointer", "wgTitle": "cpp/concept/NullablePointer", "wgCurRevisionId": 46143, "wgArticleId": 9850, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_concept_NullablePointer action-view skin-cppreference2 cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fconcept%2FNullablePointer" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="NullablePointer.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/concept/NullablePointer&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="NullablePointer.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">C++ concepts:</span> NullablePointer <span class="t-mark">(since C++11)</span></h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../concept.html" title="cpp/concept">concept</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
+
+<tr>
+<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../header.html" title="cpp/header"> Standard library headers</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../iterator.html" title="cpp/iterator"> Iterators library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+
+<tr>
+<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
+</td></tr>
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../concept.html" title="cpp/concept"> C++ concepts</a><div class="t-navbar-menu"><div><div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Basic
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="DefaultConstructible.html" title="cpp/concept/DefaultConstructible">DefaultConstructible</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="CopyAssignable.html" title="cpp/concept/CopyAssignable">CopyAssignable</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="CopyConstructible.html" title="cpp/concept/CopyConstructible">CopyConstructible</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="MoveAssignable.html" title="cpp/concept/MoveAssignable">MoveAssignable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="MoveConstructible.html" title="cpp/concept/MoveConstructible">MoveConstructible</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Destructible.html" title="cpp/concept/Destructible">Destructible</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Library-Wide
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="EqualityComparable.html" title="cpp/concept/EqualityComparable">EqualityComparable</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="LessThanComparable.html" title="cpp/concept/LessThanComparable">LessThanComparable</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Swappable.html" title="cpp/concept/Swappable">Swappable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ValueSwappable.html" title="cpp/concept/ValueSwappable">ValueSwappable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">NullablePointer</strong></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Hash.html" title="cpp/concept/Hash">Hash</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Allocator.html" title="cpp/concept/Allocator">Allocator</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Container
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Container.html" title="cpp/concept/Container">Container</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="SequenceContainer.html" title="cpp/concept/SequenceContainer">SequenceContainer</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ReversibleContainer.html" title="cpp/concept/ReversibleContainer">ReversibleContainer</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/AssociativeContainer&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/AssociativeContainer (page does not exist)">AssociativeContainer</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="AllocatorAwareContainer.html" title="cpp/concept/AllocatorAwareContainer">AllocatorAwareContainer</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/UnorderedAssociativeContainer&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/UnorderedAssociativeContainer (page does not exist)">UnorderedAssociativeContainer</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr class="t-sb-list-h2">
+<td colspan="5">  Container Elements
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="CopyInsertable.html" title="cpp/concept/CopyInsertable">CopyInsertable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="MoveInsertable.html" title="cpp/concept/MoveInsertable">MoveInsertable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="EmplaceConstructible.html" title="cpp/concept/EmplaceConstructible">EmplaceConstructible</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Iterator
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Iterator.html" title="cpp/concept/Iterator">Iterator</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="OutputIterator.html" title="cpp/concept/OutputIterator">OutputIterator</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="InputIterator.html" title="cpp/concept/InputIterator">InputIterator</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ForwardIterator.html" title="cpp/concept/ForwardIterator">ForwardIterator</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="BidirectionalIterator.html" title="cpp/concept/BidirectionalIterator">BidirectionalIterator</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator">RandomAccessIterator</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Stream I/O
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="FormattedInputFunction.html" title="cpp/concept/FormattedInputFunction">FormattedInputFunction</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="UnformattedInputFunction.html" title="cpp/concept/UnformattedInputFunction">UnformattedInputFunction</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction">FormattedOutputFunction</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="UnformattedOutputFunction.html" title="cpp/concept/UnformattedOutputFunction">UnformattedOutputFunction</a></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Random Numbers
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="SeedSequence.html" title="cpp/concept/SeedSequence">SeedSequence</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/RandomNumberEngine&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)">RandomNumberEngine</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="RandomNumberDistribution.html" title="cpp/concept/RandomNumberDistribution">RandomNumberDistribution</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/UniformRandomNumberGenerator&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/UniformRandomNumberGenerator (page does not exist)">UniformRandomNumberGenerator</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/RandomNumberEngineAdaptor&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/RandomNumberEngineAdaptor (page does not exist)">RandomNumberEngineAdaptor</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Concurrency
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="BasicLockable.html" title="cpp/concept/BasicLockable">BasicLockable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Lockable.html" title="cpp/concept/Lockable">Lockable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="TimedLockable.html" title="cpp/concept/TimedLockable">TimedLockable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/Mutex&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/Mutex (page does not exist)">Mutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/TimedMutex&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/TimedMutex (page does not exist)">TimedMutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+
+<tr class="t-sb-list-h1">
+<td colspan="5">  Other
+</td></tr>
+<tr>
+<td>
+</td></tr>
+<tr>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/CharTraits&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/CharTraits (page does not exist)">CharTraits</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/pos_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/pos type (page does not exist)">pos_type</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/off_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/off type (page does not exist)">off_type</a></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="Clock.html" title="cpp/concept/Clock">Clock</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td>
+<td>
+<div>
+<table class="t-sb-list" cellpadding="0" style="">
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/UnaryTypeTrait&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/UnaryTypeTrait (page does not exist)">UnaryTypeTrait</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/BinaryTypeTrait&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/BinaryTypeTrait (page does not exist)">BinaryTypeTrait</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/TransformationTrait&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/TransformationTrait (page does not exist)">TransformationTrait</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+
+<tr>
+<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="TrivialClock.html" title="cpp/concept/TrivialClock">TrivialClock</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
+</td></tr>
+</table>
+</div>
+</td></tr>
+
+</table>
+</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/concept/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<p>Specifies that the type is an pointer-like object which can be compared to <span class="mw-geshi cpp source-cpp"><a href="../types/nullptr_t.html"><span class="kw102">std::<span class="me2">nullptr_t</span></span></a></span> objects.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;action=edit&amp;section=1" title="Edit section: Requirements">edit</a>]</span> <span class="mw-headline" id="Requirements">Requirements</span></h3>
+<p>The type must meet all of the following concept requirements:
+</p>
+<ul><li> <a href="EqualityComparable.html" title="cpp/concept/EqualityComparable"><code>EqualityComparable</code></a>
+</li><li> <a href="DefaultConstructible.html" title="cpp/concept/DefaultConstructible"><code>DefaultConstructible</code></a>
+</li><li> <a href="CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a>
+</li><li> <a href="CopyAssignable.html" title="cpp/concept/CopyAssignable"><code>CopyAssignable</code></a>
+</li><li> <a href="Destructible.html" title="cpp/concept/Destructible"><code>Destructible</code></a>
+</li></ul>
+<p>In addition, a value-initialized object of the type must produce a null value of that type. This null value shall only be equivalent to itself. Default initialization of the type may have an indeterminate value.
+</p><p>An object of the type must be contextually convertible to bool. The effect of this conversion returns false if the value is equivalent to its null value and true otherwise.
+</p><p>None of the operations that this type performs may throw exceptions.
+</p><p>The type must satisfy the following additional expressions, given two values <code>p</code> and <code>q</code> that are of the type, and that <code>np</code> is a value of <span class="mw-geshi cpp source-cpp"><a href="../types/nullptr_t.html"><span class="kw102">std::<span class="me2">nullptr_t</span></span></a></span> type (possibly <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span> qualified):
+</p>
+<table class="t-dcl-list">
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-hitem">
+<td>  Expression
+</td>
+<td>  Effects
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">Type p<span class="br0">&#40;</span>np<span class="br0">&#41;</span><span class="sy4">;</span></span>
+<p><span class="mw-geshi cpp source-cpp">Type p <span class="sy1">=</span> np<span class="sy4">;</span></span> 
+</p>
+</td>
+<td>  Afterwards, <code>p</code> is equivalent to <span class="mw-geshi cpp source-cpp">nullptr</span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">Type<span class="br0">&#40;</span>np<span class="br0">&#41;</span></span>
+</td>
+<td>   a temporary object that is equivalent to <span class="mw-geshi cpp source-cpp">nullptr</span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">p <span class="sy1">=</span> np</span>
+</td>
+<td>   Must return a <code>Type&amp;</code>, and afterwards, <code>p</code> is equivalent to <span class="mw-geshi cpp source-cpp">nullptr</span>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">p <span class="sy3">!</span><span class="sy1">=</span> q</span>
+</td>
+<td>  Must return a value that is contextually convertible to bool.
+<p>The effect is <code>!(p == q)</code>
+</p>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">p <span class="sy1">==</span> np</span>
+<p><span class="mw-geshi cpp source-cpp">np <span class="sy1">==</span> p</span>
+</p>
+</td>
+<td>  Must return a value that is contextually convertible to bool.
+<p>The effect is <code>(p == Type())</code>
+</p>
+</td></tr>
+
+
+<tr class="t-dcl-list-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dcl-list-item">
+<td>  <span class="mw-geshi cpp source-cpp">p <span class="sy3">!</span><span class="sy1">=</span> np</span>
+<p><span class="mw-geshi cpp source-cpp">np <span class="sy3">!</span><span class="sy1">=</span> p</span>
+</p>
+</td>
+<td>  Must return a value that is contextually convertible to bool.
+<p>The effect is <code>!(p == np)</code>
+</p>
+</td></tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 3651/1000000
+Post-expand include size: 84971/2097152 bytes
+Template argument size: 16216/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9850-0!*!0!*!*!*!* and timestamp 20130310173636 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;oldid=46143">http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;oldid=46143</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/concept/NullablePointer" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/concept/NullablePointer" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/NullablePointer&amp;oldid=46143" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 18 February 2013, at 22:21.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 22 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
+	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
+}
+</script><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2828341-1");
+pageTracker._trackPageview();
+</script><!-- Served in 2.031 secs. -->        
+	</body>
+<!-- Cached 20130310173636 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/concept/NullablePointer by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

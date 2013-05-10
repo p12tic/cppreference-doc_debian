@@ -28,14 +28,14 @@
     <!-- c/types -->
 
         <!-- generic types -->
-        <!--
-    <typedef name="std::size_t" link="cpp/types/size_t"/>
-    <typedef name="std::ptrdiff_t" link="cpp/types/ptrdiff_t"/>
-    <typedef name="std::nullptr_t" link="cpp/types/nullptr_t"/>
+
+    <typedef name="size_t" link="cpp/types/size_t"/>
+    <typedef name="ptrdiff_t" link="cpp/types/ptrdiff_t"/>
+    <typedef name="nullptr_t" link="cpp/types/nullptr_t"/>
     <const name="NULL" link="cpp/types/NULL"/>
-    <typedef name="std::max_align_t" link="cpp/types/max_align_t"/>
+    <typedef name="max_align_t" link="cpp/types/max_align_t"/>
     <function name="offsetof" link="cpp/types/offsetof"/>
-        -->
+
         <!-- fixed width integer types -->
 
     <typedef name="int8_t" link="c/types/integer"/>
@@ -366,8 +366,8 @@
     <const name="DBL_MAX_10_EXP" link="c/types/limits"/>
     <const name="LDBL_MAX_10_EXP" link="c/types/limits"/>
 
-    <const name="FLT_ROUNDS" link="c/types/limits"/>
-    <const name="FLT_EVAL_METHOD" link="c/types/limits"/>
+    <const name="FLT_ROUNDS" link="c/types/limits/FLT_ROUNDS"/>
+    <const name="FLT_EVAL_METHOD" link="c/types/limits/FLT_EVAL_METHOD"/>
 
     <!--=======================================================================-->
     <!-- c/memory -->
@@ -463,7 +463,7 @@
     <const name="EXDEV" link="c/error/errno_macros"/>
 
     <!--=======================================================================-->
-    <!-- cS/variadic -->
+    <!-- c/variadic -->
 
     <!-- todo -->
 
@@ -622,8 +622,8 @@
     <function name="iswctype" link="c/string/wide/iswctype"/>
     <function name="wctype" link="c/string/wide/wctype"/>
 
-    <function name="towlower" link="c/string/wide/tolower"/>
-    <function name="towupper" link="c/string/wide/toupper"/>
+    <function name="towlower" link="c/string/wide/towlower"/>
+    <function name="towupper" link="c/string/wide/towupper"/>
     <function name="towctrans" link="c/string/wide/towctrans"/>
     <function name="wctrans" link="c/string/wide/wctrans"/>
 
@@ -751,7 +751,7 @@
 
     <!-- c/numeric/fenv -->
 
-    <function name="feclearexcept" link="c/numeric/fenv/fecrearexcept"/>
+    <function name="feclearexcept" link="c/numeric/fenv/feclearexcept"/>
     <function name="fetestexcept" link="c/numeric/fenv/fetestexcept"/>
     <function name="feraiseexcept" link="c/numeric/fenv/feraiseexcept"/>
     <function name="fegetexceptflag" link="c/numeric/fenv/feexceptflag"/>
@@ -781,7 +781,85 @@
 
     <function name="srand" link="c/numeric/random/srand"/>
     <function name="rand" link="c/numeric/random/rand"/>
-    <const name="MAX_RANDOM" link="c/numeric/random/MAX_RANDOM"/>
+    <const name="RAND_MAX" link="c/numeric/random/RAND_MAX"/>
+
+    <!-- cpp/numeric/random -->
+
+    <const name="complex" link="c/numeric/complex/complex"/>
+    <const name="Complex_I" link="c/numeric/complex/Complex_I"/>
+    <const name="imaginary" link="c/numeric/complex/imaginary"/>
+    <const name="Imaginary_I" link="c/numeric/complex/Imaginary_I"/>
+    <const name="I" link="c/numeric/complex/I"/>
+
+    <function name="CMPLX" link="c/numeric/complex/CMPLX"/>
+    <function name="CMPLXF" link="c/numeric/complex/CMPLX"/>
+    <function name="CMPLXL" link="c/numeric/complex/CMPLX"/>
+    <function name="cimag" link="c/numeric/complex/cimag"/>
+    <function name="cimagf" link="c/numeric/complex/cimag"/>
+    <function name="cimagl" link="c/numeric/complex/cimag"/>
+    <function name="creal" link="c/numeric/complex/creal"/>
+    <function name="crealf" link="c/numeric/complex/creal"/>
+    <function name="creall" link="c/numeric/complex/creal"/>
+    <function name="carg" link="c/numeric/complex/carg"/>
+    <function name="cargf" link="c/numeric/complex/carg"/>
+    <function name="cargl" link="c/numeric/complex/carg"/>
+    <function name="conj" link="c/numeric/complex/conj"/>
+    <function name="conjf" link="c/numeric/complex/conj"/>
+    <function name="conjl" link="c/numeric/complex/conj"/>
+    <function name="cproj" link="c/numeric/complex/cproj"/>
+    <function name="cprojf" link="c/numeric/complex/cproj"/>
+    <function name="cprojl" link="c/numeric/complex/cproj"/>
+    <function name="cabs" link="c/numeric/complex/cabs"/>
+    <function name="cabsf" link="c/numeric/complex/cabs"/>
+    <function name="cabsl" link="c/numeric/complex/cabs"/>
+    <function name="cexp" link="c/numeric/complex/cexp"/>
+    <function name="cexpf" link="c/numeric/complex/cexp"/>
+    <function name="cexpl" link="c/numeric/complex/cexp"/>
+    <function name="clog" link="c/numeric/complex/clog"/>
+    <function name="clogf" link="c/numeric/complex/clog"/>
+    <function name="clogl" link="c/numeric/complex/clog"/>
+    <function name="cpow" link="c/numeric/complex/cpow"/>
+    <function name="cpowf" link="c/numeric/complex/cpow"/>
+    <function name="cpowl" link="c/numeric/complex/cpow"/>
+    <function name="csqrt" link="c/numeric/complex/csqrt"/>
+    <function name="csqrtf" link="c/numeric/complex/csqrt"/>
+    <function name="csqrtl" link="c/numeric/complex/csqrt"/>
+    <function name="cacos" link="c/numeric/complex/cacos"/>
+    <function name="cacosf" link="c/numeric/complex/cacos"/>
+    <function name="cacosl" link="c/numeric/complex/cacos"/>
+    <function name="casin" link="c/numeric/complex/casin"/>
+    <function name="casinf" link="c/numeric/complex/casin"/>
+    <function name="casinl" link="c/numeric/complex/casin"/>
+    <function name="catan" link="c/numeric/complex/catan"/>
+    <function name="catanf" link="c/numeric/complex/catan"/>
+    <function name="catanl" link="c/numeric/complex/catan"/>
+    <function name="ccos" link="c/numeric/complex/ccos"/>
+    <function name="ccosf" link="c/numeric/complex/ccos"/>
+    <function name="ccosl" link="c/numeric/complex/ccos"/>
+    <function name="csin" link="c/numeric/complex/csin"/>
+    <function name="csinf" link="c/numeric/complex/csin"/>
+    <function name="csinl" link="c/numeric/complex/csin"/>
+    <function name="ctan" link="c/numeric/complex/ctan"/>
+    <function name="ctanf" link="c/numeric/complex/ctan"/>
+    <function name="ctanl" link="c/numeric/complex/ctan"/>
+    <function name="cacosh" link="c/numeric/complex/cacosh"/>
+    <function name="cacoshf" link="c/numeric/complex/cacosh"/>
+    <function name="cacoshl" link="c/numeric/complex/cacosh"/>
+    <function name="casinh" link="c/numeric/complex/casinh"/>
+    <function name="casinhf" link="c/numeric/complex/casinh"/>
+    <function name="casinhl" link="c/numeric/complex/casinh"/>
+    <function name="catanh" link="c/numeric/complex/catanh"/>
+    <function name="catanhf" link="c/numeric/complex/catanh"/>
+    <function name="catanhl" link="c/numeric/complex/catanh"/>
+    <function name="ccosh" link="c/numeric/complex/ccosh"/>
+    <function name="ccoshf" link="c/numeric/complex/ccosh"/>
+    <function name="ccoshl" link="c/numeric/complex/ccosh"/>
+    <function name="csinh" link="c/numeric/complex/csinh"/>
+    <function name="csinhf" link="c/numeric/complex/csinh"/>
+    <function name="csinhl" link="c/numeric/complex/csinh"/>
+    <function name="ctanh" link="c/numeric/complex/ctanh"/>
+    <function name="ctanhf" link="c/numeric/complex/ctanh"/>
+    <function name="ctanhl" link="c/numeric/complex/ctanh"/>
 
     <!-- cpp/algorithm -->
 
@@ -879,5 +957,162 @@
     <function name="setlocale" link="c/locale/setlocale"/>
     <function name="localeconv" link="c/locale/localeconv"/>
     <class name="lconv" link="c/locale/lconv"/>
+
+    <const name="LC_ALL" link="c/locale/LC_categories"/>
+    <const name="LC_COLLATE" link="c/locale/LC_categories"/>
+    <const name="LC_CTYPE" link="c/locale/LC_categories"/>
+    <const name="LC_MONETARY" link="c/locale/LC_categories"/>
+    <const name="LC_NUMERIC" link="c/locale/LC_categories"/>
+    <const name="LC_TIME" link="c/locale/LC_categories"/>
+
+    <!-- c/atomic -->
+
+    <enum name="memory_order" link="c/atomic/memory_order"/>
+    <const name="memory_order_relaxed" link="c/atomic/memory_order"/>
+    <const name="memory_order_consume" link="c/atomic/memory_order"/>
+    <const name="memory_order_acquire" link="c/atomic/memory_order"/>
+    <const name="memory_order_release" link="c/atomic/memory_order"/>
+    <const name="memory_order_acq_rel" link="c/atomic/memory_order"/>
+    <const name="memory_order_seq_cst" link="c/atomic/memory_order"/>
+    <typedef name="atomic_flag" link="c/atomic/atomic_flag"/>
+
+    <const name="ATOMIC_BOOL_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_CHAR_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_CHAR16_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_CHAR32_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_WCHAR_T_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_SHORT_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_INT_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_LONG_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_LLONG_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+    <const name="ATOMIC_POINTER_LOCK_FREE" link="c/atomic/ATOMIC_LOCK_FREE_consts"/>
+
+    <const name="ATOMIC_FLAG_INIT" link="c/atomic/ATOMIC_FLAG_INIT"/>
+    <function name="ATOMIC_VAR_INIT" link="c/atomic/ATOMIC_VAR_INIT"/>
+    <function name="kill_dependency" link="c/atomic/kill_dependency"/>
+
+    <function name="atomic_load_test_and_set" link="c/atomic/atomic_load_test_and_set"/>
+    <function name="atomic_load_test_and_set_explicit" link="c/atomic/atomic_load_test_and_set"/>
+    <function name="atomic_flag_clear" link="c/atomic/atomic_flag_clear"/>
+    <function name="atomic_flag_clear_explicit" link="c/atomic/atomic_flag_clear"/>
+    <function name="atomic_init" link="c/atomic/atomic_init"/>
+    <function name="atomic_is_lock_free" link="c/atomic/atomic_is_lock_free"/>
+
+    <function name="atomic_store" link="c/atomic/atomic_store"/>
+    <function name="atomic_store_explicit" link="c/atomic/atomic_store"/>
+    <function name="atomic_load" link="c/atomic/atomic_load"/>
+    <function name="atomic_load_explicit" link="c/atomic/atomic_load"/>
+    <function name="atomic_exchange" link="c/atomic/atomic_exchange"/>
+    <function name="atomic_exchange_explicit" link="c/atomic/atomic_exchange"/>
+    <function name="atomic_compare_exchange_weak" link="c/atomic/atomic_compare_exchange"/>
+    <function name="atomic_compare_exchange_weak_explicit" link="c/atomic/atomic_compare_exchange"/>
+    <function name="atomic_compare_exchange_strong" link="c/atomic/atomic_compare_exchange"/>
+    <function name="atomic_compare_exchange_strong_explicit" link="c/atomic/atomic_compare_exchange"/>
+    <function name="atomic_fetch_add" link="c/atomic/atomic_fetch_add"/>
+    <function name="atomic_fetch_add_explicit" link="c/atomic/atomic_fetch_add"/>
+    <function name="atomic_fetch_sub" link="c/atomic/atomic_fetch_sub"/>
+    <function name="atomic_fetch_sub_explicit" link="c/atomic/atomic_fetch_sub"/>
+    <function name="atomic_fetch_or" link="c/atomic/atomic_fetch_or"/>
+    <function name="atomic_fetch_or_explicit" link="c/atomic/atomic_fetch_or"/>
+    <function name="atomic_fetch_xor" link="c/atomic/atomic_fetch_xor"/>
+    <function name="atomic_fetch_xor_explicit" link="c/atomic/atomic_fetch_xor"/>
+    <function name="atomic_fetch_and" link="c/atomic/atomic_fetch_and"/>
+    <function name="atomic_fetch_and_explicit" link="c/atomic/atomic_fetch_and"/>
+    <function name="atomic_thread_fence" link="c/atomic/atomic_thread_fence"/>
+    <function name="atomic_signal_fence" link="c/atomic/atomic_signal_fence"/>
+
+    <typedef name="atomic_bool" link="c/atomic"/>
+    <typedef name="atomic_char" link="c/atomic"/>
+    <typedef name="atomic_schar" link="c/atomic"/>
+    <typedef name="atomic_uchar" link="c/atomic"/>
+    <typedef name="atomic_short" link="c/atomic"/>
+    <typedef name="atomic_ushort" link="c/atomic"/>
+    <typedef name="atomic_int" link="c/atomic"/>
+    <typedef name="atomic_uint" link="c/atomic"/>
+    <typedef name="atomic_long" link="c/atomic"/>
+    <typedef name="atomic_ulong" link="c/atomic"/>
+    <typedef name="atomic_llong" link="c/atomic"/>
+    <typedef name="atomic_ullong" link="c/atomic"/>
+    <typedef name="atomic_char16_t" link="c/atomic"/>
+    <typedef name="atomic_char32_t" link="c/atomic"/>
+    <typedef name="atomic_wchar_t" link="c/atomic"/>
+    <typedef name="atomic_int_least8_t" link="c/atomic"/>
+    <typedef name="atomic_uint_least8_t" link="c/atomic"/>
+    <typedef name="atomic_int_least16_t" link="c/atomic"/>
+    <typedef name="atomic_uint_least16_t" link="c/atomic"/>
+    <typedef name="atomic_int_least32_t" link="c/atomic"/>
+    <typedef name="atomic_uint_least32_t" link="c/atomic"/>
+    <typedef name="atomic_int_least64_t" link="c/atomic"/>
+    <typedef name="atomic_uint_least64_t" link="c/atomic"/>
+    <typedef name="atomic_int_fast8_t" link="c/atomic"/>
+    <typedef name="atomic_uint_fast8_t" link="c/atomic"/>
+    <typedef name="atomic_int_fast16_t" link="c/atomic"/>
+    <typedef name="atomic_uint_fast16_t" link="c/atomic"/>
+    <typedef name="atomic_int_fast32_t" link="c/atomic"/>
+    <typedef name="atomic_uint_fast32_t" link="c/atomic"/>
+    <typedef name="atomic_int_fast64_t" link="c/atomic"/>
+    <typedef name="atomic_uint_fast64_t" link="c/atomic"/>
+    <typedef name="atomic_intprt_t" link="c/atomic"/>
+    <typedef name="atomic_uintprt_t" link="c/atomic"/>
+    <typedef name="atomic_size_t" link="c/atomic"/>
+    <typedef name="atomic_ptrdiff_t" link="c/atomic"/>
+    <typedef name="atomic_intmax_t" link="c/atomic"/>
+    <typedef name="atomic_uintmax_t" link="c/atomic"/>
+
+        <!-- c/thread -->
+
+    <typedef name="thrd_t" link="c/thread"/>
+    <function name="thrd_create" link="c/thread/thrd_create"/>
+    <function name="thrd_equal" link="c/thread/thrd_equal"/>
+    <function name="thrd_current" link="c/thread/thrd_current"/>
+    <function name="thrd_sleep" link="c/thread/thrd_sleep"/>
+    <function name="thrd_yield" link="c/thread/thrd_yield"/>
+    <function name="thrd_exit" link="c/thread/thrd_exit"/>
+    <function name="thrd_detach" link="c/thread/thrd_detach"/>
+    <function name="thrd_join" link="c/thread/thrd_join"/>
+
+    <const name="thrd_success" link="c/thread/thrd_errors"/>
+    <const name="thrd_timeout" link="c/thread/thrd_errors"/>
+    <const name="thrd_busy" link="c/thread/thrd_errors"/>
+    <const name="thrd_nomem" link="c/thread/thrd_errors"/>
+    <const name="thrd_error" link="c/thread/thrd_errors"/>
+
+    <typedef name="thrd_start_t" link="c/thread"/>
+
+    <typedef name="mtx_t" link="c/thread"/>
+    <function name="mtx_init" link="c/thread/mtx_init"/>
+    <function name="mtx_lock" link="c/thread/mtx_lock"/>
+    <function name="mtx_timedlock" link="c/thread/mtx_timedlock"/>
+    <function name="mtx_trylock" link="c/thread/mtx_trylock"/>
+    <function name="mtx_unlock" link="c/thread/mtx_unlock"/>
+    <function name="mtx_destroy" link="c/thread/mtx_destroy"/>
+
+    <const name="mtx_plain" link="c/thread/mtx_types"/>
+    <const name="mtx_recursive" link="c/thread/mtx_types"/>
+    <const name="mtx_timed" link="c/thread/mtx_types"/>
+
+    <typedef name="thrd_start_t" link="c/thread"/>
+
+    <typedef name="once_flag" link="c/thread"/>
+    <const name="ONCE_FLAG_INIT" link="c/thread/ONCE_FLAG_INIT"/>
+    <function name="call_once" link="c/thread/call_once"/>
+
+    <typedef name="cnd_t" link="c/thread"/>
+    <function name="cnd_init" link="c/thread/cnd_init"/>
+    <function name="cnd_signal" link="c/thread/cnd_signal"/>
+    <function name="cnd_broadcast" link="c/thread/cnd_broadcast"/>
+    <function name="cnd_wait" link="c/thread/cnd_wait"/>
+    <function name="cnd_timedwait" link="c/thread/cnd_timedwait"/>
+    <function name="cnd_destroy" link="c/thread/cnd_destroy"/>
+
+    <const name="thread_local" link="c/thread/thread_local"/>
+    <const name="TSS_DTOR_ITERATIONS" link="c/thread/TSS_DTOR_ITERATIONS"/>
+    <typedef name="tss_t" link="c/thread"/>
+    <typedef name="tss_dtor_t" link="c/thread"/>
+
+    <function name="tss_create" link="c/thread/tss_create"/>
+    <function name="tss_get" link="c/thread/tss_get"/>
+    <function name="tss_set" link="c/thread/tss_set"/>
+    <function name="tss_delete" link="c/thread/tss_delete"/>
 
 </index>
