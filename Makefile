@@ -82,7 +82,7 @@ dist: clean
 install:
 	# install the devhelp documentation
 	pushd "output" > /dev/null; \
-	find . -type f \
+	find . -type f -not -iname "*.ttf" \
 		-exec install -DT -m 644 '{}' "$(DESTDIR)$(docdir)/html/{}" \; ; \
 	popd > /dev/null
 

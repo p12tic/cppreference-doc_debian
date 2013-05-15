@@ -1,0 +1,13 @@
+Description: Do not distribute fonts that came with the upstream tarball
+Author: p12 <tir5c3@yahoo.co.uk>
+--- cppreference-doc-20130510.orig/Makefile
++++ cppreference-doc-20130510/Makefile
+@@ -82,7 +82,7 @@ dist: clean
+ install:
+ 	# install the devhelp documentation
+ 	pushd "output" > /dev/null; \
+-	find . -type f \
++	find . -type f -not -iname "*.ttf" \
+ 		-exec install -DT -m 644 '{}' "$(DESTDIR)$(docdir)/html/{}" \; ; \
+ 	popd > /dev/null
+
