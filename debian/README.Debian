@@ -1,0 +1,27 @@
+cppreference-doc for Debian
+---------------------------
+
+In order to read the QCH help package in Qt Assistant program, it must be
+registered in the program. This can be done in two ways:
+
+ * Click Edit > Preferences > Documentation > Add in Qt Assistant and enter
+   /usr/share/cppreference/doc/qch/cppreference-doc-en-cpp.qch
+
+ * Run the following line in the terminal:
+  assitant -register /usr/share/cppreference/doc/qch/cppreference-doc-en-cpp.qch
+
+Qt Assistant with enabled Webkit support is needed for proper rendering of the
+documentation. As of May 2013, Debian ships Qt Assistant with Webkit disabled.
+There are two possible solutions:
+
+ * Rebuild Qt Assistant with Webkit support enabled. The patch against
+   qt4-x11 4.8.4 can be found here <http://pastebin.com/b7YVbQ6U>. The patch
+   might work for other QT versions without modifications.
+
+ * Install Qt Assistant from a distribution that enables Webkit in Qt Assistant
+   (e.g. Ubuntu). This is not recommended, might break at any time, etc. etc.,
+   but I have had good success in running a variety of Qt Assistant versions.
+   The only requirement is that the version of Qt Assistant is not lower than
+   the version of the Qt libraries on the system.
+
+ -- p12 <tir5c3@yahoo.co.uk>, Tue, 28 May 2013 21:02:14 +0300
