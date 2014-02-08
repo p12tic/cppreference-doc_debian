@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/string/byte/strtoimax by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:15:28 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/string/byte/strtoimax by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:57:23 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::strtoimax, std::strtoumax - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit" />
 <link rel="shortcut icon" href="../../../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/string/byte/strtoimax", "wgTitle": "cpp/string/byte/strtoimax", "wgCurRevisionId": 46755, "wgArticleId": 9530, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/string/byte/strtoimax","wgTitle":"cpp/string/byte/strtoimax","wgCurRevisionId":66729,"wgArticleId":9530,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/string/byte/strtoimax","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
 <style type="text/css">/*<![CDATA[*/
 .source-cpp {line-height: normal;}
 .source-cpp li, .source-cpp pre {
@@ -104,12 +107,13 @@
 
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string_byte_strtoimax action-view skin-cppreference2 cpp-navbar">
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_string_byte_strtoimax skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
                 <div id="cpp-head-first">
-                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
                     <div id="cpp-head-search">
                         
 <!-- 0 -->
@@ -118,7 +122,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -128,7 +132,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fstring%2Fbyte%2Fstrtoimax" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fstring%2Fbyte%2Fstrtoimax&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fstring%2Fbyte%2Fstrtoimax" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -204,381 +212,123 @@
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a> | <a href="../../string.html" title="cpp/string">string</a> | <a href="../byte.html" title="cpp/string/byte">byte</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../string.html" title="cpp/string">string</a>&lrm; | <a href="../byte.html" title="cpp/string/byte">byte</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="../../language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Null-terminated strings
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../byte.html" title="cpp/string/byte"> Byte strings</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../multibyte.html" title="cpp/string/multibyte"> Multibyte strings</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../wide.html" title="cpp/string/wide"> Wide strings</a>
-</td></tr>
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Classes
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_string.html" title="cpp/string/basic string">basic_string</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../char_traits.html" title="cpp/string/char traits">char_traits</a></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../byte.html" title="cpp/string/byte"> Null-terminated byte strings</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Functions
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Character manipulation
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isalnum.html" title="cpp/string/byte/isalnum">isalnum</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isalpha.html" title="cpp/string/byte/isalpha">isalpha</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="islower.html" title="cpp/string/byte/islower">islower</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isupper.html" title="cpp/string/byte/isupper">isupper</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isdigit.html" title="cpp/string/byte/isdigit">isdigit</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isxdigit.html" title="cpp/string/byte/isxdigit">isxdigit</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isblank.html" title="cpp/string/byte/isblank">isblank</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="iscntrl.html" title="cpp/string/byte/iscntrl">iscntrl</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isgraph.html" title="cpp/string/byte/isgraph">isgraph</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isspace.html" title="cpp/string/byte/isspace">isspace</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="isprint.html" title="cpp/string/byte/isprint">isprint</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ispunct.html" title="cpp/string/byte/ispunct">ispunct</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tolower.html" title="cpp/string/byte/tolower">tolower</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="toupper.html" title="cpp/string/byte/toupper">toupper</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Conversions to numeric formats
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="atof.html" title="cpp/string/byte/atof">atof</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="atoi.html" title="cpp/string/byte/atoi">atoi<br />atol<br />atoll</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strtol.html" title="cpp/string/byte/strtol">strtol<br />strtoll</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strtoul.html" title="cpp/string/byte/strtoul">strtoul<br />strtoull</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strtof.html" title="cpp/string/byte/strtof">strtof<br />strtod<br />strtold</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  String manipulation
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strcpy.html" title="cpp/string/byte/strcpy">strcpy</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strncpy.html" title="cpp/string/byte/strncpy">strncpy</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strcat.html" title="cpp/string/byte/strcat">strcat</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strncat.html" title="cpp/string/byte/strncat">strncat</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strxfrm.html" title="cpp/string/byte/strxfrm">strxfrm</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  String examination
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strlen.html" title="cpp/string/byte/strlen">strlen</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strcmp.html" title="cpp/string/byte/strcmp">strcmp</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strncmp.html" title="cpp/string/byte/strncmp">strncmp</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strcoll.html" title="cpp/string/byte/strcoll">strcoll</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strchr.html" title="cpp/string/byte/strchr">strchr</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strrchr.html" title="cpp/string/byte/strrchr">strrchr</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strspn.html" title="cpp/string/byte/strspn">strspn</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strcspn.html" title="cpp/string/byte/strcspn">strcspn</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strpbrk.html" title="cpp/string/byte/strpbrk">strpbrk</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strstr.html" title="cpp/string/byte/strstr">strstr</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strtok.html" title="cpp/string/byte/strtok">strtok</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Memory manipulation
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="memchr.html" title="cpp/string/byte/memchr">memchr</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="memcmp.html" title="cpp/string/byte/memcmp">memcmp</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="memset.html" title="cpp/string/byte/memset">memset</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="memcpy.html" title="cpp/string/byte/memcpy">memcpy</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="memmove.html" title="cpp/string/byte/memmove">memmove</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Miscellaneous
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="strerror.html" title="cpp/string/byte/strerror">strerror</a></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<table class="t-ddcl-list">
-<tr class="t-ddcl-list-header">
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../multibyte.html" title="cpp/string/multibyte"> Multibyte strings</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../wide.html" title="cpp/string/wide"> Wide strings</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string.html" title="cpp/string/basic string"><span class="t-lines"><span>basic_string</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../char_traits.html" title="cpp/string/char traits"><span class="t-lines"><span>char_traits</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../byte.html" title="cpp/string/byte"> Null-terminated byte strings</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Character manipulation</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isalnum.html" title="cpp/string/byte/isalnum"><span class="t-lines"><span>isalnum</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isalpha.html" title="cpp/string/byte/isalpha"><span class="t-lines"><span>isalpha</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="islower.html" title="cpp/string/byte/islower"><span class="t-lines"><span>islower</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isupper.html" title="cpp/string/byte/isupper"><span class="t-lines"><span>isupper</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isdigit.html" title="cpp/string/byte/isdigit"><span class="t-lines"><span>isdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isxdigit.html" title="cpp/string/byte/isxdigit"><span class="t-lines"><span>isxdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isblank.html" title="cpp/string/byte/isblank"><span class="t-lines"><span>isblank</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iscntrl.html" title="cpp/string/byte/iscntrl"><span class="t-lines"><span>iscntrl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isgraph.html" title="cpp/string/byte/isgraph"><span class="t-lines"><span>isgraph</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isspace.html" title="cpp/string/byte/isspace"><span class="t-lines"><span>isspace</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isprint.html" title="cpp/string/byte/isprint"><span class="t-lines"><span>isprint</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ispunct.html" title="cpp/string/byte/ispunct"><span class="t-lines"><span>ispunct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tolower.html" title="cpp/string/byte/tolower"><span class="t-lines"><span>tolower</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="toupper.html" title="cpp/string/byte/toupper"><span class="t-lines"><span>toupper</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conversions to numeric formats</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="atof.html" title="cpp/string/byte/atof"><span class="t-lines"><span>atof</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="atoi.html" title="cpp/string/byte/atoi"><span class="t-lines"><span>atoi</span><span>atol</span><span>atoll</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strtol.html" title="cpp/string/byte/strtol"><span class="t-lines"><span>strtol</span><span>strtoll</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strtoul.html" title="cpp/string/byte/strtoul"><span class="t-lines"><span>strtoul</span><span>strtoull</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strtof.html" title="cpp/string/byte/strtof"><span class="t-lines"><span>strtof</span><span>strtod</span><span>strtold</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> String manipulation</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strcpy.html" title="cpp/string/byte/strcpy"><span class="t-lines"><span>strcpy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strncpy.html" title="cpp/string/byte/strncpy"><span class="t-lines"><span>strncpy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strcat.html" title="cpp/string/byte/strcat"><span class="t-lines"><span>strcat</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strncat.html" title="cpp/string/byte/strncat"><span class="t-lines"><span>strncat</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strxfrm.html" title="cpp/string/byte/strxfrm"><span class="t-lines"><span>strxfrm</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> String examination</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strlen.html" title="cpp/string/byte/strlen"><span class="t-lines"><span>strlen</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strcmp.html" title="cpp/string/byte/strcmp"><span class="t-lines"><span>strcmp</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strncmp.html" title="cpp/string/byte/strncmp"><span class="t-lines"><span>strncmp</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strcoll.html" title="cpp/string/byte/strcoll"><span class="t-lines"><span>strcoll</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strchr.html" title="cpp/string/byte/strchr"><span class="t-lines"><span>strchr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strrchr.html" title="cpp/string/byte/strrchr"><span class="t-lines"><span>strrchr</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strspn.html" title="cpp/string/byte/strspn"><span class="t-lines"><span>strspn</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strcspn.html" title="cpp/string/byte/strcspn"><span class="t-lines"><span>strcspn</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strpbrk.html" title="cpp/string/byte/strpbrk"><span class="t-lines"><span>strpbrk</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strstr.html" title="cpp/string/byte/strstr"><span class="t-lines"><span>strstr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strtok.html" title="cpp/string/byte/strtok"><span class="t-lines"><span>strtok</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Memory manipulation</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="memchr.html" title="cpp/string/byte/memchr"><span class="t-lines"><span>memchr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="memcmp.html" title="cpp/string/byte/memcmp"><span class="t-lines"><span>memcmp</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="memset.html" title="cpp/string/byte/memset"><span class="t-lines"><span>memset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="memcpy.html" title="cpp/string/byte/memcpy"><span class="t-lines"><span>memcpy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="memmove.html" title="cpp/string/byte/memmove"><span class="t-lines"><span>memmove</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Miscellaneous</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="strerror.html" title="cpp/string/byte/strerror"><span class="t-lines"><span>strerror</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../../header/cinttypes.html" title="cpp/header/cinttypes">&lt;cinttypes&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> strtoimax<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> endptr, <span class="kw4">int</span> base <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
-<td class="t-ddcl-list-item-nopad">  </td>
-<td> <span class="t-mark">(since C++11)</span> </td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw132">std::<span class="me2">uintmax_t</span></span></a> strtoumax<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> nptr, <span class="kw4">char</span><span class="sy2">**</span> endptr, <span class="kw4">int</span> base <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
-<td class="t-ddcl-list-item-nopad">  </td>
-<td> <span class="t-mark">(since C++11)</span> </td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-</table>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
 <p>Interprets an integer value in a byte string pointed to by <code>nptr</code>.
 </p><p>Function discards any whitespace characters (as identified by calling <code>isspace()</code>) until first non-whitespace character is found. Then it takes as many characters as possible to form a valid <i>base-n</i> (where n=base)  integer number representation and converts them to an  integer value. The valid   integer value consists of the following parts:
 </p>
 <ul><li> <span class="t-mark">(optional)</span> plus or minus sign
-</li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0</b></code>) indicating octal base (applies only when the base is <span class="mw-geshi cpp source-cpp"><span class="nu0">8</span></span>)
-</li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0x</b></code> or <code><b>0X</b></code>) indicating hexadecimal base (applies only when the base is <span class="mw-geshi cpp source-cpp"><span class="nu0">16</span></span>)
+</li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0</b></code>) indicating octal base (applies only when the base is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">8</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>)
+</li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0x</b></code> or <code><b>0X</b></code>) indicating hexadecimal base (applies only when the base is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">16</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>)
 </li><li> a sequence of digits
 </li></ul>
 <p>The set of valid digits for base-2 integer is <code>01</code>, for base-3 integer is <code>012</code>, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored. In non-default locales, additional numeric formats may be accepted.
-</p><p>If the value of base is <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>, the numeric base is auto-detected: if the prefix is <code><b>0</b></code>, the base is octal, if the prefix is <code><b>0x</b></code> or <code><b>0X</b></code>, the base is hexadecimal, otherwise the base is decimal.
-</p><p>The functions sets the pointer pointed to by <code>endptr</code> to point to the character past the last character interpreted. If <code>endptr</code> is <span class="mw-geshi cpp source-cpp"><a href="../../types/NULL.html"><span class="kw103">NULL</span></a></span>, it is ignored.
-</p><p>If the <code>nptr</code> is empty or does not have the expected form, no conversion is performed, and (if <code>enptr</code> is not <span class="mw-geshi cpp source-cpp"><a href="../../types/NULL.html"><span class="kw103">NULL</span></a></span>) the value of <code>nptr</code> is stored in the object pointed to by <code>endptr</code>.
+</p><p>If the value of base is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, the numeric base is auto-detected: if the prefix is <code><b>0</b></code>, the base is octal, if the prefix is <code><b>0x</b></code> or <code><b>0X</b></code>, the base is hexadecimal, otherwise the base is decimal.
+</p><p>The functions sets the pointer pointed to by <code>endptr</code> to point to the character past the last character interpreted. If <code>endptr</code> is <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span>, it is ignored.
+</p><p>If the <code>nptr</code> is empty or does not have the expected form, no conversion is performed, and (if <code>enptr</code> is not <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span>) the value of <code>nptr</code> is stored in the object pointed to by <code>endptr</code>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -589,24 +339,24 @@
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
-<table class="t-param-list">
+<table class="t-par-begin">
 
 
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  nptr
 </td>
 <td> -
 </td>
 <td>  pointer to the null-terminated byte string to be interpreted
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  endptr
 </td>
 <td> -
 </td>
 <td>  pointer to a pointer to character.
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  base
 </td>
 <td> -
@@ -615,25 +365,25 @@
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <ul><li> If successful, an integer value corresponding to the contents of <code>str</code> is returned.
-</li><li> If the converted value falls out of range of corresponding return type, a range error occurs (setting <a href="../../error/errno.html" title="cpp/error/errno"><span class="mw-geshi cpp source-cpp"><span class="kw2">errno</span></span></a> to <span class="mw-geshi cpp source-cpp"><a href="../../error/errno_macros.html"><span class="kw706">ERANGE</span></a></span>) and <span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw161">INTMAX_MAX</span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw147">INTMAX_MIN</span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw175">UINTMAX_MAX</span></a></span> or <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> is returned, as appropriate.
-</li><li> If no conversion can be performed, <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> is returned.
+</li><li> If the converted value falls out of range of corresponding return type, a range error occurs (setting <span class="t-lc"><a href="../../error/errno.html" title="cpp/error/errno">errno</a></span> to <span class="t-lc"><a href="../../error/errno_macros.html" title="cpp/error/errno macros">ERANGE</a></span>) and <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">INTMAX_MAX</a></span>, <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">INTMAX_MIN</a></span>, <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">UINTMAX_MAX</a></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned, as appropriate.
+</li><li> If no conversion can be performed, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned.
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3oce98XSNth-afUaezq0SD9w9BMr99j6qKX43jDeD9AM1Mp7ueZWdGufjSHa6NaaN-DsVpOEWkY5MXznFQYdQxp_yILTFg9Exk11DqMACFBroOAqnKXtIBNnEPOgPOPcOsLH-QEfJ0BOjeU5Kd0Fz18Fm7tAbwHx_TNVhdTxmBT_nRv7eGW0C5KF1HdhkJec2YpYtx1weI8-_8dnwOeU0ngbnMJG332DYnwv5v1qWOHnrK-Kdag3o7QJUBwLV9SOXb4nEC8Sm-rpLXCjDdy63i4MjbWTkBNMuKVkK-UVC1v43l62QjlNRkAApOt8_g7j3PMRaxyqLrKAaExiGbxgNg==' class='external text'>run this code</a></div>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 <span class="co2">#include &lt;cinttypes&gt;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;helloworld&quot;</span><span class="sy4">;</span>
-    <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> val <span class="sy1">=</span> <a href="strtoimax.html"><span class="kw944">std::<span class="me2">strtoimax</span></span></a><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, nullptr, <span class="nu0">36</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 36 is &quot;</span> <span class="sy1">&lt;&lt;</span> val <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 10<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;helloworld&quot;</span><span class="sy4">;</span>
+    <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> val <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">strtoimax</span><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, nullptr, <span class="nu0">36</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 36 is &quot;</span> <span class="sy1">&lt;&lt;</span> val <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 10<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">char</span><span class="sy2">*</span> nptr<span class="sy4">;</span>
-    val <span class="sy1">=</span> <a href="strtoimax.html"><span class="kw944">std::<span class="me2">strtoimax</span></span></a><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="sy3">&amp;</span>nptr, <span class="nu0">30</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    val <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">strtoimax</span><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="sy3">&amp;</span>nptr, <span class="nu0">30</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>nptr <span class="sy3">!</span><span class="sy1">=</span> <span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 30 is invalid.&quot;</span>
+        <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 30 is invalid.&quot;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; The first invalid digit is &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>nptr <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -642,57 +392,59 @@
 helloworld in base 30 is invalid. The first invalid digit is w</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../wide/wcstoimax.html" title="cpp/string/wide/wcstoimax"> wcstoimax<br />wcstoumax</a></div><div><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../wide/wcstoimax.html" title="cpp/string/wide/wcstoimax"> <span class="t-lines"><span>wcstoimax</span><span>wcstoumax</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   converts a wide string to <span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a></span> or <span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw132">std::<span class="me2">uintmax_t</span></span></a></span>  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/wide/dcl_list_wcstoimax&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a wide string to <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> or <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::uintmax_t</a></span>  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/wide/dsc_wcstoimax&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="strtol.html" title="cpp/string/byte/strtol"> strtol<br />strtoll</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="strtol.html" title="cpp/string/byte/strtol"> <span class="t-lines"><span>strtol</span><span>strtoll</span></span></a></div></div>
 </td>
-<td>   converts a byte string to an integer value  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dcl_list_strtol&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a byte string to an integer value  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dsc_strtol&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="strtoul.html" title="cpp/string/byte/strtoul"> strtoul<br /> strtoull</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="strtoul.html" title="cpp/string/byte/strtoul"> <span class="t-lines"><span>strtoul</span><span> strtoull</span></span></a></div></div>
 </td>
-<td>   converts a byte string to an unsigned integer value  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dcl_list_strtoul&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a byte string to an unsigned integer value  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dsc_strtoul&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td colspan="2"> <div class="t-dcl-list-see"><span><a href="../../../c/string/byte/strtoimax.html" title="c/string/byte/strtoimax">C documentation</a></span> for <span class="t-dcl-list-see-monospace"><span>strtoimax</span>, <span>strtoumax</span></span></div>
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../../../c/string/byte/strtoimax.html" title="c/string/byte/strtoimax">C documentation</a></span> for <span class="t-dsc-see-tt"><span>strtoimax</span>, <span>strtoumax</span></span></div>
 </td></tr>
 
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3720/1000000
-Post-expand include size: 77533/2097152 bytes
-Template argument size: 15573/2097152 bytes
+Preprocessor visited node count: 4050/1000000
+Preprocessor generated node count: 7156/1000000
+Post‐expand include size: 100247/2097152 bytes
+Template argument size: 16386/2097152 bytes
+Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9530-0!*!0!!en!*!* and timestamp 20130414143842 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9530-0!*!0!!en!*!* and timestamp 20131228141044 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=46755">http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=46755</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=66729">http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=66729</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -715,7 +467,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/string/byte/strtoimax" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/string/byte/strtoimax" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=46755" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/string/byte/strtoimax" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/string/byte/strtoimax" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;oldid=66729" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtoimax&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -723,8 +475,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/byte/strtoimax" title="cpp/string/byte/strtoimax" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 10 April 2013, at 13:06.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 157 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 28 December 2013, at 06:10.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 736 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -733,36 +485,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 2.445 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.091 secs. -->
 	</body>
-<!-- Cached 20130414143842 -->
+<!-- Cached 20131229020950 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/string/byte/strtoimax by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:15:28 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/string/byte/strtoimax by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:57:23 GMT -->
 </html>

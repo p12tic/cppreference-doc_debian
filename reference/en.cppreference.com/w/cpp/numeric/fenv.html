@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/numeric/fenv by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:09 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/numeric/fenv by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:34 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>Floating-point environment - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit" />
 <link rel="shortcut icon" href="../../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/numeric/fenv", "wgTitle": "cpp/numeric/fenv", "wgCurRevisionId": 44476, "wgArticleId": 2710, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/numeric/fenv","wgTitle":"cpp/numeric/fenv","wgCurRevisionId":58506,"wgArticleId":2710,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/numeric/fenv","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
 <style type="text/css">/*<![CDATA[*/
 .source-cpp {line-height: normal;}
 .source-cpp li, .source-cpp pre {
@@ -80,7 +83,7 @@
 
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_numeric_fenv action-view skin-cppreference2 cpp-navbar">
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_numeric_fenv skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
@@ -94,7 +97,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -104,7 +107,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnumeric%2Ffenv" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnumeric%2Ffenv&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnumeric%2Ffenv" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -180,176 +187,52 @@
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../numeric.html" title="cpp/numeric">numeric</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../numeric.html" title="cpp/numeric">numeric</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5">  <a href="math.html" title="cpp/numeric/math">Common mathematical functions</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <strong class="selflink">Floating-point environment</strong>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="complex.html" title="cpp/numeric/complex">Complex numbers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="valarray.html" title="cpp/numeric/valarray">Numeric arrays</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="random.html" title="cpp/numeric/random">Pseudo-random number generation</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Generic numeric operations
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/iota.html" title="cpp/algorithm/iota">iota</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/accumulate.html" title="cpp/algorithm/accumulate">accumulate</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/inner_product.html" title="cpp/algorithm/inner product">inner_product</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference">adjacent_difference</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/partial_sum.html" title="cpp/algorithm/partial sum">partial_sum</a></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink">Floating-point environment</strong><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Functions
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feclearexcept.html" title="cpp/numeric/fenv/feclearexcept">feclearexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/fetestexcept.html" title="cpp/numeric/fenv/fetestexcept">fetestexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feraiseexcept.html" title="cpp/numeric/fenv/feraiseexcept">feraiseexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feexceptflag.html" title="cpp/numeric/fenv/feexceptflag">fegetexceptflag<br />fesetexceptflag</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feround.html" title="cpp/numeric/fenv/feround">fegetround<br />fesetround</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feenv.html" title="cpp/numeric/fenv/feenv">fegetenv<br />fesetenv</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feholdexcept.html" title="cpp/numeric/fenv/feholdexcept">feholdexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/feupdateenv.html" title="cpp/numeric/fenv/feupdateenv">feupdateenv</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Macro constants
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_ALL_EXCEPT<br />FE_DIVBYZERO<br />FE_INEXACT<br />FE_INVALID<br />FE_OVERFLOW<br />FE_UNDERFLOW</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/FE_round.html" title="cpp/numeric/fenv/FE round">FE_DOWNWARD<br />FE_TONEAREST<br />FE_TOWARDZERO<br />FE_UPWARD</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fenv/FE_DFL_ENV.html" title="cpp/numeric/fenv/FE DFL ENV">FE_DFL_ENV</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Floating-point environment</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/inner_product.html" title="cpp/algorithm/inner product"><span class="t-lines"><span>inner_product</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"><span class="t-lines"><span>adjacent_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/partial_sum.html" title="cpp/algorithm/partial sum"><span class="t-lines"><span>partial_sum</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink">Floating-point environment</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feclearexcept.html" title="cpp/numeric/fenv/feclearexcept"><span class="t-lines"><span>feclearexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/fetestexcept.html" title="cpp/numeric/fenv/fetestexcept"><span class="t-lines"><span>fetestexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feraiseexcept.html" title="cpp/numeric/fenv/feraiseexcept"><span class="t-lines"><span>feraiseexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feexceptflag.html" title="cpp/numeric/fenv/feexceptflag"><span class="t-lines"><span>fegetexceptflag</span><span>fesetexceptflag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feround.html" title="cpp/numeric/fenv/feround"><span class="t-lines"><span>fegetround</span><span>fesetround</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feenv.html" title="cpp/numeric/fenv/feenv"><span class="t-lines"><span>fegetenv</span><span>fesetenv</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feholdexcept.html" title="cpp/numeric/fenv/feholdexcept"><span class="t-lines"><span>feholdexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/feupdateenv.html" title="cpp/numeric/fenv/feupdateenv"><span class="t-lines"><span>feupdateenv</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Macro constants</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions"><span class="t-lines"><span>FE_ALL_EXCEPT</span><span>FE_DIVBYZERO</span><span>FE_INEXACT</span><span>FE_INVALID</span><span>FE_OVERFLOW</span><span>FE_UNDERFLOW</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/FE_round.html" title="cpp/numeric/fenv/FE round"><span class="t-lines"><span>FE_DOWNWARD</span><span>FE_TONEAREST</span><span>FE_TOWARDZERO</span><span>FE_UPWARD</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fenv/FE_DFL_ENV.html" title="cpp/numeric/fenv/FE DFL ENV"><span class="t-lines"><span>FE_DFL_ENV</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>The floating-point environment is the set of floating-point status flags and control modes supported by the implementation. It is thread-local, each thread inherits the initial state of its floating-point environment from the parent thread. Floating-point operations modify the floating-point status flags to indicate abnormal results or auxiliary information. The state of floating-point control modes affects the outcomes of some floating-point operations.
 </p><p>The floating-point environment access and modification is only meaningful when <a href="../preprocessor/impl.html" title="cpp/preprocessor/impl"><tt>
 #pragma STDC FENV_ACCESS</tt></a> is set to <code>ON</code>. Otherwise the implementation is free to assume that floating-point control modes are always the default ones and that floating-point status flags are never tested or modified. In practice, few current compilers support the <code>#pragma</code> explicitly, but most compilers allow meaningful access to the floating-point environment anyway.
@@ -363,139 +246,139 @@
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit&amp;section=1" title="Edit section: Types">edit</a>]</span> <span class="mw-headline" id="Types">Types</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in header <code><a href="../header/cfenv.html" title="cpp/header/cfenv">&lt;cfenv&gt;</a></code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;cfenv&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <span class="mw-geshi cpp source-cpp">fenv_t</span>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">fenv_t</span></span>
 </td>
 <td>  The type representing the entire floating-point environment
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <span class="mw-geshi cpp source-cpp">fexcept_t</span>
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">fexcept_t</span></span>
 </td>
 <td>  The type representing all floating-point status flags collectively
 </td></tr>
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit&amp;section=2" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions">Functions</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feclearexcept.html" title="cpp/numeric/fenv/feclearexcept"> feclearexcept</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feclearexcept.html" title="cpp/numeric/fenv/feclearexcept"> <span class="t-lines"><span>feclearexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   clears the specified floating-point status flags <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feclearexcept&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   clears the specified floating-point status flags <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feclearexcept&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/fetestexcept.html" title="cpp/numeric/fenv/fetestexcept"> fetestexcept</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/fetestexcept.html" title="cpp/numeric/fenv/fetestexcept"> <span class="t-lines"><span>fetestexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   determines which of the specified floating-point status flags are set <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_fetestexcept&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   determines which of the specified floating-point status flags are set <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_fetestexcept&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feraiseexcept.html" title="cpp/numeric/fenv/feraiseexcept"> feraiseexcept</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feraiseexcept.html" title="cpp/numeric/fenv/feraiseexcept"> <span class="t-lines"><span>feraiseexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   raises the specified floating-point exceptions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feraiseexcept&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   raises the specified floating-point exceptions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feraiseexcept&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feexceptflag.html" title="cpp/numeric/fenv/feexceptflag"> fegetexceptflag<br />fesetexceptflag</a></div><div><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feexceptflag.html" title="cpp/numeric/fenv/feexceptflag"> <span class="t-lines"><span>fegetexceptflag</span><span>fesetexceptflag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>  copies the state of the specified floating-point status flags from or to the floating-point environment <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feexceptflag&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  copies the state of the specified floating-point status flags from or to the floating-point environment <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feexceptflag&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feround.html" title="cpp/numeric/fenv/feround"> fegetround<br />fesetround</a></div><div><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feround.html" title="cpp/numeric/fenv/feround"> <span class="t-lines"><span>fegetround</span><span>fesetround</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   gets or sets rounding  direction  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feround&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   gets or sets rounding  direction  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feround&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feenv.html" title="cpp/numeric/fenv/feenv"> fegetenv<br />fesetenv</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feenv.html" title="cpp/numeric/fenv/feenv"> <span class="t-lines"><span>fegetenv</span><span>fesetenv</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>    saves or restores the current floating point environment <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feenv&amp;action=edit">&#91;edit&#93;</a></span>
+<td>    saves or restores the current floating point environment <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feenv&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feholdexcept.html" title="cpp/numeric/fenv/feholdexcept"> feholdexcept</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feholdexcept.html" title="cpp/numeric/fenv/feholdexcept"> <span class="t-lines"><span>feholdexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   saves the environment, clears all status flags and ignores all future errors <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feholdexcept&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   saves the environment, clears all status flags and ignores all future errors <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feholdexcept&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/feupdateenv.html" title="cpp/numeric/fenv/feupdateenv"> feupdateenv</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/feupdateenv.html" title="cpp/numeric/fenv/feupdateenv"> <span class="t-lines"><span>feupdateenv</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   restores the floating-point environment and raises the previously raise exceptions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_feupdateenv&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   restores the floating-point environment and raises the previously raise exceptions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_feupdateenv&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit&amp;section=3" title="Edit section: Macros">edit</a>]</span> <span class="mw-headline" id="Macros">Macros</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions"> FE_ALL_EXCEPT<br />FE_DIVBYZERO<br />FE_INEXACT<br />FE_INVALID<br />FE_OVERFLOW<br />FE_UNDERFLOW</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions"> <span class="t-lines"><span>FE_ALL_EXCEPT</span><span>FE_DIVBYZERO</span><span>FE_INEXACT</span><span>FE_INVALID</span><span>FE_OVERFLOW</span><span>FE_UNDERFLOW</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   floating-point exceptions  <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_FE_exceptions&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   floating-point exceptions  <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_FE_exceptions&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/FE_round.html" title="cpp/numeric/fenv/FE round"> FE_DOWNWARD<br />FE_TONEAREST<br />FE_TOWARDZERO<br />FE_UPWARD</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/FE_round.html" title="cpp/numeric/fenv/FE round"> <span class="t-lines"><span>FE_DOWNWARD</span><span>FE_TONEAREST</span><span>FE_TOWARDZERO</span><span>FE_UPWARD</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   floating-point rounding direction <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_FE_round&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   floating-point rounding direction <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_FE_round&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fenv/FE_DFL_ENV.html" title="cpp/numeric/fenv/FE DFL ENV"> FE_DFL_ENV</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fenv/FE_DFL_ENV.html" title="cpp/numeric/fenv/FE DFL ENV"> <span class="t-lines"><span>FE_DFL_ENV</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   default floating-point environment <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dcl_list_FE_DFL_ENV&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   default floating-point environment <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/fenv/dsc_FE_DFL_ENV&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>The floating-point exceptions are not related to the C++ exceptions. When a floating-point operation raises a floating-point exception, the status of the floating-point environment changes, which can be tested with <span class="mw-geshi cpp source-cpp"><a href="fenv/fetestexcept.html"><span class="kw1152">std::<span class="me2">fetestexcept</span></span></a></span>, but the execution of a C++ program on most implementations continues uninterrupted.
+<p>The floating-point exceptions are not related to the C++ exceptions. When a floating-point operation raises a floating-point exception, the status of the floating-point environment changes, which can be tested with <span class="t-lc"><a href="fenv/fetestexcept.html" title="cpp/numeric/fenv/fetestexcept">std::fetestexcept</a></span>, but the execution of a C++ program on most implementations continues uninterrupted.
 </p><p>There are compiler extensions that may be used to generate C++ exceptions automatically whenever a floating-point exception is raised:
 </p>
 <ul><li> GNU libc function <code><a rel="nofollow" class="external text" href="http://www.gnu.org/s/hello/manual/libc/Control-Functions.html">feenableexcept()</a></code> enables trapping of the floating-point exceptions, which generates the signal <code>SIGFPE</code>. If the compiler option <code>-fnon-call-exceptions</code> was used, the handler for that signal may throw a user-defined C++ exception.
@@ -504,17 +387,19 @@
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 2500/1000000
-Post-expand include size: 89780/2097152 bytes
-Template argument size: 17546/2097152 bytes
+Preprocessor visited node count: 3044/1000000
+Preprocessor generated node count: 4852/1000000
+Post‐expand include size: 125095/2097152 bytes
+Template argument size: 23078/2097152 bytes
+Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2710-0!*!0!!en!*!* and timestamp 20130207030024 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2710-0!*!0!!en!*!* and timestamp 20130911072156 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=44476">http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=44476</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=58506">http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=58506</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -537,7 +422,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/numeric/fenv" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/numeric/fenv" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=44476" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/numeric/fenv" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/numeric/fenv" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;oldid=58506" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -545,8 +430,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/fenv" title="cpp/numeric/fenv" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 2 November 2012, at 22:40.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,698 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:16.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 1,953 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -555,36 +440,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 0.901 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.138 secs. -->        
 	</body>
-<!-- Cached 20130207030024 -->
+<!-- Cached 20130911072156 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/numeric/fenv by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:09 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/numeric/fenv by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:34 GMT -->
 </html>

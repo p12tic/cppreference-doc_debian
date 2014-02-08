@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/io/c/fprintf by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:12:57 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/io/c/fprintf by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:52:30 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::printf, std::fprintf, std::sprintf, std::snprintf - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit" />
 <link rel="shortcut icon" href="../../../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/io/c/fprintf", "wgTitle": "cpp/io/c/fprintf", "wgCurRevisionId": 43285, "wgArticleId": 581, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c/fprintf","wgTitle":"cpp/io/c/fprintf","wgCurRevisionId":66817,"wgArticleId":581,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/c/fprintf","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
 <style type="text/css">/*<![CDATA[*/
 .source-cpp {line-height: normal;}
 .source-cpp li, .source-cpp pre {
@@ -104,12 +107,13 @@
 
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_c_fprintf action-view skin-cppreference2 cpp-navbar">
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_io_c_fprintf skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
                 <div id="cpp-head-first">
-                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
                     <div id="cpp-head-search">
                         
 <!-- 0 -->
@@ -118,7 +122,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -128,7 +132,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fc%2Ffprintf" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fc%2Ffprintf&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fio%2Fc%2Ffprintf" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -144,7 +152,7 @@
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="fprintf.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/c/fprintf&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:cpp/io/c/fprintf"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -204,513 +212,158 @@
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a> | <a href="../../io.html" title="cpp/io">io</a> | <a href="../c.html" title="cpp/io/c">c</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../io.html" title="cpp/io">io</a>&lrm; | <a href="../c.html" title="cpp/io/c">c</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="../../language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5">  <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../c.html" title="cpp/io/c"> C-style I/O</a>
-</td></tr>
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Buffers
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_streambuf.html" title="cpp/io/basic streambuf">basic_streambuf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">basic_filebuf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringbuf.html" title="cpp/io/basic stringbuf">basic_stringbuf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstreambuf.html" title="cpp/io/strstreambuf">strstreambuf</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Streams
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Abstractions
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ios_base.html" title="cpp/io/ios base">ios_base</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ios.html" title="cpp/io/basic ios">basic_ios</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istream.html" title="cpp/io/basic istream">basic_istream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostream.html" title="cpp/io/basic ostream">basic_ostream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_iostream.html" title="cpp/io/basic iostream">basic_iostream</a></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  File I/O
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ifstream.html" title="cpp/io/basic ifstream">basic_ifstream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ofstream.html" title="cpp/io/basic ofstream">basic_ofstream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_fstream.html" title="cpp/io/basic fstream">basic_fstream</a></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  String I/O
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_istringstream.html" title="cpp/io/basic istringstream">basic_istringstream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_ostringstream.html" title="cpp/io/basic ostringstream">basic_ostringstream</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../basic_stringstream.html" title="cpp/io/basic stringstream">basic_stringstream</a></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Array I/O
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../istrstream.html" title="cpp/io/istrstream">istrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ostrstream.html" title="cpp/io/ostrstream">ostrstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../strstream.html" title="cpp/io/strstream">strstream</a></td><td><span class="t-mark">(deprecated)</span></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Types
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamoff.html" title="cpp/io/streamoff">streamoff</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../streamsize.html" title="cpp/io/streamsize">streamsize</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../fpos.html" title="cpp/io/fpos">fpos</a></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Error category interface
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../iostream_category.html" title="cpp/io/iostream category">iostream_category</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../io_errc.html" title="cpp/io/io errc">io_errc</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../c.html" title="cpp/io/c"> C-style I/O</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Functions
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  File access
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fopen.html" title="cpp/io/c/fopen">fopen</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="freopen.html" title="cpp/io/c/freopen">freopen</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fclose.html" title="cpp/io/c/fclose">fclose</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fflush.html" title="cpp/io/c/fflush">fflush</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fwide.html" title="cpp/io/c/fwide">fwide</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setbuf.html" title="cpp/io/c/setbuf">setbuf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="setvbuf.html" title="cpp/io/c/setvbuf">setvbuf</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Direct input/output
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fread.html" title="cpp/io/c/fread">fread</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fwrite.html" title="cpp/io/c/fwrite">fwrite</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Unformatted input/output
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fgetc.html" title="cpp/io/c/fgetc">fgetc</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fgets.html" title="cpp/io/c/fgets">fgets</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fputc.html" title="cpp/io/c/fputc">fputc</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fputs.html" title="cpp/io/c/fputs">fputs</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="getchar.html" title="cpp/io/c/getchar">getchar</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="gets.html" title="cpp/io/c/gets">gets</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="putchar.html" title="cpp/io/c/putchar">putchar</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="puts.html" title="cpp/io/c/puts">puts</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ungetc.html" title="cpp/io/c/ungetc">ungetc</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fgetwc.html" title="cpp/io/c/fgetwc">fgetwc</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fgetws.html" title="cpp/io/c/fgetws">fgetws</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fputwc.html" title="cpp/io/c/fputwc">fputwc</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fputws.html" title="cpp/io/c/fputws">fputws</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="getwchar.html" title="cpp/io/c/getwchar">getwchar</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="putwchar.html" title="cpp/io/c/putwchar">putwchar</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ungetwc.html" title="cpp/io/c/ungetwc">ungetwc</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Formatted input/output
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fscanf.html" title="cpp/io/c/fscanf">scanf<br />fscanf<br />sscanf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="vfscanf.html" title="cpp/io/c/vfscanf">vscanf<br />vfscanf<br />vsscanf</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">printf<br />fprintf<br />sprintf<br />snprintf</strong></td><td><br /><br /><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="vfprintf.html" title="cpp/io/c/vfprintf">vprintf<br />vfprintf<br />vsprintf<br />vsnprintf</a></td><td><br /><br /><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fwscanf.html" title="cpp/io/c/fwscanf">wscanf<br />fwscanf<br />swscanf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="vfwscanf.html" title="cpp/io/c/vfwscanf">vwscanf<br />vfwscanf<br />vswscanf</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fwprintf.html" title="cpp/io/c/fwprintf">wprintf<br />fwprintf<br />swprintf</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="vfwprintf.html" title="cpp/io/c/vfwprintf">vwprintf<br />vfwprintf<br />vswprintf</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  File positioning
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ftell.html" title="cpp/io/c/ftell">ftell</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fgetpos.html" title="cpp/io/c/fgetpos">fgetpos</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fseek.html" title="cpp/io/c/fseek">fseek</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="fsetpos.html" title="cpp/io/c/fsetpos">fsetpos</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="rewind.html" title="cpp/io/c/rewind">rewind</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Error handling
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="clearerr.html" title="cpp/io/c/clearerr">clearerr</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="feof.html" title="cpp/io/c/feof">feof</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="ferror.html" title="cpp/io/c/ferror">ferror</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="perror.html" title="cpp/io/c/perror">perror</a></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Operations on files
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="remove.html" title="cpp/io/c/remove">remove</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="rename.html" title="cpp/io/c/rename">rename</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tmpfile.html" title="cpp/io/c/tmpfile">tmpfile</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tmpnam.html" title="cpp/io/c/tmpnam">tmpnam</a></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<table class="t-ddcl-list">
-<tr class="t-ddcl-list-header">
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Buffers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_streambuf.html" title="cpp/io/basic streambuf"><span class="t-lines"><span>basic_streambuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_filebuf.html" title="cpp/io/basic filebuf"><span class="t-lines"><span>basic_filebuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_stringbuf.html" title="cpp/io/basic stringbuf"><span class="t-lines"><span>basic_stringbuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../strstreambuf.html" title="cpp/io/strstreambuf"><span class="t-lines"><span>strstreambuf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Streams </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Abstractions </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ios_base.html" title="cpp/io/ios base"><span class="t-lines"><span>ios_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_ios.html" title="cpp/io/basic ios"><span class="t-lines"><span>basic_ios</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_istream.html" title="cpp/io/basic istream"><span class="t-lines"><span>basic_istream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_ostream.html" title="cpp/io/basic ostream"><span class="t-lines"><span>basic_ostream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_iostream.html" title="cpp/io/basic iostream"><span class="t-lines"><span>basic_iostream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> File I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_ifstream.html" title="cpp/io/basic ifstream"><span class="t-lines"><span>basic_ifstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_ofstream.html" title="cpp/io/basic ofstream"><span class="t-lines"><span>basic_ofstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_fstream.html" title="cpp/io/basic fstream"><span class="t-lines"><span>basic_fstream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> String I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_istringstream.html" title="cpp/io/basic istringstream"><span class="t-lines"><span>basic_istringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_ostringstream.html" title="cpp/io/basic ostringstream"><span class="t-lines"><span>basic_ostringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_stringstream.html" title="cpp/io/basic stringstream"><span class="t-lines"><span>basic_stringstream</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Array I/O </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../istrstream" title="cpp/io/istrstream"><span class="t-lines"><span>istrstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ostrstream.html" title="cpp/io/ostrstream"><span class="t-lines"><span>ostrstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../strstream.html" title="cpp/io/strstream"><span class="t-lines"><span>strstream</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Types </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../streamoff.html" title="cpp/io/streamoff"><span class="t-lines"><span>streamoff</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../streamsize.html" title="cpp/io/streamsize"><span class="t-lines"><span>streamsize</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../fpos.html" title="cpp/io/fpos"><span class="t-lines"><span>fpos</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Error category interface </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../iostream_category.html" title="cpp/io/iostream category"><span class="t-lines"><span>iostream_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../io_errc.html" title="cpp/io/io errc"><span class="t-lines"><span>io_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../c.html" title="cpp/io/c"> C-style I/O</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> File access</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fopen.html" title="cpp/io/c/fopen"><span class="t-lines"><span>fopen</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="freopen.html" title="cpp/io/c/freopen"><span class="t-lines"><span>freopen</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fclose.html" title="cpp/io/c/fclose"><span class="t-lines"><span>fclose</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fflush" title="cpp/io/c/fflush"><span class="t-lines"><span>fflush</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fwide.html" title="cpp/io/c/fwide"><span class="t-lines"><span>fwide</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="setbuf.html" title="cpp/io/c/setbuf"><span class="t-lines"><span>setbuf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="setvbuf.html" title="cpp/io/c/setvbuf"><span class="t-lines"><span>setvbuf</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Direct input/output</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fread.html" title="cpp/io/c/fread"><span class="t-lines"><span>fread</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fwrite.html" title="cpp/io/c/fwrite"><span class="t-lines"><span>fwrite</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Unformatted input/output</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fgetc.html" title="cpp/io/c/fgetc"><span class="t-lines"><span>fgetc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fgets.html" title="cpp/io/c/fgets"><span class="t-lines"><span>fgets</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputc.html" title="cpp/io/c/fputc"><span class="t-lines"><span>fputc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputs.html" title="cpp/io/c/fputs"><span class="t-lines"><span>fputs</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="getchar.html" title="cpp/io/c/getchar"><span class="t-lines"><span>getchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="putchar.html" title="cpp/io/c/putchar"><span class="t-lines"><span>putchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="puts.html" title="cpp/io/c/puts"><span class="t-lines"><span>puts</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ungetc.html" title="cpp/io/c/ungetc"><span class="t-lines"><span>ungetc</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fgetwc.html" title="cpp/io/c/fgetwc"><span class="t-lines"><span>fgetwc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fgetws.html" title="cpp/io/c/fgetws"><span class="t-lines"><span>fgetws</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputwc.html" title="cpp/io/c/fputwc"><span class="t-lines"><span>fputwc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputws.html" title="cpp/io/c/fputws"><span class="t-lines"><span>fputws</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="getwchar.html" title="cpp/io/c/getwchar"><span class="t-lines"><span>getwchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="putwchar.html" title="cpp/io/c/putwchar"><span class="t-lines"><span>putwchar</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ungetwc.html" title="cpp/io/c/ungetwc"><span class="t-lines"><span>ungetwc</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Formatted input/output</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fscanf.html" title="cpp/io/c/fscanf"><span class="t-lines"><span>scanf</span><span>fscanf</span><span>sscanf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="vfscanf.html" title="cpp/io/c/vfscanf"><span class="t-lines"><span>vscanf</span><span>vfscanf</span><span>vsscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>printf</span><span>fprintf</span><span>sprintf</span><span>snprintf</span></span></strong></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="vfprintf.html" title="cpp/io/c/vfprintf"><span class="t-lines"><span>vprintf</span><span>vfprintf</span><span>vsprintf</span><span>vsnprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fwscanf.html" title="cpp/io/c/fwscanf"><span class="t-lines"><span>wscanf</span><span>fwscanf</span><span>swscanf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="vfwscanf.html" title="cpp/io/c/vfwscanf"><span class="t-lines"><span>vwscanf</span><span>vfwscanf</span><span>vswscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fwprintf.html" title="cpp/io/c/fwprintf"><span class="t-lines"><span>wprintf</span><span>fwprintf</span><span>swprintf</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="vfwprintf.html" title="cpp/io/c/vfwprintf"><span class="t-lines"><span>vwprintf</span><span>vfwprintf</span><span>vswprintf</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> File positioning</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ftell.html" title="cpp/io/c/ftell"><span class="t-lines"><span>ftell</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fgetpos.html" title="cpp/io/c/fgetpos"><span class="t-lines"><span>fgetpos</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fseek.html" title="cpp/io/c/fseek"><span class="t-lines"><span>fseek</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fsetpos.html" title="cpp/io/c/fsetpos"><span class="t-lines"><span>fsetpos</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rewind.html" title="cpp/io/c/rewind"><span class="t-lines"><span>rewind</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Error handling</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="clearerr.html" title="cpp/io/c/clearerr"><span class="t-lines"><span>clearerr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="feof.html" title="cpp/io/c/feof"><span class="t-lines"><span>feof</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ferror.html" title="cpp/io/c/ferror"><span class="t-lines"><span>ferror</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="perror.html" title="cpp/io/c/perror"><span class="t-lines"><span>perror</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Operations on files</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="remove.html" title="cpp/io/c/remove"><span class="t-lines"><span>remove</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rename.html" title="cpp/io/c/rename"><span class="t-lines"><span>rename</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tmpfile.html" title="cpp/io/c/tmpfile"><span class="t-lines"><span>tmpfile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tmpnam.html" title="cpp/io/c/tmpnam"><span class="t-lines"><span>tmpnam</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../../header/cstdio.html" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> printf<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fprintf<span class="br0">&#40;</span> <span class="kw4">FILE</span><span class="sy2">*</span> stream, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fprintf<span class="br0">&#40;</span> FILE<span class="sy2">*</span> stream, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> sprintf<span class="br0">&#40;</span> <span class="kw4">char</span><span class="sy2">*</span> buffer, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (3) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> snprintf<span class="br0">&#40;</span> <span class="kw4">char</span><span class="sy2">*</span> buffer, <span class="kw4">int</span> buf_size, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (4) </td>
-<td> <span class="t-mark">(since C++11)</span> </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-</table>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
 <p>Loads the data from the given locations, converts them to character string equivalents and writes the results to a variety of sinks.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Writes the results to <span class="mw-geshi cpp source-cpp"><span class="kw2">stdout</span></span>.</div>
+<div class="t-li1"><span class="t-li">1)</span> Writes the results to <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdout</a></span>.</div>
 <div class="t-li1"><span class="t-li">2)</span> Writes the results to a file stream <code>stream</code>.</div>
 <div class="t-li1"><span class="t-li">3)</span> Writes the results to a character string <code>buffer</code>.</div>
 <div class="t-li1"><span class="t-li">4)</span> Writes the results to a character string <code>buffer</code>. At most <code>buf_size</code> - 1 characters are written. The resulting character string will be terminated with a null character, unless <code>buf_size</code> is zero. </div>
@@ -723,37 +376,37 @@
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
-<table class="t-param-list">
+<table class="t-par-begin">
 
 
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  stream
 </td>
 <td> -
 </td>
 <td>  output file stream to write to
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  buffer
 </td>
 <td> -
 </td>
 <td>  pointer to a character string to write to
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  buf_size
 </td>
 <td> -
 </td>
 <td>  up to buf_size - 1 characters may be written, plus the null terminator
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  format
 </td>
 <td> -
 </td>
 <td>  pointer to a null-terminated multibyte string specifying how to interpret the data.
-<p>The format string consists of whitespace characters, non-whitespace characters (except <code><b>%</b></code>) and conversion specifications. Each conversion specification has the following format:
+<p>The format string consists of ordinary characters (except <code><b>%</b></code>), which are copied unchanged into the output stream, and conversion specifications. Each conversion specification has the following format:
 </p>
 <dl><dd><ul><li> introductory <code><b>%</b></code> character
 </li></ul>
@@ -768,10 +421,10 @@
 </li></ul>
 </dd></dl>
 </dd></dl>
-<dl><dd><ul><li> <span class="t-mark">(optional)</span> integer value or <code>*</code> that specifies minimum field width. The result is padded with <i>space</i> characters (by default), if required, on the left when right-justified, or on the right if left-justified. In the case when <code>*</code> is used, the width is specified by an additional argument of type <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>. If the value of the argument is negative, it results with the <code>-</code> flag specified and positive field width.
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> integer value or <code>*</code> that specifies minimum field width. The result is padded with <i>space</i> characters (by default), if required, on the left when right-justified, or on the right if left-justified. In the case when <code>*</code> is used, the width is specified by an additional argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>. If the value of the argument is negative, it results with the <code>-</code> flag specified and positive field width.
 </li></ul>
 </dd></dl>
-<dl><dd><ul><li> <span class="t-mark">(optional)</span> <code><b>.</b></code> followed by integer number or <code><b>*</b></code> that specifies <i>precision</i> of the conversion. In the case when <code>*</code> is used, the <i>precision</i> is specified by an additional argument of type <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span>. If the value of this argument is negative, it is ignored. See the table below for exact effects of <i>precision</i>.
+<dl><dd><ul><li> <span class="t-mark">(optional)</span> <code><b>.</b></code> followed by integer number or <code><b>*</b></code> that specifies <i>precision</i> of the conversion. In the case when <code>*</code> is used, the <i>precision</i> is specified by an additional argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>. If the value of this argument is negative, it is ignored. See the table below for exact effects of <i>precision</i>.
 </li></ul>
 </dd></dl>
 <dl><dd><ul><li> <span class="t-mark">(optional)</span> <i>length modifier</i> that specifies the size of the argument
@@ -844,9 +497,9 @@
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span></span>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -871,9 +524,9 @@
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span><span class="sy2">*</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span><span class="sy2">*</span></span></span>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -891,25 +544,25 @@
 <td style="text-align:left;">
 <dl><dd>converts a signed <b>decimal integer</b> in the style <i>[-]dddd</i>.
 </dd></dl>
-<p><i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span>.<br /> 
-If both the converted value and the precision are <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> the conversion results in no characters.
+<p><i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>.<br /> 
+If both the converted value and the precision are <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> the conversion results in no characters.
 </p>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span></div></div>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">short</span></span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">short</span></span></span></div></div>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">int</span></span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">int</span></span></span></div></div>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">long</span></span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">long</span></span></span></div></div>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">long</span> <span class="kw4">long</span></span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span></div></div>
 </td>
-<td rowspan="3"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp">intmax_t</span></div></div>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp">intmax_t</span></span></div></div>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp">size_t</span></div></div>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp">size_t</span></span></div></div>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp">ptrdiff_t</span></div></div>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp">ptrdiff_t</span></span></div></div>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td></tr>
@@ -919,10 +572,10 @@ If both the converted value and the precision are <span class="mw-geshi cpp sour
 <td style="text-align:left;">
 <dl><dd>converts a signed <b>octal integer</b> in the style <i>[-]oooo</i>.
 </dd></dl>
-<p><i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span>. 
-If both the converted value and the precision are <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> the conversion results in no characters.
+<p><i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>. 
+If both the converted value and the precision are <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> the conversion results in no characters.
 In the <i>alternative implementation</i> precision is increased if necessary, to write one leading zero.
-In that case if both the converted value and the precision are <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>, single <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> is written.
+In that case if both the converted value and the precision are <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, single <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is written.
 </p>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
@@ -935,10 +588,22 @@ In that case if both the converted value and the precision are <span class="mw-g
 </dd></dl>
 <p>For the <code><b>x</b></code> conversion letters <code>abcdef</code> are used.<br />
 For the <code><b>X</b></code> conversion letters <code>ABCDEF</code> are used.<br />
-<i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span>.
-If both the converted value and the precision are <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> the conversion results in no characters.
+<i>Precision</i> specifies the minimum number of digits to appear. The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>.
+If both the converted value and the precision are <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> the conversion results in no characters.
 In the <i>alternative implementation</i> <code><b>0x</b></code> or <code><b>0X</b></code> is prefixed to results if the converted value is nonzero.
 </p>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span></div></div>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span></div></div>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span></div></div>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span></div></div>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span></div></div>
+</td>
+<td rowspan="2"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp">uintmax_t</span></span></div></div>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td></tr>
@@ -949,21 +614,9 @@ In the <i>alternative implementation</i> <code><b>0x</b></code> or <code><b>0X</
 <dl><dd>converts an <b>unsigned decimal integer</b> in the style <i>dddd</i>.
 </dd></dl>
 <p><i>Precision</i> specifies the minimum number of digits to appear. 
-The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span>. 
-If both the converted value and the precision are <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span> the conversion results in no characters.
+The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>. 
+If both the converted value and the precision are <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> the conversion results in no characters.
 </p>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></div></div>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></div></div>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></div></div>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></div></div>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></div></div>
-</td>
-<td> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp">uintmax_t</span></div></div>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td></tr>
@@ -974,7 +627,7 @@ If both the converted value and the precision are <span class="mw-geshi cpp sour
 <dl><dd>converts <b>floating-point number</b> to the decimal notation in the style <i>[-]ddd.ddd</i>.
 </dd></dl>
 <p><i>Precision</i> specifies the minimum number of digits to appear after the decimal point character. 
-The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span>.
+The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span></span>.
 In the <i>alternative implementation</i> decimal point character is written even if no digits follow it.
 For infinity and not-a-number conversion style see notes.
 </p>
@@ -983,11 +636,9 @@ For infinity and not-a-number conversion style see notes.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></div></div>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span></div></div>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></div></div>
-</td>
-<td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span></div></div>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -995,7 +646,9 @@ For infinity and not-a-number conversion style see notes.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></div></div>
+<td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
+</td>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span></div></div>
 </td></tr>
 <tr>
 <th> <code>e</code> <br /> <code>E</code>
@@ -1006,9 +659,9 @@ For infinity and not-a-number conversion style see notes.
 <p>For the <code><b>e</b></code> conversion style <i>[-]d.ddd</i><code><b>e</b></code><i>±dd</i> is used.<br />
 For the <code><b>E</b></code> conversion style <i>[-]d.ddd</i><code><b>E</b></code><i>±dd</i> is used.<br />
 The exponent contains at least two digits, more digits are used only if necessary. 
-If the value is <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>, the exponent is also <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>.
+If the value is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, the exponent is also <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>.
 <i>Precision</i> specifies the minimum number of digits to appear after the decimal point character.
-The default precision is <span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span>.
+The default precision is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span></span>.
 In the <i>alternative implementation</i> decimal point character is written even if no digits follow it.
 For infinity and not-a-number conversion style see notes.
 </p>
@@ -1034,7 +687,7 @@ For infinity and not-a-number conversion style see notes.
 <p>For the <code><b>a</b></code> conversion style <i>[-]</i><code><b>0x</b></code><i>h.hhh</i><code><b>p</b></code><i>±d</i> is used.<br />
 For the <code><b>A</b></code> conversion style <i>[-]</i><code><b>0X</b></code><i>h.hhh</i><code><b>P</b></code><i>±d</i> is used.<br />
 The first hexadecimal digit is <code>0</code> if the argument is not a normalized floating point value.
-If the value is <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>, the exponent is also <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>.
+If the value is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, the exponent is also <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>.
 <i>Precision</i> specifies the minimum number of digits to appear after the decimal point character.
 The default precision is sufficient for exact representation of the value.
 In the <i>alternative implementation</i> decimal point character is written even if no digits follow it.
@@ -1061,7 +714,7 @@ For infinity and not-a-number conversion style see notes.
 </dd></dl>
 <p>For the <code><b>g</b></code> conversion style conversion with style <code><b>e</b></code> or <code><b>f</b></code> will be performed.<br />
 For the <code><b>G</b></code> conversion style conversion with style <code><b>E</b></code> or <code><b>F</b></code> will be performed.<br />
-Let <code>P</code> equal the precision if nonzero, <span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span> if the precision is not specified, or <span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span> if the precision is <span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span>. Then, if a conversion with style <code>E</code> would have an exponent of <code>X</code>:
+Let <code>P</code> equal the precision if nonzero, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">6</span></span></span> if the precision is not specified, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> if the precision is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>. Then, if a conversion with style <code>E</code> would have an exponent of <code>X</code>:
 </p>
 <ul><li> if <i>P &gt; X ≥ −4</i>, the conversion is with style <code><b>f</b></code> or <code><b>F</b></code> and precision <i>P − 1 − X</i>.
 </li><li> otherwise, the conversion is with style <code><b>e</b></code> or <code><b>E</b></code> and precision <i>P − 1</i>.
@@ -1096,7 +749,7 @@ The complete specification must be <code><b>%n</b></code>.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">int</span><span class="sy2">*</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span><span class="sy2">*</span></span></span>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -1119,7 +772,7 @@ The complete specification must be <code><b>%n</b></code>.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
-<td> <span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -1139,114 +792,138 @@ The complete specification must be <code><b>%n</b></code>.
 </dd></dl>
 <p>The floating point conversion functions convert infinity to <code>inf</code> or <code>infinity</code>. Which one is used is implementation defined.<br />
 Not-a-number is converted to <code>nan</code> or <code>nan(<i>char_sequence</i>)</code>. Which one is used is implementation defined.<br />
-The conversions <code><b>F</b></code>, <code><b>E</b></code>, <code><b>G</b></code>, <code><b>A</b></code> output <code>INF</code>, <code>INFINITY</code>, <code>NAN</code> instead.
+The conversions <code><b>F</b></code>, <code><b>E</b></code>, <code><b>G</b></code>, <code><b>A</b></code> output <code>INF</code>, <code>INFINITY</code>, <code>NAN</code> instead.<br />
+The correct conversion specifiers for the fixed-width character types (<span class="t-lc">std:int8_t</span>, etc) are defined in the header <a href="../../types/integer.html" title="cpp/types/integer">&lt;cinttypes&gt;</a>
 </p>
 </td></tr></table>
 <p><br />
 </p>
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  ...
 </td>
 <td> -
 </td>
-<td>  arguments specifying data to print
+<td>  arguments specifying data to print. If any argument is not the type expected by the corresponding conversion specifier, or if there are less arguments than required by <code>format</code>, the behavior is undefined. If there are more arguments than required by <code>format</code>, the extraneous arguments are evaluated and ignored
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<div class="t-li1"><span class="t-li">1-3)</span> Number of characters written if successful or negative value if an error occurred.</div>
-<div class="t-li1"><span class="t-li">4)</span> Number of characters written if successful or negative value if an error occurred. If the resulting string gets truncated due to <code>buf_size</code> limit, function returns the total number of characters (not including the terminating null-byte) which would have been written, if the limit was not imposed. </div>
+<div class="t-li1"><span class="t-li">1-2)</span> Number of characters written if successful or negative value if an error occurred.</div>
+<div class="t-li1"><span class="t-li">3)</span> Number of characters written if successful (not including the terminating null-byte) or negative value if an error occurred.</div>
+<div class="t-li1"><span class="t-li">4)</span> Number of characters written if successful (not including the terminating null-byte) or negative value if an error occurred. If the resulting string gets truncated due to <code>buf_size</code> limit, function returns the total number of characters (not including the terminating null-byte) which would have been written, if the limit was not imposed. </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3ocAZcCTNtg8QTb0QTmE9UcFBLqeKPbH8tG789JemrwPrjMEdX5ODULAXTWgCF5cScVC3IZByxOAH01h-17x3KAzzimChbaIjyXfUz8-zicq8i1vAc6BN9g0O_klqv1qo532Rbu-xDzhs-UdvjsLyto3trTRvRNxMka7yvQG7900Wne4oDnjr4SJSjXbdFJt5YEFpX9QmOvOvaMkqSD_uV6l3c4wHFlJp2NBFnKGUpc2Tmxhj7X-z_D4bYjMyW-VUHIyO12uDbPjZf7RrLafmJacTVgQS36xarkkc_Za7RjwJkJscri0t1xbsbsdwSY-kQycU7ZGrWJ1Bz9rAvbbqHUmdu1SIMuvYSC1QrS8FpvxLrAVz70dF27IRWUSvCVrpZwShEDsPnucGYDEylix1gt6FIXXjMbLdQ==' class='external text'>run this code</a></div>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;limits&gt;</span>
+<span class="co2">#include &lt;cstdint&gt;</span>
+<span class="co2">#include &lt;cinttypes&gt;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Strings:<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Strings:<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
     <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s <span class="sy1">=</span> <span class="st0">&quot;Hello&quot;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\t</span>.%10s.<span class="es1">\n</span><span class="es1">\t</span>.%-10s.<span class="es1">\n</span><span class="es1">\t</span>.%*s.<span class="es1">\n</span>&quot;</span>, s, s, <span class="nu0">10</span>, s<span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\t</span>.%10s.<span class="es1">\n</span><span class="es1">\t</span>.%-10s.<span class="es1">\n</span><span class="es1">\t</span>.%*s.<span class="es1">\n</span>&quot;</span>, s, s, <span class="nu0">10</span>, s<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Characters:<span class="es1">\t</span>%c&#160;%%<span class="es1">\n</span>&quot;</span>, <span class="nu0">65</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Characters:<span class="es1">\t</span>%c&#160;%%<span class="es1">\n</span>&quot;</span>, <span class="nu0">65</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Integers<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Decimal:<span class="es1">\t</span>%i&#160;%d&#160;%.6i&#160;%i&#160;%.0i&#160;%+i&#160;%u<span class="es1">\n</span>&quot;</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">4</span>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Hexadecimal:<span class="es1">\t</span>%x&#160;%x&#160;%X&#160;%#x<span class="es1">\n</span>&quot;</span>, <span class="nu0">5</span>, <span class="nu0">10</span>, <span class="nu0">10</span>, <span class="nu0">6</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Octal:<span class="es1">\t</span>%o&#160;%#o&#160;%#o<span class="es1">\n</span>&quot;</span>, <span class="nu0">10</span>, <span class="nu0">10</span>, <span class="nu0">4</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Integers<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Decimal:<span class="es1">\t</span>%i&#160;%d&#160;%.6i&#160;%i&#160;%.0i&#160;%+i&#160;%u<span class="es1">\n</span>&quot;</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">4</span>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Hexadecimal:<span class="es1">\t</span>%x&#160;%x&#160;%X&#160;%#x<span class="es1">\n</span>&quot;</span>, <span class="nu0">5</span>, <span class="nu0">10</span>, <span class="nu0">10</span>, <span class="nu0">6</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Octal:<span class="es1">\t</span>%o&#160;%#o&#160;%#o<span class="es1">\n</span>&quot;</span>, <span class="nu0">10</span>, <span class="nu0">10</span>, <span class="nu0">4</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Floating point<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Rounding:<span class="es1">\t</span>%f&#160;%.0f&#160;%.32f<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span>, <span class="nu16">1.3</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Padding:<span class="es1">\t</span>%05.2f&#160;%.2f&#160;%5.2f<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Scientific:<span class="es1">\t</span>%E&#160;%e<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fprintf.html"><span class="kw1512">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;Hexadecimal:<span class="es1">\t</span>%a&#160;%A<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Floating point<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Rounding:<span class="es1">\t</span>%f&#160;%.0f&#160;%.32f<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span>, <span class="nu16">1.3</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Padding:<span class="es1">\t</span>%05.2f&#160;%.2f&#160;%5.2f<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Scientific:<span class="es1">\t</span>%E&#160;%e<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Hexadecimal:<span class="es1">\t</span>%a&#160;%A<span class="es1">\n</span>&quot;</span>, <span class="nu16">1.5</span>, <span class="nu16">1.5</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Special values:<span class="es1">\t</span>0/0=%g 1/0=%g<span class="es1">\n</span>&quot;</span>, <span class="nu0">0</span>.<span class="sy2">/</span><span class="nu0">0</span>, <span class="nu0">1</span>.<span class="sy2">/</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Variable width control:<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;right-justified variable width: '%*c'<span class="es1">\n</span>&quot;</span>, <span class="nu0">5</span>, <span class="st0">'x'</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> r <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;left-justified variable width&#160;: '%*c'<span class="es1">\n</span>&quot;</span>, <span class="sy2">-</span><span class="nu0">5</span>, <span class="st0">'x'</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;(the last printf printed&#160;%d characters)<span class="es1">\n</span>&quot;</span>, r<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// fixed-width types</span>
+    <a href="../../types/integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a> val <span class="sy1">=</span> <a href="../../types/numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span><a href="../../types/integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">printf</span><span class="br0">&#40;</span><span class="st0">&quot;Largest 32-bit value is&#160;%&quot;</span> <a href="../../types/integer.html"><span class="kw206">PRIu32</span></a> <span class="st0">&quot; or&#160;%#&quot;</span> <a href="../../types/integer.html"><span class="kw234">PRIx32</span></a> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span>, val, val<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Strings:
-    .     Hello.
-    .Hello     .
-    .     Hello.
+        .     Hello.
+        .Hello     .
+        .     Hello.
 Characters:     A&#160;%
 Integers
 Decimal:        1 2 000003 0  +4 4294967295
 Hexadecimal:    5 a A 0x6
-Octal:          12 012 04
+Octal:  12 012 04
 Floating point
 Rounding:       1.500000 2 1.30000000000000004440892098500626
 Padding:        01.50 1.50  1.50
 Scientific:     1.500000E+00 1.500000e+00
-Hexadecimal:    0x1.8p+0 0X1.8P+0</pre></div></div> 
+Hexadecimal:    0x1.8p+0 0X1.8P+0
+Special values: 0/0=nan 1/0=inf
+Variable width control:
+right-justified variable width: '    x'
+left-justified variable width&#160;: 'x    '
+(the last printf printed 40 characters)
+Largest 32-bit value is 4294967295 or 0xffffffff</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="vfprintf.html" title="cpp/io/c/vfprintf"> vprintf<br />vfprintf<br />vsprintf<br />vsnprintf</a></div><div><br /><br /><br /><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="vfprintf.html" title="cpp/io/c/vfprintf"> <span class="t-lines"><span>vprintf</span><span>vfprintf</span><span>vsprintf</span><span>vsnprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   prints formatted output to <span class="mw-geshi cpp source-cpp"><span class="kw2">stdout</span></span>, a file stream or a buffer<br /> using variable argument list  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dcl_list_vfprintf&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   prints formatted output to <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdout</a></span>, a file stream or a buffer<br /> using variable argument list  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_vfprintf&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fputs.html" title="cpp/io/c/fputs"> fputs</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fputs.html" title="cpp/io/c/fputs"> <span class="t-lines"><span>fputs</span></span></a></div></div>
 </td>
-<td>   writes a character string to a file stream <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dcl_list_fputs&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   writes a character string to a file stream <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_fputs&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="fscanf.html" title="cpp/io/c/fscanf"> scanf<br />fscanf<br />sscanf</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fscanf.html" title="cpp/io/c/fscanf"> <span class="t-lines"><span>scanf</span><span>fscanf</span><span>sscanf</span></span></a></div></div>
 </td>
-<td>   reads formatted input from <span class="mw-geshi cpp source-cpp"><span class="kw2">stdin</span></span>, a file stream or a buffer <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dcl_list_fscanf&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   reads formatted input from <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span>, a file stream or a buffer <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_fscanf&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td colspan="2"> <div class="t-dcl-list-see"><span><a href="../../../c/io/fprintf.html" title="c/io/fprintf">C documentation</a></span> for <span class="t-dcl-list-see-monospace"><span>printf</span>, <span>fprintf</span>, <span>sprintf</span>, <span>snprintf</span></span></div>
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../../../c/io/fprintf.html" title="c/io/fprintf">C documentation</a></span> for <span class="t-dsc-see-tt"><span>printf</span>, <span>fprintf</span>, <span>sprintf</span>, <span>snprintf</span></span></div>
 </td></tr>
 
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 6383/1000000
-Post-expand include size: 160759/2097152 bytes
-Template argument size: 44498/2097152 bytes
+Preprocessor visited node count: 7297/1000000
+Preprocessor generated node count: 9466/1000000
+Post‐expand include size: 205916/2097152 bytes
+Template argument size: 52001/2097152 bytes
+Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:581-0!*!0!!en!*!* and timestamp 20130414140113 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:581-0!*!0!!en!*!* and timestamp 20140102213438 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=43285">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=43285</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=66817">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=66817</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -1269,7 +946,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/fprintf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/fprintf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=43285" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/fprintf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/fprintf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;oldid=66817" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fprintf&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -1277,8 +954,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/fprintf" title="cpp/io/c/fprintf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 2 November 2012, at 19:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 71,543 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 January 2014, at 13:25.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 101,600 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1287,36 +964,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 5.987 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 7.325 secs. -->
 	</body>
-<!-- Cached 20130414140113 -->
+<!-- Cached 20140102213438 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/io/c/fprintf by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:12:57 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/io/c/fprintf by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:52:30 GMT -->
 </html>

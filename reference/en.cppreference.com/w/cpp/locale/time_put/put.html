@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/locale/time_put/put by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:21:27 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/locale/time_put/put by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 15:06:47 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::time_put::put, std::time_put::do_put - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=edit" />
 <link rel="shortcut icon" href="../../../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/locale/time_put/put", "wgTitle": "cpp/locale/time put/put", "wgCurRevisionId": 46006, "wgArticleId": 9838, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/locale/time_put/put","wgTitle":"cpp/locale/time put/put","wgCurRevisionId":64648,"wgArticleId":9838,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/locale/time_put/put","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
 <style type="text/css">/*<![CDATA[*/
 .source-cpp {line-height: normal;}
 .source-cpp li, .source-cpp pre {
@@ -104,12 +107,13 @@
 
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_locale_time_put_put action-view skin-cppreference2 cpp-navbar">
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_locale_time_put_put skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
                 <div id="cpp-head-first">
-                    <h5><a href="../../../../index.html">cppreference.com</a></h5>
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
                     <div id="cpp-head-search">
                         
 <!-- 0 -->
@@ -118,7 +122,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -128,7 +132,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flocale%2Ftime+put%2Fput" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flocale%2Ftime+put%2Fput&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flocale%2Ftime+put%2Fput" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -204,516 +212,159 @@
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a> | <a href="../../locale.html" title="cpp/locale">locale</a> | <a href="../time_put.html" title="cpp/locale/time put">time put</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../locale.html" title="cpp/locale">locale</a>&lrm; | <a href="../time_put.html" title="cpp/locale/time put">time put</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="../../language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Locales and facets
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../locale.html" title="cpp/locale/locale">locale</a></td></tr></table>
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../use_facet.html" title="cpp/locale/use facet">use_facet</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../has_facet.html" title="cpp/locale/has facet">has_facet</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Character classification
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isspace.html" title="cpp/locale/isspace">isspace</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isblank.html" title="cpp/locale/isblank">isblank</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../iscntrl.html" title="cpp/locale/iscntrl">iscntrl</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isupper.html" title="cpp/locale/isupper">isupper</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../islower.html" title="cpp/locale/islower">islower</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isalpha.html" title="cpp/locale/isalpha">isalpha</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isdigit.html" title="cpp/locale/isdigit">isdigit</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ispunct.html" title="cpp/locale/ispunct">ispunct</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isxdigit.html" title="cpp/locale/isxdigit">isxdigit</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isalnum.html" title="cpp/locale/isalnum">isalnum</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isprint.html" title="cpp/locale/isprint">isprint</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../isgraph.html" title="cpp/locale/isgraph">isgraph</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Conversions
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../toupper.html" title="cpp/locale/toupper">toupper</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../tolower.html" title="cpp/locale/tolower">tolower</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../wstring_convert.html" title="cpp/locale/wstring convert">wstring_convert</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../wbuffer_convert.html" title="cpp/locale/wbuffer convert">wbuffer_convert</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Facet category base classes
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ctype_base.html" title="cpp/locale/ctype base">ctype_base</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_base.html" title="cpp/locale/codecvt base">codecvt_base</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../messages_base.html" title="cpp/locale/messages base">messages_base</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../time_base.html" title="cpp/locale/time base">time_base</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../money_base.html" title="cpp/locale/money base">money_base</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Facet categories
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ctype.html" title="cpp/locale/ctype">ctype</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ctype_char.html" title="cpp/locale/ctype char">ctype&lt;char&gt;</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt.html" title="cpp/locale/codecvt">codecvt</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../collate.html" title="cpp/locale/collate">collate</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../messages.html" title="cpp/locale/messages">messages</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../time_get.html" title="cpp/locale/time get">time_get</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../time_put.html" title="cpp/locale/time put">time_put</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../num_get.html" title="cpp/locale/num get">num_get</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../num_put.html" title="cpp/locale/num put">num_put</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../numpunct.html" title="cpp/locale/numpunct">numpunct</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../money_get.html" title="cpp/locale/money get">money_get</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../money_put.html" title="cpp/locale/money put">money_put</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../moneypunct.html" title="cpp/locale/moneypunct">moneypunct</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Locale-specific facets
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ctype_byname.html" title="cpp/locale/ctype byname">ctype_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../ctype_byname_char.html" title="cpp/locale/ctype byname char">ctype_byname&lt;char&gt;</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_byname.html" title="cpp/locale/codecvt byname">codecvt_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../messages_byname.html" title="cpp/locale/messages byname">messages_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../collate_byname.html" title="cpp/locale/collate byname">collate_byname</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../time_get_byname.html" title="cpp/locale/time get byname">time_get_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../time_put_byname.html" title="cpp/locale/time put byname">time_put_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../numpunct_byname.html" title="cpp/locale/numpunct byname">numpunct_byname</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../moneypunct_byname.html" title="cpp/locale/moneypunct byname">moneypunct_byname</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Code conversion facets
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_utf8.html" title="cpp/locale/codecvt utf8">codecvt_utf8</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_utf16.html" title="cpp/locale/codecvt utf16">codecvt_utf16</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16">codecvt_utf8_utf16</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../codecvt_mode.html" title="cpp/locale/codecvt mode">codecvt_mode</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  C locale
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../setlocale.html" title="cpp/locale/setlocale">setlocale</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../localeconv.html" title="cpp/locale/localeconv">localeconv</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../lconv.html" title="cpp/locale/lconv">lconv</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../LC_categories.html" title="cpp/locale/LC categories">LC_ALL<br />LC_COLLATE<br />LC_CTYPE<br />LC_MONETARY<br />LC_NUMERIC<br />LC_TIME</a></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../time_put.html" title="cpp/locale/time put"><code>std::time_put</code></a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Member functions
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="time_put.html" title="cpp/locale/time put/time put">time_put::time_put</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="_time_put.html" title="cpp/locale/time put/~time put">time_put::~time_put</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">time_put::put<br />time_put::do_put</strong></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/time_put/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<table class="t-ddcl-list">
-<tr class="t-ddcl-list-header">
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../use_facet.html" title="cpp/locale/use facet"><span class="t-lines"><span>use_facet</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../has_facet.html" title="cpp/locale/has facet"><span class="t-lines"><span>has_facet</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Character classification</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isspace.html" title="cpp/locale/isspace"><span class="t-lines"><span>isspace</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isblank.html" title="cpp/locale/isblank"><span class="t-lines"><span>isblank</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../iscntrl.html" title="cpp/locale/iscntrl"><span class="t-lines"><span>iscntrl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isupper.html" title="cpp/locale/isupper"><span class="t-lines"><span>isupper</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../islower.html" title="cpp/locale/islower"><span class="t-lines"><span>islower</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isalpha.html" title="cpp/locale/isalpha"><span class="t-lines"><span>isalpha</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isdigit.html" title="cpp/locale/isdigit"><span class="t-lines"><span>isdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ispunct.html" title="cpp/locale/ispunct"><span class="t-lines"><span>ispunct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isxdigit.html" title="cpp/locale/isxdigit"><span class="t-lines"><span>isxdigit</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isalnum.html" title="cpp/locale/isalnum"><span class="t-lines"><span>isalnum</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isprint.html" title="cpp/locale/isprint"><span class="t-lines"><span>isprint</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../isgraph.html" title="cpp/locale/isgraph"><span class="t-lines"><span>isgraph</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conversions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../toupper.html" title="cpp/locale/toupper"><span class="t-lines"><span>toupper</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../tolower.html" title="cpp/locale/tolower"><span class="t-lines"><span>tolower</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../wstring_convert.html" title="cpp/locale/wstring convert"><span class="t-lines"><span>wstring_convert</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../wbuffer_convert.html" title="cpp/locale/wbuffer convert"><span class="t-lines"><span>wbuffer_convert</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Facet category base classes</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ctype_base.html" title="cpp/locale/ctype base"><span class="t-lines"><span>ctype_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_base.html" title="cpp/locale/codecvt base"><span class="t-lines"><span>codecvt_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../messages_base.html" title="cpp/locale/messages base"><span class="t-lines"><span>messages_base</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_base.html" title="cpp/locale/time base"><span class="t-lines"><span>time_base</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../money_base.html" title="cpp/locale/money base"><span class="t-lines"><span>money_base</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Facet categories</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ctype.html" title="cpp/locale/ctype"><span class="t-lines"><span>ctype</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ctype_char.html" title="cpp/locale/ctype char"><span class="t-lines"><span>ctype&lt;char&gt;</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt.html" title="cpp/locale/codecvt"><span class="t-lines"><span>codecvt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../collate.html" title="cpp/locale/collate"><span class="t-lines"><span>collate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../messages.html" title="cpp/locale/messages"><span class="t-lines"><span>messages</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_get.html" title="cpp/locale/time get"><span class="t-lines"><span>time_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_put.html" title="cpp/locale/time put"><span class="t-lines"><span>time_put</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../num_get.html" title="cpp/locale/num get"><span class="t-lines"><span>num_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../num_put.html" title="cpp/locale/num put"><span class="t-lines"><span>num_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../numpunct.html" title="cpp/locale/numpunct"><span class="t-lines"><span>numpunct</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../money_get.html" title="cpp/locale/money get"><span class="t-lines"><span>money_get</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../money_put.html" title="cpp/locale/money put"><span class="t-lines"><span>money_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../moneypunct.html" title="cpp/locale/moneypunct"><span class="t-lines"><span>moneypunct</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Locale-specific facets</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../ctype_byname.html" title="cpp/locale/ctype byname"><span class="t-lines"><span>ctype_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_byname.html" title="cpp/locale/codecvt byname"><span class="t-lines"><span>codecvt_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../messages_byname.html" title="cpp/locale/messages byname"><span class="t-lines"><span>messages_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../collate_byname.html" title="cpp/locale/collate byname"><span class="t-lines"><span>collate_byname</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_get_byname.html" title="cpp/locale/time get byname"><span class="t-lines"><span>time_get_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../time_put_byname.html" title="cpp/locale/time put byname"><span class="t-lines"><span>time_put_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../numpunct_byname.html" title="cpp/locale/numpunct byname"><span class="t-lines"><span>numpunct_byname</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../moneypunct_byname.html" title="cpp/locale/moneypunct byname"><span class="t-lines"><span>moneypunct_byname</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Code conversion facets</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_utf8.html" title="cpp/locale/codecvt utf8"><span class="t-lines"><span>codecvt_utf8</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_utf16.html" title="cpp/locale/codecvt utf16"><span class="t-lines"><span>codecvt_utf16</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16"><span class="t-lines"><span>codecvt_utf8_utf16</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../codecvt_mode.html" title="cpp/locale/codecvt mode"><span class="t-lines"><span>codecvt_mode</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> C locale</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../setlocale.html" title="cpp/locale/setlocale"><span class="t-lines"><span>setlocale</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../localeconv.html" title="cpp/locale/localeconv"><span class="t-lines"><span>localeconv</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lconv.html" title="cpp/locale/lconv"><span class="t-lines"><span>lconv</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../LC_categories.html" title="cpp/locale/LC categories"><span class="t-lines"><span>LC_ALL</span><span>LC_COLLATE</span><span>LC_CTYPE</span><span>LC_MONETARY</span><span>LC_NUMERIC</span><span>LC_TIME</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../time_put.html" title="cpp/locale/time put"><tt>std::time_put</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="time_put.html" title="cpp/locale/time put/time put"><span class="t-lines"><span>time_put::time_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="_time_put.html" title="cpp/locale/time put/~time put"><span class="t-lines"><span>time_put::~time_put</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>time_put::put</span><span>time_put::do_put</span></span></strong></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/time_put/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../../header/locale.html" title="cpp/header/locale">&lt;locale&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
-<p>iter_type put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1344">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
+<p>iter_type put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw864">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> charT<span class="sy2">*</span> fmtbeg, <span class="kw4">const</span> charT<span class="sy2">*</span> fmtend <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
-<p>iter_type put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1344">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
+<p>iter_type put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw864">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">char</span> format, <span class="kw4">char</span> modifier <span class="sy1">=</span> <span class="nu0">0</span> <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
-<p><span class="kw1">virtual</span> iter_type do_put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1344">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
+<p><span class="kw1">virtual</span> iter_type do_put<span class="br0">&#40;</span> iter_type out, <a href="../../io/ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; char_type fill, <span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw864">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">char</span> format, <span class="kw4">char</span> modifier <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (3) </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-</table>
-<p>Converts the calendar date and time stored in the <span class="mw-geshi cpp source-cpp"><a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a></span> object pointed to by <code>t</code> into a character string, according to the format string <code>[fmtbeg, fmtend)</code>. The format string is the same as used by <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">srtftime</span></span>, but each format specifier is processed by an individual call to <code>do_put()</code>, which can be customized by extending this facet.
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Converts the calendar date and time stored in the <span class="t-lc"><a href="../../chrono/c/tm.html" title="cpp/chrono/c/tm">std::tm</a></span> object pointed to by <code>t</code> into a character string, according to the format string <code>[fmtbeg, fmtend)</code>. The format string is the same as used by <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">srtftime</span></span></span>, but each format specifier is processed by an individual call to <code>do_put()</code>, which can be customized by extending this facet.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Steps through the character sequence <code>[fmtbeg, fmtend)</code>, examining the characters. Every character that is not a part of a format sequence is written to the output iterator <code>out</code> immediately. To identify format sequences, this function narrows the next character <code>c</code> in <code>[fmtbeg, fmtend)</code> as if by <span class="mw-geshi cpp source-cpp"><a href="../ctype.html"><span class="kw1607">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">narrow</span><span class="br0">&#40;</span>c,<span class="nu0">0</span><span class="br0">&#41;</span></span> and if it equals <span class="mw-geshi cpp source-cpp"><span class="st0">'%'</span></span>, the next one or two characters are compared to the list of format sequences recognized by <span class="mw-geshi cpp source-cpp"><a href="../../chrono/c/strftime.html"><span class="kw859">std::<span class="me2">strftime</span></span></a></span> plus any additional implementation-defined formats supported by this locale. For each valid format sequence, a call to <span class="mw-geshi cpp source-cpp">do_put<span class="br0">&#40;</span>out, str, fill, t, format, modifier<span class="br0">&#41;</span></span> is made, where <code>format</code> is the format sequence character, and <code>modifier</code> is the optional format sequence modifier (<span class="mw-geshi cpp source-cpp"><span class="st0">'E'</span></span> or <span class="mw-geshi cpp source-cpp"><span class="st0">'O'</span></span>). A value of <span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span> is used if the modifier is absent.</div>
+<div class="t-li1"><span class="t-li">1)</span> Steps through the character sequence <code>[fmtbeg, fmtend)</code>, examining the characters. Every character that is not a part of a format sequence is written to the output iterator <code>out</code> immediately. To identify format sequences, this function narrows the next character <code>c</code> in <code>[fmtbeg, fmtend)</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span><span class="br0">&#40;</span>str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">narrow</span><span class="br0">&#40;</span>c,<span class="nu0">0</span><span class="br0">&#41;</span></span></span> and if it equals <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'%'</span></span></span>, the next one or two characters are compared to the list of format sequences recognized by <span class="t-lc"><a href="../../chrono/c/strftime.html" title="cpp/chrono/c/strftime">std::strftime</a></span> plus any additional implementation-defined formats supported by this locale. For each valid format sequence, a call to <span class="t-c"><span class="mw-geshi cpp source-cpp">do_put<span class="br0">&#40;</span>out, str, fill, t, format, modifier<span class="br0">&#41;</span></span></span> is made, where <code>format</code> is the format sequence character, and <code>modifier</code> is the optional format sequence modifier (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'E'</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'O'</span></span></span>). A value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span></span> is used if the modifier is absent.</div>
 <div class="t-li1"><span class="t-li">2)</span> Calls the <code>do_put</code> member function of the most derived class.</div>
-<div class="t-li1"><span class="t-li">3)</span> Converts the calendar date and time stored in the <span class="mw-geshi cpp source-cpp"><a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a></span> object pointed to by <code>t</code> into a character string, according to the format conversion sequence formed by concatenating <span class="mw-geshi cpp source-cpp"><span class="st0">'%'</span></span>, the value of <code>modifier</code> if not <span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span>, and the value of <code>format</code>. The format is interpreted the same way as the function <span class="mw-geshi cpp source-cpp"><a href="../../chrono/c/strftime.html"><span class="kw859">std::<span class="me2">strftime</span></span></a></span>, except that the formats that are described as locale-dependent are defined by this locale, and additional format specifiers may be supported (the <code>fill</code> argument is provided for these implementation-defined format specifiers to use). The string is written to the output iterator <code>out</code>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Converts the calendar date and time stored in the <span class="t-lc"><a href="../../chrono/c/tm.html" title="cpp/chrono/c/tm">std::tm</a></span> object pointed to by <code>t</code> into a character string, according to the format conversion sequence formed by concatenating <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'%'</span></span></span>, the value of <code>modifier</code> if not <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span></span>, and the value of <code>format</code>. The format is interpreted the same way as the function <span class="t-lc"><a href="../../chrono/c/strftime.html" title="cpp/chrono/c/strftime">std::strftime</a></span>, except that the formats that are described as locale-dependent are defined by this locale, and additional format specifiers may be supported (the <code>fill</code> argument is provided for these implementation-defined format specifiers to use). The string is written to the output iterator <code>out</code>.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
@@ -724,31 +375,31 @@
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
-<table class="t-param-list">
+<table class="t-par-begin">
 
 
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  out
 </td>
 <td> -
 </td>
 <td>  output iterator where the result of the conversion is written
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  str
 </td>
 <td> -
 </td>
-<td>  a stream object that this function uses to obtain locale facets when needed, e.g. <span class="mw-geshi cpp source-cpp"><a href="../ctype.html"><span class="kw1607">std::<span class="me2">ctype</span></span></a></span> to narrow characters
+<td>  a stream object that this function uses to obtain locale facets when needed, e.g. <span class="t-lc"><a href="../ctype.html" title="cpp/locale/ctype">std::ctype</a></span> to narrow characters
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  t
 </td>
 <td> -
 </td>
-<td>  pointer to the <span class="mw-geshi cpp source-cpp"><a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a></span> object from which the date/time values are obtained
+<td>  pointer to the <span class="t-lc"><a href="../../chrono/c/tm.html" title="cpp/chrono/c/tm">std::tm</a></span> object from which the date/time values are obtained
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  fmtbeg
 </td>
 <td> -
@@ -773,14 +424,14 @@
 <td>
 </td></tr>
 <tr>
-<th> <code>n</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>n</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes newline character
 </td>
 <td>
 </td></tr>
 <tr>
-<th> <code>t</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>t</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes horizontal tab character
 </td>
@@ -797,7 +448,7 @@
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>EY</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>EY</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>year</b> in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale
 </td>
@@ -811,35 +462,35 @@
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>Oy</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Oy</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes last 2 digits of <b>year</b> using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale
 </td>
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>Ey</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Ey</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>year</b> as offset from locale's alternative calendar period <code>%EC</code> (locale-dependent)
 </td>
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>C</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>C</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes first 2 digits of <b>year</b> as a decimal number (range <code>[00,99]</code>)
 </td>
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>EC</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>EC</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes name of the <b>base year (period)</b> in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP
 </td>
 <td> <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>G</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>G</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>ISO 8601 week-based year</b>, i.e. the year that contains the specified week.
 <p>In IS0 8601 weeks begin with Monday and the first week of the year must satisfy the following requirements:
@@ -851,7 +502,7 @@
 <td> <code><b>tm_year</b></code>, <code><b>tm_wday</b></code>, <code><b>tm_yday</b></code>
 </td></tr>
 <tr>
-<th> <code>g</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>g</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes last 2 digits of <b>ISO 8601 week-based year</b>, i.e. the year that contains the specified week (range <code>[00,99]</code>).
 <p>In IS0 8601 weeks begin with Monday and the first week of the year must satisfy the following requirements:
@@ -873,7 +524,7 @@
 <td> <code><b>tm_mon</b></code>
 </td></tr>
 <tr>
-<th> <code>h</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>h</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> synonym of <code>b</code>
 </td>
@@ -894,7 +545,7 @@
 <td> <code><b>tm_mon</b></code>
 </td></tr>
 <tr>
-<th> <code>Om</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Om</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>month</b> using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale
 </td>
@@ -911,7 +562,7 @@
 <td> <code><b>tm_year</b></code>, <code><b>tm_wday</b></code>, <code><b>tm_yday</b></code>
 </td></tr>
 <tr>
-<th> <code>OU</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OU</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>week of the year</b>, as by <code>%U</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale
 </td>
@@ -925,14 +576,14 @@
 <td> <code><b>tm_year</b></code>, <code><b>tm_wday</b></code>, <code><b>tm_yday</b></code>
 </td></tr>
 <tr>
-<th> <code>OW</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OW</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>week of the year</b>, as by <code>%W</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale
 </td>
 <td> <code><b>tm_year</b></code>, <code><b>tm_wday</b></code>, <code><b>tm_yday</b></code>
 </td></tr>
 <tr>
-<th> <code>V</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>V</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>ISO 8601 week of the year</b> (range <code>[01,53]</code>).
 <p>In IS0 8601 weeks begin with Monday and the first week of the year must satisfy the following requirements:
@@ -944,7 +595,7 @@
 <td> <code><b>tm_year</b></code>, <code><b>tm_wday</b></code>, <code><b>tm_yday</b></code>
 </td></tr>
 <tr>
-<th> <code>OV</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OV</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>week of the year</b>, as by <code>%V</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale
 </td>
@@ -968,7 +619,7 @@
 <td> <code><b>tm_mday</b></code>
 </td></tr>
 <tr>
-<th> <code>Od</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Od</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes zero-based <b>day of the month</b> using the alternative numeric system, e.g 二十七 instead of 23 in ja_JP locale
 <p>Single character is preceded by a space.
@@ -977,7 +628,7 @@
 <td> <code><b>tm_mday</b></code>
 </td></tr>
 <tr>
-<th> <code>e</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>e</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>day of the month</b> as a decimal number (range <code>[1,31]</code>).
 <p>Single digit is preceded by a space.
@@ -986,7 +637,7 @@
 <td> <code><b>tm_mday</b></code>
 </td></tr>
 <tr>
-<th> <code>Oe</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Oe</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes one-based <b>day of the month</b> using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale
 <p>Single character is preceded by a space.
@@ -1019,21 +670,21 @@
 <td> <code><b>tm_wday</b></code>
 </td></tr>
 <tr>
-<th> <code>Ow</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Ow</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>weekday</b>, where Sunday is <code>0</code>, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale
 </td>
 <td> <code><b>tm_wday</b></code>
 </td></tr>
 <tr>
-<th> <code>u</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>u</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>weekday</b> as a decimal number, where Monday is <code>1</code> (ISO 8601 format) (range <code>[1-7]</code>)
 </td>
 <td> <code><b>tm_wday</b></code>
 </td></tr>
 <tr>
-<th> <code>Ou</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Ou</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>weekday</b>, where Monday is <code>1</code>, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale
 </td>
@@ -1050,7 +701,7 @@
 <td> <code><b>tm_hour</b></code>
 </td></tr>
 <tr>
-<th> <code>OH</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OH</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>hour</b> from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale
 </td>
@@ -1064,7 +715,7 @@
 <td> <code><b>tm_hour</b></code>
 </td></tr>
 <tr>
-<th> <code>OI</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OI</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>hour</b> from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale
 </td>
@@ -1078,7 +729,7 @@
 <td> <code><b>tm_min</b></code>
 </td></tr>
 <tr>
-<th> <code>OM</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OM</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>minute</b> using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale
 </td>
@@ -1092,7 +743,7 @@
 <td> <code><b>tm_sec</b></code>
 </td></tr>
 <tr>
-<th> <code>OS</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>OS</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>second</b> using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale
 </td>
@@ -1109,7 +760,7 @@
 <td> all
 </td></tr>
 <tr>
-<th> <code>Ec</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Ec</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>alternative date and time string</b>, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale
 </td>
@@ -1123,7 +774,7 @@
 <td> all
 </td></tr>
 <tr>
-<th> <code>Ex</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>Ex</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>alternative date representation</b>, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale
 </td>
@@ -1137,42 +788,42 @@
 <td> all
 </td></tr>
 <tr>
-<th> <code>EX</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>EX</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>alternative time representation</b> (locale dependent)
 </td>
 <td> all
 </td></tr>
 <tr>
-<th> <code>D</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>D</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> equivalent to <b>"%m/%d/%y"</b>
 </td>
 <td> <code><b>tm_mon</b></code>, <code><b>tm_mday</b></code>, <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>F</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>F</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> equivalent to <b>"%Y-%m-%d"</b> (the ISO 8601 date format)
 </td>
 <td> <code><b>tm_mon</b></code>, <code><b>tm_mday</b></code>, <code><b>tm_year</b></code>
 </td></tr>
 <tr>
-<th> <code>r</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>r</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes localized <b>12-hour clock</b> time (locale dependent)
 </td>
 <td> <code><b>tm_hour</b></code>, <code><b>tm_min</b></code>, <code><b>tm_sec</b></code>
 </td></tr>
 <tr>
-<th> <code>R</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>R</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> equivalent to <b>"%H:%M"</b>
 </td>
 <td> <code><b>tm_hour</b></code>, <code><b>tm_min</b></code>
 </td></tr>
 <tr>
-<th> <code>T</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>T</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> equivalent to <b>"%H:%M:%S"</b> (the ISO 8601 time format)
 </td>
@@ -1186,7 +837,7 @@
 <td> <code><b>tm_hour</b></code>
 </td></tr>
 <tr>
-<th> <code>z</code><br /><span class="t-mark">(C++11)</span>
+<th> <code>z</code><br /><span class="t-mark-rev t-since-cxx11">(C++11)</span>
 </th>
 <td> writes <b>offset from UTC</b> in the ISO 8601 format (e.g. <code>-0430</code>), or no characters if the time zone information is not available
 </td>
@@ -1202,28 +853,28 @@
 <p><br />
 </p>
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  fmtend
 </td>
 <td> -
 </td>
 <td>  pointer one past the last character of a sequence of char_type characters specifying the conversion format
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  fill
 </td>
 <td> -
 </td>
 <td>  fill character (usually space)
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  format
 </td>
 <td> -
 </td>
 <td>  the character that names a conversion specifier
 </td></tr>
-<tr class="t-param-list-item">
+<tr class="t-par">
 <td>  modifier
 </td>
 <td> -
@@ -1238,39 +889,40 @@
 </p><p>The <code>fill</code> character is provided for those implementation-defined format specifiers and for the user-defined overrides of <code>do_put()</code> that use padding and filling logic. Such implementations typically make use of the formatting flags from <code>str</code>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3qfD9-DTRthGcWTHHb5jFep2-q5geb5usfzMJ54lO76EzPigcZOZupqkSUHbrpKCQYBioSzaSW0YynFKiPuTPbw53dJ6k7XpwefKb0q_T6OA4KNVKelQEBCR-B3nNO_m6yM_Bx9hqCK7ME1wXjJ2XM9R1YoMDlSLM1l8jMRHeMjq-dLGffuAQvDFLOhk5VSvtTIK6KHeb6zIS5TOHlH9Nc2YIF8621aspLaLG7tXlH9UpgusYdDhykZvw5yxEJL7WVf1ejopym5Pfur1Uo9jo0-hrxTWOsuH-yBgwXRWxtXcJhi4-D9Cftp5oMhnGpI9qkq8XLGeS2dbw4Y1yD8S346tQzKJNB5hSMkzggxZRZCrBWTrlpRIY2TWZnEcti5oddzZw6l5ElWje_xklyl3zMaxcn-8bBO_mGpTSL6yyjFbR06VGUFTiktT6HdO90J2-L6JBhwMffe0F-C82hDYoTn28QeNxo74bVBaXNbZlxZEUKAIvA83N3z1FNojJwLna8Zx-wJGrA==' class='external text'>run this code</a></div>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;sstream&gt;</span>
 <span class="co2">#include &lt;iomanip&gt;</span>
 <span class="co2">#include &lt;ctime&gt;</span>
 &#160;
-<span class="kw4">void</span> try_time_put<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t, <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1037">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> fmt<span class="br0">&#41;</span>
+<span class="kw4">void</span> try_time_put<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../chrono/c/tm.html"><span class="kw864">std::<span class="me2">tm</span></span></a><span class="sy2">*</span> t, <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> fmt<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1563">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the locale '&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&#160;: '&quot;</span><span class="sy4">;</span>
+        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the locale '&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&#160;: '&quot;</span><span class="sy4">;</span>
 &#160;
-        <a href="../use_facet.html"><span class="kw1566">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../time_put.html"><span class="kw1621">std::<span class="me2">time_put</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">put</span><span class="br0">&#40;</span>
-                    <a href="../../iterator/ostreambuf_iterator.html"><span class="kw549">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span>,
-                    <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a>, <span class="st0">' '</span>, t, <span class="sy3">&amp;</span>fmt<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>fmt<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> fmt.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../use_facet.html"><span class="kw1577">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../time_put.html"><span class="kw1632">std::<span class="me2">time_put</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">put</span><span class="br0">&#40;</span>
+                    <a href="../../iterator/ostreambuf_iterator.html"><span class="kw549">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span>,
+                    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>, <span class="st0">' '</span>, t, <span class="sy3">&amp;</span>fmt<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>fmt<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> fmt.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-        <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
+&#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../chrono/c/time_t.html"><span class="kw866">std::<span class="me2">time_t</span></span></a> t <span class="sy1">=</span> <a href="../../chrono/c/time.html"><span class="kw855">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../chrono/c/tm.html"><span class="kw865">std::<span class="me2">tm</span></span></a> tm <span class="sy1">=</span> <span class="sy2">*</span><a href="../../chrono/c/localtime.html"><span class="kw862">std::<span class="me2">localtime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../chrono/c/time_t.html"><span class="kw865">std::<span class="me2">time_t</span></span></a> t <span class="sy1">=</span> <a href="../../chrono/c/time.html"><span class="kw854">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../chrono/c/tm.html"><span class="kw864">std::<span class="me2">tm</span></span></a> tm <span class="sy1">=</span> <span class="sy2">*</span><a href="../../chrono/c/localtime.html"><span class="kw861">std::<span class="me2">localtime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../string/basic_string.html"><span class="kw1037">std::<span class="me2">string</span></span></a> fmt <span class="sy1">=</span> <span class="st0">&quot;%c&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Using the format string '&quot;</span> <span class="sy1">&lt;&lt;</span> fmt
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' to format the time: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../chrono/c/ctime.html"><span class="kw858">std::<span class="me2">ctime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> fmt <span class="sy1">=</span> <span class="st0">&quot;%c&quot;</span><span class="sy4">;</span>
+    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Using the format string '&quot;</span> <span class="sy1">&lt;&lt;</span> fmt
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' to format the time: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../chrono/c/ctime.html"><span class="kw857">std::<span class="me2">ctime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1563">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     try_time_put<span class="br0">&#40;</span><span class="sy3">&amp;</span>tm, fmt<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1563">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;el_GR.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;el_GR.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     try_time_put<span class="br0">&#40;</span><span class="sy3">&amp;</span>tm, fmt<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1563">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     try_time_put<span class="br0">&#40;</span><span class="sy3">&amp;</span>tm, fmt<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -1282,40 +934,42 @@ In the locale 'el_GR.utf8'&#160;: 'Δευ 11 Φεβ 2013 11:02:38 μμ EST'
 In the locale 'ja_JP.utf8'&#160;: '2013年02月11日 23時02分38秒'</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../../io/manip/put_time.html" title="cpp/io/manip/put time"> put_time</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../io/manip/put_time.html" title="cpp/io/manip/put time"> <span class="t-lines"><span>put_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   formats and outputs a date/time value according to the specified format <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/dcl_list_put_time&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   formats and outputs a date/time value according to the specified format <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/dsc_put_time&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../time_get/get.html" title="cpp/locale/time get/get"> do_get</a></div><div><span class="t-cmark">[virtual]</span> <span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../time_get/get.html" title="cpp/locale/time get/get"> <span class="t-lines"><span>do_get</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[virtual]</span> <span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   extracts date/time components from input stream, according to the specified format  <br /> <span class="t-mark">(virtual protected member function of <code>std::time_get</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/time_get/dcl_list_do_get&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   extracts date/time components from input stream, according to the specified format  <br /> <span class="t-mark">(virtual protected member function of <code>std::time_get</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/time_get/dsc_do_get&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 5395/1000000
-Post-expand include size: 120518/2097152 bytes
-Template argument size: 35200/2097152 bytes
+Preprocessor visited node count: 5977/1000000
+Preprocessor generated node count: 11778/1000000
+Post‐expand include size: 155023/2097152 bytes
+Template argument size: 36873/2097152 bytes
+Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9838-0!*!0!!en!*!* and timestamp 20130423150718 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9838-0!*!0!!en!*!* and timestamp 20131015064424 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=46006">http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=46006</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=64648">http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=64648</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -1338,11 +992,11 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/locale/time_put/put" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/locale/time_put/put" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=46006" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/locale/time_put/put" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/locale/time_put/put" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;oldid=64648" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/time_put/put&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 11 February 2013, at 21:03.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 57 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 August 2013, at 06:50.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 206 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1351,36 +1005,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 3.418 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.227 secs. -->
 	</body>
-<!-- Cached 20130423150718 -->
+<!-- Cached 20131015064424 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/locale/time_put/put by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:21:27 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/locale/time_put/put by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 15:06:47 GMT -->
 </html>
