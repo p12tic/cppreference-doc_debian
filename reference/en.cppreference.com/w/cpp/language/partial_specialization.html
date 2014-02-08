@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.cppreference.com/w/cpp/language/partial_specialization by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:51:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>partial template specialization - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/partial_specialization","wgTitle":"cpp/language/partial specialization","wgCurRevisionId":63617,"wgArticleId":12828,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/partial_specialization","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_partial_specialization skin-cppreference2 action-view">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Fpartial+specialization&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Flanguage%2Fpartial+specialization" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="partial_specialization.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/language/partial_specialization&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="partial_specialization.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">partial template specialization</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../language.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+Allows customizing class templates for a given category of template arguments.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_argument_list"><span class="tocnumber">2</span> <span class="toctext">The argument list</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Name_lookup"><span class="tocnumber">3</span> <span class="toctext">Name lookup</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Matching"><span class="tocnumber">4</span> <span class="toctext">Matching</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Members_of_partial_specializations"><span class="tocnumber">5</span> <span class="toctext">Members of partial specializations</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;section=1" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span></h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">parameter-list</span> <code><b>&gt;</b></code> <span class="t-spar">class-key</span> <span class="t-spar">class-head-name</span> <code><b>&lt;</b></code> <span class="t-spar">argument-list</span> <code><b>&gt;</b></code> <span class="t-spar">declaration</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>where <span class="t-spar">class-head-name</span> identifies the name of a previously declared <a href="class_template.html" title="cpp/language/class template">class template</a>.
+</p><p>For example,
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2, <span class="kw4">int</span> I<span class="sy1">&gt;</span>
+<span class="kw1">class</span> A <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw4">int</span> I<span class="sy1">&gt;</span>
+<span class="kw1">class</span> A<span class="sy1">&lt;</span>T, T<span class="sy2">*</span>, I<span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization where T2 is a pointer to T1</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw1">class</span> T2, <span class="kw4">int</span> I<span class="sy1">&gt;</span>
+<span class="kw1">class</span> A<span class="sy1">&lt;</span>T<span class="sy2">*</span>, T2, I<span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization where T1 is a pointer</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> A<span class="sy1">&lt;</span><span class="kw4">int</span>, T<span class="sy2">*</span>, <span class="nu0">5</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization where T1 is int, I is 5,</span>
+                        <span class="co1">// and T2 is a pointer</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> X, <span class="kw1">class</span> T, <span class="kw4">int</span> I<span class="sy1">&gt;</span>
+<span class="kw1">class</span> A<span class="sy1">&lt;</span>X, T<span class="sy2">*</span>, I<span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization where T2 is a pointer</span></pre></div></div>
+<p>Examples of partial specializations in the standard library include <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/unique_ptr.html"><span class="kw581">std::<span class="me2">unique_ptr</span></span></a></span></span>, which has a partial specialization for array types.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;section=2" title="Edit section: The argument list">edit</a>]</span> <span class="mw-headline" id="The_argument_list">The argument list</span></h3>
+<p>The following restrictions apply to the <span class="t-spar">argument-list</span> of a partial template specialization:
+</p>
+<div class="t-li1"><span class="t-li">1)</span> The argument list cannot be identical to the non-specialized argument list (it must specialize something)
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2, <span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw1">class</span> A <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> X, <span class="kw1">class</span> Y, <span class="kw4">int</span> N<span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy1">&lt;</span>X,Y,N<span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// error</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">2)</span> Default arguments cannot appear in the argument list</div>
+<div class="t-li1"><span class="t-li">3)</span> The specialization has to be more specialized than the primary template</div>
+<div class="t-li1"><span class="t-li">4)</span> If any argument is a pack expansion, it must be the last argument in the list</div>
+<div class="t-li1"><span class="t-li">5)</span> Non-type argument expression cannot use the name of the template parameter except when it is exactly the name of the template parameter
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw4">int</span> I, <span class="kw4">int</span> J<span class="sy1">&gt;</span> <span class="kw1">struct</span> A <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw1">struct</span> A<span class="sy1">&lt;</span>I<span class="sy2">+</span><span class="nu0">5</span>, I<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// error</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw1">struct</span> A<span class="sy1">&lt;</span>I, I<span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div></div>
+<div class="t-li1"><span class="t-li">6)</span> Non-type template argument cannot specialize a template parameter whose type depends on a parameter of the specialization:
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, T t<span class="sy1">&gt;</span> <span class="kw1">struct</span> C <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> C<span class="sy1">&lt;</span>T, <span class="nu0">1</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// error: type of the argument 1 is T,</span>
+                                   <span class="co1">// which depends on the parameter T</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">int</span> X, <span class="kw4">int</span> <span class="br0">&#40;</span><span class="sy2">*</span>array_ptr<span class="br0">&#41;</span><span class="br0">&#91;</span>X<span class="br0">&#93;</span> <span class="sy1">&gt;</span> <span class="kw1">class</span> A <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+<span class="kw4">int</span> array<span class="br0">&#91;</span><span class="nu0">5</span><span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw4">int</span> X <span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy1">&lt;</span>X,<span class="sy3">&amp;</span>array<span class="sy1">&gt;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// error: type of the argument &amp;array</span>
+                             <span class="co1">// is int(*)[X], which depends on the parameter X</span></pre></div></div></div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;section=3" title="Edit section: Name lookup">edit</a>]</span> <span class="mw-headline" id="Name_lookup">Name lookup</span></h3>
+<p>Partial template specializations are not found by name lookup. Only if the primary template is found by name lookup, its partial specializations are considered. In particular, a using declaration that makes a primary template visible, makes partial specializations visible as well:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> N <span class="br0">&#123;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2<span class="sy1">&gt;</span> <span class="kw1">class</span> A <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary template</span>
+<span class="br0">&#125;</span>
+<span class="kw1">using</span> N<span class="sy4">::</span><span class="me2">A</span><span class="sy4">;</span> <span class="co1">// refers to the primary template</span>
+<span class="kw1">namespace</span> N <span class="br0">&#123;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy1">&lt;</span>T, T<span class="sy2">*</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization</span>
+<span class="br0">&#125;</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span> a<span class="sy4">;</span> <span class="co1">// name lookup finds N::A (the primary template),</span>
+               <span class="co1">// the partial specialization with T = int is then used</span></pre></div></div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;section=4" title="Edit section: Matching">edit</a>]</span> <span class="mw-headline" id="Matching">Matching</span></h3>
+<p>When a class template is instantiated, and there are partial specializations avaiable, the compiler has to decide if the primary template is going to be used or one of its partial specializations. 
+</p>
+<div class="t-li1"><span class="t-li">1)</span> If only one specialization matches the template arguments, that specialization is used</div>
+<div class="t-li1"><span class="t-li">2)</span> If more than one specialization matches, partial order rules are used to determine which specialization is more specialized. The most specialized specialization is used, if it is unique (if it is not unique, the program cannot be compiled)</div>
+<div class="t-li1"><span class="t-li">a)</span> </div>
+<div class="t-li1"><span class="t-li">3)</span> If no specializations match, the primary template is used
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// given the template A as defined above</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span>, <span class="nu0">1</span><span class="sy1">&gt;</span> a1<span class="sy4">;</span> <span class="co1">// no specializations match, uses primary template</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy2">*</span>, <span class="nu0">1</span><span class="sy1">&gt;</span> a2<span class="sy4">;</span> <span class="co1">// uses partial specialization #1 (T=int, I=1)</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">char</span><span class="sy2">*</span>, <span class="nu0">5</span><span class="sy1">&gt;</span> a3<span class="sy4">;</span> <span class="co1">// uses partial specialization #3, (T=char)</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">char</span><span class="sy2">*</span>, <span class="nu0">1</span><span class="sy1">&gt;</span> a4<span class="sy4">;</span> <span class="co1">// uses partial specialization #4, (X=int, T=char, I=1)</span>
+A<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span>, <span class="kw4">int</span><span class="sy2">*</span>, <span class="nu0">2</span><span class="sy1">&gt;</span> a5<span class="sy4">;</span> <span class="co1">// error: matches #2 (T=int, T2=int*, I=2)</span>
+                     <span class="co1">//        matches #4 (X=int*, T=int, I=2)</span>
+                     <span class="co1">// neither one is more specialized than the other</span></pre></div></div></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: partial order in more detail </td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=edit&amp;section=5" title="Edit section: Members of partial specializations">edit</a>]</span> <span class="mw-headline" id="Members_of_partial_specializations">Members of partial specializations</span></h3>
+<p>The template parameter list and the template argument list of a member of a partial specialization must match the parameter list and the argument list of the partial specialization. 
+</p><p>Just like with members of primary templates, they only need to be defined if used in the program.
+</p><p>Members of partial specializations are not related to the members of the primary template.
+</p><p>Explicit (full) specialization of a member of a partial specialization is declared the same way as an explicit specialization of the primary template.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw4">int</span> I<span class="sy1">&gt;</span>  <span class="co1">// primary template</span>
+<span class="kw1">struct</span> A <span class="br0">&#123;</span>
+    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// member declaration</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw4">int</span> I<span class="sy1">&gt;</span>
+<span class="kw4">void</span> A<span class="sy1">&lt;</span>T,I<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span> <span class="co1">// primary template member definition</span>
+&#160;
+<span class="co1">// partial specialization</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> A<span class="sy1">&lt;</span>T,<span class="nu0">2</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span>
+    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">void</span> g<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">void</span> h<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="co1">// member of partial specialization</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> A<span class="sy1">&lt;</span>T,<span class="nu0">2</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">g</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// explicit (full) specialization</span>
+<span class="co1">// of a member of partial specialization</span>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
+<span class="kw4">void</span> A<span class="sy1">&lt;</span><span class="kw4">char</span>,<span class="nu0">2</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">h</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    A<span class="sy1">&lt;</span><span class="kw4">char</span>,<span class="nu0">0</span><span class="sy1">&gt;</span> a0<span class="sy4">;</span>
+    A<span class="sy1">&lt;</span><span class="kw4">char</span>,<span class="nu0">2</span><span class="sy1">&gt;</span> a2<span class="sy4">;</span>
+    a0.<span class="me1">f</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, uses primary template’s member definition</span>
+    a2.<span class="me1">g</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, uses partial specialization's member definition</span>
+    a2.<span class="me1">h</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, uses fully-specialized definition of</span>
+            <span class="co1">// the member of a partial specialization</span>
+    a2.<span class="me1">f</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// error: no definition of f() in the partial</span>
+            <span class="co1">// specialization A&lt;T,2&gt; (the primary template is not used)</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>If a class template is a member of another class template, and it has partial specializations, these specializations are members of the enclosing class template. If the enclosing template is instantiated, the declarations of each member partial specialization is instantiated as well (the same way declarations, but not definitions, of all other members of a template are instantiated)
+</p><p>If the primary member template is explicitly (fully) specialized for a given (implicit) specialization of the enclosing class template, the partial specializations of the member
+template are ignored for this specialization of the enclosing class template.
+</p><p>If a partial specialization of the member template is explicitly specialized for a given (implicit) specialization of the enclosing class template, the primary member template and its other partial specializations are still considered for this specialization
+of the enclosing class template.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> A <span class="br0">&#123;</span> <span class="co1">// enclosing class template</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T2<span class="sy1">&gt;</span>
+  <span class="kw1">struct</span> B <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// primary member template</span>
+  <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T2<span class="sy1">&gt;</span>
+  <span class="kw1">struct</span> B<span class="sy1">&lt;</span>T2<span class="sy2">*</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// partial specialization of member template</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T2<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> A<span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">B</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// full specialization of primary member template</span>
+                       <span class="co1">// (will ignore the partial)</span>
+&#160;
+A<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">B</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span> abcip<span class="sy4">;</span> <span class="co1">// uses partial specialization T2=int</span>
+A<span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">B</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span> absip<span class="sy4">;</span> <span class="co1">// uses full specialization of the primary (ignores partial)</span>
+A<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">B</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> abci<span class="sy4">;</span> <span class="co1">// uses primary</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 567/1000000
+Preprocessor generated node count: 4025/1000000
+Post‐expand include size: 4158/2097152 bytes
+Template argument size: 4768/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12828-0!*!0!!en!*!* and timestamp 20130911050100 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;oldid=63617">http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;oldid=63617</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/partial_specialization" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/partial_specialization" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;oldid=63617" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/partial_specialization&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 July 2013, at 20:37.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 103 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.962 secs. -->        
+	</body>
+<!-- Cached 20130911050100 -->
+
+<!-- Mirrored from en.cppreference.com/w/cpp/language/partial_specialization by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:51:16 GMT -->
+</html>

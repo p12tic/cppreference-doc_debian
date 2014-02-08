@@ -1,86 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/thread by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:09:29 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/thread by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:45:51 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>Thread support library - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit" />
 <link rel="shortcut icon" href="../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/thread", "wgTitle": "cpp/thread", "wgCurRevisionId": 45598, "wgArticleId": 1774, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
-<style type="text/css">/*<![CDATA[*/
-.source-cpp {line-height: normal;}
-.source-cpp li, .source-cpp pre {
-	line-height: normal; border: 0px none white;
-}
-/**
- * GeSHi Dynamically Generated Stylesheet
- * --------------------------------------
- * Dynamically generated stylesheet for cpp
- * CSS class: source-cpp, CSS id: 
- * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
- * (http://qbnz.com/highlighter/ and http://geshi.org/)
- * --------------------------------------
- */
-.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
-.cpp.source-cpp  {font-family:monospace;}
-.cpp.source-cpp .imp {font-weight: bold; color: red;}
-.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
-.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
-.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
-.cpp.source-cpp .kw1 {color: #0000dd;}
-.cpp.source-cpp .kw2 {color: #0000ff;}
-.cpp.source-cpp .kw3 {color: #0000dd;}
-.cpp.source-cpp .kw4 {color: #0000ff;}
-.cpp.source-cpp .co1 {color: #909090;}
-.cpp.source-cpp .co2 {color: #339900;}
-.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
-.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
-.cpp.source-cpp .br0 {color: #008000;}
-.cpp.source-cpp .sy0 {color: #008000;}
-.cpp.source-cpp .sy1 {color: #000080;}
-.cpp.source-cpp .sy2 {color: #000040;}
-.cpp.source-cpp .sy3 {color: #000040;}
-.cpp.source-cpp .sy4 {color: #008080;}
-.cpp.source-cpp .st0 {color: #008000;}
-.cpp.source-cpp .nu0 {color: #000080;}
-.cpp.source-cpp .nu6 {color: #000080;}
-.cpp.source-cpp .nu8 {color: #000080;}
-.cpp.source-cpp .nu12 {color: #000080;}
-.cpp.source-cpp .nu16 {color:#000080;}
-.cpp.source-cpp .nu17 {color:#000080;}
-.cpp.source-cpp .nu18 {color:#000080;}
-.cpp.source-cpp .nu19 {color:#000080;}
-.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
-.cpp.source-cpp span.xtra { display:block; }
-
-/*]]>*/
-</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_thread action-view skin-cppreference2 cpp-navbar">
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/thread","wgTitle":"cpp/thread","wgCurRevisionId":65037,"wgArticleId":1774,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/thread","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_thread skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
@@ -94,7 +45,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -104,7 +55,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fthread" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fthread&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fthread" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -183,276 +138,72 @@
                     <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <strong class="selflink"> Thread support library</strong> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"> Thread support library</strong><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Threads
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/thread.html" title="cpp/thread/thread">thread</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  <code>this_thread</code> namespace
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/get_id.html" title="cpp/thread/get id">get_id</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/yield.html" title="cpp/thread/yield">yield</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/sleep_for.html" title="cpp/thread/sleep for">sleep_for</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/sleep_until.html" title="cpp/thread/sleep until">sleep_until</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Mutual exclusion
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/mutex.html" title="cpp/thread/mutex">mutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/timed_mutex.html" title="cpp/thread/timed mutex">timed_mutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/recursive_mutex.html" title="cpp/thread/recursive mutex">recursive_mutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex">recursive_timed_mutex</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Generic lock management
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/lock_guard.html" title="cpp/thread/lock guard">lock_guard</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/unique_lock.html" title="cpp/thread/unique lock">unique_lock</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/lock_tag_t.html" title="cpp/thread/lock tag t">defer_lock_t<br />try_to_lock_t<br />adopt_lock_t</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/lock.html" title="cpp/thread/lock">lock</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/try_lock.html" title="cpp/thread/try lock">try_lock</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/lock_tag.html" title="cpp/thread/lock tag">defer_lock<br />try_to_lock<br />adopt_lock</a></td><td><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-<tr class="t-sb-list-h1">
-<td colspan="5">  Condition variables
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/condition_variable.html" title="cpp/thread/condition variable">condition_variable</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/condition_variable_any.html" title="cpp/thread/condition variable any">condition_variable_any</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit">notify_all_at_thread_exit</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/cv_status.html" title="cpp/thread/cv status">cv_status</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-
-<tr class="t-sb-list-h1">
-<td colspan="5">  Futures
-</td></tr>
-<tr>
-<td>
-</td></tr>
-<tr>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/promise.html" title="cpp/thread/promise">promise</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/future.html" title="cpp/thread/future">future</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/shared_future.html" title="cpp/thread/shared future">shared_future</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/packaged_task.html" title="cpp/thread/packaged task">packaged_task</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/async.html" title="cpp/thread/async">async</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td>
-<td>
-<div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/launch.html" title="cpp/thread/launch">launch</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/future_status.html" title="cpp/thread/future status">future_status</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/future_error.html" title="cpp/thread/future error">future_error</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/future_category.html" title="cpp/thread/future category">future_category</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="thread/future_errc.html" title="cpp/thread/future errc">future_errc</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div>
-</td></tr>
-
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Thread support library</strong> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"> Thread support library</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/yield.html" title="cpp/thread/yield"><span class="t-lines"><span>yield</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/sleep_for.html" title="cpp/thread/sleep for"><span class="t-lines"><span>sleep_for</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/sleep_until.html" title="cpp/thread/sleep until"><span class="t-lines"><span>sleep_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Mutual exclusion</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/mutex.html" title="cpp/thread/mutex"><span class="t-lines"><span>mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/timed_mutex.html" title="cpp/thread/timed mutex"><span class="t-lines"><span>timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/shared_mutex.html" title="cpp/thread/shared mutex"><span class="t-lines"><span>shared_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/recursive_mutex.html" title="cpp/thread/recursive mutex"><span class="t-lines"><span>recursive_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"><span class="t-lines"><span>recursive_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/lock.html" title="cpp/thread/lock"><span class="t-lines"><span>lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/try_lock.html" title="cpp/thread/try lock"><span class="t-lines"><span>try_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/lock_tag.html" title="cpp/thread/lock tag"><span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div>
+</tr><tr class="t-nv-h1"></td><td colspan="5"> Condition variables</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/condition_variable.html" title="cpp/thread/condition variable"><span class="t-lines"><span>condition_variable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/condition_variable_any.html" title="cpp/thread/condition variable any"><span class="t-lines"><span>condition_variable_any</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"><span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/cv_status.html" title="cpp/thread/cv status"><span class="t-lines"><span>cv_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Futures</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/promise.html" title="cpp/thread/promise"><span class="t-lines"><span>promise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/future.html" title="cpp/thread/future"><span class="t-lines"><span>future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/shared_future.html" title="cpp/thread/shared future"><span class="t-lines"><span>shared_future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/packaged_task.html" title="cpp/thread/packaged task"><span class="t-lines"><span>packaged_task</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/async.html" title="cpp/thread/async"><span class="t-lines"><span>async</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/launch.html" title="cpp/thread/launch"><span class="t-lines"><span>launch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/future_status.html" title="cpp/thread/future status"><span class="t-lines"><span>future_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/future_error.html" title="cpp/thread/future error"><span class="t-lines"><span>future_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/future_category.html" title="cpp/thread/future category"><span class="t-lines"><span>future_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread/future_errc.html" title="cpp/thread/future errc"><span class="t-lines"><span>future_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>C++ includes built-in support for threads, mutual exclusion, condition variables, and futures.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -480,108 +231,121 @@
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=1" title="Edit section: Threads">edit</a>]</span> <span class="mw-headline" id="Threads">Threads</span></h3>
 <p>Threads enable programs to execute across several processor cores.
 </p>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in header <code><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/thread&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/thread (page does not exist)">&lt;thread&gt;</a></code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;thread&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/thread.html" title="cpp/thread/thread"> thread</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/thread.html" title="cpp/thread/thread"> <span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   manages a separate thread  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_thread&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   manages a separate thread  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_thread&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr>
 <td colspan="2"> <h5> <span class="mw-headline" id="Functions_managing_the_current_thread">  Functions managing the current thread </span></h5>
 </td></tr>
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in namespace <code>this_thread</code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>this_thread</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/yield.html" title="cpp/thread/yield"> yield</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/yield.html" title="cpp/thread/yield"> <span class="t-lines"><span>yield</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   suggests that the implementation reschedule execution of threads <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_yield&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   suggests that the implementation reschedule execution of threads <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_yield&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/get_id.html" title="cpp/thread/get id"> get_id</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/get_id.html" title="cpp/thread/get id"> <span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   returns the thread id of the current thread  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_get_id&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   returns the thread id of the current thread  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_get_id&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/sleep_for.html" title="cpp/thread/sleep for"> sleep_for</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/sleep_for.html" title="cpp/thread/sleep for"> <span class="t-lines"><span>sleep_for</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   stops the execution of the current thread for a specified time duration  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_sleep_for&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   stops the execution of the current thread for a specified time duration  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_sleep_for&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/sleep_until.html" title="cpp/thread/sleep until"> sleep_until</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/sleep_until.html" title="cpp/thread/sleep until"> <span class="t-lines"><span>sleep_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   stops the execution of the current thread until a specified time point  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_sleep_until&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   stops the execution of the current thread until a specified time point  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_sleep_until&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=2" title="Edit section: Mutual exclusion">edit</a>]</span> <span class="mw-headline" id="Mutual_exclusion">Mutual exclusion</span></h3>
 <p>Mutual exclusion algorithms prevent multiple threads from simultaneously accessing shared resources. This prevents data races and provides support for synchronization between threads.
 </p>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in header <code><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/mutex&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/mutex (page does not exist)">&lt;mutex&gt;</a></code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;mutex&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/mutex.html" title="cpp/thread/mutex"> mutex</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/mutex.html" title="cpp/thread/mutex"> <span class="t-lines"><span>mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   provides basic mutual exclusion facility  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_mutex&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   provides basic mutual exclusion facility  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_mutex&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/timed_mutex.html" title="cpp/thread/timed mutex"> timed_mutex</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/timed_mutex.html" title="cpp/thread/timed mutex"> <span class="t-lines"><span>timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   provides mutual exclusion facility which implements locking with a timeout  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_timed_mutex&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   provides mutual exclusion facility which implements locking with a timeout  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_timed_mutex&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/recursive_mutex.html" title="cpp/thread/recursive mutex"> recursive_mutex</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/recursive_mutex.html" title="cpp/thread/recursive mutex"> <span class="t-lines"><span>recursive_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   provides mutual exclusion facility which can be locked recursively by the same thread  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_recursive_mutex&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   provides mutual exclusion facility which can be locked recursively by the same thread  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_recursive_mutex&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"> recursive_timed_mutex</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"> <span class="t-lines"><span>recursive_timed_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   provides mutual exclusion facility which can be locked recursively<br /> by the same thread and implements locking with a timeout  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_recursive_timed_mutex&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   provides mutual exclusion facility which can be locked recursively<br /> by the same thread and implements locking with a timeout  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_recursive_timed_mutex&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;shared_mutex&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/shared_mutex.html" title="cpp/thread/shared mutex"> <span class="t-lines"><span>shared_mutex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
+</td>
+<td>   provides shared mutual exclusion facility  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_mutex&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -589,40 +353,53 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Generic_mutex_management">  Generic mutex management </span></h5>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
-<td colspan="2">
-</td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/lock_guard.html" title="cpp/thread/lock guard"> lock_guard</a></div><div><span class="t-mark">(C++11)</span></div></div>
-</td>
-<td>   implements a strictly scope-based mutex ownership wrapper  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_lock_guard&amp;action=edit">&#91;edit&#93;</a></span>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;mutex&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/unique_lock.html" title="cpp/thread/unique lock"> unique_lock</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/lock_guard.html" title="cpp/thread/lock guard"> <span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   implements movable mutex ownership wrapper  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_unique_lock&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   implements a strictly scope-based mutex ownership wrapper  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock_guard&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/lock_tag_t.html" title="cpp/thread/lock tag t"> defer_lock_t<br />try_to_lock_t<br />adopt_lock_t</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/unique_lock.html" title="cpp/thread/unique lock"> <span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   tag type used to specify locking strategy <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_lock_tag_t&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   implements movable mutex ownership wrapper  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_unique_lock&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/lock_tag.html" title="cpp/thread/lock tag"> defer_lock<br />try_to_lock<br />adopt_lock</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/shared_lock.html" title="cpp/thread/shared lock"> <span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div>
 </td>
-<td>   tag constants used to specify locking strategy <br /> <span class="t-mark">(constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_lock_tag&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   implements movable shared mutex ownership wrapper  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_lock&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/lock_tag_t.html" title="cpp/thread/lock tag t"> <span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   tag type used to specify locking strategy  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock_tag_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-sep">
+<td colspan="2">
+</td></tr>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/lock_tag.html" title="cpp/thread/lock tag"> <span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   tag constants used to specify locking strategy  <br /> <span class="t-mark">(constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock_tag&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -630,22 +407,22 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Generic_locking_algorithms">  Generic locking algorithms </span></h5>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/try_lock.html" title="cpp/thread/try lock"> try_lock</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/try_lock.html" title="cpp/thread/try lock"> <span class="t-lines"><span>try_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   attempts to obtain ownership of mutexes via repeated calls to <code>try_lock</code>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_try_lock&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   attempts to obtain ownership of mutexes via repeated calls to <code>try_lock</code>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_try_lock&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/lock.html" title="cpp/thread/lock"> lock</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/lock.html" title="cpp/thread/lock"> <span class="t-lines"><span>lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   locks specified mutexes, blocks if any are unavailable  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_lock&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   locks specified mutexes, blocks if any are unavailable  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_lock&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -653,143 +430,143 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Call_once">  Call once </span></h5>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/once_flag.html" title="cpp/thread/once flag"> once_flag</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/once_flag.html" title="cpp/thread/once flag"> <span class="t-lines"><span>once_flag</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   helper object to ensure that <a href="thread/call_once.html" title="cpp/thread/call once"><tt>call_once</tt></a> invokes the function only once  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_once_flag&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   helper object to ensure that <a href="thread/call_once.html" title="cpp/thread/call once"><tt>call_once</tt></a> invokes the function only once  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_once_flag&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/call_once.html" title="cpp/thread/call once"> call_once</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/call_once.html" title="cpp/thread/call once"> <span class="t-lines"><span>call_once</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   invokes a function only once even if called from multiple threads  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_call_once&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   invokes a function only once even if called from multiple threads  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_call_once&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=3" title="Edit section: Condition variables">edit</a>]</span> <span class="mw-headline" id="Condition_variables">Condition variables</span></h3>
 <p>A condition variable is a synchronization primitive that allows multiple threads to communicate with each other.  It allows some number of threads to wait (possibly with a timeout) for notification from another thread that they may proceed. A condition variable is always associated with a mutex. 
 </p>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in header <code><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/condition_variable&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/condition variable (page does not exist)">&lt;condition_variable&gt;</a></code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;condition_variable&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/condition_variable.html" title="cpp/thread/condition variable"> condition_variable</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/condition_variable.html" title="cpp/thread/condition variable"> <span class="t-lines"><span>condition_variable</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   provides a condition variable associated with a <span class="mw-geshi cpp source-cpp"><a href="thread/unique_lock.html"><span class="kw1685">std::<span class="me2">unique_lock</span></span></a></span>  <br /> <span class="t-mark">(class)</span>
+<td>   provides a condition variable associated with a <span class="t-lc"><a href="thread/unique_lock.html" title="cpp/thread/unique lock">std::unique_lock</a></span>  <br /> <span class="t-mark">(class)</span>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/condition_variable_any.html" title="cpp/thread/condition variable any"> condition_variable_any</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/condition_variable_any.html" title="cpp/thread/condition variable any"> <span class="t-lines"><span>condition_variable_any</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   provides a condition variable associated with any lock type  <br /> <span class="t-mark">(class)</span>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"> notify_all_at_thread_exit</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"> <span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   schedules a call to <code>notify_all</code> to be invoked when this thread is completely finished  <br /> <span class="t-mark">(function)</span>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/cv_status.html" title="cpp/thread/cv status"> cv_status</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/cv_status.html" title="cpp/thread/cv status"> <span class="t-lines"><span>cv_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   lists the possible results of timed waits on condition variables  <br /> <span class="t-mark">(enum)</span>
 </td></tr>
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=edit&amp;section=4" title="Edit section: Futures">edit</a>]</span> <span class="mw-headline" id="Futures">Futures</span></h3>
-<p>The standard library provides facilities to obtain values that are returned and to catch exceptions that are thrown by asynchronous tasks (i.e. functions launched in separate threads). These values are communicated in a <i>shared state</i>, in which the asynchronous task may write its return value or store an exception, and which may be examined, waited for, and otherwise manipulated by other threads that hold instances of <span class="mw-geshi cpp source-cpp"><a href="thread/future.html"><span class="kw1697">std::<span class="me2">future</span></span></a></span> or <span class="mw-geshi cpp source-cpp"><a href="thread/shared_future.html"><span class="kw1698">std::<span class="me2">shared_future</span></span></a></span> that reference that shared state.
+<p>The standard library provides facilities to obtain values that are returned and to catch exceptions that are thrown by asynchronous tasks (i.e. functions launched in separate threads). These values are communicated in a <i>shared state</i>, in which the asynchronous task may write its return value or store an exception, and which may be examined, waited for, and otherwise manipulated by other threads that hold instances of <span class="t-lc"><a href="thread/future.html" title="cpp/thread/future">std::future</a></span> or <span class="t-lc"><a href="thread/shared_future.html" title="cpp/thread/shared future">std::shared_future</a></span> that reference that shared state.
 </p>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-header">
-<td colspan="2"> <div>Defined in header <code><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/future&amp;action=edit&amp;redlink=1" class="new" title="cpp/header/future (page does not exist)">&lt;future&gt;</a></code> </div>
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;future&gt;</code> </div>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/promise.html" title="cpp/thread/promise"> promise</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/promise.html" title="cpp/thread/promise"> <span class="t-lines"><span>promise</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   stores a value for asynchronous retrieval  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_promise&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   stores a value for asynchronous retrieval  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_promise&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/packaged_task.html" title="cpp/thread/packaged task"> packaged_task</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/packaged_task.html" title="cpp/thread/packaged task"> <span class="t-lines"><span>packaged_task</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   packages a function to store its return value for asynchronous retrieval  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_packaged_task&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   packages a function to store its return value for asynchronous retrieval  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_packaged_task&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/future.html" title="cpp/thread/future"> future</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/future.html" title="cpp/thread/future"> <span class="t-lines"><span>future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   waits for a value that is set asynchronously  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_future&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   waits for a value that is set asynchronously  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/shared_future.html" title="cpp/thread/shared future"> shared_future</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/shared_future.html" title="cpp/thread/shared future"> <span class="t-lines"><span>shared_future</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   waits for a value (possibly referenced by other futures) that is set asynchronously  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_shared_future&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   waits for a value (possibly referenced by other futures) that is set asynchronously  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_shared_future&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/async.html" title="cpp/thread/async"> async</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/async.html" title="cpp/thread/async"> <span class="t-lines"><span>async</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   runs a function asynchronously (potentially in a new thread) and returns a <span class="mw-geshi cpp source-cpp"><a href="thread/future.html"><span class="kw1697">std::<span class="me2">future</span></span></a></span> that will hold the result  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_async&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   runs a function asynchronously (potentially in a new thread) and returns a <span class="t-lc"><a href="thread/future.html" title="cpp/thread/future">std::future</a></span> that will hold the result  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_async&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/launch.html" title="cpp/thread/launch"> launch</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/launch.html" title="cpp/thread/launch"> <span class="t-lines"><span>launch</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   specifies the launch policy for <span class="mw-geshi cpp source-cpp"><a href="thread/async.html"><span class="kw1701">std::<span class="me2">async</span></span></a></span>  <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_launch&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   specifies the launch policy for <span class="t-lc"><a href="thread/async.html" title="cpp/thread/async">std::async</a></span>  <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_launch&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/future_status.html" title="cpp/thread/future status"> future_status</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/future_status.html" title="cpp/thread/future status"> <span class="t-lines"><span>future_status</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   specifies the results of timed waits performed on <span class="mw-geshi cpp source-cpp"><a href="thread/future.html"><span class="kw1697">std::<span class="me2">future</span></span></a></span> and <span class="mw-geshi cpp source-cpp"><a href="thread/shared_future.html"><span class="kw1698">std::<span class="me2">shared_future</span></span></a></span>  <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_future_status&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   specifies the results of timed waits performed on <span class="t-lc"><a href="thread/future.html" title="cpp/thread/future">std::future</a></span> and <span class="t-lc"><a href="thread/shared_future.html" title="cpp/thread/shared future">std::shared_future</a></span>  <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_status&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -797,47 +574,49 @@
 <td colspan="2"> <h5> <span class="mw-headline" id="Future_errors">  Future errors </span></h5>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/future_error.html" title="cpp/thread/future error"> future_error</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/future_error.html" title="cpp/thread/future error"> <span class="t-lines"><span>future_error</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   reports an error related to futures or promises  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_future_error&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   reports an error related to futures or promises  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_error&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/future_category.html" title="cpp/thread/future category"> future_category</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/future_category.html" title="cpp/thread/future category"> <span class="t-lines"><span>future_category</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   identifies the future error category <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_future_category&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   identifies the future error category <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_category&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="thread/future_errc.html" title="cpp/thread/future errc"> future_errc</a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="thread/future_errc.html" title="cpp/thread/future errc"> <span class="t-lines"><span>future_errc</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   identifies the future error codes <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dcl_list_future_errc&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   identifies the future error codes <br /> <span class="t-mark">(enum)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/dsc_future_errc&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 5126/1000000
-Post-expand include size: 176405/2097152 bytes
-Template argument size: 34384/2097152 bytes
+Preprocessor visited node count: 6917/1000000
+Preprocessor generated node count: 7187/1000000
+Post‐expand include size: 270662/2097152 bytes
+Template argument size: 51263/2097152 bytes
+Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1774-0!*!0!!en!*!* and timestamp 20130207023015 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1774-0!*!0!!en!*!* and timestamp 20130915145139 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=45598">http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=45598</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=65037">http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=65037</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -860,7 +639,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/thread" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/thread" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=45598" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/thread" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/thread" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;oldid=65037" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -868,8 +647,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/thread" title="cpp/thread" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/thread" title="cpp/thread" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/thread" title="cpp/thread" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/thread" title="cpp/thread" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/thread" title="cpp/thread" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/thread" title="cpp/thread" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/thread" title="cpp/thread" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 5 January 2013, at 11:54.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 31,942 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 29 August 2013, at 11:49.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 37,308 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -878,36 +657,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 1.701 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.639 secs. -->        
 	</body>
-<!-- Cached 20130207023015 -->
+<!-- Cached 20130915145139 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/thread by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:09:40 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/thread by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:46:14 GMT -->
 </html>

@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 
-<!-- Mirrored from en.cppreference.com/w/cpp/utility/hash by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:16 GMT -->
+<!-- Mirrored from en.cppreference.com/w/cpp/utility/hash by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:44 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::hash - cppreference.com</title>
 <meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.18.2" />
+<meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit" />
 <link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit" />
 <link rel="shortcut icon" href="../../../favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../mwiki/load202e.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <link rel="stylesheet" href="../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
-<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}#toc{display:none}.editsection{display:none}
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:4:b677bc2b5ec37947892a2d0853532528 */</style>
 <script src="../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "cpp/utility/hash", "wgTitle": "cpp/utility/hash", "wgCurRevisionId": 45645, "wgArticleId": 2990, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
-}
-</script><script>if(window.mw){
-	mw.loader.load(["mediawiki.page.startup"]);
-}
-</script>
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/utility/hash","wgTitle":"cpp/utility/hash","wgCurRevisionId":66813,"wgArticleId":2990,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/utility/hash","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
 <style type="text/css">/*<![CDATA[*/
 .source-cpp {line-height: normal;}
 .source-cpp li, .source-cpp pre {
@@ -104,12 +107,13 @@
 
 /*]]>*/
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
-<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_utility_hash action-view skin-cppreference2 cpp-navbar">
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_utility_hash skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
         <div id="mw-head" class="noprint">
             <div id="cpp-head-first-base">
                 <div id="cpp-head-first">
-                    <h5><a href="../../../index.html">cppreference.com</a></h5>
+                    <h5><a href="../../../index.html">
+                        cppreference.com                        </a></h5>
                     <div id="cpp-head-search">
                         
 <!-- 0 -->
@@ -118,7 +122,7 @@
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -128,7 +132,11 @@
                         
 <!-- 0 -->
 <div id="p-personal" class="">
-<span id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Futility%2Fhash" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></span></div>
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Futility%2Fhash&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Futility%2Fhash" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
 
 <!-- /0 -->
                     </div>
@@ -204,198 +212,75 @@
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a> | <a href="../utility.html" title="cpp/utility">utility</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../utility.html" title="cpp/utility">utility</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="line-height:1.1em;">
-
-<tr>
-<td colspan="5">  <a href="../language.html" title="cpp/language"> Language</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../header.html" title="cpp/header"> Standard library headers</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../concept.html" title="cpp/concept"> Concepts</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../utility.html" title="cpp/utility"> Utilities library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../string.html" title="cpp/string"> Strings library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../container.html" title="cpp/container"> Containers library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../iterator.html" title="cpp/iterator"> Iterators library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../numeric.html" title="cpp/numeric"> Numerics library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../io.html" title="cpp/io"> Input/output library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../locale.html" title="cpp/locale"> Localizations library</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark">(C++11)</span>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5">  <a href="../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits)
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../memory.html" title="cpp/memory"> Dynamic memory management</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../errorhtml.html" title="cpp/error"> Error handling</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="program.html" title="cpp/utility/program"> Program utilities</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="variadichtml.html" title="cpp/utility/variadic"> Variadic functions</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="../chrono.html" title="cpp/chrono"> Date and time</a>
-</td></tr>
-
-<tr>
-<td colspan="5">  <a href="functional.html" title="cpp/utility/functional"> Function objects</a>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="initializer_list.html" title="cpp/utility/initializer list">initializer_list</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="bitset.html" title="cpp/utility/bitset">bitset</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><strong class="selflink">hash</strong></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Relational operators
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp">rel_ops::operator!=<br />rel_ops::operator&gt;<br />rel_ops::operator&lt;=<br />rel_ops::operator&gt;=</a></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Pairs and tuples
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="pair.html" title="cpp/utility/pair">pair</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="tuple.html" title="cpp/utility/tuple">tuple</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="piecewise_construct_t.html" title="cpp/utility/piecewise construct t">piecewise_construct_t</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="piecewise_construct.html" title="cpp/utility/piecewise construct">piecewise_construct</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr class="t-sb-list-h2">
-<td colspan="5">  Swap, forward and move
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="../algorithm/swap.html" title="cpp/algorithm/swap">swap</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="forward.html" title="cpp/utility/forward">forward</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="move.html" title="cpp/utility/move">move</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="move_if_noexcept.html" title="cpp/utility/move if noexcept">move_if_noexcept</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="declval.html" title="cpp/utility/declval">declval</a></td><td><span class="t-mark">(C++11)</span></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"><code>std::hash</code></strong><div class="t-navbar-menu"><div><div>
-<table class="t-sb-list" cellpadding="0" style="">
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="hash/hashhtml.html" title="cpp/utility/hash/hash">hash::hash</a></td></tr></table>
-</td></tr>
-
-<tr>
-<td colspan="5"> <table class="t-sb-list-ln-table"><tr><td><a href="hash/operator()html.html" title="cpp/utility/hash/operator()">hash::operator()</a></td></tr></table>
-</td></tr>
-</table>
-</div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/hash/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<table class="t-ddcl-list">
-<tr class="t-ddcl-list-header">
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../memory.html" title="cpp/memory"> Dynamic memory management</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error"> Error handling</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="program.html" title="cpp/utility/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variadic.html" title="cpp/utility/variadic"> Variadic functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../chrono.html" title="cpp/chrono"> Date and time</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="functional.html" title="cpp/utility/functional"> Function objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="initializer_list.html" title="cpp/utility/initializer list"><span class="t-lines"><span>initializer_list</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bitset.html" title="cpp/utility/bitset"><span class="t-lines"><span>bitset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>hash</span></span></strong></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relational operators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp"><span class="t-lines"><span>rel_ops::operator!=</span><span>rel_ops::operator&gt;</span><span>rel_ops::operator&lt;=</span><span>rel_ops::operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Pairs and tuples</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="pair.html" title="cpp/utility/pair"><span class="t-lines"><span>pair</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tuple.html" title="cpp/utility/tuple"><span class="t-lines"><span>tuple</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="piecewise_construct_t.html" title="cpp/utility/piecewise construct t"><span class="t-lines"><span>piecewise_construct_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="piecewise_construct.html" title="cpp/utility/piecewise construct"><span class="t-lines"><span>piecewise_construct</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Swap, forward and move</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="forward.html" title="cpp/utility/forward"><span class="t-lines"><span>forward</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="move.html" title="cpp/utility/move"><span class="t-lines"><span>move</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="move_if_noexcept.html" title="cpp/utility/move if noexcept"><span class="t-lines"><span>move_if_noexcept</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="declval.html" title="cpp/utility/declval"><span class="t-lines"><span>declval</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"><tt>std::hash</tt></strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hash/hash" title="cpp/utility/hash/hash"><span class="t-lines"><span>hash::hash</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hash/operator().html" title="cpp/utility/hash/operator()"><span class="t-lines"><span>hash::operator()</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/hash/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../header/functional.html" title="cpp/header/functional">&lt;functional&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Key <span class="sy1">&gt;</span><br />
 <span class="kw1">struct</span> hash<span class="sy4">;</span> <span class="co1">// not defined</span></span></div></td>
-<td class="t-ddcl-list-item-nopad">  </td>
-<td> <span class="t-mark">(since C++11)</span> </td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-</table>
-<p>The hash template defines a function object that implements a <a href="http://en.wikipedia.com/wiki/Hash_function" class="extiw" title="enwiki:Hash function">hash function</a>.  Instances of this function object define an <span class="mw-geshi cpp source-cpp">operator<span class="br0">&#40;</span><span class="br0">&#41;</span></span> that:
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>The hash template defines a function object that implements a <a href="http://en.wikipedia.com/wiki/Hash_function" class="extiw" title="enwiki:Hash function">hash function</a>.  Instances of this function object define an <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> that:
 </p><p>1. Accepts a single parameter of type <code>Key</code>.
-</p><p>2. Returns a value of type <span class="mw-geshi cpp source-cpp">size_t</span> that represents the hash value of the parameter.
+</p><p>2. Returns a value of type <span class="t-c"><span class="mw-geshi cpp source-cpp">size_t</span></span> that represents the hash value of the parameter.
 </p><p>3. Does not throw exceptions when called.
-</p><p>4. For two parameters <code>k1</code> and <code>k2</code> that are equal, <span class="mw-geshi cpp source-cpp"><a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k1<span class="br0">&#41;</span> <span class="sy1">==</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k2<span class="br0">&#41;</span></span>.
-</p><p>5. For two different parameters <code>k1</code> and <code>k2</code> that are not equal, the probability that <span class="mw-geshi cpp source-cpp"><a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k1<span class="br0">&#41;</span> <span class="sy1">==</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k2<span class="br0">&#41;</span></span> should be very small, approaching <span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><a href="../types/numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>size_t<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span>.
+</p><p>4. For two parameters <code>k1</code> and <code>k2</code> that are equal, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k1<span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k2<span class="br0">&#41;</span></span></span>.
+</p><p>5. For two different parameters <code>k1</code> and <code>k2</code> that are not equal, the probability that <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k1<span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k2<span class="br0">&#41;</span></span></span> should be very small, approaching <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><a href="../types/numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>size_t<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
 </p><p>The hash template is both <a href="../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a> and <a href="../concept/Destructible.html" title="cpp/concept/Destructible"><code>Destructible</code></a>.
-</p><p>The unordered associative containers <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_set.html"><span class="kw1065">std::<span class="me2">unordered_set</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_multiset.html"><span class="kw1066">std::<span class="me2">unordered_multiset</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_map.html"><span class="kw1067">std::<span class="me2">unordered_map</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_multimaphtml.html"><span class="kw1068">std::<span class="me2">unordered_multimap</span></span></a></span> use specializations of the template <span class="mw-geshi cpp source-cpp"><a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a></span> as the default hash function.
+</p><p>The unordered associative containers <span class="t-lc"><a href="../container/unordered_set.html" title="cpp/container/unordered set">std::unordered_set</a></span>, <span class="t-lc"><a href="../container/unordered_multiset.html" title="cpp/container/unordered multiset">std::unordered_multiset</a></span>, <span class="t-lc"><a href="../container/unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span>, <span class="t-lc"><a href="../container/unordered_multimap.html" title="cpp/container/unordered multimap">std::unordered_multimap</a></span> use specializations of the template <span class="t-lc"><strong class="selflink">std::hash</strong></span> as the default hash function.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -409,64 +294,64 @@
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>The actual hash functions are implementation-dependent and are not required to fulfill any other quality criteria except those specified above. Notably, some implementations use trivial (identity) hash functions which map an integer to itself. In other words, these hash functions are designed to work with unordered associative containers, but not as cryptographic hashes, for example.
-</p><p>There is no specialization for C strings. <span class="mw-geshi cpp source-cpp"><a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span><span class="sy1">&gt;</span></span> produces a hash of the value of the pointer (the memory address), it does not examine the contents of any character array.
+</p><p>There is no specialization for C strings. <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span><span class="sy1">&gt;</span></span></span> produces a hash of the value of the pointer (the memory address), it does not examine the contents of any character array.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=2" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
+<tr class="t-dsc">
 <td>  <code>argument_type</code>
 </td>
 <td>  <code>Key</code>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
+<tr class="t-dsc">
 <td>  <code>result_type</code>
 </td>
-<td>  <span class="mw-geshi cpp source-cpp"><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a></span>
+<td>  <span class="t-lc"><a href="../types/size_t.html" title="cpp/types/size t">std::size_t</a></span>
 </td></tr>
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=3" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div t-dcl-member-nobold-div"><div><a href="hash/hashhtml.html" title="cpp/utility/hash/hash"> (constructor)</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="hash/hash" title="cpp/utility/hash/hash"> <span class="t-lines"><span>(constructor)</span></span></a></div></div>
 </td>
 <td>  constructs a hash function object <br /> <span class="t-mark">(public member function)</span>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="hash/operator()html.html" title="cpp/utility/hash/operator()"> operator()</a></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="hash/operator().html" title="cpp/utility/hash/operator()"> <span class="t-lines"><span>operator()</span></span></a></div></div>
 </td>
 <td>   calculate the hash of the argument  <br /> <span class="t-mark">(public member function)</span>
 </td></tr>
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=4" title="Edit section: Standard specializations for basic types">edit</a>]</span> <span class="mw-headline" id="Standard_specializations_for_basic_types">Standard specializations for basic types</span></h3>
-<table class="t-ddcl-list">
-<tr class="t-ddcl-list-header">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../header/functional.html" title="cpp/header/functional">&lt;functional&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-<tr class="t-ddcl-list-item">
-<td class="t-ddcl-list-item-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
+</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
 <p><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">signed</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
@@ -486,180 +371,188 @@
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="sy4">;</span><br />
 </p>
 <span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
-<td class="t-ddcl-list-item-nopad">  </td>
-<td class="t-ddcl-list-item-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
 </tr>
-<tr><td colspan="3" class="t-ddcl-list-sep"></td></tr>
-</table>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=5" title="Edit section: Standard specializations for library types">edit</a>]</span> <span class="mw-headline" id="Standard_specializations_for_library_types">Standard specializations for library types</span></h3>
-<table class="t-dcl-list">
+<table class="t-dsc-begin">
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../string/basic_string/hash.html" title="cpp/string/basic string/hash"> std::hash<span class="t-dcl-small">&lt;std::string&gt;</span><br />std::hash<span class="t-dcl-small">&lt;std::u16string&gt;</span><br />std::hash<span class="t-dcl-small">&lt;std::u32string&gt;</span><br />std::hash<span class="t-dcl-small">&lt;std::wstring&gt;</span></a></div><div><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span><br /><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../string/basic_string/hash.html" title="cpp/string/basic string/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::string&gt;</span></span><span>std::hash<span class="t-dsc-small">&lt;std::u16string&gt;</span></span><span>std::hash<span class="t-dsc-small">&lt;std::u32string&gt;</span></span><span>std::hash<span class="t-dsc-small">&lt;std::wstring&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for strings  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/basic_string/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for strings  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/basic_string/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../error/error_code/hash.html" title="cpp/error/error code/hash"> std::hash<span class="t-dcl-small">&lt;std::error_code&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../error/error_code/hash.html" title="cpp/error/error code/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::error_code&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../error/error_code.html"><span class="kw800">std::<span class="me2">error_code</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/error/error_code/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/error/error_code/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="bitset/hash.html" title="cpp/utility/bitset/hash"> std::hash<span class="t-dcl-small">&lt;std::bitset&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="bitset/hash.html" title="cpp/utility/bitset/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::bitset&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="bitset.html"><span class="kw867">std::<span class="me2">bitset</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/bitset/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="t-lc"><a href="bitset.html" title="cpp/utility/bitset">std::bitset</a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/bitset/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../memory/unique_ptr/hash.html" title="cpp/memory/unique ptr/hash"> std::hash<span class="t-dcl-small">&lt;std::unique_ptr&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../memory/unique_ptr/hash.html" title="cpp/memory/unique ptr/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::unique_ptr&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../memory/unique_ptr.html"><span class="kw580">std::<span class="me2">unique_ptr</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/unique_ptr/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="t-lc"><a href="../memory/unique_ptr.html" title="cpp/memory/unique ptr">std::unique_ptr</a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/unique_ptr/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../memory/shared_ptr/hash.html" title="cpp/memory/shared ptr/hash"> std::hash<span class="t-dcl-small">&lt;std::shared_ptr&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../memory/shared_ptr/hash.html" title="cpp/memory/shared ptr/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::shared_ptr&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../memory/shared_ptr.html"><span class="kw581">std::<span class="me2">shared_ptr</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="t-lc"><a href="../memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../types/type_index/hash.html" title="cpp/types/type index/hash"> std::hash<span class="t-dcl-small">&lt;std::type_index&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../types/type_index/hash.html" title="cpp/types/type index/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::type_index&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../types/type_index.html"><span class="kw438">std::<span class="me2">type_index</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/types/type_index/dcl_list_hash&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   hash support for <span class="t-lc"><a href="../types/type_index.html" title="cpp/types/type index">std::type_index</a></span>  <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/types/type_index/dsc_hash&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../container/vector_bool/hash.html" title="cpp/container/vector bool/hash"> std::hash<span class="t-dcl-small">&lt;std::vector&lt;bool&gt;&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../container/vector_bool/hash.html" title="cpp/container/vector bool/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::vector&lt;bool&gt;&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../container/vector.html"><span class="kw1057">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span>  <br /> <span class="t-mark">(class template specialization)</span>
+<td>   hash support for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../container/vector.html"><span class="kw1066">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span>  <br /> <span class="t-mark">(class template specialization)</span>
 </td></tr>
 
 
-<tr class="t-dcl-list-sep">
+<tr class="t-dsc-sep">
 <td colspan="2">
 </td></tr>
-<tr class="t-dcl-list-item">
-<td>  <div class="t-dcl-member-div"><div><a href="../thread/thread/id/hash.html" title="cpp/thread/thread/id/hash"> std::hash<span class="t-dcl-small">&lt;std::thread::id&gt;</span></a></div><div><span class="t-mark">(C++11)</span></div></div>
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../thread/thread/id/hash.html" title="cpp/thread/thread/id/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::thread::id&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   hash support for <span class="mw-geshi cpp source-cpp"><a href="../thread/thread/id.html"><span class="kw1672">std::<span class="me2">thread</span><span class="sy4">::</span><span class="me2">id</span></span></a></span>  <br /> <span class="t-mark">(class template specialization)</span>
+<td>   hash support for <span class="t-lc"><a href="../thread/thread/id.html" title="cpp/thread/thread/id">std::thread::id</a></span>  <br /> <span class="t-mark">(class template specialization)</span>
 </td></tr>
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=edit&amp;section=6" title="Edit section: Examples">edit</a>]</span> <span class="mw-headline" id="Examples">Examples</span></h3>
 <div class="t-example"><p>
-<p>Demonstrates the computation of a hash for <span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a></span>, a type that already has a hash specialization.
+<p>Demonstrates the computation of a hash for <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::string</a></span>, a type that already has a hash specialization.
 </p>
- </p><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3kcd-6GTRsS-afKan_ee6Svvq8GTsteN7zdp-Kj_tFe5zPNlAfaH9t_0aUJX6jFv3OK_eYOZdwim9So5K_QHqa1DPf_TSjOHigYCc9xHwjzX6k4U_acbbaXiF5r7ODj0j_elZwCDHFsis9Kzk46Get6vDZ6FSeur7oDAoMHm_NqkoL9q8DPj6vqnDohggnq1le5-Amldeas=' class='external text'>run this code</a></div>
+ </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;functional&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;Meet the new boss...&quot;</span><span class="sy4">;</span>
-    <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> hash_fn<span class="sy4">;</span>
-    size_t str_hash <span class="sy1">=</span> hash_fn<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;Meet the new boss...&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> hash_fn<span class="sy4">;</span>
+    <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> str_hash <span class="sy1">=</span> hash_fn<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str_hash <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str_hash <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
-<p>Output:
+<p>Possible output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">391070135</pre></div></div> 
 </div>
 <div class="t-example"><p>
-<p>Demonstrates creation of a hash function for a user defined type. Using this as a template parameter for <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_map.html"><span class="kw1067">std::<span class="me2">unordered_map</span></span></a></span>, <span class="mw-geshi cpp source-cpp"><a href="../container/unordered_set.html"><span class="kw1065">std::<span class="me2">unordered_set</span></span></a></span>, etc. also requires specialization of <span class="mw-geshi cpp source-cpp"><a href="functional/equal_to.html"><span class="kw874">std::<span class="me2">equal_to</span></span></a></span>.
+<p>Demonstrates creation of a hash function for a user defined type. Using this as a template parameter for <span class="t-lc"><a href="../container/unordered_map.html" title="cpp/container/unordered map">std::unordered_map</a></span>, <span class="t-lc"><a href="../container/unordered_set.html" title="cpp/container/unordered set">std::unordered_set</a></span>, etc. also requires specialization of <span class="t-lc"><a href="functional/equal_to.html" title="cpp/utility/functional/equal to">std::equal_to</a></span>.
 </p>
- </p><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3nfDC8HTNthmNWTnU1rSSpsSmjJ2QeJZMt7IHWLBLawMGD8ewUTCYSRmcq9LXd2IDGLwohyd7CkgEcyLa_iIQ8_mZl70QHdYtizhm_yE1rf7LpAC6tjOa-nlG44acluKSMGq9s44XIqIj6YwDXf6RvhfKjh282SDlNPJL7JeT5SxM9U6KVaZBlV2jOBcxQCXHOzAlsSeMDD0BIOr1tuCULZHXQLdPdXDCxU3OjfWsAlbCPInYKR0CipXzA1hIDtTXWB-I1vVXiJ5bsEPZlXH5-m2CS3a0AwgdTPshhkyrTEmD3NoIHWrOLSEtlnUFzRQhNq1GUJVbLR0zqt0mV1wWJFw_L9GkVxy6RWfVePz1sPE87UihcsmvaXm3bljjK8K9hr5z_yLT0jf1ndDTpDqrTtTDTncF8Bwi3VhjyQ2zUMILg==' class='external text'>run this code</a></div>
+ </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;functional&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 &#160;
-<span class="kw1">struct</span> S <span class="br0">&#123;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> first_name<span class="sy4">;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> last_name<span class="sy4">;</span>
+<span class="kw1">struct</span> S
+<span class="br0">&#123;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> first_name<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> last_name<span class="sy4">;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
-<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> MyHash<span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> MyHash<span class="sy4">;</span>
 &#160;
 <span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
-<span class="kw1">class</span> MyHash<span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
+<span class="kw1">class</span> MyHash<span class="sy1">&lt;</span>S<span class="sy1">&gt;</span>
+<span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
-    size_t operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">const</span> S <span class="sy3">&amp;</span>s<span class="br0">&#41;</span> <span class="kw4">const</span> 
+    <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>S <span class="kw4">const</span><span class="sy3">&amp;</span> s<span class="br0">&#41;</span> <span class="kw4">const</span> 
     <span class="br0">&#123;</span>
-        size_t h1 <span class="sy1">=</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">first_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        size_t h2 <span class="sy1">=</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">last_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> h1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">first_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> h2 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">last_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
         <span class="kw1">return</span> h1 <span class="sy3">^</span> <span class="br0">&#40;</span>h2 <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> s1 <span class="sy1">=</span> <span class="st0">&quot;Hubert&quot;</span><span class="sy4">;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> s2 <span class="sy1">=</span> <span class="st0">&quot;Farnsworth&quot;</span><span class="sy4">;</span>
-    <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> h1<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> s1 <span class="sy1">=</span> <span class="st0">&quot;Hubert&quot;</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> s2 <span class="sy1">=</span> <span class="st0">&quot;Farnsworth&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> h1<span class="sy4">;</span>
 &#160;
     S n1<span class="sy4">;</span>
     n1.<span class="me1">first_name</span> <span class="sy1">=</span> s1<span class="sy4">;</span>
     n1.<span class="me1">last_name</span> <span class="sy1">=</span>  s2<span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s1) = &quot;</span> <span class="sy1">&lt;&lt;</span> h1<span class="br0">&#40;</span>s1<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s2) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s2<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span>
+    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s1) = &quot;</span> <span class="sy1">&lt;&lt;</span> h1<span class="br0">&#40;</span>s1<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s2) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s2<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span>
 	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(n1) = &quot;</span> <span class="sy1">&lt;&lt;</span> MyHash<span class="sy1">&lt;</span>S<span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>n1<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
 <span class="br0">&#125;</span></pre></div></div>
-<p>Output:
+<p>Possible output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">hash(s1) = 6119893563398376542
 hash(s2) = 14988020022735710972
 hash(n1) = 17649170831080298918</pre></div></div> 
 </div>
 <div class="t-example"><p>
-<p>Demonstrates how to specialize <span class="mw-geshi cpp source-cpp"><a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a></span> for a user defined type.
+<p>Demonstrates how to specialize <span class="t-lc"><strong class="selflink">std::hash</strong></span> for a user defined type.
 </p>
- </p><div class="t-example-live-link"><a href='http://liveworkspace.org/api/cppreference.com/clangpp/1005f9f891bb264c0273672491cda0bfh9PiNCpmKGQJ3nfB-8WTNthHZd70bSdUsb_L37Xm4Fye337lfARtEA-4B3u7vFVhEQhtH6s9X-RqoitJ3-vrpO9-gwwGeznFePjDmdmOr12eXXtODUNCLGjrxVhguoV5FU_vlj4iee-FHzDX0BtdsnE8rAHr-LEtu0U2rJ0mYnEF9RIiMDiaeRHB0gAmtSqBT3tlCggw3zDU-p2kRGxlVgrGGjll5Aq9b8qjl5lzI7BudWRMONYfCZF5WCoAOG8FyEnTTVFvZa4QUdk21-dPfat6fFXbCL2_r8scSTRRygL3M2vVqePrtwrdMweubiRveX3Z23Eb-iqR7cl6ZzKRglrjidPmDi5RoCumqMF0P6eRHMoVCfod9XFJSt6ODBs-' class='external text'>run this code</a></div>
+ </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;functional&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 &#160;
-<span class="kw1">struct</span> S <span class="br0">&#123;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> first_name<span class="sy4">;</span>
-    <a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a> last_name<span class="sy4">;</span>
+<span class="kw1">struct</span> S
+<span class="br0">&#123;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> first_name<span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> last_name<span class="sy4">;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
-<span class="kw1">namespace</span> std <span class="br0">&#123;</span>
-<span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
-<span class="kw1">struct</span> hash<span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
-<span class="kw1">public</span><span class="sy4">:</span>
-    size_t operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">const</span> S <span class="sy3">&amp;</span>s<span class="br0">&#41;</span> <span class="kw4">const</span> 
+<span class="kw1">namespace</span> std
+<span class="br0">&#123;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;&gt;</span>
+    <span class="kw1">struct</span> hash<span class="sy1">&lt;</span>S<span class="sy1">&gt;</span>
     <span class="br0">&#123;</span>
-        size_t h1 <span class="sy1">=</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">first_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        size_t h2 <span class="sy1">=</span> <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1036">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">last_name</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">return</span> h1 <span class="sy3">^</span> <span class="br0">&#40;</span> h2 <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span> <span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span>
-<span class="br0">&#125;</span><span class="sy4">;</span>
+        <span class="kw1">typedef</span> S argument_type<span class="sy4">;</span>
+        <span class="kw1">typedef</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> value_type<span class="sy4">;</span>
+&#160;
+        value_type operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>argument_type <span class="kw4">const</span><span class="sy3">&amp;</span> s<span class="br0">&#41;</span> <span class="kw4">const</span>
+        <span class="br0">&#123;</span>
+            value_type <span class="kw4">const</span> h1 <span class="br0">&#40;</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">first_name</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+            value_type <span class="kw4">const</span> h2 <span class="br0">&#40;</span> std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>s.<span class="me1">last_name</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw1">return</span> h1 <span class="sy3">^</span> <span class="br0">&#40;</span>h2 <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
@@ -667,28 +560,30 @@ hash(n1) = 17649170831080298918</pre></div></div>
     S s<span class="sy4">;</span>
     s.<span class="me1">first_name</span> <span class="sy1">=</span> <span class="st0">&quot;Bender&quot;</span><span class="sy4">;</span>
     s.<span class="me1">last_name</span> <span class="sy1">=</span>  <span class="st0">&quot;Rodriguez&quot;</span><span class="sy4">;</span>
-    <a href="hash.html"><span class="kw916">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> hash_fn<span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">hash</span><span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> hash_fn<span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ostream.html"><span class="kw1427">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s) = &quot;</span> <span class="sy1">&lt;&lt;</span> hash_fn<span class="br0">&#40;</span>s<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hash(s) = &quot;</span> <span class="sy1">&lt;&lt;</span> hash_fn<span class="br0">&#40;</span>s<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
-<p>Output:
+<p>Possible output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">hash(s) = 32902390710</pre></div></div> 
 </div>
 
 <!-- 
 NewPP limit report
-Preprocessor node count: 3233/1000000
-Post-expand include size: 84650/2097152 bytes
-Template argument size: 29143/2097152 bytes
+Preprocessor visited node count: 3672/1000000
+Preprocessor generated node count: 8791/1000000
+Post‐expand include size: 115540/2097152 bytes
+Template argument size: 32007/2097152 bytes
+Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2990-0!*!0!!en!*!* and timestamp 20130414140905 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2990-0!*!0!!en!*!* and timestamp 20140102210404 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=45645">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=45645</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=66813">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=66813</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -711,7 +606,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/utility/hash" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/utility/hash" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;printable=yes" rel="alternate">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=45645" title="Permanent link to this revision of the page">Permanent link</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/utility/hash" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/utility/hash" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;oldid=66813" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/hash&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -719,8 +614,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/utility/hash" title="cpp/utility/hash" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 January 2013, at 16:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,857 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 January 2014, at 13:04.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 28,436 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -729,36 +624,33 @@ Expensive parser function count: 0/100
                             </ul>
                                     <ul id="footer-icons" class="noprint">
                                     <li id="footer-poweredbyico">
-                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                        </li>
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
             </div>
         </div>
         <!-- /footer -->
-        <script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
-}
-</script>
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
 <script src="../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
-<script>if(window.mw){
-	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0
-	,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
-	
-	/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:4:3740695a1552aee37d594967bd36f869 */
-}
-</script><script type="text/javascript">
+<script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2828341-1");
-pageTracker._trackPageview();
-</script><!-- Served in 3.733 secs. -->        
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.092 secs. -->
 	</body>
-<!-- Cached 20130414140907 -->
+<!-- Cached 20140102210548 -->
 
-<!-- Mirrored from en.cppreference.com/w/cpp/utility/hash by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 10 May 2013 15:14:17 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Mirrored from en.cppreference.com/w/cpp/utility/hash by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:46 GMT -->
 </html>
