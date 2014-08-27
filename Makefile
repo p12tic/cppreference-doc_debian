@@ -26,11 +26,11 @@ bookdir = $(datarootdir)/devhelp/books
 
 #Version
 
-VERSION=20140208
+VERSION=20140827
 
 #STANDARD RULES
 
-all: doc_devhelp doc_qch
+all: doc_devhelp doc_qch doc_doxygen
 
 DISTFILES=	\
 		reference/				\
@@ -39,10 +39,11 @@ DISTFILES=	\
 		ddg_parse_html.py		\
 		devhelp2qch.xsl			\
 		fix_devhelp-links.py	\
-		httrack-workarounds.py	\
+		index2autolinker.py	\
 		index2browser.py		\
 		index2ddg.py			\
 		index2devhelp.py		\
+		index2doxygen-tag.py		\
 		index2search.py			\
 		index2highlight.py		\
 		index_transform.py		\
@@ -51,11 +52,13 @@ DISTFILES=	\
 		index-functions.README	\
 		index-functions-c.xml	\
 		index-functions-cpp.xml	\
+		link_map.py		\
 		preprocess.py			\
 		preprocess.xsl			\
 		preprocess-css.css		\
 		Makefile				\
-		README
+		README				\
+		xml_utils.py
 
 CLEANFILES= \
 		output
@@ -71,7 +74,7 @@ dist: clean
 	tar czf "cppreference-doc-$(VERSION).tar.gz" "cppreference-doc-$(VERSION)"
 	rm -rf "cppreference-doc-$(VERSION)"
 
-install:
+install: all
 	# install the devhelp documentation
 	pushd "output/reference" > /dev/null; \
 	find . -type f \
@@ -82,6 +85,10 @@ install:
 		"$(DESTDIR)$(bookdir)/cppreference-doc-en-c/cppreference-doc-en-c.devhelp2"
 	install -DT -m 644 "output/cppreference-doc-en-cpp.devhelp2" \
 		"$(DESTDIR)$(bookdir)/cppreference-doc-en-cpp/cppreference-doc-en-cpp.devhelp2"
+	install -DT -m 644 "output/cppreference-doxygen-local.tag.xml" \
+		"$(DESTDIR)$(bookdir)/cppreference-doxygen-local.tag.xml"
+	install -DT -m 644 "output/cppreference-doxygen-web.tag.xml" \
+		"$(DESTDIR)$(bookdir)/cppreference-doxygen-web.tag.xml"
 
 	# install the .qch (Qt Help) documentation
 	install -DT -m 644 "output/cppreference-doc-en-cpp.qch" \
@@ -91,12 +98,39 @@ uninstall:
 	rm -rf "$(DESTDIR)$(docdir)"
 	rm -rf "$(DESTDIR)$(bookdir)"
 
+release: all
+	rm -rf release
+	mkdir -p release
+
+	# zip the distributable
+	mkdir -p "cppreference-doc-$(VERSION)"
+	cp -r $(DISTFILES) "cppreference-doc-$(VERSION)"
+	tar czf "release/cppreference-doc-$(VERSION).tar.gz" "cppreference-doc-$(VERSION)"
+	zip -r "release/cppreference-doc-$(VERSION).zip" "cppreference-doc-$(VERSION)"
+	rm -rf "cppreference-doc-$(VERSION)"
+
+	# zip the html output
+	pushd "output"; \
+	tar czf "../release/html-book-$(VERSION).tar.gz" "reference" \
+		"cppreference-doxygen-local.tag.xml" ; \
+	zip -r "../release/html-book-$(VERSION).zip" "reference" \
+		"cppreference-doxygen-local.tag.xml" ; \
+	popd
+
+	# zip qch
+	pushd "output"; \
+	tar czf "../release/qch-book-$(VERSION).tar.gz" "cppreference-doc-en-cpp.qch"; \
+	zip -r "../release/qch-book-$(VERSION).zip" "cppreference-doc-en-cpp.qch"; \
+	popd
+
 #WORKER RULES
 doc_html: output/reference
 
 doc_devhelp: output/cppreference-doc-en-c.devhelp2 output/cppreference-doc-en-cpp.devhelp2
 
 doc_qch: output/cppreference-doc-en-cpp.qch
+
+doc_doxygen: output/cppreference-doxygen-web.tag.xml output/cppreference-doxygen-local.tag.xml
 
 #builds the title<->location map
 output/link-map.xml: output/reference
@@ -147,11 +181,24 @@ output/qch-help-project-cpp.xml: output/cppreference-doc-en-cpp.devhelp2
 	xsltproc devhelp2qch.xsl "output/cppreference-doc-en-cpp.devhelp2" > \
 		"output/qch-help-project-cpp.xml"
 
-output:
-	mkdir -p output
+# build doxygen tag file
+output/cppreference-doxygen-local.tag.xml: 		\
+		output/reference 		\
+		output/link-map.xml
+	./index2doxygen-tag.py "output/link-map.xml" \
+		"index-functions-cpp.xml" \
+		"output/cppreference-doxygen-local.tag.xml"
+
+output/cppreference-doxygen-web.tag.xml: 		\
+		output/reference 		\
+		output/link-map.xml
+	./index2doxygen-tag.py web \
+		"index-functions-cpp.xml" \
+		"output/cppreference-doxygen-web.tag.xml"
 
 #create preprocessed archive
-output/reference: output
+output/reference:
+	mkdir -p output
 	./preprocess.py
 
 # create indexes for the wiki
@@ -171,22 +218,17 @@ source:
 	mkdir "reference"
 
 	pushd "reference" > /dev/null; \
-	httrack http://en.cppreference.com/w/ -k --near --include-query-string \
-	  -* +en.cppreference.com/* +upload.cppreference.com/* -*index.php\?* \
-	  -*/Special:* -*/Talk:* -*/Help:* -*/File:* -*/Cppreference:* -*/WhatLinksHere:* \
-	  -*/Template:* -*/Category:* -*action=* -*printable=* \
-	  -en.cppreference.com/book/* -en.cppreference.com/book \
-	  +*MediaWiki:Common.css* +*MediaWiki:Print.css* +*MediaWiki:Vector.css* \
-	  -*MediaWiki:Geshi.css* "+*title=-&action=raw*" --timeout=180 --retries=10 ;\
+	regex=".*index\\.php.*|.*/Special:.*|.*/Talk:.*" \
+	regex+="|.*/Help:.*|.*/File:.*|.*/Cppreference:.*" \
+	regex+="|.*/WhatLinksHere:.*|.*/Template:.*|.*/Category:.*" \
+	regex+="|.*action=.*|.*printable=.*|.*en.cppreference.com/book.*" ; \
+	echo $$regex ; \
+	wget --adjust-extension --page-requisites --convert-links \
+	  --force-directories --recursive --level=15 \
+	  --span-hosts --domains=en.cppreference.com,upload.cppreference.com \
+	  --reject-regex $$regex \
+	  --timeout=180 --no-verbose \
+	  --retry-connrefused --waitretry=1 --read-timeout=20 \
+	  http://en.cppreference.com/w/ ; \
 	popd > /dev/null
-
-	#delete useless files
-	rm -rf "reference/hts-cache"
-	rm -f "reference/backblue.gif"
-	rm -f "reference/fade.gif"
-	rm -f "reference/hts-log.txt"
-	rm -f "reference/index.html"
-
-	#download files that httrack has forgotten
-	./httrack-workarounds.py
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-    Copyright (C) 2013  Povilas Kanapickas <tir5c3@yahoo.co.uk>
+    Copyright (C) 2013  Povilas Kanapickas <povilas@radix.lt>
 
     This file is part of cppreference-doc
 
@@ -18,7 +18,8 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 '''
 
-from index_transform import IndexTransform, xml_escape
+from index_transform import IndexTransform
+from xml_utils import xml_escape
 import sys
 
 if len(sys.argv) != 8:
@@ -58,10 +59,10 @@ class Index2Devhelp(IndexTransform):
         return ''
 
     def process_item_hook(self, el, full_name, full_link):
-        global out_f, rel_link
+        global out_f
         out_f.write('<keyword type="' + xml_escape(self.get_mark(el))
                     + '" name="' + xml_escape(full_name)
-                    + '" link="' + xml_escape(rel_link) + '"/>\n')
+                    + '" link="' + xml_escape(full_link) + '"/>\n')
         IndexTransform.process_item_hook(self, el, full_name, full_link)
 
 out_f.write('<?xml version="1.0"?>\n'
@@ -83,6 +84,3 @@ out_f.write('''
   </functions>
 </book>
 ''')
-
-
-

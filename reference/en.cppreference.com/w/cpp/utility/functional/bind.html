@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
-
-<!-- Mirrored from en.cppreference.com/w/cpp/utility/functional/bind by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:51 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>std::bind - cppreference.com</title>
 <meta charset="UTF-8" />
@@ -13,15 +10,15 @@
 <link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
 <link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../../mwiki/loadfe52.css?debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%7Cext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
-<link rel="stylesheet" href="../../../../mwiki/load7fe1.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
 <style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
 /* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
-<script src="../../../../mwiki/load404e.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/utility/functional/bind","wgTitle":"cpp/utility/functional/bind","wgCurRevisionId":66482,"wgArticleId":4161,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/utility/functional/bind","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/utility/functional/bind","wgTitle":"cpp/utility/functional/bind","wgCurRevisionId":72012,"wgArticleId":4161,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/utility/functional/bind","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -122,7 +119,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
 		<input type='hidden' name="title" value="Special:Search"/>
 				<div id="simpleSearch">
-						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr11b9.png?303" alt="Search" /></button>					</div>
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="Search" /></button>					</div>
 			</form>
 </div>
 
@@ -160,7 +157,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 1 -->
 <div id="p-variants" class="vectorMenu emptyPortlet">
-		<h5><span>Variants</span><a href="#"></a></h5>
+		<h5><span>Variants</span><a href="bind.html#"></a></h5>
 	<div class="menu">
 		<ul>
 					</ul>
@@ -185,7 +182,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 1 -->
 <div id="p-cactions" class="vectorMenu emptyPortlet">
-	<h5><span>Actions</span><a href="#"></a></h5>
+	<h5><span>Actions</span><a href="bind.html#"></a></h5>
 	<div class="menu">
 		<ul>
 					</ul>
@@ -216,7 +213,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
                     <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
-<tr class="t-nv"><td colspan="5"> <a href="../../language.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
@@ -228,7 +225,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../atomic" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
@@ -281,8 +278,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="equal_to.html" title="cpp/utility/functional/equal to"><span class="t-lines"><span>equal_to</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not_equal_to.html" title="cpp/utility/functional/not equal to"><span class="t-lines"><span>not_equal_to</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="greater" title="cpp/utility/functional/greater"><span class="t-lines"><span>greater</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="less" title="cpp/utility/functional/less"><span class="t-lines"><span>less</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="greater.html" title="cpp/utility/functional/greater"><span class="t-lines"><span>greater</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="less.html" title="cpp/utility/functional/less"><span class="t-lines"><span>less</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="greater_equal.html" title="cpp/utility/functional/greater equal"><span class="t-lines"><span>greater_equal</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="less_equal.html" title="cpp/utility/functional/less equal"><span class="t-lines"><span>less_equal</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bit_and.html" title="cpp/utility/functional/bit and"><span class="t-lines"><span>bit_and</span></span></a></div></div></td></tr>
@@ -298,8 +295,6 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not1.html" title="cpp/utility/functional/not1"><span class="t-lines"><span>not1</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not2.html" title="cpp/utility/functional/not2"><span class="t-lines"><span>not2</span></span></a></div></div></td></tr>
 </table></div></td></tr>
-<p><br />
-</p>
 <tr class="t-nv-h2"><td colspan="5"> Deprecated binders and adaptors </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unary_function.html" title="cpp/utility/functional/unary function"><span class="t-lines"><span>unary_function</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="binary_function.html" title="cpp/utility/functional/binary function"><span class="t-lines"><span>binary_function</span></span></a></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div></td></tr>
@@ -319,14 +314,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
-<tr class="t-dcl t-since-cxx11">
+</tr><tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> F, <span class="kw1">class</span>... <span class="me1">Args</span> <span class="sy1">&gt;</span><br />
 <span class="coMULTI">/*unspecified*/</span> bind<span class="br0">&#40;</span> F<span class="sy3">&amp;&amp;</span> f, Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> R, <span class="kw1">class</span> F, <span class="kw1">class</span>... <span class="me1">Args</span> <span class="sy1">&gt;</span><br />
 <span class="coMULTI">/*unspecified*/</span> bind<span class="br0">&#40;</span> F<span class="sy3">&amp;&amp;</span> f, Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -336,20 +329,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>The function template <code>bind</code> generates a forwarding call wrapper for <code>f</code>. Calling this wrapper is equivalent to invoking <code>f</code> with some of its arguments bound to <code>args</code>. 
-</p><p>Internally, the wrapper holds a member object of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span> constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span></span></span>, and one object per each of <code>args...</code>, of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span>, similarly constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="br0">&#40;</span>arg_i<span class="br0">&#41;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
-<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
-<li class="toclevel-1"><a href="#std::bind_return_type"><span class="tocnumber">3</span> <span class="toctext"><span>std::bind</span> <i>return type</i></span></a>
+<li class="toclevel-1 tocsection-1"><a href="bind.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="bind.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1"><a href="bind.html#std::bind_return_type"><span class="tocnumber">3</span> <span class="toctext"><span>std::bind</span> <i>return type</i></span></a>
 <ul>
-<li class="toclevel-2"><a href="#Member_type_result_type"><span class="tocnumber">3.1</span> <span class="toctext">Member type result_type</span></a></li>
-<li class="toclevel-2"><a href="#Member_function_operator.28.29"><span class="tocnumber">3.2</span> <span class="toctext">Member function operator()</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#Exceptions"><span class="tocnumber">3.3</span> <span class="toctext">Exceptions</span></a></li>
-<li class="toclevel-2 tocsection-6"><a href="#Notes"><span class="tocnumber">3.4</span> <span class="toctext">Notes</span></a></li>
-<li class="toclevel-2 tocsection-7"><a href="#Example"><span class="tocnumber">3.5</span> <span class="toctext">Example</span></a></li>
-<li class="toclevel-2 tocsection-8"><a href="#See_also"><span class="tocnumber">3.6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-2"><a href="bind.html#Member_objects"><span class="tocnumber">3.1</span> <span class="toctext">Member objects</span></a></li>
+<li class="toclevel-2"><a href="bind.html#Constructors"><span class="tocnumber">3.2</span> <span class="toctext">Constructors</span></a></li>
+<li class="toclevel-2"><a href="bind.html#Member_type_result_type"><span class="tocnumber">3.3</span> <span class="toctext">Member type result_type</span></a></li>
+<li class="toclevel-2"><a href="bind.html#Member_function_operator.28.29"><span class="tocnumber">3.4</span> <span class="toctext">Member function operator()</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="bind.html#Exceptions"><span class="tocnumber">3.5</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="bind.html#Notes"><span class="tocnumber">3.6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="bind.html#Example"><span class="tocnumber">3.7</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="bind.html#See_also"><span class="tocnumber">3.8</span> <span class="toctext">See also</span></a></li>
 </ul>
 </li>
 </ul>
@@ -363,7 +357,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  invocable object (function object, pointer to function, reference to function, pointer to member function, or pointer to member data) that will be bound to some arguments
+<td>  <a href="../../concept/Callable.html" title="cpp/concept/Callable"><code>Callable</code></a> object (function object, pointer to function, reference to function, pointer to member function, or pointer to data member) that will be bound to some arguments
 </td></tr>
 <tr class="t-par">
 <td>  args
@@ -373,10 +367,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  list of arguments to bind, with the unbound arguments replaced by the placeholders <code>_1, _2, _3...</code> of namespace <code>std::placeholders</code>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>A function object of unspecified type <code>T</code>, for which <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_bind_expression.html"><span class="kw891">std::<span class="me2">is_bind_expression</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, and which can be stored in <span class="t-lc"><a href="function.html" title="cpp/utility/functional/function">std::function</a></span>. The object is movable if <code>f</code> and all <code>args</code> are movable, and is copyable otherwise. The type defines the following members:
+<p>A function object of unspecified type <code>T</code>, for which <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_bind_expression.html"><span class="kw891">std::<span class="me2">is_bind_expression</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, and which can be stored in <span class="t-lc"><a href="function.html" title="cpp/utility/functional/function">std::function</a></span>. It has the following members:
 </p>
 <div class="t-member">
 <h1> <span class="mw-headline" id="std::bind_return_type"> <span style="font-size:0.7em; line-height:130%">std::bind</span> <i>return type</i> </span></h1>
+<h4> <span class="mw-headline" id="Member_objects">Member objects</span></h4>
+<p>The return type of <code>std::bind</code> holds a member object of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span> constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span></span></span>, and one object per each of <code>args...</code>, of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span>, similarly constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="br0">&#40;</span>arg_i<span class="br0">&#41;</span></span></span>.
+</p>
+<h4> <span class="mw-headline" id="Constructors">Constructors</span></h4>
+<p>The return type of <code>std::bind</code> is <a href="../../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a> if all of its member objects (specified above) are CopyConstructible, and is <a href="../../concept/MoveConstructible.html" title="cpp/concept/MoveConstructible"><code>MoveConstructible</code></a> otherwise. The type defines the following members:
+</p>
 <h4> <span class="mw-headline" id="Member_type_result_type">Member type <code>result_type</code></span></h4>
 <p>1) If <code>F</code> is a pointer to function or a pointer to member function, <code>result_type</code> is the return type of <code>F</code>. If <code>F</code> is a class type with nested typedef <code>result_type</code>, then <code>result_type</code> is <code>F::result_type</code>.  Otherwise no <code>result_type</code> is defined.
 </p><p>2) <code>result_type</code> is exactly <code>R</code>.
@@ -384,7 +384,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h4> <span class="mw-headline" id="Member_function_operator.28.29">Member function <code>operator()</code></span></h4>
 <p>Given an object <code>g</code> obtained from an earlier call to <code>bind</code>, when it is invoked in a function call expression <span class="t-c"><span class="mw-geshi cpp source-cpp">g<span class="br0">&#40;</span>u1, u2, ... <span class="me1">uM</span><span class="br0">&#41;</span></span></span>, an invocation of the stored object of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span> takes place, with arguments defined as follows:
 </p>
-<ul><li> If the argument is of type <code>std::reference_wrapper&lt;T&gt;</code> (e.g. <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::ref</a></span> or <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::cref</a></span>) was used in the initial call to <code>bind</code>, then the reference <code>T&amp;</code> stored in the bound argument is passed to the invocable object.
+<ul><li> If the argument is of type <code>std::reference_wrapper&lt;T&gt;</code> (for example, <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::ref</a></span> or <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::cref</a></span> was used in the initial call to <code>bind</code>), then the reference <code>T&amp;</code> stored in the bound argument is passed to the invocable object.
 </li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_bind_expression.html"><span class="kw891">std::<span class="me2">is_bind_expression</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span> (i.e. another <code>bind</code> subexpression was used as an argument in the initial call to <code>bind</code>), then that bind subexpression is invoked immediately and its result is passed to the invocable object. If the bind subexpression has any placeholder arguments, they are picked from <code>u1, u2, ...</code>.
 </li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_placeholder.html"><span class="kw892">std::<span class="me2">is_placeholder</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span></span></span> (i.e., <code>std::placeholders::_1, _2, _3, ...</code> was used as the argument to the initial call to <code>bind</code>), then the argument indicated by the placeholder (<code>u1</code> for <code>_1</code>, <code>u2</code> for <code>_2</code>, etc) is passed to the invocable object as <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Uj<span class="sy1">&gt;</span><span class="br0">&#40;</span>uj<span class="br0">&#41;</span></span></span>.
 </li><li> Otherwise, the stored argument is passed to the invocable object as-is.
@@ -392,17 +392,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>If some of the arguments that are supplied in the call to <code>g()</code> are not matched by any placeholders stored in <code>g</code>, the unused arguments are evaluated and discarded.
 </p>
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=5" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=7" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <p>Only throws if construction of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="br0">&#40;</span>f<span class="br0">&#41;</span></span></span> throws, or any of the constructors for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/decay.html"><span class="kw521">std::<span class="me2">decay</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span></span></span> from the corresponding <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw912">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Arg_i<span class="sy1">&gt;</span><span class="br0">&#40;</span>arg_i<span class="br0">&#41;</span></span></span> throws where <code>Arg_i</code> is the ith type and <code>arg_i</code> is the ith argument in <code>Args... args</code>.
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=6" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>The arguments to bind are copied or moved, and are never passed by reference unless wrapped in <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::ref</a></span> or <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::cref</a></span>.
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=8" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>As described in <a href="../../concept/Callable.html" title="cpp/concept/Callable"><code>Callable</code></a>, when invoking a pointer to non-static member function or pointer to non-static data member, the first argument has to be a reference or pointer (including, possibly, smart pointer such as <span class="t-lc"><a href="../../memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span> and <span class="t-lc"><a href="../../memory/unique_ptr.html" title="cpp/memory/unique ptr">std::unique_ptr</a></span>) to an object whose member will be accessed.
+</p><p>The arguments to bind are copied or moved, and are never passed by reference unless wrapped in <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::ref</a></span> or <span class="t-lc"><a href="ref.html" title="cpp/utility/functional/ref">std::cref</a></span>.
 </p><p>Duplicate placeholders in the same bind expression (multiple <code>_1</code>'s for example) are allowed, but the results are only well defined if the corresponding argument (<code>u1</code>) is an lvalue or non-movable rvalue.
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=7" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=9" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;random&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;memory&gt;</span>
 <span class="co2">#include &lt;functional&gt;</span>
 &#160;
 <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n1, <span class="kw4">int</span> n2, <span class="kw4">int</span> n3, <span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> n4, <span class="kw4">int</span> n5<span class="br0">&#41;</span>
@@ -441,8 +443,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
     <span class="co1">// common use case: binding a RNG with a distribution</span>
     <a href="../../numeric/random.html"><span class="kw1204">std::<span class="me2">default_random_engine</span></span></a> e<span class="sy4">;</span>
-    <a href="../../numeric/random/uniform_int_distribution"><span class="kw1210">std::<span class="me2">uniform_int_distribution</span></span></a><span class="sy1">&lt;&gt;</span> d<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="function.html"><span class="kw894">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> rnd <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">bind</span><span class="br0">&#40;</span>d, e<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../numeric/random/uniform_int_distribution.html"><span class="kw1210">std::<span class="me2">uniform_int_distribution</span></span></a><span class="sy1">&lt;&gt;</span> d<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="function.html"><span class="kw894">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> rnd <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">bind</span><span class="br0">&#40;</span>d, e<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// a copy of e is stored in rnd</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> n<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span>
         <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> rnd<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
     <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
@@ -455,30 +457,29 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// bind to member data</span>
     <span class="kw4">auto</span> f4 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">bind</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>Foo<span class="sy4">::</span><span class="me2">data</span>, _1<span class="br0">&#41;</span><span class="sy4">;</span>
     <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> f4<span class="br0">&#40;</span>foo<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-<span class="br0">&#125;</span></pre></div></div>
+&#160;
+    <span class="co1">// smart pointers can be used to call members of the referenced objects, too</span>
+    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> f4<span class="br0">&#40;</span><a href="../../memory/shared_ptr/make_shared.html"><span class="kw583">std::<span class="me2">make_shared</span></span></a><span class="sy1">&lt;</span>Foo<span class="sy1">&gt;</span><span class="br0">&#40;</span>foo<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> f4<span class="br0">&#40;</span><a href="../../memory/unique_ptr.html"><span class="kw581">std::<span class="me2">unique_ptr</span></span></a><span class="sy1">&lt;</span>Foo<span class="sy1">&gt;</span><span class="br0">&#40;</span>new Foo<span class="br0">&#40;</span>foo<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span><span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">2 1 42 10 7
 12 12 12 4 5
 1 5 0 2 0 8 2 2 10 8
 100
+10
+10
 10</pre></div></div> 
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=8" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=edit&amp;section=10" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
-<tr class="t-dsc-sep">
-<td colspan="2">
-</td></tr>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="placeholders.html" title="cpp/utility/functional/placeholders"> <span class="t-lines"><span>_1, _2, _3, _4, ...</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>  placeholders for the unbound arguments in a <code>std::bind</code> expression  <br /> <span class="t-mark">(constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/functional/dsc_placeholders&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
-<tr class="t-dsc-sep">
-<td colspan="2">
-</td></tr>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="mem_fn.html" title="cpp/utility/functional/mem fn"> <span class="t-lines"><span>mem_fn</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
@@ -488,19 +489,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5602/1000000
-Preprocessor generated node count: 9320/1000000
-Post‐expand include size: 159061/2097152 bytes
-Template argument size: 35981/2097152 bytes
+Preprocessor visited node count: 5699/1000000
+Preprocessor generated node count: 9508/1000000
+Post‐expand include size: 160101/2097152 bytes
+Template argument size: 37894/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4161-0!*!0!!en!*!* and timestamp 20131124175710 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4161-0!*!0!!en!*!* and timestamp 20140708132843 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=66482">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=66482</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=72012">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=72012</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -518,12 +519,12 @@ Expensive parser function count: 0/100
                         <div id="cpp-navigation">
             <h5>Navigation</h5>
             <ul>
-<li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Store"><a href="http://www.cppreference.com/store" rel="nofollow">Store</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
         </div>
                         <div id="cpp-toolbox">
-            <h5><span>Toolbox</span><a href="#"></a></h5>
+            <h5><span>Toolbox</span><a href="bind.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/utility/functional/bind" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/utility/functional/bind" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=66482" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/utility/functional/bind" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/utility/functional/bind" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;oldid=72012" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bind&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -531,8 +532,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/utility/functional/bind" title="cpp/utility/functional/bind" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 24 November 2013, at 09:57.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 23,999 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 8 July 2014, at 06:28.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 78,059 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -551,11 +552,11 @@ Expensive parser function count: 0/100
         <script>if(window.mw){
 mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
 }</script>
-<script src="../../../../mwiki/loadac2a.php?debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
 mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
 }</script>
-<script src="../../../../mwiki/load345b.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -565,9 +566,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.085 secs. -->
+</script><!-- Served in 0.093 secs. -->
 	</body>
-<!-- Cached 20131124175711 -->
-
-<!-- Mirrored from en.cppreference.com/w/cpp/utility/functional/bind by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Feb 2014 14:54:51 GMT -->
+<!-- Cached 20140708133053 -->
 </html>
