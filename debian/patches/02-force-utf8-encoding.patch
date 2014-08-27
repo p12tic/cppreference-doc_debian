@@ -11,3 +11,68 @@ Index: cppreference-doc/build_link_map.py
          text = f.read()
          f.close()
  
+Index: cppreference-doc/index2devhelp.py
+===================================================================
+--- cppreference-doc.orig/index2devhelp.py
++++ cppreference-doc/index2devhelp.py
+@@ -41,7 +41,7 @@ rel_link = sys.argv[5]
+ in_fn = sys.argv[6]
+ dest_fn = sys.argv[7]
+ 
+-out_f = open(dest_fn, 'w')
++out_f = open(dest_fn, 'w', encoding='utf-8')
+ 
+ 
+ class Index2Devhelp(IndexTransform):
+Index: cppreference-doc/preprocess.py
+===================================================================
+--- cppreference-doc.orig/preprocess.py
++++ cppreference-doc/preprocess.py
+@@ -147,14 +147,14 @@ def rlink_fix(match):
+ 
+ # clean the html files
+ for fn in html_files:
+-    f = open(fn, "r")
++    f = open(fn, "r", encoding='utf-8')
+     text = f.read()
+     f.close()
+ 
+     text = r1.sub('', text);
+     text = rlink.sub(rlink_fix, text)
+ 
+-    f = open(fn, "w")
++    f = open(fn, "w", encoding='utf-8')
+     f.write(text)
+     f.close()
+ 
+@@ -167,10 +167,10 @@ for fn in html_files:
+ 
+ # append css modifications
+ 
+-f = open("preprocess-css.css", "r")
++f = open("preprocess-css.css", "r", encoding='utf-8')
+ css_app = f.read()
+ f.close()
+-f = open("output/reference/common/site_modules.css", "a")
++f = open("output/reference/common/site_modules.css", "a", encoding='utf-8')
+ f.write(css_app)
+ f.close()
+ 
+@@ -178,7 +178,7 @@ f.close()
+ 
+ for fn in [ "output/reference/common/site_modules.css",
+             "output/reference/common/ext.css"]:
+-    f = open(fn, "r")
++    f = open(fn, "r", encoding='utf-8')
+     text = f.read()
+     f.close()
+ 
+@@ -190,7 +190,7 @@ for fn in [ "output/reference/common/sit
+     # QT Help viewer doesn't understand nth-child
+     text = text.replace('nth-child(1)', 'first-child')
+ 
+-    f = open(fn, "w")
++    f = open(fn, "w", encoding='utf-8')
+     f.write(text)
+     f.close()
+ 
