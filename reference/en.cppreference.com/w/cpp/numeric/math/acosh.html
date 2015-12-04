@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &#160; &#160; &#160; acosh<span class="br0">&#40;</span> <span class="kw4">float</span> arg <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -417,7 +419,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>If the argument is less than 1, a domain error occurs.
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
-<ul><li> if the argument is less than 1, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised an NaN is returned
+<ul><li> if the argument is less than 1, <span class="t-lc">FE_INVALID</span> is raised an NaN is returned
 </li><li> if the argument is 1, +0 is returned
 </li><li> if the argument is +∞, +∞ is returned
 </li><li> if the argument is NaN, NaN is returned
@@ -436,17 +438,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(10) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(DBL_MAX) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><a href="../../types/climits.html"><span class="kw412">DBL_MAX</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span>  std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1154">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(DBL_MAX) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw412">DBL_MAX</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span>  std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
      <span class="co1">// error handling </span>
-     <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1164">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1175">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-     <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(0.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><span class="nu16">0.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-     <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw656">EDOM</span></a><span class="br0">&#41;</span>
-         <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == EDOM: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw976">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-     <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1165">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1178">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+     <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <a href="../fenv/feclearexcept.html"><span class="kw1197">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+     <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;acosh(0.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">acosh</span><span class="br0">&#40;</span><span class="nu16">0.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw690">EDOM</span></a><span class="br0">&#41;</span>
+         <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == EDOM: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1003">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+     <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -495,15 +497,15 @@ acosh(0.5) = -nan
 </p>
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7082/1000000
-Preprocessor generated node count: 8587/1000000
-Post‐expand include size: 221219/2097152 bytes
-Template argument size: 41779/2097152 bytes
+Preprocessor visited node count: 7094/1000000
+Preprocessor generated node count: 8655/1000000
+Post‐expand include size: 221714/2097152 bytes
+Template argument size: 41828/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1344-0!*!0!!en!*!* and timestamp 20140705003849 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1344-0!*!0!!en!*!* and timestamp 20151130145644 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -538,8 +540,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/acosh" title="cpp/numeric/math/acosh" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 25 May 2014, at 23:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,549 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 May 2014, at 22:02.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,508 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -572,7 +574,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.501 secs. -->
+</script><!-- Served in 2.473 secs. -->
 	</body>
-<!-- Cached 20140705003851 -->
+<!-- Cached 20151130145644 -->
 </html>

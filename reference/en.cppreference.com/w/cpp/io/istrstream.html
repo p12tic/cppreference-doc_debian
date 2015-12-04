@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -250,15 +251,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> istrstream <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_istream.html"><span class="kw1412">std::<span class="me2">istream</span></span></a></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> istrstream <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_istream.html"><span class="kw1450">std::<span class="me2">istream</span></span></a></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark">(deprecated)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class <code>istrstream</code> implements input operations on array-backed streams. It essentially wraps a raw array I/O device implementation (<span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstreambuf</span></span></span>) into the higher-level interface of <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span>. 
-</p><p>The typical implementation of <code>istrstream</code> holds only one non-derived data member: an object of type <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstreambuf</span></span></span>.
+<p>The class <code>istrstream</code> implements input operations on array-backed streams. It essentially wraps a raw array I/O device implementation (<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a></span></span>) into the higher-level interface of <span class="t-lc">std::basic_istream</span>. 
+</p><p>The typical implementation of <code>istrstream</code> holds only one non-derived data member: an object of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -279,18 +281,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li>
 <li class="toclevel-1"><a href="istrstream.html#Inherited_from_std::basic_ios"><span class="tocnumber">4</span> <span class="toctext">Inherited from   <span>std::</span>basic_ios</span></a>
 <ul>
-<li class="toclevel-2"><a href="istrstream.html#Member_types"><span class="tocnumber">4.1</span> <span class="toctext">Member types</span></a>
+<li class="toclevel-2"><a href="istrstream.html#Member_types"><span class="tocnumber">4.1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-2"><a href="istrstream.html#Member_functions_3"><span class="tocnumber">4.2</span> <span class="toctext">Member functions</span></a>
 <ul>
-<li class="toclevel-3"><a href="istrstream.html#State_functions"><span class="tocnumber">4.1.1</span> <span class="toctext">State functions</span></a></li>
-<li class="toclevel-3"><a href="istrstream.html#Formatting"><span class="tocnumber">4.1.2</span> <span class="toctext">Formatting</span></a></li>
-<li class="toclevel-3"><a href="istrstream.html#Miscellaneous_2"><span class="tocnumber">4.1.3</span> <span class="toctext">Miscellaneous</span></a></li>
+<li class="toclevel-3"><a href="istrstream.html#State_functions"><span class="tocnumber">4.2.1</span> <span class="toctext">State functions</span></a></li>
+<li class="toclevel-3"><a href="istrstream.html#Formatting"><span class="tocnumber">4.2.2</span> <span class="toctext">Formatting</span></a></li>
+<li class="toclevel-3"><a href="istrstream.html#Miscellaneous_2"><span class="tocnumber">4.2.3</span> <span class="toctext">Miscellaneous</span></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toclevel-1"><a href="istrstream.html#Inherited_from_std::ios_base"><span class="tocnumber">5</span> <span class="toctext">Inherited from   <span>std::</span>ios_base</span></a>
 <ul>
-<li class="toclevel-2"><a href="istrstream.html#Member_functions_3"><span class="tocnumber">5.1</span> <span class="toctext">Member functions</span></a>
+<li class="toclevel-2"><a href="istrstream.html#Member_functions_4"><span class="tocnumber">5.1</span> <span class="toctext">Member functions</span></a>
 <ul>
 <li class="toclevel-3"><a href="istrstream.html#Formatting_2"><span class="tocnumber">5.1.1</span> <span class="toctext">Formatting</span></a></li>
 <li class="toclevel-3"><a href="istrstream.html#Locales"><span class="tocnumber">5.1.2</span> <span class="toctext">Locales</span></a></li>
@@ -305,7 +308,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p><code>istrstream</code> has been deprecated since C++98, <span class="t-lc"><a href="basic_istringstream.html" title="cpp/io/basic istringstream">std::istringstream</a></span> and <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array_source">boost::iostreams::array_source</a> are the recommended replacements.
+<p><code>istrstream</code> has been deprecated since C++98, <span class="t-lc">std::istringstream</span> and <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array_source">boost::iostreams::array_source</a> are the recommended replacements.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/istrstream&amp;action=edit&amp;section=2" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
 <table class="t-dsc-begin">
@@ -495,6 +498,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 </table>
+<h3> <span class="mw-headline" id="Member_functions_3">Member functions</span></h3>
 <table class="t-dsc-begin">
 
 <tr>
@@ -528,7 +532,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="basic_ios/operator!.html" title="cpp/io/basic ios/operator!"> <span class="t-lines"><span>operator!</span></span></a></div></div>
 </td>
-<td>   checks if an error has occurred (synonym of <span class="t-lc"><a href="basic_ios/fail.html" title="cpp/io/basic ios/fail">fail()</a></span>)  <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dsc_operator!&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   checks if an error has occurred (synonym of <span class="t-lc">fail()</span>)  <br /> <span class="t-mark">(public member function of <code>std::basic_ios</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/dsc_operator!&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -616,7 +620,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </div>
 <div class="t-inherited">
 <h2> <span class="mw-headline" id="Inherited_from_std::ios_base">Inherited from  <a href="ios_base.html" title="cpp/io/ios base"> <span style="font-size:0.7em; line-height:130%">std::</span>ios_base</a> </span></h2>
-<h3> <span class="mw-headline" id="Member_functions_3">Member functions</span></h3>
+<h3> <span class="mw-headline" id="Member_functions_4">Member functions</span></h3>
 <table class="t-dsc-begin">
 
 
@@ -766,7 +770,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>binary</tt></a>
 </td>
-<td>  open in binary mode<span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_openmode&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  open in <a href="c.html#Binary_and_text_modes" title="cpp/io/c">binary mode</a><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_openmode&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -818,21 +822,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>dec</tt></a>
 </td>
-<td>  use decimal base for integer I/O: see <span class="t-lc"><a href="manip/hex.html" title="cpp/io/manip/hex">std::dec</a></span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  use decimal base for integer I/O: see <span class="t-lc">std::dec</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>oct</tt></a>
 </td>
-<td>  use octal base for integer I/O: see <span class="t-lc"><a href="manip/hex.html" title="cpp/io/manip/hex">std::oct</a></span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  use octal base for integer I/O: see <span class="t-lc">std::oct</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>hex</tt></a>
 </td>
-<td>  use hexadecimal base for integer I/O: see <span class="t-lc"><a href="manip/hex.html" title="cpp/io/manip/hex">std::hex</a></span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  use hexadecimal base for integer I/O: see <span class="t-lc">std::hex</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -846,21 +850,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>left</tt></a>
 </td>
-<td>   left adjustment (adds fill characters to the right): see <span class="t-lc"><a href="manip/left.html" title="cpp/io/manip/left">std::left</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   left adjustment (adds fill characters to the right): see <span class="t-lc">std::left</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>right</tt></a>
 </td>
-<td>  right adjustment (adds fill characters to the left): see <span class="t-lc"><a href="manip/left.html" title="cpp/io/manip/left">std::right</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  right adjustment (adds fill characters to the left): see <span class="t-lc">std::right</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>internal</tt></a>
 </td>
-<td>  internal adjustment (adds fill characters to the internal designated point): see <span class="t-lc"><a href="manip/left.html" title="cpp/io/manip/left">std::internal</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  internal adjustment (adds fill characters to the internal designated point): see <span class="t-lc">std::internal</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -874,14 +878,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>scientific</tt></a>
 </td>
-<td>   generate floating point types using scientific notation, or hex notation if combined with fixed: see <span class="t-lc"><a href="manip/fixed.html" title="cpp/io/manip/fixed">std::scientific</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   generate floating point types using scientific notation, or hex notation if combined with fixed: see <span class="t-lc">std::scientific</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>fixed</tt></a>
 </td>
-<td>  generate floating point types using fixed notation, or hex notation if combined with scientific: see <span class="t-lc"><a href="manip/fixed.html" title="cpp/io/manip/fixed">std::fixed</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  generate floating point types using fixed notation, or hex notation if combined with scientific: see <span class="t-lc">std::fixed</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
@@ -895,49 +899,49 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>boolalpha</tt></a>
 </td>
-<td>   insert and extract <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> type in alphanumeric format: see <span class="t-lc"><a href="manip/boolalpha.html" title="cpp/io/manip/boolalpha">std::boolalpha</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   insert and extract <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> type in alphanumeric format: see <span class="t-lc">std::boolalpha</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showbase</tt></a>
 </td>
-<td>  generate a prefix indicating the numeric base for integer output, require the currency indicator in monetary I/O: see <span class="t-lc"><a href="manip/showbase.html" title="cpp/io/manip/showbase">std::showbase</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  generate a prefix indicating the numeric base for integer output, require the currency indicator in monetary I/O: see <span class="t-lc">std::showbase</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showpoint</tt></a>
 </td>
-<td>  generate a decimal-point character unconditionally for floating-point number output: see <span class="t-lc"><a href="manip/showpoint.html" title="cpp/io/manip/showpoint">std::showpoint</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  generate a decimal-point character unconditionally for floating-point number output: see <span class="t-lc">std::showpoint</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>showpos</tt></a>
 </td>
-<td>  generate a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span></span> character for non-negative numeric output: see <span class="t-lc"><a href="manip/showpos.html" title="cpp/io/manip/showpos">std::showpos</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  generate a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span></span> character for non-negative numeric output: see <span class="t-lc">std::showpos</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>skipws</tt></a>
 </td>
-<td>  skip leading whitespace before certain input operations: see <span class="t-lc"><a href="manip/skipws.html" title="cpp/io/manip/skipws">std::skipws</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  skip leading whitespace before certain input operations: see <span class="t-lc">std::skipws</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>unitbuf</tt></a>
 </td>
-<td>  flush the output after each output operation: see <span class="t-lc"><a href="manip/unitbuf.html" title="cpp/io/manip/unitbuf">std::unitbuf</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  flush the output after each output operation: see <span class="t-lc">std::unitbuf</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <a href="ios_base/fmtflags.html" title="cpp/io/ios base/fmtflags"><tt>uppercase</tt></a>
 </td>
-<td>  replace certain lowercase letters with their uppercase<br />equivalents in certain output output operations: see <span class="t-lc"><a href="manip/uppercase.html" title="cpp/io/manip/uppercase">std::uppercase</a></span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  replace certain lowercase letters with their uppercase<br />equivalents in certain output output operations: see <span class="t-lc">std::uppercase</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 </table> <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/ios_base/dsc_fmtflags&amp;action=edit">&#91;edit&#93;</a></span>
@@ -1042,15 +1046,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 14680/1000000
-Preprocessor generated node count: 12065/1000000
-Post‐expand include size: 532524/2097152 bytes
-Template argument size: 153023/2097152 bytes
+Preprocessor visited node count: 14691/1000000
+Preprocessor generated node count: 12113/1000000
+Post‐expand include size: 528518/2097152 bytes
+Template argument size: 151065/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4696-0!*!0!!en!*!* and timestamp 20140704201504 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4696-0!*!0!!en!*!* and timestamp 20151130141629 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -1085,8 +1089,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/istrstream" title="cpp/io/istrstream" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 June 2013, at 08:59.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,475 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 June 2013, at 07:59.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,513 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1119,7 +1123,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 4.598 secs. -->
+</script><!-- Served in 4.225 secs. -->
 	</body>
-<!-- Cached 20140704201504 -->
+<!-- Cached 20151130141629 -->
 </html>

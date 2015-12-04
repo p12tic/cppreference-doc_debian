@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -293,12 +294,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ios/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span> <a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> sb <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span> <a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> sb <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -341,24 +342,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostringstream.html"><span class="kw1421">std::<span class="me2">ostringstream</span></span></a> local<span class="sy4">;</span>
-    <span class="kw4">auto</span> cout_buff <span class="sy1">=</span> <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// save pointer to std::cout buffer</span>
+    <a href="../basic_ostringstream.html"><span class="kw1459">std::<span class="me2">ostringstream</span></span></a> local<span class="sy4">;</span>
+    <span class="kw4">auto</span> cout_buff <span class="sy1">=</span> <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// save pointer to std::cout buffer</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span>local.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// substitute internal std::cout buffer with</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span>local.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// substitute internal std::cout buffer with</span>
         <span class="co1">// buffer of 'local' object</span>
 &#160;
     <span class="co1">// now std::cout work with 'local' buffer</span>
     <span class="co1">// you don't see this message</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;some message&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;some message&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// go back to old buffer</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span>cout_buff<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span>cout_buff<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// you will see this message</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;back to default buffer<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;back to default buffer<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// print 'local' content</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;local content: &quot;</span> <span class="sy1">&lt;&lt;</span> local.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;local content: &quot;</span> <span class="sy1">&lt;&lt;</span> local.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -377,15 +378,15 @@ local content: some message</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3861/1000000
-Preprocessor generated node count: 7344/1000000
-Post‐expand include size: 91199/2097152 bytes
-Template argument size: 16135/2097152 bytes
+Preprocessor visited node count: 3877/1000000
+Preprocessor generated node count: 7412/1000000
+Post‐expand include size: 91758/2097152 bytes
+Template argument size: 16184/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5529-0!*!0!!en!*!* and timestamp 20140704192314 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5529-0!*!0!!en!*!* and timestamp 20150825012441 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -421,7 +422,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 18 December 2013, at 01:38.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,932 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 12,616 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -454,7 +455,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.631 secs. -->
+</script><!-- Served in 1.585 secs. -->
 	</body>
-<!-- Cached 20140704192314 -->
+<!-- Cached 20150825012441 -->
 </html>

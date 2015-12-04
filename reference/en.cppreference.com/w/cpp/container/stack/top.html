@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -300,20 +301,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../stack.html"><span class="kw1081">std::<span class="me2">stack</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span>   s<span class="sy4">;</span>
+    <a href="../stack.html"><span class="kw1108">std::<span class="me2">stack</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span>   s<span class="sy4">;</span>
 &#160;
     s.<span class="me1">push</span><span class="br0">&#40;</span> <span class="nu0">2</span> <span class="br0">&#41;</span><span class="sy4">;</span>
     s.<span class="me1">push</span><span class="br0">&#40;</span> <span class="nu0">6</span> <span class="br0">&#41;</span><span class="sy4">;</span>
     s.<span class="me1">push</span><span class="br0">&#40;</span> <span class="nu0">51</span> <span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Top element: &quot;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Top element: &quot;</span>
 	      <span class="sy1">&lt;&lt;</span> s.<span class="me1">top</span><span class="br0">&#40;</span><span class="br0">&#41;</span>         <span class="co1">// Leaves element on stack</span>
 	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     s.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Top element: &quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">top</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; elements on stack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Top element: &quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">top</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -343,15 +344,15 @@ Top element: 6</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2622/1000000
-Preprocessor generated node count: 6827/1000000
-Post‐expand include size: 65750/2097152 bytes
-Template argument size: 11870/2097152 bytes
+Preprocessor visited node count: 2638/1000000
+Preprocessor generated node count: 6895/1000000
+Post‐expand include size: 66309/2097152 bytes
+Template argument size: 11919/2097152 bytes
 Highest expansion depth: 21/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:313-0!*!0!!en!*!* and timestamp 20140704195634 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:313-0!*!0!!en!*!* and timestamp 20150825014334 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -387,7 +388,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 3 June 2013, at 04:21.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,325 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 14,733 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -420,7 +421,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.307 secs. -->
+</script><!-- Served in 1.285 secs. -->
 	</body>
-<!-- Cached 20140704195634 -->
+<!-- Cached 20150825014334 -->
 </html>

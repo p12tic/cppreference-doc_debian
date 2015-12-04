@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -261,7 +262,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> feclearexcept<span class="br0">&#40;</span> <span class="kw4">int</span> excepts <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -306,28 +308,28 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1165">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1176">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;1.0/0.0 = &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.0</span> <span class="sy2">/</span> zero <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1166">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1177">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;division by zero reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">feclearexcept</span><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;1.0/0.0 = &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.0</span> <span class="sy2">/</span> zero <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1209">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;division by zero reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;divsion by zero not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;divsion by zero not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
-    <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1165">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1176">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1.0/10 = &quot;</span> <span class="sy1">&lt;&lt;</span> one<span class="sy2">/</span><span class="nu0">10</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1166">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1178">FE_INEXACT</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact result reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">feclearexcept</span><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1.0/10 = &quot;</span> <span class="sy1">&lt;&lt;</span> one<span class="sy2">/</span><span class="nu0">10</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1210">FE_INEXACT</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact result reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact result not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact result not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
-    <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1165">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1176">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;sqrt(-1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/sqrt.html"><span class="kw1107">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1166">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1179">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid result reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">feclearexcept</span><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;sqrt(-1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/sqrt.html"><span class="kw1140">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid result reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid result not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid result not reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -351,15 +353,15 @@ invalid result reported</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2039/1000000
-Preprocessor generated node count: 5954/1000000
-Post‐expand include size: 67859/2097152 bytes
-Template argument size: 14678/2097152 bytes
+Preprocessor visited node count: 2048/1000000
+Preprocessor generated node count: 6022/1000000
+Post‐expand include size: 68428/2097152 bytes
+Template argument size: 14727/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5252-0!*!0!!en!*!* and timestamp 20140704200653 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5252-0!*!0!!en!*!* and timestamp 20151130144322 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -394,8 +396,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/fenv/feclearexcept" title="cpp/numeric/fenv/feclearexcept" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 16:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,228 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:41.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,781 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -428,7 +430,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.128 secs. -->
+</script><!-- Served in 1.202 secs. -->
 	</body>
-<!-- Cached 20140704200654 -->
+<!-- Cached 20151130144322 -->
 </html>

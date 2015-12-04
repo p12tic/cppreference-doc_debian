@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -299,8 +300,8 @@ iterator emplace<span class="br0">&#40;</span> Args<span class="sy3">&amp;&amp;<
 </tbody></table>
 <p>Inserts a new element into the container by constructing it in-place with the given <code>args</code>  .
 </p><p>Careful use of <code>emplace</code> allows the new element to be constructed while avoiding unnecessary copy or move operations.
-The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw913">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
-</p><p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is equal to or greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
+The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
+</p><p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -341,24 +342,24 @@ The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi
 <span class="co2">#include &lt;unordered_map&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../unordered_multimap.html"><span class="kw1080">std::<span class="me2">unordered_multimap</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
+    <a href="../unordered_multimap.html"><span class="kw1107">std::<span class="me2">unordered_multimap</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
 &#160;
-    <span class="co1">// uses pair's move constructor (overload 8)</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw902">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="co1">// uses pair's move constructor</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw937">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="co1">// uses pair's converting move constructor (overload 5)</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw902">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;abcd&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="co1">// uses pair's converting move constructor</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw937">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;abcd&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="co1">// uses pair's template constructor (overload 3)</span>
+    <span class="co1">// uses pair's template constructor</span>
     m.<span class="me1">emplace</span><span class="br0">&#40;</span><span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;ddd&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="co1">// uses pair's piecewise constructor (overload 6)</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/piecewise_construct.html"><span class="kw905">std::<span class="me2">piecewise_construct</span></span></a>,
-              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw909">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;c&quot;</span><span class="br0">&#41;</span>,
-              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw909">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span>, <span class="st0">'c'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="co1">// uses pair's piecewise constructor</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/piecewise_construct.html"><span class="kw940">std::<span class="me2">piecewise_construct</span></span></a>,
+              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw944">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;c&quot;</span><span class="br0">&#41;</span>,
+              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw944">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span>, <span class="st0">'c'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>p <span class="sy4">:</span> m<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; =&gt; &quot;</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; =&gt; &quot;</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -377,6 +378,7 @@ d =&gt; ddd</pre></div></div>
 <td>   constructs elements in-place using a hint  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_emplace_hint&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
+
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="insert.html" title="cpp/container/unordered multimap/insert"> <span class="t-lines"><span>insert</span></span></a></div></div>
 </td>
@@ -386,15 +388,15 @@ d =&gt; ddd</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4129/1000000
-Preprocessor generated node count: 8735/1000000
-Post‐expand include size: 153097/2097152 bytes
-Template argument size: 22607/2097152 bytes
+Preprocessor visited node count: 4142/1000000
+Preprocessor generated node count: 8850/1000000
+Post‐expand include size: 153817/2097152 bytes
+Template argument size: 22518/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:356-0!*!0!!en!*!* and timestamp 20140705053604 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:356-0!*!0!!en!*!* and timestamp 20151028073910 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -430,7 +432,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:37.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,483 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,856 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -463,7 +465,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.650 secs. -->
+</script><!-- Served in 1.581 secs. -->
 	</body>
-<!-- Cached 20140705053604 -->
+<!-- Cached 20151028073910 -->
 </html>

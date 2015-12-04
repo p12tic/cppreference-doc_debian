@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -321,8 +322,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>If a putback position is available in the get area (<span class="t-c"><span class="mw-geshi cpp source-cpp">gptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&gt;</span> eback<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>), then decrements the next pointer (<span class="t-lc">gptr()</span>) and returns the character it now points to.
-</p><p>If a putback position is not available, then calls <span class="t-lc">pbackfail()</span> to back up the input sequence if possible.
+<p>If a putback position is available in the get area (<span class="t-c"><span class="mw-geshi cpp source-cpp">gptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&gt;</span> eback<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>), then decrements the next pointer (<span class="t-lc"><a href="gptr.html" title="cpp/io/basic streambuf/gptr">gptr()</a></span>) and returns the character it now points to.
+</p><p>If a putback position is not available, then calls <span class="t-lc"><a href="pbackfail.html" title="cpp/io/basic streambuf/pbackfail">pbackfail()</a></span> to back up the input sequence if possible.
 </p><p>The I/O stream function <a href="../basic_istream/unget.html" title="cpp/io/basic istream/unget"><tt>basic_istream::unget</tt></a> is implemented in terms of this function.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -338,7 +339,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/sungetc&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <p>If putback position was available, returns the character that the next pointer is now pointing at, converted to <code>int_type</code> with <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">to_int_type</span><span class="br0">&#40;</span><span class="sy2">*</span>gptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>. The next single-character input from this streambuf will return this character.
-</p><p>If putback position was not available, returns what <span class="t-lc">pbackfail()</span> returns, which is  <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">eof</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> on failure.
+</p><p>If putback position was not available, returns what <span class="t-lc"><a href="pbackfail.html" title="cpp/io/basic streambuf/pbackfail">pbackfail()</a></span> returns, which is  <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">eof</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> on failure.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_streambuf/sungetc&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -347,18 +348,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_stringstream.html"><span class="kw1422">std::<span class="me2">stringstream</span></span></a> s<span class="br0">&#40;</span><span class="st0">&quot;abcdef&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// gptr() poitns to 'a'</span>
+    <a href="../basic_stringstream.html"><span class="kw1460">std::<span class="me2">stringstream</span></span></a> s<span class="br0">&#40;</span><span class="st0">&quot;abcdef&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// gptr() poitns to 'a'</span>
     <span class="kw4">char</span> c1 <span class="sy1">=</span> s.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// c = 'a', gptr() now points to 'b' </span>
     <span class="kw4">char</span> c2 <span class="sy1">=</span> s.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sungetc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// same as s.unget(): gptr() points to 'a' again </span>
     <span class="kw4">char</span> c3 <span class="sy1">=</span> s.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// c3 = 'a', gptr() now points to 'b'</span>
     <span class="kw4">char</span> c4 <span class="sy1">=</span> s.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// c4 = 'b', gptr() now points to 'c'</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c1 <span class="sy1">&lt;&lt;</span> c2 <span class="sy1">&lt;&lt;</span> c3 <span class="sy1">&lt;&lt;</span> c4 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c1 <span class="sy1">&lt;&lt;</span> c2 <span class="sy1">&lt;&lt;</span> c3 <span class="sy1">&lt;&lt;</span> c4 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     s.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sungetc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// back to 'b'</span>
     s.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sungetc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// back to 'a'</span>
     <span class="kw4">int</span> eof <span class="sy1">=</span> s.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sungetc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// nothing to unget: pbackfail() fails</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>eof <span class="sy1">==</span> <a href="../c.html"><span class="kw1562">EOF</span></a><span class="br0">&#41;</span>
-            <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Nothing to unget after 'a'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>eof <span class="sy1">==</span> <a href="../c.html"><span class="kw1606">EOF</span></a><span class="br0">&#41;</span>
+            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Nothing to unget after 'a'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -383,15 +384,15 @@ Nothing to unget after 'a'</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5094/1000000
-Preprocessor generated node count: 8016/1000000
-Post‐expand include size: 124629/2097152 bytes
-Template argument size: 23040/2097152 bytes
+Preprocessor visited node count: 5106/1000000
+Preprocessor generated node count: 8084/1000000
+Post‐expand include size: 125400/2097152 bytes
+Template argument size: 23089/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9691-0!*!0!!en!*!* and timestamp 20140705220739 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9691-0!*!0!!en!*!* and timestamp 20150825093522 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -422,7 +423,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 09:18.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,169 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,174 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -455,7 +456,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.874 secs. -->
+</script><!-- Served in 1.833 secs. -->
 	</body>
-<!-- Cached 20140705220739 -->
+<!-- Cached 20150825093522 -->
 </html>

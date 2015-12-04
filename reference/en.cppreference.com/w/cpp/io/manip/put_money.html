@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -319,6 +320,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>put_money</span></span></strong></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="put_time.html" title="cpp/io/manip/put time"><span class="t-lines"><span>put_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Quoted manipulator</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="quoted.html" title="cpp/io/manip/quoted"><span class="t-lines"><span>quoted</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dsc-header">
@@ -326,7 +329,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> MoneyT <span class="sy1">&gt;</span><br />
 <span class="coMULTI">/*unspecified*/</span> put_money<span class="br0">&#40;</span> <span class="kw4">const</span> MoneyT<span class="sy3">&amp;</span> mon, <span class="kw4">bool</span> intl <span class="sy1">=</span> <span class="kw2">false</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -334,7 +338,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> put_money<span class="br0">&#40;</span>mon, intl<span class="br0">&#41;</span></span></span>, converts the monetary value <code>mon</code> to its character representation as specified by the <span class="t-lc"><a href="../../locale/money_put.html" title="cpp/locale/money put">std::money_put</a></span> facet of the locale currently imbued in <code>out</code>.
+<p>When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> put_money<span class="br0">&#40;</span>mon, intl<span class="br0">&#41;</span></span></span>, converts the monetary value <code>mon</code> to its character representation as specified by the <span class="t-lc">std::money_put</span> facet of the locale currently imbued in <code>out</code>.
 </p><p>This function behaves as a <a href="../../concept/FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction"><code>FormattedOutputFunction</code></a>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -364,10 +368,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  use international currency strings if <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, use currency symbols otherwise
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/put_money&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Returns an object of unspecified type such that if <code>out</code> is the name of an output stream of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1400">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>, then the expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> put_money<span class="br0">&#40;</span>mon, intl<span class="br0">&#41;</span></span></span> behaves as if the following code was executed:
-</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typedef</span> <a href="../../iterator/ostreambuf_iterator.html"><span class="kw549">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span> Iter<span class="sy4">;</span><br />
-<span class="kw1">typedef</span> <a href="../../locale/money_put.html"><span class="kw1647">std::<span class="me2">money_put</span></span></a><span class="sy1">&lt;</span>CharT, Iter<span class="sy1">&gt;</span> MoneyPut<span class="sy4">;</span><br />
-<span class="kw4">const</span> MoneyPut<span class="sy3">&amp;</span> mp <span class="sy1">=</span> <a href="../../locale/use_facet.html"><span class="kw1576">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span>MoneyPut<span class="sy1">&gt;</span><span class="br0">&#40;</span>out.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span><br />
+<p>Returns an object of unspecified type such that if <code>out</code> is the name of an output stream of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>, then the expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> put_money<span class="br0">&#40;</span>mon, intl<span class="br0">&#41;</span></span></span> behaves as if the following code was executed:
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typedef</span> <a href="../../iterator/ostreambuf_iterator.html"><span class="kw576">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span> Iter<span class="sy4">;</span><br />
+<span class="kw1">typedef</span> <a href="../../locale/money_put.html"><span class="kw1691">std::<span class="me2">money_put</span></span></a><span class="sy1">&lt;</span>CharT, Iter<span class="sy1">&gt;</span> MoneyPut<span class="sy4">;</span><br />
+<span class="kw4">const</span> MoneyPut<span class="sy3">&amp;</span> mp <span class="sy1">=</span> <a href="../../locale/use_facet.html"><span class="kw1620">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span>MoneyPut<span class="sy1">&gt;</span><span class="br0">&#40;</span>out.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span><br />
 <span class="kw4">const</span> Iter end <span class="sy1">=</span> mp.<span class="me1">put</span><span class="br0">&#40;</span>Iter<span class="br0">&#40;</span>out.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>, intl, out, out.<span class="me1">fill</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, mon<span class="br0">&#41;</span><span class="sy4">;</span><br />
 <span class="kw1">if</span> <span class="br0">&#40;</span>end.<span class="me1">failed</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
 &#160; &#160; out.<span class="me1">setstate</span><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">badbit</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>
@@ -380,13 +384,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">long</span> <span class="kw4">double</span> mon <span class="sy1">=</span> <span class="nu16">123.45</span><span class="sy4">;</span> <span class="co1">// or std::string mon = &quot;123.45&quot;;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1573">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1617">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;en_US: &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; or &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon, <span class="kw2">true</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1573">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ru_RU.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ru_RU: &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; or &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon, <span class="kw2">true</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1573">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ja_JP: &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; or &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon, <span class="kw2">true</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1617">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ru_RU.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ru_RU: &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; or &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon, <span class="kw2">true</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1617">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ja_JP: &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; or &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">put_money</span><span class="br0">&#40;</span>mon, <span class="kw2">true</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -412,15 +416,15 @@ ja_JP: ￥123 or JPY  123</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4176/1000000
-Preprocessor generated node count: 6979/1000000
-Post‐expand include size: 117161/2097152 bytes
-Template argument size: 19241/2097152 bytes
+Preprocessor visited node count: 4282/1000000
+Preprocessor generated node count: 7110/1000000
+Post‐expand include size: 120449/2097152 bytes
+Template argument size: 19774/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4800-0!*!0!!en!*!* and timestamp 20140705032345 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4800-0!*!0!!en!*!* and timestamp 20151130155245 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -455,8 +459,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/manip/put_money" title="cpp/io/manip/put money" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 July 2013, at 18:28.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,373 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 July 2013, at 17:28.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,020 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -489,7 +493,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.211 secs. -->
+</script><!-- Served in 2.134 secs. -->
 	</body>
-<!-- Cached 20140705032345 -->
+<!-- Cached 20151130155245 -->
 </html>

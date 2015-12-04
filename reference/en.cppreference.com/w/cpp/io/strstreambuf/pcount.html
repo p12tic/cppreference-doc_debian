@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -311,25 +312,25 @@ Returns the number of characters written to the output sequence.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    std<span class="sy4">::</span><span class="me2">strstream</span> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
+    <a href="../strstream.html"><span class="kw1478">std::<span class="me2">strstream</span></span></a> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
     dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">strstreambuf</span><span class="sy2">*</span> buf <span class="sy1">=</span> dyn.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The size of the output is &quot;</span>
+    <a href="../strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a><span class="sy2">*</span> buf <span class="sy1">=</span> dyn.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The size of the output is &quot;</span>
               <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or just buf.pcount()</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; and it holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     dyn.<span class="me1">freeze</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// after calling .str() on a dynamic strstream</span>
 &#160;
     <span class="kw4">char</span> arr<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">ostrstream</span> user<span class="br0">&#40;</span>arr, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// user-provided output buffer</span>
+    <a href="../ostrstream.html"><span class="kw1477">std::<span class="me2">ostrstream</span></span></a> user<span class="br0">&#40;</span>arr, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// user-provided output buffer</span>
     buf <span class="sy1">=</span> user.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     user <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span> <span class="co1">// note: no std::ends</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">write</span><span class="br0">&#40;</span>arr, buf<span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// or just user.pcount()</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">write</span><span class="br0">&#40;</span>arr, buf<span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// or just user.pcount()</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">istrstream</span> lit<span class="br0">&#40;</span><span class="st0">&quot;1 2 3&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// read-only fixed-size buffer</span>
+    <a href="../istrstream.html"><span class="kw1476">std::<span class="me2">istrstream</span></span></a> lit<span class="br0">&#40;</span><span class="st0">&quot;1 2 3&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// read-only fixed-size buffer</span>
     buf <span class="sy1">=</span> lit.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="co1">// istrstream has no member pcount(), so lit.pcount() won't work</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Input-only pcount() = &quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Input-only pcount() = &quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -355,15 +356,15 @@ Input-only pcount() = 0</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3198/1000000
-Preprocessor generated node count: 7219/1000000
-Post‐expand include size: 80384/2097152 bytes
-Template argument size: 15532/2097152 bytes
+Preprocessor visited node count: 3210/1000000
+Preprocessor generated node count: 7287/1000000
+Post‐expand include size: 80943/2097152 bytes
+Template argument size: 15581/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12916-0!*!0!!en!*!* and timestamp 20140706142321 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12916-0!*!0!!en!*!* and timestamp 20150825172917 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -399,7 +400,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 26 August 2013, at 14:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 619 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 1,911 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -432,7 +433,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.500 secs. -->
+</script><!-- Served in 1.506 secs. -->
 	</body>
-<!-- Cached 20140706142321 -->
+<!-- Cached 20150825172917 -->
 </html>

@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -355,20 +356,26 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
-<td> <div><span class="mw-geshi cpp source-cpp">forward_list<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> init, <br />
+<td> <div><span class="mw-geshi cpp source-cpp">forward_list<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> init, <br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (7) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Constructs new container from a variety of data sources and optionally using user supplied allocator <code>alloc</code>.
+<p>Constructs a new container from a variety of data sources, optionally using a user supplied allocator <code>alloc</code>.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Default constructor. Constructs empty container.</div>
+<div class="t-li1"><span class="t-li">1)</span> Default constructor. Constructs an empty container.</div>
 <div class="t-li1"><span class="t-li">2)</span> Constructs the container with <code>count</code> copies of elements with value <code>value</code>.</div>
-<div class="t-li1"><span class="t-li">3)</span> Constructs the container with <code>count</code> value-initialized (default constructed, for classes) instances of <code>T</code>. No copies are made.</div>
-<div class="t-li1"><span class="t-li">4)</span> Constructs the container with the contents of the range <code>[first, last)</code>. <span class="t-rev-inl t-since-cxx11"><span>This constructor does not participate in overload resolution if <code>InputIt</code> does not satisfy <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>, to avoid ambiguity with the overload 2</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span></div>
-<div class="t-li1"><span class="t-li">5)</span> Copy constructor. Constructs the container with the copy of the contents of <code>other</code>. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw569">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_container_copy_construction</span><span class="br0">&#40;</span>other<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Constructs the container with <code>count</code> <a href="../../concept/DefaultInsertable.html" title="cpp/concept/DefaultInsertable">default-inserted</a> instances of <code>T</code>. No copies are made.</div>
+<div class="t-li1"><span class="t-li">4)</span> Constructs the container with the contents of the range <code>[first, last)</code>. 
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11"><td>This constructor has the same effect as overload <span class="t-v">(2)</span> if <code>InputIt</code> is an integral type.</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>This overload only participates in overload resolution if  <code>InputIt</code> satisfies <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a> , to avoid ambiguity with the overload <span class="t-v">(2)</span>.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
+</table></div>
+<div class="t-li1"><span class="t-li">5)</span> Copy constructor. Constructs the container with the copy of the contents of <code>other</code>. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_container_copy_construction</span><span class="br0">&#40;</span>other.<span class="me1">get_allocator</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.</div>
 <div class="t-li1"><span class="t-li">6)</span> Move constructor. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to <code>other</code>.</div>
 <div class="t-li1"><span class="t-li">7)</span> Constructs the container with the contents of the initializer list <code>init</code>. </div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -424,15 +431,6 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> -
 </td>
 <td>  initializer list to initialize the elements of the container with
-</td></tr>
-<tr class="t-par-hitem">
-<td colspan="3"> Type requirements
-</td></tr>
-<tr class="t-par-req">
-<td colspan="3"> -<div class="spacer"></div><code>Allocator</code> must meet the requirements of <a href="../../concept/Allocator.html" title="cpp/concept/Allocator"><code>Allocator</code></a>.
-</td></tr>
-<tr class="t-par-req">
-<td colspan="3"> -<div class="spacer"></div><code>InputIt</code> must meet the requirements of <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor&amp;action=edit&amp;section=T-2" title="Template:cpp/container/constructor">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <div class="t-li1"><span class="t-li">1)</span> Constant</div>
@@ -441,14 +439,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div class="t-li1"><span class="t-li">5)</span> Linear in size of <code>other</code></div>
 <div class="t-li1"><span class="t-li">6)</span> Constant. If <code>alloc</code> is given and <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc <span class="sy3">!</span><span class="sy1">=</span> other.<span class="me1">get_allocator</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>, then linear.</div>
 <div class="t-li1"><span class="t-li">7)</span> Linear in size of <code>init</code></div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor&amp;action=edit&amp;section=T-4" title="Template:cpp/container/constructor">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor&amp;action=edit&amp;section=T-5" title="Template:cpp/container/constructor">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;forward_list&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
-<a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> s, <span class="kw4">const</span> <a href="../forward_list.html"><span class="kw1069">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<a href="../../io/basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> s, <span class="kw4">const</span> <a href="../forward_list.html"><span class="kw1096">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
     s.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'['</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">char</span> comma<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="st0">'<span class="es5">\0</span>'</span>, <span class="st0">' '</span>, <span class="st0">'<span class="es5">\0</span>'</span><span class="br0">&#125;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> e <span class="sy4">:</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
@@ -461,20 +459,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> 
 <span class="br0">&#123;</span>
     <span class="co1">// c++11 initializer list syntax:</span>
-    <a href="../forward_list.html"><span class="kw1069">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words1 <span class="br0">&#123;</span><span class="st0">&quot;the&quot;</span>, <span class="st0">&quot;frogurt&quot;</span>, <span class="st0">&quot;is&quot;</span>, <span class="st0">&quot;also&quot;</span>, <span class="st0">&quot;cursed&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words1: &quot;</span> <span class="sy1">&lt;&lt;</span> words1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../forward_list.html"><span class="kw1096">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words1 <span class="br0">&#123;</span><span class="st0">&quot;the&quot;</span>, <span class="st0">&quot;frogurt&quot;</span>, <span class="st0">&quot;is&quot;</span>, <span class="st0">&quot;also&quot;</span>, <span class="st0">&quot;cursed&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words1: &quot;</span> <span class="sy1">&lt;&lt;</span> words1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// words2 == words1</span>
-    <a href="../forward_list.html"><span class="kw1069">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words2<span class="br0">&#40;</span>words1.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, words1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words2: &quot;</span> <span class="sy1">&lt;&lt;</span> words2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../forward_list.html"><span class="kw1096">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words2<span class="br0">&#40;</span>words1.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, words1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words2: &quot;</span> <span class="sy1">&lt;&lt;</span> words2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// words3 == words1</span>
-    <a href="../forward_list.html"><span class="kw1069">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words3<span class="br0">&#40;</span>words1<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words3: &quot;</span> <span class="sy1">&lt;&lt;</span> words3 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../forward_list.html"><span class="kw1096">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words3<span class="br0">&#40;</span>words1<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words3: &quot;</span> <span class="sy1">&lt;&lt;</span> words3 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// words4 is {&quot;Mo&quot;, &quot;Mo&quot;, &quot;Mo&quot;, &quot;Mo&quot;, &quot;Mo&quot;}</span>
-    <a href="../forward_list.html"><span class="kw1069">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words4<span class="br0">&#40;</span><span class="nu0">5</span>, <span class="st0">&quot;Mo&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words4: &quot;</span> <span class="sy1">&lt;&lt;</span> words4 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../forward_list.html"><span class="kw1096">std::<span class="me2">forward_list</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> words4<span class="br0">&#40;</span><span class="nu0">5</span>, <span class="st0">&quot;Mo&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;words4: &quot;</span> <span class="sy1">&lt;&lt;</span> words4 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -483,7 +481,7 @@ words2: [the, frogurt, is, also, cursed]
 words3: [the, frogurt, is, also, cursed]
 words4: [Mo, Mo, Mo, Mo, Mo]</pre></div></div> 
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor&amp;action=edit&amp;section=T-5" title="Template:cpp/container/constructor">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor&amp;action=edit&amp;section=T-6" title="Template:cpp/container/constructor">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
@@ -501,15 +499,15 @@ words4: [Mo, Mo, Mo, Mo, Mo]</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5433/1000000
-Preprocessor generated node count: 10296/1000000
-Post‐expand include size: 160823/2097152 bytes
-Template argument size: 25024/2097152 bytes
+Preprocessor visited node count: 5407/1000000
+Preprocessor generated node count: 10146/1000000
+Post‐expand include size: 160126/2097152 bytes
+Template argument size: 24775/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:906-0!*!0!!en!*!* and timestamp 20140705144311 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:906-0!*!0!!en!*!* and timestamp 20150825092055 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -545,7 +543,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:30.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,324 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,099 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -578,7 +576,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.876 secs. -->
+</script><!-- Served in 2.753 secs. -->
 	</body>
-<!-- Cached 20140705144311 -->
+<!-- Cached 20150825092055 -->
 </html>

@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -319,18 +320,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> filename <span class="sy1">=</span> <span class="st0">&quot;some_file&quot;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> filename <span class="sy1">=</span> <span class="st0">&quot;some_file&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_fstream.html"><span class="kw1419">std::<span class="me2">fstream</span></span></a> fs<span class="br0">&#40;</span>filename, std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">in</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_fstream.html"><span class="kw1457">std::<span class="me2">fstream</span></span></a> fs<span class="br0">&#40;</span>filename, std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">in</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../manip/boolalpha.html"><span class="kw1445">std::<span class="me2">boolalpha</span></span></a><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fs.is_open() = &quot;</span> <span class="sy1">&lt;&lt;</span> fs.<span class="me1">is_open</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fs.is_open() = &quot;</span> <span class="sy1">&lt;&lt;</span> fs.<span class="me1">is_open</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>fs.<span class="me1">is_open</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
        fs.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
        fs.<span class="me1">open</span><span class="br0">&#40;</span>filename, std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">out</span><span class="br0">&#41;</span><span class="sy4">;</span>
-       <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fs.is_open() = &quot;</span> <span class="sy1">&lt;&lt;</span> fs.<span class="me1">is_open</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+       <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fs.is_open() = &quot;</span> <span class="sy1">&lt;&lt;</span> fs.<span class="me1">is_open</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -356,15 +357,15 @@ fs.is_open() = true</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3145/1000000
-Preprocessor generated node count: 7758/1000000
-Post‐expand include size: 118325/2097152 bytes
-Template argument size: 14141/2097152 bytes
+Preprocessor visited node count: 3157/1000000
+Preprocessor generated node count: 7826/1000000
+Post‐expand include size: 119166/2097152 bytes
+Template argument size: 14190/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:489-0!*!0!!en!*!* and timestamp 20140704205645 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:489-0!*!0!!en!*!* and timestamp 20150825064714 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -400,7 +401,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,968 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,807 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -433,7 +434,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.321 secs. -->
+</script><!-- Served in 1.339 secs. -->
 	</body>
-<!-- Cached 20140704205645 -->
+<!-- Cached 20150825064714 -->
 </html>

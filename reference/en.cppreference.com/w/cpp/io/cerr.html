@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -296,23 +297,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a> cerr<span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a> cerr<span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_ostream.html"><span class="kw1428">std::<span class="me2">wostream</span></span></a> wcerr<span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_ostream.html"><span class="kw1466">std::<span class="me2">wostream</span></span></a> wcerr<span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The global objects <span class="t-lc"><a href="basic_ostream.html" title="cpp/io/basic ostream">std::cerr</a></span> and <span class="t-lc"><a href="basic_ostream.html" title="cpp/io/basic ostream">std::wcerr</a></span> control output to a stream buffer of implementation-defined type (derived from <span class="t-lc"><a href="basic_streambuf.html" title="cpp/io/basic streambuf">std::streambuf</a></span> and <span class="t-lc"><a href="basic_streambuf.html" title="cpp/io/basic streambuf">std::wstreambuf</a></span>, respectively), associated with the standard C error output stream <span class="t-lc"><a href="c.html" title="cpp/io/c">stderr</a></span>.
+<p>The global objects <span class="t-lc">std::cerr</span> and <span class="t-lc">std::wcerr</span> control output to a stream buffer of implementation-defined type (derived from <span class="t-lc">std::streambuf</span> and <span class="t-lc">std::wstreambuf</span>, respectively), associated with the standard C error output stream <span class="t-lc">stderr</span>.
 </p><p>These objects are guaranteed to be initialized during or before the first time an object of type <span class="t-lc">std::ios_base::Init</span> is constructed and are available for use in the constructors and destructors of static objects (as long as <code>&lt;iostream&gt;</code> is included).
 </p><p>Unless <span class="t-c"><span class="mw-geshi cpp source-cpp">sync_with_stdio<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span></span></span> has been issued, it is safe to concurrently access these objects from multiple threads for both formatted and unformatted output.
-</p><p>Once initialized, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><a href="basic_ostream.html"><span class="kw1441">std::<span class="me2">cerr</span></span></a>.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> unitbuf<span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span></span></span> (same for <code>wcerr</code>) meaning that any output sent to these stream objects is immediately flushed to the OS (via <span class="t-lc"><a href="basic_ostream/sentry.html" title="cpp/io/basic ostream/sentry">std::basic_ostream::sentry</a></span>'s destructor).
-</p><p>In addition, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_ostream.html"><span class="kw1441">std::<span class="me2">cerr</span></span></a>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a></span></span> (same for <code>wcerr</code> and <code>wcout</code>), meaning that any output operation on <span class="t-lc"><a href="basic_ostream.html" title="cpp/io/basic ostream">std::cerr</a></span> first executes <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> (via <span class="t-lc"><a href="basic_ostream/sentry.html" title="cpp/io/basic ostream/sentry">std::basic_ostream::sentry</a></span>'s constructor) <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</p><p>Once initialized, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">cerr</span>.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> unitbuf<span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span></span></span> (same for <code>wcerr</code>) meaning that any output sent to these stream objects is immediately flushed to the OS (via <span class="t-lc">std::basic_ostream::sentry</span>'s destructor).
+</p><p>In addition, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">cerr</span>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a></span></span> (same for <code>wcerr</code> and <code>wcout</code>), meaning that any output operation on <span class="t-lc">std::cerr</span> first executes <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> (via <span class="t-lc">std::basic_ostream::sentry</span>'s constructor) <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/cerr&amp;action=edit&amp;section=1" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><p> output to stderr via cerr flushes out the pending output on cout, while output to stderr via clog does not
@@ -322,17 +324,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;chrono&gt;</span>
 <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Output from thread...&quot;</span><span class="sy4">;</span>
-    <a href="../thread/sleep_for.html"><span class="kw1785">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">&#40;</span><a href="../chrono/duration.html"><span class="kw841">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;...thread calls flush()&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="manip/endl.html"><span class="kw1472">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Output from thread...&quot;</span><span class="sy4">;</span>
+    <a href="../thread/sleep_for.html"><span class="kw1827">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">&#40;</span><a href="../chrono/duration.html"><span class="kw875">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;...thread calls flush()&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="manip/endl.html"><span class="kw1512">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../thread/thread.html"><span class="kw1782">std::<span class="me2">thread</span></span></a> t1<span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../thread/sleep_for.html"><span class="kw1785">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">&#40;</span><a href="../chrono/duration.html"><span class="kw841">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="basic_ostream.html"><span class="kw1443">std::<span class="me2">clog</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This output from main is not tie()'d to cout<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="basic_ostream.html"><span class="kw1441">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This output is tie()'d to cout<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1824">std::<span class="me2">thread</span></span></a> t1<span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../thread/sleep_for.html"><span class="kw1827">std::<span class="me2">this_thread</span><span class="sy4">::</span><span class="me2">sleep_for</span></span></a><span class="br0">&#40;</span><a href="../chrono/duration.html"><span class="kw875">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="clog.html"><span class="kw1483">std::<span class="me2">clog</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This output from main is not tie()'d to cout<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">cerr</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This output is tie()'d to cout<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     t1.<span class="me1">join</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -353,27 +355,27 @@ Output from thread...This output is tie()'d to cout
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="clog.html" title="cpp/io/clog"> <span class="t-lines"><span>clog</span><span>wclog</span></span></a></div></div>
 </td>
-<td>  writes to the standard C error stream <span class="t-lc"><a href="c.html" title="cpp/io/c">stderr</a></span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_clog&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  writes to the standard C error stream <span class="t-lc">stderr</span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_clog&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="cout.html" title="cpp/io/cout"> <span class="t-lines"><span>cout</span><span>wcout</span></span></a></div></div>
 </td>
-<td>  writes to the standard C output stream <span class="t-lc"><a href="c.html" title="cpp/io/c">stdout</a></span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_cout&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  writes to the standard C output stream <span class="t-lc">stdout</span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_cout&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3864/1000000
-Preprocessor generated node count: 7979/1000000
-Post‐expand include size: 96638/2097152 bytes
-Template argument size: 16611/2097152 bytes
+Preprocessor visited node count: 3880/1000000
+Preprocessor generated node count: 8047/1000000
+Post‐expand include size: 96609/2097152 bytes
+Template argument size: 16608/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4060-0!*!0!!*!*!* and timestamp 20140705013618 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4060-0!*!0!!*!*!* and timestamp 20151130141346 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -408,8 +410,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/cerr" title="cpp/io/cerr" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 19 August 2013, at 08:47.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,309 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 19 August 2013, at 07:47.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 20,989 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -442,7 +444,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.843 secs. -->
+</script><!-- Served in 1.878 secs. -->
 	</body>
-<!-- Cached 20140705013619 -->
+<!-- Cached 20151130141347 -->
 </html>

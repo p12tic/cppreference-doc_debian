@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -302,19 +303,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Codecvt,<br />
 <p>&#160; &#160; &#160; &#160; &#160;<span class="kw1">class</span> Elem <span class="sy1">=</span> <span class="kw4">wchar_t</span>,<br />
-&#160; &#160; &#160; &#160; &#160;<span class="kw1">class</span> Tr <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1064">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>Elem<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br />
+&#160; &#160; &#160; &#160; &#160;<span class="kw1">class</span> Tr <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>Elem<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br />
 </p>
-<span class="kw1">class</span> wbuffer_convert <span class="sy4">:</span> <span class="kw1">public</span> <a href="../io/basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>Elem, Tr<span class="sy1">&gt;</span></span></div></td>
+<span class="kw1">class</span> wbuffer_convert <span class="sy4">:</span> <span class="kw1">public</span> <a href="../io/basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>Elem, Tr<span class="sy1">&gt;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><span class="t-lc"><strong class="selflink">std::wbuffer_convert</strong></span> is a wrapper over stream buffer of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span> which gives it the appearance of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>Elem<span class="sy1">&gt;</span></span></span>. All I/O performed through <span class="t-lc"><strong class="selflink">std::wbuffer_convert</strong></span> undergoes character conversion as defined by the facet <code>Codecvt</code>. <span class="t-lc"><strong class="selflink">std::wbuffer_convert</strong></span> assumes ownership of the conversion facet, and cannot use a facet managed by a locale. The standard facets suitable for use with <span class="t-lc"><strong class="selflink">std::wbuffer_convert</strong></span> are <span class="t-lc"><a href="codecvt_utf8.html" title="cpp/locale/codecvt utf8">std::codecvt_utf8</a></span> for UTF-8/UCS2 and UTF-8/UCS4 conversions and <span class="t-lc"><a href="codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16">std::codecvt_utf8_utf16</a></span> for UTF-8/UTF-16 conversions.
-</p><p>This class template makes the implicit character conversion functionality of <span class="t-lc"><a href="../io/basic_filebuf.html" title="cpp/io/basic filebuf">std::basic_filebuf</a></span> available for any <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span>.
+<p><span class="t-lc">std::wbuffer_convert</span> is a wrapper over stream buffer of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span> which gives it the appearance of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>Elem<span class="sy1">&gt;</span></span></span>. All I/O performed through <span class="t-lc">std::wbuffer_convert</span> undergoes character conversion as defined by the facet <code>Codecvt</code>. <span class="t-lc">std::wbuffer_convert</span> assumes ownership of the conversion facet, and cannot use a facet managed by a locale. The standard facets suitable for use with <span class="t-lc">std::wbuffer_convert</span> are <span class="t-lc">std::codecvt_utf8</span> for UTF-8/UCS2 and UTF-8/UCS4 conversions and <span class="t-lc">std::codecvt_utf8_utf16</span> for UTF-8/UTF-16 conversions.
+</p><p>This class template makes the implicit character conversion functionality of <span class="t-lc">std::basic_filebuf</span> available for any <span class="t-lc">std::basic_streambuf</span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/wbuffer_convert&amp;action=edit&amp;section=1" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
 <table class="t-dsc-begin">
@@ -343,7 +345,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>operator=</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>operator=</span></span></div></div>
 </td>
 <td>   the copy assignment operator is deleted  <br /> <span class="t-mark">(public member function)</span>
 </td></tr>
@@ -382,7 +384,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr>
 <th> UTF-16
 </th>
-<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/mbrtoc16.html" title="cpp/string/multibyte/mbrtoc16"><tt>mbrtoc16</tt></a> / <a href="../string/multibyte/c16rtomb.html" title="cpp/string/multibyte/c16rtomb"><tt>c16rtomb</tt></a>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/mbrtoc16.html" title="cpp/string/multibyte/mbrtoc16"><tt>mbrtoc16</tt></a><span class="t-mark">(one way)</span>
 </td>
 <td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="codecvt.html" title="cpp/locale/codecvt"><tt>codecvt</tt></a>&lt;char16_t, char, mbstate_t&gt;<br /><a href="codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16"><tt>codecvt_utf8_utf16</tt></a>&lt;char16_t&gt;<br /><a href="codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16"><tt>codecvt_utf8_utf16</tt></a>&lt;char32_t&gt;<br /><a href="codecvt_utf8_utf16.html" title="cpp/locale/codecvt utf8 utf16"><tt>codecvt_utf8_utf16</tt></a>&lt;wchar_t&gt;
 </td>
@@ -391,7 +393,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr>
 <th> UCS2
 </th>
-<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no"> No
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/c16rtomb.html" title="cpp/string/multibyte/c16rtomb"><tt>c16rtomb</tt></a><span class="t-mark">(one way)</span>
 </td>
 <td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="codecvt_utf8.html" title="cpp/locale/codecvt utf8"><tt>codecvt_utf8</tt></a>&lt;char16_t&gt;
 </td>
@@ -447,15 +449,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5764/1000000
-Preprocessor generated node count: 8965/1000000
-Post‐expand include size: 153168/2097152 bytes
-Template argument size: 26463/2097152 bytes
+Preprocessor visited node count: 5816/1000000
+Preprocessor generated node count: 9040/1000000
+Post‐expand include size: 153757/2097152 bytes
+Template argument size: 26588/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2957-0!*!0!!*!*!* and timestamp 20140704235856 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2957-0!*!0!!*!*!* and timestamp 20151130140619 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -490,8 +492,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/wbuffer_convert" title="cpp/locale/wbuffer convert" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 16:39.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,676 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:39.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,761 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -524,7 +526,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.722 secs. -->
+</script><!-- Served in 1.792 secs. -->
 	</body>
-<!-- Cached 20140704235856 -->
+<!-- Cached 20151130140619 -->
 </html>

@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -297,7 +298,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>This protected virtual function is called by the public functions <span class="t-lc">sungetc()</span> and <span class="t-lc"><a href="sputbackc.html" title="cpp/io/basic streambuf/sputbackc">sputbackc()</a></span> (which, in turn, are called by <a href="../basic_istream/unget.html" title="cpp/io/basic istream/unget"><tt>basic_istream::unget</tt></a> and <a href="../basic_istream/putback.html" title="cpp/io/basic istream/putback"><tt>basic_istream::putback</tt></a>) when either:
+<p>This protected virtual function is called by the public functions <span class="t-lc"><a href="sungetc.html" title="cpp/io/basic streambuf/sungetc">sungetc()</a></span> and <span class="t-lc"><a href="sputbackc.html" title="cpp/io/basic streambuf/sputbackc">sputbackc()</a></span> (which, in turn, are called by <a href="../basic_istream/unget.html" title="cpp/io/basic istream/unget"><tt>basic_istream::unget</tt></a> and <a href="../basic_istream/putback.html" title="cpp/io/basic istream/putback"><tt>basic_istream::putback</tt></a>) when either:
 </p>
 <div class="t-li1"><span class="t-li">1)</span> There is no putback position in the get area (<code>pbackfail()</code> is called with no arguments). In this situation, the purpose of <code>pbackfail()</code> is to back up the get area by one character, if the associated character sequence allows this (e.g. a file-backed streambuf may reload the buffer from a file, starting one character earlier). </div>
 <div class="t-li1"><span class="t-li">2)</span> The caller attempts to putback a different character from the one retrieved earlier (<code>pbackfail()</code> is called with the character that needs to be put back). In this situation, the purpose of <code>pbackfail()</code> is to place the character <code>c</code> into the get area at the position just before <a href="gptr.html" title="cpp/io/basic streambuf/gptr"><tt>basic_streambuf::gptr()</tt></a>, and, if possible, to modify the associated character sequence to reflect this change. This may involve backing up the get area as in the first variant.</div>
@@ -363,15 +364,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6075/1000000
-Preprocessor generated node count: 11642/1000000
-Post‐expand include size: 145298/2097152 bytes
-Template argument size: 26484/2097152 bytes
+Preprocessor visited node count: 6085/1000000
+Preprocessor generated node count: 11710/1000000
+Post‐expand include size: 145925/2097152 bytes
+Template argument size: 26533/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9693-0!*!0!!en!*!* and timestamp 20140705143848 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9693-0!*!0!!en!*!* and timestamp 20150825093552 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -407,7 +408,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 09:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,184 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,227 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -440,7 +441,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.774 secs. -->
+</script><!-- Served in 1.663 secs. -->
 	</body>
-<!-- Cached 20140705143848 -->
+<!-- Cached 20150825093552 -->
 </html>

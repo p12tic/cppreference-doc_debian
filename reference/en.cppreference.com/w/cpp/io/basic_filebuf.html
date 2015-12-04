@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -266,19 +267,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <br />
 <p>&#160; &#160; <span class="kw1">class</span> CharT, <br />
-&#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1064">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><br />
+&#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><br />
 </p>
-<span class="sy1">&gt;</span> <span class="kw1">class</span> basic_filebuf <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></div></td>
+<span class="sy1">&gt;</span> <span class="kw1">class</span> basic_filebuf <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><code>std::basic_filebuf</code> is a <span class="t-lc"><a href="basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> whose associated character sequence is a file. Both the input sequence and the output sequence are associated with the same file, and a joint file position is maintained for both operations.
-</p><p>The functions underflow() and overflow()/sync() perform the actual I/O between the file and the get and put areas of the buffer. When <code>CharT</code> is not <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>, most implementations store multibyte characters in the file and a <span class="t-lc"><a href="../locale/codecvt.html" title="cpp/locale/codecvt">std::codecvt</a></span> facet is used to perform wide/multibyte character conversion.
+<p><code>std::basic_filebuf</code> is a <span class="t-lc">std::basic_streambuf</span> whose associated character sequence is a file. Both the input sequence and the output sequence are associated with the same file, and a joint file position is maintained for both operations.
+</p><p>The functions underflow() and overflow()/sync() perform the actual I/O between the file and the get and put areas of the buffer. When <code>CharT</code> is not <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>, most implementations store multibyte characters in the file and a <span class="t-lc">std::codecvt</span> facet is used to perform wide/multibyte character conversion.
 </p><p>Two specializations for common character types are also defined:
 </p>
 <table class="t-dsc-begin">
@@ -371,7 +373,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>pos_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">pos_type</span></span></span> which is required to be <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fpos.html"><span class="kw1482">std::<span class="me2">fpos</span></span></a><span class="sy1">&lt;</span>Traits<span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">pos_type</span></span></span> which is required to be <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fpos.html"><span class="kw1525">std::<span class="me2">fpos</span></span></a><span class="sy1">&lt;</span>Traits<span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
@@ -500,7 +502,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="basic_filebuf/swap2.html" title="cpp/io/basic filebuf/swap2"> <span class="t-lines"><span>std::swap<span class="t-dsc-small">(std::basic_filebuf)</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   specializes the <span class="t-lc"><a href="../algorithm/swap.html" title="cpp/algorithm/swap">std::swap</a></span> algorithm <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_filebuf/dsc_swap2&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   specializes the <span class="t-lc">std::swap</span> algorithm <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_filebuf/dsc_swap2&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <div class="t-inherited">
@@ -624,9 +626,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>stossc</div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>stossc</span></span></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div>
 </td>
-<td>   advances the input sequence as if by calling <span class="t-lc"><a href="basic_streambuf/sbumpc.html" title="cpp/io/basic streambuf/sbumpc">sbumpc()</a></span> and discarding the result <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_streambuf/dsc_stossc&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   advances the input sequence as if by calling <span class="t-lc">sbumpc()</span> and discarding the result <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_streambuf/dsc_stossc&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -833,15 +835,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 14070/1000000
-Preprocessor generated node count: 11714/1000000
-Post‐expand include size: 453868/2097152 bytes
-Template argument size: 108080/2097152 bytes
+Preprocessor visited node count: 14094/1000000
+Preprocessor generated node count: 11762/1000000
+Post‐expand include size: 454347/2097152 bytes
+Template argument size: 108014/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:485-0!*!0!!en!*!* and timestamp 20140704191516 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:485-0!*!0!!en!*!* and timestamp 20151130142515 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -876,8 +878,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_filebuf" title="cpp/io/basic filebuf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 25 June 2014, at 06:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,801 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 June 2014, at 05:34.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 31,475 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -910,7 +912,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 5.026 secs. -->
+</script><!-- Served in 4.721 secs. -->
 	</body>
-<!-- Cached 20140704191516 -->
+<!-- Cached 20151130142515 -->
 </html>

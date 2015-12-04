@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../iterator.html" title="cpp/iterator"> Iterator library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Iterator primitives</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../iterator_traits.html" title="cpp/iterator/iterator traits"><span class="t-lines"><span>iterator_traits</span></span></a></div></div></td></tr>
@@ -241,6 +242,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../end.html" title="cpp/iterator/end"><span class="t-lines"><span>end</span><span>cend</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rbegin.html" title="cpp/iterator/rbegin"><span class="t-lines"><span>rbegin</span><span>crbegin</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rend.html" title="cpp/iterator/rend"><span class="t-lines"><span>rend</span><span>crend</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Container access</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../size.html" title="cpp/iterator/size"><span class="t-lines"><span>size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../empty.html" title="cpp/iterator/empty"><span class="t-lines"><span>empty</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../data.html" title="cpp/iterator/data"><span class="t-lines"><span>data</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../move_iterator.html" title="cpp/iterator/move iterator"><tt>std::move_iterator</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h2"><td colspan="5"> Member functions</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>move_iterator::move_iterator</span></span></strong></div></div></td></tr>
@@ -275,7 +280,7 @@ move_iterator<span class="br0">&#40;</span> <span class="kw4">const</span> move_
 </tbody></table>
 <p>Constructs a new iterator adaptor.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Default constructor. <code>current</code> is value-initialized. This makes sense only if operations on an value-initialized <code>Iterator</code> make also sense.</div>
+<div class="t-li1"><span class="t-li">1)</span> Default constructor. <code>current</code> is value-initialized. Operations on the resulting iterator have defined behavior if and only if the corresponding operations on a value-initialized <code>Iterator</code> also have defined behavior.</div>
 <div class="t-li1"><span class="t-li">2)</span> <code>current</code> is initialized with <code>x</code>.</div>
 <div class="t-li1"><span class="t-li">3)</span> Copy constructor. The underlying iterator is initialized with that of <code>other</code>.</div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/adaptor/constructor&amp;action=edit&amp;section=T-1" title="Template:cpp/iterator/adaptor/constructor">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
@@ -310,15 +315,15 @@ move_iterator<span class="br0">&#40;</span> <span class="kw4">const</span> move_
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3536/1000000
-Preprocessor generated node count: 10454/1000000
-Post‐expand include size: 130095/2097152 bytes
-Template argument size: 16516/2097152 bytes
+Preprocessor visited node count: 3803/1000000
+Preprocessor generated node count: 10647/1000000
+Post‐expand include size: 140990/2097152 bytes
+Template argument size: 17906/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8716-0!*!0!!*!*!* and timestamp 20140707042757 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8716-0!*!0!!*!*!* and timestamp 20151114012200 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -353,8 +358,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/iterator/move_iterator/move_iterator" title="cpp/iterator/move iterator/move iterator" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:43.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 770 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:43.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,396 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -387,7 +392,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.130 secs. -->
+</script><!-- Served in 1.124 secs. -->
 	</body>
-<!-- Cached 20140707042758 -->
+<!-- Cached 20151114012200 -->
 </html>

@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -337,7 +338,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/reserve&amp;action=edit&amp;section=T-6" title="Template:cpp/container/reserve">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;vector&gt;</span>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstddef&gt;</span>
+<span class="co2">#include &lt;new&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
 <span class="co1">// minimal C++11 allocator with debug output</span>
@@ -348,12 +351,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> NAlloc<span class="br0">&#40;</span><span class="kw4">const</span> NAlloc<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
     Tp<span class="sy2">*</span> allocate<span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         n <span class="sy2">*</span><span class="sy1">=</span> sizeof<span class="br0">&#40;</span>Tp<span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;allocating &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-        <span class="kw1">return</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>Tp<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="sy4">::</span><a href="../../memory/new/operator_new.html"><span class="kw556">operator new</span></a><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;allocating &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>Tp<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="sy4">::</span><a href="../../memory/new/operator_new.html"><span class="kw589">operator new</span></a><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
     <span class="kw4">void</span> deallocate<span class="br0">&#40;</span>Tp<span class="sy2">*</span> p, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;deallocating &quot;</span> <span class="sy1">&lt;&lt;</span> n<span class="sy2">*</span>sizeof<span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-        <span class="sy4">::</span><a href="../../memory/new/operator_delete.html"><span class="kw558">operator delete</span></a><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;deallocating &quot;</span> <span class="sy1">&lt;&lt;</span> n<span class="sy2">*</span>sizeof<span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="sy4">::</span><a href="../../memory/new/operator_delete.html"><span class="kw591">operator delete</span></a><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw1">class</span> U<span class="sy1">&gt;</span>
@@ -364,16 +367,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> sz <span class="sy1">=</span> <span class="nu0">100</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;using reserve: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;using reserve: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#123;</span>
-        <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, NAlloc<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v1<span class="sy4">;</span>
+        <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, NAlloc<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v1<span class="sy4">;</span>
         v1.<span class="me1">reserve</span><span class="br0">&#40;</span>sz<span class="br0">&#41;</span><span class="sy4">;</span>
         <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> sz<span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span>
             v1.<span class="me1">push_back</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;not using reserve: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;not using reserve: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#123;</span>
-        <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, NAlloc<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v1<span class="sy4">;</span>
+        <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, NAlloc<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v1<span class="sy4">;</span>
         <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> sz<span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span>
             v1.<span class="me1">push_back</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
@@ -411,6 +414,12 @@ deallocating 512 bytes</pre></div></div>
 </td></tr>
 
 <tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="max_size.html" title="cpp/container/vector/max size"> <span class="t-lines"><span>max_size</span></span></a></div></div>
+</td>
+<td>   returns the maximum possible number of elements  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_max_size&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="resize.html" title="cpp/container/vector/resize"> <span class="t-lines"><span>resize</span></span></a></div></div>
 </td>
 <td>   changes the number of elements stored  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_resize&amp;action=edit">&#91;edit&#93;</a></span>
@@ -425,15 +434,15 @@ deallocating 512 bytes</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4434/1000000
-Preprocessor generated node count: 9592/1000000
-Post‐expand include size: 160288/2097152 bytes
-Template argument size: 24594/2097152 bytes
+Preprocessor visited node count: 4591/1000000
+Preprocessor generated node count: 9811/1000000
+Post‐expand include size: 166636/2097152 bytes
+Template argument size: 25544/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:466-0!*!0!!en!*!* and timestamp 20140704191114 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:466-0!*!0!!en!*!* and timestamp 20151028044803 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -469,7 +478,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 17 February 2014, at 11:52.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 15,738 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 45,335 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -502,7 +511,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.571 secs. -->
+</script><!-- Served in 1.602 secs. -->
 	</body>
-<!-- Cached 20140704191114 -->
+<!-- Cached 20151028044803 -->
 </html>

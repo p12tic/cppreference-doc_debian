@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -265,6 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstoul.html" title="cpp/string/wide/wcstoul"><span class="t-lines"><span>wcstoul</span><span>wcstoull</span></span></a></div></div></td></tr>
 </table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstof.html" title="cpp/string/wide/wcstof"><span class="t-lines"><span>wcstof</span><span>wcstod</span><span>wcstold</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstoimax.html" title="cpp/string/wide/wcstoimax"><span class="t-lines"><span>wcstoimax</span><span>wcstouimax</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> String manipulation</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
@@ -299,14 +301,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> wcscoll<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> lhs, <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> rhs <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Compares two null-terminated wide strings according to the locale most recently installed by <span class="t-lc"><a href="../../locale/setlocale.html" title="cpp/locale/setlocale">std::setlocale</a></span>, as defined by the <span class="t-lc"><a href="../../locale/LC_categories.html" title="cpp/locale/LC categories">LC_COLLATE</a></span> category.
+<p>Compares two null-terminated wide strings according to the locale most recently installed by <span class="t-lc">std::setlocale</span>, as defined by the <span class="t-lc">LC_COLLATE</span> category.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -344,27 +347,27 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">void</span> try_compare<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> p1, <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> p2<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">wcscoll</span><span class="br0">&#40;</span>p1, p2<span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
-         <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-         <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the American locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the American locale: &quot;</span><span class="sy4">;</span>
     try_compare<span class="br0">&#40;</span>L<span class="st0">&quot;hrnec&quot;</span>, L<span class="st0">&quot;chrt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1673">LC_COLLATE</span></a>, <span class="st0">&quot;cs_CZ.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Czech locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1717">LC_COLLATE</span></a>, <span class="st0">&quot;cs_CZ.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Czech locale: &quot;</span><span class="sy4">;</span>
     try_compare<span class="br0">&#40;</span>L<span class="st0">&quot;hrnec&quot;</span>, L<span class="st0">&quot;chrt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1673">LC_COLLATE</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the American locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1717">LC_COLLATE</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the American locale: &quot;</span><span class="sy4">;</span>
     try_compare<span class="br0">&#40;</span>L<span class="st0">&quot;år&quot;</span>, L<span class="st0">&quot;ängel&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1673">LC_COLLATE</span></a>, <span class="st0">&quot;sv_SE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Swedish locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1717">LC_COLLATE</span></a>, <span class="st0">&quot;sv_SE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Swedish locale: &quot;</span><span class="sy4">;</span>
     try_compare<span class="br0">&#40;</span>L<span class="st0">&quot;år&quot;</span>, L<span class="st0">&quot;ängel&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -403,15 +406,15 @@ In the Swedish locale: år before ängel</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3839/1000000
-Preprocessor generated node count: 7103/1000000
-Post‐expand include size: 95876/2097152 bytes
-Template argument size: 16779/2097152 bytes
+Preprocessor visited node count: 3935/1000000
+Preprocessor generated node count: 7218/1000000
+Post‐expand include size: 99755/2097152 bytes
+Template argument size: 17572/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4585-0!*!0!!en!*!* and timestamp 20140706084950 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4585-0!*!0!!en!*!* and timestamp 20151130150138 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -446,8 +449,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/wide/wcscoll" title="cpp/string/wide/wcscoll" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,772 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:27.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,278 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -480,7 +483,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.330 secs. -->
+</script><!-- Served in 2.244 secs. -->
 	</body>
-<!-- Cached 20140706084950 -->
+<!-- Cached 20151130150138 -->
 </html>

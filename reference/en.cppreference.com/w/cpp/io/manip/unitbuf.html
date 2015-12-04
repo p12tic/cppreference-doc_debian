@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -319,6 +320,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="put_money.html" title="cpp/io/manip/put money"><span class="t-lines"><span>put_money</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="put_time.html" title="cpp/io/manip/put time"><span class="t-lines"><span>put_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Quoted manipulator</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="quoted.html" title="cpp/io/manip/quoted"><span class="t-lines"><span>quoted</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dsc-header">
@@ -326,22 +329,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> unitbuf<span class="br0">&#40;</span> <a href="../ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> unitbuf<span class="br0">&#40;</span> <a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> nounitbuf<span class="br0">&#40;</span> <a href="../ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> nounitbuf<span class="br0">&#40;</span> <a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Enables or disables automatic flushing of the output stream after any output operation. Has no effect on input.
-</p><p>1) enables the <code>unitbuf</code> flag in the stream <code>str</code> as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">setf</span><span class="br0">&#40;</span><a href="../ios_base/fmtflags.html"><span class="kw1381">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a><span class="br0">&#41;</span></span></span>
-</p><p>2) disables the <code>unitbuf</code> flag in the stream <code>str</code> as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">unsetf</span><span class="br0">&#40;</span><a href="../ios_base/fmtflags.html"><span class="kw1381">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a><span class="br0">&#41;</span></span></span>
-</p><p>This is an I/O manipulator, it may be called with an expression such as <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span></span></span> for any <code>out</code> of type <span class="t-lc"><a href="../basic_ostream.html" title="cpp/io/basic ostream">std::basic_ostream</a></span> or with an expression such as <span class="t-c"><span class="mw-geshi cpp source-cpp">in <span class="sy1">&gt;&gt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span></span></span> for any <code>in</code> of type <span class="t-lc"><a href="../basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span>.
+</p><p>1) enables the <code>unitbuf</code> flag in the stream <code>str</code> as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">setf</span><span class="br0">&#40;</span><a href="../ios_base/fmtflags.html"><span class="kw1419">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a><span class="br0">&#41;</span></span></span>
+</p><p>2) disables the <code>unitbuf</code> flag in the stream <code>str</code> as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">unsetf</span><span class="br0">&#40;</span><a href="../ios_base/fmtflags.html"><span class="kw1419">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a><span class="br0">&#41;</span></span></span>
+</p><p>This is an I/O manipulator, it may be called with an expression such as <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span></span></span> for any <code>out</code> of type <span class="t-lc">std::basic_ostream</span> or with an expression such as <span class="t-c"><span class="mw-geshi cpp source-cpp">in <span class="sy1">&gt;&gt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span></span></span> for any <code>in</code> of type <span class="t-lc">std::basic_istream</span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -353,8 +357,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/unitbuf&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Flushing is performed in the destructor of the <span class="t-lc"><a href="../basic_ostream/sentry.html" title="cpp/io/basic ostream/sentry">std::basic_ostream::sentry</a></span> object, which calls <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pubsync<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> if <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <a href="../ios_base/fmtflags.html"><span class="kw1381">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a> <span class="sy1">==</span> <span class="kw2">true</span></span></span>.
-</p><p>The standard output objects <span class="t-lc"><a href="../basic_ostream.html" title="cpp/io/basic ostream">std::cerr</a></span> and <span class="t-lc"><a href="../basic_ostream.html" title="cpp/io/basic ostream">std::wcerr</a></span> have their <code>unitbuf</code> bit set by default.
+<p>Flushing is performed in the destructor of the <span class="t-lc">std::basic_ostream::sentry</span> object, which calls <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pubsync<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> if <span class="t-c"><span class="mw-geshi cpp source-cpp">str.<span class="me1">flags</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <a href="../ios_base/fmtflags.html"><span class="kw1419">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">unitbuf</span></span></a> <span class="sy1">==</span> <span class="kw2">true</span></span></span>.
+</p><p>The standard output objects <span class="t-lc">std::cerr</span> and <span class="t-lc">std::wcerr</span> have their <code>unitbuf</code> bit set by default.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/unitbuf&amp;action=edit&amp;section=2" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
@@ -379,15 +383,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> Diff<span class="sy1">&gt;</span>
 <span class="kw4">void</span> log_progress<span class="br0">&#40;</span>Diff d<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;..(&quot;</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../../chrono/duration/duration_cast.html"><span class="kw844">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../chrono/duration.html"><span class="kw840">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">milliseconds</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span>.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;..(&quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../../chrono/duration/duration_cast.html"><span class="kw878">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">duration_cast</span></span></a><span class="sy1">&lt;</span><a href="../../chrono/duration.html"><span class="kw874">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">milliseconds</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span>.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; ms)..&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">volatile</span> <span class="kw4">int</span> sink <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span><span class="sy4">;</span> <span class="co1">// enable automatic flushing</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">unitbuf</span><span class="sy4">;</span> <span class="co1">// enable automatic flushing</span>
 &#160;
     <span class="kw4">auto</span> t1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">::</span><span class="me2">high_resolution_clock</span><span class="sy4">::</span><span class="me2">now</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> <span class="nu0">5</span><span class="sy4">;</span> <span class="sy2">++</span>j<span class="br0">&#41;</span>
@@ -398,7 +402,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
         <span class="kw4">auto</span> now <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">::</span><span class="me2">high_resolution_clock</span><span class="sy4">::</span><span class="me2">now</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
         log_progress<span class="br0">&#40;</span>now <span class="sy2">-</span> t1<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -422,15 +426,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4278/1000000
-Preprocessor generated node count: 6847/1000000
-Post‐expand include size: 115257/2097152 bytes
-Template argument size: 18572/2097152 bytes
+Preprocessor visited node count: 4391/1000000
+Preprocessor generated node count: 6978/1000000
+Post‐expand include size: 118319/2097152 bytes
+Template argument size: 19105/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4820-0!*!0!!en!*!* and timestamp 20140705190650 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4820-0!*!0!!en!*!* and timestamp 20151130155101 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -465,8 +469,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/manip/unitbuf" title="cpp/io/manip/unitbuf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:04.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,141 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:04.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,644 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -499,7 +503,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.147 secs. -->
+</script><!-- Served in 2.155 secs. -->
 	</body>
-<!-- Cached 20140705190650 -->
+<!-- Cached 20151130155101 -->
 </html>

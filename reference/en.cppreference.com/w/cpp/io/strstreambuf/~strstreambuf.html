@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -290,8 +291,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>(none0
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/%7Estrstreambuf&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>This destructor is typically called by the destructor of <span class="t-lc">std::strstream</span>
-</p><p>If <span class="t-lc">str()</span> was called on a dynamic strstream and <span class="t-lc">freeze(false)</span> was not called after that, this destructor leaks memory.
+<p>This destructor is typically called by the destructor of <span class="t-lc"><a href="../strstream.html" title="cpp/io/strstream">std::strstream</a></span>
+</p><p>If <span class="t-lc"><a href="str.html" title="cpp/io/strstreambuf/str">str()</a></span> was called on a dynamic strstream and <span class="t-lc"><a href="freeze.html" title="cpp/io/strstreambuf/freeze">freeze(false)</a></span> was not called after that, this destructor leaks memory.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/%7Estrstreambuf&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -300,31 +301,31 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">void</span><span class="sy2">*</span> my_alloc<span class="br0">&#40;</span>size_t n<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;my_alloc(&quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;) called<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;my_alloc(&quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;) called<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">return</span> new <span class="kw4">char</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">void</span> my_free<span class="br0">&#40;</span><span class="kw4">void</span><span class="sy2">*</span> p<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;my_free() called<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;my_free() called<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     delete<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">*</span><span class="br0">&#41;</span>p<span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="br0">&#123;</span>
-        std<span class="sy4">::</span><span class="me2">strstreambuf</span> buf<span class="br0">&#40;</span>my_alloc, my_free<span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a> s<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../strstreambuf.html"><span class="kw1441">std::<span class="me2">strstreambuf</span></span></a> buf<span class="br0">&#40;</span>my_alloc, my_free<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a> s<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
         s <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         buf.<span class="me1">freeze</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> <span class="co1">// destructor called here, buffer deallocated</span>
 &#160;
     <span class="br0">&#123;</span>
-        std<span class="sy4">::</span><span class="me2">strstreambuf</span> buf<span class="br0">&#40;</span>my_alloc, my_free<span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a> s<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../strstreambuf.html"><span class="kw1441">std::<span class="me2">strstreambuf</span></span></a> buf<span class="br0">&#40;</span>my_alloc, my_free<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a> s<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
         s <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="co1">//        buf.freeze(false);</span>
     <span class="br0">&#125;</span> <span class="co1">// destructor called here, memory leak!</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -339,15 +340,15 @@ my_alloc(4096) called
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2791/1000000
-Preprocessor generated node count: 5958/1000000
-Post‐expand include size: 70861/2097152 bytes
-Template argument size: 12825/2097152 bytes
+Preprocessor visited node count: 2803/1000000
+Preprocessor generated node count: 6017/1000000
+Post‐expand include size: 71580/2097152 bytes
+Template argument size: 12874/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12883-0!*!0!!*!*!* and timestamp 20140704233930 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12883-0!*!0!!*!*!* and timestamp 20150524000453 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -383,7 +384,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 11:24.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 612 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 1,553 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -416,7 +417,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.314 secs. -->
+</script><!-- Served in 1.170 secs. -->
 	</body>
-<!-- Cached 20140704233930 -->
+<!-- Cached 20150524000453 -->
 </html>

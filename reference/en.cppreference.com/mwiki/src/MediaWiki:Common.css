@@ -1,9 +1,8 @@
- 
 /* ======================================================================
    CUSTOMIZATION
  ------------------------------------------------------------------------
 */
-
+ 
 
 /* local dejavu fonts */
 @font-face {
@@ -257,9 +256,9 @@ span.mw-geshi {
 .t-c {
     background-color: transparent;
     background-color: rgba(0,0,0,0.031);
-    border: 1px solid #D6D6D6;
-    border-radius: 3px;
-    margin: 0 2px;
+    border: 1px solid #D6D6D6; 
+    border-radius: 3px; 
+    margin: 0 2px; 
     padding: 0 2px;
     display: inline-block;
 }
@@ -720,9 +719,14 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
 }
 
 .t-noexcept-inline > .t-noexcept-box {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-block; 
+    vertical-align: middle; 
     padding:0;
+}
+
+.t-rev .t-noexcept-full .t-mark-rev,
+.t-rev .t-noexcept-inline .t-mark-rev {
+    display: none;
 }
 
 /* ----------------------------------------------------------------------
@@ -797,6 +801,11 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
     white-space: nowrap;
 }
 
+.t-dsc > td,
+.t-dsc-hitem > td {
+    border-top: 1px solid #CCCCCC;
+}
+
 .t-dsc-header > td {
     padding: 0;
     font-size: 0.8em;
@@ -805,11 +814,6 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
 
 .t-dsc-header > td:nth-child(1) > div {
     margin-left: 2em;
-}
-
-.t-dsc-sep > td {
-    border-top: 1px solid #CCCCCC;
-    padding: 0;
 }
 
 .t-dsc-see {
@@ -823,6 +827,40 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
 
 .t-dsc-see-tt > span {
    font-family: DejaVuSansMono, "DejaVu Sans Mono", courier, monospace;
+}
+
+/* ----------------------------------------------------------------------
+   .dsctable
+*/
+
+.dsctable td ul,
+.dsctable td ol,
+.dsctable td dl {
+    text-align: left;
+}
+
+.dsctable {
+    max-width: 60em;
+    border-spacing: 0;
+}
+
+.dsctable > tbody > tr > td {
+    border-top: 1px solid silver;
+    width: 0%;
+    line-height: 1.2em;
+    padding: 0.2em 0.1em 0.25em 0.75em;
+    white-space: nowrap;
+}
+
+.dsctable > tbody > tr:last-child > td {
+    border-bottom: 1px solid silver;
+}
+
+.dsctable > tbody > tr > th {
+    font-weight: bold;
+    line-height: 1.1em;
+    padding: 0.2em 0 0.25em 0.75em;
+    white-space: nowrap;
 }
 
 /* ----------------------------------------------------------------------
@@ -858,12 +896,14 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
     padding: 0;
 }
 
-.t-dcl > td:nth-child(2) {
+.t-dcl > td:nth-child(2),
+.t-dcl-rev-aux > td:nth-child(2) {
     font-size: 0.8em;
     padding-right: 1.5em;
 }
 
-.t-dcl > td:nth-child(3) {
+.t-dcl > td:nth-child(3),
+.t-dcl-rev-aux > td:nth-child(3) {
     padding: 0;
 }
 
@@ -871,26 +911,35 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
     padding-right: 0 !important;
 }
 
-.t-dcl-sep > td {
+/* Apply the dark border */
+.t-dcl > td,
+.t-dcl-h > td,
+.t-dcl-sep > td,
+.t-dcl-rev > .t-dcl:first-child > td, /* if dcl-rev-aux is hidden */
+.t-dcl-rev > .t-dcl-rev-aux > td {
     border-top: 1px solid #cccccc;
+}
+
+.t-dcl-sep > td {
     padding: 0;
 }
 
-.t-dcl-rev > .t-dcl-sep > td {
+/* Apply the light border to the dcl-rev elements */
+.t-dcl-rev > .t-dcl > td,
+.t-dcl-rev > .t-dcl-h > td {
     border-top: 1px solid #e8e8e8;
 }
 
-/* disable the above rule for the first and the last separators */
-.t-dcl-rev > .t-dcl-sep:first-child > td,
-.t-dcl-rev > .t-dcl-sep:last-child > td {
-    border-top: 1px solid #cccccc;
+/* Do not apply any border to the first element in dcl-rev block */
+.t-dcl-rev-aux + .t-dcl td {
+    border-top: none;
 }
 
-/* Reduce padding. Preserve padding for the first and the last visible
+/* Reduce padding. Preserve padding for the first and the last visible 
    code elements */
-.t-dcl-rev-aux ~ .t-dcl-sep ~ .t-dcl-sep ~ .t-dcl td {
-    /* Here we abuse CSS a bit to ensure that at least one block between separators
-       has his top padding left untouched */
+.t-dcl-rev-aux ~ .t-dcl ~ .t-dcl td {
+    /* Here we abuse CSS a bit to ensure that at least one block has 
+       his top padding left untouched */
     padding-top: 0;
 }
 
@@ -903,10 +952,7 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
     padding: 0;
 }
 
-.t-dcl-rev-aux + .t-dcl-sep {
-    display: none;
-}
-
+/* Override columns overridden by data in dcl-rev entry */
 .t-dcl-rev-num > .t-dcl-rev-aux ~ tr:not(.t-dcl-rev-aux) > td:nth-child(2) {
     display: none;
 }
@@ -1045,6 +1091,19 @@ body.skin-vector       .t-navbar-head:nth-child(2) {
     padding: 0.3em 0.2em;
 }
 
+.t-rev-begin-noborder .t-rev > td {
+    padding: 0;
+    border: none !important;
+}
+
+.t-rev-begin-noborder .t-rev > td:first-child {
+    padding-right: 0.2em;
+}
+
+.t-dsc .t-rev-begin {
+    display: inline-table;
+}
+
 .t-rev > td:nth-child(1) {
     border: 1px solid silver;
     border-right: none;
@@ -1084,6 +1143,10 @@ div#content .t-rev > td:first-child > ul:first-child {
 
 .t-rev-inl {
     border: 1px solid silver;
+}
+
+.t-rev-inl.t-rev-inl-noborder {
+    border: none;
 }
 
 /* ----------------------------------------------------------------------
@@ -1841,7 +1904,7 @@ body.page-Special_UserLogin_signup .mw-label label { white-space : nowrap; }
 */
 
 body.mediawiki table.mbox-small-left,
-body.mediawiki table.mbox-small {
+body.mediawiki table.mbox-small {   
     width: 500px;
 }
 

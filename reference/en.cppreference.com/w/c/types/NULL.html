@@ -214,11 +214,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                                                             <!-- bodycontent -->
                     <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../c.html" title="c"> C</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
 <tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="c/language"> Language</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="c/header"> Standard Library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="c/header"> headers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../types.html" title="c/types"> Type support</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../memory.html" title="c/memory"> Dynamic memory management</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../error.html" title="c/error"> Error handling</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../program.html" title="c/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../variadic.html" title="c/variadic"> Variadic function support</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../chrono.html" title="c/chrono"> Date and time utilities</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../string.html" title="c/string"> Strings library</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="c/algorithm"> Algorithms</a> </td></tr>
@@ -227,6 +228,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="c/locale"> Localization support</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="c/thread"> Thread support</a> <span class="t-mark-rev t-since-c11">(C11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="c/atomic"> Atomic operations</a> <span class="t-mark-rev t-since-c11">(C11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../experimental.html" title="c/experimental"><span class="t-lines"><span>Technical Specifications</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../types.html" title="c/types"> Type support</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="size_t.html" title="c/types/size t"><span class="t-lines"><span>size_t</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ptrdiff_t.html" title="c/types/ptrdiff t"><span class="t-lines"><span>ptrdiff_t</span></span></a></div></div></td></tr>
@@ -241,32 +243,38 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dsc-header">
+</tr>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code>&lt;string.h&gt;</code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dsc-header">
+</tr>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code>&lt;wchar.h&gt;</code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dsc-header">
+</tr>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code>&lt;time.h&gt;</code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dsc-header">
+</tr>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code>&lt;locale.h&gt;</code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dsc-header">
+</tr>
+<tr class="t-dsc-header">
 <td> <div>Defined in header <code>&lt;stdio.h&gt;</code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi c source-c"><span class="co2">#define NULL /*implementation-defined*/</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
@@ -280,19 +288,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdlib.h&gt;</span>
 &#160;
 <span class="kw1">struct</span> S<span class="sy4">;</span>
-<span class="kw4">void</span><span class="br0">&#40;</span><span class="sy2">*</span>f<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">=</span> <a href="../../cpp/types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span>
+<span class="kw4">void</span><span class="br0">&#40;</span><span class="sy2">*</span>f<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">=</span> NULL<span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>    
-    <span class="kw4">char</span> <span class="sy2">*</span>ptr <span class="sy1">=</span> <a href="../memory/malloc.html"><span class="kw403">malloc</span></a><span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="sy2">*</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>ptr <span class="sy1">==</span> <a href="../../cpp/types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span> <a href="../program/exit.html"><span class="kw488">exit</span></a><span class="br0">&#40;</span><a href="../program/EXIT_status.html"><span class="kw494">EXIT_FAILURE</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../memory/free.html"><span class="kw406">free</span></a><span class="br0">&#40;</span>ptr<span class="br0">&#41;</span><span class="sy4">;</span>
-    ptr <span class="sy1">=</span> <a href="../../cpp/types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span>
+    <span class="kw4">char</span> <span class="sy2">*</span>ptr <span class="sy1">=</span> <a href="../memory/malloc.html"><span class="kw402">malloc</span></a><span class="br0">&#40;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="sy2">*</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>ptr <span class="sy1">==</span> NULL<span class="br0">&#41;</span> <a href="../program/exit.html"><span class="kw487">exit</span></a><span class="br0">&#40;</span><a href="../program/EXIT_status.html"><span class="kw493">EXIT_FAILURE</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../memory/free.html"><span class="kw405">free</span></a><span class="br0">&#40;</span>ptr<span class="br0">&#41;</span><span class="sy4">;</span>
+    ptr <span class="sy1">=</span> NULL<span class="sy4">;</span>
 &#160;
-    <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> <a href="../../cpp/types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span>
-    <span class="kw1">struct</span> S <span class="sy2">*</span>s <span class="sy1">=</span> <a href="../../cpp/types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span>
+    <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> NULL<span class="sy4">;</span>
+    <span class="kw1">struct</span> S <span class="sy2">*</span>s <span class="sy1">=</span> NULL<span class="sy4">;</span>
 &#160;
-    <span class="kw1">return</span> <a href="../program/EXIT_status.html"><span class="kw493">EXIT_SUCCESS</span></a><span class="sy4">;</span>
+    <span class="kw1">return</span> <a href="../program/EXIT_status.html"><span class="kw492">EXIT_SUCCESS</span></a><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -309,15 +317,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 977/1000000
-Preprocessor generated node count: 4526/1000000
-Post‐expand include size: 22570/2097152 bytes
-Template argument size: 3391/2097152 bytes
+Preprocessor visited node count: 1041/1000000
+Preprocessor generated node count: 4607/1000000
+Post‐expand include size: 24352/2097152 bytes
+Template argument size: 3651/2097152 bytes
 Highest expansion depth: 16/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9389-0!*!0!!*!*!* and timestamp 20140705113143 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9389-0!*!0!!*!*!* and timestamp 20151130142547 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -352,8 +360,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/types/NULL" title="c/types/NULL" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 3 June 2014, at 07:09.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,240 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 3 June 2014, at 06:09.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,098 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -386,7 +394,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.475 secs. -->
+</script><!-- Served in 0.447 secs. -->
 	</body>
-<!-- Cached 20140705113143 -->
+<!-- Cached 20151130142548 -->
 </html>

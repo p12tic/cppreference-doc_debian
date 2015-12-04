@@ -28,7 +28,7 @@ from xml_utils import xml_escape, xml_unescape
 # copy the source tree
 os.system('rm -rf output/reference')
 os.system('mkdir -p output/reference')
-os.system('cp -rt output/reference reference/*')
+os.system('cp -r reference/* output/reference ')
 
 # rearrange the archive {root} here is output/reference
 
@@ -61,7 +61,7 @@ for lang in ["en"]:
     if (os.path.isdir(src_data_path)):
         # the skin files should be the same for all languages thus we
         # can merge everything
-        os.system('cp -rl ' + src_data_path + '/* ' + data_path)
+        os.system('cp -r ' + src_data_path + '/* ' + data_path)
         os.system('rm -r ' + src_data_path)
 
     # also copy the custom fonts
@@ -72,9 +72,9 @@ for lang in ["en"]:
 
 
 # find files that need to be renamed
-files_rename_qs = []
-files_rename_quot = []
-files_loader = []
+files_rename_qs = []        # remove query string
+files_rename_quot = []      # remove quotes
+files_loader = []           # files served by load.php
 for root, dirnames, filenames in os.walk('output/reference/'):
     for filename in fnmatch.filter(filenames, '*[?]*'):
         files_rename_qs.append((root, filename))
@@ -90,6 +90,9 @@ for root,fn in files_loader:
 rename_map = []
 def rename_file(root, fn, new_fn):
     path = os.path.join(root,fn)
+    if not os.path.isfile(path):
+        print("Not renaming " + path)
+        return
     new_path = os.path.join(root,new_fn)
     shutil.move(path, new_path)
     rename_map.append((fn, new_fn))
@@ -117,6 +120,11 @@ for root,fn in files_loader:
 
     rename_file(root, fn, new_fn)
 
+# rename filenames that conflict on case-insensitive filesystems
+# TODO: perform this automatically
+rename_file('output/reference/en/cpp/numeric/math', 'NAN.html', 'NAN.2.html')
+rename_file('output/reference/en/c/numeric/math', 'NAN.html', 'NAN.2.html')
+
 # find files that need to be preprocessed
 html_files = []
 for root, dirnames, filenames in os.walk('output/reference/'):
@@ -143,6 +151,7 @@ def rlink_fix(match):
     target = re.sub('(\.php|\.css)\?.*', '\\1', target)
     target = urllib.parse.quote(target)
     target = xml_escape(target)
+    target = target.replace('%23', '#');
     return pre + target + post
 
 # clean the html files

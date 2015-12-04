@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -315,7 +316,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> is<span class="br0">&#40;</span>mask m, <span class="kw4">char</span> c<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
@@ -329,7 +331,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <div class="t-li1"><span class="t-li">1)</span> Checks if the character <code>c</code> is classified by the mask <code>m</code> according to the classification table returned by the member function <span class="t-lc">table()</span>. Effectively calculates <span class="t-c"><span class="mw-geshi cpp source-cpp">table<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>c<span class="br0">&#93;</span> <span class="sy3">&amp;</span> m</span></span></div>
 <div class="t-li1"><span class="t-li">2)</span> For every character in the character array <code>[low, high)</code>, reads its full classification mask from the classification table returned by the member function <span class="t-lc">table()</span> (that is, evaluates <span class="t-c"><span class="mw-geshi cpp source-cpp">table<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span> <span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span><span class="sy2">*</span>p<span class="br0">&#93;</span></span></span> and stores it in the corresponding element of the array pointed to by <code>vec</code></div>
-<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>c <span class="sy1">&gt;=</span> <a href="../ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">table_size</span></span></span>, then an implementation-defined value is substituted instead of <span class="t-c"><span class="mw-geshi cpp source-cpp">table<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>c<span class="br0">&#93;</span></span></span>, possibly different for different values of <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span>.
+<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>c <span class="sy1">&gt;=</span> <a href="../ctype.html"><span class="kw1662">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">table_size</span></span></span>, then an implementation-defined value is substituted instead of <span class="t-c"><span class="mw-geshi cpp source-cpp">table<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>c<span class="br0">&#93;</span></span></span>, possibly different for different values of <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -383,7 +385,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div class="t-li1"><span class="t-li">1)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if <code>c</code> is classified by <code>m</code> in <span class="t-lc">table()</span></div>
 <div class="t-li1"><span class="t-li">2)</span> <code>high</code></div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype_char/is&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Unlike the primary template <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a></span></span>, this specialization does not perform a virtual function call when classifying characters. To customize the behavior, a derived class may provide a non-default classification table to the base class constructor.
+<p>Unlike the primary template <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../ctype.html"><span class="kw1662">std::<span class="me2">ctype</span></span></a></span></span>, this specialization does not perform a virtual function call when classifying characters. To customize the behavior, a derived class may provide a non-default classification table to the base class constructor.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype_char/is&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: no example </td></tr></table>
@@ -399,15 +401,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5740/1000000
-Preprocessor generated node count: 11653/1000000
-Post‐expand include size: 133849/2097152 bytes
-Template argument size: 20846/2097152 bytes
+Preprocessor visited node count: 5754/1000000
+Preprocessor generated node count: 11721/1000000
+Post‐expand include size: 134412/2097152 bytes
+Template argument size: 20895/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12831-0!*!0!!en!*!* and timestamp 20140706015532 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12831-0!*!0!!en!*!* and timestamp 20151130144259 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -437,8 +439,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/locale/ctype_char/is" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/locale/ctype_char/is" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype_char/is&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype_char/is&amp;oldid=64201" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype_char/is&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 08:28.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 619 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 07:28.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,122 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -471,7 +473,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.172 secs. -->
+</script><!-- Served in 2.067 secs. -->
 	</body>
-<!-- Cached 20140706015533 -->
+<!-- Cached 20151130144259 -->
 </html>

@@ -77,6 +77,7 @@ def needs_entry_in_group(el):
     if el.tag == 'function': return True
     if el.tag == 'class': return True
     if el.tag == 'enum': return True
+    if el.tag == 'variable': return True
     return False
 
 class Index2AutolinkerGroups(IndexTransform):
@@ -147,6 +148,6 @@ json_groups = [ v for v in groups.values() ]
 json_groups = sorted(json_groups, key=lambda x: x['name'])
 links = sorted(links, key=lambda x: x['target'])
 
-out_f.write(json.dumps({ 'groups' : json_groups, 'links' : links}, indent=0,
-                       sort_keys=True))
+out_f.write(json.dumps({ 'groups' : json_groups, 'links' : links}, indent=None,
+                       separators=(',\n', ': '), sort_keys=True))
 out_f.close()

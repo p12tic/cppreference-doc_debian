@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &#160; &#160; &#160; hypot<span class="br0">&#40;</span> <span class="kw4">float</span> x, <span class="kw4">float</span> y <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -414,7 +416,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>If a range error due to underflow occurs, the correct result (after rounding) is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=3" title="Edit section: Error handling">edit</a>]</span> <span class="mw-headline" id="Error_handling">Error handling</span></h3>
-<p>Errors are reported as specified in <span class="t-lc"><a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a></span>
+<p>Errors are reported as specified in <span class="t-lc">math_errhandling</span>
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
 <ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">hypot<span class="br0">&#40;</span>x, y<span class="br0">&#41;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">hypot<span class="br0">&#40;</span>y, x<span class="br0">&#41;</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp">hypot<span class="br0">&#40;</span>x, <span class="sy2">-</span>y<span class="br0">&#41;</span></span></span> are equivalent
@@ -424,7 +426,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>Implementations usually guarantee precision of less than 1 ulp (units in the last place): <a rel="nofollow" class="external text" href="http://sourceware.org/git/?p=glibc.git;a=blob_plain;f=sysdeps/ieee754/dbl-64/e_hypot.c">GNU</a>, <a rel="nofollow" class="external text" href="http://www.freebsd.org/cgi/cvsweb.cgi/src/lib/msun/src/e_hypot.c?rev=1.13.4.2;content-type=text%2Fplain">BSD</a>, <a rel="nofollow" class="external text" href="http://www.open64.net/doc/d5/d3f/hypot_8c-source.html">Open64</a>
-</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span>x, y<span class="br0">&#41;</span></span></span> is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">&#40;</span><a href="../complex.html"><span class="kw1186">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>x,y<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span>x, y<span class="br0">&#41;</span></span></span> is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">&#40;</span><a href="../complex.html"><span class="kw1219">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>x,y<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>
 </p><p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/hypot.html">POSIX specifies</a> that underflow may only occur when both arguments are subnormal and the correct result is also subnormal (this forbids naive implementations)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -440,17 +442,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// typical usage</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;(1,1) cartesian is (&quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">','</span> <span class="sy1">&lt;&lt;</span> <a href="atan2.html"><span class="kw1116">std::<span class="me2">atan2</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;) polar<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;(1,1) cartesian is (&quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">','</span> <span class="sy1">&lt;&lt;</span> <a href="atan2.html"><span class="kw1149">std::<span class="me2">atan2</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;) polar<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="co1">// special values</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hypot(NAN,INFINITY) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><a href="NAN.html"><span class="kw1155">NAN</span></a>,<a href="INFINITY.html"><span class="kw1154">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hypot(NAN,INFINITY) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><a href="NAN.html"><span class="kw1188">NAN</span></a>,<a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// error handling </span>
-    <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1164">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1175">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hypot(DBL_MAX,DBL_MAX) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><a href="../../types/climits.html"><span class="kw412">DBL_MAX</span></a>,<a href="../../types/climits.html"><span class="kw412">DBL_MAX</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw708">ERANGE</span></a><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno = ERANGE &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw976">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span>fetestexcept<span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1179">FE_OVERFLOW</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_OVERFLOW raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <a href="../fenv/feclearexcept.html"><span class="kw1197">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hypot(DBL_MAX,DBL_MAX) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw412">DBL_MAX</span></a>,<a href="../../types/climits.1.html"><span class="kw412">DBL_MAX</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw742">ERANGE</span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno = ERANGE &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1003">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>fetestexcept<span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1212">FE_OVERFLOW</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_OVERFLOW raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -495,15 +497,15 @@ hypot(DBL_MAX,DBL_MAX) = inf
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7311/1000000
-Preprocessor generated node count: 8974/1000000
-Post‐expand include size: 221117/2097152 bytes
-Template argument size: 42064/2097152 bytes
+Preprocessor visited node count: 7323/1000000
+Preprocessor generated node count: 9042/1000000
+Post‐expand include size: 221606/2097152 bytes
+Template argument size: 42113/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2949-0!*!0!!en!*!* and timestamp 20140704214801 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2949-0!*!0!!en!*!* and timestamp 20151130140737 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -538,8 +540,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/hypot" title="cpp/numeric/math/hypot" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 26 May 2014, at 20:57.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,964 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 26 May 2014, at 19:57.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 17,039 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -574,5 +576,5 @@ _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
 </script><!-- Served in 3.323 secs. -->
 	</body>
-<!-- Cached 20140704214801 -->
+<!-- Cached 20151130140737 -->
 </html>

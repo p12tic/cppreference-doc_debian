@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../algorithm.html" title="cpp/algorithm"> Algorithm library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Non-modifying sequence operations </td></tr>
@@ -268,7 +269,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reverse_copy.html" title="cpp/algorithm/reverse copy"><span class="t-lines"><span>reverse_copy</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rotate.html" title="cpp/algorithm/rotate"><span class="t-lines"><span>rotate</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rotate_copy.html" title="cpp/algorithm/rotate copy"><span class="t-lines"><span>rotate_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="random_shuffle.html" title="cpp/algorithm/random shuffle"><span class="t-lines"><span>random_shuffle</span><span>shuffle</span></span></a></div><div><span class="t-lines"><span>&#160;</span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="random_shuffle.html" title="cpp/algorithm/random shuffle"><span class="t-lines"><span>random_shuffle</span><span>shuffle</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique.html" title="cpp/algorithm/unique"><span class="t-lines"><span>unique</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique_copy.html" title="cpp/algorithm/unique copy"><span class="t-lines"><span>unique_copy</span></span></a></div></div></td></tr>
 </table></div></td></tr>
@@ -357,7 +358,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> RandomIt <span class="sy1">&gt;</span><br />
 <span class="kw4">void</span> sort_heap<span class="br0">&#40;</span> RandomIt first, RandomIt last <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
@@ -422,14 +424,14 @@ The types <span class="t-c"><span class="mw-geshi cpp source-cpp">Type1</span></
 <p>(none)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort_heap&amp;action=edit&amp;section=3" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
-<p>At most <i>N&#215;log(N)</i> comparisons where <span class="t-c"><span class="mw-geshi cpp source-cpp">N<span class="sy1">=</span><a href="../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span>.
+<p>At most <i>N&#215;log(N)</i> comparisons where <span class="t-c"><span class="mw-geshi cpp source-cpp">N<span class="sy1">=</span><a href="../iterator/distance.html"><span class="kw578">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort_heap&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>A <i>max heap</i> is a range of elements <code>[f,l)</code> that has the following properties:
 </p>
 <dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>f</span></span> is the largest element in the range
-</li><li> a new element can be added using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="push_heap.html"><span class="kw1332">std::<span class="me2">push_heap</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
-</li><li> the first element can be removed using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pop_heap.html"><span class="kw1333">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
+</li><li> a new element can be added using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="push_heap.html"><span class="kw1370">std::<span class="me2">push_heap</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
+</li><li> the first element can be removed using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pop_heap.html"><span class="kw1371">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
 </li></ul>
 </dd></dl>
 <p>The actual arrangement of the elements is implementation defined.
@@ -446,7 +448,7 @@ The types <span class="t-c"><span class="mw-geshi cpp source-cpp">Type1</span></
 <span class="kw4">void</span> sort_heap<span class="br0">&#40;</span> RandomIt first, RandomIt last <span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">while</span> <span class="br0">&#40;</span>first <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">&#41;</span>
-        <a href="pop_heap.html"><span class="kw1333">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span>first, last<span class="sy2">--</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="pop_heap.html"><span class="kw1371">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span>first, last<span class="sy2">--</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 </td></tr>
 <tr>
@@ -458,7 +460,7 @@ The types <span class="t-c"><span class="mw-geshi cpp source-cpp">Type1</span></
 <span class="kw4">void</span> sort_heap<span class="br0">&#40;</span> RandomIt first, RandomIt last, Compare comp <span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">while</span> <span class="br0">&#40;</span>first <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">&#41;</span>
-        <a href="pop_heap.html"><span class="kw1333">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span>first, last<span class="sy2">--</span>, comp<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="pop_heap.html"><span class="kw1371">std::<span class="me2">pop_heap</span></span></a><span class="br0">&#40;</span>first, last<span class="sy2">--</span>, comp<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort_heap&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -469,22 +471,22 @@ The types <span class="t-c"><span class="mw-geshi cpp source-cpp">Type1</span></
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../container/vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">3</span>, <span class="nu0">1</span>, <span class="nu0">4</span>, <span class="nu0">1</span>, <span class="nu0">5</span>, <span class="nu0">9</span><span class="br0">&#125;</span><span class="sy4">;</span> 
+    <a href="../container/vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">3</span>, <span class="nu0">1</span>, <span class="nu0">4</span>, <span class="nu0">1</span>, <span class="nu0">5</span>, <span class="nu0">9</span><span class="br0">&#125;</span><span class="sy4">;</span> 
 &#160;
-    <a href="make_heap.html"><span class="kw1331">std::<span class="me2">make_heap</span></span></a><span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="make_heap.html"><span class="kw1369">std::<span class="me2">make_heap</span></span></a><span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;heap:<span class="es1">\t</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;heap:<span class="es1">\t</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>   
 &#160;
     std<span class="sy4">::</span><span class="me2">sort_heap</span><span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>sorted:<span class="es1">\t</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>sorted:<span class="es1">\t</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span>                                                   
-        <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>   
-    <a href="../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -503,15 +505,15 @@ sorted: 1 1 3 4 5 9</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6417/1000000
-Preprocessor generated node count: 9284/1000000
-Post‐expand include size: 169928/2097152 bytes
-Template argument size: 30620/2097152 bytes
+Preprocessor visited node count: 6451/1000000
+Preprocessor generated node count: 9559/1000000
+Post‐expand include size: 171269/2097152 bytes
+Template argument size: 30916/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:784-0!*!0!!en!*!* and timestamp 20140705005423 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:784-0!*!0!!en!*!* and timestamp 20151130144250 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -546,8 +548,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/sort_heap" title="cpp/algorithm/sort heap" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 10 October 2013, at 07:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,900 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 10 October 2013, at 06:27.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,865 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -580,7 +582,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.847 secs. -->
+</script><!-- Served in 2.960 secs. -->
 	</body>
-<!-- Cached 20140705005424 -->
+<!-- Cached 20151130144251 -->
 </html>

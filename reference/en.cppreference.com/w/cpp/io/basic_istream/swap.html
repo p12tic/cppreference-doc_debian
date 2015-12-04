@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -320,14 +321,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;utility&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a> s1<span class="br0">&#40;</span><span class="st0">&quot;hello&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a> s2<span class="br0">&#40;</span><span class="st0">&quot;bye&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a> s1<span class="br0">&#40;</span><span class="st0">&quot;hello&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a> s2<span class="br0">&#40;</span><span class="st0">&quot;bye&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     s1.<span class="me1">swap</span><span class="br0">&#40;</span>s2<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, istringstream has a public swap()</span>
-    <a href="../../algorithm/swap.html"><span class="kw1295">std::<span class="me2">swap</span></span></a><span class="br0">&#40;</span>s1, s2<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, calls s1.swap(s2)</span>
+    <a href="../../algorithm/swap.html"><span class="kw1299">std::<span class="me2">swap</span></span></a><span class="br0">&#40;</span>s1, s2<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK, calls s1.swap(s2)</span>
 <span class="co1">//  std::cin.swap(s2); // ERROR: swap is a protected member</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -336,15 +337,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3527/1000000
-Preprocessor generated node count: 6434/1000000
-Post‐expand include size: 88661/2097152 bytes
-Template argument size: 14772/2097152 bytes
+Preprocessor visited node count: 3536/1000000
+Preprocessor generated node count: 6493/1000000
+Post‐expand include size: 89220/2097152 bytes
+Template argument size: 14821/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4029-0!*!0!!*!*!* and timestamp 20140705133214 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4029-0!*!0!!*!*!* and timestamp 20150523213709 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -380,7 +381,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 08:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,464 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,948 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -413,7 +414,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.545 secs. -->
+</script><!-- Served in 1.477 secs. -->
 	</body>
-<!-- Cached 20140705133214 -->
+<!-- Cached 20150523213709 -->
 </html>

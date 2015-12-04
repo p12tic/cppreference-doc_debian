@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -290,15 +291,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> rand<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Returns a pseudo-random integral value between <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> and <span class="t-lc"><a href="RAND_MAX.html" title="cpp/numeric/random/RAND MAX">RAND_MAX</a></span> (0 and <code>RAND_MAX</code> included).
-</p><p><span class="t-lc"><a href="srand.html" title="cpp/numeric/random/srand">std::srand()</a></span> seeds the pseudo-random number generator used by <code>rand()</code>.
+<p>Returns a pseudo-random integral value between <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> and <span class="t-lc">RAND_MAX</span> (0 and <code>RAND_MAX</code> included).
+</p><p><span class="t-lc">std::srand()</span> seeds the pseudo-random number generator used by <code>rand()</code>.
 If <code>rand()</code> is used before any calls to <code>srand()</code>, <code>rand()</code> behaves as if it was seeded with <code>srand(1)</code>.
 </p><p>Each time <code>rand()</code> is seeded with <code>srand()</code>, it must produce the same sequence of values on successive calls. Other functions in the standard library may call <code>rand</code>, it is implementation-defined which functions do so.
 </p><p>It is implementation-defined whether <code>rand()</code> is thread-safe.
@@ -316,7 +318,7 @@ If <code>rand()</code> is used before any calls to <code>srand()</code>, <code>r
 <p>(none)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/random/rand&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Pseudo-random integral value between <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> and <span class="t-lc"><a href="RAND_MAX.html" title="cpp/numeric/random/RAND MAX">RAND_MAX</a></span>.
+<p>Pseudo-random integral value between <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> and <span class="t-lc">RAND_MAX</span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/random/rand&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>There are no guarantees as to the quality of the random sequence produced.
@@ -332,9 +334,9 @@ In the past, some implementations of <code>rand()</code> have had serious shortc
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> 
 <span class="br0">&#123;</span>
-    <a href="srand.html"><span class="kw1206">std::<span class="me2">srand</span></span></a><span class="br0">&#40;</span><a href="../../chrono/c/time.html"><span class="kw854">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// use current time as seed for random generator</span>
+    <a href="srand.html"><span class="kw1245">std::<span class="me2">srand</span></span></a><span class="br0">&#40;</span><a href="../../chrono/c/time.html"><span class="kw888">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// use current time as seed for random generator</span>
     <span class="kw4">int</span> random_variable <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">rand</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Random value on [0 &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="RAND_MAX.html"><span class="kw1207">RAND_MAX</span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]: &quot;</span> 
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Random value on [0 &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="RAND_MAX.html"><span class="kw1246">RAND_MAX</span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]: &quot;</span> 
               <span class="sy1">&lt;&lt;</span> random_variable <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -359,7 +361,7 @@ In the past, some implementations of <code>rand()</code> have had serious shortc
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="RAND_MAX.html" title="cpp/numeric/random/RAND MAX"> <span class="t-lines"><span>RAND_MAX</span></span></a></div></div>
 </td>
-<td>   maximum possible value generated by <span class="t-lc"><strong class="selflink">std::rand</strong></span> <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/random/dsc_RAND_MAX&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   maximum possible value generated by <span class="t-lc">std::rand</span> <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/random/dsc_RAND_MAX&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -370,15 +372,15 @@ In the past, some implementations of <code>rand()</code> have had serious shortc
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3919/1000000
-Preprocessor generated node count: 7348/1000000
-Post‐expand include size: 128241/2097152 bytes
-Template argument size: 24114/2097152 bytes
+Preprocessor visited node count: 3931/1000000
+Preprocessor generated node count: 7416/1000000
+Post‐expand include size: 128408/2097152 bytes
+Template argument size: 24079/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2033-0!*!0!!en!*!* and timestamp 20140704190003 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2033-0!*!0!!en!*!* and timestamp 20151130141155 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -413,8 +415,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/random/rand" title="cpp/numeric/random/rand" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 4 June 2014, at 18:36.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 35,947 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 June 2014, at 17:36.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 144,853 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -447,7 +449,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.590 secs. -->
+</script><!-- Served in 1.533 secs. -->
 	</body>
-<!-- Cached 20140704190003 -->
+<!-- Cached 20151130141158 -->
 </html>

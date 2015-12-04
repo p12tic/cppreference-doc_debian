@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
@@ -265,7 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="codectv.html" title="cpp/header/codectv" class="mw-redirect"><tt>&lt;codectv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
 </table></div></td></tr>
 </table></div>
@@ -396,63 +397,63 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>stdin<br />stdout<br />stderr</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>stdin</span><span>stdout</span><span>stderr</span></span></div></div>
 </td>
 <td>   expression of type <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> associated with the input stream<br />expression of type <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> associated with the output stream<br />expression of type <span class="t-c"><span class="mw-geshi cpp source-cpp">FILE<span class="sy2">*</span></span></span> associated with the error output stream <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>EOF</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>EOF</span></span></div></div>
 </td>
 <td>   integer constant expression of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span> and negative value  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FOPEN_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FOPEN_MAX</span></span></div></div>
 </td>
 <td>   number of files that can be open simultaneously  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FILENAME_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FILENAME_MAX</span></span></div></div>
 </td>
 <td>   size needed for an array of char to hold the longest supported file name <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>BUFSIZ</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>BUFSIZ</span></span></div></div>
 </td>
 <td>   size of the buffer used by <span class="t-lc"><a href="../io/c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span>  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>_IOFBF<br />_IOLBF<br />_IONBF</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>_IOFBF</span><span>_IOLBF</span><span>_IONBF</span></span></div></div>
 </td>
 <td>  argument to <span class="t-lc"><a href="../io/c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> indicating fully buffered I/O<br />argument to <span class="t-lc"><a href="../io/c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> indicating line buffered I/O<br />argument to <span class="t-lc"><a href="../io/c/setbuf.html" title="cpp/io/c/setbuf">std::setbuf</a></span> indicating unbuffered I/O <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>SEEK_SET<br />SEEK_CUR<br />SEEK_END</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>SEEK_SET</span><span>SEEK_CUR</span><span>SEEK_END</span></span></div></div>
 </td>
 <td>   argument to <span class="t-lc"><a href="../io/c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> indicating seeking from beginning of the file<br />argument to <span class="t-lc"><a href="../io/c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> indicating seeking from the current file position<br />argument to <span class="t-lc"><a href="../io/c/fseek.html" title="cpp/io/c/fseek">std::fseek</a></span> indicating seeking from end of the file <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>TMP_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>TMP_MAX</span></span></div></div>
 </td>
 <td>   maximum number of unique filenames that can be generated by <span class="t-lc"><a href="../io/c/tmpnam.html" title="cpp/io/c/tmpnam">std::tmpnam</a></span>  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>L_tmpnam</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>L_tmpnam</span></span></div></div>
 </td>
 <td>    size needed for an array of char to hold the result of <span class="t-lc"><a href="../io/c/tmpnam.html" title="cpp/io/c/tmpnam">std::tmpnam</a></span>  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
@@ -558,9 +559,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="../io/c/gets.html" title="cpp/io/c/gets"> <span class="t-lines"><span>gets</span></span></a></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="../io/c/gets.html" title="cpp/io/c/gets"> <span class="t-lines"><span>gets</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span></div></div>
 </td>
-<td>   reads a character string from <span class="t-lc"><a href="../io/c.html" title="cpp/io/c">stdin</a></span><span class="t-mark-rev t-until-cxx14">(until C++14)</span> <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_gets&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   reads a character string from <span class="t-lc"><a href="../io/c.html" title="cpp/io/c">stdin</a></span>  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_gets&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -727,15 +728,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 9387/1000000
-Preprocessor generated node count: 7823/1000000
-Post‐expand include size: 250703/2097152 bytes
-Template argument size: 47464/2097152 bytes
+Preprocessor visited node count: 9537/1000000
+Preprocessor generated node count: 7871/1000000
+Post‐expand include size: 255896/2097152 bytes
+Template argument size: 48247/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9758-0!*!0!!en!*!* and timestamp 20140704193020 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9758-0!*!0!!en!*!* and timestamp 20150825035214 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -766,7 +767,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:53.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,955 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,448 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -799,7 +800,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.457 secs. -->
+</script><!-- Served in 2.451 secs. -->
 	</body>
-<!-- Cached 20140704193020 -->
+<!-- Cached 20150825035214 -->
 </html>

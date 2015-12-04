@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &#160; &#160; &#160; remquo<span class="br0">&#40;</span> <span class="kw4">float</span> x, <span class="kw4">float</span> y, <span class="kw4">int</span><span class="sy2">*</span> quo <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -383,7 +385,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<div class="t-li1"><span class="t-li">1-3)</span> Computes the floating-point remainder of the division operation <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> as the <span class="t-lc"><a href="remainder.html" title="cpp/numeric/math/remainder">std::remainder()</a></span> function does.  Additionally, the sign and at least the three of the last bits of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> will be stored in <span class="t-c"><span class="mw-geshi cpp source-cpp">quo</span></span>, sufficient to determine the octant of the result within a period.</div>
+<div class="t-li1"><span class="t-li">1-3)</span> Computes the floating-point remainder of the division operation <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> as the <span class="t-lc">std::remainder()</span> function does.  Additionally, the sign and at least the three of the last bits of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> will be stored in <span class="t-c"><span class="mw-geshi cpp source-cpp">quo</span></span>, sufficient to determine the octant of the result within a period.</div>
 <div class="t-li1"><span class="t-li">4)</span> A set of overloads or a function template for all combinations of arguments of <a href="../../types/is_arithmetic.html" title="cpp/types/is arithmetic">arithmetic type</a> not covered by 1-3. If any non-pointer argument has <a href="../../types/is_integral.html" title="cpp/types/is integral">integral type</a>, it is cast to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>. If any other non-pointer argument is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>, then the return type is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>, otherwise it is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -414,7 +416,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  pointer to an integer value to store the sign and some bits of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/remquo&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>If successful, returns the floating-point remainder of the division <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> as defined in <span class="t-lc"><a href="remainder.html" title="cpp/numeric/math/remainder">std::remainder</a></span>, and a value whose sign is the sign of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> and whose magnitude is congruent <span class="texhtml" style="white-space: nowrap;">modulo 2<span class="t-su">n<br /></span></span> to the magnitude of the integral quotient of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span>, where <span class="texhtml" style="white-space: nowrap;">n</span> is an implementation-defined integer greater than or equal to <span class="texhtml" style="white-space: nowrap;">3</span>.
+<p>If successful, returns the floating-point remainder of the division <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> as defined in <span class="t-lc">std::remainder</span>, and a value whose sign is the sign of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span> and whose magnitude is congruent <span class="texhtml" style="white-space: nowrap;">modulo 2<span class="t-su">n<br /></span></span> to the magnitude of the integral quotient of <span class="t-c"><span class="mw-geshi cpp source-cpp">x<span class="sy2">/</span>y</span></span>, where <span class="texhtml" style="white-space: nowrap;">n</span> is an implementation-defined integer greater than or equal to <span class="texhtml" style="white-space: nowrap;">3</span>.
 </p><p>If <code>y</code> is zero, the value stored in <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>quo</span></span> is unspecified.
 </p><p>If a domain error occurs, an implementation-defined value is returned (NaN where supported)
 </p><p>If a range error occurs due to underflow, the correct result is returned if subnormals are supported.
@@ -426,14 +428,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
 <ul><li> The current <a href="../fenv/FE_round.html" title="cpp/numeric/fenv/FE round">rounding mode</a> has no effect.
-</li><li> <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> is never raised
-</li><li> If <code>x</code> is ±∞ and <code>y</code> is not NaN, NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
-</li><li> If <code>y</code> is ±0 and <code>x</code> is not NaN, NaN is returned  and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
+</li><li> <span class="t-lc">FE_INEXACT</span> is never raised
+</li><li> If <code>x</code> is ±∞ and <code>y</code> is not NaN, NaN is returned and <span class="t-lc">FE_INVALID</span> is raised
+</li><li> If <code>y</code> is ±0 and <code>x</code> is not NaN, NaN is returned  and <span class="t-lc">FE_INVALID</span> is raised
 </li><li> If either <code>x</code> or <code>y</code> is NaN, NaN is returned
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/remquo&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/remquo.html">POSIX requires</a> that a domain error occurs if <code>x</code> is infinite or <code>y</code> is zero.
-</p><p>This function is useful when implementing periodic functions with the period exactly representable as a floating-point value: when calculating <span class="texhtml" style="white-space: nowrap;">sin(πx)</span> for a very large <code>x</code>, calling <span class="t-lc"><a href="sin.html" title="cpp/numeric/math/sin">std::sin</a></span> directly may result in a large error, but if the function argument is first reduced with <code>std::remquo</code>, the low-order bits of the quotient may be used to determine the sign and the octant of the result within the period, while the remainder may be used to calculate the value with high precision. 
+</p><p>This function is useful when implementing periodic functions with the period exactly representable as a floating-point value: when calculating <span class="texhtml" style="white-space: nowrap;">sin(πx)</span> for a very large <code>x</code>, calling <span class="t-lc">std::sin</span> directly may result in a large error, but if the function argument is first reduced with <code>std::remquo</code>, the low-order bits of the quotient may be used to determine the sign and the octant of the result within the period, while the remainder may be used to calculate the value with high precision. 
 </p><p>On some platforms this operation is supported by hardware (and, for example, on Intel CPUs, <code>FPREM1</code> leaves exactly 3 bits of precision in the quotient when complete).
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/remquo&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -443,8 +445,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;cfenv&gt;</span>
 &#160;
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
-<span class="kw4">const</span> <span class="kw4">double</span> pi <span class="sy1">=</span> <a href="acos.html"><span class="kw1114">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
-<span class="kw4">double</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1111">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> x<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+<span class="kw4">const</span> <span class="kw4">double</span> pi <span class="sy1">=</span> <a href="acos.html"><span class="kw1147">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">double</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1144">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> x<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="co1">// the period is 2, values are (0;0.5) positive, (0.5;1.5) negative, (1.5,2) positive</span>
 <span class="kw4">double</span> cos_pi_x_smart<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
@@ -452,15 +454,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="kw4">double</span> rem <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">remquo</span><span class="br0">&#40;</span>x, <span class="nu0">1</span>, <span class="sy3">&amp;</span>quadrant<span class="br0">&#41;</span><span class="sy4">;</span>
     quadrant <span class="sy1">=</span> <span class="br0">&#40;</span><span class="kw4">unsigned</span><span class="br0">&#41;</span>quadrant <span class="sy2">%</span> <span class="nu0">4</span><span class="sy4">;</span> <span class="co1">// keep 2 bits to determine quadrant</span>
     <span class="kw1">switch</span><span class="br0">&#40;</span>quadrant<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <span class="kw1">case</span> <span class="nu0">0</span><span class="sy4">:</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1111">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <span class="nu0">1</span><span class="sy4">:</span> <span class="kw1">return</span> <span class="sy2">-</span><a href="cos.html"><span class="kw1111">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <span class="nu0">2</span><span class="sy4">:</span> <span class="kw1">return</span> <span class="sy2">-</span><a href="cos.html"><span class="kw1111">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <span class="nu0">3</span><span class="sy4">:</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1111">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <span class="nu0">0</span><span class="sy4">:</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1144">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <span class="nu0">1</span><span class="sy4">:</span> <span class="kw1">return</span> <span class="sy2">-</span><a href="cos.html"><span class="kw1144">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <span class="nu0">2</span><span class="sy4">:</span> <span class="kw1">return</span> <span class="sy2">-</span><a href="cos.html"><span class="kw1144">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <span class="nu0">3</span><span class="sy4">:</span> <span class="kw1">return</span> <a href="cos.html"><span class="kw1144">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span>pi <span class="sy2">*</span> rem<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cos(pi * 0.25) = &quot;</span> <span class="sy1">&lt;&lt;</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="nu16">0.25</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cos(pi * 0.25) = &quot;</span> <span class="sy1">&lt;&lt;</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="nu16">0.25</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cos(pi * 1.25) = &quot;</span> <span class="sy1">&lt;&lt;</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="nu16">1.25</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cos(pi * 1000000000000.25) = &quot;</span>
               <span class="sy1">&lt;&lt;</span> cos_pi_x_naive<span class="br0">&#40;</span><span class="nu16">1000000000000.25</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
@@ -471,10 +473,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cos(pi * 1000000000001.25) = &quot;</span>
               <span class="sy1">&lt;&lt;</span> cos_pi_x_smart<span class="br0">&#40;</span><span class="nu16">1000000000001.25</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// error handling</span>
-    <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1164">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1175">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../fenv/feclearexcept.html"><span class="kw1197">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">int</span> quo<span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;remquo(+Inf, 1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">remquo</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1154">INFINITY</span></a>, <span class="nu0">1</span>, <span class="sy3">&amp;</span>quo<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span>fetestexcept<span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1178">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;remquo(+Inf, 1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">remquo</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a>, <span class="nu0">1</span>, <span class="sy3">&amp;</span>quo<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>fetestexcept<span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -516,15 +518,15 @@ remquo(+Inf, 1) = -nan
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7327/1000000
-Preprocessor generated node count: 8974/1000000
-Post‐expand include size: 218129/2097152 bytes
-Template argument size: 43399/2097152 bytes
+Preprocessor visited node count: 7339/1000000
+Preprocessor generated node count: 9042/1000000
+Post‐expand include size: 218310/2097152 bytes
+Template argument size: 43448/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2652-0!*!0!!en!*!* and timestamp 20140704231459 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2652-0!*!0!!en!*!* and timestamp 20151130154858 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -559,8 +561,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/remquo" title="cpp/numeric/math/remquo" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 June 2014, at 18:59.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,722 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 June 2014, at 17:59.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,902 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -593,7 +595,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.631 secs. -->
+</script><!-- Served in 3.566 secs. -->
 	</body>
-<!-- Cached 20140704231459 -->
+<!-- Cached 20151130154858 -->
 </html>

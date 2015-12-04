@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -299,26 +300,26 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;cstdlib&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ifstream.html"><span class="kw1417">std::<span class="me2">ifstream</span></span></a> file<span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ifstream.html"><span class="kw1455">std::<span class="me2">ifstream</span></span></a> file<span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>file<span class="br0">&#41;</span>  <span class="co1">// operator! is used here</span>
     <span class="br0">&#123;</span>  
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;File opening failed<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-        <span class="kw1">return</span> <a href="../../utility/program/EXIT_status.html"><span class="kw817">EXIT_FAILURE</span></a><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;File opening failed<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <a href="../../utility/program/EXIT_status.html"><span class="kw851">EXIT_FAILURE</span></a><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     <span class="co1">// typical C++ I/O loop uses the return value of the I/O function</span>
     <span class="co1">// as the loop controlling condition, operator bool() is used here</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n<span class="sy4">;</span> file <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
-       <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+       <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">if</span> <span class="br0">&#40;</span>file.<span class="me1">bad</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I/O error while reading<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;I/O error while reading<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>file.<span class="me1">eof</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;End of file reached successfully<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;End of file reached successfully<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>file.<span class="me1">fail</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Non-integer data encountered<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Non-integer data encountered<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br /> 
 </p>
@@ -515,15 +516,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4482/1000000
-Preprocessor generated node count: 8342/1000000
-Post‐expand include size: 109172/2097152 bytes
-Template argument size: 16983/2097152 bytes
+Preprocessor visited node count: 4494/1000000
+Preprocessor generated node count: 8410/1000000
+Post‐expand include size: 109735/2097152 bytes
+Template argument size: 17032/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:507-0!*!0!!en!*!* and timestamp 20140704221549 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:507-0!*!0!!en!*!* and timestamp 20150825005130 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -559,7 +560,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 07:54.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,206 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 14,769 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -592,7 +593,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.927 secs. -->
+</script><!-- Served in 1.942 secs. -->
 	</body>
-<!-- Cached 20140704221549 -->
+<!-- Cached 20150825005130 -->
 </html>

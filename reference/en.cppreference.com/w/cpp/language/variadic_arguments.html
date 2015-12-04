@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/variadic_arguments","wgTitle":"cpp/language/variadic arguments","wgCurRevisionId":69440,"wgArticleId":13164,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/variadic_arguments","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/variadic_arguments","wgTitle":"cpp/language/variadic arguments","wgCurRevisionId":81700,"wgArticleId":13164,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/variadic_arguments","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="functions.html" title="cpp/language/functions"> Functions</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h2"><td colspan="5"> Declarations </td></tr>
@@ -238,6 +239,14 @@ printx<span class="br0">&#40;</span><span class="st0">&quot;a=%d b=%d&quot;</spa
 <span class="kw4">int</span> printz<span class="br0">&#40;</span>...<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// valid, but the arguments cannot be accessed portably</span></pre></div></div>
 <p>Note: this is different from a function <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> expansion, which is indicated by an ellipsis that is a part of a parameter declarator, rather than an ellipsis that appears as a parameter on its own. Both parameter pack expansion and the ellipsis parameter may appear in the declaration of a function template, as in the case of <span class="t-lc"><a href="../types/is_function.html" title="cpp/types/is function">std::is_function</a></span>.
 </p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="variadic_arguments.html#Default_conversions"><span class="tocnumber">1</span> <span class="toctext">Default conversions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="variadic_arguments.html#Alternatives"><span class="tocnumber">2</span> <span class="toctext">Alternatives</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="variadic_arguments.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="variadic_arguments.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=edit&amp;section=1" title="Edit section: Default conversions">edit</a>]</span> <span class="mw-headline" id="Default_conversions">Default conversions</span></h3>
 <p>When a variadic function is called, after lvalue-to-rvalue, array-to-pointer, and function-to-pointer <a href="implicit_cast.html#Lvalue_transformations" title="cpp/language/implicit cast">conversions</a>, each argument that is a part of the variable argument list undergoes additional conversions known as <i>default argument promotions</i>: 
 </p>
@@ -282,31 +291,42 @@ printx<span class="br0">&#40;</span><span class="st0">&quot;a=%d b=%d&quot;</spa
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../utility/variadic/va_list.html" title="cpp/utility/variadic/va list"> <span class="t-lines"><span>va_list</span></span></a></div></div>
 </td>
-<td>   holds the information needed by va_start, va_arg, va_end, and va_copy <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/variadic/dsc_va_list&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   holds the information needed by va_start, va_arg, va_end, and va_copy <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/variadic/dsc_va_list&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
+<p>The behavior of the <span class="t-lc"><a href="../utility/variadic/va_start.html" title="cpp/utility/variadic/va start">va_start</a></span> macro is undefined if the last parameter before the ellipsis has reference type, or has type that is not compatible with the type that results from default argument promotions.
+</p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=edit&amp;section=2" title="Edit section: Alternatives">edit</a>]</span> <span class="mw-headline" id="Alternatives">Alternatives</span></h3>
 <ul><li> <a href="parameter_pack.html" title="cpp/language/parameter pack">Variadic templates</a> can also be used to create functions that take variable number of arguments.  They are often the better choice because they do not impose restrictions on the types of the arguments, do not perform integral and floating-point promotions, and are type safe. <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
-</li><li> If all variable arguments share a common type, a <span class="t-lc"><a href="../utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span> provides a convenient mechanism (albeit with a different syntax) for accessing variable arguments.
+</li><li> If all variable arguments share a common type, a <span class="t-lc"><a href="../utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span> provides a convenient mechanism (albeit with a different syntax) for accessing variable arguments. <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>In the C programming language, at least one named parameter must appear before the ellipsis parameter, so <code>printz(...);</code> is not valid.
+<p>In the C programming language, at least one named parameter must appear before the ellipsis parameter, so <code>printz(...);</code> is not valid. In C++, this form is allowed even though the arguments passed to such function are not accessible, and is commonly used as the fallback overload in <a href="sfinae.html" title="cpp/language/sfinae">SFINAE</a>, exploiting the lowest priority of the ellipsis conversion in <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a>.
 </p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../../c/language/variadic.html" title="c/language/variadic">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Variadic arguments</span></span></div>
+</td></tr>
+
+</table>
+
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 1293/1000000
-Preprocessor generated node count: 3383/1000000
-Post‐expand include size: 46042/2097152 bytes
-Template argument size: 6538/2097152 bytes
+Preprocessor visited node count: 1406/1000000
+Preprocessor generated node count: 3821/1000000
+Post‐expand include size: 47784/2097152 bytes
+Template argument size: 6955/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13164-0!*!0!!*!*!* and timestamp 20140704211648 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13164-0!*!0!!en!*!* and timestamp 20151104191805 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=69440">http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=69440</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=81700">http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=81700</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -329,11 +349,11 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="variadic_arguments.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/variadic_arguments" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/variadic_arguments" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=69440" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/variadic_arguments" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/variadic_arguments" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;oldid=81700" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/variadic_arguments&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 8 April 2014, at 12:53.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,749 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 November 2015, at 11:18.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 21,812 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -366,7 +386,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.674 secs. -->
+</script><!-- Served in 0.074 secs. -->
 	</body>
-<!-- Cached 20140704211650 -->
+<!-- Cached 20151104192409 -->
 </html>

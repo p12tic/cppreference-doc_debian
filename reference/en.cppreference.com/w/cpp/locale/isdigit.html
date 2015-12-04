@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -320,7 +321,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> charT <span class="sy1">&gt;</span><br />
 <span class="kw4">bool</span> isdigit<span class="br0">&#40;</span> charT ch, <span class="kw4">const</span> locale<span class="sy3">&amp;</span> loc <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -328,7 +330,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Checks if the given character is classified as a digit by the given locale's <span class="t-lc"><a href="ctype.html" title="cpp/locale/ctype">std::ctype</a></span> facet.
+<p>Checks if the given character is classified as a digit by the given locale's <span class="t-lc">std::ctype</span> facet.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -367,8 +369,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr>
 <td>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> charT <span class="sy1">&gt;</span>
-<span class="kw4">bool</span> isdigit<span class="br0">&#40;</span> charT ch, <span class="kw4">const</span> <a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="br0">&#123;</span>
-    <span class="kw1">return</span> <a href="use_facet.html"><span class="kw1577">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span>.<span class="me1">is</span><span class="br0">&#40;</span><a href="ctype_base.html"><span class="kw1589">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">digit</span></span></a>, ch<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">bool</span> isdigit<span class="br0">&#40;</span> charT ch, <span class="kw4">const</span> <a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">return</span> <a href="use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="ctype.html"><span class="kw1662">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span>.<span class="me1">is</span><span class="br0">&#40;</span><a href="ctype_base.html"><span class="kw1633">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">digit</span></span></a>, ch<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/isdigit&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -378,9 +380,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;string&gt;</span>
 <span class="co2">#include &lt;set&gt;</span>
 &#160;
-<span class="kw1">struct</span> jdigit_ctype <span class="sy4">:</span> <a href="ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> jdigit_ctype <span class="sy4">:</span> <a href="ctype.html"><span class="kw1662">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span>
 <span class="br0">&#123;</span>
-    <a href="../container/set.html"><span class="kw1071">std::<span class="me2">set</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span> jdigits<span class="br0">&#123;</span>L<span class="st0">'一'</span>,L<span class="st0">'二'</span>,L<span class="st0">'三'</span>,L<span class="st0">'四'</span>,L<span class="st0">'五'</span>,L<span class="st0">'六'</span>,L<span class="st0">'七'</span>,L<span class="st0">'八'</span>,L<span class="st0">'九'</span>,L<span class="st0">'十'</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../container/set.html"><span class="kw1098">std::<span class="me2">set</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span> jdigits<span class="br0">&#123;</span>L<span class="st0">'一'</span>,L<span class="st0">'二'</span>,L<span class="st0">'三'</span>,L<span class="st0">'四'</span>,L<span class="st0">'五'</span>,L<span class="st0">'六'</span>,L<span class="st0">'七'</span>,L<span class="st0">'八'</span>,L<span class="st0">'九'</span>,L<span class="st0">'十'</span><span class="br0">&#125;</span><span class="sy4">;</span>
     <span class="kw4">bool</span> do_is<span class="br0">&#40;</span>mask m, char_type c<span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span>
         <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>m <span class="sy3">&amp;</span> digit<span class="br0">&#41;</span> <span class="sy3">&amp;&amp;</span> jdigits.<span class="me1">count</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="br0">&#41;</span>
             <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span> <span class="co1">// Japanese digits will be classified as digits</span>
@@ -391,17 +393,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
 &#160;
-    <a href="../string/basic_string.html"><span class="kw1047">std::<span class="me2">wstring</span></span></a> text <span class="sy1">=</span> L<span class="st0">&quot;123一二三１２３&quot;</span><span class="sy4">;</span>
-    <a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>, new jdigit_ctype<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> text <span class="sy1">=</span> L<span class="st0">&quot;123一二三１２３&quot;</span><span class="sy4">;</span>
+    <a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>, new jdigit_ctype<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">wchar_t</span> c <span class="sy4">:</span> text<span class="br0">&#41;</span>
-        <span class="kw1">if</span><span class="br0">&#40;</span><a href="../string/byte/isdigit.html"><span class="kw932">std::<span class="me2">isdigit</span></span></a><span class="br0">&#40;</span>c, loc<span class="br0">&#41;</span><span class="br0">&#41;</span>
-            <a href="../io/basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is a digit<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span><a href="../string/byte/isdigit.html"><span class="kw959">std::<span class="me2">isdigit</span></span></a><span class="br0">&#40;</span>c, loc<span class="br0">&#41;</span><span class="br0">&#41;</span>
+            <a href="../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is a digit<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">else</span>
-            <a href="../io/basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is NOT a digit<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+            <a href="../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is NOT a digit<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -433,15 +435,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4091/1000000
-Preprocessor generated node count: 6697/1000000
-Post‐expand include size: 108100/2097152 bytes
-Template argument size: 18802/2097152 bytes
+Preprocessor visited node count: 4103/1000000
+Preprocessor generated node count: 6765/1000000
+Post‐expand include size: 108635/2097152 bytes
+Template argument size: 18851/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2927-0!*!0!!en!*!* and timestamp 20140706130427 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2927-0!*!0!!en!*!* and timestamp 20151130150110 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -476,8 +478,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/isdigit" title="cpp/locale/isdigit" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 July 2013, at 18:40.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,502 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 July 2013, at 17:40.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,874 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -510,7 +512,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.919 secs. -->
+</script><!-- Served in 1.894 secs. -->
 	</body>
-<!-- Cached 20140706130427 -->
+<!-- Cached 20151130150110 -->
 </html>

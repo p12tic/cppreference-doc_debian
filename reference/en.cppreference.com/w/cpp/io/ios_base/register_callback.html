@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -347,21 +348,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;functional&gt;</span>
 &#160;
 <span class="co1">// cached locale-specific message and its hash</span>
-<span class="kw1">typedef</span> <a href="../../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> cache_t<span class="sy4">;</span>
+<span class="kw1">typedef</span> <a href="../../utility/pair.html"><span class="kw903">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a>, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> cache_t<span class="sy4">;</span>
 &#160;
 <span class="co1">// populate the cached message and its hash from the locale</span>
-<span class="kw4">void</span> update_cache<span class="br0">&#40;</span>cache_t<span class="sy3">&amp;</span> cache, <a href="../../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#41;</span>
+<span class="kw4">void</span> update_cache<span class="br0">&#40;</span>cache_t<span class="sy3">&amp;</span> cache, <a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">auto</span><span class="sy3">&amp;</span> fct <span class="sy1">=</span> <a href="../../locale/use_facet.html"><span class="kw1577">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span> <a href="../../locale/messages.html"><span class="kw1626">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> <span class="sy1">&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../locale/messages_base.html"><span class="kw1602">std::<span class="me2">messages_base</span><span class="sy4">::</span><span class="me2">catalog</span></span></a> cat <span class="sy1">=</span> fct.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;sed&quot;</span>, loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">auto</span><span class="sy3">&amp;</span> fct <span class="sy1">=</span> <a href="../../locale/use_facet.html"><span class="kw1586">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span> <a href="../../locale/messages.html"><span class="kw1635">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> <span class="sy1">&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/messages_base.html"><span class="kw1611">std::<span class="me2">messages_base</span><span class="sy4">::</span><span class="me2">catalog</span></span></a> cat <span class="sy1">=</span> fct.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;sed&quot;</span>, loc<span class="br0">&#41;</span><span class="sy4">;</span>
     cache.<span class="me1">first</span> <span class="sy1">=</span> cat <span class="sy1">&lt;</span> <span class="nu0">0</span> <span class="sy4">?</span> <span class="st0">&quot;&quot;</span> <span class="sy4">:</span> fct.<span class="me1">get</span><span class="br0">&#40;</span>cat, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="st0">&quot;Memory exhausted&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    cache.<span class="me1">second</span> <span class="sy1">=</span> <a href="../../utility/hash.html"><span class="kw918">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>cache.<span class="me1">first</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    cache.<span class="me1">second</span> <span class="sy1">=</span> <a href="../../utility/hash.html"><span class="kw920">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>cache.<span class="me1">first</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="co1">// update the cache if the locale changed</span>
-<span class="kw4">void</span> true_callback<span class="br0">&#40;</span><a href="event.html"><span class="kw1392">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">event</span></span></a> evt, <a href="../ios_base.html"><span class="kw1355">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <span class="kw4">int</span> idx<span class="br0">&#41;</span>
+<span class="kw4">void</span> true_callback<span class="br0">&#40;</span><a href="event.html"><span class="kw1396">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">event</span></span></a> evt, <a href="../ios_base.html"><span class="kw1359">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> str, <span class="kw4">int</span> idx<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>evt <span class="sy1">==</span> <a href="event.html"><span class="kw1394">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">imbue_event</span></span></a><span class="br0">&#41;</span> 
+    <span class="kw1">if</span> <span class="br0">&#40;</span>evt <span class="sy1">==</span> <a href="event.html"><span class="kw1398">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">imbue_event</span></span></a><span class="br0">&#41;</span> 
     <span class="br0">&#123;</span>
         cache_t<span class="sy2">*</span> ptr <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span>cache_t<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>str.<span class="me1">pword</span><span class="br0">&#40;</span>idx<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
         update_cache<span class="br0">&#40;</span><span class="sy2">*</span>ptr, str.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -371,7 +372,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co1">// registers the cache in pword() and sets up the callback</span>
 <span class="kw1">struct</span> CacheSetup
 <span class="br0">&#123;</span>
-    CacheSetup<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <a href="event_callback.html"><span class="kw1396">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">event_callback</span></span></a> f, cache_t<span class="sy2">*</span> cache<span class="br0">&#41;</span>
+    CacheSetup<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <a href="event_callback.html"><span class="kw1400">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">event_callback</span></span></a> f, cache_t<span class="sy2">*</span> cache<span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
         <span class="kw4">int</span> index <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ostream</span><span class="sy4">::</span><span class="me2">xalloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
         os.<span class="me1">pword</span><span class="br0">&#40;</span>index<span class="br0">&#41;</span> <span class="sy1">=</span> cache<span class="sy4">;</span> <span class="co1">// store pointer to cache in the stream</span>
@@ -383,7 +384,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co1">// some custom class </span>
 <span class="kw1">struct</span> S <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="co1">// some custom class's operator&lt;&lt; that needs fast access to hashed message</span>
-<a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <span class="kw4">const</span> S<span class="sy3">&amp;</span><span class="br0">&#41;</span>
+<a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, <span class="kw4">const</span> S<span class="sy3">&amp;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
    <span class="kw4">static</span> cache_t cache<span class="sy4">;</span>
    <span class="kw4">static</span> CacheSetup setup<span class="br0">&#40;</span>os, true_callback, <span class="sy3">&amp;</span>cache<span class="br0">&#41;</span><span class="sy4">;</span>
@@ -392,20 +393,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     S s<span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1657">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1666">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1657">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1666">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1657">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;ru_RU.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>loc, new <a href="../../locale/messages_byname.html"><span class="kw1666">std::<span class="me2">messages_byname</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;ru_RU.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -417,15 +418,15 @@ Speicher erschöpft&#160;: 3,139,423,551
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3629/1000000
-Preprocessor generated node count: 6531/1000000
-Post‐expand include size: 87378/2097152 bytes
-Template argument size: 20070/2097152 bytes
+Preprocessor visited node count: 3641/1000000
+Preprocessor generated node count: 6590/1000000
+Post‐expand include size: 87937/2097152 bytes
+Template argument size: 20119/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:619-0!*!0!!en!*!* and timestamp 20140704222711 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:619-0!*!0!!en!*!* and timestamp 20150523213446 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -461,7 +462,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 27 October 2013, at 07:54.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,447 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,080 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -494,7 +495,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.598 secs. -->
+</script><!-- Served in 1.478 secs. -->
 	</body>
-<!-- Cached 20140704222711 -->
+<!-- Cached 20150523213447 -->
 </html>

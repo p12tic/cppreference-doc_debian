@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
@@ -265,7 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="codectv.html" title="cpp/header/codectv" class="mw-redirect"><tt>&lt;codectv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
 </table></div></td></tr>
 </table></div>
@@ -921,7 +922,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="br0">&#125;</span></pre></div></div>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/regex&amp;action=edit&amp;section=6" title="Edit section: Class std::regex error">edit</a>]</span> <span class="mw-headline" id="Class_std::regex_error">Class <span class="t-lc"><a href="../regex/regex_error.html" title="cpp/regex/regex error">std::regex_error</a></span></span></h4>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> regex_error <span class="sy4">:</span> <span class="kw1">public</span> <a href="../error/runtime_error/runtime_error.html"><span class="kw616">std::<span class="me2">runtime_error</span></span></a> <span class="br0">&#123;</span>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> regex_error <span class="sy4">:</span> <span class="kw1">public</span> <a href="../error/runtime_error/runtime_error.html"><span class="kw650">std::<span class="me2">runtime_error</span></span></a> <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
     <span class="kw1">explicit</span> regex_error<span class="br0">&#40;</span>regex_constants<span class="sy4">::</span><span class="me2">error_type</span> ecode<span class="br0">&#41;</span><span class="sy4">;</span>
     regex_constants<span class="sy4">::</span><span class="me2">error_type</span> code<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
@@ -933,8 +934,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw1">struct</span> regex_traits <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
     <span class="kw1">typedef</span> charT                           char_type<span class="sy4">;</span>
-    <span class="kw1">typedef</span> <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span>    string_type<span class="sy4">;</span>
-    <span class="kw1">typedef</span> <a href="../locale/locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a>                     locale_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span>    string_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <a href="../locale/locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a>                     locale_type<span class="sy4">;</span>
     <span class="kw1">typedef</span> <span class="coMULTI">/*bitmask_type*/</span>                char_class_type<span class="sy4">;</span>
 &#160;
     regex_traits<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -1043,7 +1044,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/regex&amp;action=edit&amp;section=9" title="Edit section: Class std::sub match">edit</a>]</span> <span class="mw-headline" id="Class_std::sub_match">Class <span class="t-lc"><a href="../regex/sub_match.html" title="cpp/regex/sub match">std::sub_match</a></span></span></h4>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> BidirectionalIterator<span class="sy1">&gt;</span>
-<span class="kw1">class</span> sub_match <span class="sy4">:</span> <span class="kw1">public</span> <a href="../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>BidirectionalIterator, BidirectionalIterator<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
+<span class="kw1">class</span> sub_match <span class="sy4">:</span> <span class="kw1">public</span> <a href="../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>BidirectionalIterator, BidirectionalIterator<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
     <span class="kw1">typedef</span> <span class="kw1">typename</span> iterator_traits<span class="sy1">&lt;</span>BidirectionalIterator<span class="sy1">&gt;</span><span class="sy4">::</span>
         <span class="me2">value_type</span>                                              value_type<span class="sy4">;</span>
@@ -1143,15 +1144,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7174/1000000
-Preprocessor generated node count: 10729/1000000
-Post‐expand include size: 191502/2097152 bytes
-Template argument size: 63631/2097152 bytes
+Preprocessor visited node count: 7180/1000000
+Preprocessor generated node count: 10751/1000000
+Post‐expand include size: 192059/2097152 bytes
+Template argument size: 63680/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9734-0!*!0!!en!*!* and timestamp 20140704193029 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9734-0!*!0!!en!*!* and timestamp 20150825072738 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -1182,7 +1183,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 8 October 2013, at 11:52.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,088 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,535 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1215,7 +1216,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 4.257 secs. -->
+</script><!-- Served in 4.120 secs. -->
 	</body>
-<!-- Cached 20140704193030 -->
+<!-- Cached 20150825072739 -->
 </html>

@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -359,10 +360,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="co1">// Buffer for std::ostream implemented by std::array</span>
 <span class="kw1">template</span><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> SIZE, <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span><span class="sy1">&gt;</span>
-<span class="kw1">class</span> ArrayedStreamBuffer <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
+<span class="kw1">class</span> ArrayedStreamBuffer <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
 &#160;
-    <span class="kw1">using</span> Base <span class="sy1">=</span> <a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">using</span> Base <span class="sy1">=</span> <a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="sy4">;</span>
     <span class="kw1">using</span> char_type <span class="sy1">=</span> <span class="kw1">typename</span> Base<span class="sy4">::</span><span class="me2">char_type</span><span class="sy4">;</span>
     <span class="kw1">using</span> int_type <span class="sy1">=</span> <span class="kw1">typename</span> Base<span class="sy4">::</span><span class="me2">int_type</span><span class="sy4">;</span>
 &#160;
@@ -374,7 +375,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
     int_type overflow<span class="br0">&#40;</span>int_type ch<span class="br0">&#41;</span> 
     <span class="br0">&#123;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;overflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;overflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">return</span> Base<span class="sy4">::</span><span class="me2">overflow</span><span class="br0">&#40;</span>ch<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
@@ -382,40 +383,40 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="br0">&#123;</span>
         <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> i<span class="sy4">:</span> buffer_<span class="br0">&#41;</span> <span class="br0">&#123;</span>
             <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-                <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;NULL&quot;</span><span class="sy4">;</span>
+                <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;NULL&quot;</span><span class="sy4">;</span>
             <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
-                <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i<span class="sy4">;</span>
+                <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i<span class="sy4">;</span>
             <span class="br0">&#125;</span>
-            <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
+            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
         <span class="br0">&#125;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
 <span class="kw1">private</span><span class="sy4">:</span>
-    <a href="../../container/array.html"><span class="kw1065">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span>char_type, SIZE<span class="sy1">&gt;</span> buffer_<span class="sy4">;</span>
+    <a href="../../container/array.html"><span class="kw1092">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span>char_type, SIZE<span class="sy1">&gt;</span> buffer_<span class="sy4">;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     ArrayedStreamBuffer<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy1">&gt;</span> streambuf<span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>streambuf<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>streambuf<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     stream <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;hello&quot;</span><span class="sy4">;</span>
     streambuf.<span class="me1">print_buffer</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>stream.<span class="me1">good</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     stream <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;world&quot;</span><span class="sy4">;</span>
     streambuf.<span class="me1">print_buffer</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>stream.<span class="me1">good</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     stream <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;!&quot;</span><span class="sy4">;</span>
     streambuf.<span class="me1">print_buffer</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>stream.<span class="me1">good</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is not good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stream is not good<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -464,15 +465,15 @@ stream is not good</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5869/1000000
-Preprocessor generated node count: 8526/1000000
-Post‐expand include size: 146840/2097152 bytes
-Template argument size: 31085/2097152 bytes
+Preprocessor visited node count: 5881/1000000
+Preprocessor generated node count: 8594/1000000
+Post‐expand include size: 147399/2097152 bytes
+Template argument size: 31134/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4890-0!*!0!!en!*!* and timestamp 20140724133327 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4890-0!*!0!!en!*!* and timestamp 20150825083806 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -508,7 +509,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 24 July 2014, at 06:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,749 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,505 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -541,7 +542,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.086 secs. -->
+</script><!-- Served in 2.685 secs. -->
 	</body>
-<!-- Cached 20140724175650 -->
+<!-- Cached 20150825083806 -->
 </html>

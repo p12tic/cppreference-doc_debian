@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -237,15 +238,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> feupdateenv<span class="br0">&#40;</span> <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">fenv_t</span><span class="sy2">*</span> envp <span class="br0">&#41;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>First, remembers the currently raised floating-point exceptions, then restores the floating-point environment from the object pointed to by <code>envp</code> (similar to <span class="t-lc"><a href="feenv.html" title="cpp/numeric/fenv/feenv">std::fesetenv</a></span>), then raises the floating-point exceptions that were saved.
-</p><p>This function may be used to end the non-stop mode established by an earlier call to <span class="t-lc"><a href="feholdexcept.html" title="cpp/numeric/fenv/feholdexcept">std::feholdexcept</a></span>.
+<p>First, remembers the currently raised floating-point exceptions, then restores the floating-point environment from the object pointed to by <code>envp</code> (similar to <span class="t-lc">std::fesetenv</span>), then raises the floating-point exceptions that were saved.
+</p><p>This function may be used to end the non-stop mode established by an earlier call to <span class="t-lc">std::feholdexcept</span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv/feupdateenv&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
@@ -256,7 +258,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  pointer to the object of type <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fenv_t</span></span></span> set by an earlier call to <span class="t-lc"><a href="feholdexcept.html" title="cpp/numeric/fenv/feholdexcept">std::feholdexcept</a></span> or <code>std::fegetenv</code> or equal to <span class="t-lc"><a href="FE_DFL_ENV.html" title="cpp/numeric/fenv/FE DFL ENV">FE_DFL_ENV</a></span>
+<td>  pointer to the object of type <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fenv_t</span></span></span> set by an earlier call to <span class="t-lc">std::feholdexcept</span> or <code>std::fegetenv</code> or equal to <span class="t-lc">FE_DFL_ENV</span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/fenv/feupdateenv&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <p><span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> on success, non-zero otherwise.
@@ -285,15 +287,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2256/1000000
-Preprocessor generated node count: 5655/1000000
-Post‐expand include size: 76263/2097152 bytes
-Template argument size: 13415/2097152 bytes
+Preprocessor visited node count: 2263/1000000
+Preprocessor generated node count: 5701/1000000
+Post‐expand include size: 76506/2097152 bytes
+Template argument size: 13398/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5605-0!*!0!!*!*!* and timestamp 20140704200745 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5605-0!*!0!!*!*!* and timestamp 20151130153325 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -328,8 +330,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/fenv/feupdateenv" title="cpp/numeric/fenv/feupdateenv" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 16:42.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 931 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:42.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,756 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -362,7 +364,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.024 secs. -->
+</script><!-- Served in 0.955 secs. -->
 	</body>
-<!-- Cached 20140704200745 -->
+<!-- Cached 20151130153325 -->
 </html>

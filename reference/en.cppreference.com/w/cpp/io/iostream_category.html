@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -268,14 +269,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../error/error_category.html"><span class="kw717">std::<span class="me2">error_category</span></span></a><span class="sy3">&amp;</span> iostream_category<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../error/error_category.html"><span class="kw751">std::<span class="me2">error_category</span></span></a><span class="sy3">&amp;</span> iostream_category<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Obtains a reference to the static error category object for iostream errors. The object is required to override the virtual function <span class="t-c"><span class="mw-geshi cpp source-cpp">error_category<span class="sy4">::</span><span class="me2">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> to return a pointer to the string <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;iostream&quot;</span></span></span>. It is used to identify error codes provided in the exceptions of type <span class="t-lc"><a href="ios_base/failure.html" title="cpp/io/ios base/failure">std::ios_base::failure</a></span>.
+<p>Obtains a reference to the static error category object for iostream errors. The object is required to override the virtual function <span class="t-c"><span class="mw-geshi cpp source-cpp">error_category<span class="sy4">::</span><span class="me2">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> to return a pointer to the string <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;iostream&quot;</span></span></span>. It is used to identify error codes provided in the exceptions of type <span class="t-lc">std::ios_base::failure</span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -290,7 +292,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>(none)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/iostream_category&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>A reference to the static object of unspecified runtime type, derived from <span class="t-lc"><a href="../error/error_category.html" title="cpp/error/error category">std::error_category</a></span>.
+<p>A reference to the static object of unspecified runtime type, derived from <span class="t-lc">std::error_category</span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/iostream_category&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <div class="t-noexcept-inline"><a href="../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> specification:&#160;&#160;<div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span></div>&#160;&#160;</div>
@@ -301,11 +303,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="basic_ifstream.html"><span class="kw1417">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="basic_ifstream.html"><span class="kw1455">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">try</span> <span class="br0">&#123;</span>
         f.<span class="me1">exceptions</span><span class="br0">&#40;</span>f.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="ios_base/failure.html"><span class="kw1356">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span>
+    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="ios_base/failure.html"><span class="kw1394">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Error code: &quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">value</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">message</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Error category: &quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">category</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
@@ -336,15 +338,15 @@ Error category: iostream</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2456/1000000
-Preprocessor generated node count: 6340/1000000
-Post‐expand include size: 63729/2097152 bytes
-Template argument size: 10903/2097152 bytes
+Preprocessor visited node count: 2465/1000000
+Preprocessor generated node count: 6408/1000000
+Post‐expand include size: 64192/2097152 bytes
+Template argument size: 10952/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4774-0!*!0!!en!*!* and timestamp 20140724130626 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4774-0!*!0!!en!*!* and timestamp 20151130145941 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -379,8 +381,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/iostream_category" title="cpp/io/iostream category" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 19 March 2014, at 09:29.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,592 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 19 March 2014, at 08:29.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,485 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -413,7 +415,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.420 secs. -->
+</script><!-- Served in 1.399 secs. -->
 	</body>
-<!-- Cached 20140724130627 -->
+<!-- Cached 20151130145941 -->
 </html>

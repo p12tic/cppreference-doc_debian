@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -260,7 +261,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputc.html" title="cpp/io/c/fputc"><span class="t-lines"><span>fputc</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputs.html" title="cpp/io/c/fputs"><span class="t-lines"><span>fputs</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="getchar.html" title="cpp/io/c/getchar"><span class="t-lines"><span>getchar</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="putchar.html" title="cpp/io/c/putchar"><span class="t-lines"><span>putchar</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="puts.html" title="cpp/io/c/puts"><span class="t-lines"><span>puts</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ungetc.html" title="cpp/io/c/ungetc"><span class="t-lines"><span>ungetc</span></span></a></div></div></td></tr>
@@ -308,15 +309,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> rewind<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1556">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> rewind<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1600">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Moves the file position indicator to the beginning of the given file stream. 
-</p><p>The function is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fseek.html"><span class="kw1546">std::<span class="me2">fseek</span></span></a><span class="br0">&#40;</span>stream, <span class="nu0">0</span>, <a href="../c.html"><span class="kw1568">SEEK_SET</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>, except that end-of-file and error indicators are cleared. 
+</p><p>The function is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fseek.html"><span class="kw1590">std::<span class="me2">fseek</span></span></a><span class="br0">&#40;</span>stream, <span class="nu0">0</span>, <a href="../c.html"><span class="kw1612">SEEK_SET</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>, except that end-of-file and error indicators are cleared. 
 </p><p>The function drops any effects from previous calls to <span class="t-lc">ungetc</span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -347,27 +349,27 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../c.html"><span class="kw1556">std::<span class="me2">FILE</span></span></a> <span class="sy2">*</span>f<span class="sy4">;</span>
+    <a href="../c.html"><span class="kw1600">std::<span class="me2">FILE</span></span></a> <span class="sy2">*</span>f<span class="sy4">;</span>
     <span class="kw4">char</span> ch<span class="sy4">;</span>
     <span class="kw4">char</span> str<span class="br0">&#91;</span><span class="nu0">20</span><span class="br0">&#93;</span><span class="sy4">;</span>
 &#160;
-    f <span class="sy1">=</span> <a href="fopen.html"><span class="kw1492">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;file.txt&quot;</span>, <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    f <span class="sy1">=</span> <a href="fopen.html"><span class="kw1536">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;file.txt&quot;</span>, <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span>ch <span class="sy1">=</span> <span class="st0">'0'</span><span class="sy4">;</span> ch <span class="sy1">&lt;=</span> <span class="st0">'9'</span><span class="sy4">;</span> ch<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="fputc.html"><span class="kw1503">std::<span class="me2">fputc</span></span></a><span class="br0">&#40;</span>ch, f<span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="fputc.html"><span class="kw1547">std::<span class="me2">fputc</span></span></a><span class="br0">&#40;</span>ch, f<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="fclose.html"><span class="kw1495">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="fclose.html"><span class="kw1539">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>f<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
 &#160;
-    <a href="../c.html"><span class="kw1556">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> f2 <span class="sy1">=</span> <a href="fopen.html"><span class="kw1492">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;file.txt&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">unsigned</span> <span class="kw4">int</span> size <span class="sy1">=</span> <a href="fread.html"><span class="kw1498">std::<span class="me2">fread</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">1</span>, <span class="nu0">10</span>, f2<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="puts.html"><span class="kw1509">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="printf.html"><span class="kw1524">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>%u<span class="es1">\n</span>&quot;</span>,size<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../c.html"><span class="kw1600">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> f2 <span class="sy1">=</span> <a href="fopen.html"><span class="kw1536">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;file.txt&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">int</span> size <span class="sy1">=</span> <a href="fread.html"><span class="kw1542">std::<span class="me2">fread</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">1</span>, <span class="nu0">10</span>, f2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="puts.html"><span class="kw1553">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="printf.html"><span class="kw1568">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>%u<span class="es1">\n</span>&quot;</span>,size<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     std<span class="sy4">::</span><span class="me2">rewind</span><span class="br0">&#40;</span>f2<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">unsigned</span> <span class="kw4">int</span> size2 <span class="sy1">=</span> <a href="fread.html"><span class="kw1498">std::<span class="me2">fread</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">1</span>, <span class="nu0">10</span>, f2<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="puts.html"><span class="kw1509">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="printf.html"><span class="kw1524">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>%u&quot;</span>,size2<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="fclose.html"><span class="kw1495">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>f2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">int</span> size2 <span class="sy1">=</span> <a href="fread.html"><span class="kw1542">std::<span class="me2">fread</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">1</span>, <span class="nu0">10</span>, f2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="puts.html"><span class="kw1553">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="printf.html"><span class="kw1568">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>%u&quot;</span>,size2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="fclose.html"><span class="kw1539">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>f2<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br /> 
 </p>
@@ -389,15 +391,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5083/1000000
-Preprocessor generated node count: 7068/1000000
-Post‐expand include size: 129775/2097152 bytes
-Template argument size: 20520/2097152 bytes
+Preprocessor visited node count: 5130/1000000
+Preprocessor generated node count: 7169/1000000
+Post‐expand include size: 131673/2097152 bytes
+Template argument size: 20897/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:598-0!*!0!!en!*!* and timestamp 20140705174540 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:598-0!*!0!!en!*!* and timestamp 20151130143051 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -432,8 +434,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/rewind" title="cpp/io/c/rewind" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 10 May 2014, at 22:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,069 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 10 May 2014, at 21:02.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,300 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -466,7 +468,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.659 secs. -->
+</script><!-- Served in 1.668 secs. -->
 	</body>
-<!-- Cached 20140705174540 -->
+<!-- Cached 20151130143051 -->
 </html>
