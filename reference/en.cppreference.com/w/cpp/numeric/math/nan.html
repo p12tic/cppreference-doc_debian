@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> nanf<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> arg <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -378,10 +380,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Converts the implementation-defined character string <code>arg</code> into the corresponding quiet NaN value, as if by calling <span class="t-lc"><a href="../../string/byte/strtof.html" title="cpp/string/byte/strtof">std::strtod</a></span>, <span class="t-lc"><a href="../../string/byte/strtof.html" title="cpp/string/byte/strtof">std::strtof</a></span>, or <span class="t-lc"><a href="../../string/byte/strtof.html" title="cpp/string/byte/strtof">std::strtold</a></span>, respectively, as follows:
-</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;string&quot;</span><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw951">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN(string)&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
-</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw951">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN()&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
-</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw951">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
+<p>Converts the implementation-defined character string <code>arg</code> into the corresponding quiet NaN value, as if by calling <span class="t-lc">std::strtod</span>, <span class="t-lc">std::strtof</span>, or <span class="t-lc">std::strtold</span>, respectively, as follows:
+</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;string&quot;</span><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw978">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN(string)&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
+</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw978">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN()&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
+</p><p>The call <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span></span></span> is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../string/byte/strtof.html"><span class="kw978">std::<span class="me2">strtod</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;NAN&quot;</span>, <span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">**</span><span class="br0">&#41;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -415,12 +417,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">double</span> f1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;1&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../types/integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a> f1n<span class="sy4">;</span> <a href="../../string/byte/memcpy.html"><span class="kw974">std::<span class="me2">memcpy</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>f1n, <span class="sy3">&amp;</span>f1, sizeof f1<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nan(<span class="es1">\&quot;</span>1<span class="es1">\&quot;</span>) = &quot;</span> <span class="sy1">&lt;&lt;</span> f1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1460">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> f1n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../types/integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a> f1n<span class="sy4">;</span> <a href="../../string/byte/memcpy.html"><span class="kw1001">std::<span class="me2">memcpy</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>f1n, <span class="sy3">&amp;</span>f1, sizeof f1<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nan(<span class="es1">\&quot;</span>1<span class="es1">\&quot;</span>) = &quot;</span> <span class="sy1">&lt;&lt;</span> f1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1502">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> f1n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">double</span> f2 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">nan</span><span class="br0">&#40;</span><span class="st0">&quot;2&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../types/integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a> f2n<span class="sy4">;</span> <a href="../../string/byte/memcpy.html"><span class="kw974">std::<span class="me2">memcpy</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>f2n, <span class="sy3">&amp;</span>f2, sizeof f2<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nan(<span class="es1">\&quot;</span>2<span class="es1">\&quot;</span>) = &quot;</span> <span class="sy1">&lt;&lt;</span> f2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1460">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> f2n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../types/integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a> f2n<span class="sy4">;</span> <a href="../../string/byte/memcpy.html"><span class="kw1001">std::<span class="me2">memcpy</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>f2n, <span class="sy3">&amp;</span>f2, sizeof f2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nan(<span class="es1">\&quot;</span>2<span class="es1">\&quot;</span>) = &quot;</span> <span class="sy1">&lt;&lt;</span> f2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1502">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> f2n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -474,15 +476,15 @@ nan(&quot;2&quot;) = nan (7ff0000000000002)</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7777/1000000
-Preprocessor generated node count: 9256/1000000
-Post‐expand include size: 237888/2097152 bytes
-Template argument size: 45262/2097152 bytes
+Preprocessor visited node count: 7788/1000000
+Preprocessor generated node count: 9324/1000000
+Post‐expand include size: 238291/2097152 bytes
+Template argument size: 45311/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3740-0!*!0!!en!*!* and timestamp 20140704223246 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3740-0!*!0!!en!*!* and timestamp 20151130140602 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -517,8 +519,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/nan" title="cpp/numeric/math/nan" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 7 June 2014, at 15:22.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,179 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 7 June 2014, at 14:22.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 28,500 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -551,7 +553,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.917 secs. -->
+</script><!-- Served in 3.887 secs. -->
 	</body>
-<!-- Cached 20140704223246 -->
+<!-- Cached 20151130140602 -->
 </html>

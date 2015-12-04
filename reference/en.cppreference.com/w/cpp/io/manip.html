@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <strong class="selflink"> I/O manipulators</strong></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -295,10 +296,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="manip/put_money.html" title="cpp/io/manip/put money"><span class="t-lines"><span>put_money</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="manip/put_time.html" title="cpp/io/manip/put time"><span class="t-lines"><span>put_time</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Quoted manipulator</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="manip/quoted.html" title="cpp/io/manip/quoted"><span class="t-lines"><span>quoted</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/manip/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>Manipulators are helper functions that make it possible to control input/output streams using <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;&lt;</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&gt;&gt;</span></span></span>. 
-</p><p>The manipulators that are invoked without arguments (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="manip/boolalpha.html"><span class="kw1445">std::<span class="me2">boolalpha</span></span></a><span class="sy4">;</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_istream.html"><span class="kw1437">std::<span class="me2">cin</span></span></a> <span class="sy1">&gt;&gt;</span> <a href="manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a><span class="sy4">;</span></span></span>) are implemented as functions that take a reference to a stream as their only argument. The special overloads of <a href="basic_ostream/operator_ltlt.html" title="cpp/io/basic ostream/operator ltlt"><tt>basic_ostream::operator&lt;&lt;</tt></a> and <a href="basic_istream/operator_gtgt.html" title="cpp/io/basic istream/operator gtgt"><tt>basic_istream::operator&gt;&gt;</tt></a> accept pointers to these functions.
-</p><p>The manipulators that are invoked with arguments (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="manip/setw.html"><span class="kw1478">std::<span class="me2">setw</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>) are implemented as functions returning objects of unspecified type.  These manipulators define their own <code>operator&lt;&lt;</code> or <code>operator&gt;&gt;</code> which perform the requested manipulation.
+</p><p>The manipulators that are invoked without arguments (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a><span class="sy4">;</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="cin.html"><span class="kw1479">std::<span class="me2">cin</span></span></a> <span class="sy1">&gt;&gt;</span> <a href="manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a><span class="sy4">;</span></span></span>) are implemented as functions that take a reference to a stream as their only argument. The special overloads of <a href="basic_ostream/operator_ltlt.html" title="cpp/io/basic ostream/operator ltlt"><tt>basic_ostream::operator&lt;&lt;</tt></a> and <a href="basic_istream/operator_gtgt.html" title="cpp/io/basic istream/operator gtgt"><tt>basic_istream::operator&gt;&gt;</tt></a> accept pointers to these functions.
+</p><p>The manipulators that are invoked with arguments (e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="manip/setw.html"><span class="kw1520">std::<span class="me2">setw</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>) are implemented as functions returning objects of unspecified type.  These manipulators define their own <code>operator&lt;&lt;</code> or <code>operator&gt;&gt;</code> which perform the requested manipulation.
 </p>
 <table class="t-dsc-begin">
 
@@ -471,15 +474,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6165/1000000
-Preprocessor generated node count: 6192/1000000
-Post‐expand include size: 210825/2097152 bytes
-Template argument size: 32550/2097152 bytes
+Preprocessor visited node count: 6253/1000000
+Preprocessor generated node count: 6258/1000000
+Post‐expand include size: 214080/2097152 bytes
+Template argument size: 33060/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2973-0!*!0!*!*!*!* and timestamp 20140704184645 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2973-0!*!0!*!*!*!* and timestamp 20150825004026 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -515,7 +518,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:03.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 26,464 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 60,305 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -548,7 +551,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.949 secs. -->
+</script><!-- Served in 1.978 secs. -->
 	</body>
-<!-- Cached 20140704184645 -->
+<!-- Cached 20150825004026 -->
 </html>

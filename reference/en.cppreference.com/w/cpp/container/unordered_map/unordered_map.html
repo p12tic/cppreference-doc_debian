@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -240,8 +241,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Modifiers</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="clear.html" title="cpp/container/unordered map/clear"><span class="t-lines"><span>unordered_map::clear</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert.html" title="cpp/container/unordered map/insert"><span class="t-lines"><span>unordered_map::insert</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert_or_assign.html" title="cpp/container/unordered map/insert or assign"><span class="t-lines"><span>unordered_map::insert_or_assign</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="emplace.html" title="cpp/container/unordered map/emplace"><span class="t-lines"><span>unordered_map::emplace</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="emplace_hint.html" title="cpp/container/unordered map/emplace hint"><span class="t-lines"><span>unordered_map::emplace_hint</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/unordered map/try emplace"><span class="t-lines"><span>unordered_map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/unordered map/erase"><span class="t-lines"><span>unordered_map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/unordered map/swap"><span class="t-lines"><span>unordered_map::swap</span></span></a></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
@@ -293,11 +296,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody><tbody>
 <tr class="t-dcl t-since-cxx14">
 <td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> size_type bucket_count,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span><br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span><br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>bucket_count, Hash<span class="br0">&#40;</span><span class="br0">&#41;</span>, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><br />
 unordered_map<span class="br0">&#40;</span> size_type bucket_count,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span><br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>bucket_count, hash, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
@@ -306,25 +311,39 @@ unordered_map<span class="br0">&#40;</span> size_type bucket_count,<br />
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr class="t-dcl">
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
 <p>unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count <span class="sy1">=</span> <span class="coMULTI">/*implementation-defined*/</span>,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash <span class="sy1">=</span> Hash<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> KeyEqual<span class="sy3">&amp;</span> equal <span class="sy1">=</span> KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span><br />
-<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
-unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span><br />
-<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
-unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
-<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span><br /><br /><br /><span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
+<p>unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span><br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>first, last, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; bucket_count, Hash<span class="br0">&#40;</span><span class="br0">&#41;</span>, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
+<p>unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>first, last, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; bucket_count, hash, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> <span class="kw4">const</span> unordered_map<span class="sy3">&amp;</span> other <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -346,22 +365,36 @@ unordered_map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
 <td> (4) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
-<tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
 <p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count <span class="sy1">=</span> <span class="coMULTI">/*implementation-defined*/</span>,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash <span class="sy1">=</span> Hash<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> KeyEqual<span class="sy3">&amp;</span> equal <span class="sy1">=</span> KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span><br />
-unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span><br />
-unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (5) </td>
-<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span><br /><br /><br /><span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>init, bucket_count, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Hash<span class="br0">&#40;</span><span class="br0">&#41;</span>, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></span></div></td>
+<td> (5) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp">unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;size_type bucket_count,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Hash<span class="sy3">&amp;</span> hash,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="sy4">:</span> unordered_map<span class="br0">&#40;</span>init, bucket_count, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; hash, KeyEqual<span class="br0">&#40;</span><span class="br0">&#41;</span>, alloc<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span></span></div></td>
+<td> (5) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
@@ -369,7 +402,7 @@ unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_l
 </p>
 <div class="t-li1"><span class="t-li">1)</span> Constructs empty container. Sets <code>max_load_factor()</code> to 1.0. For the default constructor, the number of buckets is implementation-defined.</div>
 <div class="t-li1"><span class="t-li">2)</span> constructs the container with the contents of the range <code>[first, last)</code>. Sets <code>max_load_factor()</code> to 1.0.</div>
-<div class="t-li1"><span class="t-li">3)</span> copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw569">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_copy_construction</span><span class="br0">&#40;</span>other<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_container_copy_construction</span><span class="br0">&#40;</span>other.<span class="me1">get_allocator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>.</div>
 <div class="t-li1"><span class="t-li">4)</span> move constructor. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to <code>other</code>.</div>
 <div class="t-li1"><span class="t-li">5)</span> constructs the container with the contents of the initializer list <code>init</code>, same as unordered_map(init.begin(), init.end()).</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -454,15 +487,15 @@ unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_l
 <span class="co2">#include &lt;utility&gt;</span>
 &#160;
 <span class="kw1">struct</span> Key <span class="br0">&#123;</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> first<span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> second<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> first<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> second<span class="sy4">;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw1">struct</span> KeyHash <span class="br0">&#123;</span>
  <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">const</span> Key<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span>
  <span class="br0">&#123;</span>
-     <span class="kw1">return</span> <a href="../../utility/hash.html"><span class="kw918">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k.<span class="me1">first</span><span class="br0">&#41;</span> <span class="sy3">^</span>
-            <span class="br0">&#40;</span><a href="../../utility/hash.html"><span class="kw918">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k.<span class="me1">second</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+     <span class="kw1">return</span> <a href="../../utility/hash.html"><span class="kw952">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k.<span class="me1">first</span><span class="br0">&#41;</span> <span class="sy3">^</span>
+            <span class="br0">&#40;</span><a href="../../utility/hash.html"><span class="kw952">std::<span class="me2">hash</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>k.<span class="me1">second</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
  <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
@@ -476,10 +509,10 @@ unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_l
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// default constructor: empty map</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m1<span class="sy4">;</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m1<span class="sy4">;</span>
 &#160;
     <span class="co1">// list constructor</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m2 <span class="sy1">=</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m2 <span class="sy1">=</span>
     <span class="br0">&#123;</span>
         <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="st0">&quot;foo&quot;</span><span class="br0">&#125;</span>,
         <span class="br0">&#123;</span><span class="nu0">3</span>, <span class="st0">&quot;bar&quot;</span><span class="br0">&#125;</span>,
@@ -487,17 +520,17 @@ unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_l
     <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// copy constructor</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m3 <span class="sy1">=</span> m2<span class="sy4">;</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m3 <span class="sy1">=</span> m2<span class="sy4">;</span>
 &#160;
     <span class="co1">// move constructor</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m4 <span class="sy1">=</span> <a href="../../utility/move.html"><span class="kw914">std::<span class="me2">move</span></span></a><span class="br0">&#40;</span>m2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m4 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>m2<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// range constructor</span>
-    <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><a href="../../utility/bitset.html"><span class="kw867">std::<span class="me2">bitset</span></span></a><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span>, <span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="br0">&#123;</span><span class="nu12">0x12</span>, <span class="nu0">1</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="nu12">0x01</span>,<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><a href="../../utility/bitset.html"><span class="kw867">std::<span class="me2">bitset</span></span></a><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span>, <span class="kw4">double</span><span class="sy1">&gt;</span> m5<span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><a href="../../utility/bitset.html"><span class="kw901">std::<span class="me2">bitset</span></span></a><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span>, <span class="kw4">int</span><span class="sy1">&gt;&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="br0">&#123;</span><span class="nu12">0x12</span>, <span class="nu0">1</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="nu12">0x01</span>,<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span><a href="../../utility/bitset.html"><span class="kw901">std::<span class="me2">bitset</span></span></a><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span>, <span class="kw4">double</span><span class="sy1">&gt;</span> m5<span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// constructor for a custom type</span>
-    <a href="../unordered_map.html"><span class="kw1079">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span>Key, <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, KeyHash, KeyEqual<span class="sy1">&gt;</span> m6 <span class="sy1">=</span> <span class="br0">&#123;</span>
+    <a href="../unordered_map.html"><span class="kw1106">std::<span class="me2">unordered_map</span></span></a><span class="sy1">&lt;</span>Key, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, KeyHash, KeyEqual<span class="sy1">&gt;</span> m6 <span class="sy1">=</span> <span class="br0">&#123;</span>
             <span class="br0">&#123;</span> <span class="br0">&#123;</span><span class="st0">&quot;John&quot;</span>, <span class="st0">&quot;Doe&quot;</span><span class="br0">&#125;</span>, <span class="st0">&quot;example&quot;</span><span class="br0">&#125;</span>,
             <span class="br0">&#123;</span> <span class="br0">&#123;</span><span class="st0">&quot;Mary&quot;</span>, <span class="st0">&quot;Sue&quot;</span><span class="br0">&#125;</span>, <span class="st0">&quot;another&quot;</span><span class="br0">&#125;</span>
     <span class="br0">&#125;</span><span class="sy4">;</span>
@@ -517,15 +550,15 @@ unordered_map<span class="br0">&#40;</span> <a href="../../utility/initializer_l
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5339/1000000
-Preprocessor generated node count: 9550/1000000
-Post‐expand include size: 165147/2097152 bytes
-Template argument size: 31171/2097152 bytes
+Preprocessor visited node count: 6081/1000000
+Preprocessor generated node count: 9961/1000000
+Post‐expand include size: 178307/2097152 bytes
+Template argument size: 33508/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:346-0!*!0!!en!*!* and timestamp 20140704184439 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:346-0!*!0!!en!*!* and timestamp 20150825003859 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -561,7 +594,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:37.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,681 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 35,844 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -594,7 +627,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.829 secs. -->
+</script><!-- Served in 3.067 secs. -->
 	</body>
-<!-- Cached 20140704184439 -->
+<!-- Cached 20150825003859 -->
 </html>

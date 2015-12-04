@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../regex.html" title="cpp/regex"> Regular expressions library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_regex.html" title="cpp/regex/basic regex"><span class="t-lines"><span>basic_regex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -240,7 +241,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/length.html" title="cpp/regex/match results/length"><span class="t-lines"><span>match_results::length</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/position.html" title="cpp/regex/match results/position"><span class="t-lines"><span>match_results::position</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/str.html" title="cpp/regex/match results/str"><span class="t-lines"><span>match_results::str</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/operator_at.html" title="cpp/regex/match results/operator at"><span class="t-lines"><span>match_results::operator_at</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/operator_at.html" title="cpp/regex/match results/operator at"><span class="t-lines"><span>match_results::operator[]</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/prefix.html" title="cpp/regex/match results/prefix"><span class="t-lines"><span>match_results::prefix</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="match_results/suffix.html" title="cpp/regex/match results/suffix"><span class="t-lines"><span>match_results::suffix</span></span></a></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Iterators</td></tr>
@@ -257,10 +258,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span><br />
 <p>&#160; &#160; <span class="kw1">class</span> BidirIt,<br />
-&#160; &#160; <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw568">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span><a href="sub_match.html"><span class="kw1682">std::<span class="me2">sub_match</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;&gt;</span><br />
+&#160; &#160; <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span><a href="sub_match.html"><span class="kw1726">std::<span class="me2">sub_match</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;&gt;</span><br />
 </p>
 <span class="sy1">&gt;</span> <span class="kw1">class</span> match_results<span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -268,8 +270,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class template <span class="t-lc"><strong class="selflink">std::match_results</strong></span> holds a collection of character sequences that represent the result of a regular expression match.
-</p><p>This is a specialized allocator-aware container.  It can only be default created, obtained from <span class="t-lc"><a href="regex_iterator.html" title="cpp/regex/regex iterator">std::regex_iterator</a></span>, or modified by <span class="t-lc"><a href="regex_search.html" title="cpp/regex/regex search">std::regex_search</a></span> or <span class="t-lc"><a href="regex_match.html" title="cpp/regex/regex match">std::regex_match</a></span>. Because <code>std::match_results</code> holds <span class="t-lc"><a href="sub_match.html" title="cpp/regex/sub match">std::sub_match</a></span>es, each of which is a pair of iterators into the original character sequence that was matched, it's undefined behavior to examine <code>std::match_results</code> if the original character sequence was destroyed or iterators to it were invalidated for other reasons.
+<p>The class template <span class="t-lc">std::match_results</span> holds a collection of character sequences that represent the result of a regular expression match.
+</p><p>This is a specialized allocator-aware container.  It can only be default created, obtained from <span class="t-lc">std::regex_iterator</span>, or modified by <span class="t-lc">std::regex_search</span> or <span class="t-lc">std::regex_match</span>. Because <code>std::match_results</code> holds <span class="t-lc">std::sub_match</span>es, each of which is a pair of iterators into the original character sequence that was matched, it's undefined behavior to examine <code>std::match_results</code> if the original character sequence was destroyed or iterators to it were invalidated for other reasons.
 </p><p>The first sub_match (index 0) contained in a match_result always represents the full match within a target sequence made by a regex, and subsequent sub_matches represent sub-expression matches corresponding in sequence to the left parenthesis delimiting the sub-expression in the regex.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -364,7 +366,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>value_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="sub_match.html"><span class="kw1682">std::<span class="me2">sub_match</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="sub_match.html"><span class="kw1726">std::<span class="me2">sub_match</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
@@ -399,28 +401,28 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>difference_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../iterator/iterator_traits.html"><span class="kw530">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">difference_type</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../iterator/iterator_traits.html"><span class="kw557">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">difference_type</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>size_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator_traits.html"><span class="kw569">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Alloc<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">size_type</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>Alloc<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">size_type</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>char_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../iterator/iterator_traits.html"><span class="kw530">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value_type</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../iterator/iterator_traits.html"><span class="kw557">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>BidirIt<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value_type</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>string_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>char_type<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
@@ -585,15 +587,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6343/1000000
-Preprocessor generated node count: 10338/1000000
-Post‐expand include size: 174603/2097152 bytes
-Template argument size: 34962/2097152 bytes
+Preprocessor visited node count: 6348/1000000
+Preprocessor generated node count: 10389/1000000
+Post‐expand include size: 174890/2097152 bytes
+Template argument size: 35004/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2281-0!*!0!!en!*!* and timestamp 20140704191847 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2281-0!*!0!!en!*!* and timestamp 20151130141332 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -628,8 +630,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/regex/match_results" title="cpp/regex/match results" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 22 March 2014, at 13:04.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 10,333 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 22 March 2014, at 12:04.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 31,879 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -662,7 +664,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.803 secs. -->
+</script><!-- Served in 2.912 secs. -->
 	</body>
-<!-- Cached 20140704191847 -->
+<!-- Cached 20151130141335 -->
 </html>

@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
@@ -265,7 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="codectv.html" title="cpp/header/codectv" class="mw-redirect"><tt>&lt;codectv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
 </table></div></td></tr>
 </table></div>
@@ -417,15 +418,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// class template unordered_set:</span>
     <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Key,
             <span class="kw1">class</span> Hash <span class="sy1">=</span> hash<span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-            <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw875">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-            <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw568">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
+            <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw909">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
+            <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
         <span class="kw1">class</span> unordered_set<span class="sy4">;</span>
 &#160;
     <span class="co1">// class template unordered_multiset:</span>
     <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Key,
             <span class="kw1">class</span> Hash <span class="sy1">=</span> hash<span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-            <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw875">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-            <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw568">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
+            <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw909">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
+            <span class="kw1">class</span> Alloc <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
         <span class="kw1">class</span> unordered_multiset<span class="sy4">;</span>
 &#160;
     <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Key, <span class="kw1">class</span> Hash, <span class="kw1">class</span> Pred, <span class="kw1">class</span> Alloc<span class="sy1">&gt;</span>
@@ -453,8 +454,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/unordered_set&amp;action=edit&amp;section=2" title="Edit section: Class std::unordered set">edit</a>]</span> <span class="mw-headline" id="Class_std::unordered_set">Class <span class="t-lc"><a href="../container/unordered_set.html" title="cpp/container/unordered set">std::unordered_set</a></span></span></h4>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Key,
     <span class="kw1">class</span> Hash <span class="sy1">=</span> hash<span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-    <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw875">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-    <span class="kw1">class</span> Allocator <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw568">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
+    <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw909">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
+    <span class="kw1">class</span> Allocator <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
 <span class="kw1">class</span> unordered_set
 <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
@@ -541,8 +542,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     iterator       find<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
     const_iterator find<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
     size_type count<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
-    <a href="../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator, iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>const_iterator, const_iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <a href="../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator, iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>const_iterator, const_iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// bucket interface</span>
     size_type bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
@@ -568,8 +569,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/unordered_set&amp;action=edit&amp;section=3" title="Edit section: Class std::unordered multiset">edit</a>]</span> <span class="mw-headline" id="Class_std::unordered_multiset">Class <span class="t-lc"><a href="../container/unordered_multiset.html" title="cpp/container/unordered multiset">std::unordered_multiset</a></span></span></h4>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Key,
     <span class="kw1">class</span> Hash <span class="sy1">=</span> hash<span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-    <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw875">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
-    <span class="kw1">class</span> Allocator <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw568">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
+    <span class="kw1">class</span> Pred <span class="sy1">=</span> <a href="../utility/functional/equal_to.html"><span class="kw909">std::<span class="me2">equal_to</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span>,
+    <span class="kw1">class</span> Allocator <span class="sy1">=</span> <a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>Key<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
 <span class="kw1">class</span> unordered_multiset
 <span class="br0">&#123;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
@@ -655,8 +656,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     iterator        find<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
     const_iterator  find<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
     size_type count<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
-    <a href="../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator, iterator<span class="sy1">&gt;</span>             equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>const_iterator, const_iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <a href="../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator, iterator<span class="sy1">&gt;</span>             equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>const_iterator, const_iterator<span class="sy1">&gt;</span> equal_range<span class="br0">&#40;</span><span class="kw4">const</span> key_type<span class="sy3">&amp;</span> k<span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// bucket interface</span>
     size_type bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
@@ -680,15 +681,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5650/1000000
-Preprocessor generated node count: 6330/1000000
-Post‐expand include size: 130984/2097152 bytes
-Template argument size: 35283/2097152 bytes
+Preprocessor visited node count: 5700/1000000
+Preprocessor generated node count: 6447/1000000
+Post‐expand include size: 131541/2097152 bytes
+Template argument size: 35332/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9796-0!*!0!!en!*!* and timestamp 20140726105904 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9796-0!*!0!!en!*!* and timestamp 20150825043032 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -719,7 +720,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:55.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,259 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,775 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -752,7 +753,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.298 secs. -->
+</script><!-- Served in 2.292 secs. -->
 	</body>
-<!-- Cached 20140726105904 -->
+<!-- Cached 20150825043035 -->
 </html>

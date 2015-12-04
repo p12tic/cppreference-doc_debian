@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -265,6 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstoul.html" title="cpp/string/wide/wcstoul"><span class="t-lines"><span>wcstoul</span><span>wcstoull</span></span></a></div></div></td></tr>
 </table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstof.html" title="cpp/string/wide/wcstof"><span class="t-lines"><span>wcstof</span><span>wcstod</span><span>wcstold</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>wcstoimax</span><span>wcstouimax</span></span></strong></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> String manipulation</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
@@ -299,7 +301,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> wcstoimax<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> nptr, <span class="kw4">wchar_t</span><span class="sy2">**</span> endptr, <span class="kw4">int</span> base <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -312,16 +315,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Interprets an unsigned integer value in a wide string pointed to by <code>nptr</code>.
-</p><p>Function discards any whitespace characters (as identified by calling <code>isspace()</code>) until first non-whitespace character is found. Then it takes as many characters as possible to form a valid <i>base-n</i> (where n=base) unsigned integer number representation and converts them to an  integer value. The valid unsigned  integer value consists of the following parts:
+</p><p>Discards any whitespace characters (as identified by calling <code>isspace()</code>) until the first non-whitespace character is found, then takes as many characters as possible to form a valid <i>base-n</i> (where n=base) unsigned integer number representation and converts them to an  integer value. The valid unsigned  integer value consists of the following parts:
 </p>
 <ul><li> <span class="t-mark">(optional)</span> prefix (<code><b>0</b></code>) indicating octal base (applies only when the base is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">8</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>)
 </li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0x</b></code> or <code><b>0X</b></code>) indicating hexadecimal base (applies only when the base is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">16</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>)
 </li><li> a sequence of digits
 </li></ul>
 <p>The set of valid digits for base-2 integer is <code>01</code>, for base-3 integer is <code>012</code>, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored.
-</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc"><a href="../../locale/setlocale.html" title="cpp/locale/setlocale">locale</a></span>.
+</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc">locale</span>.
 </p><p>If the value of base is <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>, the numeric base is auto-detected: if the prefix is <code><b>0</b></code>, the base is octal, if the prefix is <code><b>0x</b></code> or <code><b>0X</b></code>, the base is hexadecimal, otherwise the base is decimal.
-</p><p>The functions sets the pointer pointed to by <code>endptr</code> to point to the wide character past the last character interpreted. If <code>endptr</code> is <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span>, it is ignored.
+</p><p>If the minus sign was part of the input sequence, the numeric value calculated from the sequence of digits is negated in the result type.
+</p><p>The functions sets the pointer pointed to by <code>endptr</code> to point to the wide character past the last character interpreted. If <code>endptr</code> is <span class="t-lc">NULL</span>, it is ignored.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -357,7 +361,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  <i>base</i> of the interpreted integer value
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcstoimax&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Integer value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs and <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">INTMAX_MAX</a></span>, <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">INTMAX_MIN</a></span>, <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">UINTMAX_MAX</a></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned, as appropriate. If no conversion can be performed, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned.
+<p>Integer value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs and <span class="t-lc">INTMAX_MAX</span>, <span class="t-lc">INTMAX_MIN</span>, <span class="t-lc">UINTMAX_MAX</span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned, as appropriate. If no conversion can be performed, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcstoimax&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -367,14 +371,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_string.html"><span class="kw1047">std::<span class="me2">wstring</span></span></a> str <span class="sy1">=</span> L<span class="st0">&quot;helloworld&quot;</span><span class="sy4">;</span>
-    <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> val <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/string/byte/wcstoimax"><span class="kw1020">std::<span class="me2">wcstoimax</span></span></a><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, nullptr, <span class="nu0">36</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 36 is &quot;</span> <span class="sy1">&lt;&lt;</span> val <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 10<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../basic_string.html"><span class="kw1072">std::<span class="me2">wstring</span></span></a> str <span class="sy1">=</span> L<span class="st0">&quot;helloworld&quot;</span><span class="sy4">;</span>
+    <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> val <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">wcstoimax</span><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, nullptr, <span class="nu0">36</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 36 is &quot;</span> <span class="sy1">&lt;&lt;</span> val <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 10<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">wchar_t</span><span class="sy2">*</span> nptr<span class="sy4">;</span>
-    val <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/string/byte/wcstoimax"><span class="kw1020">std::<span class="me2">wcstoimax</span></span></a><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="sy3">&amp;</span>nptr, <span class="nu0">30</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    val <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">wcstoimax</span><span class="br0">&#40;</span>str.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="sy3">&amp;</span>nptr, <span class="nu0">30</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>nptr <span class="sy3">!</span><span class="sy1">=</span> <span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 30 is invalid.&quot;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; in base 30 is invalid.&quot;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; The first invalid digit is &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>nptr <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -388,7 +392,7 @@ helloworld in base 30 is invalid. The first invalid digit is w</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../byte/strtoimax.html" title="cpp/string/byte/strtoimax"> <span class="t-lines"><span>strtoimax</span><span>strtoumax</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   converts a byte string to <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> or <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::uintmax_t</a></span>  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dsc_strtoimax&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a byte string to <span class="t-lc">std::intmax_t</span> or <span class="t-lc">std::uintmax_t</span>  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/byte/dsc_strtoimax&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -411,15 +415,15 @@ helloworld in base 30 is invalid. The first invalid digit is w</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4022/1000000
-Preprocessor generated node count: 7022/1000000
-Post‐expand include size: 99501/2097152 bytes
-Template argument size: 16693/2097152 bytes
+Preprocessor visited node count: 4116/1000000
+Preprocessor generated node count: 7137/1000000
+Post‐expand include size: 103010/2097152 bytes
+Template argument size: 17354/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9531-0!*!0!!en!*!* and timestamp 20140822082757 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9531-0!*!0!!en!*!* and timestamp 20151130162130 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -454,8 +458,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/wide/wcstoimax" title="cpp/string/wide/wcstoimax" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 16:48.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,330 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:48.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,792 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -488,7 +492,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.082 secs. -->
+</script><!-- Served in 2.127 secs. -->
 	</body>
-<!-- Cached 20140822082757 -->
+<!-- Cached 20151130162130 -->
 </html>

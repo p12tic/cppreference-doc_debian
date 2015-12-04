@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -241,6 +242,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstoul.html" title="cpp/string/wide/wcstoul"><span class="t-lines"><span>wcstoul</span><span>wcstoull</span></span></a></div></div></td></tr>
 </table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstof.html" title="cpp/string/wide/wcstof"><span class="t-lines"><span>wcstof</span><span>wcstod</span><span>wcstold</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="wcstoimax.html" title="cpp/string/wide/wcstoimax"><span class="t-lines"><span>wcstoimax</span><span>wcstouimax</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> String manipulation</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
@@ -275,7 +277,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> wcsstr<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> dest, <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> src <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
@@ -316,7 +319,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  pointer to the null-terminated wide string to search for
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcsstr&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Pointer to the first character of the found substring in <code>dest</code>, or <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span> if no such substring is found. If <code>src</code> points to an empty string, <code>dest</code> is returned.
+<p>Pointer to the first character of the found substring in <code>dest</code>, or <span class="t-lc">NULL</span> if no such substring is found. If <code>src</code> points to an empty string, <code>dest</code> is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcsstr&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: no example </td></tr></table>
@@ -355,15 +358,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4001/1000000
-Preprocessor generated node count: 9829/1000000
-Post‐expand include size: 97117/2097152 bytes
-Template argument size: 14556/2097152 bytes
+Preprocessor visited node count: 4099/1000000
+Preprocessor generated node count: 9944/1000000
+Post‐expand include size: 101052/2097152 bytes
+Template argument size: 15349/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3801-0!*!0!!en!*!* and timestamp 20140705010846 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3801-0!*!0!!en!*!* and timestamp 20151130145928 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -398,8 +401,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/wide/wcsstr" title="cpp/string/wide/wcsstr" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 16 October 2013, at 05:13.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,045 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 16 October 2013, at 04:13.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,452 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -432,7 +435,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.263 secs. -->
+</script><!-- Served in 1.232 secs. -->
 	</body>
-<!-- Cached 20140705010846 -->
+<!-- Cached 20151130145928 -->
 </html>

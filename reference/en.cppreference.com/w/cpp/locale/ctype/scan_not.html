@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -339,7 +340,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
 <span class="kw4">const</span> CharT<span class="sy2">*</span> scan_not<span class="br0">&#40;</span> mask m, <span class="kw4">const</span> CharT<span class="sy2">*</span> beg, <span class="kw4">const</span> CharT<span class="sy2">*</span> end <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
@@ -399,17 +401,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">auto</span><span class="sy3">&amp;</span> f <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1577">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../ctype.html"><span class="kw1618">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">auto</span><span class="sy3">&amp;</span> f <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../ctype.html"><span class="kw1662">std::<span class="me2">ctype</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// skip leading whitespace</span>
     <span class="kw4">char</span> s1<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;      <span class="es1">\t</span><span class="es1">\t</span><span class="es1">\n</span>  Test&quot;</span><span class="sy4">;</span>
-    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> p1 <span class="sy1">=</span> f.<span class="me1">scan_not</span><span class="br0">&#40;</span><a href="../ctype_base.html"><span class="kw1583">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">space</span></span></a>, <a href="../../iterator/begin.html"><span class="kw554">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>s1<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw555">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>s1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> p1 <span class="sy1">=</span> f.<span class="me1">scan_not</span><span class="br0">&#40;</span><a href="../ctype_base.html"><span class="kw1627">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">space</span></span></a>, <a href="../../iterator/begin.html"><span class="kw581">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>s1<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw585">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>s1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// skip leading digits</span>
     <span class="kw4">char</span> s2<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;123456789abcd&quot;</span><span class="sy4">;</span>
-    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> p2 <span class="sy1">=</span> f.<span class="me1">scan_not</span><span class="br0">&#40;</span><a href="../ctype_base.html"><span class="kw1589">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">digit</span></span></a>, <a href="../../iterator/begin.html"><span class="kw554">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>s2<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw555">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>s2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> p2 <span class="sy1">=</span> f.<span class="me1">scan_not</span><span class="br0">&#40;</span><a href="../ctype_base.html"><span class="kw1633">std::<span class="me2">ctype_base</span><span class="sy4">::</span><span class="me2">digit</span></span></a>, <a href="../../iterator/begin.html"><span class="kw581">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>s2<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw585">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>s2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> p2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -428,15 +430,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5326/1000000
-Preprocessor generated node count: 8351/1000000
-Post‐expand include size: 131833/2097152 bytes
-Template argument size: 22005/2097152 bytes
+Preprocessor visited node count: 5342/1000000
+Preprocessor generated node count: 8419/1000000
+Post‐expand include size: 132398/2097152 bytes
+Template argument size: 22054/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9827-0!*!0!!en!*!* and timestamp 20140706014330 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9827-0!*!0!!en!*!* and timestamp 20151130145342 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -466,8 +468,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/locale/ctype/scan_not" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/locale/ctype/scan_not" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype/scan_not&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype/scan_not&amp;oldid=62069" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/ctype/scan_not&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 20 June 2013, at 13:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 621 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 20 June 2013, at 12:32.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,452 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -500,7 +502,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.731 secs. -->
+</script><!-- Served in 1.796 secs. -->
 	</body>
-<!-- Cached 20140706014330 -->
+<!-- Cached 20151130145342 -->
 </html>

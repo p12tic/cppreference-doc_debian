@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -266,7 +267,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> mblen<span class="br0">&#40;</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
@@ -275,7 +277,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>Determines the size, in bytes, of the multibyte character whose first byte is pointed to by <code>s</code>. 
 </p><p>If <code>s</code> is a null pointer, resets the global conversion state and determined whether shift sequences are used.
-</p><p>This function is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="mbtowc.html"><span class="kw977">std::<span class="me2">mbtowc</span></span></a><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">wchar_t</span><span class="sy2">*</span><span class="br0">&#41;</span><span class="nu0">0</span>, s, n<span class="br0">&#41;</span></span></span>, except that conversion state of <span class="t-lc"><a href="mbtowc.html" title="cpp/string/multibyte/mbtowc">std::mbtowc</a></span> is unaffected.
+</p><p>This function is equivalent to the call <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="mbtowc.html"><span class="kw1004">std::<span class="me2">mbtowc</span></span></a><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">wchar_t</span><span class="sy2">*</span><span class="br0">&#41;</span><span class="nu0">0</span>, s, n<span class="br0">&#41;</span></span></span>, except that conversion state of <span class="t-lc">std::mbtowc</span> is unaffected.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -287,7 +289,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/mblen&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Each call to <code>mblen</code> updates the internal global conversion state (a static object of type <span class="t-lc"><a href="mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span>, only known to this function). If the multibyte encoding uses shift states, care must be taken to avoid backtracking or multiple scans. In any case, multiple threads should not call <code>mblen</code> without synchronization: <span class="t-lc"><a href="mbrlen.html" title="cpp/string/multibyte/mbrlen">std::mbrlen</a></span> may be used instead.
+<p>Each call to <code>mblen</code> updates the internal global conversion state (a static object of type <span class="t-lc">std::mbstate_t</span>, only known to this function). If the multibyte encoding uses shift states, care must be taken to avoid backtracking or multiple scans. In any case, multiple threads should not call <code>mblen</code> without synchronization: <span class="t-lc">std::mbrlen</span> may be used instead.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/mblen&amp;action=edit&amp;section=2" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
@@ -321,7 +323,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="co1">// the number of characters in a multibyte string is the sum of mblen()'s</span>
 <span class="co1">// note: the simpler approach is std::mbstowcs(NULL, s.c_str(), s.size())</span>
-<a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> strlen_mb<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s<span class="br0">&#41;</span>
+<a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> strlen_mb<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../basic_string.html"><span class="kw1071">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> result <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
     <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> ptr <span class="sy1">=</span> s.<span class="me1">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -330,7 +332,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="kw1">while</span> <span class="br0">&#40;</span>ptr <span class="sy1">&lt;</span> end<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         <span class="kw4">int</span> next <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">mblen</span><span class="br0">&#40;</span>ptr, end<span class="sy2">-</span>ptr<span class="br0">&#41;</span><span class="sy4">;</span>
         <span class="kw1">if</span> <span class="br0">&#40;</span>next <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-            <span class="kw1">throw</span> <a href="../../error/runtime_error/runtime_error.html"><span class="kw616">std::<span class="me2">runtime_error</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;strlen_mb(): conversion error&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw1">throw</span> <a href="../../error/runtime_error/runtime_error.html"><span class="kw650">std::<span class="me2">runtime_error</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;strlen_mb(): conversion error&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
         <span class="br0">&#125;</span>
         ptr <span class="sy2">+</span><span class="sy1">=</span> next<span class="sy4">;</span>
         <span class="sy2">++</span>result<span class="sy4">;</span>
@@ -341,11 +343,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// allow mblen() to work with UTF-8 multibyte encoding</span>
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="co1">// UTF-8 narrow multibyte encoding</span>
-    <a href="../basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
+    <a href="../basic_string.html"><span class="kw1071">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
                       <span class="co1">// or &quot;\x7a\xc3\x9f\xe6\xb0\xb4\xf0\x9d\x84\x8b&quot;;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is &quot;</span> <span class="sy1">&lt;&lt;</span> str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes, but only &quot;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is &quot;</span> <span class="sy1">&lt;&lt;</span> str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bytes, but only &quot;</span>
               <span class="sy1">&lt;&lt;</span> strlen_mb<span class="br0">&#40;</span>str<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; characters<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -375,15 +377,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2270/1000000
-Preprocessor generated node count: 6162/1000000
-Post‐expand include size: 60547/2097152 bytes
-Template argument size: 12466/2097152 bytes
+Preprocessor visited node count: 2282/1000000
+Preprocessor generated node count: 6230/1000000
+Post‐expand include size: 60926/2097152 bytes
+Template argument size: 12515/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4582-0!*!0!!en!*!* and timestamp 20140705225640 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4582-0!*!0!!en!*!* and timestamp 20151130144051 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -418,8 +420,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/multibyte/mblen" title="cpp/string/multibyte/mblen" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 25 July 2013, at 23:30.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,349 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 25 July 2013, at 22:30.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,027 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -452,7 +454,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.758 secs. -->
+</script><!-- Served in 1.940 secs. -->
 	</body>
-<!-- Cached 20140705225641 -->
+<!-- Cached 20151130144053 -->
 </html>

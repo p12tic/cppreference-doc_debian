@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -375,14 +376,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/splice&amp;action=edit&amp;section=T-3" title="Template:cpp/container/splice">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <p>1-2) Constant.
-</p><p>3) Constant if <span class="t-c"><span class="mw-geshi cpp source-cpp">this <span class="sy1">==</span> <span class="sy3">&amp;</span>other</span></span>, otherwise linear in <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span>.
+</p><p>3) Constant if <span class="t-c"><span class="mw-geshi cpp source-cpp">this <span class="sy1">==</span> <span class="sy3">&amp;</span>other</span></span>, otherwise linear in <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw578">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/splice&amp;action=edit&amp;section=T-4" title="Template:cpp/container/splice">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;list&gt;</span>
 &#160;
-<a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> ostr, <span class="kw4">const</span> <a href="../list.html"><span class="kw1070">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> list<span class="br0">&#41;</span>
+<a href="../../io/basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> ostr, <span class="kw4">const</span> <a href="../list.html"><span class="kw1097">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> list<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> list<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         ostr <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span> <span class="sy1">&lt;&lt;</span> i<span class="sy4">;</span>
@@ -392,21 +393,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main <span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../list.html"><span class="kw1070">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> list1 <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span> <span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../list.html"><span class="kw1070">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> list2 <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="nu0">10</span>, <span class="nu0">20</span>, <span class="nu0">30</span>, <span class="nu0">40</span>, <span class="nu0">50</span> <span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../list.html"><span class="kw1097">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> list1 <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span> <span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../list.html"><span class="kw1097">std::<span class="me2">list</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> list2 <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="nu0">10</span>, <span class="nu0">20</span>, <span class="nu0">30</span>, <span class="nu0">40</span>, <span class="nu0">50</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">auto</span> it <span class="sy1">=</span> list1.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../iterator/advance.html"><span class="kw550">std::<span class="me2">advance</span></span></a><span class="br0">&#40;</span>it, <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../iterator/advance.html"><span class="kw577">std::<span class="me2">advance</span></span></a><span class="br0">&#40;</span>it, <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     list1.<span class="me1">splice</span><span class="br0">&#40;</span>it, list2<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list1: &quot;</span> <span class="sy1">&lt;&lt;</span> list1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list2: &quot;</span> <span class="sy1">&lt;&lt;</span> list2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list1: &quot;</span> <span class="sy1">&lt;&lt;</span> list1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list2: &quot;</span> <span class="sy1">&lt;&lt;</span> list2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     list2.<span class="me1">splice</span><span class="br0">&#40;</span>list2.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, list1, it, list1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list1: &quot;</span> <span class="sy1">&lt;&lt;</span> list1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list2: &quot;</span> <span class="sy1">&lt;&lt;</span> list2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list1: &quot;</span> <span class="sy1">&lt;&lt;</span> list1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;list2: &quot;</span> <span class="sy1">&lt;&lt;</span> list2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -433,15 +434,15 @@ list2:  3 4 5</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5235/1000000
-Preprocessor generated node count: 8724/1000000
-Post‐expand include size: 162095/2097152 bytes
-Template argument size: 22560/2097152 bytes
+Preprocessor visited node count: 5282/1000000
+Preprocessor generated node count: 8887/1000000
+Post‐expand include size: 162936/2097152 bytes
+Template argument size: 22609/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:954-0!*!0!!en!*!* and timestamp 20140704190713 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:954-0!*!0!!en!*!* and timestamp 20150825030220 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -477,7 +478,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,951 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 23,650 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -510,7 +511,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.769 secs. -->
+</script><!-- Served in 2.628 secs. -->
 	</body>
-<!-- Cached 20140704190713 -->
+<!-- Cached 20150825030220 -->
 </html>

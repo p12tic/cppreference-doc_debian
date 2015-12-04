@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -236,8 +237,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Modifiers</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="clear.html" title="cpp/container/unordered map/clear"><span class="t-lines"><span>unordered_map::clear</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert.html" title="cpp/container/unordered map/insert"><span class="t-lines"><span>unordered_map::insert</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert_or_assign.html" title="cpp/container/unordered map/insert or assign"><span class="t-lines"><span>unordered_map::insert_or_assign</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="emplace.html" title="cpp/container/unordered map/emplace"><span class="t-lines"><span>unordered_map::emplace</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>unordered_map::emplace_hint</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/unordered map/try emplace"><span class="t-lines"><span>unordered_map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/unordered map/erase"><span class="t-lines"><span>unordered_map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/unordered map/swap"><span class="t-lines"><span>unordered_map::swap</span></span></a></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
@@ -270,8 +273,8 @@ iterator emplace_hint<span class="br0">&#40;</span> const_iterator hint, Args<sp
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Inserts a new element to the container, using <code>hint</code> as a suggestion where the element should go. The element is constructed in-place, i.e. no copy or move operations are performed. 
-</p><p>The constructor of the element type (<code>value_type</code>, that is, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to the function, forwarded with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw913">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
-</p><p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is equal to or greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
+</p><p>The constructor of the element type (<code>value_type</code>, that is, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to the function, forwarded with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
+</p><p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -324,15 +327,15 @@ iterator emplace_hint<span class="br0">&#40;</span> const_iterator hint, Args<sp
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4005/1000000
-Preprocessor generated node count: 8010/1000000
-Post‐expand include size: 99455/2097152 bytes
-Template argument size: 18181/2097152 bytes
+Preprocessor visited node count: 4197/1000000
+Preprocessor generated node count: 8137/1000000
+Post‐expand include size: 105406/2097152 bytes
+Template argument size: 19457/2097152 bytes
 Highest expansion depth: 21/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:325-0!*!0!!en!*!* and timestamp 20140704202320 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:325-0!*!0!!en!*!* and timestamp 20151028070602 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -368,7 +371,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 30 August 2013, at 09:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,380 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,063 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -401,7 +404,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.263 secs. -->
+</script><!-- Served in 1.288 secs. -->
 	</body>
-<!-- Cached 20140704202321 -->
+<!-- Cached 20151028070602 -->
 </html>

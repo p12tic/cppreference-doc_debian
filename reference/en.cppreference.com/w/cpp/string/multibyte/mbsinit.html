@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -266,14 +267,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> mbsinit<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="mbstate_t.html"><span class="kw993">std::<span class="me2">mbstate_t</span></span></a><span class="sy2">*</span> ps<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> mbsinit<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="mbstate_t.html"><span class="kw1020">std::<span class="me2">mbstate_t</span></span></a><span class="sy2">*</span> ps<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>If <code>ps</code> is not a null pointer, the <code>mbsinit</code> function determines whether the pointed-to <span class="t-lc"><a href="mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span> object describes the initial conversion state. 
+<p>If <code>ps</code> is not a null pointer, the <code>mbsinit</code> function determines whether the pointed-to <span class="t-lc">std::mbstate_t</span> object describes the initial conversion state. 
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -285,7 +287,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/mbsinit&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Although a zero-initialized <span class="t-lc"><a href="mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span> always represents the initial conversion state, there may be other values of <span class="t-lc"><a href="mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span> that also represent the initial conversion state.
+<p>Although a zero-initialized <span class="t-lc">std::mbstate_t</span> always represents the initial conversion state, there may be other values of <span class="t-lc">std::mbstate_t</span> that also represent the initial conversion state.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/mbsinit&amp;action=edit&amp;section=2" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
@@ -311,19 +313,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// allow mbrlen() to work with UTF-8 multibyte encoding</span>
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="co1">// UTF-8 narrow multibyte encoding</span>
-    <a href="../basic_string.html"><span class="kw1044">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> u8<span class="st0">&quot;水&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;\u6c34&quot; or &quot;\xe6\xb0\xb4&quot;</span>
-    <a href="mbstate_t.html"><span class="kw993">std::<span class="me2">mbstate_t</span></span></a> mb <span class="sy1">=</span> <a href="mbstate_t.html"><span class="kw993">std::<span class="me2">mbstate_t</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span><a href="mbrlen.html"><span class="kw984">std::<span class="me2">mbrlen</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="nu0">1</span>, <span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_string.html"><span class="kw1071">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> u8<span class="st0">&quot;水&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;\u6c34&quot; or &quot;\xe6\xb0\xb4&quot;</span>
+    <a href="mbstate_t.html"><span class="kw1020">std::<span class="me2">mbstate_t</span></span></a> mb <span class="sy1">=</span> <a href="mbstate_t.html"><span class="kw1020">std::<span class="me2">mbstate_t</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span><a href="mbrlen.html"><span class="kw1011">std::<span class="me2">mbrlen</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="nu0">1</span>, <span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>std<span class="sy4">::</span><span class="me2">mbsinit</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After processing the first 1 byte of &quot;</span> <span class="sy1">&lt;&lt;</span> str
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After processing the first 1 byte of &quot;</span> <span class="sy1">&lt;&lt;</span> str
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; the conversion state is not initial<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
-    <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span><a href="mbrlen.html"><span class="kw984">std::<span class="me2">mbrlen</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>, str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span><a href="mbrlen.html"><span class="kw1011">std::<span class="me2">mbrlen</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>str<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>, str.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">mbsinit</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>mb<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After processing the remaining 2 bytes of &quot;</span> <span class="sy1">&lt;&lt;</span> str
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After processing the remaining 2 bytes of &quot;</span> <span class="sy1">&lt;&lt;</span> str
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, the conversion state is initial conversion state<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -349,15 +351,15 @@ After processing the remaining 2 bytes of 水, the conversion state is initial c
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2038/1000000
-Preprocessor generated node count: 5922/1000000
-Post‐expand include size: 56224/2097152 bytes
-Template argument size: 11136/2097152 bytes
+Preprocessor visited node count: 2050/1000000
+Preprocessor generated node count: 5990/1000000
+Post‐expand include size: 56591/2097152 bytes
+Template argument size: 11185/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4623-0!*!0!!en!*!* and timestamp 20140705214753 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4623-0!*!0!!en!*!* and timestamp 20151130150648 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -392,8 +394,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/multibyte/mbsinit" title="cpp/string/multibyte/mbsinit" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:26.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,803 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:26.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,509 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -426,7 +428,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.224 secs. -->
+</script><!-- Served in 1.168 secs. -->
 	</body>
-<!-- Cached 20140705214753 -->
+<!-- Cached 20151130150648 -->
 </html>

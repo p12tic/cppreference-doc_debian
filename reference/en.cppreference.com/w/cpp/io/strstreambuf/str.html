@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -285,8 +286,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Calls <span class="t-lc">freeze()</span>, then returns a copy of start pointer of the get area, <span class="t-lc">std::streambuf::eback()</span>.
-</p><p>The start of the get area, for all writeable <code>std::strstreambuf</code> objects constructed through the interface provided by <span class="t-lc">std::strstream</span>, is also the start of the put area.
+<p>Calls <span class="t-lc"><a href="freeze.html" title="cpp/io/strstreambuf/freeze">freeze()</a></span>, then returns a copy of start pointer of the get area, <span class="t-lc"><a href="../basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr">std::streambuf::eback()</a></span>.
+</p><p>The start of the get area, for all writeable <code>std::strstreambuf</code> objects constructed through the interface provided by <span class="t-lc"><a href="../strstream.html" title="cpp/io/strstream">std::strstream</a></span>, is also the start of the put area.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -301,11 +302,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>(none)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/str&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>A copy of <span class="t-lc">eback()</span>, which may be a null pointer.
+<p>A copy of <span class="t-lc"><a href="../basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr">eback()</a></span>, which may be a null pointer.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/str&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>This function is typically called through the <span class="t-lc">std::strstream</span> interface.
-</p><p>The call to <span class="t-lc">freeze()</span> guarantees that the returned pointer remains valid until the next explicit call to <span class="t-lc">freeze(false)</span>: otherwise (on a dynamic buffer) any output operation could trigger buffer reallocation which would invalidate the pointer. It also causes a memory leak in the destructor of <code>std::strstreambuf</code>, unless <span class="t-lc">freeze(false)</span> is called before the buffer (or, more commonly, the <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">strstream</span></span></span> that manages it) is destroyed.
+<p>This function is typically called through the <span class="t-lc"><a href="../strstream.html" title="cpp/io/strstream">std::strstream</a></span> interface.
+</p><p>The call to <span class="t-lc"><a href="freeze.html" title="cpp/io/strstreambuf/freeze">freeze()</a></span> guarantees that the returned pointer remains valid until the next explicit call to <span class="t-lc">freeze(false)</span>: otherwise (on a dynamic buffer) any output operation could trigger buffer reallocation which would invalidate the pointer. It also causes a memory leak in the destructor of <code>std::strstreambuf</code>, unless <span class="t-lc">freeze(false)</span> is called before the buffer (or, more commonly, the <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../strstream.html"><span class="kw1478">std::<span class="me2">strstream</span></span></a></span></span> that manages it) is destroyed.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/str&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -314,23 +315,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    std<span class="sy4">::</span><span class="me2">strstream</span> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated read/write buffer</span>
+    <a href="../strstream.html"><span class="kw1478">std::<span class="me2">strstream</span></span></a> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated read/write buffer</span>
     dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">strstreambuf</span><span class="sy2">*</span> buf <span class="sy1">=</span> dyn.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;R/W buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or dyn.str()</span>
+    <a href="../strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a><span class="sy2">*</span> buf <span class="sy1">=</span> dyn.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;R/W buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or dyn.str()</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     dyn.<span class="me1">freeze</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// after calling .str() on a dynamic strstream</span>
 &#160;
     <span class="kw4">char</span> arr<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">ostrstream</span> user<span class="br0">&#40;</span>arr, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// fixed-size write-only buffer</span>
+    <a href="../ostrstream.html"><span class="kw1477">std::<span class="me2">ostrstream</span></span></a> user<span class="br0">&#40;</span>arr, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// fixed-size write-only buffer</span>
     buf <span class="sy1">=</span> user.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    user <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span> <span class="sy1">&lt;&lt;</span> <a href="../manip/ends.html"><span class="kw1470">std::<span class="me2">ends</span></span></a><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Write-only buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or user.str()</span>
+    user <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span> <span class="sy1">&lt;&lt;</span> <a href="../manip/ends.html"><span class="kw1512">std::<span class="me2">ends</span></span></a><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Write-only buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or user.str()</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">istrstream</span> lit<span class="br0">&#40;</span><span class="st0">&quot;1 2 3&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// fixed-size read-only buffer</span>
+    <a href="../istrstream.html"><span class="kw1476">std::<span class="me2">istrstream</span></span></a> lit<span class="br0">&#40;</span><span class="st0">&quot;1 2 3&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// fixed-size read-only buffer</span>
     buf <span class="sy1">=</span> lit.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Read-only buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or lit.str()</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Read-only buffer holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> buf<span class="sy2">-</span><span class="sy1">&gt;</span>str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// or lit.str()</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -363,15 +364,15 @@ Read-only buffer holds &quot;1 2 31 2 3&quot;</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3506/1000000
-Preprocessor generated node count: 7511/1000000
-Post‐expand include size: 84775/2097152 bytes
-Template argument size: 16194/2097152 bytes
+Preprocessor visited node count: 3518/1000000
+Preprocessor generated node count: 7579/1000000
+Post‐expand include size: 85670/2097152 bytes
+Template argument size: 16243/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12917-0!*!0!!en!*!* and timestamp 20140704184205 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12917-0!*!0!!en!*!* and timestamp 20150825103416 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -407,7 +408,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 26 August 2013, at 14:31.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 685 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,069 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -440,7 +441,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.545 secs. -->
+</script><!-- Served in 1.507 secs. -->
 	</body>
-<!-- Cached 20140704184205 -->
+<!-- Cached 20150825103416 -->
 </html>

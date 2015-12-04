@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -281,7 +282,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> basic_istringstream<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1043">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> str,<br />
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> basic_istringstream<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> str,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;ios_base<span class="sy4">::</span><span class="me2">openmode</span> mode <span class="sy1">=</span> ios_base<span class="sy4">::</span><span class="me2">in</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
@@ -296,7 +297,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Constructs new string stream.
 </p><p>1) Constructs new underlying string device. The underlying <code>basic_stringbuf</code> object is constructed as <span class="t-c"><span class="mw-geshi cpp source-cpp">basic_stringbuf<span class="sy1">&lt;</span>Char,Traits,Allocator<span class="sy1">&gt;</span><span class="br0">&#40;</span>mode <span class="sy3">|</span> ios_base<span class="sy4">::</span><span class="me2">in</span><span class="br0">&#41;</span></span></span>.
 </p><p>2) Uses a copy of <code>str</code> as initial contents of the underlying string device. The underlying <code>basic_stringbuf</code> object is constructed as <span class="t-c"><span class="mw-geshi cpp source-cpp">basic_stringbuf<span class="sy1">&lt;</span>Char,Traits,Allocator<span class="sy1">&gt;</span><span class="br0">&#40;</span>str, mode <span class="sy3">|</span> ios_base<span class="sy4">::</span><span class="me2">in</span><span class="br0">&#41;</span></span></span>.
-</p><p>3) Move constructor. Constructs the file stream with the state of <code>other</code> using move semantics. 
+</p><p>3) Move constructor. Constructs the string stream with the state of <code>other</code> using move semantics. 
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_stringstream/constructor&amp;action=edit&amp;section=T-1" title="Template:cpp/io/basic stringstream/constructor">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
@@ -334,7 +335,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="../ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>binary</tt></a>
 </td>
-<td>  open in binary mode
+<td>  open in <a href="../c.html#Binary_and_text_modes" title="cpp/io/c">binary mode</a>
 </td></tr>
 
 
@@ -381,21 +382,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// default constructor (input/output stream)</span>
-    <a href="../basic_stringstream.html"><span class="kw1422">std::<span class="me2">stringstream</span></span></a> buf1<span class="sy4">;</span>
+    <a href="../basic_stringstream.html"><span class="kw1460">std::<span class="me2">stringstream</span></span></a> buf1<span class="sy4">;</span>
     buf1 <span class="sy1">&lt;&lt;</span> <span class="nu0">7</span><span class="sy4">;</span>
     <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
     buf1 <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;buf1 = &quot;</span> <span class="sy1">&lt;&lt;</span> buf1.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; n = &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;buf1 = &quot;</span> <span class="sy1">&lt;&lt;</span> buf1.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; n = &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// input stream</span>
-    <a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a> inbuf<span class="br0">&#40;</span><span class="st0">&quot;-10&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istringstream.html"><span class="kw1458">std::<span class="me2">istringstream</span></span></a> inbuf<span class="br0">&#40;</span><span class="st0">&quot;-10&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     inbuf <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;n = &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;n = &quot;</span> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// output stream in append mode (C++11)</span>
-    <a href="../basic_ostringstream.html"><span class="kw1421">std::<span class="me2">ostringstream</span></span></a> buf2<span class="br0">&#40;</span><span class="st0">&quot;test&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1363">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">ate</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ostringstream.html"><span class="kw1459">std::<span class="me2">ostringstream</span></span></a> buf2<span class="br0">&#40;</span><span class="st0">&quot;test&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1401">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">ate</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     buf2 <span class="sy1">&lt;&lt;</span> <span class="st0">'1'</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf2.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> buf2.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -421,15 +422,15 @@ test1</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3304/1000000
-Preprocessor generated node count: 8103/1000000
-Post‐expand include size: 117572/2097152 bytes
-Template argument size: 16769/2097152 bytes
+Preprocessor visited node count: 3321/1000000
+Preprocessor generated node count: 8171/1000000
+Post‐expand include size: 118664/2097152 bytes
+Template argument size: 16923/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:534-0!*!0!!*!*!* and timestamp 20140705144048 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:534-0!*!0!!*!*!* and timestamp 20150825031517 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -465,7 +466,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,850 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,704 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -498,7 +499,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.579 secs. -->
+</script><!-- Served in 1.546 secs. -->
 	</body>
-<!-- Cached 20140705144048 -->
+<!-- Cached 20150825031517 -->
 </html>

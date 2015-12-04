@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
@@ -265,7 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="codectv.html" title="cpp/header/codectv" class="mw-redirect"><tt>&lt;codectv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
 </table></div></td></tr>
 </table></div>
@@ -341,55 +342,55 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div>
 </div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/header/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>This header was originally in the C standard library as <code><b>&lt;limits.h&gt;</b></code>.
-</p><p>This header is part of the <a href="../types.html" title="cpp/types">type support</a> library, in particular it's part of the <a href="../types/climits.html" title="cpp/types/climits">C numeric limits interface</a>.
+</p><p>This header is part of the <a href="../types.html" title="cpp/types">type support</a> library, in particular it's part of the <a href="../types/climits.1.html" title="cpp/types/climits">C numeric limits interface</a>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/climits&amp;action=edit&amp;section=1" title="Edit section: Macros">edit</a>]</span> <span class="mw-headline" id="Macros">Macros</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>CHAR_BIT</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>CHAR_BIT</span></span></div></div>
 </td>
 <td>   number of bits in byte  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>MB_LEN_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>MB_LEN_MAX</span></span></div></div>
 </td>
 <td>   maximum number of bytes in a multibyte character  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>CHAR_MIN</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>CHAR_MIN</span></span></div></div>
 </td>
 <td>   minimum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>CHAR_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>CHAR_MAX</span></span></div></div>
 </td>
 <td>   maximum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>SCHAR_MIN<br />SHRT_MIN<br />INT_MIN<br />LONG_MIN<br />LLONG_MIN</div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>SCHAR_MIN</span><span>SHRT_MIN</span><span>INT_MIN</span><span>LONG_MIN</span><span>LLONG_MIN</span></span></div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   minimum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> respectively <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>SCHAR_MAX<br />SHRT_MAX<br />INT_MAX<br />LONG_MAX<br />LLONG_MAX</div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>SCHAR_MAX</span><span>SHRT_MAX</span><span>INT_MAX</span><span>LONG_MAX</span><span>LLONG_MAX</span></span></div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   maximum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> respectively <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>UCHAR_MAX<br />USHRT_MAX<br />UINT_MAX<br />ULONG_MAX<br />ULLONG_MAX</div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>UCHAR_MAX</span><span>USHRT_MAX</span><span>UINT_MAX</span><span>ULONG_MAX</span><span>ULLONG_MAX</span></span></div><div><span class="t-lines"><span></span><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   maximum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>,<br /><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span> respectively <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
@@ -398,15 +399,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5250/1000000
-Preprocessor generated node count: 5065/1000000
-Post‐expand include size: 113087/2097152 bytes
-Template argument size: 24166/2097152 bytes
+Preprocessor visited node count: 5354/1000000
+Preprocessor generated node count: 5101/1000000
+Post‐expand include size: 117618/2097152 bytes
+Template argument size: 24826/2097152 bytes
 Highest expansion depth: 18/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9663-0!*!0!*!*!*!* and timestamp 20140704192506 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9663-0!*!0!*!*!*!* and timestamp 20150825040905 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -437,7 +438,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:44.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,956 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,826 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -470,7 +471,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.426 secs. -->
+</script><!-- Served in 2.388 secs. -->
 	</body>
-<!-- Cached 20140704192508 -->
+<!-- Cached 20150825040905 -->
 </html>

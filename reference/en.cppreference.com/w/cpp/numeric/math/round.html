@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> round<span class="br0">&#40;</span> <span class="kw4">float</span> arg <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -471,16 +473,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li></ul>
 <dl><dd> For <code>std::lround</code> and <code>std::llround</code> functions:
 </dd></dl>
-<ul><li> <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> is never raised
+<ul><li> <span class="t-lc">FE_INEXACT</span> is never raised
 </li><li> The current <a href="../fenv/FE_round.html" title="cpp/numeric/fenv/FE round">rounding mode</a> has no effect.
-</li><li> If <code>arg</code> is ±∞, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised and an implementation-defined value is returned
-</li><li> If the result of the rounding is outside the range of the return type, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised and an implementation-defined value is returned
-</li><li> If <code>arg</code> is NaN, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised and an implementation-defined value is returned
+</li><li> If <code>arg</code> is ±∞, <span class="t-lc">FE_INVALID</span> is raised and an implementation-defined value is returned
+</li><li> If the result of the rounding is outside the range of the return type, <span class="t-lc">FE_INVALID</span> is raised and an implementation-defined value is returned
+</li><li> If <code>arg</code> is NaN, <span class="t-lc">FE_INVALID</span> is raised and an implementation-defined value is returned
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/round&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> may be (but isn't required to be) raised by <code>std::round</code> when rounding a non-integer finite value.
-</p><p>The largest representable floating-point values are exact integers in all standard floating-point formats, so <code>std::round</code> never overflows on its own; however the result may overflow any integer type (including <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span>), when stored in an integer variable.
-</p><p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/lround.html">POSIX specifies</a> that all cases where <code>std::lround</code> or <code>std::llround</code> raise <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> are domain errors.
+<p><span class="t-lc">FE_INEXACT</span> may be (but isn't required to be) raised by <code>std::round</code> when rounding a non-integer finite value.
+</p><p>The largest representable floating-point values are exact integers in all standard floating-point formats, so <code>std::round</code> never overflows on its own; however the result may overflow any integer type (including <span class="t-lc">std::intmax_t</span>), when stored in an integer variable.
+</p><p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/lround.html">POSIX specifies</a> that all cases where <code>std::lround</code> or <code>std::llround</code> raise <span class="t-lc">FE_INEXACT</span> are domain errors.
 </p><p>The <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> version of <code>std::round</code> behaves as if implemented as follows:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cmath&gt;</span>
@@ -489,13 +491,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">double</span> round<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     std<span class="sy4">::</span><span class="me2">fenv_t</span> save_env<span class="sy4">;</span>
-    <a href="../fenv/feholdexcept.html"><span class="kw1171">std::<span class="me2">feholdexcept</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>save_env<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">double</span> result <span class="sy1">=</span> <a href="rint.html"><span class="kw1132">std::<span class="me2">rint</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1163">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1175">FE_INEXACT</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../fenv/feround.html"><span class="kw1168">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1181">FE_TOWARDZERO</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-        result <span class="sy1">=</span> <a href="rint.html"><span class="kw1132">std::<span class="me2">rint</span></span></a><span class="br0">&#40;</span><a href="copysign.html"><span class="kw1142">std::<span class="me2">copysign</span></span></a><span class="br0">&#40;</span><span class="nu16">0.5</span> <span class="sy2">+</span> <a href="fabs.html"><span class="kw1086">std::<span class="me2">fabs</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span>, x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../fenv/feholdexcept.html"><span class="kw1204">std::<span class="me2">feholdexcept</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>save_env<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">double</span> result <span class="sy1">=</span> <a href="rint.html"><span class="kw1165">std::<span class="me2">rint</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1196">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_INEXACT</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../fenv/feround.html"><span class="kw1201">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1214">FE_TOWARDZERO</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+        result <span class="sy1">=</span> <a href="rint.html"><span class="kw1165">std::<span class="me2">rint</span></span></a><span class="br0">&#40;</span><a href="copysign.html"><span class="kw1175">std::<span class="me2">copysign</span></span></a><span class="br0">&#40;</span><span class="nu16">0.5</span> <span class="sy2">+</span> <a href="fabs.html"><span class="kw1113">std::<span class="me2">fabs</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span>, x<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../fenv/feupdateenv.html"><span class="kw1172">std::<span class="me2">feupdateenv</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>save_env<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../fenv/feupdateenv.html"><span class="kw1205">std::<span class="me2">feupdateenv</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>save_env<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">return</span> result<span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/round&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -510,33 +512,33 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// round</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  round(+2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  round(+2.7) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="nu16">2.7</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(-2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  round(-2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  round(-2.7) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.7</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1152">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;round(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">round</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1185">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// lround</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  lround(+2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  lround(+2.7) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="nu16">2.7</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(-2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  lround(-2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  lround(-2.7) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.7</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1152">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;lround(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1185">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// error handling</span>
-    <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1162">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1173">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;std::lround(LONG_MAX+1.5) = &quot;</span>
-              <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><a href="../../types/climits.html"><span class="kw399">LONG_MAX</span></a><span class="sy2">+</span><span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1163">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1176">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-              <a href="../../io/basic_ostream.html"><span class="kw1436">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID was raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../fenv/feclearexcept.html"><span class="kw1195">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1206">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;std::lround(LONG_MAX+1.5) = &quot;</span>
+              <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">lround</span><span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw399">LONG_MAX</span></a><span class="sy2">+</span><span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1196">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1209">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+              <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID was raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -580,15 +582,15 @@ std::lround(LONG_MAX+1.5) = -9223372036854775808
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7942/1000000
-Preprocessor generated node count: 9282/1000000
-Post‐expand include size: 218736/2097152 bytes
-Template argument size: 44069/2097152 bytes
+Preprocessor visited node count: 7962/1000000
+Preprocessor generated node count: 9350/1000000
+Post‐expand include size: 218837/2097152 bytes
+Template argument size: 44118/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1370-0!*!0!!en!2!* and timestamp 20140704191317 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1370-0!*!0!!en!2!* and timestamp 20151130141734 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -623,8 +625,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/round" title="cpp/numeric/math/round" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 30 June 2014, at 12:36.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 24,342 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 June 2014, at 11:36.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 77,274 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -657,7 +659,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.985 secs. -->
+</script><!-- Served in 3.734 secs. -->
 	</body>
-<!-- Cached 20140704191317 -->
+<!-- Cached 20151130141735 -->
 </html>

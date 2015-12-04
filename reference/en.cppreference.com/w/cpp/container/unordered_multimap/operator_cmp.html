@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -267,17 +268,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dcl-begin"><tbody> 
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Key, <span class="kw1">class</span> T, <span class="kw1">class</span> Hash, <span class="kw1">class</span> KeyEqual, <span class="kw1">class</span> Allocator <span class="sy1">&gt;</span><br />
-<p><span class="kw4">void</span> operator<span class="sy1">==</span><span class="br0">&#40;</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span> <span class="sy3">&amp;</span>lhs, <br />
+<p><span class="kw4">bool</span> operator<span class="sy1">==</span><span class="br0">&#40;</span> <span class="kw4">const</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> lhs, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span> <span class="sy3">&amp;</span>rhs<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rhs <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Key, <span class="kw1">class</span> T, <span class="kw1">class</span> Hash, <span class="kw1">class</span> KeyEqual, <span class="kw1">class</span> Allocator <span class="sy1">&gt;</span><br />
-<p><span class="kw4">void</span> operator<span class="sy3">!</span><span class="sy1">=</span><span class="br0">&#40;</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span> <span class="sy3">&amp;</span>lhs, <br />
+<p><span class="kw4">bool</span> operator<span class="sy3">!</span><span class="sy1">=</span><span class="br0">&#40;</span> <span class="kw4">const</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> lhs, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span> <span class="sy3">&amp;</span>rhs<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> unordered_multimap<span class="sy1">&lt;</span>Key,T,Hash,KeyEqual,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rhs <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -290,7 +291,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li><li> each group of equivalent keys <code>[lhs_eq1, lhs_eq2)</code> obtained from <span class="t-c"><span class="mw-geshi cpp source-cpp">lhs.<span class="me1">equal_range</span><span class="br0">&#40;</span>lhs_eq1<span class="br0">&#41;</span></span></span> has a corresponding group of equivalent keys in the other container <code>[rhs_eq1, rhs_eq2)</code> obtained from <span class="t-c"><span class="mw-geshi cpp source-cpp">rhs.<span class="me1">equal_range</span><span class="br0">&#40;</span>rhs_eq1<span class="br0">&#41;</span></span></span>, that has the following properties:
 </li></ul>
 <dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>lhs_eq1, lhs_eq2<span class="br0">&#41;</span> <span class="sy1">==</span> <a href="../../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>rhs_eq1, rhs_eq2<span class="br0">&#41;</span></span></span>.
-</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/is_permutation.html"><span class="kw1342">std::<span class="me2">is_permutation</span></span></a><span class="br0">&#40;</span>lhs_eq1, lhs_eq2, rhs_eq1<span class="br0">&#41;</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/is_permutation.html"><span class="kw1346">std::<span class="me2">is_permutation</span></span></a><span class="br0">&#40;</span>lhs_eq1, lhs_eq2, rhs_eq1<span class="br0">&#41;</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>.
 </li></ul>
 </dd></dl>
 <p>The behavior is undefined if <code>Key</code> or <code>T</code> are not <a href="../../concept/EqualityComparable.html" title="cpp/concept/EqualityComparable"><code>EqualityComparable</code></a>.
@@ -315,15 +316,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3820/1000000
-Preprocessor generated node count: 5754/1000000
-Post‐expand include size: 142159/2097152 bytes
-Template argument size: 18881/2097152 bytes
+Preprocessor visited node count: 3834/1000000
+Preprocessor generated node count: 5791/1000000
+Post‐expand include size: 143049/2097152 bytes
+Template argument size: 19011/2097152 bytes
 Highest expansion depth: 18/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2010-0!*!0!!*!*!* and timestamp 20140704203846 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2010-0!*!0!!*!*!* and timestamp 20150523211540 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -359,7 +360,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:37.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,732 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,239 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -392,7 +393,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.747 secs. -->
+</script><!-- Served in 1.639 secs. -->
 	</body>
-<!-- Cached 20140704203846 -->
+<!-- Cached 20150523211540 -->
 </html>

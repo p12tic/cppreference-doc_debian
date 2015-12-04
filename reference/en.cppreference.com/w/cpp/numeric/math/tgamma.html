@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &#160; &#160; &#160; tgamma<span class="br0">&#40;</span> <span class="kw4">float</span> arg <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -419,9 +421,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>If <code>arg</code> is zero or is an integer less than zero, a pole error or a domain error may occur.
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
-<ul><li> If the argument is ±0, ±∞ is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></span> is raised
-</li><li> If the argument is a negative integer, NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
-</li><li> If the argument is -∞, NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
+<ul><li> If the argument is ±0, ±∞ is returned and <span class="t-lc">FE_DIVBYZERO</span> is raised
+</li><li> If the argument is a negative integer, NaN is returned and <span class="t-lc">FE_INVALID</span> is raised
+</li><li> If the argument is -∞, NaN is returned and <span class="t-lc">FE_INVALID</span> is raised
 </li><li> If the argument is +∞, +∞ is returned.
 </li><li> If the argument is NaN, NaN is returned
 </li></ul>
@@ -441,20 +443,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(10) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(10) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, 9! = &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">2</span><span class="sy2">*</span><span class="nu0">3</span><span class="sy2">*</span><span class="nu0">4</span><span class="sy2">*</span><span class="nu0">5</span><span class="sy2">*</span><span class="nu0">6</span><span class="sy2">*</span><span class="nu0">7</span><span class="sy2">*</span><span class="nu0">8</span><span class="sy2">*</span><span class="nu0">9</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(0.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="nu16">0.5</span><span class="br0">&#41;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, sqrt(pi) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="sqrt.html"><span class="kw1107">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><a href="acos.html"><span class="kw1115">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, sqrt(pi) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="sqrt.html"><span class="kw1140">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><a href="acos.html"><span class="kw1148">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// special values</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(+Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1154">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(+Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// error handling </span>
-    <span class="kw2">errno</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1164">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1175">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(-1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw656">EDOM</span></a><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == EDOM: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw976">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1165">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1178">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw2">errno</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <a href="../fenv/feclearexcept.html"><span class="kw1197">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;tgamma(-1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tgamma</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw690">EDOM</span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == EDOM: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1003">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -485,15 +487,15 @@ tgamma(-1) = nan
 </p>
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6885/1000000
-Preprocessor generated node count: 8707/1000000
-Post‐expand include size: 206984/2097152 bytes
-Template argument size: 39367/2097152 bytes
+Preprocessor visited node count: 6897/1000000
+Preprocessor generated node count: 8775/1000000
+Post‐expand include size: 207339/2097152 bytes
+Template argument size: 39416/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2901-0!*!0!!en!*!* and timestamp 20140705015716 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2901-0!*!0!!en!*!* and timestamp 20151130145948 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -528,8 +530,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/tgamma" title="cpp/numeric/math/tgamma" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 7 June 2014, at 14:45.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,706 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 7 June 2014, at 13:45.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,608 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -562,7 +564,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.700 secs. -->
+</script><!-- Served in 2.624 secs. -->
 	</body>
-<!-- Cached 20140705015718 -->
+<!-- Cached 20151130145948 -->
 </html>

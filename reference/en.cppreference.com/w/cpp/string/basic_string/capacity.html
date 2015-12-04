@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -298,7 +299,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="to_string.html" title="cpp/string/basic string/to string"><span class="t-lines"><span>to_string</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="to_wstring.html" title="cpp/string/basic string/to wstring"><span class="t-lines"><span>to_wstring</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Helper classes</td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hash.html" title="cpp/string/basic string/hash"><span class="t-lines"><span>hash<span class="t-dsc-small">&lt;std::string&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::wstring&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::u32string&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::u16string&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hash.html" title="cpp/string/basic string/hash"><span class="t-lines"><span>hash<span class="t-dsc-small">&lt;std::string&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::wstring&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::u32string&gt;</span></span><span>hash<span class="t-dsc-small">&lt;std::u16string&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/basic_string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
@@ -342,14 +343,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 &#160;
-<span class="kw4">void</span> show_capacity<span class="br0">&#40;</span><a href="../basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> <span class="kw4">const</span><span class="sy3">&amp;</span> s<span class="br0">&#41;</span>
+<span class="kw4">void</span> show_capacity<span class="br0">&#40;</span><a href="../basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> <span class="kw4">const</span><span class="sy3">&amp;</span> s<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' has capacity &quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">capacity</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> s <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' has capacity &quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">capacity</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> s<span class="br0">&#123;</span><span class="st0">&quot;Exemplar&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> s<span class="br0">&#123;</span><span class="st0">&quot;Exemplar&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
     show_capacity<span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     s <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">&quot; is an example string.&quot;</span><span class="sy4">;</span>
@@ -378,15 +379,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4895/1000000
-Preprocessor generated node count: 8122/1000000
-Post‐expand include size: 133072/2097152 bytes
-Template argument size: 26225/2097152 bytes
+Preprocessor visited node count: 4913/1000000
+Preprocessor generated node count: 8208/1000000
+Post‐expand include size: 136166/2097152 bytes
+Template argument size: 26985/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1397-0!*!0!!en!*!* and timestamp 20140724131626 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1397-0!*!0!!en!*!* and timestamp 20150825005320 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -422,7 +423,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 23 May 2014, at 19:24.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,364 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,125 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -455,7 +456,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.445 secs. -->
+</script><!-- Served in 1.440 secs. -->
 	</body>
-<!-- Cached 20140724131627 -->
+<!-- Cached 20150825005320 -->
 </html>

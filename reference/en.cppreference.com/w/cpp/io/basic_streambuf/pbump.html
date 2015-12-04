@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -352,23 +353,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;string&gt;</span>
 <span class="co2">#include &lt;fstream&gt;</span>
 &#160;
-<span class="kw1">struct</span> showput_streambuf <span class="sy4">:</span> <a href="../basic_filebuf.html"><span class="kw1410">std::<span class="me2">filebuf</span></span></a>
+<span class="kw1">struct</span> showput_streambuf <span class="sy4">:</span> <a href="../basic_filebuf.html"><span class="kw1448">std::<span class="me2">filebuf</span></span></a>
 <span class="br0">&#123;</span>
     <span class="kw1">using</span> std<span class="sy4">::</span><span class="me2">filebuf</span><span class="sy4">::</span><span class="me2">pbump</span><span class="sy4">;</span> <span class="co1">// expose protected</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> showput<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span>
-        <span class="kw1">return</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>, pptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> showput<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span>
+        <span class="kw1">return</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>, pptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     showput_streambuf mybuf<span class="sy4">;</span>
-    mybuf.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1361">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a> str<span class="br0">&#40;</span><span class="sy3">&amp;</span>mybuf<span class="br0">&#41;</span><span class="sy4">;</span>
-    str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This is a test&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../manip/flush.html"><span class="kw1471">std::<span class="me2">flush</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1234&quot;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The put area contains: &quot;</span> <span class="sy1">&lt;&lt;</span> mybuf.<span class="me1">showput</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    mybuf.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1399">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a> str<span class="br0">&#40;</span><span class="sy3">&amp;</span>mybuf<span class="br0">&#41;</span><span class="sy4">;</span>
+    str <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;This is a test&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../manip/flush.html"><span class="kw1513">std::<span class="me2">flush</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1234&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The put area contains: &quot;</span> <span class="sy1">&lt;&lt;</span> mybuf.<span class="me1">showput</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     mybuf.<span class="me1">pbump</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after pbump(10), it contains &quot;</span> <span class="sy1">&lt;&lt;</span> mybuf.<span class="me1">showput</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after pbump(10), it contains &quot;</span> <span class="sy1">&lt;&lt;</span> mybuf.<span class="me1">showput</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -387,15 +388,15 @@ after pbump(10), it contains 1234 is a test</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4811/1000000
-Preprocessor generated node count: 7744/1000000
-Post‐expand include size: 119435/2097152 bytes
-Template argument size: 21608/2097152 bytes
+Preprocessor visited node count: 4823/1000000
+Preprocessor generated node count: 7812/1000000
+Post‐expand include size: 119994/2097152 bytes
+Template argument size: 21657/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4898-0!*!0!!en!*!* and timestamp 20140705023849 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4898-0!*!0!!en!*!* and timestamp 20150825093546 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -431,7 +432,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 09:00.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,566 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,692 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -464,7 +465,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.537 secs. -->
+</script><!-- Served in 1.448 secs. -->
 	</body>
-<!-- Cached 20140705023849 -->
+<!-- Cached 20150825093546 -->
 </html>

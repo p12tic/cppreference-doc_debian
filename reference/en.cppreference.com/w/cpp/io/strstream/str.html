@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -294,7 +295,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>After a call to <span class="t-lc">str()</span>, dynamic streams become frozen. A call to <span class="t-c"><span class="mw-geshi cpp source-cpp">freeze<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span></span></span> is required before exiting the scope in which this <span class="t-c"><span class="mw-geshi cpp source-cpp">strstream</span></span> object was created. otherwise the destructor will leak memory. Also, additional output to a frozen stream may be truncated once it reaches the end of the allocated buffer.
+<p>After a call to <span class="t-lc"><strong class="selflink">str()</strong></span>, dynamic streams become frozen. A call to <span class="t-c"><span class="mw-geshi cpp source-cpp">freeze<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span></span></span> is required before exiting the scope in which this <span class="t-c"><span class="mw-geshi cpp source-cpp">strstream</span></span> object was created. otherwise the destructor will leak memory. Also, additional output to a frozen stream may be truncated once it reaches the end of the allocated buffer.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/str&amp;action=edit&amp;section=T-1" title="Template:cpp/io/strstream/str">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <p>(none)
@@ -309,15 +310,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    std<span class="sy4">::</span><span class="me2">strstream</span> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
+    <a href="../strstream.html"><span class="kw1478">std::<span class="me2">strstream</span></span></a> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
     dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="co1">// the stream is now frozen due to str()</span>
     dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; More text&quot;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The output stream holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     dyn.<span class="me1">freeze</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -337,15 +338,15 @@ The stream holds &quot;Test: 1.23 More &quot;</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2742/1000000
-Preprocessor generated node count: 7324/1000000
-Post‐expand include size: 104003/2097152 bytes
-Template argument size: 11962/2097152 bytes
+Preprocessor visited node count: 2754/1000000
+Preprocessor generated node count: 7392/1000000
+Post‐expand include size: 104994/2097152 bytes
+Template argument size: 12011/2097152 bytes
 Highest expansion depth: 36/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9728-0!*!0!!en!*!* and timestamp 20140704233930 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9728-0!*!0!!en!*!* and timestamp 20150825073236 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -376,7 +377,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 08:42.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,206 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,293 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -409,7 +410,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.644 secs. -->
+</script><!-- Served in 1.531 secs. -->
 	</body>
-<!-- Cached 20140704233930 -->
+<!-- Cached 20150825073236 -->
 </html>

@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -298,21 +299,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 <td></td>
 </tr><tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_istream.html"><span class="kw1412">std::<span class="me2">istream</span></span></a> cin<span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_istream.html"><span class="kw1450">std::<span class="me2">istream</span></span></a> cin<span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_istream.html"><span class="kw1426">std::<span class="me2">wistream</span></span></a> wcin<span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <a href="basic_istream.html"><span class="kw1464">std::<span class="me2">wistream</span></span></a> wcin<span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The global objects <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::cin</a></span> and <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::wcin</a></span> control input from a stream buffer of implementation-defined type (derived from <span class="t-lc"><a href="basic_streambuf.html" title="cpp/io/basic streambuf">std::streambuf</a></span>), associated with the standard C input stream <span class="t-lc"><a href="c.html" title="cpp/io/c">stdin</a></span>.
-</p><p>These objects are guaranteed to be constructed before the first constructor of a static object is called and they are guaranteed to outlive the last destructor of a static object, so that it is always possible to read from <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::cin</a></span> in user code.
+<p>The global objects <span class="t-lc">std::cin</span> and <span class="t-lc">std::wcin</span> control input from a stream buffer of implementation-defined type (derived from <span class="t-lc">std::streambuf</span>), associated with the standard C input stream <span class="t-lc">stdin</span>.
+</p><p>These objects are guaranteed to be constructed before the first constructor of a static object is called and they are guaranteed to outlive the last destructor of a static object, so that it is always possible to read from <span class="t-lc">std::cin</span> in user code.
 </p><p>Unless <span class="t-c"><span class="mw-geshi cpp source-cpp">sync_with_stdio<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span></span></span> has been issued, it is safe to concurrently access these objects from multiple threads for both formatted and unformatted input.
-</p><p>Once <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::cin</a></span> is constructed, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_istream.html"><span class="kw1437">std::<span class="me2">cin</span></span></a>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a></span></span>, and likewise, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_istream.html"><span class="kw1438">std::<span class="me2">wcin</span></span></a>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="basic_ostream.html"><span class="kw1440">std::<span class="me2">wcout</span></span></a></span></span>. This means that any formatted input operation on <span class="t-lc"><a href="basic_istream.html" title="cpp/io/basic istream">std::cin</a></span> forces a call to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> if any characters are pending for output.
+</p><p>Once <span class="t-lc">std::cin</span> is constructed, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">cin</span>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a></span></span>, and likewise, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">wcin</span>.<span class="me1">tie</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><a href="cout.html"><span class="kw1480">std::<span class="me2">wcout</span></span></a></span></span>. This means that any formatted input operation on <span class="t-lc">std::cin</span> forces a call to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a>.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> if any characters are pending for output.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/cin&amp;action=edit&amp;section=1" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -320,14 +321,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw1">struct</span> Foo <span class="br0">&#123;</span>
     <span class="kw4">int</span> n<span class="sy4">;</span>
     Foo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-       <a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Enter n: &quot;</span><span class="sy4">;</span> <span class="co1">// no flush needed</span>
-       <a href="basic_istream.html"><span class="kw1437">std::<span class="me2">cin</span></span></a> <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span>
+       <a href="cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Enter n: &quot;</span><span class="sy4">;</span> <span class="co1">// no flush needed</span>
+       std<span class="sy4">::</span><span class="me2">cin</span> <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 Foo f<span class="sy4">;</span> <span class="co1">// static object</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;f.n is &quot;</span> <span class="sy1">&lt;&lt;</span> f.<span class="me1">n</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;f.n is &quot;</span> <span class="sy1">&lt;&lt;</span> f.<span class="me1">n</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -346,21 +347,21 @@ f.n is 10</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="cout.html" title="cpp/io/cout"> <span class="t-lines"><span>cout</span><span>wcout</span></span></a></div></div>
 </td>
-<td>  writes to the standard C output stream <span class="t-lc"><a href="c.html" title="cpp/io/c">stdout</a></span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_cout&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  writes to the standard C output stream <span class="t-lc">stdout</span><br /><span class="t-mark">(global object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/dsc_cout&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4037/1000000
-Preprocessor generated node count: 7783/1000000
-Post‐expand include size: 97571/2097152 bytes
-Template argument size: 16033/2097152 bytes
+Preprocessor visited node count: 4053/1000000
+Preprocessor generated node count: 7851/1000000
+Post‐expand include size: 97709/2097152 bytes
+Template argument size: 16056/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3761-0!*!0!!*!*!* and timestamp 20140705044917 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3761-0!*!0!!*!*!* and timestamp 20151129032838 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -395,8 +396,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/cin" title="cpp/io/cin" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,733 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:02.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 33,605 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -429,7 +430,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.942 secs. -->
+</script><!-- Served in 0.095 secs. -->
 	</body>
-<!-- Cached 20140705044918 -->
+<!-- Cached 20151130140538 -->
 </html>

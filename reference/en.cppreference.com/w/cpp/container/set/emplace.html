@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -259,7 +260,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">Args</span> <span class="sy1">&gt;</span><br />
-<a href="../../utility/pair.html"><span class="kw901">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator,<span class="kw4">bool</span><span class="sy1">&gt;</span> emplace<span class="br0">&#40;</span> Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator,<span class="kw4">bool</span><span class="sy1">&gt;</span> emplace<span class="br0">&#40;</span> Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -267,7 +268,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>Inserts a new element into the container by constructing it in-place with the given <code>args</code>  if there is no element with the key in the container.
 </p><p>Careful use of <code>emplace</code> allows the new element to be constructed while avoiding unnecessary copy or move operations.
-The constructor of the new element is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw913">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
+The constructor of the new element is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
 </p><p>No iterators or references are invalidated.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -292,7 +293,7 @@ The constructor of the new element is called with exactly the same arguments as 
 <td>  arguments to forward to the constructor of the element
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/emplace_assoc&amp;action=edit&amp;section=T-2" title="Template:cpp/container/emplace assoc">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Returns a pair consisting of a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> denoting whether the insertion took place and an iterator to the inserted element, or the already-existing element if no insertion happened.
+<p>Returns a pair consisting of an iterator to the inserted element, or the already-existing element if no insertion happened, and a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> denoting whether the insertion took place.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/emplace_assoc&amp;action=edit&amp;section=T-3" title="Template:cpp/container/emplace assoc">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <p>If an exception is thrown by any operation, this function has no effect.
@@ -311,6 +312,7 @@ The constructor of the new element is called with exactly the same arguments as 
 <td>   constructs elements in-place using a hint  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_emplace_hint&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
+
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="insert.html" title="cpp/container/set/insert"> <span class="t-lines"><span>insert</span></span></a></div></div>
 </td>
@@ -320,15 +322,15 @@ The constructor of the new element is called with exactly the same arguments as 
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4050/1000000
-Preprocessor generated node count: 11762/1000000
-Post‐expand include size: 139394/2097152 bytes
-Template argument size: 17278/2097152 bytes
+Preprocessor visited node count: 4061/1000000
+Preprocessor generated node count: 11877/1000000
+Post‐expand include size: 140238/2097152 bytes
+Template argument size: 17331/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:283-0!*!0!!en!*!* and timestamp 20140705000315 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:283-0!*!0!!en!*!* and timestamp 20151028053806 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -364,7 +366,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:35.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,314 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 14,492 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -397,7 +399,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.183 secs. -->
+</script><!-- Served in 1.176 secs. -->
 	</body>
-<!-- Cached 20140705000315 -->
+<!-- Cached 20151028053806 -->
 </html>

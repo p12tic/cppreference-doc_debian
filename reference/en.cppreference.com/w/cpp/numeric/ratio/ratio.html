@@ -125,7 +125,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="ratio.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/numeric/ratio/ratio&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:cpp/numeric/ratio/ratio"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -237,7 +238,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <br />
 <p>&#160; &#160; <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> Num, <br />
 &#160; &#160; <a href="../../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a> Denom <span class="sy1">=</span> <span class="nu0">1</span> <br />
@@ -248,7 +250,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class template <code>std::ratio</code> provides compile-time rational arithmetic support. Each instantiation of this template exactly represents any finite rational number as long as its numerator <code>Num</code> and denominator <code>Denom</code> are representable as compile-time constants of type <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span>. In addition, <code>Denom</code> may not be zero and may not be equal to the most negative value. Both numerator and denominator are automatically reduced to the lowest terms.
+<p>The class template <code>std::ratio</code> provides compile-time rational arithmetic support. Each instantiation of this template exactly represents any finite rational number as long as its numerator <code>Num</code> and denominator <code>Denom</code> are representable as compile-time constants of type <span class="t-lc">std::intmax_t</span>. In addition, <code>Denom</code> may not be zero and may not be equal to the most negative value. Both numerator and denominator are automatically reduced to the lowest terms.
 </p><p>Several convenience typedefs that correspond to the SI ratios are provided by the standard library:
 </p>
 <table class="t-dsc-begin">
@@ -267,14 +269,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>yocto</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1</span>, <span class="nu0">1000000000000000000000000</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> can represent the denominator
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1</span>, <span class="nu0">1000000000000000000000000</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc">std::intmax_t</span> can represent the denominator
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>zepto</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1</span>, <span class="nu0">1000000000000000000000</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> can represent the denominator
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1</span>, <span class="nu0">1000000000000000000000</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc">std::intmax_t</span> can represent the denominator
 </td></tr>
 
 
@@ -393,14 +395,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>zetta</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1000000000000000000000</span>, <span class="nu0">1</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> can represent the numerator
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1000000000000000000000</span>, <span class="nu0">1</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc">std::intmax_t</span> can represent the numerator
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>yotta</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1000000000000000000000000</span>, <span class="nu0">1</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> can represent the numerator
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ratio</span><span class="sy1">&lt;</span><span class="nu0">1000000000000000000000000</span>, <span class="nu0">1</span><span class="sy1">&gt;</span></span></span>, if <span class="t-lc">std::intmax_t</span> can represent the numerator
 </td></tr>
 
 </table>
@@ -425,31 +427,31 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">constexpr intmax_t</span> num</div><div><span class="t-lines"><span><span class="t-cmark">[static]</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">constexpr intmax_t</span> num</span></span></div><div><span class="t-lines"><span><span class="t-cmark">[static]</span></span></span></div></div>
 </td>
-<td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> value of type <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> equal to <code>sign(Num) * sign(Denom) * abs(Num) / gcd(Num, Denom)</code>  <br /> <span class="t-mark">(public static member constant)</span>
+<td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> value of type <span class="t-lc">std::intmax_t</span> equal to <code>sign(Num) * sign(Denom) * abs(Num) / gcd(Num, Denom)</code>  <br /> <span class="t-mark">(public static member constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">constexpr intmax_t</span> den</div><div><span class="t-lines"><span><span class="t-cmark">[static]</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">constexpr intmax_t</span> den</span></span></div><div><span class="t-lines"><span><span class="t-cmark">[static]</span></span></span></div></div>
 </td>
-<td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> value of type <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span> equal to <code>abs(Denom) / gcd(Num, Denom)</code>  <br /> <span class="t-mark">(public static member constant)</span>
+<td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> value of type <span class="t-lc">std::intmax_t</span> equal to <code>abs(Denom) / gcd(Num, Denom)</code>  <br /> <span class="t-mark">(public static member constant)</span>
 </td></tr>
 
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3073/1000000
-Preprocessor generated node count: 7268/1000000
-Post‐expand include size: 72748/2097152 bytes
-Template argument size: 17645/2097152 bytes
+Preprocessor visited node count: 3108/1000000
+Preprocessor generated node count: 7318/1000000
+Post‐expand include size: 73735/2097152 bytes
+Template argument size: 17580/2097152 bytes
 Highest expansion depth: 15/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2489-0!*!0!!*!*!* and timestamp 20140704190103 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2489-0!*!0!!*!*!* and timestamp 20151130140600 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -484,8 +486,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/ratio/ratio" title="cpp/numeric/ratio/ratio" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 19 March 2014, at 08:57.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 11,714 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 19 March 2014, at 07:57.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 33,193 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -518,7 +520,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.203 secs. -->
+</script><!-- Served in 4.004 secs. -->
 	</body>
-<!-- Cached 20140704190103 -->
+<!-- Cached 20151130140600 -->
 </html>

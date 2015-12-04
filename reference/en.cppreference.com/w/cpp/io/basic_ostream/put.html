@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -336,20 +337,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'a'</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// normal usage</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'<span class="es1">\n</span>'</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'a'</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// normal usage</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'<span class="es1">\n</span>'</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ofstream.html"><span class="kw1418">std::<span class="me2">ofstream</span></span></a> s<span class="br0">&#40;</span><span class="st0">&quot;/does/not/exist/&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ofstream.html"><span class="kw1456">std::<span class="me2">ofstream</span></span></a> s<span class="br0">&#40;</span><span class="st0">&quot;/does/not/exist/&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     s.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// pretend the stream is good</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Unformatted output: &quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Unformatted output: &quot;</span><span class="sy4">;</span>
     s.<span class="me1">put</span><span class="br0">&#40;</span><span class="st0">'c'</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// this will set badbit, but not failbit</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fail=&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">bool</span><span class="br0">&#40;</span>s.<span class="me1">rdstate</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> s.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bad=&quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">bad</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fail=&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">bool</span><span class="br0">&#40;</span>s.<span class="me1">rdstate</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> s.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bad=&quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">bad</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     s.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Formatted output:   &quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Formatted output:   &quot;</span><span class="sy4">;</span>
     s <span class="sy1">&lt;&lt;</span> <span class="st0">'c'</span><span class="sy4">;</span> <span class="co1">// this will set badbit and failbit</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fail=&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">bool</span><span class="br0">&#40;</span>s.<span class="me1">rdstate</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> s.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bad=&quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">bad</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fail=&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">bool</span><span class="br0">&#40;</span>s.<span class="me1">rdstate</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> s.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; bad=&quot;</span> <span class="sy1">&lt;&lt;</span> s.<span class="me1">bad</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -363,7 +364,7 @@ Formatted output:    fail=1 bad=1</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="operator_ltlt2.html" title="cpp/io/basic ostream/operator ltlt2"> <span class="t-lines"><span>operator&lt;&lt;<span class="t-dsc-small">(std::basic_ostream)</span></span></span></a></div></div>
 </td>
-<td>   inserts character data <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ostream/dsc_operator_ltlt2&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   inserts character data <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_ostream/dsc_operator_ltlt2&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -375,15 +376,15 @@ Formatted output:    fail=1 bad=1</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3484/1000000
-Preprocessor generated node count: 7788/1000000
-Post‐expand include size: 92313/2097152 bytes
-Template argument size: 16173/2097152 bytes
+Preprocessor visited node count: 3496/1000000
+Preprocessor generated node count: 7856/1000000
+Post‐expand include size: 92962/2097152 bytes
+Template argument size: 16258/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:550-0!*!0!!en!*!* and timestamp 20140704193410 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:550-0!*!0!!en!*!* and timestamp 20150825051122 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -419,7 +420,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 17:16.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,220 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,467 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -452,7 +453,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.610 secs. -->
+</script><!-- Served in 1.559 secs. -->
 	</body>
-<!-- Cached 20140704193410 -->
+<!-- Cached 20150825051122 -->
 </html>

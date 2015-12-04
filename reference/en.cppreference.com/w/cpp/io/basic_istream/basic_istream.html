@@ -149,7 +149,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="basic_istream.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/io/basic_istream/basic_istream&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:cpp/io/basic_istream/basic_istream"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -293,7 +294,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istream/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> basic_istream<span class="br0">&#40;</span> <a href="../basic_streambuf.html"><span class="kw1352">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> sb<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> basic_istream<span class="br0">&#40;</span> <a href="../basic_streambuf.html"><span class="kw1356">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> sb<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -333,14 +334,14 @@ basic_istream<span class="br0">&#40;</span> basic_istream<span class="sy3">&amp;
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a> s1<span class="br0">&#40;</span><span class="st0">&quot;hello&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_istream.html"><span class="kw1412">std::<span class="me2">istream</span></span></a> s2<span class="br0">&#40;</span>s1.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>                        <span class="co1">// OK: s2 shares the buffer with s1</span>
+    <a href="../basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a> s1<span class="br0">&#40;</span><span class="st0">&quot;hello&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istream.html"><span class="kw1416">std::<span class="me2">istream</span></span></a> s2<span class="br0">&#40;</span>s1.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>                        <span class="co1">// OK: s2 shares the buffer with s1</span>
 &#160;
 <span class="co1">//    std::istream s3(std::istringstream(&quot;test&quot;));      // ERROR: move constructor is protected</span>
 <span class="co1">//    std::istream s4(s2);                              // ERROR: copy constructor is deleted</span>
-    <a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a> s5<span class="br0">&#40;</span><a href="../basic_istringstream.html"><span class="kw1420">std::<span class="me2">istringstream</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;world&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK: move ctor called by derived class</span>
+    <a href="../basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a> s5<span class="br0">&#40;</span><a href="../basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;world&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK: move ctor called by derived class</span>
 &#160;
-    <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> s5.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> s5.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -349,15 +350,15 @@ basic_istream<span class="br0">&#40;</span> basic_istream<span class="sy3">&amp;
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3708/1000000
-Preprocessor generated node count: 6606/1000000
-Post‐expand include size: 89469/2097152 bytes
-Template argument size: 15874/2097152 bytes
+Preprocessor visited node count: 3722/1000000
+Preprocessor generated node count: 6665/1000000
+Post‐expand include size: 90028/2097152 bytes
+Template argument size: 15923/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:517-0!*!0!!*!*!* and timestamp 20140705044931 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:517-0!*!0!!*!*!* and timestamp 20150523213621 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -393,7 +394,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 10 May 2014, at 04:13.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,838 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,511 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -426,7 +427,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.522 secs. -->
+</script><!-- Served in 1.478 secs. -->
 	</body>
-<!-- Cached 20140705044932 -->
+<!-- Cached 20150523213626 -->
 </html>

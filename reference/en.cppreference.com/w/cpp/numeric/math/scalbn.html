@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
@@ -361,7 +362,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &#160; &#160; &#160; scalbn<span class="br0">&#40;</span> <span class="kw4">float</span> x, <span class="kw4">int</span> exp <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
@@ -403,7 +405,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<div class="t-li1"><span class="t-li">1-3,5-7)</span> Multiplies a floating point value <code>x</code> by <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">FLT_RADIX</a></span> raised to power <code>exp</code>.</div>
+<div class="t-li1"><span class="t-li">1-3,5-7)</span> Multiplies a floating point value <code>x</code> by <span class="t-lc">FLT_RADIX</span> raised to power <code>exp</code>.</div>
 <div class="t-li1"><span class="t-li">4,8)</span> A set of overloads or a function template accepting an argument of any <a href="../../types/is_integral.html" title="cpp/types/is integral">integral type</a>. Equivalent to <span class="t-v">(2)</span> or <span class="t-v">(6)</span> (the argument is cast to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>).</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -434,7 +436,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  integer value
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/scalbn&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>If no errors occur, <code>x</code> multiplied by <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">FLT_RADIX</a></span> to the power of <code>arg</code> (<span class="texhtml" style="white-space: nowrap;">x&#215;FLT_RADIX<span class="t-su">exp<br /></span></span>) is returned.
+<p>If no errors occur, <code>x</code> multiplied by <span class="t-lc">FLT_RADIX</span> to the power of <code>arg</code> (<span class="texhtml" style="white-space: nowrap;">x&#215;FLT_RADIX<span class="t-su">exp<br /></span></span>) is returned.
 </p><p>If a range error due to overflow occurs, <code>±HUGE_VAL</code>, <code>±HUGE_VALF</code>, or <code>±HUGE_VALL</code> is returned.
 </p><p>If a range error due to underflow occurs, the correct result (after rounding) is returned.
 </p>
@@ -442,7 +444,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Errors are reported as specified in <a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a>
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
-<ul><li> Unless a range error occurs, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> is never raised (the result is exact)
+<ul><li> Unless a range error occurs, <span class="t-lc">FE_INEXACT</span> is never raised (the result is exact)
 </li><li> Unless a range error occurs, <a href="../fenv/FE_round.html" title="cpp/numeric/fenv/FE round">the current rounding mode</a> is ignored
 </li><li> If <code>x</code> is ±0, it is returned, unmodified
 </li><li> If <code>x</code> is ±∞, it is returned, unmodified
@@ -450,10 +452,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li><li> If <code>x</code> is NaN, NaN is returned
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/scalbn&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>On binary systems (where <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">FLT_RADIX</a></span> is <code>2</code>), <code>std::scalbn</code> is equivalent to <span class="t-lc"><a href="ldexp.html" title="cpp/numeric/math/ldexp">std::ldexp</a></span>.
+<p>On binary systems (where <span class="t-lc">FLT_RADIX</span> is <code>2</code>), <code>std::scalbn</code> is equivalent to <span class="t-lc">std::ldexp</span>.
 </p><p>Although <code>std::scalbn</code> and <code>std::scalbln</code> are specified to perform the operation efficiently, on many implementations they are less efficient than multiplication or division by a power of two using arithmetic operators.
 </p><p>The function name stands for "new scalb", where <code>scalb</code> was an older non-standard function whose second argument had floating-point type.
-</p><p>The <code>scalbln</code> function is provided because the factor required to scale from the smallest positive floating-point value to the largest finite one may be greater than 32767, the standard-guaranteed <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">INT_MAX</a></span>. In particular, for the 80-bit <code>long double</code>, the factor is 32828.
+</p><p>The <code>scalbln</code> function is provided because the factor required to scale from the smallest positive floating-point value to the largest finite one may be greater than 32767, the standard-guaranteed <span class="t-lc">INT_MAX</span>. In particular, for the 80-bit <code>long double</code>, the factor is 32828.
 </p><p>The GNU implementation does not set <code>errno</code> regardless of <code>math_errhandling</code>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/scalbn&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -467,22 +469,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(7, -4) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="nu0">7</span>, <span class="sy2">-</span><span class="nu0">4</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+    <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(7, -4) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="nu0">7</span>, <span class="sy2">-</span><span class="nu0">4</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(1, -1074) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="sy2">-</span><span class="nu0">1074</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (minimum positive subnormal double)<span class="es1">\n</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(nextafter(1,0), 1024) = &quot;</span>
-              <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><a href="nextafter.html"><span class="kw1141">std::<span class="me2">nextafter</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#41;</span>, <span class="nu0">1024</span><span class="br0">&#41;</span>
+              <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><a href="nextafter.html"><span class="kw1174">std::<span class="me2">nextafter</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#41;</span>, <span class="nu0">1024</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (largest finite double)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="co1">// special values</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(-0, 10) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span>, <span class="nu0">10</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(-Inf, -1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1153">INFINITY</span></a>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(-0, 10) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span>, <span class="nu0">10</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(-Inf, -1) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1186">INFINITY</span></a>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// error handling</span>
-    <span class="kw2">errno</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <a href="http://en.cppreference.com/w/cpp/numeric/fenv/fecrearexcept"><span class="kw1163">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1174">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(1, 1024) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">1024</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw708">ERANGE</span></a><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == ERANGE: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw976">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1164">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1178">FE_OVERFLOW</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_OVERFLOW raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw2">errno</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> <a href="../fenv/feclearexcept.html"><span class="kw1196">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1207">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;scalbn(1, 1024) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">scalbn</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">1024</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw742">ERANGE</span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    errno == ERANGE: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1003">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1197">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1211">FE_OVERFLOW</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_OVERFLOW raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -518,15 +520,15 @@ scalbn(1, 1024) = inf
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7425/1000000
-Preprocessor generated node count: 9016/1000000
-Post‐expand include size: 212241/2097152 bytes
-Template argument size: 41353/2097152 bytes
+Preprocessor visited node count: 7441/1000000
+Preprocessor generated node count: 9084/1000000
+Post‐expand include size: 212506/2097152 bytes
+Template argument size: 41402/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1371-0!*!0!!en!*!* and timestamp 20140719225620 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1371-0!*!0!!en!*!* and timestamp 20151130145934 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -561,8 +563,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/scalbn" title="cpp/numeric/math/scalbn" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 19 July 2014, at 15:56.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,450 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 19 July 2014, at 14:56.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,204 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -595,7 +597,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.092 secs. -->
+</script><!-- Served in 3.099 secs. -->
 	</body>
-<!-- Cached 20140720130648 -->
+<!-- Cached 20151130145934 -->
 </html>

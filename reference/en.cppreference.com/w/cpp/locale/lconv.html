@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -335,14 +336,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> lconv<span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class <code>std::lconv</code> contains numeric and monetary formatting rules as defined by a C locale. Objects of this struct may be obtained with <span class="t-lc"><a href="localeconv.html" title="cpp/locale/localeconv">std::localeconv</a></span>. The members of <code>std::lconv</code> are values of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> and of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span>. Each <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span> member except <code>decimal_point</code> may be pointing at a null character (that is, at an empty C-string). The members of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> are all non-negative numbers, any of which may be <span class="t-lc"><a href="../types/climits.html" title="cpp/types/climits">CHAR_MAX</a></span> if the corresponding value is not available in the current C locale.
+<p>The class <code>std::lconv</code> contains numeric and monetary formatting rules as defined by a C locale. Objects of this struct may be obtained with <span class="t-lc">std::localeconv</span>. The members of <code>std::lconv</code> are values of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> and of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span>. Each <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span> member except <code>decimal_point</code> may be pointing at a null character (that is, at an empty C-string). The members of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> are all non-negative numbers, any of which may be <span class="t-lc">CHAR_MAX</span> if the corresponding value is not available in the current C locale.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -363,21 +365,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> decimal_point</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> decimal_point</span></span></div></div>
 </td>
 <td>   the character used as the decimal point <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> thousands_sep</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> thousands_sep</span></span></div></div>
 </td>
 <td>   the character used to separate groups of digits before the decimal point <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> grouping</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> grouping</span></span></div></div>
 </td>
 <td>   a string whose elements indicate the sizes of digit groups <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
@@ -387,35 +389,35 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> mon_decimal_point</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> mon_decimal_point</span></span></div></div>
 </td>
 <td>   the character used as the decimal point <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> mon_thousands_sep</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> mon_thousands_sep</span></span></div></div>
 </td>
 <td>   the character used to separate groups of digits before the decimal point <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> mon_grouping</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> mon_grouping</span></span></div></div>
 </td>
 <td>   a string whose elements indicate the sizes of digit groups <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> positive_sign</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> positive_sign</span></span></div></div>
 </td>
 <td>   a string used to indicate non-negative monetary quantity <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> negative_sign</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> negative_sign</span></span></div></div>
 </td>
 <td>   a string used to indicate negative monetary quantity <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
@@ -425,56 +427,56 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> currency_symbol</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> currency_symbol</span></span></div></div>
 </td>
 <td>   the symbol used for currency in the current C locale <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> frac_digits</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> frac_digits</span></span></div></div>
 </td>
 <td>   the number of digits after the decimal point to display in a monetary quantity <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> p_cs_precedes</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> p_cs_precedes</span></span></div></div>
 </td>
 <td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> if currency_symbol is placed before non-negative value, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> if after <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> n_cs_precedes</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> n_cs_precedes</span></span></div></div>
 </td>
 <td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> if currency_symbol is placed before negative value, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> if after <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> p_sep_by_space</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> p_sep_by_space</span></span></div></div>
 </td>
 <td>   indicates the separation of <code>currency_symbol</code>, <code>positive_sign</code>, and the non-negative monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> n_sep_by_space</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> n_sep_by_space</span></span></div></div>
 </td>
 <td>   indicates the separation of <code>currency_symbol</code>, <code>negative_sign</code>, and the negative monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> p_sign_posn</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> p_sign_posn</span></span></div></div>
 </td>
 <td>   indicates the position of <code>positive_sign</code> in a non-negative monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> n_sign_posn</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> n_sign_posn</span></span></div></div>
 </td>
 <td>   indicates the position of <code>negative_sign</code> in a negative monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
@@ -484,63 +486,63 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char*</span> int_curr_symbol</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char*</span> int_curr_symbol</span></span></div></div>
 </td>
 <td>   the string used as international currency name in the current C locale <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_frac_digits</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_frac_digits</span></span></div></div>
 </td>
 <td>   the number of digits after the decimal point to display in an international monetary quantity <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_p_cs_precedes</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_p_cs_precedes</span></span></div></div>
 </td>
 <td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> if currency_symbol is placed before non-negative international monetary value, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> if after <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_n_cs_precedes</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_n_cs_precedes</span></span></div></div>
 </td>
 <td>   <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> if currency_symbol is placed before negative international monetary value, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> if after <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_p_sep_by_space</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_p_sep_by_space</span></span></div></div>
 </td>
 <td>   indicates the separation of <code>currency_symbol</code>, <code>positive_sign</code>, and the non-negative international monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_n_sep_by_space</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_n_sep_by_space</span></span></div></div>
 </td>
 <td>   indicates the separation of <code>currency_symbol</code>, <code>negative_sign</code>, and the negative international monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_p_sign_posn</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_p_sign_posn</span></span></div></div>
 </td>
 <td>   indicates the position of <code>positive_sign</code> in a non-negative international monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-dsc-small">char</span> int_n_sign_posn</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span><span class="t-dsc-small">char</span> int_n_sign_posn</span></span></div></div>
 </td>
 <td>   indicates the position of <code>negative_sign</code> in a negative international monetary value <br /> <span class="t-mark">(public member object)</span>
 </td></tr>
 
 </table>
 <p><br />
-The characters of the C-strings pointed to by <code>grouping</code> and <code>mon_grouping</code> are interpreted according to their numeric values. When the terminating <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span></span> is encountered, the last value seen is assumed to repeat for the remainder of digits. If <span class="t-lc"><a href="../types/climits.html" title="cpp/types/climits">CHAR_MAX</a></span> is encountered, no further digits are grouped. the typical grouping of three digits at a time is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es5">\003</span>&quot;</span></span></span>.
+The characters of the C-strings pointed to by <code>grouping</code> and <code>mon_grouping</code> are interpreted according to their numeric values. When the terminating <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span></span> is encountered, the last value seen is assumed to repeat for the remainder of digits. If <span class="t-lc">CHAR_MAX</span> is encountered, no further digits are grouped. the typical grouping of three digits at a time is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es5">\003</span>&quot;</span></span></span>.
 </p><p>The values of <code>p_sep_by_space</code>, <code>n_sep_by_space</code>, <code>int_p_sep_by_space</code>, <code>int_n_sep_by_space</code> are interpreted as follows:
 </p>
 <table class="t-dsc-begin">
@@ -613,9 +615,9 @@ The characters of the C-strings pointed to by <code>grouping</code> and <code>mo
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="setlocale.html"><span class="kw1670">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;ja_JP.UTF-8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">lconv</span><span class="sy2">*</span> lc <span class="sy1">=</span> <a href="localeconv.html"><span class="kw1671">std::<span class="me2">localeconv</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Japanese currency symbol: &quot;</span> <span class="sy1">&lt;&lt;</span> lc<span class="sy2">-</span><span class="sy1">&gt;</span>currency_symbol
+    <a href="setlocale.html"><span class="kw1714">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;ja_JP.UTF-8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">lconv</span><span class="sy2">*</span> lc <span class="sy1">=</span> <a href="localeconv.html"><span class="kw1715">std::<span class="me2">localeconv</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Japanese currency symbol: &quot;</span> <span class="sy1">&lt;&lt;</span> lc<span class="sy2">-</span><span class="sy1">&gt;</span>currency_symbol
               <span class="sy1">&lt;&lt;</span> <span class="st0">'('</span> <span class="sy1">&lt;&lt;</span> lc<span class="sy2">-</span><span class="sy1">&gt;</span>int_curr_symbol <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -640,7 +642,7 @@ The characters of the C-strings pointed to by <code>grouping</code> and <code>mo
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="moneypunct.html" title="cpp/locale/moneypunct"> <span class="t-lines"><span>moneypunct</span></span></a></div></div>
 </td>
-<td>   defines monetary formatting parameters used by <span class="t-lc"><a href="money_get.html" title="cpp/locale/money get">std::money_get</a></span> and <span class="t-lc"><a href="money_put.html" title="cpp/locale/money put">std::money_put</a></span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_moneypunct&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   defines monetary formatting parameters used by <span class="t-lc">std::money_get</span> and <span class="t-lc">std::money_put</span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_moneypunct&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -651,15 +653,15 @@ The characters of the C-strings pointed to by <code>grouping</code> and <code>mo
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7844/1000000
-Preprocessor generated node count: 11418/1000000
-Post‐expand include size: 172504/2097152 bytes
-Template argument size: 42989/2097152 bytes
+Preprocessor visited node count: 8192/1000000
+Preprocessor generated node count: 11534/1000000
+Post‐expand include size: 184629/2097152 bytes
+Template argument size: 45156/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5136-0!*!0!!en!*!* and timestamp 20140705225015 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5136-0!*!0!!en!*!* and timestamp 20151130144845 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -694,8 +696,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/lconv" title="cpp/locale/lconv" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:08.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,640 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:08.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,386 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -728,7 +730,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.285 secs. -->
+</script><!-- Served in 3.249 secs. -->
 	</body>
-<!-- Cached 20140705225015 -->
+<!-- Cached 20151130144846 -->
 </html>

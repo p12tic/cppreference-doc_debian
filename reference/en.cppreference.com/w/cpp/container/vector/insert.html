@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -344,18 +345,25 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 </tr>
 </tbody><tbody>
 <tr class="t-dcl t-since-cxx11">
-<td> <div><span class="mw-geshi cpp source-cpp">iterator insert<span class="br0">&#40;</span> const_iterator pos, <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> ilist <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp">iterator insert<span class="br0">&#40;</span> const_iterator pos, <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> ilist <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (5) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Inserts elements at specified location in the container.
+<p>Inserts elements at the specified location in the container.
 </p>
-<div class="t-li1"><span class="t-li">1-2)</span> inserts <code>value</code> before the location pointed to by <code>pos</code></div>
-<div class="t-li1"><span class="t-li">3)</span> inserts <code>count</code> copies of the <code>value</code> before the location pointed to by <code>pos</code></div>
-<div class="t-li1"><span class="t-li">4)</span> inserts elements from range <code>[first, last)</code> before the location pointed to by <code>pos</code>. <span class="t-rev-inl t-since-cxx11"><span>This overload does not participate in overload resolution if <code>InputIt</code> does not satisfy <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>.</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span> The behavior is undefined if <code>first</code> and <code>last</code> are iterators into <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>. </div>
-<div class="t-li1"><span class="t-li">5)</span> inserts elements from initializer list <code>ilist</code>.</div>
+<div class="t-li1"><span class="t-li">1-2)</span> inserts <code>value</code> before <code>pos</code></div>
+<div class="t-li1"><span class="t-li">3)</span> inserts <code>count</code> copies of the <code>value</code> before <code>pos</code></div>
+<div class="t-li1"><span class="t-li">4)</span> inserts elements from range <code>[first, last)</code> before <code>pos</code>. 
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11"><td>This overload has the same effect as overload <span class="t-v">(3)</span> if <code>InputIt</code> is an integral type.</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>This overload only participates in overload resolution if <code>InputIt</code> qualifies as <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>, to avoid ambiguity with the overload <span class="t-v">(3)</span>.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
+</table>
+The behavior is undefined if <code>first</code> and <code>last</code> are iterators into <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>. </div>
+<div class="t-li1"><span class="t-li">5)</span> inserts elements from initializer list <code>ilist</code> before <code>pos</code>.</div>
 <p>Causes reallocation if the new <span class="t-lc"><a href="size.html" title="cpp/container/vector/size">size()</a></span> is greater than the old <span class="t-lc"><a href="capacity.html" title="cpp/container/vector/capacity">capacity()</a></span>.&#32;If the new <span class="t-lc"><a href="size.html" title="cpp/container/vector/size">size()</a></span> is greater than <span class="t-lc"><a href="capacity.html" title="cpp/container/vector/capacity">capacity()</a></span>, all iterators and references are invalidated. Otherwise, only the iterators and references before the insertion point remain valid. The past-the-end iterator is also invalidated.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -377,7 +385,7 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 </td>
 <td> -
 </td>
-<td>  iterator to the location before which the content will be inserted. <code>pos</code> may be the <span class="t-lc"><a href="end.html" title="cpp/container/vector/end">end()</a></span> iterator
+<td>  iterator before which the content will be inserted. <code>pos</code> may be the <span class="t-lc"><a href="end.html" title="cpp/container/vector/end">end()</a></span> iterator
 </td></tr>
 <tr class="t-par">
 <td>  value
@@ -404,7 +412,22 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 <td colspan="3"> Type requirements
 </td></tr>
 <tr class="t-par-req">
-<td colspan="3"> -<div class="spacer"></div><code>InputIt</code> must meet the requirements of <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>.
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><code>CopyAssignable</code></a> and <a href="../../concept/CopyInsertable.html" title="cpp/concept/CopyInsertable"><code>CopyInsertable</code></a> in order to use overload (1).
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"><code>MoveAssignable</code></a> and <a href="../../concept/MoveInsertable.html" title="cpp/concept/MoveInsertable"><code>MoveInsertable</code></a> in order to use overload (2).
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><code>CopyAssignable</code></a> and <a href="../../concept/CopyInsertable.html" title="cpp/concept/CopyInsertable"><code>CopyInsertable</code></a> in order to use overload (3).
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/EmplaceConstructible.html" title="cpp/concept/EmplaceConstructible"><code>EmplaceConstructible</code></a> in order to use overload (4,5).
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"><code>MoveAssignable</code></a> and <a href="../../concept/MoveInsertable.html" title="cpp/concept/MoveInsertable"><code>MoveInsertable</code></a> in order to use overload (4). required only if <code>InputIt</code> satisfies <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a> but not <a href="../../concept/ForwardIterator.html" title="cpp/concept/ForwardIterator"><code>ForwardIterator</code></a>. <span class="t-mark-rev t-until-cxx17">(until C++17)</span>
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>T</code> must meet the requirements of <a href="../../concept/Swappable.html" title="cpp/concept/Swappable"><code>Swappable</code></a>, <a href="../../concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"><code>MoveAssignable</code></a>, <a href="../../concept/MoveConstructible.html" title="cpp/concept/MoveConstructible"><code>MoveConstructible</code></a> and <a href="../../concept/MoveInsertable.html" title="cpp/concept/MoveInsertable"><code>MoveInsertable</code></a> in order to use overload (4,5). <span class="t-mark-rev t-since-cxx17">(since C++17)</span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/insert&amp;action=edit&amp;section=T-2" title="Template:cpp/container/insert">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <div class="t-li1"><span class="t-li">1-2)</span> Iterator pointing to the inserted <code>value</code></div>
@@ -414,9 +437,9 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/insert&amp;action=edit&amp;section=T-3" title="Template:cpp/container/insert">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <div class="t-li1"><span class="t-li">1-2)</span> Constant plus linear in the distance between <code>pos</code> and end of the container.</div>
 <div class="t-li1"><span class="t-li">3)</span> Linear in <span class="t-c"><span class="mw-geshi cpp source-cpp">count</span></span> plus linear in the distance between <code>pos</code> and end of the container.</div>
-<div class="t-li1"><span class="t-li">4)</span> Linear in <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span> plus linear in the distance between <code>pos</code> and end of the container.</div>
+<div class="t-li1"><span class="t-li">4)</span> Linear in <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw578">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span> plus linear in the distance between <code>pos</code> and end of the container.</div>
 <div class="t-li1"><span class="t-li">5)</span> Linear in <span class="t-c"><span class="mw-geshi cpp source-cpp">ilist.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> plus linear in the distance between <code>pos</code> and end of the container.</div>
-<h3> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/insert&amp;action=edit&amp;section=T-4" title="Template:cpp/container/insert">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <p>If an exception is thrown when inserting a single element at the end, and T is <a href="../../concept/CopyInsertable.html" title="cpp/concept/CopyInsertable"><code>CopyInsertable</code></a> or <span class="t-lc">std::is_nothrow_move_constructible&lt;T&gt;::value</span> is <span class="t-lc">true</span>, there are no effects (strong exception guarantee).
 </p>
 <h3> <span class="mw-headline" id="Example">Example</span></h3>
@@ -424,17 +447,17 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;vector&gt;</span>
 &#160;
-<span class="kw4">void</span> print_vec<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> vec<span class="br0">&#41;</span>
+<span class="kw4">void</span> print_vec<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> vec<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> x<span class="sy4">:</span> vec<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-         <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> x<span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> x<span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main <span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec<span class="br0">&#40;</span><span class="nu0">3</span>,<span class="nu0">100</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec<span class="br0">&#40;</span><span class="nu0">3</span>,<span class="nu0">100</span><span class="br0">&#41;</span><span class="sy4">;</span>
     print_vec<span class="br0">&#40;</span>vec<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">auto</span> it <span class="sy1">=</span> vec.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -447,7 +470,7 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
     <span class="co1">// &quot;it&quot; no longer valid, get a new one:</span>
     it <span class="sy1">=</span> vec.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../vector.html"><span class="kw1067">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec2<span class="br0">&#40;</span><span class="nu0">2</span>,<span class="nu0">400</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> vec2<span class="br0">&#40;</span><span class="nu0">2</span>,<span class="nu0">400</span><span class="br0">&#41;</span><span class="sy4">;</span>
     vec.<span class="me1">insert</span><span class="br0">&#40;</span>it<span class="sy2">+</span><span class="nu0">2</span>, vec2.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, vec2.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     print_vec<span class="br0">&#40;</span>vec<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
@@ -463,7 +486,7 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 300 300 400 400 200 100 100 100
 501 502 503 300 300 400 400 200 100 100 100</pre></div></div> 
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/insert&amp;action=edit&amp;section=T-7" title="Template:cpp/container/insert">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/insert&amp;action=edit&amp;section=T-6" title="Template:cpp/container/insert">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
@@ -476,21 +499,21 @@ iterator insert<span class="br0">&#40;</span> const_iterator pos, InputIt first,
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="push_back.html" title="cpp/container/vector/push back"> <span class="t-lines"><span>push_back</span></span></a></div></div>
 </td>
-<td>   adds elements to the end <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_push_back&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   adds an element to the end <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_push_back&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5369/1000000
-Preprocessor generated node count: 10561/1000000
-Post‐expand include size: 175528/2097152 bytes
-Template argument size: 23820/2097152 bytes
+Preprocessor visited node count: 6099/1000000
+Preprocessor generated node count: 11083/1000000
+Post‐expand include size: 198006/2097152 bytes
+Template argument size: 29360/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:458-0!*!0!!en!*!* and timestamp 20140704191350 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:458-0!*!0!!en!*!* and timestamp 20151028042749 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -526,7 +549,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:40.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 44,107 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 125,101 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -559,7 +582,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.303 secs. -->
+</script><!-- Served in 2.996 secs. -->
 	</body>
-<!-- Cached 20140704191351 -->
+<!-- Cached 20151028042749 -->
 </html>

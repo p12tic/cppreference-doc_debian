@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -287,7 +288,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Constructs new file stream.
 </p>
 <div class="t-li1"><span class="t-li">1)</span> Default constructor: constructs a stream that is not associated with a file: default-constructs the <span class="t-lc"><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">std::basic_filebuf</a></span> and constructs the base with the pointer to this default-constructed <span class="t-lc"><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">std::basic_filebuf</a></span> member.</div>
-<div class="t-li1"><span class="t-li">2)</span> First, performs the same steps as the default constructor, then asssociates the stream with a file by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>open<span class="br0">&#40;</span>filename, mode<span class="br0">&#41;</span></span></span>.. If the open() call returns a null pointer, sets <span class="t-c"><span class="mw-geshi cpp source-cpp">setstate<span class="br0">&#40;</span>failbit<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">2)</span> First, performs the same steps as the default constructor, then associates the stream with a file by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>open<span class="br0">&#40;</span>filename, mode<span class="br0">&#41;</span></span></span> (see <span class="t-lc"><a href="../basic_filebuf/open.html" title="cpp/io/basic filebuf/open">std::basic_filebuf::open</a></span> for the details on the effects of that call). If the <span class="t-c"><span class="mw-geshi cpp source-cpp">open<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> call returns a null pointer, sets <span class="t-c"><span class="mw-geshi cpp source-cpp">setstate<span class="br0">&#40;</span>failbit<span class="br0">&#41;</span></span></span>.</div>
 <div class="t-li1"><span class="t-li">3)</span> Same as <span class="t-c"><span class="mw-geshi cpp source-cpp">basic_fstream<span class="br0">&#40;</span>filename.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, mode<span class="br0">&#41;</span></span></span>. </div>
 <div class="t-li1"><span class="t-li">4)</span> Move constructor. First, move-constructs the base class from <code>other</code> (which does not affect the <code>rdbuf()</code> pointer), then move-constructs the <span class="t-lc"><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">std::basic_filebuf</a></span> member, then calls <span class="t-c"><span class="mw-geshi cpp source-cpp">this<span class="sy2">-</span><span class="sy1">&gt;</span>set_rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> to install the new <code>basic_filebuf</code> as the <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> pointer in the base class.</div>
 <div class="t-li1"><span class="t-li">5)</span> The copy-constructor is deleted: this class is not copyable.</div>
@@ -327,7 +328,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <a href="../ios_base/openmode.html" title="cpp/io/ios base/openmode"><tt>binary</tt></a>
 </td>
-<td>  open in binary mode
+<td>  open in <a href="../c.html#Binary_and_text_modes" title="cpp/io/c">binary mode</a>
 </td></tr>
 
 
@@ -368,17 +369,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  another file stream to use as source
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_fstream/constructor&amp;action=edit&amp;section=T-2" title="Template:cpp/io/basic fstream/constructor">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="t-example t-example-std-cxx11"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;fstream&gt;</span>
 <span class="co2">#include &lt;utility&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-<a href="../basic_fstream.html"><span class="kw1419">std::<span class="me2">fstream</span></span></a> f0<span class="sy4">;</span>
-    <a href="../basic_fstream.html"><span class="kw1419">std::<span class="me2">fstream</span></span></a> f1<span class="br0">&#40;</span><span class="st0">&quot;test.bin&quot;</span>, std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">binary</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> name <span class="sy1">=</span> <span class="st0">&quot;example.txt&quot;</span><span class="sy4">;</span>
-    <a href="../basic_fstream.html"><span class="kw1419">std::<span class="me2">fstream</span></span></a> f2<span class="br0">&#40;</span>name<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_fstream.html"><span class="kw1419">std::<span class="me2">fstream</span></span></a> f3<span class="br0">&#40;</span><a href="../../utility/move.html"><span class="kw914">std::<span class="me2">move</span></span></a><span class="br0">&#40;</span>f1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_fstream.html"><span class="kw1457">std::<span class="me2">fstream</span></span></a> f0<span class="sy4">;</span>
+    <a href="../basic_fstream.html"><span class="kw1457">std::<span class="me2">fstream</span></span></a> f1<span class="br0">&#40;</span><span class="st0">&quot;test.bin&quot;</span>, std<span class="sy4">::</span><span class="me2">ios</span><span class="sy4">::</span><span class="me2">binary</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> name <span class="sy1">=</span> <span class="st0">&quot;example.txt&quot;</span><span class="sy4">;</span>
+    <a href="../basic_fstream.html"><span class="kw1457">std::<span class="me2">fstream</span></span></a> f2<span class="br0">&#40;</span>name<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_fstream.html"><span class="kw1457">std::<span class="me2">fstream</span></span></a> f3<span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>f1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br /> 
 </p>
@@ -413,15 +414,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4209/1000000
-Preprocessor generated node count: 8767/1000000
-Post‐expand include size: 144860/2097152 bytes
-Template argument size: 19476/2097152 bytes
+Preprocessor visited node count: 4264/1000000
+Preprocessor generated node count: 8854/1000000
+Post‐expand include size: 146895/2097152 bytes
+Template argument size: 19688/2097152 bytes
 Highest expansion depth: 36/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:487-0!*!0!!*!*!* and timestamp 20140705044139 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:487-0!*!0!!*!*!* and timestamp 20151116191235 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -456,8 +457,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_fstream/basic_fstream" title="cpp/io/basic fstream/basic fstream" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,259 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:41.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,285 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -490,7 +491,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.209 secs. -->
+</script><!-- Served in 0.083 secs. -->
 	</body>
-<!-- Cached 20140705044139 -->
+<!-- Cached 20151116205936 -->
 </html>

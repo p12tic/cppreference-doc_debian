@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -277,21 +278,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>This class is used to ensure that the default C++ streams (<span class="t-lc"><a href="../basic_istream.html" title="cpp/io/basic istream">std::cin</a></span>, <span class="t-lc"><a href="../basic_ostream.html" title="cpp/io/basic ostream">std::cout</a></span>, etc.) are properly initialized and destructed. The class tracks how many instances of it are created and initializes the C++ streams when the first instance is constructed as well as flushes the output streams when the last instance is destructed.
+<p>This class is used to ensure that the default C++ streams (<span class="t-lc"><a href="../cin.html" title="cpp/io/cin">std::cin</a></span>, <span class="t-lc"><a href="../cout.html" title="cpp/io/cout">std::cout</a></span>, etc.) are properly initialized and destructed. The class tracks how many instances of it are created and initializes the C++ streams when the first instance is constructed as well as flushes the output streams when the last instance is destructed.
 </p><p>The header <code>&lt;iostream&gt;</code> declares (directly or indirectly) an instance of <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">Init</span></span></span> with static storage duration, whose definition is provided by the C++ library: this makes it safe to access the standard I/O streams in the constructors and destructors of static objects (as long as <code>#include &lt;iostream&gt;</code> is present in the translation unit)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/ios_base/Init&amp;action=edit&amp;section=1" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div>(constructor)</div></div>
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><span class="t-lines"><span>(constructor)</span></span></div></div>
 </td>
 <td>  if <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> is the first instance created, initializes the default C++ streams <br /> <span class="t-mark">(public member function)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div>(destructor)</div></div>
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><span class="t-lines"><span>(destructor)</span></span></div></div>
 </td>
 <td>  if <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> is the last instance created, flushes the default C++ streams <br /> <span class="t-mark">(public member function)</span>
 </td></tr>
@@ -327,15 +328,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4126/1000000
-Preprocessor generated node count: 7644/1000000
-Post‐expand include size: 103267/2097152 bytes
-Template argument size: 17775/2097152 bytes
+Preprocessor visited node count: 4164/1000000
+Preprocessor generated node count: 7694/1000000
+Post‐expand include size: 104474/2097152 bytes
+Template argument size: 17933/2097152 bytes
 Highest expansion depth: 18/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:607-0!*!0!!*!*!* and timestamp 20140705003000 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:607-0!*!0!!*!*!* and timestamp 20150825090159 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -371,7 +372,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 18 December 2013, at 15:38.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,971 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,656 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -404,7 +405,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.445 secs. -->
+</script><!-- Served in 1.391 secs. -->
 	</body>
-<!-- Cached 20140705003001 -->
+<!-- Cached 20150825090159 -->
 </html>

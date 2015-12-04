@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -322,7 +323,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/wbuffer_convert/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> wbuffer_convert<span class="br0">&#40;</span> <a href="../../io/basic_streambuf.html"><span class="kw1409">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> bytebuf <span class="sy1">=</span> <span class="nu0">0</span>,<br />
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> wbuffer_convert<span class="br0">&#40;</span> <a href="../../io/basic_streambuf.html"><span class="kw1413">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> bytebuf <span class="sy1">=</span> <span class="nu0">0</span>,<br />
 <p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; Codecvt<span class="sy2">*</span> pcvt <span class="sy1">=</span> new Codecvt,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; state_type state <span class="sy1">=</span> state_type<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -330,7 +331,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl t-since-cxx14">
-<td> <div><span class="mw-geshi cpp source-cpp">wbuffer_convert<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../wbuffer_convert.html"><span class="kw1580">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy3">&amp;</span><span class="br0">&#41;</span> <span class="sy1">=</span> delete<span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp">wbuffer_convert<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../wbuffer_convert.html"><span class="kw1589">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy3">&amp;</span><span class="br0">&#41;</span> <span class="sy1">=</span> delete<span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
@@ -372,18 +373,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// wrap a UTF-8 string stream in a UCS4 wbuffer_convert</span>
-    <a href="../../io/basic_stringbuf.html"><span class="kw1411">std::<span class="me2">stringbuf</span></span></a> utf8buf<span class="br0">&#40;</span>u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001f34c</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// or u8&quot;zß水🍌&quot;</span>
+    <a href="../../io/basic_stringbuf.html"><span class="kw1415">std::<span class="me2">stringbuf</span></span></a> utf8buf<span class="br0">&#40;</span>u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001f34c</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// or u8&quot;zß水🍌&quot;</span>
                        <span class="co1">// or &quot;\x7a\xc3\x9f\xe6\xb0\xb4\xf0\x9f\x8d\x8c&quot;;</span>
-    <a href="../wbuffer_convert.html"><span class="kw1580">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1663">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv_in<span class="br0">&#40;</span><span class="sy3">&amp;</span>utf8buf<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_istream.html"><span class="kw1426">std::<span class="me2">wistream</span></span></a> ucsbuf<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv_in<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Reading from a UTF-8 stringbuf via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../wbuffer_convert.html"><span class="kw1589">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1672">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv_in<span class="br0">&#40;</span><span class="sy3">&amp;</span>utf8buf<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/basic_istream.html"><span class="kw1430">std::<span class="me2">wistream</span></span></a> ucsbuf<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv_in<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Reading from a UTF-8 stringbuf via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">wchar_t</span> c<span class="sy4">;</span> ucsbuf.<span class="me1">get</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1471">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1455">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// wrap a UTF-8 aware std::cout in a UCS4 wbuffer_convert to output UCS4</span>
-    <a href="../wbuffer_convert.html"><span class="kw1580">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1663">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv_out<span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">wostream</span></span></a> out<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv_out<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Sending UCS4 data to std::cout via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../wbuffer_convert.html"><span class="kw1589">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1672">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv_out<span class="br0">&#40;</span><a href="../../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/basic_ostream.html"><span class="kw1432">std::<span class="me2">wostream</span></span></a> out<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv_out<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Sending UCS4 data to std::cout via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     out <span class="sy1">&lt;&lt;</span> L<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001f34c</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -399,15 +400,15 @@ zß水🍌</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4248/1000000
-Preprocessor generated node count: 6737/1000000
-Post‐expand include size: 109674/2097152 bytes
-Template argument size: 19675/2097152 bytes
+Preprocessor visited node count: 4261/1000000
+Preprocessor generated node count: 6796/1000000
+Post‐expand include size: 110233/2097152 bytes
+Template argument size: 19724/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5198-0!*!0!!*!*!* and timestamp 20140704193302 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5198-0!*!0!!*!*!* and timestamp 20150524001301 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -443,7 +444,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 17 August 2013, at 16:57.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 925 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,022 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -476,7 +477,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.558 secs. -->
+</script><!-- Served in 1.503 secs. -->
 	</body>
-<!-- Cached 20140704193302 -->
+<!-- Cached 20150524001301 -->
 </html>

@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -326,13 +327,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_streambuf.html"><span class="kw1409">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_streambuf.html"><span class="kw1409">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span> <a href="../../io/basic_streambuf.html"><span class="kw1409">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> bytebuf <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../io/basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> rdbuf<span class="br0">&#40;</span> <a href="../../io/basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> bytebuf <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -355,18 +357,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// convert UTF-8 to UCS4</span>
-    <a href="../../io/basic_stringbuf.html"><span class="kw1411">std::<span class="me2">stringbuf</span></span></a> utf8buf<span class="br0">&#40;</span>u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
+    <a href="../../io/basic_stringbuf.html"><span class="kw1449">std::<span class="me2">stringbuf</span></span></a> utf8buf<span class="br0">&#40;</span>u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
                        <span class="co1">// or &quot;\x7a\xc3\x9f\xe6\xb0\xb4\xf0\x9d\x84\x8b&quot;;</span>
-    <a href="../wbuffer_convert.html"><span class="kw1580">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1663">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv<span class="br0">&#40;</span><span class="sy3">&amp;</span>utf8buf<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_istream.html"><span class="kw1426">std::<span class="me2">wistream</span></span></a> ucsbuf<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Reading from a UTF-8 stringbuf via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../wbuffer_convert.html"><span class="kw1624">std::<span class="me2">wbuffer_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1707">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span> conv<span class="br0">&#40;</span><span class="sy3">&amp;</span>utf8buf<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/basic_istream.html"><span class="kw1464">std::<span class="me2">wistream</span></span></a> ucsbuf<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Reading from a UTF-8 stringbuf via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">wchar_t</span> c<span class="sy4">;</span> ucsbuf.<span class="me1">get</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// reuse the same wbuffer_convert to handle UCS4 to UTF-8 output</span>
-    conv.<span class="me1">rdbuf</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1428">std::<span class="me2">wostream</span></span></a> out<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Sending UCS4 data to std::cout via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    conv.<span class="me1">rdbuf</span><span class="br0">&#40;</span><a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/basic_ostream.html"><span class="kw1466">std::<span class="me2">wostream</span></span></a> out<span class="br0">&#40;</span><span class="sy3">&amp;</span>conv<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Sending UCS4 data to std::cout via wbuffer_convert:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     out <span class="sy1">&lt;&lt;</span> L<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -391,15 +393,15 @@ zß水𝄋</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4320/1000000
-Preprocessor generated node count: 7646/1000000
-Post‐expand include size: 113405/2097152 bytes
-Template argument size: 19335/2097152 bytes
+Preprocessor visited node count: 4336/1000000
+Preprocessor generated node count: 7714/1000000
+Post‐expand include size: 113970/2097152 bytes
+Template argument size: 19384/2097152 bytes
 Highest expansion depth: 19/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5299-0!*!0!!*!*!* and timestamp 20140704232940 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5299-0!*!0!!*!*!* and timestamp 20151130160312 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -434,8 +436,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/wbuffer_convert/rdbuf" title="cpp/locale/wbuffer convert/rdbuf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:11.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 802 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:11.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 2,436 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -468,7 +470,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.447 secs. -->
+</script><!-- Served in 1.486 secs. -->
 	</body>
-<!-- Cached 20140704232940 -->
+<!-- Cached 20151130160312 -->
 </html>

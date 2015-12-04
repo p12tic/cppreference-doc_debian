@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../byte.html" title="cpp/string/byte"> Byte strings</a> </td></tr>
@@ -266,7 +267,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> wctob<span class="br0">&#40;</span> std<span class="sy4">::</span><span class="me2">wint_t</span> c <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
@@ -296,7 +298,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  wide character to narrow
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/wctob&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p><span class="t-lc"><a href="../../io/c.html" title="cpp/io/c">EOF</a></span> if <code>c</code> does not represent a multibyte character with length <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> in initial shift state.
+<p><span class="t-lc">EOF</span> if <code>c</code> does not represent a multibyte character with length <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span> in initial shift state.
 </p><p>Otherwise, the single-byte representation of <code>c</code> as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> converted to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/multibyte/wctob&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -308,21 +310,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">void</span> try_narrowing<span class="br0">&#40;</span><span class="kw4">wchar_t</span> c<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> cn <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">wctob</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span>cn <span class="sy3">!</span><span class="sy1">=</span> <a href="../../io/c.html"><span class="kw1561">EOF</span></a><span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\'</span>'</span> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' narrowed to &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">+</span>cn <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>cn <span class="sy3">!</span><span class="sy1">=</span> <a href="../../io/c.html"><span class="kw1605">EOF</span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\'</span>'</span> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' narrowed to &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">+</span>cn <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\'</span>'</span> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' could not be narrowed<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\'</span>'</span> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' could not be narrowed<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;th_TH.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1462">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1446">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Thai UTF-8 locale:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;th_TH.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1504">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1488">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Thai UTF-8 locale:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     try_narrowing<span class="br0">&#40;</span>L<span class="st0">'a'</span><span class="br0">&#41;</span><span class="sy4">;</span>
     try_narrowing<span class="br0">&#40;</span>L<span class="st0">'๛'</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../locale/setlocale.html"><span class="kw1669">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1672">LC_ALL</span></a>, <span class="st0">&quot;th_TH.tis620&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1438">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Thai TIS-620 locale:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;th_TH.tis620&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Thai TIS-620 locale:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     try_narrowing<span class="br0">&#40;</span>L<span class="st0">'a'</span><span class="br0">&#41;</span><span class="sy4">;</span>
     try_narrowing<span class="br0">&#40;</span>L<span class="st0">'๛'</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -364,15 +366,15 @@ In Thai TIS-620 locale:
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2456/1000000
-Preprocessor generated node count: 6560/1000000
-Post‐expand include size: 64858/2097152 bytes
-Template argument size: 12288/2097152 bytes
+Preprocessor visited node count: 2468/1000000
+Preprocessor generated node count: 6628/1000000
+Post‐expand include size: 65409/2097152 bytes
+Template argument size: 12337/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4633-0!*!0!!en!*!* and timestamp 20140705072738 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4633-0!*!0!!en!*!* and timestamp 20151130155733 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -407,8 +409,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/string/multibyte/wctob" title="cpp/string/multibyte/wctob" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:26.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,746 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:26.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,470 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -441,7 +443,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.542 secs. -->
+</script><!-- Served in 1.445 secs. -->
 	</body>
-<!-- Cached 20140705072738 -->
+<!-- Cached 20151130155733 -->
 </html>

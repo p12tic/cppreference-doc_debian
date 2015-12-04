@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -328,7 +329,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp">wide_string from_bytes<span class="br0">&#40;</span> <span class="kw4">char</span> byte <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
@@ -355,7 +357,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>2) Converts the null-terminated multibyte character sequence beginning at the character pointed to by <code>ptr</code> to wide_string
 </p><p>3) Converts the narrow string <code>str</code> to wide_string.
 </p><p>4) Converts the narrow multibyte character sequence <code>[first, last)</code> to wide_string
-</p><p>In all cases, the conversion begins in initial shift state, unless non-initial starting state was provided to this <code>wstring_convert</code> constructor. The number of characters converted and the final value of the conversion state are remembered and can be accessed with <span class="t-lc"><a href="state.html" title="cpp/locale/wstring convert/state">state()</a></span> and <span class="t-lc"><a href="converted.html" title="cpp/locale/wstring convert/converted">converted()</a></span>
+</p><p>In all cases, the conversion begins in initial shift state, unless non-initial starting state was provided to this <code>wstring_convert</code> constructor. The number of characters converted and the final value of the conversion state are remembered and can be accessed with <span class="t-lc">state()</span> and <span class="t-lc">converted()</span>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -369,7 +371,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>A <code>wide_string</code> object containing the results of multibyte to wide conversion. If the conversion failed and there was a user-supplied wide-error string provided to the constructor of this <code>wstring_convert</code>, returns that wide-error string.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/wstring_convert/from_bytes&amp;action=edit&amp;section=2" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
-<p>If this <code>wstring_convert</code> object was constructed without a user-supplied wide-error string, throws <span class="t-lc"><a href="../../error/range_error/range_error.html" title="cpp/error/range error">std::range_error</a></span> on conversion failure.
+<p>If this <code>wstring_convert</code> object was constructed without a user-supplied wide-error string, throws <span class="t-lc">std::range_error</span> on conversion failure.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/wstring_convert/from_bytes&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -380,22 +382,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a> utf8 <span class="sy1">=</span>  u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
+    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> utf8 <span class="sy1">=</span>  u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;zß水𝄋&quot;</span>
                         <span class="co1">// or &quot;\x7a\xc3\x9f\xe6\xb0\xb4\xf0\x9d\x84\x8b&quot;;</span>
 &#160;
     <span class="co1">// the UTF-8 / UTF-16 standard conversion facet</span>
-    <a href="../wstring_convert.html"><span class="kw1579">std::<span class="me2">wstring_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8_utf16.html"><span class="kw1665">std::<span class="me2">codecvt_utf8_utf16</span></span></a><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span>, <span class="kw4">char16_t</span><span class="sy1">&gt;</span> utf16conv<span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1049">std::<span class="me2">u16string</span></span></a> utf16 <span class="sy1">=</span> utf16conv.<span class="me1">from_bytes</span><span class="br0">&#40;</span>utf8.<span class="me1">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF16 conversion produced &quot;</span> <span class="sy1">&lt;&lt;</span> utf16.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; code points:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../wstring_convert.html"><span class="kw1623">std::<span class="me2">wstring_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8_utf16.html"><span class="kw1709">std::<span class="me2">codecvt_utf8_utf16</span></span></a><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span>, <span class="kw4">char16_t</span><span class="sy1">&gt;</span> utf16conv<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1076">std::<span class="me2">u16string</span></span></a> utf16 <span class="sy1">=</span> utf16conv.<span class="me1">from_bytes</span><span class="br0">&#40;</span>utf8.<span class="me1">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF16 conversion produced &quot;</span> <span class="sy1">&lt;&lt;</span> utf16.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; code points:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">char16_t</span> c <span class="sy4">:</span> utf16<span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// the UTF-8 / UTF-32 standard conversion facet</span>
-    <a href="../wstring_convert.html"><span class="kw1579">std::<span class="me2">wstring_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1663">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span>, <span class="kw4">char32_t</span><span class="sy1">&gt;</span> utf32conv<span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1051">std::<span class="me2">u32string</span></span></a> utf32 <span class="sy1">=</span> utf32conv.<span class="me1">from_bytes</span><span class="br0">&#40;</span>utf8<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF32 conversion produced &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1462">std::<span class="me2">dec</span></span></a> <span class="sy1">&lt;&lt;</span> utf32.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; code points:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../wstring_convert.html"><span class="kw1623">std::<span class="me2">wstring_convert</span></span></a><span class="sy1">&lt;</span><a href="../codecvt_utf8.html"><span class="kw1707">std::<span class="me2">codecvt_utf8</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span>, <span class="kw4">char32_t</span><span class="sy1">&gt;</span> utf32conv<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1078">std::<span class="me2">u32string</span></span></a> utf32 <span class="sy1">=</span> utf32conv.<span class="me1">from_bytes</span><span class="br0">&#40;</span>utf8<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF32 conversion produced &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1504">std::<span class="me2">dec</span></span></a> <span class="sy1">&lt;&lt;</span> utf32.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; code points:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">char32_t</span> c <span class="sy4">:</span> utf32<span class="br0">&#41;</span>
-        <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -435,15 +437,15 @@ UTF32 conversion produced 4 code points:
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5073/1000000
-Preprocessor generated node count: 8562/1000000
-Post‐expand include size: 127489/2097152 bytes
-Template argument size: 23036/2097152 bytes
+Preprocessor visited node count: 5097/1000000
+Preprocessor generated node count: 8630/1000000
+Post‐expand include size: 127846/2097152 bytes
+Template argument size: 23085/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5182-0!*!0!!en!*!* and timestamp 20140704205024 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5182-0!*!0!!en!*!* and timestamp 20151130145500 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -478,8 +480,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/wstring_convert/from_bytes" title="cpp/locale/wstring convert/from bytes" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 09:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,665 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 08:02.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,372 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -512,7 +514,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.043 secs. -->
+</script><!-- Served in 2.023 secs. -->
 	</body>
-<!-- Cached 20140704205024 -->
+<!-- Cached 20151130145500 -->
 </html>

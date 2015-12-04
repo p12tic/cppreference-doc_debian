@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
@@ -265,7 +266,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="codectv.html" title="cpp/header/codectv" class="mw-redirect"><tt>&lt;codectv&gt;</tt></a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a></td></tr>
 </table></div></td></tr>
 </table></div>
@@ -341,83 +342,83 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div>
 </div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/header/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>This header was originally in the C standard library as <code><b>&lt;float.h&gt;</b></code>.
-</p><p>This header is part of the <a href="../types.html" title="cpp/types">type support</a> library, in particular it's part of the <a href="../types/climits.html" title="cpp/types/climits">C numeric limits interface</a>.
+</p><p>This header is part of the <a href="../types.html" title="cpp/types">type support</a> library, in particular it's part of the <a href="../types/climits.1.html" title="cpp/types/climits">C numeric limits interface</a>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/header/cfloat&amp;action=edit&amp;section=1" title="Edit section: Macros">edit</a>]</span> <span class="mw-headline" id="Macros">Macros</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_RADIX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_RADIX</span></span></div></div>
 </td>
 <td>   the radix (integer base) used by the representation of all three floating-point types  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>DECIMAL_DIG</div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>DECIMAL_DIG</span></span></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
 <td>   number of decimal digits that can be converted to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> and back without losing precision  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MIN<br />DBL_MIN<br />LDBL_MIN</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MIN</span><span>DBL_MIN</span><span>LDBL_MIN</span></span></div></div>
 </td>
 <td>   minimum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MAX<br />DBL_MAX<br />LDBL_MAX</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MAX</span><span>DBL_MAX</span><span>LDBL_MAX</span></span></div></div>
 </td>
 <td>   maximum value of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_EPSILON<br />DBL_EPSILON<br />LDBL_EPSILON</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_EPSILON</span><span>DBL_EPSILON</span><span>LDBL_EPSILON</span></span></div></div>
 </td>
 <td>   difference between <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span></span></span> and the next representable value for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_DIG<br />DBL_DIG<br />LDBL_DIG</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_DIG</span><span>DBL_DIG</span><span>LDBL_DIG</span></span></div></div>
 </td>
 <td>   number of decimal digits that can be represented without losing precision for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MANT_DIG<br />DBL_MANT_DIG<br />LDBL_MANT_DIG</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MANT_DIG</span><span>DBL_MANT_DIG</span><span>LDBL_MANT_DIG</span></span></div></div>
 </td>
 <td>   number of base <code>FLT_RADIX</code> digits that can be represented without losing precision for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MIN_EXP<br />DBL_MIN_EXP<br />LDBL_MIN_EXP</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MIN_EXP</span><span>DBL_MIN_EXP</span><span>LDBL_MIN_EXP</span></span></div></div>
 </td>
 <td>   minimum negative integer such that <code>FLT_RADIX</code> raised by power one less than that integer is a normalized <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MIN_10_EXP<br />DBL_MIN_10_EXP<br />LDBL_MIN_10_EXP</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MIN_10_EXP</span><span>DBL_MIN_10_EXP</span><span>LDBL_MIN_10_EXP</span></span></div></div>
 </td>
 <td>   minimum negative integer such that <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">10</span></span></span> raised by power one less than that integer is a normalized <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MAX_EXP<br />DBL_MAX_EXP<br />LDBL_MAX_EXP</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MAX_EXP</span><span>DBL_MAX_EXP</span><span>LDBL_MAX_EXP</span></span></div></div>
 </td>
 <td>   maximum positive integer such that <code>FLT_RADIX</code> raised by power one more than that integer is a normalized <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div>FLT_MAX_10_EXP<br />DBL_MAX_10_EXP<br />LDBL_MAX_10_EXP</div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>FLT_MAX_10_EXP</span><span>DBL_MAX_10_EXP</span><span>LDBL_MAX_10_EXP</span></span></div></div>
 </td>
 <td>   maximum positive integer such that <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">10</span></span></span> raised by power one more than that integer is a normalized <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
@@ -440,15 +441,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5918/1000000
-Preprocessor generated node count: 5632/1000000
-Post‐expand include size: 123736/2097152 bytes
-Template argument size: 31626/2097152 bytes
+Preprocessor visited node count: 6078/1000000
+Preprocessor generated node count: 5676/1000000
+Post‐expand include size: 130679/2097152 bytes
+Template argument size: 32682/2097152 bytes
 Highest expansion depth: 18/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9664-0!*!0!*!*!*!* and timestamp 20140704192514 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9664-0!*!0!*!*!*!* and timestamp 20150825085643 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -479,7 +480,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:44.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,508 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,275 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -512,7 +513,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.810 secs. -->
+</script><!-- Served in 3.761 secs. -->
 	</body>
-<!-- Cached 20140704192514 -->
+<!-- Cached 20150825085643 -->
 </html>

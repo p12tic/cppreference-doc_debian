@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="locale.html" title="cpp/locale/locale"><span class="t-lines"><span>locale</span></span></a></div></div></td></tr>
@@ -316,22 +317,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dsc-header">
-<td> <div>Defined in header <code><a href="../header/codectv.html" title="cpp/header/codecvt">&lt;codecvt&gt;</a></code>
+<td> <div>Defined in header <code><a href="../header/codecvt.html" title="cpp/header/codecvt">&lt;codecvt&gt;</a></code>
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Elem,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw4">unsigned</span> <span class="kw4">long</span> Maxcode <span class="sy1">=</span> <span class="nu12">0x10ffff</span>,<br />
-&#160; &#160; &#160; &#160; &#160; <a href="codecvt_mode.html"><span class="kw1665">std::<span class="me2">codecvt_mode</span></span></a> Mode <span class="sy1">=</span> <span class="br0">&#40;</span><a href="codecvt_mode.html"><span class="kw1665">std::<span class="me2">codecvt_mode</span></span></a><span class="br0">&#41;</span><span class="nu0">0</span> <span class="sy1">&gt;</span><br />
+&#160; &#160; &#160; &#160; &#160; <a href="codecvt_mode.html"><span class="kw1709">std::<span class="me2">codecvt_mode</span></span></a> Mode <span class="sy1">=</span> <span class="br0">&#40;</span><a href="codecvt_mode.html"><span class="kw1709">std::<span class="me2">codecvt_mode</span></span></a><span class="br0">&#41;</span><span class="nu0">0</span> <span class="sy1">&gt;</span><br />
 </p>
-<span class="kw1">class</span> codecvt_utf8_utf16 <span class="sy4">:</span> <span class="kw1">public</span> <a href="codecvt.html"><span class="kw1619">std::<span class="me2">codecvt</span></span></a><span class="sy1">&lt;</span>Elem, <span class="kw4">char</span>, <a href="../string/multibyte/mbstate_t.html"><span class="kw994">std::<span class="me2">mbstate_t</span></span></a><span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
+<span class="kw1">class</span> codecvt_utf8_utf16 <span class="sy4">:</span> <span class="kw1">public</span> <a href="codecvt.html"><span class="kw1663">std::<span class="me2">codecvt</span></span></a><span class="sy1">&lt;</span>Elem, <span class="kw4">char</span>, <a href="../string/multibyte/mbstate_t.html"><span class="kw1021">std::<span class="me2">mbstate_t</span></span></a><span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><span class="t-lc"><strong class="selflink">std::codecvt_utf8_utf16</strong></span> is a <span class="t-lc"><a href="codecvt.html" title="cpp/locale/codecvt">std::codecvt</a></span> facet which encapsulates conversion between a UTF-8 encoded byte string and UTF-16 encoded character string. If <code>Elem</code> is a 32-bit type, one UTF-16 codepoint will be stored in each 32-bit character of the output sequence. This codecvt facet can be used to read and write UTF-8 files, both text and binary.
+<p><span class="t-lc">std::codecvt_utf8_utf16</span> is a <span class="t-lc">std::codecvt</span> facet which encapsulates conversion between a UTF-8 encoded byte string and UTF-16 encoded character string. If <code>Elem</code> is a 32-bit type, one UTF-16 codepoint will be stored in each 32-bit character of the output sequence. This codecvt facet can be used to read and write UTF-8 files, both text and binary.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -342,22 +344,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Parameters"><span class="tocnumber">3.1</span> <span class="toctext">Parameters</span></a></li>
 </ul>
 </li>
-<li class="toclevel-1"><a href="codecvt_utf8_utf16.html#std::codecvt_utf8_utf16::.7Ecodecvt_utf8_utf16"><span class="tocnumber">4</span> <span class="toctext"><span>std::codecvt_utf8_utf16::</span>~codecvt_utf8_utf16</span></a>
+<li class="toclevel-1"><a href="codecvt_utf8_utf16.html#std::codecvt_utf8_utf16::.7Ecodecvt_utf8_utf16"><span class="tocnumber">4</span> <span class="toctext"><span>std::codecvt_utf8_utf16::</span>~codecvt_utf8_utf16</span></a></li>
+<li class="toclevel-1"><a href="codecvt_utf8_utf16.html#Inherited_from_std::codecvt"><span class="tocnumber">5</span> <span class="toctext">Inherited from   <span>std::</span>codecvt</span></a>
 <ul>
-<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Inherited_from_std::codecvt"><span class="tocnumber">4.1</span> <span class="toctext">Inherited from   <span>std::</span>codecvt</span></a>
-<ul>
-<li class="toclevel-3"><a href="codecvt_utf8_utf16.html#Member_types"><span class="tocnumber">4.1.1</span> <span class="toctext">Member types</span></a></li>
-<li class="toclevel-3"><a href="codecvt_utf8_utf16.html#Member_objects"><span class="tocnumber">4.1.2</span> <span class="toctext">Member objects</span></a></li>
-<li class="toclevel-3"><a href="codecvt_utf8_utf16.html#Member_functions_2"><span class="tocnumber">4.1.3</span> <span class="toctext">Member functions</span></a></li>
-<li class="toclevel-3"><a href="codecvt_utf8_utf16.html#Protected_member_functions"><span class="tocnumber">4.1.4</span> <span class="toctext">Protected member functions</span></a></li>
+<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Member_types"><span class="tocnumber">5.1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Member_objects"><span class="tocnumber">5.2</span> <span class="toctext">Member objects</span></a></li>
+<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Member_functions_2"><span class="tocnumber">5.3</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Protected_member_functions"><span class="tocnumber">5.4</span> <span class="toctext">Protected member functions</span></a></li>
 </ul>
 </li>
-<li class="toclevel-2"><a href="codecvt_utf8_utf16.html#Inherited_from_std::codecvt_base"><span class="tocnumber">4.2</span> <span class="toctext">Inherited from   <span>std::</span>codecvt_base</span></a>
+<li class="toclevel-1"><a href="codecvt_utf8_utf16.html#Inherited_from_std::codecvt_base"><span class="tocnumber">6</span> <span class="toctext">Inherited from   <span>std::</span>codecvt_base</span></a>
 <ul>
-<li class="toclevel-3 tocsection-4"><a href="codecvt_utf8_utf16.html#Example"><span class="tocnumber">4.2.1</span> <span class="toctext">Example</span></a></li>
-<li class="toclevel-3 tocsection-5"><a href="codecvt_utf8_utf16.html#See_also"><span class="tocnumber">4.2.2</span> <span class="toctext">See also</span></a></li>
-</ul>
-</li>
+<li class="toclevel-2 tocsection-4"><a href="codecvt_utf8_utf16.html#Example"><span class="tocnumber">6.1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="codecvt_utf8_utf16.html#See_also"><span class="tocnumber">6.2</span> <span class="toctext">See also</span></a></li>
 </ul>
 </li>
 </ul>
@@ -385,7 +384,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  a constant of type <span class="t-lc"><a href="codecvt_mode.html" title="cpp/locale/codecvt mode">std::codecvt_mode</a></span>
+<td>  a constant of type <span class="t-lc">std::codecvt_mode</span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/codecvt_utf8_utf16&amp;action=edit&amp;section=2" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
 <table class="t-dsc-begin">
@@ -405,7 +404,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 </table>
 <div class="t-member">
-<h1> <span class="mw-headline" id="std::codecvt_utf8_utf16::codecvt_utf8_utf16"> <span style="font-size:0.7em; line-height:130%">std::codecvt_utf8_utf16::</span>codecvt_utf8_utf16 </span></h1>
+<h2> <span class="mw-headline" id="std::codecvt_utf8_utf16::codecvt_utf8_utf16"> <span style="font-size:0.7em; line-height:130%">std::codecvt_utf8_utf16::</span>codecvt_utf8_utf16 </span></h2>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> codecvt_utf8_utf16<span class="br0">&#40;</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> refs <span class="sy1">=</span> <span class="nu0">0</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -429,7 +428,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr></table>
 </div>
 <div class="t-member">
-<h1> <span class="mw-headline" id="std::codecvt_utf8_utf16::.7Ecodecvt_utf8_utf16"> <span style="font-size:0.7em; line-height:130%">std::codecvt_utf8_utf16::</span>~codecvt_utf8_utf16 </span></h1>
+<h2> <span class="mw-headline" id="std::codecvt_utf8_utf16::.7Ecodecvt_utf8_utf16"> <span style="font-size:0.7em; line-height:130%">std::codecvt_utf8_utf16::</span>~codecvt_utf8_utf16 </span></h2>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">~codecvt_utf8_utf16<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -487,7 +486,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>id</code> <span class="t-mark">(static)</span>
 </td>
-<td>  <span class="t-lc"><a href="locale/id.html" title="cpp/locale/locale/id">std::locale::id</a></span>
+<td>  <span class="t-lc">std::locale::id</span>
 </td></tr>
 
 </table>
@@ -651,19 +650,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../io/basic_ofstream.html"><span class="kw1418">std::<span class="me2">ofstream</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> u8<span class="st0">&quot;z<span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/basic_ofstream.html"><span class="kw1456">std::<span class="me2">ofstream</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> u8<span class="st0">&quot;z<span class="es3">\u6c34</span><span class="es4">\U0001d10b</span>&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ifstream.html"><span class="kw1431">std::<span class="me2">wifstream</span></span></a> file1<span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    file1.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.UTF8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Normal read from file (using default UTF-8/UTF-32 codecvt)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/basic_ifstream.html"><span class="kw1469">std::<span class="me2">wifstream</span></span></a> file1<span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    file1.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.UTF8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Normal read from file (using default UTF-8/UTF-32 codecvt)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">wchar_t</span> c<span class="sy4">;</span> file1 <span class="sy1">&gt;&gt;</span> c<span class="sy4">;</span> <span class="br0">&#41;</span>
-        <a href="../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../io/basic_ifstream.html"><span class="kw1431">std::<span class="me2">wifstream</span></span></a> file2<span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    file2.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1574">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>file2.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new std<span class="sy4">::</span><span class="me2">codecvt_utf8_utf16</span><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF-16 read from the same file (using codecvt_utf8_utf16)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../io/basic_ifstream.html"><span class="kw1469">std::<span class="me2">wifstream</span></span></a> file2<span class="br0">&#40;</span><span class="st0">&quot;text.txt&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    file2.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span>file2.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new std<span class="sy4">::</span><span class="me2">codecvt_utf8_utf16</span><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;UTF-16 read from the same file (using codecvt_utf8_utf16)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">wchar_t</span> c<span class="sy4">;</span> file2 <span class="sy1">&gt;&gt;</span> c<span class="sy4">;</span> <span class="br0">&#41;</span>
-        <a href="../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/hex.html"><span class="kw1463">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/showbase.html"><span class="kw1447">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -692,7 +691,7 @@ UTF-16 read from the same file (using codecvt_utf8_utf16)
 <tr>
 <th> UTF-16
 </th>
-<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/mbrtoc16.html" title="cpp/string/multibyte/mbrtoc16"><tt>mbrtoc16</tt></a> / <a href="../string/multibyte/c16rtomb.html" title="cpp/string/multibyte/c16rtomb"><tt>c16rtomb</tt></a>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/mbrtoc16.html" title="cpp/string/multibyte/mbrtoc16"><tt>mbrtoc16</tt></a><span class="t-mark">(one way)</span>
 </td>
 <td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="codecvt.html" title="cpp/locale/codecvt"><tt>codecvt</tt></a>&lt;char16_t, char, mbstate_t&gt;<br /><strong class="selflink"><tt>codecvt_utf8_utf16</tt></strong>&lt;char16_t&gt;<br /><strong class="selflink"><tt>codecvt_utf8_utf16</tt></strong>&lt;char32_t&gt;<br /><strong class="selflink"><tt>codecvt_utf8_utf16</tt></strong>&lt;wchar_t&gt;
 </td>
@@ -701,7 +700,7 @@ UTF-16 read from the same file (using codecvt_utf8_utf16)
 <tr>
 <th> UCS2
 </th>
-<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no"> No
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="../string/multibyte/c16rtomb.html" title="cpp/string/multibyte/c16rtomb"><tt>c16rtomb</tt></a><span class="t-mark">(one way)</span>
 </td>
 <td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><a href="codecvt_utf8.html" title="cpp/locale/codecvt utf8"><tt>codecvt_utf8</tt></a>&lt;char16_t&gt;
 </td>
@@ -763,15 +762,15 @@ UTF-16 read from the same file (using codecvt_utf8_utf16)
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 8693/1000000
-Preprocessor generated node count: 9769/1000000
-Post‐expand include size: 233575/2097152 bytes
-Template argument size: 55704/2097152 bytes
+Preprocessor visited node count: 8744/1000000
+Preprocessor generated node count: 9864/1000000
+Post‐expand include size: 233964/2097152 bytes
+Template argument size: 55675/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2911-0!*!0!!en!*!* and timestamp 20140704201241 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2911-0!*!0!!en!*!* and timestamp 20151130142902 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -806,8 +805,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/locale/codecvt_utf8_utf16" title="cpp/locale/codecvt utf8 utf16" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 17 August 2013, at 19:49.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,736 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 17 August 2013, at 18:49.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 17,226 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -840,7 +839,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.145 secs. -->
+</script><!-- Served in 3.067 secs. -->
 	</body>
-<!-- Cached 20140704201241 -->
+<!-- Cached 20151130142904 -->
 </html>

@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -316,14 +317,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;fstream&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../basic_filebuf.html"><span class="kw1410">std::<span class="me2">filebuf</span></span></a>
+<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../basic_filebuf.html"><span class="kw1448">std::<span class="me2">filebuf</span></span></a>
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> underflow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-         <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before underflow(): size of the get area is &quot;</span>
+         <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before underflow(): size of the get area is &quot;</span>
                    <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; with &quot;</span>
                    <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>gptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; read positions available<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
          <span class="kw4">int</span> rc <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">filebuf</span><span class="sy4">::</span><span class="me2">underflow</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-         <a href="../basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns &quot;</span> <span class="sy1">&lt;&lt;</span> rc <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;.<span class="es1">\n</span>After the call, &quot;</span>
+         <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns &quot;</span> <span class="sy1">&lt;&lt;</span> rc <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;.<span class="es1">\n</span>After the call, &quot;</span>
                    <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;size of the get area is &quot;</span>
                    <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; with &quot;</span>
                    <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>gptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; read positions available<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
@@ -334,8 +335,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     mybuf buf<span class="sy4">;</span>
-    buf.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1360">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../basic_istream.html"><span class="kw1412">std::<span class="me2">istream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
+    buf.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1398">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istream.html"><span class="kw1450">std::<span class="me2">istream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">while</span><span class="br0">&#40;</span>stream.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -389,15 +390,15 @@ After the call, size of the get area is 0 with 0 read positions available</pre><
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4562/1000000
-Preprocessor generated node count: 7950/1000000
-Post‐expand include size: 120698/2097152 bytes
-Template argument size: 24926/2097152 bytes
+Preprocessor visited node count: 4574/1000000
+Preprocessor generated node count: 8018/1000000
+Post‐expand include size: 121257/2097152 bytes
+Template argument size: 24975/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5655-0!*!0!!en!*!* and timestamp 20140705112953 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5655-0!*!0!!en!*!* and timestamp 20150825093606 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -433,7 +434,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 9 September 2013, at 10:44.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,843 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,620 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -466,7 +467,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.869 secs. -->
+</script><!-- Served in 1.802 secs. -->
 	</body>
-<!-- Cached 20140705112953 -->
+<!-- Cached 20150825093606 -->
 </html>

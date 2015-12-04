@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../regex.html" title="cpp/regex"> Regular expressions library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="basic_regex.html" title="cpp/regex/basic regex"><span class="t-lines"><span>basic_regex</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -246,7 +247,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl t-since-cxx11">
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT <span class="sy1">&gt;</span><br />
 <span class="kw1">class</span> regex_traits<span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -254,8 +256,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The type trait template <code>regex_traits</code> supplies <span class="t-lc"><a href="basic_regex.html" title="cpp/regex/basic regex">std::basic_regex</a></span> with the set of types and functions necessary to operate on the type <code>CharT</code>.
-</p><p>Since many of regex operations are locale-sensitive (when <span class="t-lc"><a href="syntax_option_type.html" title="cpp/regex/syntax option type">std::regex_constants::collate</a></span> flag is set), the regex_traits class typically holds an instance of a <span class="t-lc"><a href="../locale/locale.html" title="cpp/locale/locale">std::locale</a></span> as a private member.
+<p>The type trait template <code>regex_traits</code> supplies <span class="t-lc">std::basic_regex</span> with the set of types and functions necessary to operate on the type <code>CharT</code>.
+</p><p>Since many of regex operations are locale-sensitive (when <span class="t-lc">std::regex_constants::collate</span> flag is set), the regex_traits class typically holds an instance of a <span class="t-lc">std::locale</span> as a private member.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/regex/regex_traits&amp;action=edit&amp;section=1" title="Edit section: Standard specializations">edit</a>]</span> <span class="mw-headline" id="Standard_specializations">Standard specializations</span></h3>
 <p>Two specializations of <code>std::regex_traits</code> are defined by the standard library:
@@ -272,7 +274,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 </table>
-<p>These specializations make it possible to use <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1679">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span> (aka <span class="t-lc"><a href="basic_regex.html" title="cpp/regex/basic regex">std::regex</a></span>) and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1679">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span> (aka <span class="t-lc"><a href="basic_regex.html" title="cpp/regex/basic regex">std::wregex</a></span>), but in order to use, for example, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1679">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>, user-provided specializtion <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_traits</span><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span> needs to be defined.
+<p>These specializations make it possible to use <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span> (aka <span class="t-lc">std::regex</span>) and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span> (aka <span class="t-lc">std::wregex</span>), but in order to use, for example, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>, user-provided specializtion <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_traits</span><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span> needs to be defined.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/regex/regex_traits&amp;action=edit&amp;section=2" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
 <table class="t-dsc-begin">
@@ -294,7 +296,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>string_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
@@ -390,15 +392,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4377/1000000
-Preprocessor generated node count: 8421/1000000
-Post‐expand include size: 127536/2097152 bytes
-Template argument size: 24329/2097152 bytes
+Preprocessor visited node count: 4384/1000000
+Preprocessor generated node count: 8467/1000000
+Post‐expand include size: 127845/2097152 bytes
+Template argument size: 24378/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3267-0!*!0!!*!*!* and timestamp 20140704195929 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3267-0!*!0!!*!*!* and timestamp 20151130141202 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -433,8 +435,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/regex/regex_traits" title="cpp/regex/regex traits" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 July 2013, at 18:31.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,362 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 July 2013, at 17:31.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,039 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -467,7 +469,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.672 secs. -->
+</script><!-- Served in 1.623 secs. -->
 	</body>
-<!-- Cached 20140704195929 -->
+<!-- Cached 20151130141202 -->
 </html>

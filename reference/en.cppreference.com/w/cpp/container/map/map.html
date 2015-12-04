@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../vector.html" title="cpp/container/vector"><span class="t-lines"><span>vector</span></span></a></div></div></td></tr>
@@ -269,8 +270,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Modifiers</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="clear.html" title="cpp/container/map/clear"><span class="t-lines"><span>map::clear</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert.html" title="cpp/container/map/insert"><span class="t-lines"><span>map::insert</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert_or_assign.html" title="cpp/container/map/insert or assign"><span class="t-lines"><span>map::insert_or_assign</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="emplace.html" title="cpp/container/map/emplace"><span class="t-lines"><span>map::emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="emplace_hint.html" title="cpp/container/map/emplace hint"><span class="t-lines"><span>map::emplace_hint</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/map/try emplace"><span class="t-lines"><span>map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/map/erase"><span class="t-lines"><span>map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/map/swap"><span class="t-lines"><span>map::swap</span></span></a></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
@@ -317,8 +320,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl t-since-cxx98">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
-<p>map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIterator <span class="sy1">&gt;</span><br />
+<p>map<span class="br0">&#40;</span> InputIterator first, InputIterator last,<br />
 &#160; &#160; &#160;<span class="kw4">const</span> Compare<span class="sy3">&amp;</span> comp <span class="sy1">=</span> Compare<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
 </p>
 &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -326,8 +329,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl t-since-cxx14">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br />
-<p>map<span class="br0">&#40;</span> InputIt first, InputIt last,<br />
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIterator <span class="sy1">&gt;</span><br />
+<p>map<span class="br0">&#40;</span> InputIterator first, InputIterator last,<br />
 </p>
 &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -361,7 +364,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
-<td> <div><span class="mw-geshi cpp source-cpp">map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
+<td> <div><span class="mw-geshi cpp source-cpp">map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
 <p>&#160; &#160; &#160;<span class="kw4">const</span> Compare<span class="sy3">&amp;</span> comp <span class="sy1">=</span> Compare<span class="br0">&#40;</span><span class="br0">&#41;</span>,<br />
 </p>
 &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> alloc <span class="sy1">=</span> Allocator<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
@@ -369,7 +372,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx14">
-<td> <div><span class="mw-geshi cpp source-cpp">map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw804">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
+<td> <div><span class="mw-geshi cpp source-cpp">map<span class="br0">&#40;</span> <a href="../../utility/initializer_list.html"><span class="kw838">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>value_type<span class="sy1">&gt;</span> init,<br />
 &#160; &#160; &#160;<span class="kw4">const</span> Allocator<span class="sy3">&amp;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
@@ -381,7 +384,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <div class="t-li1"><span class="t-li">1)</span> Default constructor. Constructs empty container.</div>
 <div class="t-li1"><span class="t-li">2)</span> Constructs the container with the contents of the range <code>[first, last)</code>.</div>
-<div class="t-li1"><span class="t-li">3)</span> Copy constructor. Constructs the container with the copy of the contents of <code>other</code>. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw569">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_copy_construction</span><span class="br0">&#40;</span>other<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Copy constructor. Constructs the container with the copy of the contents of <code>other</code>. If <code>alloc</code> is not provided, allocator is obtained by calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>allocator_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">select_on_container_copy_construction</span><span class="br0">&#40;</span>other.<span class="me1">get_allocator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>.</div>
 <div class="t-li1"><span class="t-li">4)</span> Move constructor. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to <code>other</code>.</div>
 <div class="t-li1"><span class="t-li">5)</span> Constructs the container with the contents of the initializer list <code>init</code>. </div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -435,7 +438,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td colspan="3"> Type requirements
 </td></tr>
 <tr class="t-par-req">
-<td colspan="3"> -<div class="spacer"></div><code>InputIt</code> must meet the requirements of <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>.
+<td colspan="3"> -<div class="spacer"></div><code>InputIterator</code> must meet the requirements of <a href="../../concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>.
 </td></tr>
 <tr class="t-par-req">
 <td colspan="3"> -<div class="spacer"></div><code>Compare</code> must meet the requirements of <a href="../../concept/Compare.html" title="cpp/concept/Compare"><code>Compare</code></a>.
@@ -445,7 +448,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor_ord&amp;action=edit&amp;section=T-2" title="Template:cpp/container/constructor ord">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <div class="t-li1"><span class="t-li">1)</span> Constant</div>
-<div class="t-li1"><span class="t-li">2)</span> <span class="texhtml" style="white-space: nowrap;">N log(N)</span> where <span class="t-c"><span class="mw-geshi cpp source-cpp">N <span class="sy1">=</span> <a href="../../iterator/distance.html"><span class="kw551">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span> in general, linear in <code>N</code> if the range is already sorted by <code>value_comp()</code>.</div>
+<div class="t-li1"><span class="t-li">2)</span> <span class="texhtml" style="white-space: nowrap;">N log(N)</span> where <span class="t-c"><span class="mw-geshi cpp source-cpp">N <span class="sy1">=</span> <a href="../../iterator/distance.html"><span class="kw578">std::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span></span></span> in general, linear in <code>N</code> if the range is already sorted by <code>value_comp()</code>.</div>
 <div class="t-li1"><span class="t-li">3)</span> Linear in size of <code>other</code></div>
 <div class="t-li1"><span class="t-li">4)</span> Constant. If <code>alloc</code> is given and <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc <span class="sy3">!</span><span class="sy1">=</span> other.<span class="me1">get_allocator</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>, then linear.</div>
 <div class="t-li1"><span class="t-li">5)</span> <span class="texhtml" style="white-space: nowrap;">N log(N)</span> where <span class="t-c"><span class="mw-geshi cpp source-cpp">N <span class="sy1">=</span> init.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span> in general, linear in <code>N</code> if <code>init</code> is already sorted by <code>value_comp()</code>.</div>
@@ -456,91 +459,62 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;iomanip&gt;</span>
 <span class="co2">#include &lt;map&gt;</span>
 &#160;
-<span class="co1">// helper function templates for printing each element</span>
-<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> CharT, <span class="kw1">typename</span> Traits, <span class="kw1">typename</span> T<span class="sy1">&gt;</span>
-<span class="kw4">void</span> print_item<span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1400">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> stream, <span class="kw4">const</span> T<span class="sy3">&amp;</span> item<span class="br0">&#41;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> Map<span class="sy1">&gt;</span>
+<span class="kw4">void</span> print_map<span class="br0">&#40;</span>Map<span class="sy3">&amp;</span> m<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-  stream <span class="sy1">&lt;&lt;</span> item<span class="sy4">;</span>
-<span class="br0">&#125;</span>
-&#160;
-<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> CharT, <span class="kw1">typename</span> Traits, <span class="kw1">typename</span> Alloc<span class="sy1">&gt;</span>
-<span class="kw4">void</span> print_item<span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1400">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> stream,
-    <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1043">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, Traits, Alloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> item<span class="br0">&#41;</span>
-<span class="br0">&#123;</span>
-  stream <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">quoted</span><span class="br0">&#40;</span>item<span class="br0">&#41;</span><span class="sy4">;</span>
-<span class="br0">&#125;</span>
-&#160;
-<span class="co1">// A printer for unordered maps</span>
-<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> Key, <span class="kw1">typename</span> T, <span class="kw1">typename</span> Compare, <span class="kw1">typename</span> Allocator<span class="sy1">&gt;</span>
-<a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../../io/basic_ostream.html"><span class="kw1414">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> stream,
-    <span class="kw4">const</span> <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span>Key, T, Compare, Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> map<span class="br0">&#41;</span>
-<span class="br0">&#123;</span>
-  stream <span class="sy1">&lt;&lt;</span> <span class="st0">'{'</span><span class="sy4">;</span>
-  <span class="kw4">char</span> comma<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="st0">'<span class="es5">\0</span>'</span>, <span class="st0">' '</span>, <span class="st0">'<span class="es5">\0</span>'</span><span class="br0">&#125;</span><span class="sy4">;</span>
-  <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> pair <span class="sy4">:</span> map<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-    stream <span class="sy1">&lt;&lt;</span> comma<span class="sy4">;</span>
-    print_item<span class="br0">&#40;</span>stream, pair.<span class="me1">first</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    stream <span class="sy1">&lt;&lt;</span> <span class="st0">':'</span><span class="sy4">;</span>
-    print_item<span class="br0">&#40;</span>stream, pair.<span class="me1">second</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    comma<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">','</span><span class="sy4">;</span>
-  <span class="br0">&#125;</span>
-  stream <span class="sy1">&lt;&lt;</span> <span class="st0">'}'</span><span class="sy4">;</span>
-  <span class="kw1">return</span> stream<span class="sy4">;</span>
+   <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'{'</span><span class="sy4">;</span>
+   <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">auto</span><span class="sy3">&amp;</span> p<span class="sy4">:</span> m<span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">':'</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+   <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;}<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
   <span class="co1">// (1) Default constructor</span>
-  <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> map1<span class="sy4">;</span>
+  <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> map1<span class="sy4">;</span>
   map1<span class="br0">&#91;</span><span class="st0">&quot;something&quot;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">69</span><span class="sy4">;</span>
   map1<span class="br0">&#91;</span><span class="st0">&quot;anything&quot;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">199</span><span class="sy4">;</span>
   map1<span class="br0">&#91;</span><span class="st0">&quot;that thing&quot;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">50</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="nu0">80</span>, <span class="st0">'-'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span> <span class="sy1">&lt;&lt;</span> map1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-  <span class="co1">// (2) Iterator constructor</span>
-  <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> iter<span class="br0">&#40;</span>map1.<span class="me1">find</span><span class="br0">&#40;</span><span class="st0">&quot;anything&quot;</span><span class="br0">&#41;</span>, map1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="nu0">80</span>, <span class="st0">'-'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;iter = &quot;</span> <span class="sy1">&lt;&lt;</span> iter <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span> <span class="sy1">&lt;&lt;</span> map1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+  <span class="co1">// (2) Range constructor</span>
+  <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> iter<span class="br0">&#40;</span>map1.<span class="me1">find</span><span class="br0">&#40;</span><span class="st0">&quot;anything&quot;</span><span class="br0">&#41;</span>, map1.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>iter = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>iter<span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
   <span class="co1">// (3) Copy constructor</span>
-  <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> copied<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="nu0">80</span>, <span class="st0">'-'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;copied = &quot;</span> <span class="sy1">&lt;&lt;</span> copied <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span> <span class="sy1">&lt;&lt;</span> map1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+  <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> copied<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>copied = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>copied<span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
   <span class="co1">// (4) Move constructor</span>
-  <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> moved<span class="br0">&#40;</span><a href="../../utility/move.html"><span class="kw914">std::<span class="me2">move</span></span></a><span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="nu0">80</span>, <span class="st0">'-'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;moved = &quot;</span> <span class="sy1">&lt;&lt;</span> moved <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span> <span class="sy1">&lt;&lt;</span> map1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+  <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> moved<span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>moved = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>moved<span class="br0">&#41;</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;map1 = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>map1<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
   <span class="co1">// (5) Initializer list constructor</span>
-  <span class="kw4">const</span> <a href="../map.html"><span class="kw1073">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> init <span class="br0">&#123;</span>
+  <span class="kw4">const</span> <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> init <span class="br0">&#123;</span>
     <span class="br0">&#123;</span><span class="st0">&quot;this&quot;</span>, <span class="nu0">100</span><span class="br0">&#125;</span>,
     <span class="br0">&#123;</span><span class="st0">&quot;can&quot;</span>, <span class="nu0">100</span><span class="br0">&#125;</span>,
     <span class="br0">&#123;</span><span class="st0">&quot;be&quot;</span>, <span class="nu0">100</span><span class="br0">&#125;</span>,
     <span class="br0">&#123;</span><span class="st0">&quot;const&quot;</span>, <span class="nu0">100</span><span class="br0">&#125;</span>,
   <span class="br0">&#125;</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="nu0">80</span>, <span class="st0">'-'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-  <a href="../../io/basic_ostream.html"><span class="kw1439">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;init = &quot;</span> <span class="sy1">&lt;&lt;</span> init <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+  <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>init = &quot;</span><span class="sy4">;</span> print_map<span class="br0">&#40;</span>init<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">--------------------------------------------------------------------------------
-map1 = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
---------------------------------------------------------------------------------
-iter = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
-map1 = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
---------------------------------------------------------------------------------
-copied = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
-map1 = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
---------------------------------------------------------------------------------
-moved = {&quot;anything&quot;:199, &quot;something&quot;:69, &quot;that thing&quot;:50}
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">map1 = {anything:199 something:69 that thing:50 }
+&#160;
+iter = {anything:199 something:69 that thing:50 }
+map1 = {anything:199 something:69 that thing:50 }
+&#160;
+copied = {anything:199 something:69 that thing:50 }
+map1 = {anything:199 something:69 that thing:50 }
+&#160;
+moved = {anything:199 something:69 that thing:50 }
 map1 = {}
---------------------------------------------------------------------------------
-init = {&quot;be&quot;:100, &quot;can&quot;:100, &quot;const&quot;:100, &quot;this&quot;:100}</pre></div></div> 
+&#160;
+init = {be:100 can:100 const:100 this:100 }</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/constructor_ord&amp;action=edit&amp;section=T-4" title="Template:cpp/container/constructor ord">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
@@ -554,15 +528,15 @@ init = {&quot;be&quot;:100, &quot;can&quot;:100, &quot;const&quot;:100, &quot;th
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5508/1000000
-Preprocessor generated node count: 9957/1000000
-Post‐expand include size: 157557/2097152 bytes
-Template argument size: 28848/2097152 bytes
+Preprocessor visited node count: 5748/1000000
+Preprocessor generated node count: 10229/1000000
+Post‐expand include size: 165662/2097152 bytes
+Template argument size: 26039/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:974-0!*!0!!en!*!* and timestamp 20140731153126 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:974-0!*!0!!en!*!* and timestamp 20150825011643 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -598,7 +572,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 14,798 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 32,874 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -631,7 +605,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.080 secs. -->
+</script><!-- Served in 2.993 secs. -->
 	</body>
-<!-- Cached 20140731154944 -->
+<!-- Cached 20150825011643 -->
 </html>

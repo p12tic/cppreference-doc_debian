@@ -24,9 +24,11 @@ datarootdir = $(prefix)/share
 docdir = $(datarootdir)/cppreference/doc
 bookdir = $(datarootdir)/devhelp/books
 
+qhelpgenerator = qhelpgenerator
+
 #Version
 
-VERSION=20140827
+VERSION=20151129
 
 #STANDARD RULES
 
@@ -35,6 +37,7 @@ all: doc_devhelp doc_qch doc_doxygen
 DISTFILES=	\
 		reference/				\
 		images/					\
+		headers/				\
 		build_link_map.py		\
 		ddg_parse_html.py		\
 		devhelp2qch.xsl			\
@@ -57,7 +60,7 @@ DISTFILES=	\
 		preprocess.xsl			\
 		preprocess-css.css		\
 		Makefile				\
-		README				\
+		README.md			\
 		xml_utils.py
 
 CLEANFILES= \
@@ -161,7 +164,7 @@ output/cppreference-doc-en-cpp.qch: output/qch-help-project-cpp.xml
 	cp "output/qch-help-project-cpp.xml" "output/reference/qch.xml"
 
 	pushd "output/reference" > /dev/null; \
-	qhelpgenerator "qch.xml" -o "../cppreference-doc-en-cpp.qch"; \
+	$(qhelpgenerator) "qch.xml" -o "../cppreference-doc-en-cpp.qch"; \
 	popd > /dev/null
 
 	rm -f "output/reference/qch.xml"
@@ -172,7 +175,7 @@ output/qch-help-project-cpp.xml: output/cppreference-doc-en-cpp.devhelp2
 
 	pushd "output/reference" > /dev/null; \
 	find . -type f -not -iname "*.ttf" \
-		-exec echo "<file>"'{}'"</file>" >> "../qch-files.xml" \; ; \
+		-exec echo "<file>"'{}'"</file>" \; | LC_ALL=C sort >> "../qch-files.xml" ; \
 	popd > /dev/null
 
 	echo "</files>" >> "output/qch-files.xml"

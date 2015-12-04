@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../c.html" title="cpp/io/c"> C-style I/O</a></td></tr>
@@ -260,7 +261,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputc.html" title="cpp/io/c/fputc"><span class="t-lines"><span>fputc</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fputs.html" title="cpp/io/c/fputs"><span class="t-lines"><span>fputs</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>getchar</span></span></strong></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gets.html" title="cpp/io/c/gets"><span class="t-lines"><span>gets</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="putchar.html" title="cpp/io/c/putchar"><span class="t-lines"><span>putchar</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="puts.html" title="cpp/io/c/puts"><span class="t-lines"><span>puts</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ungetc.html" title="cpp/io/c/ungetc"><span class="t-lines"><span>ungetc</span></span></a></div></div></td></tr>
@@ -308,22 +309,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </div></td>
 <td></td>
 <td></td>
-</tr><tr class="t-dcl">
+</tr>
+<tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> getchar<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Reads the next character from <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span>.
-</p><p>Equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fgetc.html"><span class="kw1501">std::<span class="me2">getc</span></span></a><span class="br0">&#40;</span><span class="kw2">stdin</span><span class="br0">&#41;</span></span></span>.
+<p>Reads the next character from <span class="t-lc">stdin</span>.
+</p><p>Equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="fgetc.html"><span class="kw1545">std::<span class="me2">getc</span></span></a><span class="br0">&#40;</span><span class="kw2">stdin</span><span class="br0">&#41;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/getchar&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <p>(none)
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/getchar&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>The obtained character on success or <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> on failure. 
-</p><p>If the failure has been caused by end of file condition, additionally sets the <i>eof</i> indicator (see <span class="t-lc">feof()</span>) on <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span>. If the failure has been caused by some other error, sets the <i>error</i> indicator (see <span class="t-lc">ferror()</span>) on <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span>.
+<p>The obtained character on success or <span class="t-lc">EOF</span> on failure. 
+</p><p>If the failure has been caused by end of file condition, additionally sets the <i>eof</i> indicator (see <span class="t-lc">feof()</span>) on <span class="t-lc">stdin</span>. If the failure has been caused by some other error, sets the <i>error</i> indicator (see <span class="t-lc">ferror()</span>) on <span class="t-lc">stdin</span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/getchar&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
@@ -342,15 +344,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5081/1000000
-Preprocessor generated node count: 6817/1000000
-Post‐expand include size: 129539/2097152 bytes
-Template argument size: 18807/2097152 bytes
+Preprocessor visited node count: 5126/1000000
+Preprocessor generated node count: 6896/1000000
+Post‐expand include size: 131331/2097152 bytes
+Template argument size: 19184/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:591-0!*!0!!*!*!* and timestamp 20140704184920 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:591-0!*!0!!*!*!* and timestamp 20151130144230 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -385,8 +387,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/getchar" title="cpp/io/c/getchar" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 8 October 2013, at 02:24.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 10,259 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 8 October 2013, at 01:24.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 22,638 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -419,7 +421,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.416 secs. -->
+</script><!-- Served in 1.345 secs. -->
 	</body>
-<!-- Cached 20140704184920 -->
+<!-- Cached 20151130144232 -->
 </html>
