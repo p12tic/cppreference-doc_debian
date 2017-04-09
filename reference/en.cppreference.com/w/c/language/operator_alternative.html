@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
 <head>
-<title>Alternative operator representations (since C95) - cppreference.com</title>
+<title>Alternative operators and tokens - cppreference.com</title>
 <meta charset="UTF-8" />
 <meta name="generator" content="MediaWiki 1.21.2" />
 <link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit" />
@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/operator_alternative","wgTitle":"c/language/operator alternative","wgCurRevisionId":74507,"wgArticleId":9975,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/operator_alternative","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/operator_alternative","wgTitle":"c/language/operator alternative","wgCurRevisionId":90335,"wgArticleId":9975,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/operator_alternative","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -201,7 +201,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                 <a id="top"></a>
                 <div id="mw-js-message" style="display:none;"></div>
                                 <!-- firstHeading -->
-                <h1 id="firstHeading" class="firstHeading">Alternative operator representations <span class="t-mark-rev t-since-c95">(since C95)</span></h1>
+                <h1 id="firstHeading" class="firstHeading">Alternative operators and tokens</h1>
                 <!-- /firstHeading -->
                 <!-- bodyContent -->
                 <div id="bodyContent">
@@ -254,10 +254,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="history.html" title="c/language/history"><span class="t-lines"><span>history of C</span></span></a></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <a href="../experimental.html" title="c/experimental">Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/language/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<p>C source code may be written in any non-ASCII 7-bit character set that includes the <a href="http://en.wikipedia.com/wiki/ISO_646" class="extiw" title="enwiki:ISO 646">ISO 646:1983</a> invariant character set. However, several C operators and punctuators require characters that are outside of the ISO 646 codeset: <code>{, }, [, ], #, \, ^, |, ~</code>. To be able to use character encodings where some or all of these symbols do not exist (such as the German <a rel="nofollow" class="external text" href="http://de.wikipedia.org/wiki/DIN_66003">DIN 66003</a>), there are two possibilities: alternative spellings of operators that use these characters or special combinations of two or three ISO 646 compatible characters that are interpreted as if they were a single non-ISO 646 character.
+<p>C source code may be written in any non-ASCII 8-bit character set that includes the <a href="http://en.wikipedia.com/wiki/ISO_646" class="extiw" title="enwiki:ISO 646">ISO 646:1983</a> invariant character set. However, several C operators and punctuators require characters that are outside of the ISO 646 codeset: <code>{, }, [, ], #, \, ^, |, ~</code>. To be able to use character encodings where some or all of these symbols do not exist (such as the German <a rel="nofollow" class="external text" href="http://de.wikipedia.org/wiki/DIN_66003">DIN 66003</a>), there are two possibilities: alternative spellings of operators that use these characters or special combinations of two or three ISO 646 compatible characters that are interpreted as if they were a single non-ISO 646 character.
 </p>
-<h2><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=1" title="Edit section: Alternative spellings">edit</a>]</span> <span class="mw-headline" id="Alternative_spellings">Alternative spellings</span></h2>
-<p>There are alternative spellings for several operators defined in <code><b>&lt;iso646.h&gt;</b></code>. 
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="operator_alternative.html#Operator_macros.28C95.29"><span class="tocnumber">1</span> <span class="toctext">Operator macros<span>(C95)</span></span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="operator_alternative.html#Alternative_tokens.28C95.29"><span class="tocnumber">2</span> <span class="toctext">Alternative tokens<span>(C95)</span></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="operator_alternative.html#Trigraphs"><span class="tocnumber">3</span> <span class="toctext">Trigraphs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="operator_alternative.html#Example"><span class="tocnumber">3.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=1" title="Edit section: Operator macros(C95)">edit</a>]</span> <span class="mw-headline" id="Operator_macros.28C95.29">Operator macros<span class="t-mark-rev t-since-c95">(C95)</span></span></h2>
+<p>There are alternative spellings for the operators that use non-ISO646 characters, defined in <code><b>&lt;iso646.h&gt;</b></code> as macros:
 </p>
 <table class="t-dsc-begin">
 
@@ -349,66 +360,93 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 </table>
-<h2><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=2" title="Edit section: Digraphs and trigraphs">edit</a>]</span> <span class="mw-headline" id="Digraphs_and_trigraphs">Digraphs and trigraphs</span></h2>
-<p>The following combinations of two and three characters (digraphs<span class="t-mark-rev t-since-c95">(C95)</span> and trigraphs<span class="t-mark">(C89)</span>) are valid substitutions for their respective primary characters:
+<p>The characters <span class="t-c"><span class="mw-geshi c source-c"><span class="sy3">&amp;</span></span></span> and <span class="t-c"><span class="mw-geshi c source-c"><span class="sy3">!</span></span></span> are invariant under ISO-646, but alternatives are provided for the operators that use these characters anyway to accommodate even more restrictive historical charsets.
+</p><p>There is no alternative spelling (such as <span class="t-c"><span class="mw-geshi c source-c">eq</span></span>) for the equality operator <span class="t-c"><span class="mw-geshi c source-c"><span class="sy1">==</span></span></span> because the character <span class="t-c"><span class="mw-geshi c source-c"><span class="sy1">=</span></span></span> was present in all supported charsets.
+</p>
+<h2><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=2" title="Edit section: Alternative tokens(C95)">edit</a>]</span> <span class="mw-headline" id="Alternative_tokens.28C95.29">Alternative tokens<span class="t-mark-rev t-since-c95">(C95)</span></span></h2>
+<p>The following alternative tokens are part of the core language, and, in all respects of the language, each alternative token behaves exactly the same as its primary token, except for its spelling (the <a href="../preprocessor/replace.html" title="c/preprocessor/replace">stringification operator</a> can make the spelling visible). The two-letter alternative tokens are sometimes called "digraphs"
+</p><p><br />
 </p>
 <table class="wikitable">
 
 <tr style="text-align: left;">
 <th> Primary
 </th>
-<th> Digraph
+<th> Alternative
+</th></tr>
+<tr>
+<td> <code>{</code> </td>
+<td> <code>&lt;%</code>
+</td></tr>
+<tr>
+<td> <code></code>} </td>
+<td> <code>%&gt;</code>
+</td></tr>
+<tr>
+<td> <code>[</code> </td>
+<td> <code>&lt;:</code>
+</td></tr>
+<tr>
+<td> <code>]</code> </td>
+<td> <code>:&gt;</code>
+</td></tr>
+<tr>
+<td> <code>#</code> </td>
+<td> <code>%:</code>
+</td></tr>
+<tr>
+<td> <code>##</code> </td>
+<td> <code>%:%:</code>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=3" title="Edit section: Trigraphs">edit</a>]</span> <span class="mw-headline" id="Trigraphs">Trigraphs</span></h2>
+<p>The following three-character groups (trigraphs) are <a href="translation_phases.html" title="c/language/translation phases">parsed before comments and string literals are recognized</a>, and each appearance of a trigraph is replaced by the corresponding primary character:
+</p>
+<table class="wikitable">
+
+<tr style="text-align: left;">
+<th> Primary
 </th>
 <th> Trigraph
 </th></tr>
 <tr>
 <td> <code>{</code> </td>
-<td> <code>&lt;%</code> </td>
 <td> <code>??&lt;</code>
 </td></tr>
 <tr>
 <td> <code></code>} </td>
-<td> <code>%&gt;</code> </td>
 <td> <code>??&gt;</code>
 </td></tr>
 <tr>
 <td> <code>[</code> </td>
-<td> <code>&lt;:</code> </td>
 <td> <code>??(</code>
 </td></tr>
 <tr>
 <td> <code>]</code> </td>
-<td> <code>:&gt;</code> </td>
 <td> <code>??)</code>
 </td></tr>
 <tr>
 <td> <code>#</code> </td>
-<td> <code>%:</code> </td>
 <td> <code>??=</code>
 </td></tr>
 <tr>
 <td> <code>\</code> </td>
-<td> </td>
 <td> <code>??/</code>
 </td></tr>
 <tr>
 <td> <code>^</code> </td>
-<td> </td>
 <td> <code>??'</code>
 </td></tr>
 <tr>
 <td> <code>|</code> </td>
-<td> </td>
 <td> <code>??!</code>
 </td></tr>
 <tr>
 <td> <code>~</code> </td>
-<td> </td>
 <td> <code>??-</code>
 </td></tr></table>
-<p>Note that trigraphs (but not digraphs) are <a href="translation_phases.html" title="c/language/translation phases">parsed before comments and string literals are recognized</a>, so a comment such as <span class="t-c"><span class="mw-geshi c source-c"><span class="co1">// Will the next line be executed?????/</span></span></span> will effectively comment out the following line, and the string literal such as <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;What's going on??!&quot;</span></span></span> is parsed as <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;What's going on|&quot;</span></span></span>.
+<p>Because trigraphs are processed early, a comment such as <span class="t-c"><span class="mw-geshi c source-c"><span class="co1">// Will the next line be executed?????/</span></span></span> will effectively comment out the following line, and the string literal such as <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;What's going on??!&quot;</span></span></span> is parsed as <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;What's going on|&quot;</span></span></span>.
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><p> The following example demonstrates alternative operator spellings from the <code><b>&lt;iso646.h&gt;</b></code> header as well as use of digraphs and trigraphs.
 <p>The space character in the first command-line argument, argv[1], requires the quotation marks: ", World!".
 </p>
@@ -440,19 +478,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2399/1000000
-Preprocessor generated node count: 5556/1000000
-Post‐expand include size: 50425/2097152 bytes
-Template argument size: 10203/2097152 bytes
+Preprocessor visited node count: 2539/1000000
+Preprocessor generated node count: 5773/1000000
+Post‐expand include size: 50984/2097152 bytes
+Template argument size: 10132/2097152 bytes
 Highest expansion depth: 15/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9975-0!*!0!!*!*!* and timestamp 20150825095036 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9975-0!*!0!!en!*!* and timestamp 20170221200138 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=74507">http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=74507</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=90335">http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=90335</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -475,11 +513,11 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="operator_alternative.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/operator_alternative" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/operator_alternative" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=74507" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/operator_alternative" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/operator_alternative" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;oldid=90335" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_alternative&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 18 December 2014, at 12:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,903 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 21 February 2017, at 12:01.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,040 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -512,7 +550,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.744 secs. -->
+</script><!-- Served in 0.047 secs. -->
 	</body>
-<!-- Cached 20150825095036 -->
+<!-- Cached 20170221200138 -->
 </html>

@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c/fscanf","wgTitle":"cpp/io/c/fscanf","wgCurRevisionId":75616,"wgArticleId":586,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/c/fscanf","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c/fscanf","wgTitle":"cpp/io/c/fscanf","wgCurRevisionId":88750,"wgArticleId":586,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/c/fscanf","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -340,7 +341,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fscanf<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1598">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fscanf<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1871">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> format, ... <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -353,7 +354,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>Reads data from the a variety of sources, interprets it according to <code>format</code> and stores the results into given locations.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Reads the data from <span class="t-lc">stdin</span></div>
+<div class="t-li1"><span class="t-li">1)</span> Reads the data from <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span></div>
 <div class="t-li1"><span class="t-li">2)</span> Reads the data from file stream <code>stream</code></div>
 <div class="t-li1"><span class="t-li">3)</span> Reads the data from null-terminated character string <code>buffer</code></div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -389,8 +390,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> -
 </td>
 <td>  pointer to a null-terminated character string specifying how to read the input.
-<p>The format string consists of whitespace characters (any single whitespace character in the format string consumes all available consecutive whitespace characters from the input), non-whitespace multibyte characters except <code><b>%</b></code> (each such character in the format string consumes exactly one identical character from the input) and conversion specifications. Each conversion specification has the following format:
+<p>The format string consists of 
 </p>
+<ul><li> non-whitespace multibyte characters except <code><b>%</b></code>: each such character in the format string consumes exactly one identical character from the input stream, or causes the function to fail if the next character on the stream does not compare equal.
+</li><li> whitespace characters: any single whitespace character in the format string consumes all available consecutive whitespace characters from the input (determined as if by calling <a href="../../string/byte/isspace.html" title="cpp/string/byte/isspace"><tt>isspace</tt></a> in a loop). Note that there is no difference between <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es1">\n</span>&quot;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot; &quot;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es1">\t</span><span class="es1">\t</span>&quot;</span></span></span>, or other whitespace in the format string.
+</li><li> conversion specifications. Each conversion specification has the following format:
+</li></ul>
 <dl><dd><ul><li> introductory <code><b>%</b></code> character
 </li></ul>
 </dd></dl>
@@ -421,6 +426,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th colspan="2" style="text-align:right; font-weight:normal;"> length modifier
 </th>
 <th> <code>hh</code>
+<p><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</p>
 </th>
 <th> <code>h</code>
 </th>
@@ -429,12 +436,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th> <code><b>l</b></code>
 </th>
 <th> <code><b>ll</b></code>
+<p><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</p>
 </th>
 <th> <code><b>j</b></code>
+<p><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</p>
 </th>
 <th> <code><b>z</b></code>
+<p><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</p>
 </th>
 <th> <code><b>t</b></code>
+<p><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</p>
 </th>
 <th> <code><b>L</b></code>
 </th></tr>
@@ -546,25 +561,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th> <code>u</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches a <b>unsigned integer</b>. 
+<dl><dd>matches an unsigned <b>decimal integer</b>. 
 </dd></dl>
-<p>The format of the number is the same as expected by <a href="../../string/byte/strtoul.html" title="cpp/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> for the <code>base</code> argument (base is determined by the first characters parsed)
+<p>The format of the number is the same as expected by <a href="../../string/byte/strtoul.html" title="cpp/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">10</span></span></span> for the <code>base</code> argument.
 </p>
 </td></tr>
 <tr>
 <th> <code>o</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches an <b>octal integer</b>.
+<dl><dd>matches an unsigned <b>octal integer</b>.
 </dd></dl>
 <p>The format of the number is the same as expected by <a href="../../string/byte/strtoul.html" title="cpp/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">8</span></span></span> for the <code>base</code> argument
 </p>
 </td></tr>
 <tr>
-<th> <code>x</code>
+<th> <code>x</code>, <code>X</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches an <b>hexadecimal integer</b>.
+<dl><dd>matches an unsigned <b>hexadecimal integer</b>.
 </dd></dl>
 <p>The format of the number is the same as expected by <a href="../../string/byte/strtoul.html" title="cpp/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">16</span></span></span> for the <code>base</code> argument
 </p>
@@ -579,7 +594,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 </td></tr>
 <tr>
-<th> <code>a</code>, <code>A</code><br /> <code>e</code>, <code>E</code><br /> <code>f</code>, <code>F</code><br /> <code>g</code>, <code>G</code>
+<th> <code>a</code>, <code>A</code><span class="t-mark-rev t-since-cxx11">(C++11)</span><br /> <code>e</code>, <code>E</code><br /> <code>f</code>, <code>F</code><br /> <code>g</code>, <code>G</code>
 </th>
 <td style="text-align:left;">
 <dl><dd>matches a <b>floating-point number</b>.
@@ -632,10 +647,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td></tr></table>
-<p>All conversion specifiers other than <code>[</code>, <code>c</code>, and <code>n</code> consume and discard all leading whitespace characters (determined as if by calling <a href="../../string/byte/isspace.html" title="cpp/string/byte/isspace"><tt>isspace</tt></a>) before attempting to parse the input. These consumed characters do not count towards the specified maximum field width.
-</p><p>The conversion specifiers <code>lc</code>, <code>ls</code>, and <code>l[</code> perform multibyte-to-wide character conversion as if by calling <a href="../../string/multibyte/wcrtomb.html" title="cpp/string/multibyte/wcrtomb"><tt>wcrtomb()</tt></a> with an <a href="../../string/multibyte/mbstate_t.html" title="cpp/string/multibyte/mbstate t"><tt>mbstate_t</tt></a> object initialized to zero before the first character is converted.
-</p><p>The conversion specifiers <code>s</code> and <code>[</code> always store the null terminator in addition to the matched characters. The size of the destination array must be at least one greater than the specified field width.
-</p><p>The correct conversion specifications for the <a href="../../types/integer.html" title="cpp/types/integer">fixed-width integer types</a> (<code>int8_t</code>, etc) are defined in the header <a href="../../types/integer.html" title="cpp/types/integer">&lt;cinttypes&gt;</a>(C++) or <a href="../../../c/types/integer.html" title="c/types/integer">&lt;inttypes.h&gt;</a> (C) (although <a href="../../types/integer.html" title="cpp/types/integer"><tt>SCNdMAX</tt></a>, <a href="../../types/integer.html" title="cpp/types/integer"><tt>SCNuMAX</tt></a>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+<p>For every conversion specifier other than <code>n</code>, the longest sequence of input characters which does not exceed any speciﬁed ﬁeld width and which either is exactly what the conversion specifier expects or is a prefix of a sequence it would expect, is what's consumed from the stream. The ﬁrst character, if any, after this consumed sequence remains unread. If the consumed sequence has length zero or if the consumed sequence cannot be converted as specified above, the matching failure occurs unless end-of-ﬁle, an encoding error, or a read error prevented input from the stream, in which case it is an input failure.
+</p><p>All conversion specifiers other than <code>[</code>, <code>c</code>, and <code>n</code> consume and discard all leading whitespace characters (determined as if by calling <a href="../../string/byte/isspace.html" title="cpp/string/byte/isspace"><tt>isspace</tt></a>) before attempting to parse the input. These consumed characters do not count towards the specified maximum field width.
+</p><p>The conversion specifiers <code>lc</code>, <code>ls</code>, and <code>l[</code> perform multibyte-to-wide character conversion as if by calling <a href="../../string/multibyte/mbrtowc.html" title="cpp/string/multibyte/mbrtowc"><tt>mbrtowc()</tt></a> with an <a href="../../string/multibyte/mbstate_t.html" title="cpp/string/multibyte/mbstate t"><tt>mbstate_t</tt></a> object initialized to zero before the first character is converted.
+</p><p>The conversion specifiers <code>s</code> and <code>[</code> always store the null terminator in addition to the matched characters. The size of the destination array must be at least one greater than the specified field width. The use of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>s</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span><span class="br0">&#91;</span></span></span>, without specifying the destination array size, is as unsafe as <span class="t-lc"><a href="gets.html" title="cpp/io/c/gets">std::gets</a></span>
+</p><p>The correct conversion specifications for the <a href="../../types/integer.html" title="cpp/types/integer">fixed-width integer types</a> (<code>int8_t</code>, etc) are defined in the header <a href="../../types/integer.html" title="cpp/types/integer">&lt;cinttypes&gt;</a> (although <a href="../../types/integer.html" title="cpp/types/integer"><tt>SCNdMAX</tt></a>, <a href="../../types/integer.html" title="cpp/types/integer"><tt>SCNuMAX</tt></a>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+</p><p>There is a <a href="../../language/eval_order.html" title="cpp/language/eval order">sequence point</a> after the action of each conversion specifier; this permits storing multiple fields in the same "sink" variable.
+</p><p>When parsing an incomplete floating-point value that ends in the exponent with no digits, such as parsing <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;100er&quot;</span></span></span> with the conversion specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span>f</span></span>, the sequence <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;100e&quot;</span></span></span> (the longest prefix of a possibly valid floating-point number) is consumed, resulting in a matching error (the consumed sequence cannot be converted to a floating-point number), with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;r&quot;</span></span></span> remaining. Existing implementations do not follow this rule and roll back to consume only <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;100&quot;</span></span></span>, leaving <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;er&quot;</span></span></span>, e.g. <a rel="nofollow" class="external text" href="https://sourceware.org/bugzilla/show_bug.cgi?id=1765">glibc bug 1765</a>
 </p><p><br />
 </p>
 </td></tr>
@@ -647,7 +665,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  receiving arguments
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Number of receiving arguments successfully assigned, or <span class="t-lc">EOF</span> if read failure occurs before the first receiving argument was assigned.
+<p>Number of receiving arguments successfully assigned (which may be zero in case a matching failure occurred before the first receiving argument was assigned), or <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> if input failure occurs before the first receiving argument was assigned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>Because most conversion specifiers first consume all consecutive whitespace, code such as 
@@ -670,7 +688,7 @@ std<span class="sy4">::</span><span class="me2">scanf</span><span class="br0">&#
     <span class="kw4">float</span> x, y<span class="sy4">;</span>
     <span class="kw4">char</span> str1<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span>, str2<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="sy4">;</span>
     <span class="kw4">wchar_t</span> warr<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    <a href="../../locale/setlocale.html"><span class="kw1711">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1714">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1984">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1987">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">char</span> input<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> u8<span class="st0">&quot;25 54.32E-1 Thompson 56789 0123 56ß水&quot;</span><span class="sy4">;</span>
     <span class="co1">// parse as follows:</span>
@@ -686,11 +704,11 @@ std<span class="sy4">::</span><span class="me2">scanf</span><span class="br0">&#
     <span class="kw4">int</span> ret <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">sscanf</span><span class="br0">&#40;</span>input, <span class="st0">&quot;%d%f%9s%2d%f%*d&#160;%3[0-9]%2lc&quot;</span>,
                      <span class="sy3">&amp;</span>i, <span class="sy3">&amp;</span>x, str1, <span class="sy3">&amp;</span>j, <span class="sy3">&amp;</span>y, str2, warr<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Converted &quot;</span> <span class="sy1">&lt;&lt;</span> ret <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fields:<span class="es1">\n</span>&quot;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Converted &quot;</span> <span class="sy1">&lt;&lt;</span> ret <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; fields:<span class="es1">\n</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;i = &quot;</span> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>x = &quot;</span> <span class="sy1">&lt;&lt;</span> x <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;str1 = &quot;</span> <span class="sy1">&lt;&lt;</span> str1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>j = &quot;</span> <span class="sy1">&lt;&lt;</span> j <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;y = &quot;</span> <span class="sy1">&lt;&lt;</span> y <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>str2 = &quot;</span> <span class="sy1">&lt;&lt;</span> str2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../manip/hex.html"><span class="kw1505">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;warr[0] = U+&quot;</span> <span class="sy1">&lt;&lt;</span> warr<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../manip/hex.html"><span class="kw1779">std::<span class="me2">hex</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;warr[0] = U+&quot;</span> <span class="sy1">&lt;&lt;</span> warr<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; warr[1] = U+&quot;</span> <span class="sy1">&lt;&lt;</span> warr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -710,7 +728,7 @@ warr[0] = U+df warr[1] = U+6c34</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="vfscanf.html" title="cpp/io/c/vfscanf"> <span class="t-lines"><span>vscanf</span><span>vfscanf</span><span>vsscanf</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   reads formatted input from <span class="t-lc">stdin</span>, a file stream or a buffer<br /> using variable argument list <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_vfscanf&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   reads formatted input from <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdin</a></span>, a file stream or a buffer<br /> using variable argument list <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_vfscanf&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -722,7 +740,13 @@ warr[0] = U+df warr[1] = U+6c34</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="printf.html" title="cpp/io/c/fprintf"> <span class="t-lines"><span>printf</span><span>fprintf</span><span>sprintf</span><span>snprintf</span></span></a></div><div><span class="t-lines"><span></span><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   prints formatted output to <span class="t-lc">stdout</span>, a file stream or a buffer  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_fprintf&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   prints formatted output to <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdout</a></span>, a file stream or a buffer  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_fprintf&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../utility/from_chars.html" title="cpp/utility/from chars"> <span class="t-lines"><span>from_chars</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   converts a character sequence to an integer or floating-point value  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/utility/dsc_from_chars&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -733,19 +757,19 @@ warr[0] = U+df warr[1] = U+6c34</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6988/1000000
-Preprocessor generated node count: 9593/1000000
-Post‐expand include size: 186206/2097152 bytes
-Template argument size: 43631/2097152 bytes
+Preprocessor visited node count: 7485/1000000
+Preprocessor generated node count: 10186/1000000
+Post‐expand include size: 200403/2097152 bytes
+Template argument size: 47767/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:586-0!*!0!!en!*!* and timestamp 20151130141027 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:586-0!*!0!!en!*!* and timestamp 20170402163042 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=75616">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=75616</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=88750">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=88750</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -768,7 +792,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="scanf.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/fscanf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/fscanf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=75616" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/fscanf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/fscanf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;oldid=88750" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fscanf&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -776,8 +800,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-cs"><a href="http://cs.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/fscanf" title="cpp/io/c/fscanf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 January 2015, at 14:49.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 114,734 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 8 December 2016, at 12:05.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 171,718 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -810,7 +834,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 5.220 secs. -->
+</script><!-- Served in 0.065 secs. -->
 	</body>
-<!-- Cached 20151130141028 -->
+<!-- Cached 20170402174837 -->
 </html>

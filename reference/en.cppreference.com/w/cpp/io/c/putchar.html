@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -365,7 +366,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/putchar&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <p>On success, returns the written character.
-</p><p>On failure, returns <span class="t-lc">EOF</span> and sets the <i>error</i> indicator (see <span class="t-lc">ferror()</span>) on <span class="t-lc">stdout</span>.
+</p><p>On failure, returns <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> and sets the <i>error</i> indicator (see <span class="t-lc">ferror()</span>) on <span class="t-lc"><a href="../c.html" title="cpp/io/c">stdout</a></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/putchar&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -379,9 +380,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
     <span class="co1">// putchar return value is not equal to the argument</span>
     <span class="kw4">int</span> r <span class="sy1">=</span> <span class="nu12">0x1070</span><span class="sy4">;</span>
-    <a href="printf.html"><span class="kw1567">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>0x%x<span class="es1">\n</span>&quot;</span>, r<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="printf.html"><span class="kw1841">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>0x%x<span class="es1">\n</span>&quot;</span>, r<span class="br0">&#41;</span><span class="sy4">;</span>
     r <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">putchar</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="printf.html"><span class="kw1567">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>0x%x<span class="es1">\n</span>&quot;</span>, r<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="printf.html"><span class="kw1841">std::<span class="me2">printf</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>0x%x<span class="es1">\n</span>&quot;</span>, r<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -407,15 +408,15 @@ p
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5205/1000000
-Preprocessor generated node count: 7274/1000000
-Post‐expand include size: 132182/2097152 bytes
-Template argument size: 20248/2097152 bytes
+Preprocessor visited node count: 5236/1000000
+Preprocessor generated node count: 7355/1000000
+Post‐expand include size: 133183/2097152 bytes
+Template argument size: 20366/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:594-0!*!0!!en!*!* and timestamp 20151130141835 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:594-0!*!0!!en!*!* and timestamp 20170319114010 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -450,8 +451,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/putchar" title="cpp/io/c/putchar" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 16 October 2013, at 06:55.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,908 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 16 October 2013, at 07:55.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,824 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -484,7 +485,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.747 secs. -->
+</script><!-- Served in 1.472 secs. -->
 	</body>
-<!-- Cached 20151130141835 -->
+<!-- Cached 20170319114010 -->
 </html>

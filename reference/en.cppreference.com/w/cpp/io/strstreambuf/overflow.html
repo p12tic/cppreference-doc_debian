@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -281,7 +282,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
-<span class="kw1">virtual</span> int_type overflow <span class="br0">&#40;</span>int_type c <span class="sy1">=</span> <a href="../c.html"><span class="kw1606">EOF</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<span class="kw1">virtual</span> int_type overflow <span class="br0">&#40;</span>int_type c <span class="sy1">=</span> <a href="../c.html"><span class="kw1879">EOF</span></a><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -291,8 +292,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <div class="t-li1"><span class="t-li">1)</span> If <code>c==EOF</code>, does nothing</div>
 <div class="t-li1"><span class="t-li">2)</span> Otherwise, if the put area has a write position available (<span class="t-c"><span class="mw-geshi cpp source-cpp">pptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>), stores the character as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>pptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">++</span> <span class="sy1">=</span> c</span></span></div>
-<div class="t-li1"><span class="t-li">3)</span> Otherwise, if the stream buffer mode is not dynamic or the stream buffer is currently frozen, the function fails and returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1606">EOF</span></a></span></span></div>
-<div class="t-li1"><span class="t-li">4)</span> Otherwise, the function reallocates (or initially allocates) a dynamic array large enough to hold the contents of the current dynamic array (if any) plus at least one additional write position. If a pointer to the allocator function <code>palloc</code> was used in the constructor, that function is called with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="sy2">*</span>palloc<span class="br0">&#41;</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span></span></span> where <code>n</code> is the number of bytes to allocate, otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp">new <span class="kw4">char</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span></span></span> is used. If a pointer to the deallocating function <code>pfree</code> was used in the constructor, that function is called with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="sy2">*</span>pfree<span class="br0">&#41;</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span></span></span> to deallocate the previous array, if needed, otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="br0">&#91;</span><span class="br0">&#93;</span> p</span></span> is used. If allocation fails, the function fails and returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1606">EOF</span></a></span></span>. </div>
+<div class="t-li1"><span class="t-li">3)</span> Otherwise, if the stream buffer mode is not dynamic or the stream buffer is currently frozen, the function fails and returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1879">EOF</span></a></span></span></div>
+<div class="t-li1"><span class="t-li">4)</span> Otherwise, the function reallocates (or initially allocates) a dynamic array large enough to hold the contents of the current dynamic array (if any) plus at least one additional write position. If a pointer to the allocator function <code>palloc</code> was used in the constructor, that function is called with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="sy2">*</span>palloc<span class="br0">&#41;</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span></span></span> where <code>n</code> is the number of bytes to allocate, otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp">new <span class="kw4">char</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span></span></span> is used. If a pointer to the deallocating function <code>pfree</code> was used in the constructor, that function is called with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="sy2">*</span>pfree<span class="br0">&#41;</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span></span></span> to deallocate the previous array, if needed, otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="br0">&#91;</span><span class="br0">&#93;</span> p</span></span> is used. If allocation fails, the function fails and returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1879">EOF</span></a></span></span>. </div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="overflow.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
@@ -313,21 +314,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  the character to store in the put area
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/overflow&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="sy1">==</span><a href="../c.html"><span class="kw1606">EOF</span></a></span></span>, returns some value other than <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1606">EOF</span></a></span></span>. Otherwise, returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span></span></span> on success, <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> on failure.
+<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="sy1">==</span><a href="../c.html"><span class="kw1879">EOF</span></a></span></span>, returns some value other than <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../c.html"><span class="kw1879">EOF</span></a></span></span>. Otherwise, returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span></span></span> on success, <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> on failure.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/overflow&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;strstream&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a>
+<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../strstreambuf.html"><span class="kw1749">std::<span class="me2">strstreambuf</span></span></a>
 <span class="br0">&#123;</span>
     int_type overflow<span class="br0">&#40;</span>int_type c<span class="br0">&#41;</span> 
     <span class="br0">&#123;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before overflow(): size of the put area is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before overflow(): size of the put area is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; with &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; write positions available<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         int_type rc <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">strstreambuf</span><span class="sy4">::</span><span class="me2">overflow</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After overflow(): size of the put area is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After overflow(): size of the put area is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; with &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pptr<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; write positions available<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">return</span> rc<span class="sy4">;</span>
     <span class="br0">&#125;</span>
@@ -336,7 +337,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     mybuf sbuf<span class="sy4">;</span> <span class="co1">// read-write dynamic strstreambuf</span>
-    <a href="../basic_iostream.html"><span class="kw1454">std::<span class="me2">iostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>sbuf<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_iostream.html"><span class="kw1728">std::<span class="me2">iostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>sbuf<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     stream <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Sufficiently long string to overflow the initial allocation, at least &quot;</span>
            <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; on some systems.&quot;</span><span class="sy4">;</span>
@@ -386,15 +387,15 @@ After overflow(): size of the put area is 128 with 63 write positions available<
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4143/1000000
-Preprocessor generated node count: 8209/1000000
-Post‐expand include size: 101456/2097152 bytes
-Template argument size: 21343/2097152 bytes
+Preprocessor visited node count: 4174/1000000
+Preprocessor generated node count: 8290/1000000
+Post‐expand include size: 102405/2097152 bytes
+Template argument size: 21461/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12968-0!*!0!!en!*!* and timestamp 20150825025105 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12968-0!*!0!!en!*!* and timestamp 20161206000257 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -424,8 +425,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/strstreambuf/overflow" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/strstreambuf/overflow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/overflow&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/overflow&amp;oldid=65329" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/strstreambuf/overflow&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 September 2013, at 08:15.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,081 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 September 2013, at 07:15.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,666 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -458,7 +459,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.439 secs. -->
+</script><!-- Served in 2.143 secs. -->
 	</body>
-<!-- Cached 20150825025106 -->
+<!-- Cached 20161206000257 -->
 </html>

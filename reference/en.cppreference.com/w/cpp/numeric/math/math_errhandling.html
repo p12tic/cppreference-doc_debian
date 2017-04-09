@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -395,14 +400,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>MATH_ERREXCEPT</code>
 </td>
-<td>  indicates that floating-point exceptions are used: at least <span class="t-lc">FE_DIVBYZERO</span>, <span class="t-lc">FE_INVALID</span>, and <span class="t-lc">FE_OVERFLOW</span> are defined in <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span>cfenv<span class="sy1">&gt;</span></span></span>.
+<td>  indicates that floating-point exceptions are used: at least <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></span>, <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span>, and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_OVERFLOW</a></span> are defined in <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span>cfenv<span class="sy1">&gt;</span></span></span>.
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>MATH_ERRNO</code>
 </td>
-<td>  indicates that floating-point operations use the variable <span class="t-lc">errno</span> to report errors.
+<td>  indicates that floating-point operations use the variable <span class="t-lc"><a href="../../error/errno.html" title="cpp/error/errno">errno</a></span> to report errors.
 </td></tr>
 
 </table>
@@ -423,44 +428,44 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td>the argument is outside the range in which the operation is mathematically defined (the description of <a href="../math.html" title="cpp/numeric/math">each function</a> lists the required domain errors)
 </td>
-<td><span class="t-lc">EDOM</span>
+<td><span class="t-lc"><a href="../../error/errno_macros.html" title="cpp/error/errno macros">EDOM</a></span>
 </td>
-<td><span class="t-lc">FE_INVALID</span>
+<td><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span>
 </td>
-<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="acos.html"><span class="kw1148">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span></span></span>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="acos.html"><span class="kw1334">std::<span class="me2">acos</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span></span></span>
 </td></tr>
 <tr>
 <td>Pole error
 </td>
 <td>the mathematical result of the function is exactly infinite or undefined
 </td>
-<td><span class="t-lc">ERANGE</span>
+<td><span class="t-lc"><a href="../../error/errno_macros.html" title="cpp/error/errno macros">ERANGE</a></span>
 </td>
-<td><span class="t-lc">FE_DIVBYZERO</span>
+<td><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_DIVBYZERO</a></span>
 </td>
-<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="log.html"><span class="kw1135">std::<span class="me2">log</span></span></a><span class="br0">&#40;</span><span class="nu16">0.0</span><span class="br0">&#41;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><span class="nu16">0.0</span></span></span>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="log.html"><span class="kw1321">std::<span class="me2">log</span></span></a><span class="br0">&#40;</span><span class="nu16">0.0</span><span class="br0">&#41;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><span class="nu16">0.0</span></span></span>
 </td></tr>
 <tr>
 <td>Range error due to overflow
 </td>
 <td>the mathematical result is finite, but becomes infinite after rounding, or becomes the largest representable finite value after rounding down
 </td>
-<td><span class="t-lc">ERANGE</span>
+<td><span class="t-lc"><a href="../../error/errno_macros.html" title="cpp/error/errno macros">ERANGE</a></span>
 </td>
-<td><span class="t-lc">FE_OVERFLOW</span>
+<td><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_OVERFLOW</a></span>
 </td>
-<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pow.html"><span class="kw1143">std::<span class="me2">pow</span></span></a><span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw412">DBL_MAX</span></a>,<span class="nu0">2</span><span class="br0">&#41;</span></span></span>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pow.html"><span class="kw1329">std::<span class="me2">pow</span></span></a><span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw418">DBL_MAX</span></a>,<span class="nu0">2</span><span class="br0">&#41;</span></span></span>
 </td></tr>
 <tr>
 <td>Range error due to underflow
 </td>
 <td>the result is non-zero, but becomes zero after rounding, or becomes subnormal with a loss of precision
 </td>
-<td><span class="t-lc">ERANGE</span> or unchanged (implementation-defined)
+<td><span class="t-lc"><a href="../../error/errno_macros.html" title="cpp/error/errno macros">ERANGE</a></span> or unchanged (implementation-defined)
 </td>
-<td><span class="t-lc">FE_UNDERFLOW</span> or nothing (implementation-defined)
+<td><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_UNDERFLOW</a></span> or nothing (implementation-defined)
 </td>
-<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/climits.1.html"><span class="kw409">DBL_MIN</span></a><span class="sy2">/</span><span class="nu0">2</span></span></span>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/climits.1.html"><span class="kw412">DBL_MIN</span></a><span class="sy2">/</span><span class="nu0">2</span></span></span>
 </td></tr>
 <tr>
 <td>Inexact result
@@ -469,13 +474,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td>unchanged
 </td>
-<td><span class="t-lc">FE_INEXACT</span> or nothing (unspecified)
+<td><span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> or nothing (unspecified)
 </td>
-<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="sqrt.html"><span class="kw1140">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><span class="nu16">10.0</span></span></span>
+<td><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="sqrt.html"><span class="kw1326">std::<span class="me2">sqrt</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu16">1.0</span><span class="sy2">/</span><span class="nu16">10.0</span></span></span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/math_errhandling&amp;action=edit&amp;section=1" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Whether <span class="t-lc">FE_INEXACT</span> is raised by the mathematical library functions is unspecified in general, but may be explicitly specified in the description of the function (e.g. <span class="t-lc">std::rint</span> vs <span class="t-lc">std::nearbyint</span>)
-</p><p>Before C++11, floating-point exceptions were not specified, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/errno_macros.html"><span class="kw690">EDOM</span></a></span></span> was required for any domain error, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/errno_macros.html"><span class="kw742">ERANGE</span></a></span></span> was required for overflows and implementation-defined for underflows.
+<p>Whether <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> is raised by the mathematical library functions is unspecified in general, but may be explicitly specified in the description of the function (e.g. <span class="t-lc"><a href="rint.html" title="cpp/numeric/math/rint">std::rint</a></span> vs <span class="t-lc"><a href="nearbyint.html" title="cpp/numeric/math/nearbyint">std::nearbyint</a></span>)
+</p><p>Before C++11, floating-point exceptions were not specified, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/errno_macros.html"><span class="kw810">EDOM</span></a></span></span> was required for any domain error, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/errno_macros.html"><span class="kw862">ERANGE</span></a></span></span> was required for overflows and implementation-defined for underflows.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/math_errhandling&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -487,17 +492,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;MATH_ERRNO is &quot;</span>
+    <a href="../../io/cout.html"><span class="kw1752">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;MATH_ERRNO is &quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="br0">&#40;</span>math_errhandling <span class="sy3">&amp;</span> MATH_ERRNO <span class="sy4">?</span> <span class="st0">&quot;set&quot;</span> <span class="sy4">:</span> <span class="st0">&quot;not set&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;MATH_ERREXCEPT is &quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="br0">&#40;</span>math_errhandling <span class="sy3">&amp;</span> MATH_ERREXCEPT <span class="sy4">?</span> <span class="st0">&quot;set&quot;</span> <span class="sy4">:</span> <span class="st0">&quot;not set&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <a href="../fenv/feclearexcept.html"><span class="kw1195">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1206">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../fenv/feclearexcept.html"><span class="kw1444">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1455">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;log(0) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="log.html"><span class="kw1135">std::<span class="me2">log</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw742">ERANGE</span></a><span class="br0">&#41;</span>
-            <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;errno = ERANGE (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1003">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1196">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1207">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1478">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;FE_DIVBYZERO (pole error) reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1752">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;log(0) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="log.html"><span class="kw1321">std::<span class="me2">log</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw862">ERANGE</span></a><span class="br0">&#41;</span>
+            <a href="../../io/cout.html"><span class="kw1752">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;errno = ERANGE (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1158">std::<span class="me2">strerror</span></span></a><span class="br0">&#40;</span><span class="kw2">errno</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1445">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1456">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1752">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;FE_DIVBYZERO (pole error) reported<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -530,15 +535,15 @@ FE_DIVBYZERO (pole error) reported</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7082/1000000
-Preprocessor generated node count: 8217/1000000
-Post‐expand include size: 213999/2097152 bytes
-Template argument size: 40464/2097152 bytes
+Preprocessor visited node count: 7271/1000000
+Preprocessor generated node count: 8392/1000000
+Post‐expand include size: 222085/2097152 bytes
+Template argument size: 41813/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9220-0!*!0!!*!*!* and timestamp 20151130142702 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9220-0!*!0!!*!*!* and timestamp 20161205225550 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -574,7 +579,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 22 May 2014, at 07:23.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,039 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,738 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -607,7 +612,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.458 secs. -->
+</script><!-- Served in 3.348 secs. -->
 	</body>
-<!-- Cached 20151130142702 -->
+<!-- Cached 20161205225550 -->
 </html>

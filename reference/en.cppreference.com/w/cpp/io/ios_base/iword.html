@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -304,7 +305,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>First, allocates or resizes the private storage (dynamic array of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> or another indexable data structure) sufficiently to make <code>index</code> a valid index, then returns a reference to the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span> element of the private storage with the index <code>index</code>. 
 </p><p>The reference may be invalidated by any operation on this <code>ios_base</code> object, including another call to <code>iword()</code>, but the stored values are retained, so that reading from <span class="t-c"><span class="mw-geshi cpp source-cpp">iword<span class="br0">&#40;</span>index<span class="br0">&#41;</span></span></span> with the same index later will produce the same value (until the next call to <span class="t-lc"><a href="../basic_ios/copyfmt.html" title="cpp/io/basic ios/copyfmt">std::basic_ios::copyfmt()</a></span>). The value can be used for any purpose. The index of the element must be obtained by <span class="t-lc"><a href="xalloc.html" title="cpp/io/ios base/xalloc">xalloc()</a></span>, otherwise collisions with other users of this <code>ios_base</code> may occur. New elements are initialized to <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>.
-</p><p>If allocation fails, calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../basic_ios.html"><span class="kw1435">std::<span class="me2">basic_ios</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">setstate</span><span class="br0">&#40;</span>badbit<span class="br0">&#41;</span></span></span> which may throw <span class="t-lc"><a href="failure.html" title="cpp/io/ios base/failure">std::ios_base::failure</a></span>
+</p><p>If allocation fails, calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../basic_ios.html"><span class="kw1709">std::<span class="me2">basic_ios</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">setstate</span><span class="br0">&#40;</span>badbit<span class="br0">&#41;</span></span></span> which may throw <span class="t-lc"><a href="failure.html" title="cpp/io/ios base/failure">std::ios_base::failure</a></span>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -343,24 +344,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw1">struct</span> Foo <span class="br0">&#123;</span>
     <span class="kw4">static</span> <span class="kw4">int</span> foo_xalloc<span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> data<span class="sy4">;</span> 
-    Foo<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s<span class="br0">&#41;</span> <span class="sy4">:</span> data<span class="br0">&#40;</span>s<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> data<span class="sy4">;</span> 
+    Foo<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s<span class="br0">&#41;</span> <span class="sy4">:</span> data<span class="br0">&#40;</span>s<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="co1">// allocates the iword storage for use with Foo objects</span>
 <span class="kw4">int</span> Foo<span class="sy4">::</span><span class="me2">foo_xalloc</span> <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">xalloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
 <span class="co1">// This user-defined operator&lt;&lt; prints the string in reverse if the iword holds 1</span>
-<a href="../basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1452">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, Foo<span class="sy3">&amp;</span> f<span class="br0">&#41;</span>
+<a href="../basic_ostream.html"><span class="kw1726">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> operator<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1726">std::<span class="me2">ostream</span></span></a><span class="sy3">&amp;</span> os, Foo<span class="sy3">&amp;</span> f<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>os.<span class="me1">iword</span><span class="br0">&#40;</span>Foo<span class="sy4">::</span><span class="me2">foo_xalloc</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="nu0">1</span><span class="br0">&#41;</span>
-        <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>f.<span class="me1">data</span>.<span class="me1">rbegin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, f.<span class="me1">data</span>.<span class="me1">rend</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>f.<span class="me1">data</span>.<span class="me1">rbegin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, f.<span class="me1">data</span>.<span class="me1">rend</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">else</span>
         <span class="kw1">return</span> os <span class="sy1">&lt;&lt;</span> f.<span class="me1">data</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="co1">// This I/O manipulator flips the number stored in iword between 0 and 1</span>
-<a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> rev<span class="br0">&#40;</span><a href="../ios_base.html"><span class="kw1393">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> os<span class="br0">&#41;</span>
+<a href="../ios_base.html"><span class="kw1666">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> rev<span class="br0">&#40;</span><a href="../ios_base.html"><span class="kw1666">std::<span class="me2">ios_base</span></span></a><span class="sy3">&amp;</span> os<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     os.<span class="me1">iword</span><span class="br0">&#40;</span>Foo<span class="sy4">::</span><span class="me2">foo_xalloc</span><span class="br0">&#41;</span> <span class="sy1">=</span> <span class="sy3">!</span>os.<span class="me1">iword</span><span class="br0">&#40;</span>Foo<span class="sy4">::</span><span class="me2">foo_xalloc</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">return</span> os<span class="sy4">;</span>
@@ -369,7 +370,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     Foo f<span class="br0">&#40;</span><span class="st0">&quot;example&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> rev <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> rev <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> rev <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> rev <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -395,15 +396,15 @@ example</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4073/1000000
-Preprocessor generated node count: 7972/1000000
-Post‐expand include size: 98035/2097152 bytes
-Template argument size: 17764/2097152 bytes
+Preprocessor visited node count: 4104/1000000
+Preprocessor generated node count: 8053/1000000
+Post‐expand include size: 98984/2097152 bytes
+Template argument size: 17882/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:615-0!*!0!!en!*!* and timestamp 20151004171523 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:615-0!*!0!!en!*!* and timestamp 20161205221419 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -438,8 +439,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/ios_base/iword" title="cpp/io/ios base/iword" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 4 October 2015, at 10:15.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,906 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 October 2015, at 09:15.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,237 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -472,7 +473,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.083 secs. -->
+</script><!-- Served in 1.967 secs. -->
 	</body>
-<!-- Cached 20151004194224 -->
+<!-- Cached 20161205221419 -->
 </html>

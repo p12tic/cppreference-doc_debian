@@ -203,10 +203,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -228,6 +230,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -298,7 +301,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class <code>thread::id</code> is a lightweight, trivially copyable class that serves as a unique identifier of <span class="t-lc">std::thread</span> objects. 
+<p>The class <code>thread::id</code> is a lightweight, trivially copyable class that serves as a unique identifier of <span class="t-lc"><a href="../thread.html" title="cpp/thread/thread">std::thread</a></span> objects. 
 </p><p>Instances of this class may also hold the special distinct value that does not represent any thread. Once a thread has finished, the value of <code>std::thread::id</code> may be reused by another thread.
 </p><p>This class is designed for use as key in associative containers, both ordered and unordered.
 </p>
@@ -341,7 +344,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="id/hash.html" title="cpp/thread/thread/id/hash"> <span class="t-lines"><span>std::hash<span class="t-dsc-small">&lt;std::thread::id&gt;</span></span></span></a></div></div>
 </td>
-<td>   specializes <span class="t-lc">std::hash</span> <br /> <span class="t-mark">(class template specialization)</span>
+<td>   specializes <span class="t-lc"><a href="../../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> <br /> <span class="t-mark">(class template specialization)</span>
 </td></tr>
 
 </table>
@@ -349,9 +352,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="get_id.html" title="cpp/thread/thread/get id"> <span class="t-lines"><span>get_id</span></span></a></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="get_id.html" title="cpp/thread/thread/get id"> <span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   returns the <i>id</i> of the thread <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/thread/dsc_get_id&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   returns the <i>id</i> of the thread  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/thread/dsc_get_id&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -363,15 +366,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5161/1000000
-Preprocessor generated node count: 8864/1000000
-Post‐expand include size: 159879/2097152 bytes
-Template argument size: 28681/2097152 bytes
+Preprocessor visited node count: 5349/1000000
+Preprocessor generated node count: 9018/1000000
+Post‐expand include size: 168688/2097152 bytes
+Template argument size: 30692/2097152 bytes
 Highest expansion depth: 21/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5138-0!*!0!!en!*!* and timestamp 20151130142420 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5138-0!*!0!!en!*!* and timestamp 20161222223355 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -407,7 +410,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 20 August 2015, at 13:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 30,794 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 57,001 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -440,7 +443,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.408 secs. -->
+</script><!-- Served in 1.104 secs. -->
 	</body>
-<!-- Cached 20151130142420 -->
+<!-- Cached 20161222223355 -->
 </html>

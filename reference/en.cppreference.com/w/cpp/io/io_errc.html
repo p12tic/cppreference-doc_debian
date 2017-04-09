@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -283,7 +284,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The scoped enumeration <code>std::io_errc</code> defines the error codes reported by I/O streams in <span class="t-lc">std::ios_base::failure</span> exception objects. Only one error code (<code>std::io_errc::stream</code>) is required, although the implementation may define additional error codes. Because the appropriate specialization of <span class="t-lc">std::is_error_code_enum</span> is provided, values of type <code>std::io_errc</code> are implicitly convertible to <span class="t-lc">std::error_code</span>.
+<p>The scoped enumeration <code>std::io_errc</code> defines the error codes reported by I/O streams in <span class="t-lc"><a href="ios_base/failure.html" title="cpp/io/ios base/failure">std::ios_base::failure</a></span> exception objects. Only one error code (<code>std::io_errc::stream</code>) is required, although the implementation may define additional error codes. Because the appropriate specialization of <span class="t-lc"><a href="../error/error_code/is_error_code_enum.html" title="cpp/error/error code/is error code enum">std::is_error_code_enum</a></span> is provided, values of type <code>std::io_errc</code> are implicitly convertible to <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -332,7 +333,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="io_errc/is_error_code_enum.html" title="cpp/io/io errc/is error code enum"> <span class="t-lines"><span>is_error_code_enum<span class="t-dsc-small">&lt;std::io_errc&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   extends the type trait <span class="t-lc">std::is_error_code_enum</span> to identify iostream error codes <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/io_errc/dsc_is_error_code_enum&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   extends the type trait <span class="t-lc"><a href="../error/error_code/is_error_code_enum.html" title="cpp/error/error code/is error code enum">std::is_error_code_enum</a></span> to identify iostream error codes <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/io_errc/dsc_is_error_code_enum&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/io_errc&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -341,13 +342,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;fstream&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="basic_ifstream.html"><span class="kw1455">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="basic_ifstream.html"><span class="kw1729">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">try</span> <span class="br0">&#123;</span>
         f.<span class="me1">exceptions</span><span class="br0">&#40;</span>f.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="ios_base/failure.html"><span class="kw1394">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="ios_base/failure.html"><span class="kw1667">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">if</span><span class="br0">&#40;</span>e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">io_errc</span><span class="sy4">::</span><span class="me2">stream</span><span class="br0">&#41;</span>
-            <a href="cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The error code is std::io_errc::stream<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+            <a href="cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The error code is std::io_errc::stream<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -379,15 +380,15 @@ The error code is std::io_errc::stream</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3207/1000000
-Preprocessor generated node count: 7090/1000000
-Post‐expand include size: 95436/2097152 bytes
-Template argument size: 17271/2097152 bytes
+Preprocessor visited node count: 3230/1000000
+Preprocessor generated node count: 7171/1000000
+Post‐expand include size: 96931/2097152 bytes
+Template argument size: 17521/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4788-0!*!0!!en!*!* and timestamp 20151130143821 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4788-0!*!0!!en!*!* and timestamp 20161206003651 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -423,7 +424,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 18 September 2015, at 23:16.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,153 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,694 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -456,7 +457,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.245 secs. -->
+</script><!-- Served in 1.167 secs. -->
 	</body>
-<!-- Cached 20151130143821 -->
+<!-- Cached 20161206003651 -->
 </html>

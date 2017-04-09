@@ -28,16 +28,18 @@ qhelpgenerator = qhelpgenerator
 
 #Version
 
-VERSION=20151129
+VERSION=20170409
 
 #STANDARD RULES
 
 all: doc_devhelp doc_qch doc_doxygen
 
 DISTFILES=	\
-		reference/				\
-		images/					\
+		gadgets/				\
 		headers/				\
+		images/					\
+		reference/				\
+		skins/					\
 		build_link_map.py		\
 		ddg_parse_html.py		\
 		devhelp2qch.xsl			\
@@ -47,17 +49,17 @@ DISTFILES=	\
 		index2ddg.py			\
 		index2devhelp.py		\
 		index2doxygen-tag.py		\
-		index2search.py			\
 		index2highlight.py		\
+		index2search.py			\
 		index_transform.py		\
 		index-chapters-c.xml	\
 		index-chapters-cpp.xml	\
+		index-cpp-search-app.txt \
 		index-functions.README	\
 		index-functions-c.xml	\
 		index-functions-cpp.xml	\
 		link_map.py		\
 		preprocess.py			\
-		preprocess.xsl			\
 		preprocess-css.css		\
 		Makefile				\
 		README.md			\
@@ -190,6 +192,7 @@ output/cppreference-doxygen-local.tag.xml: 		\
 		output/link-map.xml
 	./index2doxygen-tag.py "output/link-map.xml" \
 		"index-functions-cpp.xml" \
+		"index-chapters-cpp.xml" \
 		"output/cppreference-doxygen-local.tag.xml"
 
 output/cppreference-doxygen-web.tag.xml: 		\
@@ -197,12 +200,13 @@ output/cppreference-doxygen-web.tag.xml: 		\
 		output/link-map.xml
 	./index2doxygen-tag.py web \
 		"index-functions-cpp.xml" \
+		"index-chapters-cpp.xml" \
 		"output/cppreference-doxygen-web.tag.xml"
 
 #create preprocessed archive
 output/reference:
 	mkdir -p output
-	./preprocess.py
+	./preprocess.py --src reference --dst output/reference
 
 # create indexes for the wiki
 indexes:
@@ -230,8 +234,9 @@ source:
 	  --force-directories --recursive --level=15 \
 	  --span-hosts --domains=en.cppreference.com,upload.cppreference.com \
 	  --reject-regex $$regex \
-	  --timeout=180 --no-verbose \
-	  --retry-connrefused --waitretry=1 --read-timeout=20 \
+	  --timeout=5 --tries=50 --no-verbose \
+	  --retry-connrefused --waitretry=10 --read-timeout=20 \
 	  http://en.cppreference.com/w/ ; \
 	popd > /dev/null
 
+	./export.py --url=http://en.cppreference.com/mwiki reference/cppreference-export-ns0,4,8,10.xml 0 4 8 10

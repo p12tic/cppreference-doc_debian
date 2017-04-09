@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c/tmpnam","wgTitle":"cpp/io/c/tmpnam","wgCurRevisionId":75569,"wgArticleId":602,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/c/tmpnam","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/c/tmpnam","wgTitle":"cpp/io/c/tmpnam","wgCurRevisionId":85923,"wgArticleId":602,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/c/tmpnam","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -341,7 +342,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Creates an unique filename that does not name a currently existing file, and stores it in the character string pointed to by <code>filename</code>. The function is capable of generating up to <span class="t-lc">TMP_MAX</span> of unique filenames, but some or all of them may already be in use, and thus not suitable return values. 
+<p>Creates a unique filename that does not name a currently existing file, and stores it in the character string pointed to by <code>filename</code>. The function is capable of generating up to <span class="t-lc"><a href="../c.html" title="cpp/io/c">TMP_MAX</a></span> of unique filenames, but some or all of them may already be in use, and thus not suitable return values. 
 </p><p><code>std::tmpnam</code> modifies static state and is not required to be thread-safe.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -362,13 +363,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  pointer to the character array capable of holding at least <span class="t-lc">L_tmpnam</span> bytes, to be used as a result buffer. If a null pointer is passed, a pointer to an internal static buffer is returned.
+<td>  pointer to the character array capable of holding at least <span class="t-lc"><a href="../c.html" title="cpp/io/c">L_tmpnam</a></span> bytes, to be used as a result buffer. If a null pointer is passed, a pointer to an internal static buffer is returned.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p><code>filename</code> if <code>filename</code> was not <span class="t-lc">NULL</span>. Otherwise a pointer to an internal static buffer is returned. If no suitable filename can be generated, <span class="t-lc">NULL</span> is returned.
+<p><code>filename</code> if <code>filename</code> was not <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span>. Otherwise a pointer to an internal static buffer is returned. If no suitable filename can be generated, <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span> is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Although the names generated by <code>std::tmpnam</code> are difficult to guess, it is possible that a file with that name is created by another process between the moment <code>std::tmpnam</code> returns and the moment this program attempts to use the returned name to create a file. The standard function <span class="t-lc">std::tmpfile</span> and the POSIX function <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/mkdtemp.html">mkstemp</a> do not have this problem (creating a unique directory using only the standard C library still requires the use of <code>tmpnam</code>)
+<p>Although the names generated by <code>std::tmpnam</code> are difficult to guess, it is possible that a file with that name is created by another process between the moment <code>std::tmpnam</code> returns and the moment this program attempts to use the returned name to create a file. The standard function <span class="t-lc"><a href="tmpfile.html" title="cpp/io/c/tmpfile">std::tmpfile</a></span> and the POSIX function <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/mkdtemp.html">mkstemp</a> do not have this problem (creating a unique directory using only the standard C library still requires the use of <code>tmpnam</code>)
 </p><p>POSIX systems additionally define the similarly named function <code><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/tempnam.html">tempnam()</a></code>, which offers the choice of a directory (which defaults to the optionally defined macro <code><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html">P_tmpdir</a>)</code>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -379,12 +380,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> name1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">tmpnam</span><span class="br0">&#40;</span>nullptr<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;temporary file name: &quot;</span> <span class="sy1">&lt;&lt;</span> name1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> name1 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">tmpnam</span><span class="br0">&#40;</span>nullptr<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;temporary file name: &quot;</span> <span class="sy1">&lt;&lt;</span> name1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <span class="kw4">char</span> name2<span class="br0">&#91;</span><a href="../c.html"><span class="kw1616">L_tmpnam</span></a><span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw4">char</span> name2<span class="br0">&#91;</span><a href="../c.html"><span class="kw1889">L_tmpnam</span></a><span class="br0">&#93;</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">tmpnam</span><span class="br0">&#40;</span>name2<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;temporary file name: &quot;</span> <span class="sy1">&lt;&lt;</span> name2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;temporary file name: &quot;</span> <span class="sy1">&lt;&lt;</span> name2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
@@ -402,6 +403,12 @@ temporary file name: /tmp/fileEv2bfW</pre></div></div>
 </td></tr>
 
 <tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../filesystem/temp_directory_path.html" title="cpp/filesystem/temp directory path"> <span class="t-lines"><span>temp_directory_path</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   returns a directory suitable for temporary files <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/filesystem/dsc_temp_directory_path&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
 <td colspan="2"> <div class="t-dsc-see"><span><a href="../../../c/io/tmpnam.html" title="c/io/tmpnam">C documentation</a></span> for <span class="t-dsc-see-tt"><span>tmpnam</span></span></div>
 </td></tr>
 
@@ -409,19 +416,19 @@ temporary file name: /tmp/fileEv2bfW</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5230/1000000
-Preprocessor generated node count: 7339/1000000
-Post‐expand include size: 132456/2097152 bytes
-Template argument size: 20818/2097152 bytes
+Preprocessor visited node count: 5375/1000000
+Preprocessor generated node count: 7476/1000000
+Post‐expand include size: 138942/2097152 bytes
+Template argument size: 21993/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:602-0!*!0!!en!*!* and timestamp 20151130141155 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:602-0!*!0!!en!*!* and timestamp 20170319090355 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=75569">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=75569</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=85923">http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=85923</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -444,7 +451,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="tmpnam.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/tmpnam" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/tmpnam" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=75569" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/c/tmpnam" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/c/tmpnam" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;oldid=85923" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/tmpnam&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -452,8 +459,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/tmpnam" title="cpp/io/c/tmpnam" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 22 January 2015, at 07:06.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,807 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 3 June 2016, at 15:30.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 29,881 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -486,7 +493,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.596 secs. -->
+</script><!-- Served in 1.397 secs. -->
 	</body>
-<!-- Cached 20151130141155 -->
+<!-- Cached 20170319090355 -->
 </html>

@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/byte/isalpha","wgTitle":"c/string/byte/isalpha","wgCurRevisionId":78755,"wgArticleId":6059,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/byte/isalpha","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/byte/isalpha","wgTitle":"c/string/byte/isalpha","wgCurRevisionId":90036,"wgArticleId":6059,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/byte/isalpha","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -309,7 +309,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>Checks if the given character is an alphabetic character, i.e. either an uppercase letter (<code>ABCDEFGHIJKLMNOPQRSTUVWXYZ</code>), or a lowercase letter (<code>abcdefghijklmnopqrstuvwxyz</code>).
 </p><p>In locales other than <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;C&quot;</span></span></span>, an alphabetic character is a character for which <span class="t-lc"><a href="isupper.html" title="c/string/byte/isupper">isupper()</a></span> or <span class="t-lc"><a href="islower.html" title="c/string/byte/islower">islower()</a></span> returns <span class="t-c"><span class="mw-geshi c source-c"><span class="kw2">true</span></span></span> or any other character considered alphabetic by the locale. In any case, <span class="t-lc"><a href="iscntrl.html" title="c/string/byte/iscntrl">iscntrl()</a></span>, <span class="t-lc"><a href="isdigit.html" title="c/string/byte/isdigit">isdigit()</a></span>, <span class="t-lc"><a href="ispunct.html" title="c/string/byte/ispunct">ispunct()</a></span> and <span class="t-lc"><a href="isspace.html" title="c/string/byte/isspace">isspace()</a></span> will return <span class="t-c"><span class="mw-geshi c source-c"><span class="kw2">false</span></span></span> for this character.
-</p><p>The behavior is undefined if the value of <code>ch</code> is not representable as <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> and is not equal to <span class="t-c"><span class="mw-geshi c source-c"><a href="../../io.html"><span class="kw888">EOF</span></a></span></span>.
+</p><p>The behavior is undefined if the value of <code>ch</code> is not representable as <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> or is not equal to <span class="t-c"><span class="mw-geshi c source-c"><a href="../../io.html"><span class="kw888">EOF</span></a></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -925,19 +925,19 @@ isalpha('\xdf') in ISO-8859-1 locale returned 1</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4761/1000000
-Preprocessor generated node count: 8698/1000000
+Preprocessor visited node count: 4769/1000000
+Preprocessor generated node count: 8741/1000000
 Post‐expand include size: 155220/2097152 bytes
 Template argument size: 19350/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6059-0!*!0!!en!*!* and timestamp 20151130202657 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6059-0!*!0!!en!*!* and timestamp 20170202134928 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=78755">http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=78755</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=90036">http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=90036</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -960,7 +960,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="isalpha.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/byte/isalpha" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/byte/isalpha" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=78755" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/byte/isalpha" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/byte/isalpha" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;oldid=90036" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/isalpha&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -968,8 +968,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/string/byte/isalpha" title="c/string/byte/isalpha" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 8 June 2015, at 05:26.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,781 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 February 2017, at 05:49.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,609 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1002,7 +1002,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.512 secs. -->
+</script><!-- Served in 0.061 secs. -->
 	</body>
-<!-- Cached 20151130202657 -->
+<!-- Cached 20170202154458 -->
 </html>

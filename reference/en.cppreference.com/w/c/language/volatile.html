@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/volatile","wgTitle":"c/language/volatile","wgCurRevisionId":79115,"wgArticleId":13832,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/volatile","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/volatile","wgTitle":"c/language/volatile","wgCurRevisionId":85105,"wgArticleId":13832,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/volatile","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -273,7 +273,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div>
 </div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/language/declarations/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>Each individual type in the C <a href="compatible_type.html" title="c/language/type">type system</a> has several <i>qualified</i> versions of that type, corresponding to one, two, or all three of the <a href="const.html" title="c/language/const">const</a>, <i>volatile</i>, and, for pointers to object types, <a href="restrict.html" title="c/language/restrict">restrict</a> qualifiers. This page describes the effects of the <i>volatile</i> qualifier.
-</p><p>Every access (both read and write) made through an lvalue expression of volatile-qualified type is considered an observable side effect for the purpose of optimization and is evaluated strictly according to the rules of the abstract machine (that is, all writes are completed at some time before the next sequence point). This means that within a single thread of execution, volatile accesses cannot be reordered relative to other visible side effects or optimized out.
+</p><p>Every access (both read and write) made through an lvalue expression of volatile-qualified type is considered an observable side effect for the purpose of optimization and is evaluated strictly according to the rules of the abstract machine (that is, all writes are completed at some time before the next sequence point). This means that within a single thread of execution, a volatile access cannot be optimized out or reordered relative to another visible side effect that is separated by a <a href="eval_order.html" title="c/language/eval order">sequence point</a> from the volatile access.
 </p><p>A cast of a non-volatile value to a volatile type has no effect. To access a non-volatile object using volatile semantics, its address must be cast to a pointer-to-volatile and then the access must be made through that pointer.
 </p><p>Any attempt to read or write to an object whose type is volatile-qualified through a non-volatile lvalue results in undefined behavior:
 </p>
@@ -397,19 +397,19 @@ Modified a volatile variable 100m times. Time used: 0.79 seconds</pre></div></di
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2623/1000000
-Preprocessor generated node count: 4950/1000000
-Post‐expand include size: 63570/2097152 bytes
-Template argument size: 12889/2097152 bytes
+Preprocessor visited node count: 2641/1000000
+Preprocessor generated node count: 4978/1000000
+Post‐expand include size: 63654/2097152 bytes
+Template argument size: 12933/2097152 bytes
 Highest expansion depth: 16/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13832-0!*!0!!en!*!* and timestamp 20150624112726 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13832-0!*!0!!en!*!* and timestamp 20160401103211 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=79115">http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=79115</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=85105">http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=85105</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -432,7 +432,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="volatile.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/volatile" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/volatile" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=79115" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/volatile" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/volatile" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;oldid=85105" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/volatile&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -440,8 +440,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/language/volatile" title="c/language/volatile" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 24 June 2015, at 04:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,008 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 April 2016, at 03:32.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,178 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -474,7 +474,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.085 secs. -->
+</script><!-- Served in 0.055 secs. -->
 	</body>
-<!-- Cached 20150624121542 -->
+<!-- Cached 20160401130319 -->
 </html>

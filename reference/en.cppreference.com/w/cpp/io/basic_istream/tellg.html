@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -302,7 +303,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Returns input position indicator of the current associated <code>streambuf</code> object.
-</p><p>Behaves as <a href="../../concept/UnformattedInputFunction.html" title="cpp/concept/UnformattedInputFunction"><code>UnformattedInputFunction</code></a>, except that <span class="t-lc"><a href="gcount.html" title="cpp/io/basic istream/gcount">gcount()</a></span> is not affected. After constructing and checking the sentry object, if <span class="t-c"><span class="mw-geshi cpp source-cpp">fail<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, returns <span class="t-c"><span class="mw-geshi cpp source-cpp">pos_type<span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span></span></span>. Otherwise, returns <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pubseekoff<span class="br0">&#40;</span><span class="nu0">0</span>, <a href="../ios_base/seekdir.html"><span class="kw1428">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">cur</span></span></a>, <a href="../ios_base/openmode.html"><span class="kw1398">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="br0">&#41;</span></span></span>.
+</p><p>Behaves as <a href="../../concept/UnformattedInputFunction.html" title="cpp/concept/UnformattedInputFunction"><code>UnformattedInputFunction</code></a>, except that <span class="t-lc"><a href="gcount.html" title="cpp/io/basic istream/gcount">gcount()</a></span> is not affected. After constructing and checking the sentry object, if <span class="t-c"><span class="mw-geshi cpp source-cpp">fail<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, returns <span class="t-c"><span class="mw-geshi cpp source-cpp">pos_type<span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span></span></span>. Otherwise, returns <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pubseekoff<span class="br0">&#40;</span><span class="nu0">0</span>, <a href="../ios_base/seekdir.html"><span class="kw1701">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">cur</span></span></a>, <a href="../ios_base/openmode.html"><span class="kw1671">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="br0">&#41;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -332,11 +333,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;Hello, world&quot;</span><span class="sy4">;</span>
-    <a href="../basic_istringstream.html"><span class="kw1458">std::<span class="me2">istringstream</span></span></a> in<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> word<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;Hello, world&quot;</span><span class="sy4">;</span>
+    <a href="../basic_istringstream.html"><span class="kw1732">std::<span class="me2">istringstream</span></span></a> in<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> word<span class="sy4">;</span>
     in <span class="sy1">&gt;&gt;</span> word<span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After reading the word <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> word
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After reading the word <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> word
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span> tellg() returns &quot;</span> <span class="sy1">&lt;&lt;</span> in.<span class="me1">tellg</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -385,15 +386,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4828/1000000
-Preprocessor generated node count: 8832/1000000
-Post‐expand include size: 125958/2097152 bytes
-Template argument size: 22658/2097152 bytes
+Preprocessor visited node count: 4859/1000000
+Preprocessor generated node count: 8913/1000000
+Post‐expand include size: 126907/2097152 bytes
+Template argument size: 22776/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:530-0!*!0!!en!*!* and timestamp 20150825005556 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:530-0!*!0!!en!*!* and timestamp 20161205220813 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -428,8 +429,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_istream/tellg" title="cpp/io/basic istream/tellg" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 15 February 2015, at 18:28.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 16,606 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 February 2015, at 17:28.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 29,758 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -462,7 +463,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.860 secs. -->
+</script><!-- Served in 2.278 secs. -->
 	</body>
-<!-- Cached 20150825005556 -->
+<!-- Cached 20161205220813 -->
 </html>

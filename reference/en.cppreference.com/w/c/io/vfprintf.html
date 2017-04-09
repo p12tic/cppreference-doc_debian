@@ -490,6 +490,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th colspan="2" style="text-align:right; font-weight:normal;"> length modifier
 </th>
 <th> <code>hh</code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code>h</code>
 </th>
@@ -498,12 +500,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th> <code><b>l</b></code>
 </th>
 <th> <code><b>ll</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>j</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>z</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>t</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>L</b></code>
 </th></tr>
@@ -691,7 +701,7 @@ For infinity and not-a-number conversion style see notes.
 </td>
 <td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span></div></div>
 </td>
-<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span></div></div>
+<td rowspan="4"> <div class="t-vertical"><div><span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">double</span></span></span> <span class="t-mark-rev t-since-c99">(C99)</span></div></div>
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td>
@@ -733,6 +743,8 @@ For infinity and not-a-number conversion style see notes.
 </td></tr>
 <tr>
 <th> <code>a</code> <br /> <code>A</code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <td style="text-align:left;">
 <dl><dd>converts <b>floating-point number</b> to the hexadecimal exponent notation.
@@ -843,8 +855,9 @@ The specification may not contain any <i>flag</i>, <i>field width</i>, or <i>pre
 </p><p>Not-a-number is converted to <code>nan</code> or <code>nan(<i>char_sequence</i>)</code>. Which one is used is implementation defined.
 </p><p>The conversions <code><b>F</b></code>, <code><b>E</b></code>, <code><b>G</b></code>, <code><b>A</b></code> output <code>INF</code>, <code>INFINITY</code>, <code>NAN</code> instead.
 </p><p>Even though <code>%c</code> expects <code>int</code> argument, it is safe to pass a <code>char</code> because of the integer promotion that takes place when a variadic function is called.
-</p><p>The correct conversion specifications for the fixed-width character types (<span class="t-lc"><a href="../types/integer.html" title="c/types/integer">int8_t</a></span>, etc) are defined in the header <a href="../../cpp/types/integer.html" title="cpp/types/integer">&lt;cinttypes&gt;</a>(C++) or <a href="../types/integer.html" title="c/types/integer">&lt;inttypes.h&gt;</a> (C) (although <span class="t-lc"><a href="../types/integer.html" title="c/types/integer">PRIdMAX</a></span>, <span class="t-lc"><a href="../types/integer.html" title="c/types/integer">PRIuMAX</a></span>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+</p><p>The correct conversion specifications for the fixed-width character types (<span class="t-lc"><a href="../types/integer.html" title="c/types/integer">int8_t</a></span>, etc) are defined in the header <a href="../types/integer.html" title="c/types/integer">&lt;inttypes.h&gt;</a> (although <span class="t-lc"><a href="../types/integer.html" title="c/types/integer">PRIdMAX</a></span>, <span class="t-lc"><a href="../types/integer.html" title="c/types/integer">PRIuMAX</a></span>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
 </p><p>The memory-writing conversion specifier <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span>n</span></span> is a common target of security exploits where format strings depend on user input and is not supported by the bounds-checked <code>printf_s</code> family of functions.
+</p><p>There is a <a href="../language/eval_order.html" title="c/language/eval order">sequence point</a> after the action of each conversion specifier; this permits storing multiple <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span>n</span></span> results in the same variable or, as an edge case, printing a string modified by an earlier <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span>n</span></span> within the same call.
 </p><p>If a conversion specification is invalid, the behavior is undefined.
 </p><p><br />
 </p>
@@ -986,15 +999,15 @@ The specification may not contain any <i>flag</i>, <i>field width</i>, or <i>pre
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 8568/1000000
-Preprocessor generated node count: 12530/1000000
-Post‐expand include size: 255207/2097152 bytes
-Template argument size: 68775/2097152 bytes
+Preprocessor visited node count: 8683/1000000
+Preprocessor generated node count: 12853/1000000
+Post‐expand include size: 257586/2097152 bytes
+Template argument size: 69518/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6225-0!*!0!!en!*!* and timestamp 20151130153523 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6225-0!*!0!!en!*!* and timestamp 20170225101540 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -1030,7 +1043,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 13 April 2015, at 07:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 11,213 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 18,992 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1063,7 +1076,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 4.752 secs. -->
+</script><!-- Served in 3.914 secs. -->
 	</body>
-<!-- Cached 20151130153523 -->
+<!-- Cached 20170225101540 -->
 </html>

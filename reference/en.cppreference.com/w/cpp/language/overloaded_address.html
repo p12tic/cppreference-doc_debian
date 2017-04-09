@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="functions.html" title="cpp/language/functions"> Functions</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -306,10 +307,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// 4. user-defined operator</span>
 &#160;
     <span class="co1">// 6. cast</span>
-    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;example&quot;</span><span class="sy4">;</span>
-    <a href="../algorithm/transform.html"><span class="kw1287">std::<span class="me2">transform</span></span></a><span class="br0">&#40;</span>str.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, str.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, str.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,
-                   <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">&#40;</span><span class="sy2">*</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../string/byte/toupper.html"><span class="kw938">std::<span class="me2">toupper</span></span></a><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// selects int toupper(int)</span>
-    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1137">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">&quot;example&quot;</span><span class="sy4">;</span>
+    <a href="../algorithm/transform.html"><span class="kw1393">std::<span class="me2">transform</span></span></a><span class="br0">&#40;</span>str.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, str.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, str.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,
+                   <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">&#40;</span><span class="sy2">*</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">toupper</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// selects int toupper(int)</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// 7. template argument</span>
     Templ<span class="sy1">&lt;</span>f<span class="sy1">&gt;</span> t<span class="sy4">;</span>  <span class="co1">// selects int f(int)</span>
@@ -336,15 +337,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 637/1000000
-Preprocessor generated node count: 2295/1000000
-Post‐expand include size: 25710/2097152 bytes
-Template argument size: 6611/2097152 bytes
+Preprocessor visited node count: 660/1000000
+Preprocessor generated node count: 2333/1000000
+Post‐expand include size: 26659/2097152 bytes
+Template argument size: 6729/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13003-0!*!0!!*!*!* and timestamp 20150313163242 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13003-0!*!0!!*!*!* and timestamp 20160323160138 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -375,7 +376,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 19 August 2014, at 07:13.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,945 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,728 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -408,7 +409,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.716 secs. -->
+</script><!-- Served in 0.644 secs. -->
 	</body>
-<!-- Cached 20150313163242 -->
+<!-- Cached 20160323160139 -->
 </html>

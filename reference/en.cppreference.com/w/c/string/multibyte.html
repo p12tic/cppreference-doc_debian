@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/multibyte","wgTitle":"c/string/multibyte","wgCurRevisionId":78815,"wgArticleId":5758,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/multibyte","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/multibyte","wgTitle":"c/string/multibyte","wgCurRevisionId":90439,"wgArticleId":5758,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/multibyte","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -236,7 +236,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>A null-terminated multibyte string (NTMBS), or "multibyte string", is a sequence of nonzero bytes followed by a byte with value zero (the terminating null character).
 </p><p>Each character stored in the string may occupy more than one byte. The encoding used to represent characters in a multibyte character string is locale-specific: it may be UTF-8, GB18030, EUC-JP, Shift-JIS, etc. For example, the char array <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#123;</span><span class="st0">'<span class="es2">\xe4</span>'</span>,<span class="st0">'<span class="es2">\xbd</span>'</span>,<span class="st0">'<span class="es2">\xa0</span>'</span>,<span class="st0">'<span class="es2">\xe5</span>'</span>,<span class="st0">'<span class="es2">\xa5</span>'</span>,<span class="st0">'<span class="es2">\xbd</span>'</span>,<span class="st0">'<span class="es5">\0</span>'</span></span></span>} is an NTMBS holding the string <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;你好&quot;</span></span></span> in UTF-8 multibyte encoding: the first three bytes encode the character 你, the next three bytes encode the character 好. The same string encoded in GB18030 is the char array <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#123;</span><span class="st0">'<span class="es2">\xc4</span>'</span>, <span class="st0">'<span class="es2">\xe3</span>'</span>, <span class="st0">'<span class="es2">\xba</span>'</span>, <span class="st0">'<span class="es2">\xc3</span>'</span>, <span class="st0">'<span class="es5">\0</span>'</span></span></span>}, where each of the two characters is encoded as a two-byte sequence.
-</p><p>In some multibyte encodings, any given multibyte character sequence may represent different characters depending on the previous byte sequences, known as "shift sequences". Such encodings are known as state-dependent: knowledge of the current shift state is required to interpret each character. An NTMBS is only valid if it begins and ends in the initial shift state: if a shift sequence was used, the corresponding unshift sequence has to be present before the terminating null character. Examples of such encodings are BOCU-1 and SCSU.
+</p><p>In some multibyte encodings, any given multibyte character sequence may represent different characters depending on the previous byte sequences, known as "shift sequences". Such encodings are known as state-dependent: knowledge of the current shift state is required to interpret each character. An NTMBS is only valid if it begins and ends in the initial shift state: if a shift sequence was used, the corresponding unshift sequence has to be present before the terminating null character. Examples of such encodings are BOCU-1 and <a rel="nofollow" class="external text" href="http://www.unicode.org/reports/tr6">SCSU</a>.
 </p><p>A multibyte character string is layout-compatible with <a href="byte.html" title="c/string/byte">null-terminated byte string</a> (NTBS), that is, can be stored, copied, and examined using the same facilities, except for calculating the number of characters. If the correct locale is in effect, I/O functions also handle multibyte strings. Multibyte strings can be converted to and from wide strings using the following locale-dependent conversion functions:
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -344,25 +344,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="multibyte/mbrtoc16.html" title="c/string/multibyte/mbrtoc16"> <span class="t-lines"><span>mbrtoc16</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   generate the next 16-bit wide character from a narrow multibyte string  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_mbrtoc16&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   generates the next 16-bit wide character from a narrow multibyte string  <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_mbrtoc16&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="multibyte/c16rtomb.html" title="c/string/multibyte/c16rtomb"> <span class="t-lines"><span>c16rtomb</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   convert a 16-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c16rtomb&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a 16-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c16rtomb&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="multibyte/mbrtoc32.html" title="c/string/multibyte/mbrtoc32"> <span class="t-lines"><span>mbrtoc32</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   generate the next 32-bit wide character from a narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_mbrtoc32&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   generates the next 32-bit wide character from a narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_mbrtoc32&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="multibyte/c32rtomb.html" title="c/string/multibyte/c32rtomb"> <span class="t-lines"><span>c32rtomb</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   convert a 32-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c32rtomb&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a 32-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c32rtomb&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;action=edit&amp;section=2" title="Edit section: Types">edit</a>]</span> <span class="mw-headline" id="Types">Types</span></h3>
@@ -383,18 +383,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>char16_t</span></span></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="multibyte/char16_t.html" title="c/string/multibyte/char16 t"> <span class="t-lines"><span>char16_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   16-bit character type  <br /> <span class="t-mark">(typedef)</span>
+<td>   16-bit wide character type  <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_char16_t&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
-
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>char32_t</span></span></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="multibyte/char32_t.html" title="c/string/multibyte/char32 t"> <span class="t-lines"><span>char32_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   32-bit character type  <br /> <span class="t-mark">(typedef)</span>
+<td>   32-bit wide character type  <br /> <span class="t-mark">(typedef)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_char32_t&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
-
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;action=edit&amp;section=3" title="Edit section: Macros">edit</a>]</span> <span class="mw-headline" id="Macros">Macros</span></h3>
 <table class="t-dsc-begin">
@@ -406,7 +404,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>MB_LEN_MAX</span></span></div></div>
 </td>
-<td>   maximum number of bytes in a multibyte character  <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_MB_LEN_MAX&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   maximum number of bytes in a multibyte character, for any supported locale  <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_MB_LEN_MAX&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc-header">
@@ -416,7 +414,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>MB_CUR_MAX</span></span></div></div>
 </td>
-<td>  maximum number of bytes in a multibyte character in the current C locale<br /><span class="t-mark">(macro variable)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_MB_CUR_MAX&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  maximum number of bytes in a multibyte character, in the current locale<br /><span class="t-mark">(macro variable)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_MB_CUR_MAX&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc-header">
@@ -508,19 +506,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5031/1000000
-Preprocessor generated node count: 6980/1000000
-Post‐expand include size: 177648/2097152 bytes
-Template argument size: 34721/2097152 bytes
+Preprocessor visited node count: 5083/1000000
+Preprocessor generated node count: 6952/1000000
+Post‐expand include size: 183861/2097152 bytes
+Template argument size: 35333/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5758-0!*!0!!en!*!* and timestamp 20150825005155 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5758-0!*!0!!en!*!* and timestamp 20170223122213 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=78815">http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=78815</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=90439">http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=90439</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -543,7 +541,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="multibyte.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/multibyte" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/multibyte" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=78815" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/multibyte" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/multibyte" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;oldid=90439" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -551,8 +549,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/string/multibyte" title="c/string/multibyte" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 June 2015, at 05:12.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 18,085 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 February 2017, at 03:39.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 35,556 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -585,7 +583,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.245 secs. -->
+</script><!-- Served in 0.064 secs. -->
 	</body>
-<!-- Cached 20150825005157 -->
+<!-- Cached 20170223133904 -->
 </html>

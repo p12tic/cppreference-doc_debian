@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
@@ -235,6 +236,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../wide.html" title="cpp/string/wide"> Wide strings</a> </td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string.html" title="cpp/string/basic string"><span class="t-lines"><span>basic_string</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string_view.html" title="cpp/string/basic string view"><span class="t-lines"><span>basic_string_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../char_traits.html" title="cpp/string/char traits"><span class="t-lines"><span>char_traits</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../wide.html" title="cpp/string/wide"> Null-terminated wide strings</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
@@ -320,20 +322,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Interprets a floating point value in a wide string pointed to by <code>str</code>.
-</p><p>Function discards any whitespace characters (as determined by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../byte/isspace.html"><span class="kw963">std::<span class="me2">isspace</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>) until first non-whitespace character is found. Then it takes as many characters as possible to form a valid floating point representation and converts them to floating point value. The valid floating point value can be one of the following:
+</p><p>Function discards any whitespace characters (as determined by <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">isspace</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>) until first non-whitespace character is found. Then it takes as many characters as possible to form a valid floating-point representation and converts them to a floating-point value. The valid floating-point value can be one of the following:
 </p>
-<ul><li>decimal floating point expression. It consists of the following parts:
+<ul><li>decimal floating-point expression. It consists of the following parts:
 </li></ul>
 <dl><dd><ul><li> <span class="t-mark">(optional)</span> plus or minus sign
-</li><li> nonempty sequence of decimal digits optionally containing decimal point character (as determined by the current C <span class="t-lc">locale</span>) (defines significand)
+</li><li> nonempty sequence of decimal digits optionally containing decimal-point character (as determined by the current C <span class="t-lc"><a href="../../locale/setlocale.html" title="cpp/locale/setlocale">locale</a></span>) (defines significand)
 </li><li> <span class="t-mark">(optional)</span> <code><b>e</b></code> or <code><b>E</b></code> followed with optional minus or plus sign and nonempty sequence of decimal digits (defines exponent)
 </li></ul>
 </dd></dl>
-<ul><li>binary floating point expression. It consists of the following parts:
+<ul><li>binary floating-point expression. It consists of the following parts:
 </li></ul>
 <dl><dd><ul><li> <span class="t-mark">(optional)</span> plus or minus sign
 </li><li> <code><b>0x</b></code> or <code><b>0X</b></code>
-</li><li> nonempty sequence of hexadecimal digits optionally containing a decimal point character (as determined by the current C <span class="t-lc">locale</span>) (defines significand)
+</li><li> nonempty sequence of hexadecimal digits optionally containing a decimal-point character (as determined by the current C <span class="t-lc"><a href="../../locale/setlocale.html" title="cpp/locale/setlocale">locale</a></span>) (defines significand)
 </li><li> <span class="t-mark">(optional)</span> <code><b>p</b></code> or <code><b>P</b></code> followed with optional minus or plus sign and nonempty sequence of decimal digits (defines exponent)
 </li></ul>
 </dd></dl>
@@ -346,12 +348,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <ul><li> not-a-number expression. It consists of the following parts:
 </li></ul>
 <dl><dd><ul><li> <span class="t-mark">(optional)</span> plus or minus sign
-</li><li> <code><b>NAN</b></code> or <code><b>NAN(</b></code><i>char_sequence</i><code><b>)</b></code> ignoring case of the <code><b>NAN</b></code> part. <i>char_sequence</i> can only contain alphanumeric characters. The result is a quiet NaN floating point value.
+</li><li> <code><b>NAN</b></code> or <code><b>NAN(</b></code><i>char_sequence</i><code><b>)</b></code> ignoring case of the <code><b>NAN</b></code> part. <i>char_sequence</i> can only contain alphanumeric characters. The result is a quiet NaN floating-point value.
 </li></ul>
 </dd></dl>
-<ul><li> any other expression that may be accepted by the currently installed C <span class="t-lc">locale</span>
+<ul><li> any other expression that may be accepted by the currently installed C <span class="t-lc"><a href="../../locale/setlocale.html" title="cpp/locale/setlocale">locale</a></span>
 </li></ul>
-<p>The functions sets the pointer pointed to by <code>str_end</code> to point to the wide character past the last character interpreted. If <code>str_end</code> is <span class="t-lc">NULL</span>, it is ignored.
+<p>The functions sets the pointer pointed to by <code>str_end</code> to point to the wide character past the last character interpreted. If <code>str_end</code> is <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span>, it is ignored.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -380,7 +382,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  pointer to a pointer to a wide character.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcstof&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Floating point value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs and <span class="t-lc">HUGE_VAL</span>, <span class="t-lc">HUGE_VALF</span> or <span class="t-lc">HUGE_VALL</span> is returned. If no conversion can be performed, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned.
+<p>Floating point value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs and <span class="t-lc"><a href="../../numeric/math/HUGE_VAL.html" title="cpp/numeric/math/HUGE VAL">HUGE_VAL</a></span>, <span class="t-lc"><a href="../../numeric/math/HUGE_VAL.html" title="cpp/numeric/math/HUGE VAL">HUGE_VALF</a></span> or <span class="t-lc"><a href="../../numeric/math/HUGE_VAL.html" title="cpp/numeric/math/HUGE VAL">HUGE_VALL</a></span> is returned. If no conversion can be performed, <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcstof&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -393,16 +395,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#123;</span>
     <span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span> p <span class="sy1">=</span> L<span class="st0">&quot;111.11 -2.22 0X1.BC70A3D70A3D7P+6  1.18973e+4932zzz&quot;</span><span class="sy4">;</span>
     <span class="kw4">wchar_t</span><span class="sy2">*</span> end<span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Parsing L<span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1753">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Parsing L<span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">double</span> f <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">wcstod</span><span class="br0">&#40;</span>p, <span class="sy3">&amp;</span>end<span class="br0">&#41;</span><span class="sy4">;</span> p <span class="sy3">!</span><span class="sy1">=</span> end<span class="sy4">;</span> f <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">wcstod</span><span class="br0">&#40;</span>p, <span class="sy3">&amp;</span>end<span class="br0">&#41;</span><span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../basic_string.html"><span class="kw1071">std::<span class="me2">wstring</span></span></a><span class="br0">&#40;</span>p, end<span class="sy2">-</span>p<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' -&gt; &quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1753">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../basic_string.html"><span class="kw1226">std::<span class="me2">wstring</span></span></a><span class="br0">&#40;</span>p, end<span class="sy2">-</span>p<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;' -&gt; &quot;</span><span class="sy4">;</span>
         p <span class="sy1">=</span> end<span class="sy4">;</span>
-        <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw742">ERANGE</span></a><span class="br0">&#41;</span><span class="br0">&#123;</span>
-            <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;range error, got &quot;</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw862">ERANGE</span></a><span class="br0">&#41;</span><span class="br0">&#123;</span>
+            <a href="../../io/cout.html"><span class="kw1753">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;range error, got &quot;</span><span class="sy4">;</span>
             <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
         <span class="br0">&#125;</span>
-        <a href="../../io/cout.html"><span class="kw1479">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1753">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> f <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -430,15 +432,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3949/1000000
-Preprocessor generated node count: 6921/1000000
-Post‐expand include size: 93362/2097152 bytes
-Template argument size: 15863/2097152 bytes
+Preprocessor visited node count: 4056/1000000
+Preprocessor generated node count: 7033/1000000
+Post‐expand include size: 97227/2097152 bytes
+Template argument size: 16470/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4740-0!*!0!!en!*!* and timestamp 20151130160215 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4740-0!*!0!!en!*!* and timestamp 20161206000703 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -474,7 +476,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 19 February 2015, at 12:49.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,459 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,443 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -507,7 +509,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.970 secs. -->
+</script><!-- Served in 1.836 secs. -->
 	</body>
-<!-- Cached 20151130160215 -->
+<!-- Cached 20161206000703 -->
 </html>

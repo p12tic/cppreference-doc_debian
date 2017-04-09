@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -247,6 +248,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/unordered map/try emplace"><span class="t-lines"><span>unordered_map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/unordered map/erase"><span class="t-lines"><span>unordered_map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/unordered map/swap"><span class="t-lines"><span>unordered_map::swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="extract.html" title="cpp/container/unordered map/extract"><span class="t-lines"><span>unordered_map::extract</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="merge.html" title="cpp/container/unordered map/merge"><span class="t-lines"><span>unordered_map::merge</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>unordered_map::count</span></span></strong></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find.html" title="cpp/container/unordered map/find"><span class="t-lines"><span>unordered_map::find</span></span></a></div></div></td></tr>
@@ -275,7 +278,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Returns the number of elements with key <code>key</code>.
+<p>Returns the number of elements with key that compares equal to the specified argument <code>key</code>, which is either 1 or 0 since this container does not allow duplicates.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -297,7 +300,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  key value of the elements to count
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/count_unord&amp;action=edit&amp;section=T-2" title="Template:cpp/container/count unord">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Number of elements with key <code>key</code>.
+<p>Number of elements with key <code>key</code>, that is either 1 or 0.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/count_unord&amp;action=edit&amp;section=T-3" title="Template:cpp/container/count unord">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <p>Constant on average, worst case linear in the size of the container.
@@ -320,15 +323,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4164/1000000
-Preprocessor generated node count: 8104/1000000
-Post‐expand include size: 149766/2097152 bytes
-Template argument size: 19432/2097152 bytes
+Preprocessor visited node count: 4368/1000000
+Preprocessor generated node count: 8272/1000000
+Post‐expand include size: 158577/2097152 bytes
+Template argument size: 20787/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:323-0!*!0!!en!*!* and timestamp 20150825073157 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:323-0!*!0!!en!*!* and timestamp 20170401212925 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -364,7 +367,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 30 August 2013, at 09:36.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,004 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 20,611 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -397,7 +400,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.981 secs. -->
+</script><!-- Served in 0.850 secs. -->
 	</body>
-<!-- Cached 20150825073157 -->
+<!-- Cached 20170401212925 -->
 </html>

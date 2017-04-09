@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../regex.html" title="cpp/regex"> Regular expressions library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
@@ -304,15 +305,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;map&gt;</span>
 &#160;
 <span class="co1">// This custom regex traits allows japanese numerals</span>
-<span class="kw1">struct</span> jnum_traits <span class="sy4">:</span> <a href="../regex_traits.html"><span class="kw1715">std::<span class="me2">regex_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> jnum_traits <span class="sy4">:</span> <a href="../regex_traits.html"><span class="kw2023">std::<span class="me2">regex_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span>
 <span class="br0">&#123;</span>   
-    <span class="kw4">static</span> <a href="../../container/map.html"><span class="kw1071">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> data<span class="sy4">;</span>
+    <span class="kw4">static</span> <a href="../../container/map.html"><span class="kw1278">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> data<span class="sy4">;</span>
     <span class="kw4">int</span> value<span class="br0">&#40;</span><span class="kw4">wchar_t</span> ch, <span class="kw4">int</span> radix <span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span>
-        <span class="kw4">wchar_t</span> up <span class="sy1">=</span> <a href="../../string/byte/toupper.html"><span class="kw939">std::<span class="me2">toupper</span></span></a><span class="br0">&#40;</span>ch, getloc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw4">wchar_t</span> up <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">toupper</span><span class="br0">&#40;</span>ch, getloc<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
         <span class="kw1">return</span> data.<span class="me1">count</span><span class="br0">&#40;</span>up<span class="br0">&#41;</span> <span class="sy4">?</span> data<span class="br0">&#91;</span>up<span class="br0">&#93;</span> <span class="sy4">:</span> regex_traits<span class="sy4">::</span><span class="me2">value</span><span class="br0">&#40;</span>ch, radix<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
-<a href="../../container/map.html"><span class="kw1071">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> jnum_traits<span class="sy4">::</span><span class="me2">data</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#123;</span>L<span class="st0">'〇'</span>,<span class="nu0">0</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'一'</span>,<span class="nu0">1</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'二'</span>,<span class="nu0">2</span><span class="br0">&#125;</span>,
+<a href="../../container/map.html"><span class="kw1278">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> jnum_traits<span class="sy4">::</span><span class="me2">data</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#123;</span>L<span class="st0">'〇'</span>,<span class="nu0">0</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'一'</span>,<span class="nu0">1</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'二'</span>,<span class="nu0">2</span><span class="br0">&#125;</span>,
                                             <span class="br0">&#123;</span>L<span class="st0">'三'</span>,<span class="nu0">3</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'四'</span>,<span class="nu0">4</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'五'</span>,<span class="nu0">5</span><span class="br0">&#125;</span>,
                                             <span class="br0">&#123;</span>L<span class="st0">'六'</span>,<span class="nu0">6</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'七'</span>,<span class="nu0">7</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'八'</span>,<span class="nu0">8</span><span class="br0">&#125;</span>,
                                             <span class="br0">&#123;</span>L<span class="st0">'九'</span>,<span class="nu0">9</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'Ａ'</span>,<span class="nu0">10</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span>L<span class="st0">'Ｂ'</span>,<span class="nu0">11</span><span class="br0">&#125;</span>,
@@ -320,17 +321,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                                             <span class="br0">&#123;</span>L<span class="st0">'Ｆ'</span>,<span class="nu0">15</span><span class="br0">&#125;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>   
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1448">std::<span class="me2">wcout</span></span></a>.<span class="me1">sync_with_stdio</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1448">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1583">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a>.<span class="me1">sync_with_stdio</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../string/basic_string.html"><span class="kw1045">std::<span class="me2">wstring</span></span></a> in <span class="sy1">=</span> L<span class="st0">&quot;風&quot;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> in <span class="sy1">=</span> L<span class="st0">&quot;風&quot;</span><span class="sy4">;</span>
 &#160;
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../regex_match.html"><span class="kw1701">std::<span class="me2">regex_match</span></span></a><span class="br0">&#40;</span>in, <a href="../basic_regex.html"><span class="kw1690">std::<span class="me2">wregex</span></span></a><span class="br0">&#40;</span>L<span class="st0">&quot;<span class="es1">\\</span>u98a8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1448">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\\</span>u98a8 matched &quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../regex_match.html"><span class="kw2009">std::<span class="me2">regex_match</span></span></a><span class="br0">&#40;</span>in, <a href="../basic_regex.html"><span class="kw1998">std::<span class="me2">wregex</span></span></a><span class="br0">&#40;</span>L<span class="st0">&quot;<span class="es1">\\</span>u98a8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\\</span>u98a8 matched &quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../regex_match.html"><span class="kw1701">std::<span class="me2">regex_match</span></span></a><span class="br0">&#40;</span>in, <a href="../basic_regex.html"><span class="kw1688">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, jnum_traits<span class="sy1">&gt;</span><span class="br0">&#40;</span>L<span class="st0">&quot;<span class="es1">\\</span>u九八ａ八&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1448">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> L<span class="st0">&quot;<span class="es1">\\</span>u九八ａ八 with custom traits matched &quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../regex_match.html"><span class="kw2009">std::<span class="me2">regex_match</span></span></a><span class="br0">&#40;</span>in, <a href="../basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span>, jnum_traits<span class="sy1">&gt;</span><span class="br0">&#40;</span>L<span class="st0">&quot;<span class="es1">\\</span>u九八ａ八&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> L<span class="st0">&quot;<span class="es1">\\</span>u九八ａ八 with custom traits matched &quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -340,15 +341,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2547/1000000
-Preprocessor generated node count: 6132/1000000
-Post‐expand include size: 71832/2097152 bytes
-Template argument size: 16342/2097152 bytes
+Preprocessor visited node count: 2570/1000000
+Preprocessor generated node count: 6213/1000000
+Post‐expand include size: 72781/2097152 bytes
+Template argument size: 16460/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8946-0!*!0!!*!*!* and timestamp 20150524001818 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8946-0!*!0!!*!*!* and timestamp 20161206181524 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -383,8 +384,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/regex/regex_traits/value" title="cpp/regex/regex traits/value" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 16 January 2014, at 17:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,787 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 16 January 2014, at 16:27.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,659 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -417,7 +418,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.427 secs. -->
+</script><!-- Served in 1.369 secs. -->
 	</body>
-<!-- Cached 20150524001818 -->
+<!-- Cached 20161206181524 -->
 </html>

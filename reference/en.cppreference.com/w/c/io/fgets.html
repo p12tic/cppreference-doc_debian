@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/io/fgets","wgTitle":"c/io/fgets","wgCurRevisionId":78932,"wgArticleId":6207,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/io/fgets","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/io/fgets","wgTitle":"c/io/fgets","wgCurRevisionId":85689,"wgArticleId":6207,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/io/fgets","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -149,7 +149,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="fgets.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:c/io/fgets&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:c/io/fgets"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -322,15 +322,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody><tbody>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Reads at most <span class="t-c"><span class="mw-geshi c source-c">count <span class="sy2">-</span> <span class="nu0">1</span></span></span> characters from the given file stream and stores them in <code>str</code>. The produced character string is always null-terminated. Parsing stops if end-of-file occurs or a newline character is found, in which case <code>str</code> will contain that newline character.
+<p>Reads at most <span class="t-c"><span class="mw-geshi c source-c">count <span class="sy2">-</span> <span class="nu0">1</span></span></span> characters from the given file stream and stores them in the character array pointed to by <code>str</code>. Parsing stops if end-of-file occurs or a newline character is found, in which case <code>str</code> will contain that newline character. If no errors occur, writes a null character at the position immediately after the last character written to <code>str</code>.
+</p><p>The behavior is undefined if <code>count</code> is less than 1.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="fgets.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
 <li class="toclevel-1 tocsection-2"><a href="fgets.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="fgets.html#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="fgets.html#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="fgets.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="fgets.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="fgets.html#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="fgets.html#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="fgets.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
@@ -342,14 +344,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  string to read the characters to
+<td>  pointer to an element of a char array
 </td></tr>
 <tr class="t-par">
 <td>  count
 </td>
 <td> -
 </td>
-<td>  the length of <code>str</code>
+<td>  maximum number of characters to write (typically the length of <code>str</code>)
 </td></tr>
 <tr class="t-par">
 <td>  stream
@@ -359,12 +361,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  file stream to read the data from
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p><code>str</code> on success, <span class="t-lc"><a href="../types/NULL.html" title="c/types/NULL">NULL</a></span> on failure.
-</p><p>If the failure has been caused by end-of-file condition, additionally sets the <i>eof</i> indicator (see <span class="t-lc"><a href="feof.html" title="c/io/feof">feof()</a></span>) on <code>stream</code>. If the failure has been caused by some other error, sets the <i>error</i> indicator (see <span class="t-lc"><a href="ferror.html" title="c/io/ferror">ferror()</a></span>) on <code>stream</code>.
+<p><code>str</code> on success, null pointer on failure.
+</p><p>If the failure has been caused by end-of-file condition, additionally sets the <i>eof</i> indicator (see <span class="t-lc"><a href="feof.html" title="c/io/feof">feof()</a></span>) on <code>stream</code>. The contents of the array pointed to by <code>str</code> are not altered in this case.
+</p><p>If the failure has been caused by some other error, sets the <i>error</i> indicator (see <span class="t-lc"><a href="ferror.html" title="c/io/ferror">ferror()</a></span>) on <code>stream</code>. The contents of the array pointed to by <code>str</code> are indeterminate (it may not even be null-terminated).
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> fgets with error checking
- </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fgets.html">POSIX additionally requires</a> that <span class="t-c"><span class="mw-geshi c source-c">fgets</span></span> sets <span class="t-lc"><a href="../error/errno.html" title="c/error/errno">errno</a></span> if it encounters an failure other than the end-of-file condition.
+</p><p>Although the standard specification is ambiguous in the case where <span class="t-c"><span class="mw-geshi c source-c">count<span class="sy1">==</span><span class="nu0">1</span></span></span>, common implementations read no characters, store zero in <span class="t-c"><span class="mw-geshi c source-c">str<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span></span></span>, and report success (return <code>str</code>)
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
 <span class="co2">#include &lt;stdlib.h&gt;</span>
 &#160;
@@ -381,17 +387,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="kw1">while</span> <span class="br0">&#40;</span>fgets<span class="br0">&#40;</span>buf, <span class="kw4">sizeof</span> buf, tmpf<span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <a href="../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span>
           <a href="fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\&quot;</span>%s<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span>, buf<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="coMULTI">/* Test reason for reaching NULL. */</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="feof.html"><span class="kw876">feof</span></a><span class="br0">&#40;</span>tmpf<span class="br0">&#41;</span><span class="br0">&#41;</span>          <span class="coMULTI">/* if failure caused by end-of-file condition */</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="feof.html"><span class="kw876">feof</span></a><span class="br0">&#40;</span>tmpf<span class="br0">&#41;</span><span class="br0">&#41;</span>
        <a href="puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span><span class="st0">&quot;End of file reached&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span><a href="ferror.html"><span class="kw877">ferror</span></a><span class="br0">&#40;</span>tmpf<span class="br0">&#41;</span><span class="br0">&#41;</span>   <span class="coMULTI">/* if failure caused by some other error      */</span>
-         <span class="br0">&#123;</span>
-            <a href="perror.html"><span class="kw878">perror</span></a><span class="br0">&#40;</span><span class="st0">&quot;fgets()&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-            <a href="fprintf.html"><span class="kw851">fprintf</span></a><span class="br0">&#40;</span><a href="../io.html"><span class="kw887">stderr</span></a>,<span class="st0">&quot;fgets() failed in file&#160;%s at line #&#160;%d<span class="es1">\n</span>&quot;</span>, __FILE__,__LINE__<span class="sy2">-</span><span class="nu0">9</span><span class="br0">&#41;</span><span class="sy4">;</span>
-            <a href="../program/exit.html"><span class="kw488">exit</span></a><span class="br0">&#40;</span><a href="../program/EXIT_status.html"><span class="kw494">EXIT_FAILURE</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-         <span class="br0">&#125;</span>
-&#160;
-    <span class="kw1">return</span> <a href="../program/EXIT_status.html"><span class="kw493">EXIT_SUCCESS</span></a><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -407,7 +404,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &quot;
 End of file reached</pre></div></div> 
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
 <div class="t-ref-std-11">
 <ul><li> C11 standard (ISO/IEC 9899:2011): 
 </li></ul>
@@ -427,7 +424,7 @@ End of file reached</pre></div></div>
 </li></ul>
 </dd></dl>
 </div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
@@ -449,6 +446,12 @@ End of file reached</pre></div></div>
 </td></tr>
 
 <tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../experimental/dynamic/getline.html" title="c/experimental/dynamic/getline"> <span class="t-lines"><span>getline</span><span>getwline</span><span>getdelim</span><span>getwdelim</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-dynamic-tr t-mark-ts">(dynamic memory TR)</span></span></span></div></div>
+</td>
+<td>   read from a stream into a automatically resized buffer until delimiter/end of line <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/experimental/dynamic/dsc_getline&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
 <td colspan="2"> <div class="t-dsc-see"><span><a href="../../cpp/io/c/fgets.html" title="cpp/io/c/fgets">C++ documentation</a></span> for <span class="t-dsc-see-tt"><span>fgets</span></span></div>
 </td></tr>
 
@@ -457,19 +460,19 @@ End of file reached</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4985/1000000
-Preprocessor generated node count: 8263/1000000
-Post‐expand include size: 161176/2097152 bytes
-Template argument size: 32936/2097152 bytes
+Preprocessor visited node count: 5223/1000000
+Preprocessor generated node count: 8533/1000000
+Post‐expand include size: 168263/2097152 bytes
+Template argument size: 33342/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6207-0!*!0!!en!*!* and timestamp 20151130150035 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6207-0!*!0!!en!*!* and timestamp 20161205222454 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=78932">http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=78932</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=85689">http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=85689</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -492,7 +495,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="fgets.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/io/fgets" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/io/fgets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=78932" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/io/fgets" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/io/fgets" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;oldid=85689" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fgets&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -500,8 +503,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/io/fgets" title="c/io/fgets" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 12 June 2015, at 07:58.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 37,990 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 2 May 2016, at 06:39.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 58,371 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -534,7 +537,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.531 secs. -->
+</script><!-- Served in 1.200 secs. -->
 	</body>
-<!-- Cached 20151130150035 -->
+<!-- Cached 20161205222455 -->
 </html>

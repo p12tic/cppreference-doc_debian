@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -415,15 +420,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>This function is not subject to any of the errors specified in <a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a>
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
-<ul><li> <span class="t-lc">FE_INEXACT</span> is never raised
+<ul><li> <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span> is never raised
 </li><li> If <code>arg</code> is ±∞, it is returned, unmodified
 </li><li> If <code>arg</code> is ±0, it is returned, unmodified
 </li><li> If <code>arg</code> is NaN, NaN is returned
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/nearbyint&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>The only difference between <code>std::nearbyint</code> and <span class="t-lc">std::rint</span> is that <code>std::nearbyint</code> never raises <span class="t-lc">FE_INEXACT</span>.
-</p><p>The largest representable floating-point values are exact integers in all standard floating-point formats, so <code>std::nearbyint</code> never overflows on its own; however the result may overflow any integer type (including <span class="t-lc">std::intmax_t</span>), when stored in an integer variable.
-</p><p>If the current rounding mode is <span class="t-lc">FE_TONEAREST</span>, this function rounds to even in halfway cases (like <span class="t-lc">rint</span>, but unlike <span class="t-lc">round</span>).
+<p>The only difference between <code>std::nearbyint</code> and <span class="t-lc"><a href="rint.html" title="cpp/numeric/math/rint">std::rint</a></span> is that <code>std::nearbyint</code> never raises <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span>.
+</p><p>The largest representable floating-point values are exact integers in all standard floating-point formats, so <code>std::nearbyint</code> never overflows on its own; however the result may overflow any integer type (including <span class="t-lc"><a href="../../types/integer.html" title="cpp/types/integer">std::intmax_t</a></span>), when stored in an integer variable.
+</p><p>If the current rounding mode is <span class="t-lc"><a href="../fenv/FE_round.html" title="cpp/numeric/fenv/FE round">FE_TONEAREST</a></span>, this function rounds to even in halfway cases (like <span class="t-lc">rint</span>, but unlike <span class="t-lc">round</span>).
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/nearbyint&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -434,8 +439,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
 <span class="co2">#pragma STDC FENV_ACCESS ON</span>
-    <a href="../fenv/feround.html"><span class="kw1203">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1215">FE_TONEAREST</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;rounding to nearest: <span class="es1">\n</span>&quot;</span>
+    <a href="../fenv/feround.html"><span class="kw1452">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1464">FE_TONEAREST</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;rounding to nearest: <span class="es1">\n</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(+2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(+3.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">3.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
@@ -443,8 +448,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(-2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(-3.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">3.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../fenv/feround.html"><span class="kw1203">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1214">FE_DOWNWARD</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;rounding down:<span class="es1">\n</span>&quot;</span>
+    <a href="../fenv/feround.html"><span class="kw1452">std::<span class="me2">fesetround</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_round.html"><span class="kw1463">FE_DOWNWARD</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;rounding down:<span class="es1">\n</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(+2.3) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">2.3</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(+2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(+3.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="nu16">3.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
@@ -452,8 +457,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(-2.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">2.5</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  nearbyint(-3.5) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">3.5</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(-0.0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span>  <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;nearbyint(-Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">nearbyint</span><span class="br0">&#40;</span><span class="sy2">-</span><a href="INFINITY.html"><span class="kw1373">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -495,15 +500,15 @@ nearbyint(-Inf) = -inf</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7011/1000000
-Preprocessor generated node count: 8583/1000000
-Post‐expand include size: 222269/2097152 bytes
-Template argument size: 44224/2097152 bytes
+Preprocessor visited node count: 7200/1000000
+Preprocessor generated node count: 8758/1000000
+Post‐expand include size: 229401/2097152 bytes
+Template argument size: 45323/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3741-0!*!0!!en!*!* and timestamp 20151130141223 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3741-0!*!0!!en!*!* and timestamp 20161205232109 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -539,7 +544,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 10 July 2014, at 20:38.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,558 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 15,404 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -572,7 +577,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.560 secs. -->
+</script><!-- Served in 2.391 secs. -->
 	</body>
-<!-- Cached 20151130141225 -->
+<!-- Cached 20161205232109 -->
 </html>

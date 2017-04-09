@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -335,22 +336,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
-<a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> grouping<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> grouping<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
-<span class="kw1">virtual</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> do_grouping<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<span class="kw1">virtual</span> <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> do_grouping<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <div class="t-li1"><span class="t-li">1)</span> Public member function, calls the member function <code>do_grouping</code> of the most derived class.</div>
-<div class="t-li1"><span class="t-li">2)</span> Returns the pattern that determines the grouping of the digits in the monetary output, with the same exact meaning as <span class="t-lc">std::numpunct::do_grouping</span></div>
+<div class="t-li1"><span class="t-li">2)</span> Returns the pattern that determines the grouping of the digits in the monetary output, with the same exact meaning as <span class="t-lc"><a href="../numpunct/grouping.html" title="cpp/locale/numpunct/grouping">std::numpunct::do_grouping</a></span></div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/moneypunct/grouping&amp;action=edit&amp;section=1" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>The object of type <span class="t-lc">std::string</span> holding the groups. The standard specializations of <code>std::numpunct</code> return an empty string, indicating no grouping. Typical groupings (e.g. the <code>en_US</code> locale) return <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es5">\003</span>&quot;</span></span></span>.
+<p>The object of type <span class="t-lc"><a href="../../string/basic_string.html" title="cpp/string/basic string">std::string</a></span> holding the groups. The standard specializations of <code>std::numpunct</code> return an empty string, indicating no grouping. Typical groupings (e.g. the <code>en_US</code> locale) return <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">&quot;<span class="es5">\003</span>&quot;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/moneypunct/grouping&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -358,7 +359,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;iomanip&gt;</span>
 <span class="co2">#include &lt;iterator&gt;</span>
-<span class="kw1">struct</span> space_out <span class="sy4">:</span> <a href="../moneypunct.html"><span class="kw1696">std::<span class="me2">moneypunct</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span>
+<span class="kw1">struct</span> space_out <span class="sy4">:</span> <a href="../moneypunct.html"><span class="kw1969">std::<span class="me2">moneypunct</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> <span class="br0">&#123;</span>
     pattern do_pos_format<span class="br0">&#40;</span><span class="br0">&#41;</span>      <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="br0">&#123;</span> <span class="br0">&#123;</span>value, none, none, none<span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span><span class="br0">&#125;</span>
     <span class="kw4">int</span> do_frac_digits<span class="br0">&#40;</span><span class="br0">&#41;</span>         <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">&#125;</span>
     char_type do_thousands_sep<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="st0">' '</span><span class="sy4">;</span><span class="br0">&#125;</span>
@@ -366,13 +367,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.UTF-8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;american locale: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1489">std::<span class="me2">showbase</span></span></a>
-              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/put_money.html"><span class="kw1522">std::<span class="me2">put_money</span></span></a><span class="br0">&#40;</span><span class="nu16">12345678.0</span><span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.UTF-8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;american locale: &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/showbase.html"><span class="kw1763">std::<span class="me2">showbase</span></span></a>
+              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/put_money.html"><span class="kw1796">std::<span class="me2">put_money</span></span></a><span class="br0">&#40;</span><span class="nu16">12345678.0</span><span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new space_out<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;locale with modified moneypunct: &quot;</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/put_money.html"><span class="kw1522">std::<span class="me2">put_money</span></span></a><span class="br0">&#40;</span><span class="nu16">12345678.0</span><span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new space_out<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;locale with modified moneypunct: &quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/put_money.html"><span class="kw1796">std::<span class="me2">put_money</span></span></a><span class="br0">&#40;</span><span class="nu16">12345678.0</span><span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -397,15 +398,15 @@ locale with modified moneypunct: 12 34 56 78</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5106/1000000
-Preprocessor generated node count: 8147/1000000
-Post‐expand include size: 131812/2097152 bytes
-Template argument size: 23531/2097152 bytes
+Preprocessor visited node count: 5145/1000000
+Preprocessor generated node count: 8228/1000000
+Post‐expand include size: 132883/2097152 bytes
+Template argument size: 23649/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12877-0!*!0!!*!*!* and timestamp 20151130145402 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12877-0!*!0!!*!*!* and timestamp 20161206181141 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -441,7 +442,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 7 August 2013, at 14:59.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,283 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,543 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -474,7 +475,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.789 secs. -->
+</script><!-- Served in 1.558 secs. -->
 	</body>
-<!-- Cached 20151130145402 -->
+<!-- Cached 20161206181141 -->
 </html>

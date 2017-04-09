@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="expressions.html" title="cpp/language/expressions"> Expressions</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -247,7 +248,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">user-defined literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Operators </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> Assignment operators</a>: 
-<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=</code></td></tr>
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=b</code></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> Increment and decrement</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> Arithmetic operators</a>:
 <code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
@@ -268,7 +269,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">Operator overloading</a></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Conversions </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast">Implicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">Implicit conversions</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a></td></tr>
@@ -380,7 +381,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>If the operand is not <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, it is converted to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> using <a href="implicit_cast.html" title="cpp/language/implicit cast">contextual conversion to bool</a>: it is only well-formed if the declaration <code>bool t(arg)</code> is well-formed, for some invented temporary <code>t</code>.
+<p>If the operand is not <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, it is converted to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> using <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">contextual conversion to bool</a>: it is only well-formed if the declaration <code>bool t(arg)</code> is well-formed, for some invented temporary <code>t</code>.
 </p><p>For the built-in logical NOT operator, the result is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the operand is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>. Otherwise, the result is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.
 </p><p>For the built-in logical AND operator, the result is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if both operands are <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>. Otherwise, the result is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>. If the first operand is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>, the second operand is not evaluated.
 </p><p>For the built-in logical OR operator, the result is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if either the first or the second operand (or both) is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>. If the firstoperand is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, the second operand is not evaluated.
@@ -466,12 +467,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// pointers are convertible to bool</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>    p <span class="sy3">&amp;&amp;</span> <span class="sy2">*</span>p <span class="sy1">==</span> <span class="nu0">2</span>   <span class="co1">// &quot;*p&quot; is safe to use after &quot;p &amp;&amp;&quot;</span>
        <span class="sy3">||</span> <span class="sy3">!</span>p <span class="sy3">&amp;&amp;</span>  n <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">2</span> <span class="br0">&#41;</span> <span class="co1">// || has lower precedence than &amp;&amp;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;true<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;true<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// streams are also convertible to bool</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Enter 'quit' to quit.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <span class="kw1">for</span><span class="br0">&#40;</span><a href="../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> line<span class="sy4">;</span>    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;&gt; &quot;</span>
-                          <span class="sy3">&amp;&amp;</span> <a href="../string/basic_string/getline.html"><span class="kw1080">std::<span class="me2">getline</span></span></a><span class="br0">&#40;</span><a href="../io/cin.html"><span class="kw1479">std::<span class="me2">cin</span></span></a>, line<span class="br0">&#41;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Enter 'quit' to quit.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><a href="../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> line<span class="sy4">;</span>    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;&gt; &quot;</span>
+                          <span class="sy3">&amp;&amp;</span> <a href="../string/basic_string/getline.html"><span class="kw1253">std::<span class="me2">getline</span></span></a><span class="br0">&#40;</span><a href="../io/cin.html"><span class="kw1753">std::<span class="me2">cin</span></span></a>, line<span class="br0">&#41;</span>
                           <span class="sy3">&amp;&amp;</span> line <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">&quot;quit&quot;</span><span class="sy4">;</span> <span class="br0">&#41;</span>
         <span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -610,8 +611,8 @@ a, b<br />
 <a href="const_cast.html" title="cpp/language/const cast"><tt>const_cast</tt></a> adds or removes <a href="cv.html" title="cpp/language/cv">cv</a> qualifiers<br />
 <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast"><tt>reinterpret_cast</tt></a> converts type to unrelated type<br />
 <a href="explicit_cast.html" title="cpp/language/explicit cast">C-style cast</a> converts one type to another by a mix of <code>static_cast</code>, <code>const_cast</code>, and <code>reinterpret_cast</code> <br />
-<a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new"><tt>new</tt></a> allocates memory<br />
-<a href="../memory/new/operator_delete.html" title="cpp/memory/new/operator delete"><tt>delete</tt></a> deallocates memory<br />
+<a href="new.html" title="cpp/language/new"><tt>new</tt></a> creates objects with dynamic storage duration<br />
+<a href="delete.html" title="cpp/language/delete"><tt>delete</tt></a> destructs objects previously created by the new expression and releases obtained memory area<br />
 <a href="sizeof.html" title="cpp/language/sizeof"><tt>sizeof</tt></a> queries the size of a type<br />
 <a href="sizeof....html" title="cpp/language/sizeof..."><tt>sizeof...</tt></a> queries the size of a <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span><br />
 <a href="typeid.html" title="cpp/language/typeid"><tt>typeid</tt></a> queries the type information of a type<br />
@@ -622,15 +623,15 @@ a, b<br />
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3661/1000000
-Preprocessor generated node count: 7780/1000000
-Post‐expand include size: 72642/2097152 bytes
-Template argument size: 13037/2097152 bytes
+Preprocessor visited node count: 3693/1000000
+Preprocessor generated node count: 7842/1000000
+Post‐expand include size: 73528/2097152 bytes
+Template argument size: 13068/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5287-0!*!0!!en!*!* and timestamp 20150920011349 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5287-0!*!0!!en!*!* and timestamp 20170316193921 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -666,7 +667,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 2 March 2015, at 07:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 14,475 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 64,743 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -699,7 +700,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 7.110 secs. -->
+</script><!-- Served in 7.294 secs. -->
 	</body>
-<!-- Cached 20150920011349 -->
+<!-- Cached 20170316193921 -->
 </html>

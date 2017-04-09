@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -322,17 +323,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>For a container <code>c</code>, the expression <span class="t-c"><span class="mw-geshi cpp source-cpp">c.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>c.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/front&amp;action=edit&amp;section=T-5" title="Template:cpp/container/front">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> The following code uses <code>front</code> to display the first element of a <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../deque.html"><span class="kw1095">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>:
+<div class="t-example"><p> The following code uses <code>front</code> to display the first element of a <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../deque.html"><span class="kw1268">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>:
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;deque&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../deque.html"><span class="kw1095">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> letters <span class="br0">&#123;</span><span class="st0">'o'</span>, <span class="st0">'m'</span>, <span class="st0">'g'</span>, <span class="st0">'w'</span>, <span class="st0">'t'</span>, <span class="st0">'f'</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../deque.html"><span class="kw1268">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> letters <span class="br0">&#123;</span><span class="st0">'o'</span>, <span class="st0">'m'</span>, <span class="st0">'g'</span>, <span class="st0">'w'</span>, <span class="st0">'t'</span>, <span class="st0">'f'</span><span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>letters.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The first character is: &quot;</span> <span class="sy1">&lt;&lt;</span> letters.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The first character is: &quot;</span> <span class="sy1">&lt;&lt;</span> letters.<span class="me1">front</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>  
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -351,15 +352,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4007/1000000
-Preprocessor generated node count: 8313/1000000
-Post‐expand include size: 134395/2097152 bytes
-Template argument size: 16920/2097152 bytes
+Preprocessor visited node count: 4030/1000000
+Preprocessor generated node count: 8415/1000000
+Post‐expand include size: 136058/2097152 bytes
+Template argument size: 17038/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:878-0!*!0!!en!*!* and timestamp 20150825033040 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:878-0!*!0!!en!*!* and timestamp 20170401214058 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -395,7 +396,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:29.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,522 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 19,362 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -428,7 +429,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.549 secs. -->
+</script><!-- Served in 1.397 secs. -->
 	</body>
-<!-- Cached 20150825033040 -->
+<!-- Cached 20170401214058 -->
 </html>

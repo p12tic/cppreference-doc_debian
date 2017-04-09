@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -242,17 +243,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/priority queue/swap"><span class="t-lines"><span>priority_queue::swap</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/priority_queue/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
-<tr class="t-dcl t-since-cxx98">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> Container, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br />
+<tr class="t-dcl t-since-cxx98 t-until-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> Container, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br />
 <p><span class="kw4">void</span> swap<span class="br0">&#40;</span> priority_queue<span class="sy1">&lt;</span>T,Container,Compare<span class="sy1">&gt;</span><span class="sy3">&amp;</span> lhs, <br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160;priority_queue<span class="sy1">&lt;</span>T,Container,Compare<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rhs <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-until-cxx17">(until C++17)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> Container, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br />
+<p><span class="kw4">void</span> swap<span class="br0">&#40;</span> priority_queue<span class="sy1">&lt;</span>T,Container,Compare<span class="sy1">&gt;</span><span class="sy3">&amp;</span> lhs, <br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160;priority_queue<span class="sy1">&lt;</span>T,Container,Compare<span class="sy1">&gt;</span><span class="sy3">&amp;</span> rhs <span class="br0">&#41;</span> <span class="kw1">noexcept</span><span class="br0">&#40;</span><span class="coMULTI">/* see below */</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Specializes the <span class="t-lc"><a href="../../algorithm/swap.html" title="cpp/algorithm/swap">std::swap</a></span> algorithm for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../priority_queue.html"><span class="kw1110">std::<span class="me2">priority_queue</span></span></a></span></span>. Swaps the contents of <code>lhs</code> and <code>rhs</code>. Calls <span class="t-c"><span class="mw-geshi cpp source-cpp">lhs.<span class="me1">swap</span><span class="br0">&#40;</span>rhs<span class="br0">&#41;</span></span></span>.
+<p>Specializes the <span class="t-lc"><a href="../../algorithm/swap.html" title="cpp/algorithm/swap">std::swap</a></span> algorithm for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../priority_queue.html"><span class="kw1296">std::<span class="me2">priority_queue</span></span></a></span></span>. Swaps the contents of <code>lhs</code> and <code>rhs</code>. Calls <span class="t-c"><span class="mw-geshi cpp source-cpp">lhs.<span class="me1">swap</span><span class="br0">&#40;</span>rhs<span class="br0">&#41;</span></span></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -280,9 +289,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/swap2&amp;action=edit&amp;section=T-3" title="Template:cpp/container/swap2">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
 <p>Same as swapping the underlying container.
 </p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/swap2&amp;action=edit&amp;section=T-4" title="Template:cpp/container/swap2">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
  <table class="t-rev-begin">
 <tr class="t-rev t-since-cxx17"><td>
-<h3> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <div class="t-noexcept-full"><a href="../../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> specification:&#160;&#160;
 <div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span><span class="br0">&#40;</span><span class="kw1">noexcept</span><span class="br0">&#40;</span>lhs.<span class="me1">swap</span><span class="br0">&#40;</span>rhs<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span></div></div>
 </td>
@@ -300,15 +309,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2626/1000000
-Preprocessor generated node count: 8245/1000000
-Post‐expand include size: 96807/2097152 bytes
-Template argument size: 11789/2097152 bytes
+Preprocessor visited node count: 2779/1000000
+Preprocessor generated node count: 8459/1000000
+Post‐expand include size: 100149/2097152 bytes
+Template argument size: 12570/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3016-0!*!0!!en!*!* and timestamp 20150825093037 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3016-0!*!0!!en!*!* and timestamp 20170401214744 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -344,7 +353,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,720 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,059 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -377,7 +386,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.178 secs. -->
+</script><!-- Served in 1.141 secs. -->
 	</body>
-<!-- Cached 20150825093038 -->
+<!-- Cached 20170401214744 -->
 </html>

@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -414,14 +419,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>If a range error occurs due to underflow, the correct result (after rounding) is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/cbrt&amp;action=edit&amp;section=3" title="Edit section: Error handling">edit</a>]</span> <span class="mw-headline" id="Error_handling">Error handling</span></h3>
-<p>Errors are reported as specified in <span class="t-lc">math_errhandling</span>
+<p>Errors are reported as specified in <span class="t-lc"><a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a></span>
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
 <ul><li> if the argument is ±0 or ±∞, it is returned, unchanged
 </li><li> if the argument is NaN, NaN is returned.
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/cbrt&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span>arg<span class="br0">&#41;</span></span></span> is not equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pow.html"><span class="kw1142">std::<span class="me2">pow</span></span></a><span class="br0">&#40;</span>arg, <span class="nu16">1.0</span><span class="sy2">/</span><span class="nu0">3</span><span class="br0">&#41;</span></span></span> because <span class="t-lc">std::pow</span> cannot raise a negative base to a fractional exponent.
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span>arg<span class="br0">&#41;</span></span></span> is not equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="pow.html"><span class="kw1328">std::<span class="me2">pow</span></span></a><span class="br0">&#40;</span>arg, <span class="nu16">1.0</span><span class="sy2">/</span><span class="nu0">3</span><span class="br0">&#41;</span></span></span> because <span class="t-lc"><a href="pow.html" title="cpp/numeric/math/pow">std::pow</a></span> cannot raise a negative base to a fractional exponent.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/cbrt&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -431,11 +436,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="co1">// normal use</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(729) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><span class="nu0">729</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(729) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><span class="nu0">729</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(-0.125) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.125</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="co1">// special values</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(-0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(+inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(-0) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cbrt(+inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">cbrt</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1373">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -473,15 +478,15 @@ cbrt(+inf) = inf</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6997/1000000
-Preprocessor generated node count: 8542/1000000
-Post‐expand include size: 216586/2097152 bytes
-Template argument size: 39692/2097152 bytes
+Preprocessor visited node count: 7186/1000000
+Preprocessor generated node count: 8717/1000000
+Post‐expand include size: 223548/2097152 bytes
+Template argument size: 40791/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1350-0!*!0!!en!*!* and timestamp 20151130150948 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1350-0!*!0!!en!*!* and timestamp 20161205225305 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -517,7 +522,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 26 May 2014, at 19:53.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,902 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 21,217 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -550,7 +555,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.400 secs. -->
+</script><!-- Served in 2.329 secs. -->
 	</body>
-<!-- Cached 20151130150948 -->
+<!-- Cached 20161205225305 -->
 </html>

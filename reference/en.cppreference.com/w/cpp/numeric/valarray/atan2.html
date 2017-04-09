@@ -203,14 +203,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -338,13 +343,13 @@ valarray<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> atan2<span c
 <p>A numeric array containing the results of computation of inverse tangent.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/valarray/atan2&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Unqualified function (<span class="t-c"><span class="mw-geshi cpp source-cpp">atan2</span></span>) is used to perform the computation. If such function is not available, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/atan2.html"><span class="kw1150">std::<span class="me2">atan2</span></span></a></span></span> is used due to argument dependent lookup.
-</p><p>The function can be implemented with the return type different from <span class="t-lc">std::valarray</span>. In this case, the replacement type has the following properties:
+<p>Unqualified function (<span class="t-c"><span class="mw-geshi cpp source-cpp">atan2</span></span>) is used to perform the computation. If such function is not available, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/atan2.html"><span class="kw1336">std::<span class="me2">atan2</span></span></a></span></span> is used due to argument dependent lookup.
+</p><p>The function can be implemented with the return type different from <span class="t-lc"><a href="../valarray.html" title="cpp/numeric/valarray">std::valarray</a></span>. In this case, the replacement type has the following properties:
 </p>
-<dl><dd><ul><li> All <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> member functions of <span class="t-lc">std::valarray</span> are provided.
-</li><li> <span class="t-lc">std::valarray</span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="slice_array.html"><span class="kw1224">std::<span class="me2">slice_array</span></span></a></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="gslice_array.html"><span class="kw1225">std::<span class="me2">gslice_array</span></span></a></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="mask_array.html"><span class="kw1226">std::<span class="me2">mask_array</span></span></a></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="indirect_array.html"><span class="kw1227">std::<span class="me2">indirect_array</span></span></a></span></span> can be constructed from the replacement type.
-</li><li> All functions accepting an argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span><span class="t-rev-inl t-since-cxx14"><span> except <a href="begin2.html" title="cpp/numeric/valarray/begin2"><tt>begin()</tt></a> and <a href="end2.html" title="cpp/numeric/valarray/end2"><tt>end()</tt></a></span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span> should also accept the replacement type.
-</li><li> All functions accepting two arguments of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span> should accept every combination of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span> and the replacement type.
+<dl><dd><ul><li> All <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> member functions of <span class="t-lc"><a href="../valarray.html" title="cpp/numeric/valarray">std::valarray</a></span> are provided.
+</li><li> <span class="t-lc"><a href="../valarray.html" title="cpp/numeric/valarray">std::valarray</a></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="slice_array.html"><span class="kw1473">std::<span class="me2">slice_array</span></span></a></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="gslice_array.html"><span class="kw1474">std::<span class="me2">gslice_array</span></span></a></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="mask_array.html"><span class="kw1475">std::<span class="me2">mask_array</span></span></a></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="indirect_array.html"><span class="kw1476">std::<span class="me2">indirect_array</span></span></a></span></span> can be constructed from the replacement type.
+</li><li> All functions accepting an argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span><span class="t-rev-inl t-since-cxx14"><span> except <a href="begin2.html" title="cpp/numeric/valarray/begin2"><tt>begin()</tt></a> and <a href="end2.html" title="cpp/numeric/valarray/end2"><tt>end()</tt></a></span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span> should also accept the replacement type.
+</li><li> All functions accepting two arguments of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span> should accept every combination of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy3">&amp;</span></span></span> and the replacement type.
 </li><li> The return type does not add more than two levels of template nesting over the most deeply-nested argument type.
 </li></ul>
 </dd></dl>
@@ -356,19 +361,19 @@ valarray<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> atan2<span c
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="asin.html" title="cpp/numeric/valarray/asin"> <span class="t-lines"><span>asin<span class="t-dsc-small">(std::valarray)</span></span></span></a></div></div>
 </td>
-<td>   applies the function <span class="t-lc">std::asin</span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_asin&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   applies the function <span class="t-lc"><a href="../math/asin.html" title="cpp/numeric/math/asin">std::asin</a></span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_asin&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="acos.html" title="cpp/numeric/valarray/acos"> <span class="t-lines"><span>acos<span class="t-dsc-small">(std::valarray)</span></span></span></a></div></div>
 </td>
-<td>   applies the function <span class="t-lc">std::acos</span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_acos&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   applies the function <span class="t-lc"><a href="../math/acos.html" title="cpp/numeric/math/acos">std::acos</a></span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_acos&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="atan.html" title="cpp/numeric/valarray/atan"> <span class="t-lines"><span>atan<span class="t-dsc-small">(std::valarray)</span></span></span></a></div></div>
 </td>
-<td>   applies the function <span class="t-lc">std::atan</span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_atan&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   applies the function <span class="t-lc"><a href="../math/atan.html" title="cpp/numeric/math/atan">std::atan</a></span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_atan&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -386,15 +391,15 @@ valarray<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> atan2<span c
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5268/1000000
-Preprocessor generated node count: 11527/1000000
-Post‐expand include size: 124229/2097152 bytes
-Template argument size: 22436/2097152 bytes
+Preprocessor visited node count: 5481/1000000
+Preprocessor generated node count: 11702/1000000
+Post‐expand include size: 131914/2097152 bytes
+Template argument size: 23769/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9037-0!*!0!!en!*!* and timestamp 20151130141110 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9037-0!*!0!!en!*!* and timestamp 20161206184332 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -430,7 +435,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 8 June 2014, at 19:13.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,865 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,538 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -463,7 +468,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.704 secs. -->
+</script><!-- Served in 0.075 secs. -->
 	</body>
-<!-- Cached 20151130141110 -->
+<!-- Cached 20161206192108 -->
 </html>

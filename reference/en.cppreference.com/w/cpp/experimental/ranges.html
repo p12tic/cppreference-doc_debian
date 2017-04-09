@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>Extensions for ranges - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/experimental/ranges","wgTitle":"cpp/experimental/ranges","wgCurRevisionId":89682,"wgArticleId":15755,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/experimental/ranges","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_experimental_ranges skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fexperimental%2Franges&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fexperimental%2Franges" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="ranges.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:cpp/experimental/ranges"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="ranges.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="ranges.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="ranges.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Extensions for ranges</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../experimental.html" title="cpp/experimental">experimental</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../experimental.html" title="cpp/experimental"> Technical specifications</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="fs.html" title="cpp/experimental/fs">Filesystem library</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(filesystem TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory.html" title="cpp/experimental/lib extensions">Library fundamentals</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(library fundamentals TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lib_extensions_2.html" title="cpp/experimental/lib extensions 2">Library fundamentals 2</a> <span class="t-mark-rev t-since-libfund-2-ts t-mark-ts">(library fundamentals 2 TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-parallelism-ts t-mark-ts">(parallelism TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(concurrency TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Ranges</strong> <span class="t-mark-rev t-since-ranges-ts t-mark-ts">(ranges TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="special_math.html" title="cpp/experimental/special math">Special mathematical functions</a> <span class="t-mark-rev t-since-special-math-tr t-mark-ts">(special math TR)</span></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"> Ranges</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ranges.html#Concepts" title="cpp/experimental/ranges"><span class="t-lines"><span>Concepts</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ranges.html#General_utilities" title="cpp/experimental/ranges"><span class="t-lines"><span>General utilities</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ranges.html#Iterators" title="cpp/experimental/ranges"><span class="t-lines"><span>Iterators</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ranges.html#Algorithms" title="cpp/experimental/ranges"><span class="t-lines"><span>Algorithms</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<p>The C++ Extensions for Ranges, ISO/IEC TS 21425:XXXX, specifies one modification to the core language and defines new components for the C++ standard library listed on this page.
+</p><p>The Ranges TS is based on the C++14 standard as modified by the <a href="../language/concepts.html" title="cpp/language/constraints"> Concepts TS</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="ranges.html#Core_language_changes"><span class="tocnumber">1</span> <span class="toctext">Core language changes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="ranges.html#Concepts"><span class="tocnumber">2</span> <span class="toctext">Concepts</span></a>
+<ul>
+<li class="toclevel-2"><a href="ranges.html#Core_language_concepts"><span class="tocnumber">2.1</span> <span class="toctext">Core language concepts</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Comparison_concepts"><span class="tocnumber">2.2</span> <span class="toctext">Comparison concepts</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Object_concepts"><span class="tocnumber">2.3</span> <span class="toctext">Object concepts</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Callable_concepts"><span class="tocnumber">2.4</span> <span class="toctext">Callable concepts</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Random_number_generator_concept"><span class="tocnumber">2.5</span> <span class="toctext">Random number generator concept</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="ranges.html#General_utilities"><span class="tocnumber">3</span> <span class="toctext">General utilities</span></a>
+<ul>
+<li class="toclevel-2"><a href="ranges.html#Utility_components"><span class="tocnumber">3.1</span> <span class="toctext">Utility components</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Function_objects"><span class="tocnumber">3.2</span> <span class="toctext">Function objects</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Metaprogramming_and_type_traits"><span class="tocnumber">3.3</span> <span class="toctext">Metaprogramming and type traits</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Tagged_pairs_and_tuples"><span class="tocnumber">3.4</span> <span class="toctext">Tagged pairs and tuples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="ranges.html#Iterators"><span class="tocnumber">4</span> <span class="toctext">Iterators</span></a>
+<ul>
+<li class="toclevel-2"><a href="ranges.html#Iterator_and_range_concepts"><span class="tocnumber">4.1</span> <span class="toctext">Iterator and range concepts</span></a>
+<ul>
+<li class="toclevel-3"><a href="ranges.html#Iterator_concepts"><span class="tocnumber">4.1.1</span> <span class="toctext">Iterator concepts</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Indirect_callable_concepts"><span class="tocnumber">4.1.2</span> <span class="toctext">Indirect callable concepts</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Common_algorithm_requirements"><span class="tocnumber">4.1.3</span> <span class="toctext">Common algorithm requirements</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Range_concepts"><span class="tocnumber">4.1.4</span> <span class="toctext">Range concepts</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Concept_utilities"><span class="tocnumber">4.1.5</span> <span class="toctext">Concept utilities</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="ranges.html#Iterator_primitives"><span class="tocnumber">4.2</span> <span class="toctext">Iterator primitives</span></a>
+<ul>
+<li class="toclevel-3"><a href="ranges.html#Iterator_utilities"><span class="tocnumber">4.2.1</span> <span class="toctext">Iterator utilities</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Iterator_traits"><span class="tocnumber">4.2.2</span> <span class="toctext">Iterator traits</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Iterator_category_tags"><span class="tocnumber">4.2.3</span> <span class="toctext">Iterator category tags</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#std::iterator_traits_specializations"><span class="tocnumber">4.2.4</span> <span class="toctext"><span>std::iterator_traits</span> specializations</span></a></li>
+<li class="toclevel-3"><a href="ranges.html#Iterator_operations"><span class="tocnumber">4.2.5</span> <span class="toctext">Iterator operations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="ranges.html#Iterator_adaptors"><span class="tocnumber">4.3</span> <span class="toctext">Iterator adaptors</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Stream_iterators"><span class="tocnumber">4.4</span> <span class="toctext">Stream iterators</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Range_access"><span class="tocnumber">4.5</span> <span class="toctext">Range access</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Range_primitives"><span class="tocnumber">4.6</span> <span class="toctext">Range primitives</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="ranges.html#Algorithms"><span class="tocnumber">5</span> <span class="toctext">Algorithms</span></a>
+<ul>
+<li class="toclevel-2"><a href="ranges.html#Non-modifying_sequence_operations"><span class="tocnumber">5.1</span> <span class="toctext">Non-modifying sequence operations</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Modifying_sequence_operations"><span class="tocnumber">5.2</span> <span class="toctext">Modifying sequence operations</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Partitioning_operations"><span class="tocnumber">5.3</span> <span class="toctext">Partitioning operations</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Sorting_operations"><span class="tocnumber">5.4</span> <span class="toctext">Sorting operations</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Binary_search_operations_.28on_sorted_ranges.29"><span class="tocnumber">5.5</span> <span class="toctext">Binary search operations (on sorted ranges)</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Set_operations_.28on_sorted_ranges.29"><span class="tocnumber">5.6</span> <span class="toctext">Set operations (on sorted ranges)</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Heap_operations"><span class="tocnumber">5.7</span> <span class="toctext">Heap operations</span></a></li>
+<li class="toclevel-2"><a href="ranges.html#Minimum.2Fmaximum_operations"><span class="tocnumber">5.8</span> <span class="toctext">Minimum/maximum operations</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit&amp;section=1" title="Edit section: Core language changes">edit</a>]</span> <span class="mw-headline" id="Core_language_changes"> Core language changes </span></h4>
+<p>The Ranges TS modifies the specification of <a href="../language/range-for.html" title="cpp/language/range-for"> the range-based <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">for</span></span></span> loop</a> to permit differently typed begin and end iterators. This change permits the use of sentinels and is also present in C++17.
+</p>
+<h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit&amp;section=2" title="Edit section: Concepts">edit</a>]</span> <span class="mw-headline" id="Concepts"> Concepts </span></h4>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Core_language_concepts">  Core language concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/concepts&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Same.html" title="cpp/experimental/ranges/concepts/Same"> <span class="t-lines"><span>Same</span></span></a></div></div>
+</td>
+<td>   specifies that a type is the same as another type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Same&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/DerivedFrom.html" title="cpp/experimental/ranges/concepts/DerivedFrom"> <span class="t-lines"><span>DerivedFrom</span></span></a></div></div>
+</td>
+<td>   specifies that a type is derived from another type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_DerivedFrom&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/ConvertibleTo.html" title="cpp/experimental/ranges/concepts/ConvertibleTo"> <span class="t-lines"><span>ConvertibleTo</span></span></a></div></div>
+</td>
+<td>   specifies that a type is implicitly convertible to another type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_ConvertibleTo&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/CommonReference.html" title="cpp/experimental/ranges/concepts/CommonReference"> <span class="t-lines"><span>CommonReference</span></span></a></div></div>
+</td>
+<td>   specifies that two types share a common reference type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_CommonReference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Common.html" title="cpp/experimental/ranges/concepts/Common"> <span class="t-lines"><span>Common</span></span></a></div></div>
+</td>
+<td>   specifies that two types share a common type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Common&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Integral.html" title="cpp/experimental/ranges/concepts/Integral"> <span class="t-lines"><span>Integral</span></span></a></div></div>
+</td>
+<td>   specifies that a type is an integral type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Integral&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/SignedIntegral.html" title="cpp/experimental/ranges/concepts/SignedIntegral"> <span class="t-lines"><span>SignedIntegral</span></span></a></div></div>
+</td>
+<td>   specifies that a type is a integral type that is signed <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_SignedIntegral&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/UnsignedIntegral.html" title="cpp/experimental/ranges/concepts/UnsignedIntegral"> <span class="t-lines"><span>UnsignedIntegral</span></span></a></div></div>
+</td>
+<td>   specifies that a type is an integral type that is not signed <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_UnsignedIntegral&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Assignable.html" title="cpp/experimental/ranges/concepts/Assignable"> <span class="t-lines"><span>Assignable</span></span></a></div></div>
+</td>
+<td>   specifies that a type is assignable from another type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Assignable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Swappable.html" title="cpp/experimental/ranges/concepts/Swappable"> <span class="t-lines"><span>Swappable</span></span></a></div></div>
+</td>
+<td>   specifies that a type can be swapped or that two types can be swapped with each other <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Swappable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Comparison_concepts">  Comparison concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/concepts&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Boolean.html" title="cpp/experimental/ranges/concepts/Boolean"> <span class="t-lines"><span>Boolean</span></span></a></div></div>
+</td>
+<td>   specifies that a type can be used in Boolean contexts <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Boolean&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/WeaklyEqualityComparable.html" title="cpp/experimental/ranges/concepts/WeaklyEqualityComparable"> <span class="t-lines"><span>WeaklyEqualityComparable</span></span></a></div></div>
+</td>
+<td>  specifies that two types can be compared for equality using operators <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">==</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span><span class="sy1">=</span></span></span>   <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_WeaklyEqualityComparable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/EqualityComparable.html" title="cpp/experimental/ranges/concepts/EqualityComparable"> <span class="t-lines"><span>EqualityComparable</span></span></a></div></div>
+</td>
+<td>  specifies that operator <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">==</span></span></span> is an equivalence relation  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_EqualityComparable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/StrictTotallyOrdered.html" title="cpp/experimental/ranges/concepts/StrictTotallyOrdered"> <span class="t-lines"><span>StrictTotallyOrdered</span></span></a></div></div>
+</td>
+<td>   specifies that the comparison operators on the type yield a total order <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_StrictTotallyOrdered&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Object_concepts">  Object concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/concepts&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Destructible.html" title="cpp/experimental/ranges/concepts/Destructible"> <span class="t-lines"><span>Destructible</span></span></a></div></div>
+</td>
+<td>   specifies that an object of the type can be destroyed and have its address taken with unary <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span></span></span>  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Destructible&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Constructible.html" title="cpp/experimental/ranges/concepts/Constructible"> <span class="t-lines"><span>Constructible</span></span></a></div></div>
+</td>
+<td>   specifies that a variable of the type can be constructed from or bound to a set of argument types  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Constructible&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/DefaultConstructible.html" title="cpp/experimental/ranges/concepts/DefaultConstructible"> <span class="t-lines"><span>DefaultConstructible</span></span></a></div></div>
+</td>
+<td>   specifies that an object of a type can be default constructed  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_DefaultConstructible&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/MoveConstructible.html" title="cpp/experimental/ranges/concepts/MoveConstructible"> <span class="t-lines"><span>MoveConstructible</span></span></a></div></div>
+</td>
+<td>  specifies that an object of a type can be move constructed <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_MoveConstructible&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/CopyConstructible.html" title="cpp/experimental/ranges/concepts/CopyConstructible"> <span class="t-lines"><span>CopyConstructible</span></span></a></div></div>
+</td>
+<td>  specifies that an object of a type can be copy constructed and move constructed   <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_CopyConstructible&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Movable.html" title="cpp/experimental/ranges/concepts/Movable"> <span class="t-lines"><span>Movable</span></span></a></div></div>
+</td>
+<td>  specifies that an object of a type can be moved and swapped <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Movable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Copyable.html" title="cpp/experimental/ranges/concepts/Copyable"> <span class="t-lines"><span>Copyable</span></span></a></div></div>
+</td>
+<td>  specifies that an object of a type can be copied, moved, and swapped  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Copyable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Semiregular.html" title="cpp/experimental/ranges/concepts/Semiregular"> <span class="t-lines"><span>Semiregular</span></span></a></div></div>
+</td>
+<td>   specifies that an object of a type can be copied, moved, swapped, and default constructed <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Semiregular&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Regular.html" title="cpp/experimental/ranges/concepts/Regular"> <span class="t-lines"><span>Regular</span></span></a></div></div>
+</td>
+<td>   specifies that a type is regular, that is, it is both <a href="ranges/concepts/Semiregular.html" title="cpp/experimental/ranges/concepts/Semiregular"><code>Semiregular</code></a> and <a href="ranges/concepts/EqualityComparable.html" title="cpp/experimental/ranges/concepts/EqualityComparable"><code>EqualityComparable</code></a>  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Regular&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Callable_concepts">  Callable concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/concepts&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Invocable.html" title="cpp/experimental/ranges/concepts/Invocable"> <span class="t-lines"><span>Invocable</span><span>RegularInvocable</span></span></a></div></div>
+</td>
+<td>  specifies that a callable type can be invoked with a given set of argument types  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Invocable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Predicate.html" title="cpp/experimental/ranges/concepts/Predicate"> <span class="t-lines"><span>Predicate</span></span></a></div></div>
+</td>
+<td>   specifies that a callable type is a Boolean predicate  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Predicate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/Relation.html" title="cpp/experimental/ranges/concepts/Relation"> <span class="t-lines"><span>Relation</span></span></a></div></div>
+</td>
+<td>   specifies that a callable type is a binary relation  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_Relation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/StrictWeakOrder.html" title="cpp/experimental/ranges/concepts/StrictWeakOrder"> <span class="t-lines"><span>StrictWeakOrder</span></span></a></div></div>
+</td>
+<td>   specifies that a <a href="ranges/concepts/Relation.html" title="cpp/experimental/ranges/concepts/Relation"><code>Relation</code></a> imposes a strict weak ordering  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_StrictWeakOrder&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Random_number_generator_concept">  Random number generator concept </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/random&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/concepts/UniformRandomNumberGenerator.html" title="cpp/experimental/ranges/concepts/UniformRandomNumberGenerator"> <span class="t-lines"><span>UniformRandomNumberGenerator</span></span></a></div></div>
+</td>
+<td>  specifies that a type qualifies as a uniform random number generator <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/concepts/dsc_UniformRandomNumberGenerator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit&amp;section=3" title="Edit section: General utilities">edit</a>]</span> <span class="mw-headline" id="General_utilities"> General utilities </span></h4>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Utility_components">  Utility components </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/utility&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/swap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/swap (page does not exist)"> <span class="t-lines"><span>swap</span></span></a></div></div>
+</td>
+<td>   swaps the value of two objects <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_swap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/exchange&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/exchange (page does not exist)"> <span class="t-lines"><span>exchange</span></span></a></div></div>
+</td>
+<td>   replaces the argument with a new value and returns its previous value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_exchange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Function_objects">  Function objects </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/functional&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/functional/invoke.html" title="cpp/experimental/ranges/functional/invoke"> <span class="t-lines"><span>invoke</span></span></a></div></div>
+</td>
+<td>   invokes a <a href="../concept/Callable.html" title="cpp/concept/Callable"><code>Callable</code></a> object with the given arguments <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_invoke&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/equal_to&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/equal to (page does not exist)"> <span class="t-lines"><span>equal_to</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">==</span> y</span></span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_equal_to&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/not_equal_to&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/not equal to (page does not exist)"> <span class="t-lines"><span>not_equal_to</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">!</span><span class="sy1">=</span> y</span></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_not_equal_to&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/greater&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/greater (page does not exist)"> <span class="t-lines"><span>greater</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&gt;</span> y</span></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_greater&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/less&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/less (page does not exist)"> <span class="t-lines"><span>less</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&lt;</span> y</span></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_less&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/greater_equal&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/greater equal (page does not exist)"> <span class="t-lines"><span>greater_equal</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&gt;=</span> y</span></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_greater_equal&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/functional/less_equal&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/functional/less equal (page does not exist)"> <span class="t-lines"><span>less_equal</span></span></a></div></div>
+</td>
+<td>  function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&lt;=</span> y</span></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_less_equal&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/functional/identity.html" title="cpp/experimental/ranges/functional/identity"> <span class="t-lines"><span>identity</span></span></a></div></div>
+</td>
+<td>  function object that returns its argument unchanged <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/functional/dsc_identity&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Metaprogramming_and_type_traits">  Metaprogramming and type traits </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;type_traits&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/type_traits/is_swappable&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/type traits/is swappable (page does not exist)"> <span class="t-lines"><span>is_swappable_with</span><span>is_swappable</span><span>is_nothrow_swappable_with</span><span>is_nothrow_swappable</span></span></a></div></div>
+</td>
+<td>  checks if objects of a type can be swapped with objects of same or different type  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/type_traits/dsc_is_swappable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/type_traits/common_reference&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/type traits/common reference (page does not exist)"> <span class="t-lines"><span>basic_common_reference</span><span>common_reference</span></span></a></div></div>
+</td>
+<td>  determine the common reference type of a set of types <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/type_traits/dsc_common_reference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/type_traits/common_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/type traits/common type (page does not exist)"> <span class="t-lines"><span>common_type</span></span></a></div></div>
+</td>
+<td>   determine the common type of a set of types <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/type_traits/dsc_common_type&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Tagged_pairs_and_tuples">  Tagged pairs and tuples </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/utility&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/TagSpecifier&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/TagSpecifier (page does not exist)"> <span class="t-lines"><span>TagSpecifier</span></span></a></div></div>
+</td>
+<td>   specifies that a type is a tag specifier <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_TagSpecifier&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/TaggedType&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/TaggedType (page does not exist)"> <span class="t-lines"><span>TaggedType</span></span></a></div></div>
+</td>
+<td>   specifies that a type represents a tag specifier and its element type  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_TaggedType&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/tagged&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/tagged (page does not exist)"> <span class="t-lines"><span>tagged</span></span></a></div></div>
+</td>
+<td>   augument a tuple-like type with named accessors  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_tagged&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/tagged_pair&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/tagged pair (page does not exist)"> <span class="t-lines"><span>tagged_pair</span></span></a></div></div>
+</td>
+<td>   alias template for a tagged <span class="t-lc"><a href="../utility/pair.html" title="cpp/utility/pair">std::pair</a></span>  <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_tagged_pair&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/make_tagged_pair&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/make tagged pair (page does not exist)"> <span class="t-lines"><span>make_tagged_pair</span></span></a></div></div>
+</td>
+<td>   convenience function for creating a <code>tagged_pair</code>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_make_tagged_pair&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/tuple&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/tagged_tuple&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/tagged tuple (page does not exist)"> <span class="t-lines"><span>tagged_tuple</span></span></a></div></div>
+</td>
+<td>   alias template for a tagged <span class="t-lc"><a href="../utility/tuple.html" title="cpp/utility/tuple">std::tuple</a></span> <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_tagged_tuple&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/utility/make_tagged_tuple&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/utility/make tagged tuple (page does not exist)"> <span class="t-lines"><span>make_tagged_tuple</span></span></a></div></div>
+</td>
+<td>   convenience function for creating a <code>tagged_tuple</code>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/utility/dsc_make_tagged_tuple&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/algorithm&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges::tag</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/tags&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/tags (page does not exist)"> <span class="t-lines"><span>in</span><span>in1</span><span>in2</span><span>out</span><span>out1</span><span>out2</span><span>fun</span><span>min</span><span>max</span><span>begin</span><span>end</span></span></a></div></div>
+</td>
+<td>   tag specifiers for use with <span class="t-lc">ranges::tagged</span> <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_tags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit&amp;section=4" title="Edit section: Iterators">edit</a>]</span> <span class="mw-headline" id="Iterators"> Iterators </span></h4>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/iterator&gt;</code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Iterator_and_range_concepts">  Iterator and range concepts </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Iterator_concepts">  Iterator concepts </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"> <span class="t-lines"><span>Readable</span></span></a></div></div>
+</td>
+<td>  specifies that a type is readable by applying operator <code>*</code>  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Readable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Writable.html" title="cpp/experimental/ranges/iterator/Writable"> <span class="t-lines"><span>Writable</span></span></a></div></div>
+</td>
+<td>  specifies that a value can be written to an iterator's referenced object <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Writable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/WeaklyIncrementable.html" title="cpp/experimental/ranges/iterator/WeaklyIncrementable"> <span class="t-lines"><span>WeaklyIncrementable</span></span></a></div></div>
+</td>
+<td>   specifies that a type can be incremented with pre- and post-increment operators <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_WeaklyIncrementable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Incrementable.html" title="cpp/experimental/ranges/iterator/Incrementable"> <span class="t-lines"><span>Incrementable</span></span></a></div></div>
+</td>
+<td>   specifies that the increment operation on a <a href="ranges/iterator/WeaklyIncrementable.html" title="cpp/experimental/ranges/iterator/WeaklyIncrementable"><code>WeaklyIncrementable</code></a> type is equality-preserving and that the type is <a href="ranges/concepts/EqualityComparable.html" title="cpp/experimental/ranges/concepts/EqualityComparable"><code>EqualityComparable</code></a>  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Incrementable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Iterator.html" title="cpp/experimental/ranges/iterator/Iterator"> <span class="t-lines"><span>Iterator</span></span></a></div></div>
+</td>
+<td>   specifies that objects of a type can be incremented and dereferenced  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Sentinel.html" title="cpp/experimental/ranges/iterator/Sentinel"> <span class="t-lines"><span>Sentinel</span></span></a></div></div>
+</td>
+<td>   specifies that objects of a type is a sentinel for an <a href="ranges/iterator/Iterator.html" title="cpp/experimental/ranges/iterator/Iterator"><code>Iterator</code></a> type <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Sentinel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/SizedSentinel.html" title="cpp/experimental/ranges/iterator/SizedSentinel"> <span class="t-lines"><span>SizedSentinel</span></span></a></div></div>
+</td>
+<td>   specifies that the <code>-</code> operator can be applied to an iterator and a sentinel to calculate their difference in constant time  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_SizedSentinel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/InputIterator.html" title="cpp/experimental/ranges/iterator/InputIterator"> <span class="t-lines"><span>InputIterator</span></span></a></div></div>
+</td>
+<td>   specifies that a type is an input iterator, that is, its referenced values can be read and it can be both pre- and post-incremented  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_InputIterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/OutputIterator.html" title="cpp/experimental/ranges/iterator/OutputIterator"> <span class="t-lines"><span>OutputIterator</span></span></a></div></div>
+</td>
+<td>   specifies that a type is an output iterator for a given value type, that is, values of that type can be written to it and it can be both pre- and post-incremented  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_OutputIterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/ForwardIterator.html" title="cpp/experimental/ranges/iterator/ForwardIterator"> <span class="t-lines"><span>ForwardIterator</span></span></a></div></div>
+</td>
+<td>   specifies that an <a href="ranges/iterator/InputIterator.html" title="cpp/experimental/ranges/iterator/InputIterator"><code>InputIterator</code></a> is a forward iterator, supporting equality comparison and multi-pass <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_ForwardIterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/BidirectionalIterator.html" title="cpp/experimental/ranges/iterator/BidirectionalIterator"> <span class="t-lines"><span>BidirectionalIterator</span></span></a></div></div>
+</td>
+<td>   specifies that a <a href="ranges/iterator/ForwardIterator.html" title="cpp/experimental/ranges/iterator/ForwardIterator"><code>ForwardIterator</code></a> is a bidirectional interator, supporting movement backwards  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_BidirectionalIterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/RandomAccessIterator.html" title="cpp/experimental/ranges/iterator/RandomAccessIterator"> <span class="t-lines"><span>RandomAccessIterator</span></span></a></div></div>
+</td>
+<td>   specifies that a <a href="ranges/iterator/BidirectionalIterator.html" title="cpp/experimental/ranges/iterator/BidirectionalIterator"><code>BidirectionalIterator</code></a> is a random-access interator, supporting advancement in constant time and subscripting  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_RandomAccessIterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Indirect_callable_concepts">  Indirect callable concepts </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectInvocable.html" title="cpp/experimental/ranges/iterator/IndirectInvocable"> <span class="t-lines"><span>IndirectInvocable</span><span>IndirectRegularInvocable</span></span></a></div></div>
+</td>
+<td>  specifies that a callable type can be invoked with the result of dereferencing some <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectInvocable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectPredicate.html" title="cpp/experimental/ranges/iterator/IndirectPredicate"> <span class="t-lines"><span>IndirectPredicate</span></span></a></div></div>
+</td>
+<td>  specifies that a callable object, when invoked with the result of dereferencing some <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types, satisfies <a href="ranges/concepts/Predicate.html" title="cpp/experimental/ranges/concepts/Predicate"><code>Predicate</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectPredicate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectRelation.html" title="cpp/experimental/ranges/iterator/IndirectRelation"> <span class="t-lines"><span>IndirectRelation</span></span></a></div></div>
+</td>
+<td>   specifies that a callable object, when invoked with the result of dereferencing some <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types, satisfies <a href="ranges/concepts/Relation.html" title="cpp/experimental/ranges/concepts/Relation"><code>Relation</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectRelation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectStrictWeakOrder.html" title="cpp/experimental/ranges/iterator/IndirectStrictWeakOrder"> <span class="t-lines"><span>IndirectStrictWeakOrder</span></span></a></div></div>
+</td>
+<td>  specifies that a callable object, when invoked with the result of dereferencing some <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types, satisfies <a href="ranges/concepts/StrictWeakOrder.html" title="cpp/experimental/ranges/concepts/StrictWeakOrder"><code>StrictWeakOrder</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectStrictWeakOrder&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Common_algorithm_requirements">  Common algorithm requirements </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlyMovable.html" title="cpp/experimental/ranges/iterator/IndirectlyMovable"> <span class="t-lines"><span>IndirectlyMovable</span></span></a></div></div>
+</td>
+<td>   specifies that values may be moved from a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> type to a <a href="ranges/iterator/Writable.html" title="cpp/experimental/ranges/iterator/Writable"><code>Writable</code></a> type  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlyMovable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlyMovableStorable.html" title="cpp/experimental/ranges/iterator/IndirectlyMovableStorable"> <span class="t-lines"><span>IndirectlyMovableStorable</span></span></a></div></div>
+</td>
+<td>  specifies that values may be moved from a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> type to a <a href="ranges/iterator/Writable.html" title="cpp/experimental/ranges/iterator/Writable"><code>Writable</code></a> type and that the move may be performed via an intermediate object  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlyMovableStorable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlyCopyable.html" title="cpp/experimental/ranges/iterator/IndirectlyCopyable"> <span class="t-lines"><span>IndirectlyCopyable</span></span></a></div></div>
+</td>
+<td>  specifies that values may be copied from a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> type to a <a href="ranges/iterator/Writable.html" title="cpp/experimental/ranges/iterator/Writable"><code>Writable</code></a> type  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlyCopyable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlyCopyableStorable.html" title="cpp/experimental/ranges/iterator/IndirectlyCopyableStorable"> <span class="t-lines"><span>IndirectlyCopyableStorable</span></span></a></div></div>
+</td>
+<td>   specifies that values may be copied from a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> type to a <a href="ranges/iterator/Writable.html" title="cpp/experimental/ranges/iterator/Writable"><code>Writable</code></a> type and that the copy may be performed via an intermediate object <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlyCopyableStorable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlySwappable.html" title="cpp/experimental/ranges/iterator/IndirectlySwappable"> <span class="t-lines"><span>IndirectlySwappable</span></span></a></div></div>
+</td>
+<td>   specifies that the values referenced by two <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types can be swapped <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlySwappable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/IndirectlyComparable.html" title="cpp/experimental/ranges/iterator/IndirectlyComparable"> <span class="t-lines"><span>IndirectlyComparable</span></span></a></div></div>
+</td>
+<td>   specifies that the values referenced by two <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types can be compared <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_IndirectlyComparable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Permutable.html" title="cpp/experimental/ranges/iterator/Permutable"> <span class="t-lines"><span>Permutable</span></span></a></div></div>
+</td>
+<td>   specifies the common requirements of algorithms that reorder elements in place  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Permutable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Mergeable.html" title="cpp/experimental/ranges/iterator/Mergeable"> <span class="t-lines"><span>Mergeable</span></span></a></div></div>
+</td>
+<td>   specifies the requirements of algorithms that merge sorted sequences into an output sequence by copying elements  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Mergeable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Sortable.html" title="cpp/experimental/ranges/iterator/Sortable"> <span class="t-lines"><span>Sortable</span></span></a></div></div>
+</td>
+<td>   specifies the common requirements of algorithms that permute sequences into ordered sequences  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Sortable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Range_concepts">  Range concepts </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/Range.html" title="cpp/experimental/ranges/iterator/Range"> <span class="t-lines"><span>Range</span></span></a></div></div>
+</td>
+<td>   specifies that a type is a range, that is, it provides a <code>begin</code> iterator and an <code>end</code> sentinel  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_Range&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/SizedRange.html" title="cpp/experimental/ranges/iterator/SizedRange"> <span class="t-lines"><span>SizedRange</span></span></a></div></div>
+</td>
+<td>   specifies that a range knows its size in constant time <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_SizedRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/View.html" title="cpp/experimental/ranges/iterator/View"> <span class="t-lines"><span>View</span></span></a></div></div>
+</td>
+<td>  specifies that a range is a view, that is, it has constant time copy/move/assignment <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_View&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/BoundedRange.html" title="cpp/experimental/ranges/iterator/BoundedRange"> <span class="t-lines"><span>BoundedRange</span></span></a></div></div>
+</td>
+<td>  specifies that a range has identical iterator and sentinel types  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_BoundedRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/InputRange.html" title="cpp/experimental/ranges/iterator/InputRange"> <span class="t-lines"><span>InputRange</span></span></a></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="ranges/iterator/InputIterator.html" title="cpp/experimental/ranges/iterator/InputIterator"><code>InputIterator</code></a>  <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_InputRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/OutputRange.html" title="cpp/experimental/ranges/iterator/OutputRange"> <span class="t-lines"><span>OutputRange</span></span></a></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="ranges/iterator/OutputIterator.html" title="cpp/experimental/ranges/iterator/OutputIterator"><code>OutputIterator</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_OutputRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/ForwardRange.html" title="cpp/experimental/ranges/iterator/ForwardRange"> <span class="t-lines"><span>ForwardRange</span></span></a></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="ranges/iterator/ForwardIterator.html" title="cpp/experimental/ranges/iterator/ForwardIterator"><code>ForwardIterator</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_ForwardRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/BidirectionalRange.html" title="cpp/experimental/ranges/iterator/BidirectionalRange"> <span class="t-lines"><span>BidirectionalRange</span></span></a></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="ranges/iterator/BidirectionalIterator.html" title="cpp/experimental/ranges/iterator/BidirectionalIterator"><code>BidirectionalIterator</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_BidirectionalRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/RandomAccessRange.html" title="cpp/experimental/ranges/iterator/RandomAccessRange"> <span class="t-lines"><span>RandomAccessRange</span></span></a></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="ranges/iterator/RandomAccessIterator.html" title="cpp/experimental/ranges/iterator/RandomAccessIterator"><code>RandomAccessIterator</code></a> <br /> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_RandomAccessRange&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Concept_utilities">  Concept utilities </span></h6>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/indirect_result_of&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/indirect result of (page does not exist)"> <span class="t-lines"><span>indirect_result_of</span></span></a></div></div>
+</td>
+<td>  compute the result of invoking a callable object on the result of dereferencing some set of <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> types <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_indirect_result_of&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/iterator/projected.html" title="cpp/experimental/ranges/iterator/projected"> <span class="t-lines"><span>projected</span></span></a></div></div>
+</td>
+<td>  helper template for specifying the constraints on algorithms that accept projections <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_projected&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/disable_sized_sentinel&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/disable sized sentinel (page does not exist)"> <span class="t-lines"><span>disable_sized_sentinel</span></span></a></div></div>
+</td>
+<td>   provides a mechanism to declare that an iterator-sentinel pair does not satisfy <a href="ranges/iterator/SizedSentinel.html" title="cpp/experimental/ranges/iterator/SizedSentinel"><code>SizedSentinel</code></a>  <br /> <span class="t-mark">(variable template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_disable_sized_sentinel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/disable_sized_range&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/disable sized range (page does not exist)"> <span class="t-lines"><span>disable_sized_range</span></span></a></div></div>
+</td>
+<td>   Provide a mechanism to declare that a range does not meet <a href="ranges/iterator/SizedRange.html" title="cpp/experimental/ranges/iterator/SizedRange"><code>SizedRange</code></a> <br /> <span class="t-mark">(variable template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_disable_sized_range&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/view_base&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/view base (page does not exist)"> <span class="t-lines"><span>view_base</span></span></a></div></div>
+</td>
+<td>  empty base class to signify that a class is a view <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_view_base&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/enable_view&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/enable view (page does not exist)"> <span class="t-lines"><span>enable_view</span></span></a></div></div>
+</td>
+<td>  helper trait to differentiate views from other ranges <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_enable_view&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Iterator_primitives">  Iterator primitives </span></h5>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Iterator_utilities">  Iterator utilities </span></h6>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iter_move&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iter move (page does not exist)"> <span class="t-lines"><span>iter_move</span></span></a></div></div>
+</td>
+<td>   casts the result of dereferencing an object to its associated rvalue reference type <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iter_move&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iter_swap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iter swap (page does not exist)"> <span class="t-lines"><span>iter_swap</span></span></a></div></div>
+</td>
+<td>   swap the values referenced by two dereferenceable objects <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iter_swap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Iterator_traits">  Iterator traits </span></h6>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/difference_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/difference type (page does not exist)"> <span class="t-lines"><span>difference_type</span></span></a></div></div>
+</td>
+<td>  obtains the difference type of a <a href="ranges/iterator/WeaklyIncrementable.html" title="cpp/experimental/ranges/iterator/WeaklyIncrementable"><code>WeaklyIncrementable</code></a> type <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_difference_type&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/value_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/value type (page does not exist)"> <span class="t-lines"><span>value_type</span></span></a></div></div>
+</td>
+<td>  obtains the value type of a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> type <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_value_type&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iterator_category&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iterator category (page does not exist)"> <span class="t-lines"><span>iterator_category</span></span></a></div></div>
+</td>
+<td>  obtains the iterator category of an input iterator type  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iterator_category&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iterator_traits&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iterator traits (page does not exist)"> <span class="t-lines"><span>iterator_traits</span></span></a></div></div>
+</td>
+<td>   compatibility traits class that collects an iterator’s associated types <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iterator_traits&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/reference_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/reference t (page does not exist)"> <span class="t-lines"><span>reference_t</span></span></a></div></div>
+</td>
+<td>  obtains a dereferenceable object's reference type <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_reference_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/rvalue_reference_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/rvalue reference t (page does not exist)"> <span class="t-lines"><span>rvalue_reference_t</span></span></a></div></div>
+</td>
+<td>  obtains a dereferenceable object's rvalue reference type <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_rvalue_reference_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iter_common_reference_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iter common reference t (page does not exist)"> <span class="t-lines"><span>iter_common_reference_t</span></span></a></div></div>
+</td>
+<td>  compute the common reference type of a <a href="ranges/iterator/Readable.html" title="cpp/experimental/ranges/iterator/Readable"><code>Readable</code></a> object's reference type and an lvalue reference to its value type <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iter_common_reference_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/is_indirectly_movable&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/is indirectly movable (page does not exist)"> <span class="t-lines"><span>is_indirectly_movable</span><span>is_nothrow_indirectly_movable</span></span></a></div></div>
+</td>
+<td>  tests whether two types satisfy <a href="ranges/iterator/IndirectlyMovable.html" title="cpp/experimental/ranges/iterator/IndirectlyMovable"><code>IndirectlyMovable</code></a> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_is_indirectly_movable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/is_indirectly_swappable&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/is indirectly swappable (page does not exist)"> <span class="t-lines"><span>is_indirectly_swappable</span><span>is_nothrow_indirectly_swappable</span></span></a></div></div>
+</td>
+<td>  tests whether two types satisfy <a href="ranges/iterator/IndirectlySwappable.html" title="cpp/experimental/ranges/iterator/IndirectlySwappable"><code>IndirectlySwappable</code></a> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_is_indirectly_swappable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Iterator_category_tags">  Iterator category tags </span></h6>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iterator_tags&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iterator tags (page does not exist)"> <span class="t-lines"><span>input_iterator_tag</span><span>output_iterator_tag</span><span>forward_iterator_tag</span><span>bidirectional_iterator_tag</span><span>random_access_iterator_tag</span></span></a></div></div>
+</td>
+<td>   empty class types used to indicate iterator categories <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iterator_tags&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="std::iterator_traits_specializations">  <span class="t-lc"><a href="../iterator/iterator_traits.html" title="cpp/iterator/iterator traits">std::iterator_traits</a></span> specializations </span></h6>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/std_iter_traits&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/std iter traits (page does not exist)"> <span class="t-lines"><span>std::iterator_traits<span style="font-size:0.7em; line-height:130%">&lt;InputIterator&gt;</span></span><span>std::iterator_traits<span style="font-size:0.7em; line-height:130%">&lt;OutputIterator&gt;</span></span></span></a></div></div>
+</td>
+<td>  specializes <span class="t-lc"><a href="../iterator/iterator_traits.html" title="cpp/iterator/iterator traits">std::iterator_traits</a></span> for ranges TS iterators <br /> <span class="t-mark">(class template specialization)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_std_iter_traits&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h6> <span class="mw-headline" id="Iterator_operations">  Iterator operations </span></h6>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/advance&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/advance (page does not exist)"> <span class="t-lines"><span>advance</span></span></a></div></div>
+</td>
+<td>  advances an iterator by given distance <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_advance&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/distance&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/distance (page does not exist)"> <span class="t-lines"><span>distance</span></span></a></div></div>
+</td>
+<td>  returns the distance between an iterator and a sentinel, or between the beginning and the end of a range <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_distance&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/next&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/next (page does not exist)"> <span class="t-lines"><span>next</span></span></a></div></div>
+</td>
+<td>  increment an iterator  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_next&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/prev&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/prev (page does not exist)"> <span class="t-lines"><span>prev</span></span></a></div></div>
+</td>
+<td>  decrement an iterator  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_prev&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Iterator_adaptors">  Iterator adaptors </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/reverse_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/reverse iterator (page does not exist)"> <span class="t-lines"><span>reverse_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor for reverse-order traversal  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_reverse_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/back_insert_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/back insert iterator (page does not exist)"> <span class="t-lines"><span>back_insert_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor for insertion at the end of a container <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_back_insert_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/front_insert_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/front insert iterator (page does not exist)"> <span class="t-lines"><span>front_insert_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor for insertion at the front of a container <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_front_insert_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/insert_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/insert iterator (page does not exist)"> <span class="t-lines"><span>insert_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor for insertion into a container <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_insert_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/move_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/move iterator (page does not exist)"> <span class="t-lines"><span>move_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor which dereferences to an rvalue reference  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_move_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/move_sentinel&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/move sentinel (page does not exist)"> <span class="t-lines"><span>move_sentinel</span></span></a></div></div>
+</td>
+<td>  sentinel adaptor for use with <code>move_iterator</code>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_move_sentinel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/common_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/common iterator (page does not exist)"> <span class="t-lines"><span>common_iterator</span></span></a></div></div>
+</td>
+<td>  adapt an iterator-sentinel pair into a common iterator type for use with legacy algorithms  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_common_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/counted_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/counted iterator (page does not exist)"> <span class="t-lines"><span>counted_iterator</span></span></a></div></div>
+</td>
+<td>  iterator adaptor that keeps track of its distance from its starting position <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_counted_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/default_sentinel&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/default sentinel (page does not exist)"> <span class="t-lines"><span>default_sentinel</span></span></a></div></div>
+</td>
+<td>  empty sentinel type for use with iterator types that know the bound of their range <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_default_sentinel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/dangling&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/dangling (page does not exist)"> <span class="t-lines"><span>dangling</span></span></a></div></div>
+</td>
+<td>  wrapper for a possibly dangling iterator <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_dangling&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/safe_iterator_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/safe iterator t (page does not exist)"> <span class="t-lines"><span>safe_iterator_t</span></span></a></div></div>
+</td>
+<td>  alias template that wraps the iterator type of an rvalue range with <code>dangling</code>  <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_safe_iterator_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/unreachable&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/unreachable (page does not exist)"> <span class="t-lines"><span>unreachable</span></span></a></div></div>
+</td>
+<td>  sentinel type used with any iterator to denote an infinite range <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_unreachable&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Stream_iterators">  Stream iterators </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/istream_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/istream iterator (page does not exist)"> <span class="t-lines"><span>istream_iterator</span></span></a></div></div>
+</td>
+<td>  input iterator that reads from <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_istream_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/ostream_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/ostream iterator (page does not exist)"> <span class="t-lines"><span>ostream_iterator</span></span></a></div></div>
+</td>
+<td>  output iterator that writes to <span class="t-lc"><a href="../io/basic_ostream.html" title="cpp/io/basic ostream">std::basic_ostream</a></span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_ostream_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/istreambuf_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/istreambuf iterator (page does not exist)"> <span class="t-lines"><span>istreambuf_iterator</span></span></a></div></div>
+</td>
+<td>  input iterator that reads from <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_istreambuf_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/ostreambuf_iterator&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/ostreambuf iterator (page does not exist)"> <span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div>
+</td>
+<td>  output iterator that writes to <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_ostreambuf_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Range_access">  Range access </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/begin&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/begin (page does not exist)"> <span class="t-lines"><span>begin</span><span>cbegin</span></span></a></div></div>
+</td>
+<td>  returns an iterator to the beginning of a range  <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_begin&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/end&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/end (page does not exist)"> <span class="t-lines"><span>end</span><span>cend</span></span></a></div></div>
+</td>
+<td>  returns an iterator to the end of a range <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_end&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/rbegin&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/rbegin (page does not exist)"> <span class="t-lines"><span>rbegin</span><span>crbegin</span></span></a></div></div>
+</td>
+<td>  returns a reverse iterator to a range <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_rbegin&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/rend&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/rend (page does not exist)"> <span class="t-lines"><span>rend</span><span>crend</span></span></a></div></div>
+</td>
+<td>  returns a reverse end iterator to a range  <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_rend&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Range_primitives">  Range primitives </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/iterator_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/iterator t (page does not exist)"> <span class="t-lines"><span>iterator_t</span></span></a></div></div>
+</td>
+<td>  obtains the iterator type of a range <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_iterator_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/sentinel_t&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/sentinel t (page does not exist)"> <span class="t-lines"><span>sentinel_t</span></span></a></div></div>
+</td>
+<td>  obtains the sentinel type of a range <br /> <span class="t-mark">(alias template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_sentinel_t&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/distance&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/distance (page does not exist)"> <span class="t-lines"><span>distance</span></span></a></div></div>
+</td>
+<td>  returns the distance between an iterator and a sentinel, or between the beginning and the end of a range <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_distance&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/size&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/size (page does not exist)"> <span class="t-lines"><span>size</span></span></a></div></div>
+</td>
+<td>   obtains the size of a range whose size can be calculated in constant time <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_size&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/empty&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/empty (page does not exist)"> <span class="t-lines"><span>empty</span></span></a></div></div>
+</td>
+<td>   checks whether a range is empty  <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_empty&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/iterator/data&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/iterator/data (page does not exist)"> <span class="t-lines"><span>data</span><span>cdata</span></span></a></div></div>
+</td>
+<td>  obtains a pointer to the beginning of a contiguous range  <br /> <span class="t-mark">(customization point object)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/iterator/dsc_data&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+<h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=edit&amp;section=5" title="Edit section: Algorithms">edit</a>]</span> <span class="mw-headline" id="Algorithms"> Algorithms </span></h4>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;experimental/ranges/algorithm&gt;</code> </div>
+</td></tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Non-modifying_sequence_operations">  Non-modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/all_any_none_of&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/all any none of (page does not exist)"> <span class="t-lines"><span>all_of</span><span>any_of</span><span>none_of</span></span></a></div></div>
+</td>
+<td>   checks if a predicate is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all, any or none of the elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_all_any_none_of&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/for_each&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/for each (page does not exist)"> <span class="t-lines"><span>for_each</span></span></a></div></div>
+</td>
+<td>   applies a function to a range of elements <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_for_each&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/count&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/count (page does not exist)"> <span class="t-lines"><span>count</span><span>count_if</span></span></a></div></div>
+</td>
+<td>   returns the number of elements satisfying specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_count&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/mismatch&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/mismatch (page does not exist)"> <span class="t-lines"><span>mismatch</span></span></a></div></div>
+</td>
+<td>   finds the first position where two ranges differ  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_mismatch&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/equal&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/equal (page does not exist)"> <span class="t-lines"><span>equal</span></span></a></div></div>
+</td>
+<td>   determines if two sets of elements are the same  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_equal&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/find&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/find (page does not exist)"> <span class="t-lines"><span>find</span><span>find_if</span><span>find_if_not</span></span></a></div></div>
+</td>
+<td>   finds the first element satisfying specific criteria <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_find&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/find_end&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/find end (page does not exist)"> <span class="t-lines"><span>find_end</span></span></a></div></div>
+</td>
+<td>   finds the last sequence of elements in a certain range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_find_end&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/find_first_of&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/find first of (page does not exist)"> <span class="t-lines"><span>find_first_of</span></span></a></div></div>
+</td>
+<td>   searches for any one of a set of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_find_first_of&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/adjacent_find&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/adjacent find (page does not exist)"> <span class="t-lines"><span>adjacent_find</span></span></a></div></div>
+</td>
+<td>   finds the first two adjacent items that are equal (or satisfy a given predicate)  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_adjacent_find&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/search&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/search (page does not exist)"> <span class="t-lines"><span>search</span></span></a></div></div>
+</td>
+<td>   searches for a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_search&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/search_n&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/search n (page does not exist)"> <span class="t-lines"><span>search_n</span></span></a></div></div>
+</td>
+<td>   searches for a number consecutive copies of an element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_search_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations">  Modifying sequence operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/algorithm/copy.html" title="cpp/experimental/ranges/algorithm/copy"> <span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div></div>
+</td>
+<td>   copies a range of elements to a new location  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/copy_n&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/copy n (page does not exist)"> <span class="t-lines"><span>copy_n</span></span></a></div></div>
+</td>
+<td>   copies a number of elements to a new location   <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_copy_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/copy_backward&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/copy backward (page does not exist)"> <span class="t-lines"><span>copy_backward</span></span></a></div></div>
+</td>
+<td>   copies a range of elements in backwards order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_copy_backward&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/move&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/move (page does not exist)"> <span class="t-lines"><span>move</span></span></a></div></div>
+</td>
+<td>   moves a range of elements to a new location   <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_move&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/move_backward&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/move backward (page does not exist)"> <span class="t-lines"><span>move_backward</span></span></a></div></div>
+</td>
+<td>   moves a range of elements to a new location in backwards order <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_move_backward&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/fill&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/fill (page does not exist)"> <span class="t-lines"><span>fill</span></span></a></div></div>
+</td>
+<td>   assigns a range of elements a certain value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_fill&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/fill_n&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/fill n (page does not exist)"> <span class="t-lines"><span>fill_n</span></span></a></div></div>
+</td>
+<td>   assigns a value to a number of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_fill_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/transform&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/transform (page does not exist)"> <span class="t-lines"><span>transform</span></span></a></div></div>
+</td>
+<td>   applies a function to a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_transform&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/generate&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/generate (page does not exist)"> <span class="t-lines"><span>generate</span></span></a></div></div>
+</td>
+<td>   saves the result of a function in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_generate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/generate_n&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/generate n (page does not exist)"> <span class="t-lines"><span>generate_n</span></span></a></div></div>
+</td>
+<td>   saves the result of N applications of a function  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_generate_n&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/remove&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/remove (page does not exist)"> <span class="t-lines"><span>remove</span><span>remove_if</span></span></a></div></div>
+</td>
+<td>   removes elements satisfying specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_remove&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/remove_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/remove copy (page does not exist)"> <span class="t-lines"><span>remove_copy</span><span>remove_copy_if</span></span></a></div></div>
+</td>
+<td>   copies a range of elements omitting those that satisfy specific criteria  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_remove_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/replace&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/replace (page does not exist)"> <span class="t-lines"><span>replace</span><span>replace_if</span></span></a></div></div>
+</td>
+<td>   replaces all values satisfying specific criteria with another value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_replace&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/replace_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/replace copy (page does not exist)"> <span class="t-lines"><span>replace_copy</span><span>replace_copy_if</span></span></a></div></div>
+</td>
+<td>   copies a range, replacing elements satisfying specific criteria with another value  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_replace_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/swap_ranges&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/swap ranges (page does not exist)"> <span class="t-lines"><span>swap_ranges</span></span></a></div></div>
+</td>
+<td>   swaps two ranges of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_swap_ranges&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/reverse&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/reverse (page does not exist)"> <span class="t-lines"><span>reverse</span></span></a></div></div>
+</td>
+<td>   reverses the order of elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_reverse&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/reverse_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/reverse copy (page does not exist)"> <span class="t-lines"><span>reverse_copy</span></span></a></div></div>
+</td>
+<td>   creates a copy of a range that is reversed  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_reverse_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/rotate&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/rotate (page does not exist)"> <span class="t-lines"><span>rotate</span></span></a></div></div>
+</td>
+<td>   rotates the order of elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_rotate&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/rotate_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/rotate copy (page does not exist)"> <span class="t-lines"><span>rotate_copy</span></span></a></div></div>
+</td>
+<td>   copies and rotate a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_rotate_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/shuffle&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/shuffle (page does not exist)"> <span class="t-lines"><span>shuffle</span></span></a></div></div>
+</td>
+<td>   randomly re-orders elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_shuffle&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/unique&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/unique (page does not exist)"> <span class="t-lines"><span>unique</span></span></a></div></div>
+</td>
+<td>   removes consecutive duplicate elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_unique&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/unique_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/unique copy (page does not exist)"> <span class="t-lines"><span>unique_copy</span></span></a></div></div>
+</td>
+<td>   creates a copy of some range of elements that contains no consecutive duplicates  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_unique_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Partitioning_operations">  Partitioning operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_partitioned&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is partitioned (page does not exist)"> <span class="t-lines"><span>is_partitioned</span></span></a></div></div>
+</td>
+<td>   determines if the range is partitioned by the given predicate   <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_partitioned&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/partition&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/partition (page does not exist)"> <span class="t-lines"><span>partition</span></span></a></div></div>
+</td>
+<td>   divides a range of elements into two groups  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_partition&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/partition_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/partition copy (page does not exist)"> <span class="t-lines"><span>partition_copy</span></span></a></div></div>
+</td>
+<td>   copies a range dividing the elements into two groups  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_partition_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/stable_partition&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/stable partition (page does not exist)"> <span class="t-lines"><span>stable_partition</span></span></a></div></div>
+</td>
+<td>   divides elements into two groups while preserving their relative order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_stable_partition&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/partition_point&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/partition point (page does not exist)"> <span class="t-lines"><span>partition_point</span></span></a></div></div>
+</td>
+<td>   locates the partition point of a partitioned range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_partition_point&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Sorting_operations">  Sorting operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_sorted&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is sorted (page does not exist)"> <span class="t-lines"><span>is_sorted</span></span></a></div></div>
+</td>
+<td>   checks whether a range is sorted into ascending order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_sorted&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_sorted_until&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is sorted until (page does not exist)"> <span class="t-lines"><span>is_sorted_until</span></span></a></div></div>
+</td>
+<td>   finds the largest sorted subrange  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_sorted_until&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ranges/algorithm/sort.html" title="cpp/experimental/ranges/algorithm/sort"> <span class="t-lines"><span>sort</span></span></a></div></div>
+</td>
+<td>   sorts a range into ascending order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/partial_sort&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/partial sort (page does not exist)"> <span class="t-lines"><span>partial_sort</span></span></a></div></div>
+</td>
+<td>   sorts the first N elements of a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_partial_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/partial_sort_copy&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/partial sort copy (page does not exist)"> <span class="t-lines"><span>partial_sort_copy</span></span></a></div></div>
+</td>
+<td>   copies and partially sorts a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_partial_sort_copy&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/stable_sort&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/stable sort (page does not exist)"> <span class="t-lines"><span>stable_sort</span></span></a></div></div>
+</td>
+<td>   sorts a range of elements while preserving order between equal elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_stable_sort&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/nth_element&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/nth element (page does not exist)"> <span class="t-lines"><span>nth_element</span></span></a></div></div>
+</td>
+<td>   partially sorts the given range making sure that it is partitioned by the given element  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_nth_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Binary_search_operations_.28on_sorted_ranges.29">  Binary search operations (on sorted ranges) </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/lower_bound&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/lower bound (page does not exist)"> <span class="t-lines"><span>lower_bound</span></span></a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>not less</i> than the given value <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_lower_bound&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/upper_bound&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/upper bound (page does not exist)"> <span class="t-lines"><span>upper_bound</span></span></a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>greater</i> than a certain value <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_upper_bound&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/binary_search&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/binary search (page does not exist)"> <span class="t-lines"><span>binary_search</span></span></a></div></div>
+</td>
+<td>   determines if an element exists in a certain range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_binary_search&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/equal_range&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/equal range (page does not exist)"> <span class="t-lines"><span>equal_range</span></span></a></div></div>
+</td>
+<td>   returns range of elements matching a specific key <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_equal_range&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Set_operations_.28on_sorted_ranges.29">  Set operations (on sorted ranges) </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/merge&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/merge (page does not exist)"> <span class="t-lines"><span>merge</span></span></a></div></div>
+</td>
+<td>   merges two sorted ranges  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_merge&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/inplace_merge&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/inplace merge (page does not exist)"> <span class="t-lines"><span>inplace_merge</span></span></a></div></div>
+</td>
+<td>   merges two ordered ranges in-place  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_inplace_merge&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/includes&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/includes (page does not exist)"> <span class="t-lines"><span>includes</span></span></a></div></div>
+</td>
+<td>   returns true if one set is a subset of another  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_includes&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/set_difference&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/set difference (page does not exist)"> <span class="t-lines"><span>set_difference</span></span></a></div></div>
+</td>
+<td>   computes the difference between two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_set_difference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/set_intersection&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/set intersection (page does not exist)"> <span class="t-lines"><span>set_intersection</span></span></a></div></div>
+</td>
+<td>   computes the intersection of two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_set_intersection&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/set_symmetric_difference&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/set symmetric difference (page does not exist)"> <span class="t-lines"><span>set_symmetric_difference</span></span></a></div></div>
+</td>
+<td>   computes the symmetric difference between two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_set_symmetric_difference&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/set_union&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/set union (page does not exist)"> <span class="t-lines"><span>set_union</span></span></a></div></div>
+</td>
+<td>   computes the union of two sets  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_set_union&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Heap_operations">  Heap operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_heap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is heap (page does not exist)"> <span class="t-lines"><span>is_heap</span></span></a></div></div>
+</td>
+<td>   checks if the given range is a max heap <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_heap_until&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is heap until (page does not exist)"> <span class="t-lines"><span>is_heap_until</span></span></a></div></div>
+</td>
+<td>   finds the largest subrange that is a max heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_heap_until&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/make_heap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/make heap (page does not exist)"> <span class="t-lines"><span>make_heap</span></span></a></div></div>
+</td>
+<td>   creates a max heap out of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_make_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/push_heap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/push heap (page does not exist)"> <span class="t-lines"><span>push_heap</span></span></a></div></div>
+</td>
+<td>   adds an element to a max heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_push_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/pop_heap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/pop heap (page does not exist)"> <span class="t-lines"><span>pop_heap</span></span></a></div></div>
+</td>
+<td>   removes the largest element from a max heap  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_pop_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/sort_heap&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/sort heap (page does not exist)"> <span class="t-lines"><span>sort_heap</span></span></a></div></div>
+</td>
+<td>   turns a max heap into a range of elements sorted in ascending order  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_sort_heap&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Minimum.2Fmaximum_operations">  Minimum/maximum operations </span></h5>
+</td></tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::experimental::ranges</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/max&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/max (page does not exist)"> <span class="t-lines"><span>max</span></span></a></div></div>
+</td>
+<td>   returns the greater of the given values  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_max&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/max_element&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/max element (page does not exist)"> <span class="t-lines"><span>max_element</span></span></a></div></div>
+</td>
+<td>   returns the largest element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_max_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/min&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/min (page does not exist)"> <span class="t-lines"><span>min</span></span></a></div></div>
+</td>
+<td>   returns the smaller of the given values  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_min&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/min_element&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/min element (page does not exist)"> <span class="t-lines"><span>min_element</span></span></a></div></div>
+</td>
+<td>   returns the smallest element in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_min_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/minmax&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/minmax (page does not exist)"> <span class="t-lines"><span>minmax</span></span></a></div></div>
+</td>
+<td>   returns the smaller and larger of two elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_minmax&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/minmax_element&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/minmax element (page does not exist)"> <span class="t-lines"><span>minmax_element</span></span></a></div></div>
+</td>
+<td>   returns the smallest and the largest elements in a range  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_minmax_element&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/lexicographical_compare&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/lexicographical compare (page does not exist)"> <span class="t-lines"><span>lexicographical_compare</span></span></a></div></div>
+</td>
+<td>   returns true if one range is lexicographically less than another  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_lexicographical_compare&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/is_permutation&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/is permutation (page does not exist)"> <span class="t-lines"><span>is_permutation</span></span></a></div></div>
+</td>
+<td>   determines if a sequence is a permutation of another sequence  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_is_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/next_permutation&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/next permutation (page does not exist)"> <span class="t-lines"><span>next_permutation</span></span></a></div></div>
+</td>
+<td>   generates the next greater lexicographic permutation of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_next_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges/algorithm/prev_permutation&amp;action=edit&amp;redlink=1" class="new" title="cpp/experimental/ranges/algorithm/prev permutation (page does not exist)"> <span class="t-lines"><span>prev_permutation</span></span></a></div></div>
+</td>
+<td>   generates the next smaller lexicographic permutation of a range of elements  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/ranges/algorithm/dsc_prev_permutation&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 23188/1000000
+Preprocessor generated node count: 15578/1000000
+Post‐expand include size: 973825/2097152 bytes
+Template argument size: 200787/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:15755-0!*!0!!en!*!* and timestamp 20170130033606 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;oldid=89682">http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;oldid=89682</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="ranges.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/experimental/ranges" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/experimental/ranges" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;oldid=89682" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/ranges&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 January 2017, at 01:05.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,664 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.057 secs. -->
+	</body>
+<!-- Cached 20170130050925 -->
+</html>

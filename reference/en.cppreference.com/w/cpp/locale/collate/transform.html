@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -344,7 +345,7 @@ string_type transform<span class="br0">&#40;</span> <span class="kw4">const</spa
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <div class="t-li1"><span class="t-li">1)</span> Public member function, calls the protected virtual member function <code>do_transform</code> of the most derived class.</div>
-<div class="t-li1"><span class="t-li">2)</span> Converts the character sequence <code>[low, high)</code> to a string that, compared lexicographically (e.g. with <code>operator&lt;</code> for strings) with the result of calling <code>transform()</code> on another string, produces the same result as calling <span class="t-lc">do_compare()</span> on the same two strings.</div>
+<div class="t-li1"><span class="t-li">2)</span> Converts the character sequence <code>[low, high)</code> to a string that, compared lexicographically (e.g. with <code>operator&lt;</code> for strings) with the result of calling <code>transform()</code> on another string, produces the same result as calling <span class="t-lc"><a href="compare.html" title="cpp/locale/collate/compare">do_compare()</a></span> on the same two strings.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="transform.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
@@ -386,26 +387,26 @@ string_type transform<span class="br0">&#40;</span> <span class="kw4">const</spa
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;sv_SE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">auto</span><span class="sy3">&amp;</span> f <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../collate.html"><span class="kw1667">std::<span class="me2">collate</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;sv_SE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">auto</span><span class="sy3">&amp;</span> f <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1894">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../collate.html"><span class="kw1940">std::<span class="me2">collate</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> in1 <span class="sy1">=</span> L<span class="st0">&quot;<span class="es3">\u00e4</span>ngel&quot;</span><span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> in2 <span class="sy1">=</span> L<span class="st0">&quot;<span class="es3">\u00e5</span>r&quot;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> in1 <span class="sy1">=</span> L<span class="st0">&quot;<span class="es3">\u00e4</span>ngel&quot;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> in2 <span class="sy1">=</span> L<span class="st0">&quot;<span class="es3">\u00e5</span>r&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> out1 <span class="sy1">=</span> f.<span class="me1">transform</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>in1<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>in1<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> in1.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> out2 <span class="sy1">=</span> f.<span class="me1">transform</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>in2<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>in2<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> in2.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> out1 <span class="sy1">=</span> f.<span class="me1">transform</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>in1<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>in1<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> in1.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> out2 <span class="sy1">=</span> f.<span class="me1">transform</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>in2<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="sy3">&amp;</span>in2<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span> in2.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Swedish locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Swedish locale: &quot;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>out1 <span class="sy1">&lt;</span> out2<span class="br0">&#41;</span>
-         <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-         <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In lexicographic comparison: &quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In lexicographic comparison: &quot;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>in1 <span class="sy1">&lt;</span> in2<span class="br0">&#41;</span>
-         <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-         <a href="../../io/cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> in2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> in1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -431,15 +432,15 @@ In lexicographic comparison: ängel before år</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4594/1000000
-Preprocessor generated node count: 7735/1000000
-Post‐expand include size: 118698/2097152 bytes
-Template argument size: 20380/2097152 bytes
+Preprocessor visited node count: 4633/1000000
+Preprocessor generated node count: 7816/1000000
+Post‐expand include size: 119709/2097152 bytes
+Template argument size: 20498/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9250-0!*!0!!en!*!* and timestamp 20151130150254 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9250-0!*!0!!en!*!* and timestamp 20161206162914 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -475,7 +476,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 28 October 2015, at 04:47.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,346 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,081 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -508,7 +509,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.643 secs. -->
+</script><!-- Served in 1.592 secs. -->
 	</body>
-<!-- Cached 20151130150254 -->
+<!-- Cached 20161206162914 -->
 </html>

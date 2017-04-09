@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/if","wgTitle":"cpp/language/if","wgCurRevisionId":76890,"wgArticleId":698,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/if","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/if","wgTitle":"cpp/language/if","wgCurRevisionId":89192,"wgArticleId":698,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/if","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="statements.html" title="cpp/language/statements"> Statements</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -258,28 +259,33 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div>
 </div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/language/statements/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <p>Conditionally executes another statement.
-</p><p>Used where code needs to be executed based on a run-time condition.
+</p><p>Used where code needs to be executed based on a run-time or compile-time condition.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="if.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="if.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="if.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="if.html#Keywords"><span class="tocnumber">4</span> <span class="toctext">Keywords</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="if.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
-<li class="toclevel-1 tocsection-6"><a href="if.html#See_Also"><span class="tocnumber">6</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="if.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a>
+<ul>
+<li class="toclevel-2"><a href="if.html#Constexpr_If"><span class="tocnumber">2.1</span> <span class="toctext">Constexpr If</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="if.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="if.html#Keywords"><span class="tocnumber">4</span> <span class="toctext">Keywords</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="if.html#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=1" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span></h3>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17"><td>
 <table class="t-sdsc-begin">
 
 <tr>
 <td colspan="10" class="t-sdsc-sep">
 </td></tr>
 <tr class="t-sdsc">
-<td class="t-sdsc-nopad"> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if (</b></code> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement_true</span>
+<td> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if</b></code> <code><b>(</b></code> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement-true</span>
 </td>
-<td class="t-sdsc-nopad">
+<td> (1)
 </td>
 <td class="t-sdsc-nopad">
 </td></tr>
@@ -290,9 +296,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td colspan="10" class="t-sdsc-sep">
 </td></tr>
 <tr class="t-sdsc">
-<td class="t-sdsc-nopad"> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if (</b></code> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement_true</span> <code><b>else</b></code> <span class="t-spar">statement_false</span>
+<td> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if</b></code> <code><b>(</b></code> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement-true</span> <code><b>else</b></code> <span class="t-spar">statement-false</span>
 </td>
-<td class="t-sdsc-nopad">
+<td> (2)
 </td>
 <td class="t-sdsc-nopad">
 </td></tr>
@@ -302,6 +308,43 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr>
 <td colspan="10" class="t-sdsc-sep">
 </td></tr></table>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(until C++17)</span></td></tr>
+<tr class="t-rev t-since-cxx17"><td>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if</b></code> <code><b>constexpr</b></code><span class="t-mark">(optional)</span> <code><b>(</b></code> <span class="t-spar">init-statement</span><span class="t-mark">(optional)</span> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement-true</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>if</b></code> <code><b>constexpr</b></code><span class="t-mark">(optional)</span> <code><b>(</b></code> <span class="t-spar">init-statement</span><span class="t-mark">(optional)</span> <span class="t-spar">condition</span> <code><b>)</b></code> <span class="t-spar">statement-true</span> <code><b>else</b></code> <span class="t-spar">statement-false</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td></tr>
+</table>
 <table class="t-par-begin">
 
 
@@ -318,96 +361,75 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> -
 </td>
 <td>  one of
-<ul><li> <a href="expressions.html" title="cpp/language/expressions">expression</a> which is <a href="implicit_cast.html" title="cpp/language/implicit cast">contextually convertible</a> to bool
+<ul><li> <a href="expressions.html" title="cpp/language/expressions">expression</a> which is <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">contextually convertible</a> to bool
 </li><li> <a href="declarations.html" title="cpp/language/declarations">declaration</a> of a single non-array variable with a brace-or-equals <a href="initialization.html" title="cpp/language/initialization">initializer</a>.
 </li></ul>
 </td></tr>
 <tr class="t-par">
-<td>  <span class="t-spar">statement_true</span>
+<td>  <span class="t-spar">init-statement</span><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td>
+<td> -
+</td>
+<td>  either
+<ul><li> an <a href="statements.html" title="cpp/language/statements">expression statement</a> (which may be a <i>null statement</i> "<code><b>;</b></code>")
+</li><li> a  <a href="declarations.html" title="cpp/language/declarations">simple declaration</a>, typically a declaration of a variable with initializer, but it may declare arbitrary many variables or be a decomposition declaration
+</li></ul>
+<dl><dd>Note that any <span class="t-spar">init-statement</span> must end with a semicolon <code><b>;</b></code>, which is why it is often described informally as an expression or a declaration followed by a semicolon.
+</dd></dl>
+</td></tr>
+<tr class="t-par">
+<td>  <span class="t-spar">statement-true</span>
 </td>
 <td> -
 </td>
 <td>  any <a href="statements.html" title="cpp/language/statements">statement</a> (often a compound statement), which is executed if <span class="t-spar">condition</span> evaluates to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>
 </td></tr>
 <tr class="t-par">
-<td>  <span class="t-spar">statement_false</span>
+<td>  <span class="t-spar">statement-false</span>
 </td>
 <td> -
 </td>
 <td>  any <a href="statements.html" title="cpp/language/statements">statement</a> (often a compound statement), which is executed if <span class="t-spar">condition</span> evaluates to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=2" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span></h3>
-<p>If the <span class="t-spar">condition</span> yields <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> after conversion to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, <span class="t-spar">statement_true</span> is executed.
-</p><p>If the else part of the if statement is present and <span class="t-spar">condition</span> yields <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> after conversion to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, <span class="t-spar">statement_false</span> is executed.
-</p><p>In the second form of if statement (the one including else), if <span class="t-spar">statement_true</span> is also an if statement then that inner if statement must contain an else part as well (in other words, in nested if-statements, the else is associated with the closest if that doesn't have an else)
+<p>If the <span class="t-spar">condition</span> yields <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> after conversion to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, <span class="t-spar">statement-true</span> is executed.
+</p><p>If the else part of the if statement is present and <span class="t-spar">condition</span> yields <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> after conversion to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>, <span class="t-spar">statement-false</span> is executed.
+</p><p>In the second form of if statement (the one including else), if <span class="t-spar">statement-true</span> is also an if statement then that inner if statement must contain an else part as well (in other words, in nested if-statements, the else is associated with the closest if that doesn't have an else)
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>If <span class="t-spar">statement_true</span> or <span class="t-spar">statement_false</span> is not a compound statement, it is treated as if it were:
-</p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span>
-    <span class="kw4">int</span> i<span class="sy4">;</span>
-<span class="co1">// i is no longer in scope</span></pre></div></div>
-<p>is the same as
-</p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-    <span class="kw4">int</span> i<span class="sy4">;</span>
-<span class="br0">&#125;</span> <span class="co1">// i is no longer in scope</span></pre></div></div>
-<p>The scope of the name introduced by <span class="t-spar">condition</span>, if it is a declaration, is the same as the scope of the body of the statements:
-</p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy1">=</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-    <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// error: redeclaration of x</span>
-<span class="br0">&#125;</span>
-<span class="kw1">else</span> <span class="br0">&#123;</span>
-    <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// error: redeclaration of x</span>
-<span class="br0">&#125;</span></pre></div></div>
- <table class="t-rev-begin">
-<tr class="t-rev t-since-cxx14"><td>
-<p>If <span class="t-spar">statement_true</span> is entered by <a href="goto.html" title="cpp/language/goto">goto</a> or <span class="t-lc">longjmp</span>, <span class="t-spar">statement_false</span> is not executed.
-</p>
-</td>
-<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td></tr>
-</table>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=4" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
-<p><a href="../keywords/if.html" title="cpp/keyword/if"><tt>if</tt></a>,
-<a href="../keyword/else.html" title="cpp/keyword/else"><tt>else</tt></a>
-</p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> The following example demonstrates several usage cases of the <code>if</code> statement
- </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
-<span class="br0">&#123;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
     <span class="co1">// simple if-statement with an else clause</span>
     <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is greater than 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is greater than 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is not greater than 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is not greater than 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     <span class="co1">// nested if-statement</span>
     <span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
     <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span>
-        <span class="kw1">if</span><span class="br0">&#40;</span>j <span class="sy1">&gt;</span> <span class="nu0">2</span><span class="br0">&#41;</span>
-            <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 1 and &quot;</span> <span class="sy1">&lt;&lt;</span> j <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-        <span class="kw1">else</span> <span class="co1">// this else is part of if(j&gt;2), not part of if(i&gt;1) </span>
-            <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 1 and &quot;</span> <span class="sy1">&lt;&lt;</span> j <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &lt;= 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>j <span class="sy1">&gt;</span> <span class="nu0">2</span><span class="br0">&#41;</span>
+            <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 1 and &quot;</span> <span class="sy1">&lt;&lt;</span> j <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">else</span> <span class="co1">// this else is part of if (j &gt; 2), not of if (i &gt; 1)</span>
+            <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &gt; 1 and &quot;</span> <span class="sy1">&lt;&lt;</span> j <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &lt;= 2<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
    <span class="co1">// declarations can be used as conditions with dynamic_cast</span>
    <span class="kw1">struct</span> Base <span class="br0">&#123;</span>
         <span class="kw1">virtual</span> ~Base<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
    <span class="br0">&#125;</span><span class="sy4">;</span>
    <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">&#123;</span>
-       <span class="kw4">void</span> df<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;df()<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+       <span class="kw4">void</span> df<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;df()<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
    <span class="br0">&#125;</span><span class="sy4">;</span>
    Base<span class="sy2">*</span> bp1 <span class="sy1">=</span> new Base<span class="sy4">;</span>
    Base<span class="sy2">*</span> bp2 <span class="sy1">=</span> new Derived<span class="sy4">;</span>
 &#160;
-   <span class="kw1">if</span><span class="br0">&#40;</span>Derived<span class="sy2">*</span> p <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>bp1<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// cast fails, returns NULL</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>Derived<span class="sy2">*</span> p <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>bp1<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// cast fails, returns NULL</span>
        p<span class="sy2">-</span><span class="sy1">&gt;</span>df<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// not executed</span>
 &#160;
-   <span class="kw1">if</span><span class="br0">&#40;</span><span class="kw4">auto</span> p <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>bp2<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// cast succeeds</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">auto</span> p <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>bp2<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// cast succeeds</span>
        p<span class="sy2">-</span><span class="sy1">&gt;</span>df<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">// executed</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -416,6 +438,187 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 2 &gt; 1 and 1 &lt;= 2
 df()</pre></div></div> 
 </div>
+<p><br />
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<p>If <span class="t-spar">init-statement</span> is used, the if statement is equivalent to
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <code><b>{</b></code><br />
+<dl><dd><span class="t-spar">init_statement</span> <br />
+</dd><dd><code><b>if</b></code> <code><b>constexpr</b></code><span class="t-mark">(optional)</span> <code><b>(</b></code> <span class="t-spar">condition</span> <code><b>)</b></code>  <br />
+<dl><dd><span class="t-spar">statement-true</span> <br />
+</dd></dl>
+</dd></dl>
+<p><code><b>} </b></code>
+</p>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>or 
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <code><b>{</b></code><br />
+<dl><dd><span class="t-spar">init_statement</span> <br />
+</dd><dd><code><b>if</b></code> <code><b>constexpr</b></code><span class="t-mark">(optional)</span> <code><b>(</b></code> <span class="t-spar">condition</span> <code><b>)</b></code>  <br />
+<dl><dd><span class="t-spar">statement-true</span> <br />
+</dd></dl>
+</dd><dd><code><b>else</b></code>
+<dl><dd><span class="t-spar">statement-false</span> <br />
+</dd></dl>
+</dd></dl>
+<p><code><b>} </b></code>
+</p>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td></tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td></tr></table>
+<p>Except that names declared by the <span class="t-spar">init-statement</span> (if <span class="t-spar">init-statement</span> is a declaration) and names declared by <span class="t-spar">condition</span> (if condition is a declaration) are in the same scope, which is also the scope of both <span class="t-spar">statement</span>s.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../container/map.html"><span class="kw1278">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
+<a href="../thread/mutex.html"><span class="kw2151">std::<span class="me2">mutex</span></span></a> mx<span class="sy4">;</span>
+<span class="kw4">extern</span> <span class="kw4">bool</span> shared_flag<span class="sy4">;</span> <span class="co1">// guarded by mx</span>
+<span class="kw4">int</span> demo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">auto</span> it <span class="sy1">=</span> m.<span class="me1">find</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> it <span class="sy3">!</span><span class="sy1">=</span> m.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> it<span class="sy2">-</span><span class="sy1">&gt;</span>size<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">char</span> buf<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span> <a href="../io/c/fgets.html"><span class="kw1820">std::<span class="me2">fgets</span></span></a><span class="br0">&#40;</span>buf, <span class="nu0">10</span>, <span class="kw2">stdin</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> m<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy2">+</span><span class="sy1">=</span> buf<span class="sy4">;</span> <span class="br0">&#125;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><a href="../thread/lock_guard.html"><span class="kw2163">std::<span class="me2">lock_guard</span></span></a> lock<span class="br0">&#40;</span>mx<span class="br0">&#41;</span><span class="sy4">;</span> shared_flag<span class="br0">&#41;</span> <span class="br0">&#123;</span> unsafe_ping<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> shared_flag <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">int</span> s<span class="sy4">;</span> <span class="kw4">int</span> count <span class="sy1">=</span> ReadBytesWithSignal<span class="br0">&#40;</span><span class="sy3">&amp;</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> publish<span class="br0">&#40;</span>count<span class="br0">&#41;</span><span class="sy4">;</span> raise<span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">auto</span> keywords <span class="sy1">=</span> <span class="br0">&#123;</span><span class="st0">&quot;if&quot;</span>, <span class="st0">&quot;for&quot;</span>, <span class="st0">&quot;while&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
+       <a href="../algorithm/all_any_none_of.html"><span class="kw1563">std::<span class="me2">any_of</span></span></a><span class="br0">&#40;</span>keywords.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, keywords.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,
+                   <span class="br0">&#91;</span><span class="sy3">&amp;</span>s<span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> kw<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> s <span class="sy1">==</span> kw<span class="sy4">;</span> <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <a href="../io/cerr.html"><span class="kw1757">std::<span class="me2">cerr</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Token must not be a keyword<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td></tr>
+</table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17"><td>
+<h4> <span class="mw-headline" id="Constexpr_If">Constexpr If</span></h4>
+<p>The statement that begins with <code><b>if constexpr</b></code> is known as the <i>constexpr if statement</i>.
+</p><p>In a constexpr if statement, the value of <span class="t-spar">condition</span> must be a contextually converted <a href="constant_expression.html" title="cpp/language/constant expression">constant expression</a> of type <code>bool</code>. If the value is <code>true</code>, then <span class="t-spar">statement-false</span> is discarded (if present), otherwise, <span class="t-spar">statement-true</span> is discarded. 
+</p><p>The return statements in a discarded statement do not participate in function return type deduction:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">auto</span> get_value<span class="br0">&#40;</span>T t<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span><a href="../types/is_pointer.html"><span class="kw463">std::<span class="me2">is_pointer_v</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">&#41;</span>
+        <span class="kw1">return</span> <span class="sy2">*</span>t<span class="sy4">;</span> <span class="co1">// deduces return type to int for T = int*</span>
+    <span class="kw1">else</span>
+        <span class="kw1">return</span> t<span class="sy4">;</span>  <span class="co1">// deduces return type to int for T = int</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The discarded statement can <a href="definition.html#One_Definition_Rule" title="cpp/language/definition">odr-use</a> a variable that is not defined
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// no definition of x required</span>
+<span class="kw4">int</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="br0">&#41;</span>
+    <span class="kw1">return</span> x<span class="sy4">;</span>
+<span class="kw1">else</span>
+    <span class="kw1">return</span> <span class="sy2">-</span>x<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>If a constexpr if statement appears inside a <a href="templates.html#Templated_entity" title="cpp/language/templates">templated entity</a>, and if <span class="t-spar">condition</span> is not <a href="dependent_name.html#Value-dependent_expressions" title="cpp/language/dependent name">value-dependent</a> after instantiation, the discarded statement is not instantiated when the enclosing template is instantiated . 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T, <span class="kw1">typename</span> ... <span class="me1">Rest</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> g<span class="br0">&#40;</span>T<span class="sy3">&amp;&amp;</span> p, Rest<span class="sy3">&amp;&amp;</span> ...<span class="me1">rs</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">// ... handle p</span>
+    <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span>sizeof...<span class="br0">&#40;</span>rs<span class="br0">&#41;</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+        g<span class="br0">&#40;</span>rs...<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// never instantiated with an empty argument list.</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Note: an example where the condition remains value-dependent after instantiation is a nested template, e.g.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> g<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw4">auto</span> lm <span class="sy1">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">auto</span> p<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span>sizeof<span class="br0">&#40;</span>T<span class="br0">&#41;</span> <span class="sy1">==</span> <span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> sizeof p <span class="sy1">==</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+           <span class="co1">// this condition remains value-dependent after instantiation of g&lt;T&gt;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Note: the discarded statement can't be ill-formed for every possible specialization:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span><a href="../types/is_arithmetic.html"><span class="kw483">std::<span class="me2">is_arithmetic_v</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">&#41;</span>
+         <span class="co1">// ...</span>
+     <span class="kw1">else</span>
+       static_assert<span class="br0">&#40;</span><span class="kw2">false</span>, <span class="st0">&quot;Must be arithmetic&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// ill-formed: invalid for every T</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The common workaround for such a catch-all statement is a type-dependent expression that is always false:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> dependent_false <span class="sy4">:</span> <a href="../types/integral_constant.html"><span class="kw650">std::<span class="me2">false_type</span></span></a> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+     <span class="kw1">if</span> <span class="kw4">constexpr</span> <span class="br0">&#40;</span><a href="../types/is_arithmetic.html"><span class="kw483">std::<span class="me2">is_arithmetic_v</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">&#41;</span>
+         <span class="co1">// ...</span>
+     <span class="kw1">else</span>
+       static_assert<span class="br0">&#40;</span>dependent_false<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span>, <span class="st0">&quot;Must be arithmetic&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// ok</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Labels (<a href="goto.html" title="cpp/language/goto">goto targets</a>, <code>case</code> labels, and <code>default:</code>) appearing in a substatement of a constexpr if can only be referenced (by <a href="switch.html" title="cpp/language/switch">switch</a> or <a href="goto.html" title="cpp/language/goto">goto</a>) in the same substatement.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td></tr>
+</table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>If <span class="t-spar">statement_true</span> or <span class="t-spar">statement_false</span> is not a compound statement, it is treated as if it were:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="br0">&#41;</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="co1">// i is no longer in scope</span></pre></div></div>
+<p>is the same as
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span>
+<span class="br0">&#125;</span> <span class="co1">// i is no longer in scope</span></pre></div></div>
+<p>The scope of the name introduced by <span class="t-spar">condition</span>, if it is a declaration, is the combined scope of both statements' bodies:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy1">=</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// error: redeclaration of x</span>
+<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+    <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// error: redeclaration of x</span>
+<span class="br0">&#125;</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14"><td>
+<p>If <span class="t-spar">statement-true</span> is entered by <a href="goto.html" title="cpp/language/goto">goto</a> or <span class="t-lc">longjmp</span>, <span class="t-spar">statement_false</span> is not executed.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td></tr>
+<tr class="t-rev t-since-cxx17"><td>
+<p>Switch and goto are not allowed to jump into a branch of constexpr if statement.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td></tr>
+</table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=5" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
+<p><a href="../keywords/if.html" title="cpp/keyword/if"><tt>if</tt></a>,
+<a href="../keyword/else.html" title="cpp/keyword/else"><tt>else</tt></a>,
+<a href="../keyword/constexpr.html" title="cpp/keyword/constexpr"><tt>constexpr</tt></a>
+</p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=edit&amp;section=6" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also">See Also</span></h3>
 <table class="t-dsc-begin">
 
@@ -427,19 +630,19 @@ df()</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 1517/1000000
-Preprocessor generated node count: 4552/1000000
-Post‐expand include size: 37259/2097152 bytes
-Template argument size: 9349/2097152 bytes
+Preprocessor visited node count: 2584/1000000
+Preprocessor generated node count: 6600/1000000
+Post‐expand include size: 55617/2097152 bytes
+Template argument size: 21889/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:698-0!*!0!!en!*!* and timestamp 20151010021548 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:698-0!*!0!!en!*!* and timestamp 20170108150727 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=76890">http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=76890</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=89192">http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=89192</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -462,7 +665,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="if.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/if" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/if" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=76890" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/if" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/if" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;oldid=89192" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/if&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -470,8 +673,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/if" title="cpp/language/if" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 4 March 2015, at 09:24.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 15,196 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 8 January 2017, at 07:07.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 29,328 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -504,7 +707,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.862 secs. -->
+</script><!-- Served in 0.061 secs. -->
 	</body>
-<!-- Cached 20151010021548 -->
+<!-- Cached 20170108152200 -->
 </html>

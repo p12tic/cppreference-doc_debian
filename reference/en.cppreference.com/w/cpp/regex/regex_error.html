@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../regex.html" title="cpp/regex"> Regular expressions library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
@@ -272,7 +273,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Defines the type of exception object thrown to report errors in the regular expressions library.
 </p>
 <div class="t-inheritance-diagram">
-<div class="center"><div class="noresize" style="height: 40px; width: 374px; "><map name="ImageMap_1_489588465"><area href="../error/exception.html" shape="rect" coords="5,4,107,36" alt="cpp/error/exception" title="cpp/error/exception"/><area href="../error/runtime_error/runtime_error.html" shape="rect" coords="135,4,238,36" alt="cpp/error/runtime error" title="cpp/error/runtime error"/></map><img alt="std-regex error-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/2/22/std-regex_error-inheritance.svg" width="374" height="40" usemap="#ImageMap_1_489588465"/><div style="margin-left: 354px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-regex_error-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
+<div class="center"><div class="noresize" style="height: 40px; width: 374px; "><map name="ImageMap_1_2016403097"><area href="../error/exception.html" shape="rect" coords="5,4,107,36" alt="cpp/error/exception" title="cpp/error/exception"/><area href="../error/runtime_error/runtime_error.html" shape="rect" coords="135,4,238,36" alt="cpp/error/runtime error" title="cpp/error/runtime error"/></map><img alt="std-regex error-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/2/22/std-regex_error-inheritance.svg" width="374" height="40" usemap="#ImageMap_1_2016403097"/><div style="margin-left: 354px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-regex_error-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
 <div style="text-align:center;">
 <p><span style="font-size:0.7em; line-height:130%">Inheritance diagram</span>
 </p>
@@ -301,7 +302,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="regex_error/code.html" title="cpp/regex/regex error/code"> <span class="t-lines"><span>code</span></span></a></div></div>
 </td>
-<td>   gets the <span class="t-lc">std::regex_constants::error_type</span> for a <code>regex_error</code>  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/regex_error/dsc_code&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   gets the <span class="t-lc"><a href="error_type.html" title="cpp/regex/error type">std::regex_constants::error_type</a></span> for a <code>regex_error</code>  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/regex/regex_error/dsc_code&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <div class="t-inherited">
@@ -330,13 +331,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">try</span> <span class="br0">&#123;</span>
-        <a href="basic_regex.html"><span class="kw1724">std::<span class="me2">regex</span></span></a> re<span class="br0">&#40;</span><span class="st0">&quot;[a-b][a&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="basic_regex.html"><span class="kw1997">std::<span class="me2">regex</span></span></a> re<span class="br0">&#40;</span><span class="st0">&quot;[a-b][a&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span> 
 &#160;
     <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">regex_error</span><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;regex_error caught: &quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">what</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-        <span class="kw1">if</span> <span class="br0">&#40;</span>e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <a href="error_type.html"><span class="kw1780">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">error_brack</span></span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-            <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The code was error_brack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;regex_error caught: &quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">what</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <a href="error_type.html"><span class="kw2053">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">error_brack</span></span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The code was error_brack<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="br0">&#125;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -348,15 +349,15 @@ The code was error_brack</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2609/1000000
-Preprocessor generated node count: 7884/1000000
-Post‐expand include size: 82090/2097152 bytes
-Template argument size: 16325/2097152 bytes
+Preprocessor visited node count: 2632/1000000
+Preprocessor generated node count: 7965/1000000
+Post‐expand include size: 83239/2097152 bytes
+Template argument size: 16518/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3109-0!*!0!!en!2!* and timestamp 20151130141230 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3109-0!*!0!!en!2!* and timestamp 20161205223100 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -392,7 +393,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 August 2015, at 04:26.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 11,471 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 20,968 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -425,7 +426,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.115 secs. -->
+</script><!-- Served in 1.019 secs. -->
 	</body>
-<!-- Cached 20151130141233 -->
+<!-- Cached 20161205223100 -->
 </html>

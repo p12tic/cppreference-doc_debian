@@ -227,14 +227,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../experimental.html" title="cpp/experimental"> Technical specifications</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../../fs.html" title="cpp/experimental/fs">Filesystem library</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(filesystem TS)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../memory.html" title="cpp/experimental/lib extensions">Library fundamentals</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(library fundamentals TS)</span></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../lib_extensions_2.html" title="cpp/experimental/lib extensions 2">Library fundamentals 2</a> <span class="t-mark-rev t-since-libfund-2-ts t-mark-ts">(library fundamentals 2 TS)</span></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(parallelism TS)</span> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-parallelism-ts t-mark-ts">(parallelism TS)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(concurrency TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../ranges.html" title="cpp/experimental/ranges">Ranges</a> <span class="t-mark-rev t-since-ranges-ts t-mark-ts">(ranges TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../special_math.html" title="cpp/experimental/special math">Special mathematical functions</a> <span class="t-mark-rev t-since-special-math-tr t-mark-ts">(special math TR)</span></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../fs.html" title="cpp/experimental/fs"> Filesystem library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h2"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
@@ -349,7 +352,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<div class="t-li1"><span class="t-li">1)</span> Returns an iterator to the first element of the path. If the path is empty, the returned iterator is equal to <span class="t-lc">end()</span>.</div>
+<div class="t-li1"><span class="t-li">1)</span> Returns an iterator to the first element of the path. If the path is empty, the returned iterator is equal to <span class="t-lc"><strong class="selflink">end()</strong></span>.</div>
 <div class="t-li1"><span class="t-li">2)</span> Returns an iterator one past the last element of the path. Dereferencing this iterator is undefined behavior.</div>
 <p>The sequence denoted by this pair of iterators consists of the following:
 </p>
@@ -382,9 +385,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     fs<span class="sy4">::</span><span class="me2">path</span> p <span class="sy1">=</span> <span class="st0">&quot;C:<span class="es1">\\</span>users<span class="es1">\\</span>abcdef<span class="es1">\\</span>AppData<span class="es1">\\</span>Local<span class="es1">\\</span>Temp<span class="es1">\\</span>&quot;</span><span class="sy4">;</span>
-    <a href="../../../io/cout.html"><span class="kw1449">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Examining the path &quot;</span> <span class="sy1">&lt;&lt;</span> p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; through iterators gives<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Examining the path &quot;</span> <span class="sy1">&lt;&lt;</span> p <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; through iterators gives<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">auto</span><span class="sy3">&amp;</span> e <span class="sy4">:</span> p<span class="br0">&#41;</span>
-        <a href="../../../io/cout.html"><span class="kw1449">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> e <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> e <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -401,15 +404,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5293/1000000
-Preprocessor generated node count: 6420/1000000
-Post‐expand include size: 149317/2097152 bytes
-Template argument size: 26476/2097152 bytes
+Preprocessor visited node count: 5378/1000000
+Preprocessor generated node count: 6577/1000000
+Post‐expand include size: 152826/2097152 bytes
+Template argument size: 26976/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13414-0!*!0!!en!*!* and timestamp 20150705212849 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13414-0!*!0!!en!*!* and timestamp 20161206161505 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -439,8 +442,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/experimental/fs/path/begin" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/experimental/fs/path/begin" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/begin&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/begin&amp;oldid=77990" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/begin&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 April 2015, at 07:40.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,234 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 April 2015, at 06:40.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,253 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -473,7 +476,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.570 secs. -->
+</script><!-- Served in 1.481 secs. -->
 	</body>
-<!-- Cached 20150705212850 -->
+<!-- Cached 20161206161505 -->
 </html>

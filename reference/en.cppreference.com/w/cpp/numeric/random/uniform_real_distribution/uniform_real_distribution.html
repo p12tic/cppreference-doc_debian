@@ -203,14 +203,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -318,19 +323,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/random/uniform_real_distribution/uniform_real_distribution&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>Requires that <span class="texhtml" style="white-space: nowrap;">a ≤ b</span> and <span class="texhtml" style="white-space: nowrap;">b-a ≤ std::numeric_limits&lt;RealType&gt;::max()</span>
 </p><p>If <code>a == b</code>, subsequent calls to the <a href="operator().html" title="cpp/numeric/random/uniform real distribution/operator()"><tt>operator()</tt></a> overload that does not accept a <code>param_type</code> object will cause undefined behavior.
-</p><p>To create a distribution over the closed interval <span class="texhtml" style="white-space: nowrap;">[a,b]</span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../math/nextafter.html"><span class="kw1141">std::<span class="me2">nextafter</span></span></a><span class="br0">&#40;</span>b, <a href="../../../types/numeric_limits.1.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>RealType<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span> may be used as the second parameter.
+</p><p>To create a distribution over the closed interval <span class="texhtml" style="white-space: nowrap;">[a,b]</span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../math/nextafter.html"><span class="kw1362">std::<span class="me2">nextafter</span></span></a><span class="br0">&#40;</span>b, <a href="../../../types/numeric_limits.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span>RealType<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span> may be used as the second parameter.
 </p>
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4175/1000000
-Preprocessor generated node count: 6792/1000000
-Post‐expand include size: 133648/2097152 bytes
-Template argument size: 25501/2097152 bytes
+Preprocessor visited node count: 4364/1000000
+Preprocessor generated node count: 6967/1000000
+Post‐expand include size: 140484/2097152 bytes
+Template argument size: 26600/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4596-0!*!0!!*!*!* and timestamp 20150525040445 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4596-0!*!0!!*!*!* and timestamp 20161206024658 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -365,8 +370,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/random/uniform_real_distribution/uniform_real_distribution" title="cpp/numeric/random/uniform real distribution/uniform real distribution" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 24 May 2015, at 21:04.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,081 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 May 2015, at 20:04.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,297 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -399,7 +404,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.080 secs. -->
+</script><!-- Served in 1.019 secs. -->
 	</body>
-<!-- Cached 20150525052751 -->
+<!-- Cached 20161206024658 -->
 </html>

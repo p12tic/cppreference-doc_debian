@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>Mathematical special functions - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=edit" />
+<link rel="shortcut icon" href="../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/numeric/special_math","wgTitle":"cpp/numeric/special math","wgCurRevisionId":91200,"wgArticleId":14764,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/numeric/special_math","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_numeric_special_math skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnumeric%2Fspecial+math&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fnumeric%2Fspecial+math" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="special_math.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/numeric/special_math&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="special_math.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="special_math.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="special_math.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Mathematical special functions</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../numeric.html" title="cpp/numeric">numeric</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Special mathematical functions</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/inner_product.html" title="cpp/algorithm/inner product"><span class="t-lines"><span>inner_product</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"><span class="t-lines"><span>adjacent_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/partial_sum.html" title="cpp/algorithm/partial sum"><span class="t-lines"><span>partial_sum</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><strong class="selflink"> Special mathematical functions</strong><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/assoc_laguerre.html" title="cpp/numeric/special math/assoc laguerre"><span class="t-lines"><span>assoc_laguerre</span><span>assoc_laguerref</span><span>assoc_laguerrel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/assoc_legendre.html" title="cpp/numeric/special math/assoc legendre"><span class="t-lines"><span>assoc_legendre</span><span>assoc_legendref</span><span>assoc_legendrel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/beta.html" title="cpp/numeric/special math/beta"><span class="t-lines"><span>beta</span><span>betaf</span><span>betal</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/comp_ellint_1.html" title="cpp/numeric/special math/comp ellint 1"><span class="t-lines"><span>comp_ellint_1</span><span>comp_ellint_1f</span><span>comp_ellint_1l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/comp_ellint_2.html" title="cpp/numeric/special math/comp ellint 2"><span class="t-lines"><span>comp_ellint_2</span><span>comp_ellint_2f</span><span>comp_ellint_2l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/comp_ellint_3.html" title="cpp/numeric/special math/comp ellint 3"><span class="t-lines"><span>comp_ellint_3</span><span>comp_ellint_3f</span><span>comp_ellint_3l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/cyl_bessel_i.html" title="cpp/numeric/special math/cyl bessel i"><span class="t-lines"><span>cyl_bessel_i</span><span>cyl_bessel_if</span><span>cyl_bessel_il</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/cyl_bessel_j.html" title="cpp/numeric/special math/cyl bessel j"><span class="t-lines"><span>cyl_bessel_j</span><span>cyl_bessel_jf</span><span>cyl_bessel_jl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/cyl_bessel_k.html" title="cpp/numeric/special math/cyl bessel k"><span class="t-lines"><span>cyl_bessel_k</span><span>cyl_bessel_kf</span><span>cyl_bessel_kl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/cyl_neumann.html" title="cpp/numeric/special math/cyl neumann"><span class="t-lines"><span>cyl_neumann</span><span>cyl_neumannf</span><span>cyl_neumannl</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/ellint_1.html" title="cpp/numeric/special math/ellint 1"><span class="t-lines"><span>ellint_1</span><span>ellint_1f</span><span>ellint_1l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/ellint_2.html" title="cpp/numeric/special math/ellint 2"><span class="t-lines"><span>ellint_2</span><span>ellint_2f</span><span>ellint_2l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/ellint_3.html" title="cpp/numeric/special math/ellint 3"><span class="t-lines"><span>ellint_3</span><span>ellint_3f</span><span>ellint_3l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/expint.html" title="cpp/numeric/special math/expint"><span class="t-lines"><span>expint</span><span>expintf</span><span>expintl</span></span></a></div></div></td></tr>
+</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/hermite.html" title="cpp/numeric/special math/hermite"><span class="t-lines"><span>hermite</span><span>hermitef</span><span>hermitel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/laguerre.html" title="cpp/numeric/special math/laguerre"><span class="t-lines"><span>laguerre</span><span>laguerref</span><span>laguerrel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/legendre.html" title="cpp/numeric/special math/legendre"><span class="t-lines"><span>legendre</span><span>legendref</span><span>legendrel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/riemann_zeta.html" title="cpp/numeric/special math/riemann zeta"><span class="t-lines"><span>riemann_zeta</span><span>riemann_zetaf</span><span>riemann_zetal</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/sph_bessel.html" title="cpp/numeric/special math/sph bessel"><span class="t-lines"><span>sph_bessel</span><span>sph_besself</span><span>sph_bessell</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/sph_legendre.html" title="cpp/numeric/special math/sph legendre"><span class="t-lines"><span>sph_legendre</span><span>sph_legendref</span><span>sph_legendrel</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="special_math/sph_neumann.html" title="cpp/numeric/special math/sph neumann"><span class="t-lines"><span>sph_neumann</span><span>sph_neumannf</span><span>sph_neumannl</span></span></a></div></div></td></tr>
+</table></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<p>The Mathematical Special Functions library was originally part of Library TR1 ISO/IEC TR 19768:2007, then published as an independent ISO standard, ISO/IEC 29124:2010, and finally merged to ISO C++ as of C++17.
+</p><p>See <a href="../experimental/special_math.html" title="cpp/experimental/special math">Mathematical special functions</a> for the ISO/IEC 29124:2010 version of this library.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=edit&amp;section=1" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions">Functions</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;cmath&gt;</code> </div>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/assoc_laguerre.html" title="cpp/numeric/special math/assoc laguerre"> <span class="t-lines"><span>assoc_laguerre</span><span>assoc_laguerref</span><span>assoc_laguerrel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   associated Laguerre polynomials <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_assoc_laguerre&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/assoc_legendre.html" title="cpp/numeric/special math/assoc legendre"> <span class="t-lines"><span>assoc_legendre</span><span>assoc_legendref</span><span>assoc_legendrel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   associated Legendre polynomials <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_assoc_legendre&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/beta.html" title="cpp/numeric/special math/beta"> <span class="t-lines"><span>beta</span><span>betaf</span><span>betal</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   beta function <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_beta&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/comp_ellint_1.html" title="cpp/numeric/special math/comp ellint 1"> <span class="t-lines"><span>comp_ellint_1</span><span>comp_ellint_1f</span><span>comp_ellint_1l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   (complete) elliptic integral of the first kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_comp_ellint_1&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/comp_ellint_2.html" title="cpp/numeric/special math/comp ellint 2"> <span class="t-lines"><span>comp_ellint_2</span><span>comp_ellint_2f</span><span>comp_ellint_2l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>    (complete) elliptic integral of the second kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_comp_ellint_2&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/comp_ellint_3.html" title="cpp/numeric/special math/comp ellint 3"> <span class="t-lines"><span>comp_ellint_3</span><span>comp_ellint_3f</span><span>comp_ellint_3l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   (complete) elliptic integral of the third kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_comp_ellint_3&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/cyl_bessel_i.html" title="cpp/numeric/special math/cyl bessel i"> <span class="t-lines"><span>cyl_bessel_i</span><span>cyl_bessel_if</span><span>cyl_bessel_il</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   regular modified cylindrical Bessel functions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_cyl_bessel_i&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/cyl_bessel_j.html" title="cpp/numeric/special math/cyl bessel j"> <span class="t-lines"><span>cyl_bessel_j</span><span>cyl_bessel_jf</span><span>cyl_bessel_jl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   cylindrical Bessel functions (of the first kind) <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_cyl_bessel_j&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/cyl_bessel_k.html" title="cpp/numeric/special math/cyl bessel k"> <span class="t-lines"><span>cyl_bessel_k</span><span>cyl_bessel_kf</span><span>cyl_bessel_kl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   irregular modified cylindrical Bessel functions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_cyl_bessel_k&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/cyl_neumann.html" title="cpp/numeric/special math/cyl neumann"> <span class="t-lines"><span>cyl_neumann</span><span>cyl_neumannf</span><span>cyl_neumannl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  cylindrical Neumann functions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_cyl_neumann&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/ellint_1.html" title="cpp/numeric/special math/ellint 1"> <span class="t-lines"><span>ellint_1</span><span>ellint_1f</span><span>ellint_1l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   (incomplete) elliptic integral of the first kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_ellint_1&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/ellint_2.html" title="cpp/numeric/special math/ellint 2"> <span class="t-lines"><span>ellint_2</span><span>ellint_2f</span><span>ellint_2l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  (incomplete) elliptic integral of the second kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_ellint_2&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/ellint_3.html" title="cpp/numeric/special math/ellint 3"> <span class="t-lines"><span>ellint_3</span><span>ellint_3f</span><span>ellint_3l</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  (incomplete) elliptic integral of the third kind <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_ellint_3&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/expint.html" title="cpp/numeric/special math/expint"> <span class="t-lines"><span>expint</span><span>expintf</span><span>expintl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>  exponential integral <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_expint&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/hermite.html" title="cpp/numeric/special math/hermite"> <span class="t-lines"><span>hermite</span><span>hermitef</span><span>hermitel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   Hermite polynomials <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_hermite&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/legendre.html" title="cpp/numeric/special math/legendre"> <span class="t-lines"><span>legendre</span><span>legendref</span><span>legendrel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   Legendre polynomials <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_legendre&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/laguerre.html" title="cpp/numeric/special math/laguerre"> <span class="t-lines"><span>laguerre</span><span>laguerref</span><span>laguerrel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   Laguerre polynomials <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_laguerre&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/riemann_zeta.html" title="cpp/numeric/special math/riemann zeta"> <span class="t-lines"><span>riemann_zeta</span><span>riemann_zetaf</span><span>riemann_zetal</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   Riemann zeta function <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_riemann_zeta&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/sph_bessel.html" title="cpp/numeric/special math/sph bessel"> <span class="t-lines"><span>sph_bessel</span><span>sph_besself</span><span>sph_bessell</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   spherical Bessel functions (of the first kind) <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_sph_bessel&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/sph_legendre.html" title="cpp/numeric/special math/sph legendre"> <span class="t-lines"><span>sph_legendre</span><span>sph_legendref</span><span>sph_legendrel</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   spherical associated Legendre functions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_sph_legendre&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="special_math/sph_neumann.html" title="cpp/numeric/special math/sph neumann"> <span class="t-lines"><span>sph_neumann</span><span>sph_neumannf</span><span>sph_neumannl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   spherical Neumann functions <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/special_math/dsc_sph_neumann&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 4761/1000000
+Preprocessor generated node count: 5490/1000000
+Post‐expand include size: 233345/2097152 bytes
+Template argument size: 48200/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14764-0!*!0!*!*!*!* and timestamp 20170326080340 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;oldid=91200">http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;oldid=91200</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="special_math.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/numeric/special_math" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/numeric/special_math" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;oldid=91200" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/special_math&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div id="cpp-languages">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/special_math" title="cpp/numeric/special math" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 26 March 2017, at 01:03.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 27,164 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.050 secs. -->
+	</body>
+<!-- Cached 20170326083906 -->
+</html>

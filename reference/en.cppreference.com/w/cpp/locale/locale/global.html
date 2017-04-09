@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -320,7 +321,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Replaces the global C++ locale with <code>loc</code>, which means all future calls to the <span class="t-lc">std::locale</span> default constructor will now return a copy of <code>loc</code>. If <code>loc</code> has a name, also replaces the C locale as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../setlocale.html"><span class="kw1714">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../LC_categories.html"><span class="kw1717">LC_ALL</span></a>, loc.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>. This function is the only way to modify the global C++ locale, which is otherwise equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">classic</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> at program startup.
+<p>Replaces the global C++ locale with <code>loc</code>, which means all future calls to the <span class="t-lc"><a href="../locale.html" title="cpp/locale/locale">std::locale</a></span> default constructor will now return a copy of <code>loc</code>. If <code>loc</code> has a name, also replaces the C locale as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../setlocale.html"><span class="kw1987">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../LC_categories.html"><span class="kw1990">LC_ALL</span></a>, loc.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">c_str</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>. This function is the only way to modify the global C++ locale, which is otherwise equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">classic</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> at program startup.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -370,15 +371,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5299/1000000
-Preprocessor generated node count: 11598/1000000
-Post‐expand include size: 132960/2097152 bytes
-Template argument size: 19567/2097152 bytes
+Preprocessor visited node count: 5330/1000000
+Preprocessor generated node count: 11679/1000000
+Post‐expand include size: 133953/2097152 bytes
+Template argument size: 19685/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2891-0!*!0!!en!*!* and timestamp 20151130154537 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2891-0!*!0!!en!*!* and timestamp 20161205231527 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -414,7 +415,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:09.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,073 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,344 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -447,7 +448,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.491 secs. -->
+</script><!-- Served in 1.340 secs. -->
 	</body>
-<!-- Cached 20151130154537 -->
+<!-- Cached 20161205231527 -->
 </html>

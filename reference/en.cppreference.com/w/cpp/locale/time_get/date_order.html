@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -348,8 +349,8 @@ dateorder date_order<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <div class="t-li1"><span class="t-li">1)</span> Public member function, calls the protected virtual member function <code>do_date_order</code> of the most derived class.</div>
-<div class="t-li1"><span class="t-li">2)</span> Returns a value of type <span class="t-lc">std::time_base::dateorder</span>, which describes the default date format used by this locale (expected by <span class="t-lc">get_date()</span> and produced by <span class="t-lc">std::strftime()</span> with format specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'%x'</span></span></span>).</div>
-<p>The valid values (inherited from <span class="t-lc">std::time_base</span>) are:
+<div class="t-li1"><span class="t-li">2)</span> Returns a value of type <span class="t-lc"><a href="../time_base.html" title="cpp/locale/time base">std::time_base::dateorder</a></span>, which describes the default date format used by this locale (expected by <span class="t-lc"><a href="get_date.html" title="cpp/locale/time get/get date">get_date()</a></span> and produced by <span class="t-lc"><a href="../../chrono/c/strftime.html" title="cpp/chrono/c/strftime">std::strftime()</a></span> with format specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'%x'</span></span></span>).</div>
+<p>The valid values (inherited from <span class="t-lc"><a href="../time_base.html" title="cpp/locale/time base">std::time_base</a></span>) are:
 </p>
 <table class="t-dsc-begin">
 
@@ -413,31 +414,31 @@ dateorder date_order<span class="br0">&#40;</span><span class="br0">&#41;</span>
 &#160;
 <span class="kw4">void</span> show_date_order<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../time_base.html"><span class="kw1648">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">dateorder</span></span></a> d <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../time_get.html"><span class="kw1673">std::<span class="me2">time_get</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>
-                                           <a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    <a href="../time_base.html"><span class="kw1921">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">dateorder</span></span></a> d <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1894">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../time_get.html"><span class="kw1946">std::<span class="me2">time_get</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>
+                                           <a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="br0">&#41;</span>
                                   <span class="br0">&#41;</span>.<span class="me1">date_order</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">switch</span> <span class="br0">&#40;</span>d<span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
-        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1649">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">no_order</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;no_order<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1650">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">dmy</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;day, month, year<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1651">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">mdy</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;month, day, year<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1652">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">ymd</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;year, month, day<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
-        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1653">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">ydm</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;year, day, month<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1922">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">no_order</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;no_order<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1923">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">dmy</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;day, month, year<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1924">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">mdy</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;month, day, year<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1925">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">ymd</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;year, month, day<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> <a href="../time_base.html"><span class="kw1926">std::<span class="me2">time_base</span><span class="sy4">::</span><span class="me2">ydm</span></span></a><span class="sy4">:</span> <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;year, day, month<span class="es1">\n</span>&quot;</span><span class="sy4">;</span> <span class="kw1">break</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In U.S. locale, the default date order is: &quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In U.S. locale, the default date order is: &quot;</span><span class="sy4">;</span>
     show_date_order<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Japanese locale, the default date order is: &quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;ja_JP.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In Japanese locale, the default date order is: &quot;</span><span class="sy4">;</span>
     show_date_order<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In German locale, the default date order is: &quot;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">locale</span><span class="sy4">::</span><span class="me2">global</span><span class="br0">&#40;</span><a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In German locale, the default date order is: &quot;</span><span class="sy4">;</span>
     show_date_order<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -464,15 +465,15 @@ In German locale, the default date order is: day, month, year</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5160/1000000
-Preprocessor generated node count: 8544/1000000
-Post‐expand include size: 128106/2097152 bytes
-Template argument size: 23941/2097152 bytes
+Preprocessor visited node count: 5199/1000000
+Preprocessor generated node count: 8625/1000000
+Post‐expand include size: 129273/2097152 bytes
+Template argument size: 24059/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9832-0!*!0!!en!*!* and timestamp 20151130142211 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9832-0!*!0!!en!*!* and timestamp 20161206180730 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -503,7 +504,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 6 August 2013, at 06:20.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,606 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,075 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -536,7 +537,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.868 secs. -->
+</script><!-- Served in 1.701 secs. -->
 	</body>
-<!-- Cached 20151130142211 -->
+<!-- Cached 20161206180730 -->
 </html>

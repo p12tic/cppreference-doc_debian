@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -331,20 +332,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">public</span><span class="sy4">:</span><br />
-catalog open<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> name, <span class="kw4">const</span> <a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+catalog open<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> name, <span class="kw4">const</span> <a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
-<span class="kw1">virtual</span> catalog do_open<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> name, <span class="kw4">const</span> <a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<span class="kw1">virtual</span> catalog do_open<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> name, <span class="kw4">const</span> <a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="sy3">&amp;</span> loc <span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>1) Public member function, calls the protected virtual member function <code>do_open</code> of the most derived class.
-</p><p>2) Obtains a value of type <code>catalog</code> (inherited from <span class="t-lc">std::messages_base</span>), which can be passed to <span class="t-lc">get()</span> to retrieve messages from the message catalog named by <code>name</code>. This value is usable until passed to <span class="t-lc">close()</span>.
+</p><p>2) Obtains a value of type <code>catalog</code> (inherited from <span class="t-lc"><a href="../messages_base.html" title="cpp/locale/messages base">std::messages_base</a></span>), which can be passed to <span class="t-lc"><a href="get.html" title="cpp/locale/messages/get">get()</a></span> to retrieve messages from the message catalog named by <code>name</code>. This value is usable until passed to <span class="t-lc"><a href="close.html" title="cpp/locale/messages/close">close()</a></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -371,10 +372,10 @@ catalog open<span class="br0">&#40;</span> <span class="kw4">const</span> <a hre
 </td>
 <td> -
 </td>
-<td>  a locale object that provides additional facets that may be required to read messages from the catalog, such as <span class="t-lc">std::codecvt</span> to perform wide/multibyte conversions
+<td>  a locale object that provides additional facets that may be required to read messages from the catalog, such as <span class="t-lc"><a href="../codecvt.html" title="cpp/locale/codecvt">std::codecvt</a></span> to perform wide/multibyte conversions
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/messages/open&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>The non-negative value of type <code>catalog</code> that can be used with <span class="t-lc">get()</span> and <span class="t-lc">close()</span>. Returns a negative value if the catalog could not be opened.
+<p>The non-negative value of type <code>catalog</code> that can be used with <span class="t-lc"><a href="get.html" title="cpp/locale/messages/get">get()</a></span> and <span class="t-lc"><a href="close.html" title="cpp/locale/messages/close">close()</a></span>. Returns a negative value if the catalog could not be opened.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/messages/open&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>On POSIX systems, this function call usually translates to a call to <code><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/catopen.html">catopen()</a></code>. In GNU libstdc++, it calls <code><a rel="nofollow" class="external text" href="http://gcc.gnu.org/onlinedocs/libstdc++/manual/facets.html">textdomain</a></code>. 
@@ -388,14 +389,14 @@ catalog open<span class="br0">&#40;</span> <span class="kw4">const</span> <a hre
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">auto</span><span class="sy3">&amp;</span> facet <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../messages.html"><span class="kw1670">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">auto</span><span class="sy3">&amp;</span> facet <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1894">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../messages.html"><span class="kw1943">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">auto</span> cat <span class="sy1">=</span> facet.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;sed&quot;</span>, loc<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>cat <span class="sy1">&lt;</span> <span class="nu0">0</span> <span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Could not open german <span class="es1">\&quot;</span>sed<span class="es1">\&quot;</span> message catalog<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Could not open german <span class="es1">\&quot;</span>sed<span class="es1">\&quot;</span> message catalog<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>No match<span class="es1">\&quot;</span> in German: &quot;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>No match<span class="es1">\&quot;</span> in German: &quot;</span>
                   <span class="sy1">&lt;&lt;</span> facet.<span class="me1">get</span><span class="br0">&#40;</span>cat, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="st0">&quot;No match&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>Memory exhausted<span class="es1">\&quot;</span> in German: &quot;</span>
                   <span class="sy1">&lt;&lt;</span> facet.<span class="me1">get</span><span class="br0">&#40;</span>cat, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="st0">&quot;Memory exhausted&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
@@ -412,15 +413,15 @@ catalog open<span class="br0">&#40;</span> <span class="kw4">const</span> <a hre
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4536/1000000
-Preprocessor generated node count: 7266/1000000
-Post‐expand include size: 112883/2097152 bytes
-Template argument size: 19211/2097152 bytes
+Preprocessor visited node count: 4575/1000000
+Preprocessor generated node count: 7347/1000000
+Post‐expand include size: 114191/2097152 bytes
+Template argument size: 19352/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9856-0!*!0!!en!*!* and timestamp 20151130161012 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9856-0!*!0!!en!*!* and timestamp 20161206091947 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -451,7 +452,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 07:38.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,084 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,940 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -484,7 +485,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.687 secs. -->
+</script><!-- Served in 1.579 secs. -->
 	</body>
-<!-- Cached 20151130161012 -->
+<!-- Cached 20161206091947 -->
 </html>

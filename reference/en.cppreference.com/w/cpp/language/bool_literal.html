@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="expressions.html" title="cpp/language/expressions"> Expressions</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -247,7 +248,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">user-defined literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Operators </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> Assignment operators</a>: 
-<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=</code></td></tr>
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=b</code></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> Increment and decrement</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> Arithmetic operators</a>:
 <code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
@@ -268,7 +269,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">Operator overloading</a></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Conversions </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast">Implicit conversions</a></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">Implicit conversions</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a></td></tr>
@@ -321,7 +322,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>The Boolean literals are the keywords <code>true</code> and <code>false</code>. They are <a href="value_category.html" title="cpp/language/value category">prvalues</a> of type <a href="types.html#Boolean_type" title="cpp/language/types">bool</a>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/bool_literal&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>See <a href="implicit_cast.html#Integral_conversions" title="cpp/language/implicit cast">Integral conversions</a> for implicit conversions from <code>bool</code> to other types and <a href="implicit_cast.html#Boolean_conversions" title="cpp/language/implicit cast">boolean conversions</a> for the implicit conversions from other types to <code>bool</code>.
+<p>See <a href="implicit_cast.html#Integral_conversions" title="cpp/language/implicit cast" class="mw-redirect">Integral conversions</a> for implicit conversions from <code>bool</code> to other types and <a href="implicit_cast.html#Boolean_conversions" title="cpp/language/implicit cast" class="mw-redirect">boolean conversions</a> for the implicit conversions from other types to <code>bool</code>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/bool_literal&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -329,10 +330,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-  <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a>
+  <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1761">std::<span class="me2">boolalpha</span></span></a>
             <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
             <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-            <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1488">std::<span class="me2">noboolalpha</span></span></a>
+            <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1762">std::<span class="me2">noboolalpha</span></span></a>
             <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
             <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -346,15 +347,15 @@ false
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 981/1000000
-Preprocessor generated node count: 3225/1000000
-Post‐expand include size: 48572/2097152 bytes
-Template argument size: 5958/2097152 bytes
+Preprocessor visited node count: 989/1000000
+Preprocessor generated node count: 3244/1000000
+Post‐expand include size: 49465/2097152 bytes
+Template argument size: 6055/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5204-0!*!0!!en!*!* and timestamp 20150920035536 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5204-0!*!0!!en!*!* and timestamp 20170116011052 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -389,8 +390,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/bool_literal" title="cpp/language/bool literal" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 21 May 2015, at 06:14.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,598 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 21 May 2015, at 05:14.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 19,615 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -423,7 +424,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.546 secs. -->
+</script><!-- Served in 0.511 secs. -->
 	</body>
-<!-- Cached 20150920035536 -->
+<!-- Cached 20170116011052 -->
 </html>

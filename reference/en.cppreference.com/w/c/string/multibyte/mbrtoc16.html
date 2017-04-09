@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/multibyte/mbrtoc16","wgTitle":"c/string/multibyte/mbrtoc16","wgCurRevisionId":76792,"wgArticleId":9391,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/multibyte/mbrtoc16","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/multibyte/mbrtoc16","wgTitle":"c/string/multibyte/mbrtoc16","wgCurRevisionId":92136,"wgArticleId":9391,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/multibyte/mbrtoc16","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -272,12 +272,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Converts a narrow multibyte character to 16-bit character representation (typically, UTF-16).
-</p><p>If <code>s</code> is not a null pointer, inspects at most <code>n</code> bytes of the multibyte character string, beginning with the byte pointed to by <code>s</code> to determine the number of bytes necessary to complete the next multibyte character (including any shift sequences). If the function determines that the next multibyte character in <code>s</code> is complete and valid, converts it to the corresponding 16-bit character and stores it in <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span> (if <code>pc16</code> is not null).
+<p>Converts a single code point from its narrow multibyte character representation to its variable-length 16-bit wide character representation (typically, UTF-16). 
+</p><p>If <code>s</code> is not a null pointer, inspects at most <code>n</code> bytes of the multibyte character string, beginning with the byte pointed to by <code>s</code> to determine the number of bytes necessary to complete the next multibyte character (including any shift sequences). If the function determines that the next multibyte character in <code>s</code> is complete and valid, converts it to the corresponding 16-bit wide character and stores it in <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span> (if <code>pc16</code> is not null).
 </p><p>If the multibyte character in <code>*s</code> corresponds to a multi-char16_t sequence (e.g. a surrogate pair in UTF-16), then after the first call to this function, <code>*ps</code> is updated in such a way that the next call to <code>mbrtoc16</code> will write out the additional char16_t, without considering <code>*s</code>.
 </p><p>If <code>s</code> is a null pointer, the values of <code>n</code> and <code>pc16</code> are ignored and the call is equivalent to <span class="t-c"><span class="mw-geshi c source-c">mbrtoc16<span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a>, <span class="st0">&quot;&quot;</span>, <span class="nu0">1</span>, ps<span class="br0">&#41;</span></span></span>.
 </p><p>If the wide character produced is the null character, the conversion state <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>ps</span></span> represents the initial shift state.
-</p><p>If the macro <span class="t-c"><span class="mw-geshi c source-c">__STDC_UTF_16__</span></span> is defined, the 16-bit encoding used by this function is UTF-16, otherwise it is implementation-defined.
+</p><p>If the macro <span class="t-c"><span class="mw-geshi c source-c">__STDC_UTF_16__</span></span> is defined, the 16-bit encoding used by this function is UTF-16; otherwise, it is implementation-defined. In any case, the multibyte character encoding used by this function is specified by the currently active C locale.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -297,7 +297,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  pointer to the location where the resulting 16-bit character will be written
+<td>  pointer to the location where the resulting 16-bit wide character will be written
 </td></tr>
 <tr class="t-par">
 <td>  s
@@ -325,51 +325,50 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <ul><li> <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span> if the character converted from <code>s</code> (and stored in <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span> if non-null) was the null character
 </li><li> the number of bytes <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#91;</span><span class="nu0">1</span>...<span class="me1">n</span><span class="br0">&#93;</span></span></span> of the multibyte character successfully converted from <code>s</code>
-</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">-</span><span class="nu0">3</span></span></span> if the next <span class="t-c"><span class="mw-geshi c source-c">char16_t</span></span> from a multi-<span class="t-c"><span class="mw-geshi c source-c">char16_t</span></span> character (e.g. a surrogate pair) has now been written to <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span>. No bytes are processed from the input in this case.
-</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">-</span><span class="nu0">2</span></span></span> if the next <code>n</code> bytes constitute an incomplete, but so far valid, multibyte character. Nothing is written to <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span>.
-</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">-</span><span class="nu0">1</span></span></span> if encoding error occurs. Nothing is written to <code>*pc16</code>, the value <span class="t-lc"><a href="../../error/errno_macros.html" title="c/error/errno macros">EILSEQ</a></span> is stored in <span class="t-lc"><a href="../../error/errno.html" title="c/error/errno">errno</a></span> and the value if <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>ps</span></span> is unspecified.
+</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">3</span></span></span> if the next <span class="t-c"><span class="mw-geshi c source-c">char16_t</span></span> from a multi-<span class="t-c"><span class="mw-geshi c source-c">char16_t</span></span> character (e.g. a surrogate pair) has now been written to <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span>. No bytes are processed from the input in this case.
+</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">2</span></span></span> if the next <code>n</code> bytes constitute an incomplete, but so far valid, multibyte character. Nothing is written to <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>pc16</span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi c source-c"><span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">size_t</span></a><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span></span></span> if encoding error occurs. Nothing is written to <code>*pc16</code>, the value <span class="t-lc"><a href="../../error/errno_macros.html" title="c/error/errno macros">EILSEQ</a></span> is stored in <span class="t-lc"><a href="../../error/errno.html" title="c/error/errno">errno</a></span> and the value if <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>ps</span></span> is unspecified.
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
 <span class="co2">#include &lt;locale.h&gt;</span>
-<span class="co2">#include &lt;string.h&gt;</span>
 <span class="co2">#include &lt;uchar.h&gt;</span>
 &#160;
 <a href="mbstate_t.html"><span class="kw591">mbstate_t</span></a> state<span class="sy4">;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <a href="../../locale/setlocale.html"><span class="kw900">setlocale</span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw903">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">char</span> <span class="sy2">*</span>str <span class="sy1">=</span> u8<span class="st0">&quot;z<span class="es3">\u00df</span><span class="es3">\u6c34</span><span class="es4">\U0001F34C</span>&quot;</span><span class="sy4">;</span> <span class="co1">// or u8&quot;zß水🍌&quot;</span>
+    <span class="kw4">char</span> in<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> u8<span class="st0">&quot;zß水🍌&quot;</span><span class="sy4">;</span> <span class="co1">// or &quot;z\u00df\u6c34\U0001F34C&quot;</span>
+    <a href="../../types/size_t.html"><span class="kw100">size_t</span></a> in_sz <span class="sy1">=</span> <span class="kw4">sizeof</span> in <span class="sy2">/</span> <span class="kw4">sizeof</span> <span class="sy2">*</span>in<span class="sy4">;</span>
 &#160;
-    <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Processing&#160;%zu bytes: [ &quot;</span>, <a href="../byte/strlen.html"><span class="kw558">strlen</span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="sy2">*</span> p <span class="sy1">=</span> str<span class="sy4">;</span> <span class="sy2">*</span>p<span class="sy4">;</span> <span class="sy2">++</span>p<span class="br0">&#41;</span> <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%#x &quot;</span>, <span class="sy2">+</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span><span class="sy2">*</span>p<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Processing&#160;%zu UTF-8 code units: [ &quot;</span>, in_sz<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">size_t</span></a> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> in_sz<span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span> <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%#x &quot;</span>, <span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>in<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <a href="../../io/puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span><span class="st0">&quot;]&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    char16_t c16<span class="sy4">;</span>
-    <span class="kw4">char</span> <span class="sy2">*</span>ptr <span class="sy1">=</span> str, <span class="sy2">*</span>end <span class="sy1">=</span> str <span class="sy2">+</span> <a href="../byte/strlen.html"><span class="kw558">strlen</span></a><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    char16_t out<span class="br0">&#91;</span>in_sz<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw4">char</span> <span class="sy2">*</span>p_in <span class="sy1">=</span> in, <span class="sy2">*</span>end <span class="sy1">=</span> in <span class="sy2">+</span> in_sz<span class="sy4">;</span>
+    char16_t <span class="sy2">*</span>p_out <span class="sy1">=</span> out<span class="sy4">;</span>
     <span class="kw4">int</span> rc<span class="sy4">;</span>
-    <span class="kw1">while</span><span class="br0">&#40;</span>rc <span class="sy1">=</span> mbrtoc16<span class="br0">&#40;</span><span class="sy3">&amp;</span>c16, ptr, end <span class="sy2">-</span> ptr, <span class="sy3">&amp;</span>state<span class="br0">&#41;</span><span class="br0">&#41;</span>
-    <span class="br0">&#123;</span>   
-        <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Next UTF-16 char:&#160;%#x obtained from &quot;</span>, c16<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">if</span><span class="br0">&#40;</span>rc <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">3</span><span class="br0">&#41;</span>
-            <a href="../../io/puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span><span class="st0">&quot;earlier surrogate pair&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span><span class="br0">&#40;</span>rc <span class="sy1">=</span> mbrtoc16<span class="br0">&#40;</span>p_out, p_in, end <span class="sy2">-</span> p_in, <span class="sy3">&amp;</span>state<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>rc <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">3</span><span class="br0">&#41;</span> <span class="co1">// surrogate pairs in UTF-16</span>
+            p_out <span class="sy2">+</span><span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
         <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>rc <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-            <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d bytes [ &quot;</span>, rc<span class="br0">&#41;</span><span class="sy4">;</span>
-            <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> rc<span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span> <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%#x &quot;</span>, <span class="sy2">+</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="br0">&#41;</span>ptr<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-            <a href="../../io/puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span><span class="st0">&quot;]&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-            ptr <span class="sy2">+</span><span class="sy1">=</span> rc<span class="sy4">;</span>
-        <span class="br0">&#125;</span>
+            p_in <span class="sy2">+</span><span class="sy1">=</span> rc<span class="sy4">;</span>
+            p_out <span class="sy2">+</span><span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">break</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
+&#160;
+    <a href="../../types/size_t.html"><span class="kw100">size_t</span></a> out_sz <span class="sy1">=</span> p_out <span class="sy2">-</span> out <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;into&#160;%zu UTF-16 code units: [ &quot;</span>, out_sz<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><a href="../../types/size_t.html"><span class="kw100">size_t</span></a> x <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> x <span class="sy1">&lt;</span> out_sz<span class="sy4">;</span> <span class="sy2">++</span>x<span class="br0">&#41;</span> <a href="../../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%#x &quot;</span>, out<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span><span class="st0">&quot;]&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Processing 10 bytes: [ 0x7a 0xc3 0x9f 0xe6 0xb0 0xb4 0xf0 0x9f 0x8d 0x8c ]
-Next UTF-16 char: 0x7a obtained from 1 bytes [ 0x7a ]
-Next UTF-16 char: 0xdf obtained from 2 bytes [ 0xc3 0x9f ]
-Next UTF-16 char: 0x6c34 obtained from 3 bytes [ 0xe6 0xb0 0xb4 ]
-Next UTF-16 char: 0xd83c obtained from 4 bytes [ 0xf0 0x9f 0x8d 0x8c ]
-Next UTF-16 char: 0xdf4c obtained from earlier surrogate pair</pre></div></div> 
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Processing 11 UTF-8 code units: [ 0x7a 0xc3 0x9f 0xe6 0xb0 0xb4 0xf0 0x9f 0x8d 0x8c 0 ]
+into 6 UTF-16 code units: [ 0x7a 0xdf 0x6c34 0xd83c 0xdf4c 0 ]</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
 <div class="t-ref-std-11">
@@ -385,7 +384,7 @@ Next UTF-16 char: 0xdf4c obtained from earlier surrogate pair</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="c16rtomb.html" title="c/string/multibyte/c16rtomb"> <span class="t-lines"><span>c16rtomb</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
 </td>
-<td>   convert a 16-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c16rtomb&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   converts a 16-bit wide character to narrow multibyte string <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/string/multibyte/dsc_c16rtomb&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -397,18 +396,18 @@ Next UTF-16 char: 0xdf4c obtained from earlier surrogate pair</pre></div></div>
 <!-- 
 NewPP limit report
 Preprocessor visited node count: 2757/1000000
-Preprocessor generated node count: 6907/1000000
-Post‐expand include size: 73950/2097152 bytes
-Template argument size: 16088/2097152 bytes
+Preprocessor generated node count: 6950/1000000
+Post‐expand include size: 74009/2097152 bytes
+Template argument size: 15667/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9391-0!*!0!!en!*!* and timestamp 20151130195320 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9391-0!*!0!!en!*!* and timestamp 20170406123807 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=76792">http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=76792</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=92136">http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=92136</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -431,7 +430,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="mbrtoc16.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/multibyte/mbrtoc16" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/multibyte/mbrtoc16" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=76792" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/multibyte/mbrtoc16" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/multibyte/mbrtoc16" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;oldid=92136" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/multibyte/mbrtoc16&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -439,8 +438,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/string/multibyte/mbrtoc16" title="c/string/multibyte/mbrtoc16" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 March 2015, at 08:16.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,163 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 6 April 2017, at 05:38.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,911 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -473,7 +472,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.471 secs. -->
+</script><!-- Served in 0.080 secs. -->
 	</body>
-<!-- Cached 20151130195320 -->
+<!-- Cached 20170406135536 -->
 </html>

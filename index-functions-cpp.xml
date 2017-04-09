@@ -380,11 +380,19 @@
     <const name="ULLONG_MAX" link="cpp/types/climits"/>
 
     <const name="FLT_RADIX" link="cpp/types/climits"/>
-    <const name="DECIMAL_DIG" link="cpp/types/climits"/>
+    <const name="DECIMAL_DIG" link="cpp/types/climits" since="c++11"/>
+
+    <const name="FLT_DECIMAL_DIG" link="cpp/types/climits" since="c++17"/>
+    <const name="DBL_DECIMAL_DIG" link="cpp/types/climits" since="c++17"/>
+    <const name="LDBL_DECIMAL_DIG" link="cpp/types/climits" since="c++17"/>
 
     <const name="FLT_MIN" link="cpp/types/climits"/>
     <const name="DBL_MIN" link="cpp/types/climits"/>
     <const name="LDBL_MIN" link="cpp/types/climits"/>
+
+    <const name="FLT_TRUE_MIN" link="cpp/types/climits" since="c++17"/>
+    <const name="DBL_TRUE_MIN" link="cpp/types/climits" since="c++17"/>
+    <const name="LDBL_TRUE_MIN" link="cpp/types/climits" since="c++17"/>
 
     <const name="FLT_MAX" link="cpp/types/climits"/>
     <const name="DBL_MAX" link="cpp/types/climits"/>
@@ -420,6 +428,10 @@
 
     <const name="FLT_ROUNDS" link="cpp/types/climits/FLT_ROUNDS"/>
     <const name="FLT_EVAL_METHOD" link="cpp/types/climits/FLT_EVAL_METHOD"/>
+
+    <const name="FLT_HAS_SUBNORM" link="cpp/types/climits" since="c++17"/>
+    <const name="DBL_HAS_SUBNORM" link="cpp/types/climits" since="c++17"/>
+    <const name="LDBL_HAS_SUBNORM" link="cpp/types/climits" since="c++17"/>
 
         <!-- RTTI -->
 
@@ -522,6 +534,8 @@
     <variable name="std::is_polymorphic_v" link="cpp/types/is_polymorphic" since="c++17"/>
     <class name="std::is_abstract" link="cpp/types/is_abstract"/>
     <variable name="std::is_abstract_v" link="cpp/types/is_abstract" since="c++17"/>
+    <class name="std::has_unique_object_representations" link="cpp/types/has_unique_object_representations" since="c++17"/>
+    <variable name="std::has_unique_object_representations_v" link="cpp/types/has_unique_object_representations" since="c++17"/>
     <class name="std::is_signed" link="cpp/types/is_signed"/>
     <variable name="std::is_signed_v" link="cpp/types/is_signed" since="c++17"/>
     <class name="std::is_unsigned" link="cpp/types/is_unsigned"/>
@@ -576,6 +590,19 @@
     <variable name="std::is_trivially_destructible_v" link="cpp/types/is_destructible" since="c++17"/>
     <class name="std::is_nothrow_destructible" link="cpp/types/is_destructible"/>
     <variable name="std::is_nothrow_destructible_v" link="cpp/types/is_destructible" since="c++17"/>
+
+    <class name="std::is_callable" link="cpp/types/is_callable" since="c++17"/>
+    <variable name="std::is_callable_v" link="cpp/types/is_callable" since="c++17"/>
+    <class name="std::is_nothrow_callable" link="cpp/types/is_callable" since="c++17"/>
+    <variable name="std::is_nothrow_callable_v" link="cpp/types/is_callable" since="c++17"/>
+    <class name="std::is_swappable" link="cpp/types/is_swappable" since="c++17"/>
+    <variable name="std::is_swappable_v" link="cpp/types/is_swappable" since="c++17"/>
+    <class name="std::is_swappable_with" link="cpp/types/is_swappable_with" since="c++17"/>
+    <variable name="std::is_swappable_with_v" link="cpp/types/is_swappable_with" since="c++17"/>
+    <class name="std::is_nothrow_swappable" link="cpp/types/is_swappable" since="c++17"/>
+    <variable name="std::is_nothrow_swappable_v" link="cpp/types/is_swappable" since="c++17"/>
+    <class name="std::is_nothrow_swappable_with" link="cpp/types/is_swappable_with" since="c++17"/>
+    <variable name="std::is_nothrow_swappable_with_v" link="cpp/types/is_swappable_with" since="c++17"/>
 
     <class name="std::has_virtual_destructor" link="cpp/types/has_virtual_destructor"/>
     <variable name="std::has_virtual_destructor_v" link="cpp/types/has_virtual_destructor" since="c++17"/>
@@ -719,6 +746,10 @@
     <function name="std::rend" link="cpp/iterator/rend" since="c++14"/>
     <function name="std::crend" link="cpp/iterator/rend" since="c++14"/>
 
+    <function name="std::size" link="cpp/iterator/size" since="c++17"/>
+    <function name="std::empty" link="cpp/iterator/empty" since="c++17"/>
+    <function name="std::data" link="cpp/iterator/data" since="c++17"/>
+
     <!--=======================================================================-->
     <!-- cpp/utility/memory -->
 
@@ -750,6 +781,7 @@
     </class>
 
     <class name="std::nothrow_t" link="cpp/memory/new/nothrow_t"/>
+    <class name="std::align_val_t" link="cpp/memory/new/align_val_t" since="c++11"/>
     <typedef name="std::new_handler" link="cpp/memory/new/new_handler"/>
 
     <const name="std::nothrow" link="cpp/memory/new/nothrow"/>
@@ -801,10 +833,93 @@
         <overload name="operator!=" link="operator_cmp"/>
     </class>
 
+    <class name="std::pmr::polymorphic_allocator" link="cpp/memory/polymorphic_allocator" since="c++17">
+        <constructor/>
+        <destructor link="."/>
+        <function name="allocate"/>
+        <function name="deallocate"/>
+        <function name="construct"/>
+        <function name="destroy"/>
+        <function name="select_on_container_copy_contruction"/>
+        <function name="resource"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+    </class>
+
+    <class name="std::pmr::memory_resource" link="cpp/memory/memory_resource" since="c++17">
+        <constructor/>
+        <function name="allocate"/>
+        <function name="deallocate"/>
+        <function name="is_equal"/>
+        <function name="do_allocate"/>
+        <function name="do_deallocate"/>
+        <function name="do_is_equal"/>
+
+        <overload name="operator==" link="operator_eq"/>
+        <overload name="operator!=" link="operator_eq"/>
+    </class>
+
+    <class name="std::pmr::pool_options" link="cpp/memory/pool_options" since="c++17">
+        <variable name="max_blocks_per_chunk" link="."/>
+        <variable name="largest_required_pool_block" link="."/>
+    </class>
+
+    <class name="std::pmr::synchronized_pool_resource" link="cpp/memory/synchronized_pool_resource" since="c++17">
+        <inherits name="std::pmr::memory_resource"/>
+        <constructor/>
+        <destructor link="."/>
+        <function name="release"/>
+        <function name="upstream_resource"/>
+        <function name="options"/>
+        <function name="do_allocate"/>
+        <function name="do_deallocate"/>
+        <function name="do_is_equal"/>
+    </class>
+
+    <class name="std::pmr::unsynchronized_pool_resource" link="cpp/memory/unsynchronized_pool_resource" since="c++17">
+        <inherits name="std::pmr::memory_resource"/>
+        <constructor/>
+        <destructor link="."/>
+        <function name="release"/>
+        <function name="upstream_resource"/>
+        <function name="options"/>
+        <function name="do_allocate"/>
+        <function name="do_deallocate"/>
+        <function name="do_is_equal"/>
+    </class>
+
+    <class name="std::pmr::monotonic_buffer_resource" link="cpp/memory/monotonic_buffer_resource" since="c++17">
+        <inherits name="std::pmr::memory_resource"/>
+        <constructor/>
+        <destructor link="."/>
+        <function name="release"/>
+        <function name="upstream_resource"/>
+        <function name="do_allocate"/>
+        <function name="do_deallocate"/>
+        <function name="do_is_equal"/>
+    </class>
+
+    <function name="std::pmr::new_delete_resource" link="cpp/memory/new_delete_resource" since="c++17"/>
+    <function name="std::pmr::null_memory_resource" link="cpp/memory/null_memory_resource" since="c++17"/>
+    <function name="std::pmr::get_default_resource" link="cpp/memory/get_default_resource" since="c++17"/>
+    <function name="std::pmr::set_default_resource" link="cpp/memory/set_default_resource" since="c++17"/>
+
     <function name="std::uninitialized_copy" link="cpp/memory/uninitialized_copy"/>
     <function name="std::uninitialized_copy_n" link="cpp/memory/uninitialized_copy_n"/>
     <function name="std::uninitialized_fill" link="cpp/memory/uninitialized_fill"/>
     <function name="std::uninitialized_fill_n" link="cpp/memory/uninitialized_fill_n"/>
+
+    <function name="std::uninitialized_move" link="cpp/memory/uninitialized_move" since="c++17"/>
+    <function name="std::uninitialized_move_n" link="cpp/memory/uninitialized_move_n" since="c++17"/>
+    <function name="std::uninitialized_default_construct" link="cpp/memory/uninitialized_default_construct" since="c++17"/>
+    <function name="std::uninitialized_default_construct_n" link="cpp/memory/uninitialized_default_construct_n" since="c++17"/>
+    <function name="std::uninitialized_value_construct" link="cpp/memory/uninitialized_value_construct" since="c++17"/>
+    <function name="std::uninitialized_value_construct_n" link="cpp/memory/uninitialized_value_construct_n" since="c++17"/>
+
+    <function name="std::destroy" link="cpp/memory/destroy" since="c++17"/>
+    <function name="std::destroy_at" link="cpp/memory/destroy_at" since="c++17"/>
+    <function name="std::destroy_n" link="cpp/memory/destroy_n" since="c++17"/>
 
     <class name="std::raw_storage_iterator" link="cpp/memory/raw_storage_iterator">
         <constructor/>
@@ -849,6 +964,7 @@
         <function name="get"/>
         <function name="operator*"/>
         <function name="operator->" link="operator*"/>
+        <function name="operator[]" link="operator_at"/>
         <function name="unique"/>
         <function name="use_count"/>
         <function name="operator bool" link="operator_bool"/>
@@ -922,6 +1038,7 @@
         <destructor/>
         <function name="operator="/>
         <function name="shared_from_this"/>
+        <function name="weak_from_this" since="c++17"/>
     </class>
 
     <class name="std::bad_weak_ptr" link="cpp/memory/bad_weak_ptr">
@@ -955,6 +1072,7 @@
     <function name="std::align" link="cpp/memory/align"/>
 
     <function name="std::malloc" link="cpp/memory/c/malloc"/>
+    <function name="std::aligned_alloc" link="cpp/memory/c/aligned_alloc" since="c++11"/>
     <function name="std::calloc" link="cpp/memory/c/calloc"/>
     <function name="std::realloc" link="cpp/memory/c/realloc"/>
     <function name="std::free" link="cpp/memory/c/free"/>
@@ -1354,7 +1472,7 @@
         <specialization name="std::common_type" link="common_type"/>
     </class>
 
-    <function name="std::chrono::time_point_cast" link="cpp/chrono/duration/time_point_cast"/>
+    <function name="std::chrono::time_point_cast" link="cpp/chrono/time_point/time_point_cast"/>
 
     <class name="std::chrono::duration" link="cpp/chrono/duration">
         <constructor/>
@@ -1440,6 +1558,8 @@
     <function name="std::difftime" link="cpp/chrono/c/difftime"/>
     <function name="std::time" link="cpp/chrono/c/time"/>
     <function name="std::clock" link="cpp/chrono/c/clock"/>
+    <function name="std::timespec_get" link="cpp/chrono/c/timespec_get" since="c++17"/>
+    <const name="TIME_UTC" link="cpp/chrono/c/timespec_get" since="c++17"/>
 
     <function name="std::asctime" link="cpp/chrono/c/asctime"/>
     <function name="std::ctime" link="cpp/chrono/c/ctime"/>
@@ -1454,6 +1574,7 @@
     <class name="std::tm" link="cpp/chrono/c/tm"/>
     <typedef name="std::time_t" link="cpp/chrono/c/time_t"/>
     <typedef name="std::clock_t" link="cpp/chrono/c/clock_t"/>
+    <function name="std::timespec" link="cpp/chrono/c/timespec" since="c++17"/>
 
     <!--=======================================================================-->
     <!-- cpp/utility/bitset -->
@@ -1584,6 +1705,7 @@
         <function name="operator()" link="."/>
     </class>
 
+    <function name="std::not_fn" link="cpp/utility/functional/not_fn" since="c++17"/>
     <function name="std::not1" link="cpp/utility/functional/not1"/>
     <function name="std::not2" link="cpp/utility/functional/not2"/>
 
@@ -1621,6 +1743,22 @@
 
     <class name="std::placeholders" link="cpp/utility/functional/placeholders"/>
 
+    <class name="std::default_searcher" link="cpp/utility/functional/default_searcher" since="c++17">
+        <constructor link="."/>
+        <operator name="operator()" link="."/>
+    </class>
+    <class name="std::boyer_moore_searcher" link="cpp/utility/functional/boyer_moore_searcher" since="c++17">
+        <constructor link="."/>
+        <operator name="operator()" link="."/>
+    </class>
+    <class name="std::boyer_moore_horspool_searcher" link="cpp/utility/functional/boyer_moore_horspool_searcher" since="c++17">
+        <constructor link="."/>
+        <operator name="operator()" link="."/>
+    </class>
+    <class name="std::make_default_searcher" link="cpp/utility/functional/default_searcher" since="c++17"/>
+    <class name="std::make_boyer_moore_searcher" link="cpp/utility/functional/boyer_moore_searcher" since="c++17"/>
+    <class name="std::make_boyer_moore_horspool_searcher" link="cpp/utility/functional/boyer_moore_horspool_searcher" since="c++17"/>
+
     <class name="std::reference_wrapper" link="cpp/utility/functional/reference_wrapper">
         <constructor/>
         <function name="operator="/>
@@ -1633,6 +1771,120 @@
     <function name="std::cref" link="cpp/utility/functional/ref"/>
 
     <!-- todo: deprecated content of <functional> -->
+
+    <!--=======================================================================-->
+    <!-- cpp/utility/any -->
+
+    <class name="std::any" link="cpp/utility/any" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+
+        <function name="emplace"/>
+        <function name="reset"/>
+        <function name="swap"/>
+        <function name="has_value"/>
+        <function name="type"/>
+
+        <overload name="std::swap" link="swap2"/>
+    </class>
+
+    <function name="std::any_cast" link="cpp/utility/any/any_cast" since="c++17"/>
+    <function name="std::make_any" link="cpp/utility/any/make_any" since="c++17"/>
+
+    <class name="std::bad_any_cast" link="cpp/utility/any/bad_any_cast" since="c++17">
+    </class>
+
+    <!--=======================================================================-->
+    <!-- cpp/utility/optional -->
+    <class name="std::optional" link="cpp/utility/optional" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+
+        <function name="operator*"/>
+        <function name="operator-&gt;" link="operator*"/>
+        <function name="operator bool" link="operator_bool"/>
+        <function name="has_value" link="operator_bool"/>
+        <function name="value"/>
+        <function name="value_or"/>
+        <function name="swap"/>
+        <function name="reset"/>
+        <function name="emplace"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+
+        <overload name="std::swap" link="swap2"/>
+        <specialization name="std::hash" link="hash"/>
+
+    </class>
+    <function name="std::make_optional" link="cpp/utility/optional/make_optional" since="c++17"/>
+    <class name="std::bad_optional_access" link="cpp/utility/optional/bad_optional_access" since="c++17"/>
+
+    <class name="std::nullopt_t" link="cpp/utility/optional/nullopt_t" since="c++17"/>
+    <const name="std::nullopt" link="cpp/utility/optional/nullopt" since="c++17"/>
+
+    <class name="std::in_place_tag" link="cpp/utility/in_place_tag" since="c++17"/>
+    <function name="std::in_place" link="cpp/utility/in_place" since="c++17"/>
+    <typedef name="std::in_place_t" link="cpp/utility/in_place" since="c++17"/>
+    <typedef name="std::in_place_type_t" link="cpp/utility/in_place" since="c++17"/>
+    <typedef name="std::in_place_index_t" link="cpp/utility/in_place" since="c++17"/>
+
+    <!--=======================================================================-->
+    <!-- cpp/utility/variant -->
+    <class name="std::variant" link="cpp/utility/variant" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+
+        <function name="index"/>
+        <function name="valueless_by_exception"/>
+        <function name="swap"/>
+        <function name="emplace"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+
+        <overload name="std::swap" link="swap2"/>
+        <overload name="std::get" link="get"/>
+        <specialization name="std::hash" link="hash"/>
+        <specialization name="std::uses_allocator" link="uses_allocator"/>
+    </class>
+
+    <function name="std::visit" link="cpp/utility/variant/visit" since="c++17"/>
+    <function name="std::holds_alternative" link="cpp/utility/variant/holds_alternative" since="c++17"/>
+    <function name="std::get_if" link="cpp/utility/variant/get_if" since="c++17"/>
+    <class name="std::bad_variant_access" link="cpp/utility/variant/bad_variant_access" since="c++17"/>
+    <const name="std::variant_npos" link="cpp/utility/variant/variant_npos" since="c++17"/>
+
+    <class name="std::variant_size" link="cpp/utility/variant/variant_size" since="c++17"/>
+    <variable name="std::variant_size_v" link="cpp/utility/variant/variant_size" since="c++17"/>
+    <class name="std::variant_alternative" link="cpp/utility/variant/variant_alternative" since="c++17"/>
+    <typedef name="std::variant_alternative_t" link="cpp/utility/variant/variant_alternative" since="c++17"/>
+
+    <class name="std::monostate" link="cpp/utility/variant/monostate" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+
+        <specialization name="std::hash" link="hash"/>
+    </class>
 
     <!--=======================================================================-->
     <!-- cpp/utility -->
@@ -1682,14 +1934,16 @@
 
     <variable name="std::tuple_size_v" link="cpp/utility/tuple/tuple_size" since="c++17"/>
 
+    <function name="std::apply" link="cpp/utility/apply" since="c++17"/>
+    <function name="std::make_from_tuple" link="cpp/utility/make_from_tuple" since="c++17"/>
     <class name="std::piecewise_construct_t" link="cpp/utility/piecewise_construct_t"></class>
     <const name="std::piecewise_construct" link="cpp/utility/piecewise_construct"/>
 
     <class name="std::integer_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
-    <typenedf name="std::index_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
-    <typenedf name="std::make_integer_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
-    <typenedf name="std::make_index_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
-    <typenedf name="std::index_sequence_for" link="cpp/utility/integer_sequence" since="c++14"/>
+    <typedef name="std::index_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
+    <typedef name="std::make_integer_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
+    <typedef name="std::make_index_sequence" link="cpp/utility/integer_sequence" since="c++14"/>
+    <typedef name="std::index_sequence_for" link="cpp/utility/integer_sequence" since="c++14"/>
 
     <function name="std::make_tuple" link="cpp/utility/tuple/make_tuple"/>
     <function name="std::tie" link="cpp/utility/tuple/tie"/>
@@ -1702,6 +1956,8 @@
     <function name="std::move (utility)" link="cpp/utility/move"/>
     <function name="std::move_if_noexcept" link="cpp/utility/move_if_noexcept"/>
     <function name="std::declval" link="cpp/utility/declval"/>
+    <function name="std::as_const" link="cpp/utility/as_const" since="c++17"/>
+    <function name="std::launder" link="cpp/utility/launder" since="c++17"/>
 
     <function name="std::rel_ops::operator!=" link="cpp/utility/rel_ops/operator_cmp"/>
     <function name="std::rel_ops::operator&gt;" link="cpp/utility/rel_ops/operator_cmp"/>
@@ -1719,20 +1975,20 @@
     <!--=======================================================================-->
     <!-- cpp/string/byte -->
 
-    <function name="std::isalnum" link="cpp/string/byte/isalnum"/>
-    <function name="std::isalpha" link="cpp/string/byte/isalpha"/>
-    <function name="std::islower" link="cpp/string/byte/islower"/>
-    <function name="std::isupper" link="cpp/string/byte/isupper"/>
-    <function name="std::isdigit" link="cpp/string/byte/isdigit"/>
-    <function name="std::isxdigit" link="cpp/string/byte/isxdigit"/>
-    <function name="std::iscntrl" link="cpp/string/byte/iscntrl"/>
-    <function name="std::isgraph" link="cpp/string/byte/isgraph"/>
-    <function name="std::isspace" link="cpp/string/byte/isspace"/>
-    <function name="std::isblank" link="cpp/string/byte/isblank"/>
-    <function name="std::isprint" link="cpp/string/byte/isprint"/>
-    <function name="std::ispunct" link="cpp/string/byte/ispunct"/>
-    <function name="std::tolower" link="cpp/string/byte/tolower"/>
-    <function name="std::toupper" link="cpp/string/byte/toupper"/>
+    <function name="std::isalnum (&lt;cctype&gt;)" link="cpp/string/byte/isalnum"/>
+    <function name="std::isalpha (&lt;cctype&gt;)" link="cpp/string/byte/isalpha"/>
+    <function name="std::islower (&lt;cctype&gt;)" link="cpp/string/byte/islower"/>
+    <function name="std::isupper (&lt;cctype&gt;)" link="cpp/string/byte/isupper"/>
+    <function name="std::isdigit (&lt;cctype&gt;)" link="cpp/string/byte/isdigit"/>
+    <function name="std::isxdigit (&lt;cctype&gt;)" link="cpp/string/byte/isxdigit"/>
+    <function name="std::iscntrl (&lt;cctype&gt;)" link="cpp/string/byte/iscntrl"/>
+    <function name="std::isgraph (&lt;cctype&gt;)" link="cpp/string/byte/isgraph"/>
+    <function name="std::isspace (&lt;cctype&gt;)" link="cpp/string/byte/isspace"/>
+    <function name="std::isblank (&lt;cctype&gt;)" link="cpp/string/byte/isblank"/>
+    <function name="std::isprint (&lt;cctype&gt;)" link="cpp/string/byte/isprint"/>
+    <function name="std::ispunct (&lt;cctype&gt;)" link="cpp/string/byte/ispunct"/>
+    <function name="std::tolower (&lt;cctype&gt;)" link="cpp/string/byte/tolower"/>
+    <function name="std::toupper (&lt;cctype&gt;)" link="cpp/string/byte/toupper"/>
 
     <function name="std::atof" link="cpp/string/byte/atof"/>
     <function name="std::atoi" link="cpp/string/byte/atoi"/>
@@ -1929,6 +2185,66 @@
     <typedef name="std::u16string" alias="std::basic_string"/>
     <typedef name="std::u32string" alias="std::basic_string"/>
 
+    <typedef name="std::pmr::string" alias="std::basic_string" since="c++17"/>
+    <typedef name="std::pmr::wstring" alias="std::basic_string" since="c++17"/>
+    <typedef name="std::pmr::u16string" alias="std::basic_string" since="c++17"/>
+    <typedef name="std::pmr::u32string" alias="std::basic_string" since="c++17"/>
+
+    <!-- cpp/string/basic_string_view -->
+
+    <class name="std::basic_string_view" link="cpp/string/basic_string_view" since="c++17">
+        <constructor/>
+        <function name="operator="/>
+
+        <function name="begin"/>
+        <function name="cbegin" link="begin"/>
+        <function name="rbegin"/>
+        <function name="crbegin" link="rbegin"/>
+        <function name="end"/>
+        <function name="cend" link="end"/>
+        <function name="rend"/>
+        <function name="crend" link="rend"/>
+
+        <function name="operator[]" link="operator_at"/>
+        <function name="at"/>
+        <function name="front"/>
+        <function name="back"/>
+        <function name="data"/>
+
+        <function name="size"/>
+        <function name="length" link="size"/>
+        <function name="max_size"/>
+        <function name="empty"/>
+        <function name="remove_prefix"/>
+        <function name="remove_suffix"/>
+        <function name="swap"/>
+
+        <function name="copy"/>
+        <function name="substr"/>
+        <function name="compare"/>
+        <function name="find"/>
+        <function name="rfind"/>
+        <function name="find_first_of"/>
+        <function name="find_last_of"/>
+        <function name="find_first_not_of"/>
+        <function name="find_last_not_of"/>
+        <const name="npos"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+        <overload name="operator&lt;&lt;" link="operator_ltlt"/>
+        <specialization name="std::hash" link="hash"/>
+    </class>
+
+    <typedef name="std::string_view" alias="std::basic_string_view" since="c++17"/>
+    <typedef name="std::wstring_view" alias="std::basic_string_view" since="c++17"/>
+    <typedef name="std::u16string_view" alias="std::basic_string_view" since="c++17"/>
+    <typedef name="std::u32string_view" alias="std::basic_string_view" since="c++17"/>
+
     <!-- cpp/string -->
 
     <function name="std::getline" link="cpp/string/basic_string/getline"/>
@@ -1999,6 +2315,7 @@
         <specialization name="std::tuple_element" link="tuple_element"/>
     </class>
 
+    <!--
     <class name="std::dynarray" link="cpp/container/dynarray" since="c++14">
         <constructor/>
         <destructor/>
@@ -2033,6 +2350,7 @@
 
         <specialization name="std::uses_allocator" link="uses_allocator"/>
     </class>
+    -->
 
     <class name="std::vector" link="cpp/container/vector">
         <constructor/>
@@ -2082,6 +2400,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::vector" alias="std::vector" since="c++17"/>
 
     <class name="std::deque" link="cpp/container/deque">
         <constructor/>
@@ -2131,6 +2450,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::deque" alias="std::deque" since="c++17"/>
 
     <class name="std::forward_list" link="cpp/container/forward_list">
         <constructor/>
@@ -2178,6 +2498,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::forward_list" alias="std::forward_list" since="c++17"/>
 
     <class name="std::list" link="cpp/container/list">
         <constructor/>
@@ -2232,6 +2553,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::list" alias="std::list" since="c++17"/>
 
     <class name="std::set" link="cpp/container/set">
         <constructor/>
@@ -2258,6 +2580,8 @@
         <function name="emplace_hint"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2277,6 +2601,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::set" alias="std::set" since="c++17"/>
 
     <class name="std::multiset" link="cpp/container/multiset">
         <constructor/>
@@ -2303,6 +2628,8 @@
         <function name="emplace_hint"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2322,6 +2649,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::multiset" alias="std::multiset" since="c++17"/>
 
     <class name="std::map" link="cpp/container/map">
         <class name="value_compare"/>
@@ -2355,6 +2683,8 @@
         <function name="try_emplace" since="c++17"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2374,6 +2704,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::map" alias="std::map" since="c++17"/>
 
     <class name="std::multimap" link="cpp/container/multimap">
         <class name="value_compare"/>
@@ -2403,6 +2734,8 @@
         <function name="emplace_hint" since="c++11"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2422,6 +2755,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::multimap" alias="std::multimap" since="c++17"/>
 
     <class name="std::unordered_set" link="cpp/container/unordered_set" since="c++11">
         <constructor/>
@@ -2444,6 +2778,8 @@
         <function name="emplace_hint"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2472,6 +2808,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::unordered_set" alias="std::unordered_set" since="c++17"/>
 
     <class name="std::unordered_multiset" link="cpp/container/unordered_multiset" since="c++11">
         <constructor/>
@@ -2494,6 +2831,8 @@
         <function name="emplace_hint"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2522,6 +2861,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::unordered_multiset" alias="std::unordered_multiset" since="c++17"/>
 
     <class name="std::unordered_map" link="cpp/container/unordered_map" since="c++11">
         <constructor/>
@@ -2546,6 +2886,8 @@
         <function name="try_emplace" since="c++17"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="at"/>
         <function name="operator[]" link="operator_at"/>
@@ -2576,6 +2918,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::unordered_map" alias="std::unordered_map" since="c++17"/>
 
     <class name="std::unordered_multimap" link="cpp/container/unordered_multimap" since="c++11">
         <constructor/>
@@ -2598,6 +2941,8 @@
         <function name="emplace_hint"/>
         <function name="erase"/>
         <function name="swap"/>
+        <function name="extract" since="c++17"/>
+        <function name="merge" since="c++17"/>
 
         <function name="count"/>
         <function name="find"/>
@@ -2626,6 +2971,7 @@
 
         <overload name="std::swap" link="swap2"/>
     </class>
+    <typedef name="std::pmr::unordered_multimap" alias="std::unordered_multimap" since="c++17"/>
 
     <class name="std::stack" link="cpp/container/stack">
         <constructor/>
@@ -2813,6 +3159,72 @@
     <const name="FP_NORMAL" link="cpp/numeric/math/FP_categories"/>
     <const name="FP_SUBNORMAL" link="cpp/numeric/math/FP_categories"/>
     <const name="FP_ZERO" link="cpp/numeric/math/FP_categories"/>
+
+    <!-- cpp/numeric/special_math -->
+
+    <function name="std::assoc_laguerre" link="cpp/numeric/special_math/assoc_laguerre" since="c++17"/>
+    <function name="std::assoc_laguerref" link="cpp/numeric/special_math/assoc_laguerre" since="c++17"/>
+    <function name="std::assoc_laguerrel" link="cpp/numeric/special_math/assoc_laguerre" since="c++17"/>
+    <function name="std::assoc_legendre" link="cpp/numeric/special_math/assoc_legendre" since="c++17"/>
+    <function name="std::assoc_legendref" link="cpp/numeric/special_math/assoc_legendre" since="c++17"/>
+    <function name="std::assoc_legendrel" link="cpp/numeric/special_math/assoc_legendre" since="c++17"/>
+    <function name="std::beta" link="cpp/numeric/special_math/beta" since="c++17"/>
+    <function name="std::betaf" link="cpp/numeric/special_math/beta" since="c++17"/>
+    <function name="std::betal" link="cpp/numeric/special_math/beta" since="c++17"/>
+    <function name="std::comp_ellint_1" link="cpp/numeric/special_math/comp_ellint_1" since="c++17"/>
+    <function name="std::comp_ellint_1f" link="cpp/numeric/special_math/comp_ellint_1" since="c++17"/>
+    <function name="std::comp_ellint_1l" link="cpp/numeric/special_math/comp_ellint_1" since="c++17"/>
+    <function name="std::comp_ellint_2" link="cpp/numeric/special_math/comp_ellint_2" since="c++17"/>
+    <function name="std::comp_ellint_2f" link="cpp/numeric/special_math/comp_ellint_2" since="c++17"/>
+    <function name="std::comp_ellint_2l" link="cpp/numeric/special_math/comp_ellint_2" since="c++17"/>
+    <function name="std::comp_ellint_3" link="cpp/numeric/special_math/comp_ellint_3" since="c++17"/>
+    <function name="std::comp_ellint_3f" link="cpp/numeric/special_math/comp_ellint_3" since="c++17"/>
+    <function name="std::comp_ellint_3l" link="cpp/numeric/special_math/comp_ellint_3" since="c++17"/>
+    <function name="std::cyl_bessel_i" link="cpp/numeric/special_math/cyl_bessel_i" since="c++17"/>
+    <function name="std::cyl_bessel_if" link="cpp/numeric/special_math/cyl_bessel_i" since="c++17"/>
+    <function name="std::cyl_bessel_il" link="cpp/numeric/special_math/cyl_bessel_i" since="c++17"/>
+    <function name="std::cyl_bessel_j" link="cpp/numeric/special_math/cyl_bessel_j" since="c++17"/>
+    <function name="std::cyl_bessel_jf" link="cpp/numeric/special_math/cyl_bessel_j" since="c++17"/>
+    <function name="std::cyl_bessel_jl" link="cpp/numeric/special_math/cyl_bessel_j" since="c++17"/>
+    <function name="std::cyl_bessel_k" link="cpp/numeric/special_math/cyl_bessel_k" since="c++17"/>
+    <function name="std::cyl_bessel_kf" link="cpp/numeric/special_math/cyl_bessel_k" since="c++17"/>
+    <function name="std::cyl_bessel_kl" link="cpp/numeric/special_math/cyl_bessel_k" since="c++17"/>
+    <function name="std::cyl_neumann" link="cpp/numeric/special_math/cyl_neumann" since="c++17"/>
+    <function name="std::cyl_neumannf" link="cpp/numeric/special_math/cyl_neumann" since="c++17"/>
+    <function name="std::cyl_neumannl" link="cpp/numeric/special_math/cyl_neumann" since="c++17"/>
+    <function name="std::ellint_1" link="cpp/numeric/special_math/ellint_1" since="c++17"/>
+    <function name="std::ellint_1f" link="cpp/numeric/special_math/ellint_1" since="c++17"/>
+    <function name="std::ellint_1l" link="cpp/numeric/special_math/ellint_1" since="c++17"/>
+    <function name="std::ellint_2" link="cpp/numeric/special_math/ellint_2" since="c++17"/>
+    <function name="std::ellint_2f" link="cpp/numeric/special_math/ellint_2" since="c++17"/>
+    <function name="std::ellint_2l" link="cpp/numeric/special_math/ellint_2" since="c++17"/>
+    <function name="std::ellint_3" link="cpp/numeric/special_math/ellint_3" since="c++17"/>
+    <function name="std::ellint_3f" link="cpp/numeric/special_math/ellint_3" since="c++17"/>
+    <function name="std::ellint_3l" link="cpp/numeric/special_math/ellint_3" since="c++17"/>
+    <function name="std::expint" link="cpp/numeric/special_math/expint" since="c++17"/>
+    <function name="std::expintf" link="cpp/numeric/special_math/expint" since="c++17"/>
+    <function name="std::expintl" link="cpp/numeric/special_math/expint" since="c++17"/>
+    <function name="std::hermite" link="cpp/numeric/special_math/hermite" since="c++17"/>
+    <function name="std::hermitef" link="cpp/numeric/special_math/hermite" since="c++17"/>
+    <function name="std::hermitel" link="cpp/numeric/special_math/hermite" since="c++17"/>
+    <function name="std::legendre" link="cpp/numeric/special_math/legendre" since="c++17"/>
+    <function name="std::legendref" link="cpp/numeric/special_math/legendre" since="c++17"/>
+    <function name="std::legendrel" link="cpp/numeric/special_math/legendre" since="c++17"/>
+    <function name="std::laguerre" link="cpp/numeric/special_math/laguerre" since="c++17"/>
+    <function name="std::laguerref" link="cpp/numeric/special_math/laguerre" since="c++17"/>
+    <function name="std::laguerrel" link="cpp/numeric/special_math/laguerre" since="c++17"/>
+    <function name="std::riemann_zeta" link="cpp/numeric/special_math/riemann_zeta" since="c++17"/>
+    <function name="std::riemann_zetaf" link="cpp/numeric/special_math/riemann_zeta" since="c++17"/>
+    <function name="std::riemann_zetal" link="cpp/numeric/special_math/riemann_zeta" since="c++17"/>
+    <function name="std::sph_bessel" link="cpp/numeric/special_math/sph_bessel" since="c++17"/>
+    <function name="std::sph_besself" link="cpp/numeric/special_math/sph_bessel" since="c++17"/>
+    <function name="std::sph_bessell" link="cpp/numeric/special_math/sph_bessel" since="c++17"/>
+    <function name="std::sph_legendre" link="cpp/numeric/special_math/sph_legendre" since="c++17"/>
+    <function name="std::sph_legendref" link="cpp/numeric/special_math/sph_legendre" since="c++17"/>
+    <function name="std::sph_legendrel" link="cpp/numeric/special_math/sph_legendre" since="c++17"/>
+    <function name="std::sph_neumann" link="cpp/numeric/special_math/sph_neumann" since="c++17"/>
+    <function name="std::sph_neumannf" link="cpp/numeric/special_math/sph_neumann" since="c++17"/>
+    <function name="std::sph_neumannl" link="cpp/numeric/special_math/sph_neumann" since="c++17"/>
 
     <!-- cpp/numeric/fenv -->
 
@@ -3449,12 +3861,23 @@
     <variable name="std::ratio_greater_v" link="cpp/numeric/ratio/ratio_greater" since="c++17"/>
     <class name="std::ratio_greater_equal" link="cpp/numeric/ratio/ratio_greater_equal"/>
     <variable name="std::ratio_greater_equal_v" link="cpp/numeric/ratio/ratio_greater_equal" since="c++17"/>
+
     <!-- cpp/algorithm -->
+
+    <class name="std::execution::sequenced_policy" link="cpp/algorithm/execution_policy_tag_t" since="c++17"/>
+    <class name="std::execution::parallel_policy" link="cpp/algorithm/execution_policy_tag_t" since="c++17"/>
+    <class name="std::execution::parallel_unsequenced_policy" link="cpp/algorithm/execution_policy_tag_t" since="c++17"/>
+    <const name="std::execution::seq" link="cpp/algorithm/execution_policy_tag" since="c++17"/>
+    <const name="std::execution::par" link="cpp/algorithm/execution_policy_tag" since="c++17"/>
+    <const name="std::execution::par_unseq" link="cpp/algorithm/execution_policy_tag" since="c++17"/>
+    <class name="std::is_execution_policy" link="cpp/algorithm/is_execution_policy" since="c++17"/>
+    <variable name="std::is_execution_policy_v" link="cpp/algorithm/is_execution_policy" since="c++17"/>
 
     <function name="std::all_of" link="cpp/algorithm/all_any_none_of"/>
     <function name="std::any_of" link="cpp/algorithm/all_any_none_of"/>
     <function name="std::none_of" link="cpp/algorithm/all_any_none_of"/>
     <function name="std::for_each" link="cpp/algorithm/for_each"/>
+    <function name="std::for_each_n" link="cpp/algorithm/for_each_n" since="c++11"/>
     <function name="std::count" link="cpp/algorithm/count"/>
     <function name="std::count_if" link="cpp/algorithm/count"/>
     <function name="std::mismatch" link="cpp/algorithm/mismatch"/>
@@ -3479,7 +3902,7 @@
     <function name="std::transform" link="cpp/algorithm/transform"/>
     <function name="std::generate" link="cpp/algorithm/generate"/>
     <function name="std::generate_n" link="cpp/algorithm/generate_n"/>
-    <function name="std::remove" link="cpp/algorithm/remove"/>
+    <function name="std::remove (&lt;algorithm&gt;)" link="cpp/algorithm/remove"/>
     <function name="std::remove_if" link="cpp/algorithm/remove"/>
     <function name="std::remove_copy" link="cpp/algorithm/remove_copy"/>
     <function name="std::remove_copy_if" link="cpp/algorithm/remove_copy"/>
@@ -3496,6 +3919,7 @@
     <function name="std::rotate_copy" link="cpp/algorithm/rotate_copy"/>
     <function name="std::random_shuffle" link="cpp/algorithm/random_shuffle"/>
     <function name="std::shuffle" link="cpp/algorithm/random_shuffle"/>
+    <function name="std::sample" link="cpp/algorithm/sample" since="c++17"/>
     <function name="std::unique" link="cpp/algorithm/unique"/>
     <function name="std::unique_copy" link="cpp/algorithm/unique_copy"/>
 
@@ -3539,6 +3963,7 @@
     <function name="std::min_element" link="cpp/algorithm/min_element"/>
     <function name="std::minmax" link="cpp/algorithm/minmax"/>
     <function name="std::minmax_element" link="cpp/algorithm/minmax_element"/>
+    <function name="std::clamp" link="cpp/algorithm/clamp" since="c++17"/>
 
     <function name="std::lexicographical_compare" link="cpp/algorithm/lexicographical_compare"/>
     <function name="std::is_permutation" link="cpp/algorithm/is_permutation"/>
@@ -3550,6 +3975,16 @@
     <function name="std::adjacent_difference" link="cpp/algorithm/adjacent_difference"/>
     <function name="std::partial_sum" link="cpp/algorithm/partial_sum"/>
     <function name="std::iota" link="cpp/algorithm/iota"/>
+
+    <function name="std::reduce" link="cpp/algorithm/reduce" since="c++17"/>
+    <function name="std::inclusive_scan" link="cpp/algorithm/inclusive_scan" since="c++17"/>
+    <function name="std::exclusive_scan" link="cpp/algorithm/exclusive_scan" since="c++17"/>
+    <function name="std::transform_reduce" link="cpp/algorithm/transform_reduce" since="c++17"/>
+    <function name="std::transform_inclusive_scan" link="cpp/algorithm/transform_inclusive_scan" since="c++17"/>
+    <function name="std::transform_exclusive_scan" link="cpp/algorithm/transform_exclusive_scan" since="c++17"/>
+
+    <function name="std::gcd" link="cpp/numeric/gcd" since="c++17"/>
+    <function name="std::lcm" link="cpp/numeric/lcm" since="c++17"/>
 
     <function name="std::qsort" link="cpp/algorithm/qsort"/>
     <function name="std::bsearch" link="cpp/algorithm/bsearch"/>
@@ -4109,7 +4544,7 @@
     <function name="std::feof" link="cpp/io/c/feof"/>
     <function name="std::ferror" link="cpp/io/c/ferror"/>
     <function name="std::perror" link="cpp/io/c/perror"/>
-    <function name="std::remove" link="cpp/io/c/remove"/>
+    <function name="std::remove (&lt;cstdio&gt;)" link="cpp/io/c/remove"/>
     <function name="std::rename" link="cpp/io/c/rename"/>
     <function name="std::tmpfile" link="cpp/io/c/tmpfile"/>
     <function name="std::tmpnam" link="cpp/io/c/tmpnam"/>
@@ -4133,6 +4568,21 @@
     <const name="L_tmpnam" link="cpp/io/c"/>
 
     <!-- cpp/locale -->
+
+    <function name="std::isalnum (&lt;clocale&gt;)" link="cpp/locale/isalnum"/>
+    <function name="std::isalpha (&lt;clocale&gt;)" link="cpp/locale/isalpha"/>
+    <function name="std::islower (&lt;clocale&gt;)" link="cpp/locale/islower"/>
+    <function name="std::isupper (&lt;clocale&gt;)" link="cpp/locale/isupper"/>
+    <function name="std::isdigit (&lt;clocale&gt;)" link="cpp/locale/isdigit"/>
+    <function name="std::isxdigit (&lt;clocale&gt;)" link="cpp/locale/isxdigit"/>
+    <function name="std::iscntrl (&lt;clocale&gt;)" link="cpp/locale/iscntrl"/>
+    <function name="std::isgraph (&lt;clocale&gt;)" link="cpp/locale/isgraph"/>
+    <function name="std::isspace (&lt;clocale&gt;)" link="cpp/locale/isspace"/>
+    <function name="std::isblank (&lt;clocale&gt;)" link="cpp/locale/isblank"/>
+    <function name="std::isprint (&lt;clocale&gt;)" link="cpp/locale/isprint"/>
+    <function name="std::ispunct (&lt;clocale&gt;)" link="cpp/locale/ispunct"/>
+    <function name="std::tolower (&lt;clocale&gt;)" link="cpp/locale/tolower"/>
+    <function name="std::toupper (&lt;clocale&gt;)" link="cpp/locale/toupper"/>
 
     <class name="std::locale" link="cpp/locale/locale">
         <constructor/>
@@ -4799,6 +5249,51 @@
     <function name="std::atomic_thread_fence" link="cpp/atomic/atomic_thread_fence"/>
     <function name="std::atomic_signal_fence" link="cpp/atomic/atomic_signal_fence"/>
 
+    <typedef name="std::atomic_bool" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_schar" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uchar" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_short" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_ushort" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_long" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_ulong" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_llong" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_ullong" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_char16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_char32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_wchar_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_least8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_least8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_least16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_least16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_least32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_least32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_least64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_least64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_fast8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_fast8_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_fast16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_fast16_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_fast32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_fast32_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_int_fast64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uint_fast64_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_intptr_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uintptr_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_size_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_ptrdiff_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_intmax_t" alias="std::atomic" since="c++11"/>
+    <typedef name="std::atomic_uintmax_t" alias="std::atomic" since="c++11"/>
+
     <!-- cpp/thread -->
 
     <class name="std::thread" link="cpp/thread/thread">
@@ -4835,6 +5330,11 @@
     <function name="std::this_thread::sleep_for" link="cpp/thread/sleep_for"/>
     <function name="std::this_thread::sleep_until" link="cpp/thread/sleep_until"/>
     <function name="std::this_thread::yield" link="cpp/thread/yield"/>
+
+    <const name="std::hardware_constructive_interference_size"
+           link="cpp/thread/hardware_destructive_interference_size" since="c++17"/>
+    <const name="std::hardware_destructive_interference_size"
+           link="cpp/thread/hardware_destructive_interference_size" since="c++17"/>
 
     <class name="std::mutex" link="cpp/thread/mutex">
         <constructor/>
@@ -5086,6 +5586,263 @@
         <overload name="std::make_error_condition" link="make_error_condition"/>
     </enum>
 
+    <!-- filesystem -->
+    <class name="std::filesystem::path" link="cpp/filesystem/path" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+        <function name="assign"/>
+
+        <const name="preferred_separator" link="."/>
+
+        <function name="append"/>
+        <function name="operator/=" link="append"/>
+        <function name="concat"/>
+        <function name="operator+=" link="concat"/>
+
+        <function name="clear"/>
+        <function name="make_preferred"/>
+        <function name="remove_filename"/>
+        <function name="replace_filename"/>
+        <function name="replace_extension"/>
+        <function name="swap"/>
+
+        <function name="c_str" link="native"/>
+        <function name="native"/>
+        <function name="operator string_type" link="native"/>
+
+        <function name="string"/>
+        <function name="wstring" link="string"/>
+        <function name="u8string" link="string"/>
+        <function name="u16string" link="string"/>
+        <function name="u32string" link="string"/>
+
+        <function name="generic_string"/>
+        <function name="generic_wstring" link="generic_string"/>
+        <function name="generic_u8string" link="generic_string"/>
+        <function name="generic_u16string" link="generic_string"/>
+        <function name="generic_u32string" link="generic_string"/>
+
+        <function name="compare"/>
+
+        <function name="lexically_normal"/>
+        <function name="lexically_proximate" link="lexically_normal"/>
+        <function name="lexically_relative" link="lexically_normal"/>
+
+        <function name="root_name"/>
+        <function name="root_directory"/>
+        <function name="root_path"/>
+        <function name="relative_path"/>
+        <function name="parent_path"/>
+        <function name="filename"/>
+        <function name="stem"/>
+        <function name="extension"/>
+
+        <function name="empty"/>
+        <function name="has_root_path" link="has_path"/>
+        <function name="has_root_name" link="has_path"/>
+        <function name="has_root_directory" link="has_path"/>
+        <function name="has_relative_path" link="has_path"/>
+        <function name="has_parent_path" link="has_path"/>
+        <function name="has_filename" link="has_path"/>
+        <function name="has_stem" link="has_path"/>
+        <function name="has_extension" link="has_path"/>
+
+        <function name="is_absolute" link="is_absrel"/>
+        <function name="is_relative" link="is_absrel"/>
+
+        <function name="begin"/>
+        <function name="end" link="begin"/>
+
+        <overload name="std::swap" link="swap2"/>
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+        <overload name="operator/" link="operator_slash"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+
+        <overload name="std::filesystem::hash_value" link="hash_value"/>
+    </class>
+    <function name="std::filesystem::u8path" link="cpp/filesystem/path/u8path" since="c++17"/>
+
+    <class name="std::filesystem::filesystem_error" link="cpp/filesystem/filesystem_error" since="c++17">
+        <constructor/>
+        <function name="path1" link="path"/>
+        <function name="path2" link="path"/>
+        <function name="what"/>
+    </class>
+
+    <class name="std::filesystem::directory_entry" link="cpp/filesystem/directory_entry" since="c++17">
+        <constructor/>
+        <function name="operator="/>
+        <function name="assign"/>
+        <function name="replace_filename"/>
+
+        <function name="path"/>
+        <overload name="operator const path&amp;" link="path"/>
+        <function name="status"/>
+        <function name="symlink_status" link="status"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+    </class>
+
+    <class name="std::filesystem::directory_iterator" link="cpp/filesystem/directory_iterator" since="c++17">
+        <constructor/>
+        <function name="operator="/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="increment"/>
+        <function name="operator++" link="increment"/>
+
+        <overload name="operator==" link="."/>
+        <overload name="operator!=" link="."/>
+        <overload name="std::filesystem::begin" link="begin"/>
+        <overload name="std::filesystem::end" link="begin"/>
+    </class>
+
+    <class name="std::filesystem::recursive_directory_iterator" link="cpp/filesystem/recursive_directory_iterator" since="c++17">
+        <constructor/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="options"/>
+        <function name="depth"/>
+        <function name="recursion_pending"/>
+
+        <function name="operator="/>
+        <function name="increment"/>
+        <function name="operator++" link="increment"/>
+        <function name="pop"/>
+        <function name="disable_recursion_pending"/>
+
+        <overload name="operator==" link="."/>
+        <overload name="operator!=" link="."/>
+        <overload name="std::filesystem::begin" link="begin"/>
+        <overload name="std::filesystem::end" link="begin"/>
+    </class>
+
+    <class name="std::filesystem::file_status" link="cpp/filesystem/file_status" since="c++17">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+        <function name="type"/>
+        <function name="permissions"/>
+    </class>
+
+    <class name="std::filesystem::space_info" link="cpp/filesystem/space_info" since="c++17">
+        <variable name="capacity" link="."/>
+        <variable name="free" link="."/>
+        <variable name="available" link="."/>
+    </class>
+
+    <class name="std::filesystem::file_type" link="cpp/filesystem/file_type" since="c++17">
+        <const name="none" link="."/>
+        <const name="not_found" link="."/>
+        <const name="regular" link="."/>
+        <const name="directory" link="."/>
+        <const name="symlink" link="."/>
+        <const name="block" link="."/>
+        <const name="character" link="."/>
+        <const name="fifo" link="."/>
+        <const name="socket" link="."/>
+        <const name="unknown" link="."/>
+    </class>
+
+    <class name="std::filesystem::perms" link="cpp/filesystem/perms" since="c++17">
+        <const name="none" link="."/>
+        <const name="owner_read" link="."/>
+        <const name="owner_write" link="."/>
+        <const name="owner_exec" link="."/>
+        <const name="owner_all" link="."/>
+        <const name="group_read" link="."/>
+        <const name="group_write" link="."/>
+        <const name="group_exec" link="."/>
+        <const name="group_all" link="."/>
+        <const name="others_read" link="."/>
+        <const name="others_write" link="."/>
+        <const name="others_exec" link="."/>
+        <const name="others_all" link="."/>
+        <const name="all" link="."/>
+        <const name="set_uid" link="."/>
+        <const name="set_gid" link="."/>
+        <const name="sticky_bit" link="."/>
+        <const name="mask" link="."/>
+
+        <const name="unknown" link="."/>
+        <const name="add_perms" link="."/>
+        <const name="remove_perms" link="."/>
+        <const name="resolve_symlinks" link="."/>
+    </class>
+
+    <class name="std::filesystem::copy_options" link="cpp/filesystem/copy_options" since="c++17">
+        <const name="none" link="."/>
+        <const name="skip_existing" link="."/>
+        <const name="overwrite_existing" link="."/>
+        <const name="update_existing" link="."/>
+        <const name="recursive" link="."/>
+        <const name="copy_symlinks" link="."/>
+        <const name="skip_symlinks" link="."/>
+        <const name="directories_only" link="."/>
+        <const name="create_symlinks" link="."/>
+        <const name="create_hard_links" link="."/>
+    </class>
+    <class name="std::filesystem::directory_options" link="cpp/filesystem/directory_options" since="c++17">
+        <const name="none" link="."/>
+        <const name="follow_directory_symlink" link="."/>
+        <const name="overwrite_existing" link="."/>
+        <const name="skip_permission_denied" link="."/>
+    </class>
+    <typedef name="std::filesystem::file_time_type" link="cpp/filesystem/file_time_type" since="c++17"/>
+
+    <function name="std::filesystem::absolute" link="cpp/filesystem/absolute" since="c++17"/>
+    <function name="std::filesystem::system_complete" link="cpp/filesystem/absolute" since="c++17"/>
+    <function name="std::filesystem::canonical" link="cpp/filesystem/canonical" since="c++17"/>
+    <function name="std::filesystem::weakly_canonical" link="cpp/filesystem/canonical" since="c++17"/>
+    <function name="std::filesystem::relative" link="cpp/filesystem/relative" since="c++17"/>
+    <function name="std::filesystem::proximate" link="cpp/filesystem/relative" since="c++17"/>
+    <function name="std::filesystem::copy" link="cpp/filesystem/copy" since="c++17"/>
+    <function name="std::filesystem::copy_file" link="cpp/filesystem/copy_file" since="c++17"/>
+    <function name="std::filesystem::copy_symlink" link="cpp/filesystem/copy_symlink" since="c++17"/>
+    <function name="std::filesystem::create_directory" link="cpp/filesystem/create_directory" since="c++17"/>
+    <function name="std::filesystem::create_directories" link="cpp/filesystem/create_directory" since="c++17"/>
+    <function name="std::filesystem::create_hard_link" link="cpp/filesystem/create_hard_link" since="c++17"/>
+    <function name="std::filesystem::create_symlink" link="cpp/filesystem/create_symlink" since="c++17"/>
+    <function name="std::filesystem::create_directory_symlink" link="cpp/filesystem/create_symlink" since="c++17"/>
+    <function name="std::filesystem::current_path" link="cpp/filesystem/current_path" since="c++17"/>
+    <function name="std::filesystem::exists" link="cpp/filesystem/exists" since="c++17"/>
+    <function name="std::filesystem::equivalent" link="cpp/filesystem/equivalent" since="c++17"/>
+    <function name="std::filesystem::file_size" link="cpp/filesystem/file_size" since="c++17"/>
+    <function name="std::filesystem::hard_link_count" link="cpp/filesystem/hard_link_count" since="c++17"/>
+    <function name="std::filesystem::last_write_time" link="cpp/filesystem/last_write_time" since="c++17"/>
+    <function name="std::filesystem::permissions" link="cpp/filesystem/permissions" since="c++17"/>
+    <function name="std::filesystem::read_symlink" link="cpp/filesystem/read_symlink" since="c++17"/>
+    <function name="std::filesystem::remove" link="cpp/filesystem/remove" since="c++17"/>
+    <function name="std::filesystem::remove_all" link="cpp/filesystem/remove" since="c++17"/>
+    <function name="std::filesystem::rename" link="cpp/filesystem/rename" since="c++17"/>
+    <function name="std::filesystem::resize_file" link="cpp/filesystem/resize_file" since="c++17"/>
+    <function name="std::filesystem::space" link="cpp/filesystem/space" since="c++17"/>
+    <function name="std::filesystem::status" link="cpp/filesystem/status" since="c++17"/>
+    <function name="std::filesystem::symlink_status" link="cpp/filesystem/status" since="c++17"/>
+    <function name="std::filesystem::temp_directory_path" link="cpp/filesystem/temp_directory_path" since="c++17"/>
+    <function name="std::filesystem::is_block_file" link="cpp/filesystem/is_block_file" since="c++17"/>
+    <function name="std::filesystem::is_character_file" link="cpp/filesystem/is_character_file" since="c++17"/>
+    <function name="std::filesystem::is_directory" link="cpp/filesystem/is_directory" since="c++17"/>
+    <function name="std::filesystem::is_empty" link="cpp/filesystem/is_empty" since="c++17"/>
+    <function name="std::filesystem::is_fifo" link="cpp/filesystem/is_fifo" since="c++17"/>
+    <function name="std::filesystem::is_other" link="cpp/filesystem/is_other" since="c++17"/>
+    <function name="std::filesystem::is_regular_file" link="cpp/filesystem/is_regular_file" since="c++17"/>
+    <function name="std::filesystem::is_socket" link="cpp/filesystem/is_socket" since="c++17"/>
+    <function name="std::filesystem::is_symlink" link="cpp/filesystem/is_symlink" since="c++17"/>
+    <function name="std::filesystem::status_known" link="cpp/filesystem/status_known" since="c++17"/>
+
     <!--=======================================================================-->
     <!-- experimental -->
 
@@ -5109,7 +5866,7 @@
 
     <function name="std::experimental::make_optional" link="cpp/experimental/optional/make_optional" since="exp"/>
 
-    <class name="std::bad_optional_access" link="cpp/utility/bad_optional_access" since="exp">
+    <class name="std::experimental::bad_optional_access" link="cpp/utility/optional/bad_optional_access" since="c++11">
         <inherits name="std::logic_error"/>
         <constructor link="."/>
     </class>
@@ -5163,7 +5920,7 @@
     <class name="std::experimental::invocation_type" link="cpp/experimental/invocation_type" since="exp"/>
     <class name="std::experimental::raw_invocation_type" link="cpp/experimental/raw_invocation_type" since="exp"/>
 
-    <class name="std::experimental::string_view" link="cpp/experimental/basic_string_view" since="exp">
+    <class name="std::experimental::basic_string_view" link="cpp/experimental/basic_string_view" since="exp">
         <constructor/>
         <function name="operator="/>
 
@@ -5213,9 +5970,10 @@
         <specialization name="std::hash" link="hash"/>
     </class>
 
-    <typedef name="std::experimental::wstring_view" alias="std::experimental::string_view" since="exp"/>
-    <typedef name="std::experimental::u16string_view" alias="std::experimental::string_view" since="exp"/>
-    <typedef name="std::experimental::u32string_view" alias="std::experimental::string_view" since="exp"/>
+    <typedef name="std::experimental::string_view" alias="std::experimental::basic_string_view" since="exp"/>
+    <typedef name="std::experimental::wstring_view" alias="std::experimental::basic_string_view" since="exp"/>
+    <typedef name="std::experimental::u16string_view" alias="std::experimental::basic_string_view" since="exp"/>
+    <typedef name="std::experimental::u32string_view" alias="std::experimental::basic_string_view" since="exp"/>
 
     <variable name="std::experimental::is_void_v" link="cpp/experimental/type_trait_variable_templates" since="exp"/>
     <variable name="std::experimental::is_null_pointer_v" link="cpp/experimental/type_trait_variable_templates" since="exp"/>
@@ -5317,5 +6075,245 @@
     <function name="std::experimental::lcm" link="cpp/experimental/lcm" since="exp"/>
     <class name="std::experimental::source_location" link="cpp/experimental/source_location" since="exp"/>
     <function name="std::as_const" link="cpp/utility/as_const" since="exp"/>
+
+    <function name="std::experimental::randint" link="cpp/experimental/randint" since="exp"/>
+    <function name="std::experimental::reseed" link="cpp/experimental/reseed" since="exp"/>
+
+    <!-- experimental/filesystem -->
+    <class name="std::experimental::filesystem::path" link="cpp/experimental/fs/path" since="exp">
+        <constructor/>
+        <destructor/>
+        <function name="operator="/>
+        <function name="assign"/>
+
+        <function name="append"/>
+        <function name="operator/=" link="append"/>
+        <function name="concat"/>
+        <function name="operator+=" link="concat"/>
+
+        <function name="clear"/>
+        <function name="make_preferred"/>
+        <function name="remove_filename"/>
+        <function name="replace_filename"/>
+        <function name="replace_extension"/>
+        <function name="swap"/>
+
+        <function name="c_str" link="native"/>
+        <function name="native"/>
+        <function name="operator string_type" link="native"/>
+
+        <function name="string"/>
+        <function name="wstring" link="string"/>
+        <function name="u8string" link="string"/>
+        <function name="u16string" link="string"/>
+        <function name="u32string" link="string"/>
+
+        <function name="generic_string"/>
+        <function name="generic_wstring" link="generic_string"/>
+        <function name="generic_u8string" link="generic_string"/>
+        <function name="generic_u16string" link="generic_string"/>
+        <function name="generic_u32string" link="generic_string"/>
+
+        <function name="compare"/>
+        <function name="root_name"/>
+        <function name="root_directory"/>
+        <function name="root_path"/>
+        <function name="relative_path"/>
+        <function name="parent_path"/>
+        <function name="filename"/>
+        <function name="stem"/>
+        <function name="extension"/>
+
+        <function name="empty"/>
+        <function name="has_root_path" link="has_path"/>
+        <function name="has_root_name" link="has_path"/>
+        <function name="has_root_directory" link="has_path"/>
+        <function name="has_relative_path" link="has_path"/>
+        <function name="has_parent_path" link="has_path"/>
+        <function name="has_filename" link="has_path"/>
+        <function name="has_stem" link="has_path"/>
+        <function name="has_extension" link="has_path"/>
+
+        <function name="begin"/>
+        <function name="end" link="begin"/>
+
+        <overload name="swap" link="swap2"/>
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+        <overload name="operator/" link="operator_slash"/>
+        <overload name="operator&lt;&lt;" link="operator_ltltgtgt"/>
+        <overload name="operator&gt;&gt;" link="operator_ltltgtgt"/>
+        <overload name="u8path"/>
+    </class>
+
+    <class name="std::experimental::filesystem::filesystem_error" link="cpp/experimental/fs/filesystem_error" since="exp">
+        <constructor/>
+        <function name="path1" link="path"/>
+        <function name="path2" link="path"/>
+        <function name="what"/>
+    </class>
+
+    <class name="std::experimental::filesystem::directory_entry" link="cpp/experimental/fs/directory_entry" since="exp">
+        <constructor/>
+        <function name="operator="/>
+        <function name="assign"/>
+        <function name="replace_filename"/>
+
+        <function name="path"/>
+        <function name="status"/>
+        <function name="symlink_status" link="status"/>
+
+        <overload name="operator==" link="operator_cmp"/>
+        <overload name="operator!=" link="operator_cmp"/>
+        <overload name="operator&lt;" link="operator_cmp"/>
+        <overload name="operator&lt;=" link="operator_cmp"/>
+        <overload name="operator&gt;" link="operator_cmp"/>
+        <overload name="operator&gt;=" link="operator_cmp"/>
+    </class>
+
+    <class name="std::experimental::filesystem::directory_iterator" link="cpp/experimental/fs/directory_iterator" since="exp">
+        <constructor/>
+        <function name="operator="/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="increment"/>
+        <function name="operator++" link="increment"/>
+
+        <overload name="std::experimental::filesystem::begin" link="begin"/>
+        <overload name="std::experimental::filesystem::end" link="begin"/>
+    </class>
+
+    <class name="std::experimental::filesystem::recursive_directory_iterator" link="cpp/experimental/fs/recursive_directory_iterator" since="exp">
+        <constructor/>
+        <function name="operator*"/>
+        <function name="operator->" link="operator*"/>
+        <function name="options"/>
+        <function name="depth"/>
+        <function name="recursion_pending"/>
+
+        <function name="operator="/>
+        <function name="increment"/>
+        <function name="operator++" link="increment"/>
+        <function name="pop"/>
+        <function name="disable_recursion_pending"/>
+
+        <overload name="std::experimental::filesystem::begin" link="begin"/>
+        <overload name="std::experimental::filesystem::end" link="begin"/>
+    </class>
+
+    <class name="std::experimental::filesystem::file_status" link="cpp/experimental/fs/file_status" since="exp">
+        <constructor/>
+        <function name="operator="/>
+        <function name="type"/>
+        <function name="permissions"/>
+    </class>
+
+    <class name="std::experimental::filesystem::space_info" link="cpp/experimental/fs/space_info" since="exp">
+        <variable name="capacity" link="."/>
+        <variable name="free" link="."/>
+        <variable name="available" link="."/>
+    </class>
+
+    <class name="std::experimental::filesystem::file_type" link="cpp/experimental/fs/file_type" since="exp">
+        <const name="none" link="."/>
+        <const name="not_found" link="."/>
+        <const name="regular" link="."/>
+        <const name="directory" link="."/>
+        <const name="symlink" link="."/>
+        <const name="block" link="."/>
+        <const name="character" link="."/>
+        <const name="fifo" link="."/>
+        <const name="socket" link="."/>
+        <const name="unknown" link="."/>
+    </class>
+
+    <class name="std::experimental::filesystem::perms" link="cpp/experimental/fs/perms" since="exp">
+        <const name="none" link="."/>
+        <const name="owner_read" link="."/>
+        <const name="owner_write" link="."/>
+        <const name="owner_exec" link="."/>
+        <const name="owner_all" link="."/>
+        <const name="group_read" link="."/>
+        <const name="group_write" link="."/>
+        <const name="group_exec" link="."/>
+        <const name="group_all" link="."/>
+        <const name="others_read" link="."/>
+        <const name="others_write" link="."/>
+        <const name="others_exec" link="."/>
+        <const name="others_all" link="."/>
+        <const name="all" link="."/>
+        <const name="set_uid" link="."/>
+        <const name="set_gid" link="."/>
+        <const name="sticky_bit" link="."/>
+        <const name="mask" link="."/>
+
+        <const name="unknown" link="."/>
+        <const name="add_perms" link="."/>
+        <const name="remove_perms" link="."/>
+        <const name="resolve_symlinks" link="."/>
+    </class>
+
+    <class name="std::experimental::filesystem::copy_options" link="cpp/experimental/fs/copy_options" since="exp">
+        <const name="none" link="."/>
+        <const name="skip_existing" link="."/>
+        <const name="overwrite_existing" link="."/>
+        <const name="update_existing" link="."/>
+        <const name="recursive" link="."/>
+        <const name="copy_symlinks" link="."/>
+        <const name="skip_symlinks" link="."/>
+        <const name="directories_only" link="."/>
+        <const name="create_symlinks" link="."/>
+        <const name="create_hard_links" link="."/>
+    </class>
+    <class name="std::experimental::filesystem::directory_options" link="cpp/experimental/fs/directory_options" since="exp">
+        <const name="none" link="."/>
+        <const name="follow_directory_symlink" link="."/>
+        <const name="overwrite_existing" link="."/>
+        <const name="skip_permission_denied" link="."/>
+    </class>
+    <typedef name="std::experimental::filesystem::file_time_type" link="cpp/experimental/fs/file_time_type" since="exp"/>
+
+    <function name="std::experimental::filesystem::absolute" link="cpp/experimental/fs/absolute" since="exp"/>
+    <function name="std::experimental::filesystem::system_complete" link="cpp/experimental/fs/absolute" since="exp"/>
+    <function name="std::experimental::filesystem::canonical" link="cpp/experimental/fs/canonical" since="exp"/>
+    <function name="std::experimental::filesystem::copy" link="cpp/experimental/fs/copy" since="exp"/>
+    <function name="std::experimental::filesystem::copy_file" link="cpp/experimental/fs/copy_file" since="exp"/>
+    <function name="std::experimental::filesystem::copy_symlink" link="cpp/experimental/fs/copy_symlink" since="exp"/>
+    <function name="std::experimental::filesystem::create_directory" link="cpp/experimental/fs/create_directory" since="exp"/>
+    <function name="std::experimental::filesystem::create_directories" link="cpp/experimental/fs/create_directory" since="exp"/>
+    <function name="std::experimental::filesystem::create_hard_link" link="cpp/experimental/fs/create_hard_link" since="exp"/>
+    <function name="std::experimental::filesystem::create_symlink" link="cpp/experimental/fs/create_symlink" since="exp"/>
+    <function name="std::experimental::filesystem::create_directory_symlink" link="cpp/experimental/fs/create_symlink" since="exp"/>
+    <function name="std::experimental::filesystem::current_path" link="cpp/experimental/fs/current_path" since="exp"/>
+    <function name="std::experimental::filesystem::exists" link="cpp/experimental/fs/exists" since="exp"/>
+    <function name="std::experimental::filesystem::equivalent" link="cpp/experimental/fs/equivalent" since="exp"/>
+    <function name="std::experimental::filesystem::file_size" link="cpp/experimental/fs/file_size" since="exp"/>
+    <function name="std::experimental::filesystem::hard_link_count" link="cpp/experimental/fs/hard_link_count" since="exp"/>
+    <function name="std::experimental::filesystem::last_write_time" link="cpp/experimental/fs/last_write_time" since="exp"/>
+    <function name="std::experimental::filesystem::permissions" link="cpp/experimental/fs/permissions" since="exp"/>
+    <function name="std::experimental::filesystem::read_symlink" link="cpp/experimental/fs/read_symlink" since="exp"/>
+    <function name="std::experimental::filesystem::remove" link="cpp/experimental/fs/remove" since="exp"/>
+    <function name="std::experimental::filesystem::remove_all" link="cpp/experimental/fs/remove" since="exp"/>
+    <function name="std::experimental::filesystem::rename" link="cpp/experimental/fs/rename" since="exp"/>
+    <function name="std::experimental::filesystem::resize_file" link="cpp/experimental/fs/resize_file" since="exp"/>
+    <function name="std::experimental::filesystem::space" link="cpp/experimental/fs/space" since="exp"/>
+    <function name="std::experimental::filesystem::status" link="cpp/experimental/fs/status" since="exp"/>
+    <function name="std::experimental::filesystem::symlink_status" link="cpp/experimental/fs/status" since="exp"/>
+    <function name="std::experimental::filesystem::temp_directory_path" link="cpp/experimental/fs/temp_directory_path" since="exp"/>
+    <function name="std::experimental::filesystem::is_block_file" link="cpp/experimental/fs/is_block_file" since="exp"/>
+    <function name="std::experimental::filesystem::is_character_file" link="cpp/experimental/fs/is_character_file" since="exp"/>
+    <function name="std::experimental::filesystem::is_directory" link="cpp/experimental/fs/is_directory" since="exp"/>
+    <function name="std::experimental::filesystem::is_empty" link="cpp/experimental/fs/is_empty" since="exp"/>
+    <function name="std::experimental::filesystem::is_fifo" link="cpp/experimental/fs/is_fifo" since="exp"/>
+    <function name="std::experimental::filesystem::is_other" link="cpp/experimental/fs/is_other" since="exp"/>
+    <function name="std::experimental::filesystem::is_regular_file" link="cpp/experimental/fs/is_regular_file" since="exp"/>
+    <function name="std::experimental::filesystem::is_socket" link="cpp/experimental/fs/is_socket" since="exp"/>
+    <function name="std::experimental::filesystem::is_symlink" link="cpp/experimental/fs/is_symlink" since="exp"/>
+    <function name="std::experimental::filesystem::status_known" link="cpp/experimental/fs/status_known" since="exp"/>
+
 
 </index>

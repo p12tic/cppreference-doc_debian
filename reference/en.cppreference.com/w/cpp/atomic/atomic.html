@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/atomic/atomic","wgTitle":"cpp/atomic/atomic","wgCurRevisionId":81254,"wgArticleId":4734,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/atomic/atomic","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/atomic/atomic","wgTitle":"cpp/atomic/atomic","wgCurRevisionId":91983,"wgArticleId":4734,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed LWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/atomic/atomic","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
@@ -270,15 +271,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span><br />
+<span class="kw1">struct</span> atomic<span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
+<td> (3) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span><br />
 <span class="kw1">struct</span> atomic<span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span><span class="sy4">;</span></span></div></td>
-<td> (3) </td>
+<td> (4) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Each instantiation and full specialization of the <code>std::atomic</code> template defines an atomic type. Objects of atomic types are the only C++ objects that are free from data races; that is, if one thread writes to an atomic object while another thread reads from it, the behavior is well-defined.
-</p><p>In addition, accesses to atomic objects may establish inter-thread synchronization and order non-atomic memory accesses as specified by <span class="t-lc">std::memory_order</span>.
+<p>Each instantiation and full specialization of the <code>std::atomic</code> template defines an atomic type. If one thread writes to an atomic object while another thread reads from it, the behavior is well-defined (see <a href="../language/memory_model.html" title="cpp/language/memory model">memory model</a> for details on data races)
+</p><p>In addition, accesses to atomic objects may establish inter-thread synchronization and order non-atomic memory accesses as specified by <span class="t-lc"><a href="memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span>.
 </p><p><code>std::atomic</code> may be instantiated with any <a href="../concept/TriviallyCopyable.html" title="cpp/concept/TriviallyCopyable"><code>TriviallyCopyable</code></a> type <code>T</code>.
 std::atomic is neither copyable nor movable.
 </p><p>The standard library provides specializations of the <code>std::atomic</code> template for the following types:
@@ -294,9 +301,9 @@ std::atomic is neither copyable nor movable.
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_bool</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2099">std::<span class="me2">atomic_bool</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
@@ -314,265 +321,322 @@ std::atomic is neither copyable nor movable.
 <tr class="t-dsc">
 <td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_char</span></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_schar</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2100">std::<span class="me2">atomic_schar</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">signed</span> <span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">signed</span> <span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uchar</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2101">std::<span class="me2">atomic_uchar</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_short</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2102">std::<span class="me2">atomic_short</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_ushort</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2103">std::<span class="me2">atomic_ushort</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2104">std::<span class="me2">atomic_int</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2105">std::<span class="me2">atomic_uint</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_long</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2106">std::<span class="me2">atomic_long</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_ulong</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2107">std::<span class="me2">atomic_ulong</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_llong</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2108">std::<span class="me2">atomic_llong</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_ullong</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2109">std::<span class="me2">atomic_ullong</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_char16_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2110">std::<span class="me2">atomic_char16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_char32_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2111">std::<span class="me2">atomic_char32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_wchar_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2112">std::<span class="me2">atomic_wchar_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2113">std::<span class="me2">atomic_int8_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw106">std::<span class="me2">int8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_least8_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2114">std::<span class="me2">atomic_uint8_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_least8_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2115">std::<span class="me2">atomic_int16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw107">std::<span class="me2">int16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_least16_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2116">std::<span class="me2">atomic_uint16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw121">std::<span class="me2">uint16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_least16_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2117">std::<span class="me2">atomic_int32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw108">std::<span class="me2">int32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_least32_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2118">std::<span class="me2">atomic_uint32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw122">std::<span class="me2">uint32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_least32_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2119">std::<span class="me2">atomic_int64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw109">std::<span class="me2">int64_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_least64_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2120">std::<span class="me2">atomic_uint64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw123">std::<span class="me2">uint64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2121">std::<span class="me2">atomic_int_least8_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw114">std::<span class="me2">int_least8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_least64_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2122">std::<span class="me2">atomic_uint_least8_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw128">std::<span class="me2">uint_least8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_fast8_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2123">std::<span class="me2">atomic_int_least16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw115">std::<span class="me2">int_least16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_fast8_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2124">std::<span class="me2">atomic_uint_least16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw129">std::<span class="me2">uint_least16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_fast16_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2125">std::<span class="me2">atomic_int_least32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw116">std::<span class="me2">int_least32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_fast16_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2126">std::<span class="me2">atomic_uint_least32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw130">std::<span class="me2">uint_least32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_fast32_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2127">std::<span class="me2">atomic_int_least64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw117">std::<span class="me2">int_least64_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_fast32_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2128">std::<span class="me2">atomic_uint_least64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw131">std::<span class="me2">uint_least64_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_int_fast64_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2129">std::<span class="me2">atomic_int_fast8_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw110">std::<span class="me2">int_fast8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uint_fast64_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2130">std::<span class="me2">atomic_uint_fast8_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw124">std::<span class="me2">uint_fast8_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_intptr_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2131">std::<span class="me2">atomic_int_fast16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw111">std::<span class="me2">int_fast16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uintptr_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2132">std::<span class="me2">atomic_uint_fast16_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw125">std::<span class="me2">uint_fast16_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_size_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2133">std::<span class="me2">atomic_int_fast32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw112">std::<span class="me2">int_fast32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_ptrdiff_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2134">std::<span class="me2">atomic_uint_fast32_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/ptrdiff_t.html"><span class="kw101">std::<span class="me2">ptrdiff_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_intmax_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2135">std::<span class="me2">atomic_int_fast64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw113">std::<span class="me2">int_fast64_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic_uintmax_t</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2136">std::<span class="me2">atomic_uint_fast64_t</span></span></a></span></span>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atomic</span><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw132">std::<span class="me2">uintmax_t</span></span></a><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2137">std::<span class="me2">atomic_intptr_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw119">std::<span class="me2">intptr_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2138">std::<span class="me2">atomic_uintptr_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw133">std::<span class="me2">uintptr_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2139">std::<span class="me2">atomic_size_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2140">std::<span class="me2">atomic_ptrdiff_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/ptrdiff_t.html"><span class="kw101">std::<span class="me2">ptrdiff_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2141">std::<span class="me2">atomic_intmax_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw118">std::<span class="me2">intmax_t</span></span></a><span class="sy1">&gt;</span></span></span>
+</td></tr>
+
+
+<tr class="t-dsc">
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2142">std::<span class="me2">atomic_uintmax_t</span></span></a></span></span>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw132">std::<span class="me2">uintmax_t</span></span></a><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
-<p>These specializations have standard layout, trivial default constructors, and trivial destructors. They support aggregate initialization syntax. Besides the operations provided for all atomic types, these specializations have additional atomic operations appropriate to integer types such as <a href="atomic/fetch_add.html" title="cpp/atomic/atomic/fetch add"><code>fetch_add</code></a>, <a href="atomic/fetch_sub.html" title="cpp/atomic/atomic/fetch sub"><code>fetch_sub</code></a>, <a href="atomic/fetch_and.html" title="cpp/atomic/atomic/fetch and"><code>fetch_and</code></a>, <a href="atomic/fetch_or.html" title="cpp/atomic/atomic/fetch or"><code>fetch_or</code></a>, <a href="atomic/fetch_xor.html" title="cpp/atomic/atomic/fetch xor"><code>fetch_xor</code></a>.
+<p>Note: <code>std::atomic_int<i>N</i>_t</code>, <code>std::atomic_uint<i>N</i>_t</code>, <code>std::atomic_intptr_t</code>, and <code>atomic_uintptr_t</code> are defined if and only if <code>std::int<i>N</i>_t</code>, <code>std::uint<i>N</i>_t</code>, <code>std::intptr_t</code>, and <code>std::uintptr_t</code> are defined, respectively.
+</p><p>These specializations have standard layout, trivial default constructors, and trivial destructors. They support aggregate initialization syntax. Besides the operations provided for all atomic types, these specializations have additional atomic operations appropriate to integer types such as <a href="atomic/fetch_add.html" title="cpp/atomic/atomic/fetch add"><code>fetch_add</code></a>, <a href="atomic/fetch_sub.html" title="cpp/atomic/atomic/fetch sub"><code>fetch_sub</code></a>, <a href="atomic/fetch_and.html" title="cpp/atomic/atomic/fetch and"><code>fetch_and</code></a>, <a href="atomic/fetch_or.html" title="cpp/atomic/atomic/fetch or"><code>fetch_or</code></a>, <a href="atomic/fetch_xor.html" title="cpp/atomic/atomic/fetch xor"><code>fetch_xor</code></a>.
 </p><p>3) Partial specializations <code>std::atomic&lt;T*&gt;</code> for all pointer types. These specializations have standard layout, trivial default constructors, and trivial destructors. They support aggregate initialization syntax. Besides the operations provided for all atomic types, these specializations additionally support atomic arithmetic operations appropriate to pointer types, such as <a href="atomic/fetch_add.html" title="cpp/atomic/atomic/fetch add"><code>fetch_add</code></a>, <a href="atomic/fetch_sub.html" title="cpp/atomic/atomic/fetch sub"><code>fetch_sub</code></a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="atomic.html#Member_functions"><span class="tocnumber">1</span> <span class="toctext">Member functions</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="atomic.html#Specialized_member_functions"><span class="tocnumber">2</span> <span class="toctext">Specialized member functions</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="atomic.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="atomic.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="atomic.html#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a href="atomic.html#Constants"><span class="tocnumber">2</span> <span class="toctext">Constants</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="atomic.html#Specialized_member_functions"><span class="tocnumber">3</span> <span class="toctext">Specialized member functions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="atomic.html#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="atomic.html#Defect_reports"><span class="tocnumber">5</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="atomic.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="atomic.html#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=1" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span></h3>
@@ -597,13 +661,13 @@ std::atomic is neither copyable nor movable.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/store.html" title="cpp/atomic/atomic/store"> <span class="t-lines"><span>store</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/store.html" title="cpp/atomic/atomic/store"> <span class="t-lines"><span>store</span></span></a></div></div>
 </td>
 <td>   atomically replaces the value of the atomic object with a non-atomic argument  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_store&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/load.html" title="cpp/atomic/atomic/load"> <span class="t-lines"><span>load</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/load.html" title="cpp/atomic/atomic/load"> <span class="t-lines"><span>load</span></span></a></div></div>
 </td>
 <td>   atomically obtains the value of the atomic object  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_load&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
@@ -615,9 +679,9 @@ std::atomic is neither copyable nor movable.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/exchange.html" title="cpp/atomic/atomic/exchange"> <span class="t-lines"><span>exchange</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/exchange.html" title="cpp/atomic/atomic/exchange"> <span class="t-lines"><span>exchange</span></span></a></div></div>
 </td>
-<td>   atomically replaces the value of the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_exchange&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   atomically replaces the value of the atomic object and obtains the value held previously <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_exchange&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -625,36 +689,46 @@ std::atomic is neither copyable nor movable.
 </td>
 <td>   atomically compares the value of the atomic object with non-atomic argument and performs atomic exchange if equal or atomic load if not  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_compare_exchange&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Constants"> Constants</span></h3>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/is_always_lock_free.html" title="cpp/atomic/atomic/is always lock free"> <span class="t-lines"><span>is_always_lock_free</span></span></a></div><div><span class="t-lines"><span><span class="t-cmark">[static]</span> <span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div>
+</td>
+<td>   indicates that the type is always lock-free <br /> <span class="t-mark">(public static member constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_is_always_lock_free&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=2" title="Edit section: Specialized member functions">edit</a>]</span> <span class="mw-headline" id="Specialized_member_functions">Specialized member functions</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_add.html" title="cpp/atomic/atomic/fetch add"> <span class="t-lines"><span>fetch_add</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_add.html" title="cpp/atomic/atomic/fetch add"> <span class="t-lines"><span>fetch_add</span></span></a></div></div>
 </td>
 <td>   atomically adds the argument to the value stored in the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_fetch_add&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_sub.html" title="cpp/atomic/atomic/fetch sub"> <span class="t-lines"><span>fetch_sub</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_sub.html" title="cpp/atomic/atomic/fetch sub"> <span class="t-lines"><span>fetch_sub</span></span></a></div></div>
 </td>
 <td>   atomically subtracts the argument from the value stored in the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_fetch_sub&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_and.html" title="cpp/atomic/atomic/fetch and"> <span class="t-lines"><span>fetch_and</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_and.html" title="cpp/atomic/atomic/fetch and"> <span class="t-lines"><span>fetch_and</span></span></a></div></div>
 </td>
 <td>   atomically performs bitwise AND between the argument and the value of the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_fetch_and&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_or.html" title="cpp/atomic/atomic/fetch or"> <span class="t-lines"><span>fetch_or</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_or.html" title="cpp/atomic/atomic/fetch or"> <span class="t-lines"><span>fetch_or</span></span></a></div></div>
 </td>
 <td>   atomically performs bitwise OR between the argument and the value of the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_fetch_or&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_xor.html" title="cpp/atomic/atomic/fetch xor"> <span class="t-lines"><span>fetch_xor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><a href="atomic/fetch_xor.html" title="cpp/atomic/atomic/fetch xor"> <span class="t-lines"><span>fetch_xor</span></span></a></div></div>
 </td>
 <td>   atomically performs bitwise XOR between the argument and the value of the atomic object and obtains the value held previously  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/atomic/dsc_fetch_xor&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
@@ -672,9 +746,31 @@ std::atomic is neither copyable nor movable.
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>There are non-member function template equivalents for all member functions of <code>std::atomic</code>. Those non-member functions may be additionally overloaded for types that are not specializations of <span class="t-lc">std::atomic</span>, but are able to guarantee atomicity. The only such type in the standard library is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/shared_ptr.html"><span class="kw615">std::<span class="me2">shared_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>.
+<p>There are non-member function template equivalents for all member functions of <code>std::atomic</code>. Those non-member functions may be additionally overloaded for types that are not specializations of <span class="t-lc"><strong class="selflink">std::atomic</strong></span>, but are able to guarantee atomicity. The only such type in the standard library is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/shared_ptr.html"><span class="kw734">std::<span class="me2">shared_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>.
 </p>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=4" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> Applied to
+</th>
+<th> Behavior as published
+</th>
+<th> Correct behavior
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://open-std.org/JTC1/SC22/WG21/docs/lwg-defects.html#2441">LWG 2441</a>
+</td>
+<td> c++11
+</td>
+<td>
+</td>
+<td> added specializations for the <span class="t-mark">(optional)</span> <a href="../types/integer.html" title="cpp/types/integer">fixed width integer types</a>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
@@ -683,7 +779,7 @@ std::atomic is neither copyable nor movable.
 <td>   the lock-free boolean atomic type  <br /> <span class="t-mark">(class)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/atomic/dsc_atomic_flag&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=edit&amp;section=6" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
 <div class="t-ref-std-c++11">
 <ul><li> C++11 standard (ISO/IEC 14882:2011): 
 </li></ul>
@@ -694,22 +790,22 @@ std::atomic is neither copyable nor movable.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 8503/1000000
-Preprocessor generated node count: 11950/1000000
-Post‐expand include size: 219327/2097152 bytes
-Template argument size: 52123/2097152 bytes
+Preprocessor visited node count: 9291/1000000
+Preprocessor generated node count: 13325/1000000
+Post‐expand include size: 223458/2097152 bytes
+Template argument size: 53970/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4734-0!*!0!!en!*!* and timestamp 20151130141754 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4734-0!*!0!!en!*!* and timestamp 20170401053731 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=81254">http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=81254</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=91983">http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=91983</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
-                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_LWG_DR_marker" title="Category:Pages with unreviewed LWG DR marker">Pages with unreviewed LWG DR marker</a></li></ul></div></div>                    <!-- /catlinks -->
                                                             <div class="visualClear"></div>
                     <!-- debughtml -->
                                         <!-- /debughtml -->
@@ -729,7 +825,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="atomic.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/atomic/atomic" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/atomic/atomic" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=81254" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/atomic/atomic" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/atomic/atomic" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;oldid=91983" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -737,8 +833,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/atomic/atomic" title="cpp/atomic/atomic" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 October 2015, at 05:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 273,361 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 22:37.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 541,942 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -771,7 +867,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 9.079 secs. -->
+</script><!-- Served in 0.058 secs. -->
 	</body>
-<!-- Cached 20151130141754 -->
+<!-- Cached 20170401054530 -->
 </html>

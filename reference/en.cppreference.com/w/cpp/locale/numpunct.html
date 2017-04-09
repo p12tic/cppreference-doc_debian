@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -338,22 +339,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The facet <span class="t-lc">std::numpunct</span> encapsulates numeric punctuation preferences. Stream I/O operations use <span class="t-lc">std::numpunct</span> through <span class="t-lc">std::num_get</span> and <span class="t-lc">std::num_put</span> for parsing numeric input and formatting numeric output. 
-</p><p>The numbers that are supported by <span class="t-lc">std::numpunct</span> have the format described below. Here <code>digit</code> represents the radix set specified by the <code>fmtflags</code> argument value, <code>thousands-sep</code> and <code>decimal-point</code> are the results of <span class="t-lc">thousands_sep()</span> and <span class="t-lc">decimal_point()</span> functions respectively. The format of integer values is as follows:
+<p>The facet <span class="t-lc"><strong class="selflink">std::numpunct</strong></span> encapsulates numeric punctuation preferences. Stream I/O operations use <span class="t-lc"><strong class="selflink">std::numpunct</strong></span> through <span class="t-lc"><a href="num_get.html" title="cpp/locale/num get">std::num_get</a></span> and <span class="t-lc"><a href="num_put.html" title="cpp/locale/num put">std::num_put</a></span> for parsing numeric input and formatting numeric output. 
+</p><p>The numbers that are supported by <span class="t-lc"><strong class="selflink">std::numpunct</strong></span> have the format described below. Here <code>digit</code> represents the radix set specified by the <code>fmtflags</code> argument value, <code>thousands-sep</code> and <code>decimal-point</code> are the results of <span class="t-lc"><a href="numpunct/thousands_sep.html" title="cpp/locale/numpunct/thousands sep">thousands_sep()</a></span> and <span class="t-lc"><a href="numpunct/decimal_point.html" title="cpp/locale/numpunct/decimal point">decimal_point()</a></span> functions respectively. The format of integer values is as follows:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">integer    &#160;::= [sign] units
 sign       &#160;::= plusminus
 plusminus  &#160;::= '+' | '-'
 units      &#160;::= digits [thousands-sep units]
 digits     &#160;::= digit [digits]</pre></div></div>
-<p>The number of digits between the <code>thousand-sep</code>s (maximum size of <code>digits</code>) is specified by the result of <span class="t-lc">grouping()</span>.
+<p>The number of digits between the <code>thousand-sep</code>s (maximum size of <code>digits</code>) is specified by the result of <span class="t-lc"><a href="numpunct/grouping.html" title="cpp/locale/numpunct/grouping">grouping()</a></span>.
 </p><p>The format of floating-point values is as follows:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">floatval   &#160;::= [sign] units [decimal-point [digits]] [e [sign] digits] |
                 [sign]        decimal-point  digits   [e [sign] digits]
 e          &#160;::= ’e’ | ’E’</pre></div></div>
 <div class="t-inheritance-diagram">
-<div class="center"><div class="noresize" style="height: 45px; width: 243px; "><map name="ImageMap_1_535095255"><area href="locale/facet.html" shape="rect" coords="5,6,107,39" alt="cpp/locale/locale/facet" title="cpp/locale/locale/facet"/></map><img alt="std-numpunct-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/2/2c/std-numpunct-inheritance.svg" width="243" height="45" usemap="#ImageMap_1_535095255"/><div style="margin-left: 223px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-numpunct-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
+<div class="center"><div class="noresize" style="height: 45px; width: 243px; "><map name="ImageMap_1_830312936"><area href="locale/facet.html" shape="rect" coords="5,6,107,39" alt="cpp/locale/locale/facet" title="cpp/locale/locale/facet"/></map><img alt="std-numpunct-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/2/2c/std-numpunct-inheritance.svg" width="243" height="45" usemap="#ImageMap_1_830312936"/><div style="margin-left: 223px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-numpunct-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
 <div style="text-align:center;">
 <p><span style="font-size:0.7em; line-height:130%">Inheritance diagram</span>
 </p>
@@ -417,7 +418,7 @@ e          &#160;::= ’e’ | ’E’</pre></div></div>
 <tr class="t-dsc">
 <td>  <code>string_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
@@ -514,11 +515,11 @@ e          &#160;::= ’e’ | ’E’</pre></div></div>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;default locale: &quot;</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new french_bool<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;locale with modified numpunct: &quot;</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;default locale: &quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1761">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">getloc</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, new french_bool<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;locale with modified numpunct: &quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../io/manip/boolalpha.html"><span class="kw1761">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="kw2">true</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw2">false</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -538,15 +539,15 @@ locale with modified numpunct: oui, non</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6475/1000000
-Preprocessor generated node count: 10412/1000000
-Post‐expand include size: 170225/2097152 bytes
-Template argument size: 31600/2097152 bytes
+Preprocessor visited node count: 6506/1000000
+Preprocessor generated node count: 10493/1000000
+Post‐expand include size: 171628/2097152 bytes
+Template argument size: 31718/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2784-0!*!0!!en!2!* and timestamp 20151130143400 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2784-0!*!0!!en!2!* and timestamp 20161205231923 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -582,7 +583,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 7 October 2013, at 10:30.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,062 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 15,119 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -615,7 +616,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.554 secs. -->
+</script><!-- Served in 2.336 secs. -->
 	</body>
-<!-- Cached 20151130143400 -->
+<!-- Cached 20161205231923 -->
 </html>

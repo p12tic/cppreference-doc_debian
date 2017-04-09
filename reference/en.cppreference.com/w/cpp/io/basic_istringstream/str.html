@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -277,12 +278,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_istringstream/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span> str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span> str<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> str<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> new_str<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> str<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,Traits,Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> new_str<span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -327,20 +328,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> n<span class="sy4">;</span>
 &#160;
-    <a href="../basic_istringstream.html"><span class="kw1458">std::<span class="me2">istringstream</span></span></a> in<span class="sy4">;</span>  <span class="co1">// could also use in(&quot;1 2&quot;)</span>
+    <a href="../basic_istringstream.html"><span class="kw1732">std::<span class="me2">istringstream</span></span></a> in<span class="sy4">;</span>  <span class="co1">// could also use in(&quot;1 2&quot;)</span>
     in.<span class="me1">str</span><span class="br0">&#40;</span><span class="st0">&quot;1 2&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     in <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after reading the first int from <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>, the int is &quot;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after reading the first int from <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>, the int is &quot;</span>
               <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, str() = <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> in.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostringstream.html"><span class="kw1459">std::<span class="me2">ostringstream</span></span></a> out<span class="br0">&#40;</span><span class="st0">&quot;1 2&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ostringstream.html"><span class="kw1733">std::<span class="me2">ostringstream</span></span></a> out<span class="br0">&#40;</span><span class="st0">&quot;1 2&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     out <span class="sy1">&lt;&lt;</span> <span class="nu0">3</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after writing the int '3' to output stream <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>&quot;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after writing the int '3' to output stream <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, str() = <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> out.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../basic_ostringstream.html"><span class="kw1459">std::<span class="me2">ostringstream</span></span></a> ate<span class="br0">&#40;</span><span class="st0">&quot;1 2&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1401">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">ate</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ostringstream.html"><span class="kw1733">std::<span class="me2">ostringstream</span></span></a> ate<span class="br0">&#40;</span><span class="st0">&quot;1 2&quot;</span>, <a href="../ios_base/openmode.html"><span class="kw1674">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">ate</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     ate <span class="sy1">&lt;&lt;</span> <span class="nu0">3</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after writing the int '3' to append stream <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>&quot;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;after writing the int '3' to append stream <span class="es1">\&quot;</span>1 2<span class="es1">\&quot;</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;, str() = <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> ate.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -361,15 +362,15 @@ after writing the int '3' to append stream &quot;1 2&quot;, str() = &quot;1 23&q
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2799/1000000
-Preprocessor generated node count: 7317/1000000
-Post‐expand include size: 105260/2097152 bytes
-Template argument size: 13731/2097152 bytes
+Preprocessor visited node count: 2838/1000000
+Preprocessor generated node count: 7398/1000000
+Post‐expand include size: 106626/2097152 bytes
+Template argument size: 13849/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:537-0!*!0!!en!*!* and timestamp 20150825093928 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:537-0!*!0!!en!*!* and timestamp 20161205234637 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -404,8 +405,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_istringstream/str" title="cpp/io/basic istringstream/str" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,055 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:41.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,572 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -438,7 +439,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.651 secs. -->
+</script><!-- Served in 1.508 secs. -->
 	</body>
-<!-- Cached 20150825093928 -->
+<!-- Cached 20161205234637 -->
 </html>

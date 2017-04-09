@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -254,8 +255,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Specializations of the class template <span class="t-lc">std::fpos</span> identify absolute positions in a stream or in a file. Each object of type <code>fpos</code> holds the byte position in the stream (typically as a private member of type <span class="t-lc">std::streamoff</span>) and the current shift state, a value of type <code>State</code> (typically <span class="t-lc">std::mbstate_t</span>).
-</p><p>The following specializations of <span class="t-lc">std::fpos</span> are provided: 
+<p>Specializations of the class template <span class="t-lc"><strong class="selflink">std::fpos</strong></span> identify absolute positions in a stream or in a file. Each object of type <code>fpos</code> holds the byte position in the stream (typically as a private member of type <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span>) and the current shift state, a value of type <code>State</code> (typically <span class="t-lc"><a href="../string/multibyte/mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span>).
+</p><p>The following specializations of <span class="t-lc"><strong class="selflink">std::fpos</strong></span> are provided: 
 </p>
 <table class="t-dsc-begin">
 
@@ -269,20 +270,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>streampos</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 
 <tr class="t-dsc">
 <td>  <code>wstreampos</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span><span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
  <table class="t-rev-begin">
 <tr class="t-rev t-since-cxx11"><td>
-<p>In addition, <span class="t-lc">std::u16streampos</span> and <span class="t-lc">std::u32streampos</span> are provided as implementation-defined types that satisfy the requirements of <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/pos_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/pos type (page does not exist)"><code>pos_type</code></a>
+<p>In addition, <span class="t-lc"><strong class="selflink">std::u16streampos</strong></span> and <span class="t-lc"><strong class="selflink">std::u32streampos</strong></span> are provided as implementation-defined types that satisfy the requirements of <a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/pos_type&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/pos type (page does not exist)"><code>pos_type</code></a>
 </p>
 </td>
 <td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
@@ -301,23 +302,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 <ul><li> A constructor that accepts an argument of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>.
 </li></ul>
-<ul><li> A constructor that accepts an argument of type <span class="t-lc">std::streamoff</span>. This constructor must also accept the special value <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="streamoff.html"><span class="kw1526">std::<span class="me2">streamoff</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span></span></span>: the <code>std::fpos</code> constructed in this manner is returned by some stream operations to indicate errors.
+<ul><li> A constructor that accepts an argument of type <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span>. This constructor must also accept the special value <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="streamoff.html"><span class="kw1800">std::<span class="me2">streamoff</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span></span></span>: the <code>std::fpos</code> constructed in this manner is returned by some stream operations to indicate errors.
 </li></ul>
-<ul><li> A conversion operator that converts <code>fpos</code> to <span class="t-lc">std::streamoff</span> with the value equal to the offset from <code>std::fpos(0)</code>.
+<ul><li> A conversion operator that converts <code>fpos</code> to <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span> with the value equal to the offset from <code>std::fpos(0)</code>.
 </li></ul>
 <ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">==</span></span></span> that compares two objects of type <code>std::fpos</code> and returns a value of type convertible to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
 </li></ul>
 <ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy3">!</span><span class="sy1">=</span></span></span> that compares two objects of type <code>std::fpos</code> and returns a value of type convertible to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
 </li></ul>
-<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">+</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">+</span><span class="sy1">=</span></span></span> which can add <span class="t-lc">std::streamoff</span> to <code>std::fpos</code>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">+</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">+</span><span class="sy1">=</span></span></span> which can add <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span> to <code>std::fpos</code>
 </li></ul>
-<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span><span class="sy1">=</span></span></span> which can subtract <span class="t-lc">std::streamoff</span> from an <code>std::fpos</code>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span><span class="sy1">=</span></span></span> which can subtract <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span> from an <code>std::fpos</code>
 </li></ul>
-<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span></span></span> which can subtract two objects of type <code>std::fpos</code> producing an <span class="t-lc">std::streamoff</span>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy2">-</span></span></span> which can subtract two objects of type <code>std::fpos</code> producing an <span class="t-lc"><a href="streamoff.html" title="cpp/io/streamoff">std::streamoff</a></span>
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/fpos&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p><code>std::streampos</code> and <code>std::wstreampos</code> are required to be the same type because <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span></span></span> are required to both be <span class="t-lc">std::mbstate_t</span>. C++98 had a self-contradictory statement that they may be different if the implementation supports no shift encoding in narrow-oriented iostreams but supports one or more shift encodings in wide-oriented streams, but that was corrected in C++03.
-</p><p>Some of the <a href="../io.html" title="cpp/io">I/O streams member functions</a> return and manipulate objects of member typedef <code>pos_type</code>. For streams, these member typedefs are provided by the template parameter <code>Traits</code>, which defaults to <span class="t-lc">std::char_traits</span>, which define their <code>pos_type</code>s to be specializations of <code>std::fpos</code>. The behavior of the I/O streams library is implementation-defined when <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">pos_type</span></span></span> is not <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/multibyte/mbstate_t.html"><span class="kw1021">std::<span class="me2">mbstate_t</span></span></a><span class="sy1">&gt;</span></span></span> (aka <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">streampos</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">wstreampos</span></span></span>).
+<p><code>std::streampos</code> and <code>std::wstreampos</code> are required to be the same type because <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">state_type</span></span></span> are required to both be <span class="t-lc"><a href="../string/multibyte/mbstate_t.html" title="cpp/string/multibyte/mbstate t">std::mbstate_t</a></span>. C++98 had a self-contradictory statement that they may be different if the implementation supports no shift encoding in narrow-oriented iostreams but supports one or more shift encodings in wide-oriented streams, but that was corrected in C++03.
+</p><p>Some of the <a href="../io.html" title="cpp/io">I/O streams member functions</a> return and manipulate objects of member typedef <code>pos_type</code>. For streams, these member typedefs are provided by the template parameter <code>Traits</code>, which defaults to <span class="t-lc"><a href="../string/char_traits.html" title="cpp/string/char traits">std::char_traits</a></span>, which define their <code>pos_type</code>s to be specializations of <code>std::fpos</code>. The behavior of the I/O streams library is implementation-defined when <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">pos_type</span></span></span> is not <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">fpos</span><span class="sy1">&lt;</span><a href="../string/multibyte/mbstate_t.html"><span class="kw1176">std::<span class="me2">mbstate_t</span></span></a><span class="sy1">&gt;</span></span></span> (aka <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">streampos</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">wstreampos</span></span></span>).
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/fpos&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
@@ -350,15 +351,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3493/1000000
-Preprocessor generated node count: 7414/1000000
-Post‐expand include size: 73193/2097152 bytes
-Template argument size: 12763/2097152 bytes
+Preprocessor visited node count: 3524/1000000
+Preprocessor generated node count: 7495/1000000
+Post‐expand include size: 74748/2097152 bytes
+Template argument size: 12913/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3744-0!*!0!!*!*!* and timestamp 20151130154833 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3744-0!*!0!!*!*!* and timestamp 20161206062036 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -394,7 +395,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 10 November 2014, at 11:09.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,235 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 16,846 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -427,7 +428,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.755 secs. -->
+</script><!-- Served in 2.745 secs. -->
 	</body>
-<!-- Cached 20151130154833 -->
+<!-- Cached 20161206062036 -->
 </html>

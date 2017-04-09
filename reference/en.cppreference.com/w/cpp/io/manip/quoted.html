@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/manip/quoted","wgTitle":"cpp/io/manip/quoted","wgCurRevisionId":69838,"wgArticleId":12913,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/manip/quoted","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/io/manip/quoted","wgTitle":"cpp/io/manip/quoted","wgCurRevisionId":91261,"wgArticleId":12913,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/io/manip/quoted","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -340,32 +341,40 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl t-since-cxx14">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits, <span class="kw1">class</span> Allocator <span class="sy1">&gt;</span><br />
-<p><span class="coMULTI">/*unspecified*/</span> quoted<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, Traits, Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
+<p><span class="coMULTI">/*unspecified*/</span> quoted<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, Traits, Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;CharT delim<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'&quot;'</span><span class="br0">&#41;</span>, CharT escape<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'<span class="es1">\\</span>'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
-<tr class="t-dcl t-since-cxx14">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits, <span class="kw1">class</span> Allocator <span class="sy1">&gt;</span><br />
-<p><span class="coMULTI">/*unspecified*/</span> quoted<span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, Traits, Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits<span class="sy1">&gt;</span><br />
+<p><span class="coMULTI">/*unspecified*/</span> quoted<span class="br0">&#40;</span><a href="../../string/basic_string_view.html"><span class="kw1243">std::<span class="me2">basic_string_view</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span> s,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;CharT delim<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'&quot;'</span><span class="br0">&#41;</span>, CharT escape<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'<span class="es1">\\</span>'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (3) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits, <span class="kw1">class</span> Allocator <span class="sy1">&gt;</span><br />
+<p><span class="coMULTI">/*unspecified*/</span> quoted<span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, Traits, Allocator<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
+</p>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;CharT delim<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'&quot;'</span><span class="br0">&#41;</span>, CharT escape<span class="sy1">=</span>CharT<span class="br0">&#40;</span><span class="st0">'<span class="es1">\\</span>'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
 <td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Allows insertion and extraction of quoted strings, such as the ones found in CSV or XML.
 </p>
-<div class="t-li1"><span class="t-li">1,2)</span> When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> quoted<span class="br0">&#40;</span>s, delim, escape<span class="br0">&#41;</span></span></span>, where <code>out</code> is an output stream with <code>char_type</code> equal to <code>CharT</code> and, for overload 2, <code>traits_type</code> equal to <code>Traits</code>, behaves as a <a href="../../concept/FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction"><code>FormattedOutputFunction</code></a>, which inserts into <span class="t-c"><span class="mw-geshi cpp source-cpp">out</span></span> a sequence of characters <code>seq</code> constructed as follows:</div>
+<div class="t-li1"><span class="t-li">1-3)</span> When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">&lt;&lt;</span> quoted<span class="br0">&#40;</span>s, delim, escape<span class="br0">&#41;</span></span></span>, where <code>out</code> is an output stream with <code>char_type</code> equal to <code>CharT</code> and, for overload 2, <code>traits_type</code> equal to <code>Traits</code>, behaves as a <a href="../../concept/FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction"><code>FormattedOutputFunction</code></a>, which inserts into <span class="t-c"><span class="mw-geshi cpp source-cpp">out</span></span> a sequence of characters <code>seq</code> constructed as follows:</div>
 <div class="t-li2"><span class="t-li">a)</span> First, the character <code>delim</code> is added to the sequence</div>
 <div class="t-li2"><span class="t-li">b)</span> Then every character from <code>s</code>, except if the next character to output equals <code>delim</code> or equals <code>escape</code> (as determined by the stream's <code>traits_type::eq</code>), then first appends an extra copy of <code>escape</code></div>
 <div class="t-li2"><span class="t-li">c)</span> In the end, <code>delim</code> is appended to <code>seq</code> once more
 <dl><dd>Then, if <code>seq.size() &lt; out.width()</code>, adds <code>out.width()-seq.size()</code> copies of the fill character <code>out.fill()</code> either at the end of the sequence (if <code>ios_base::left</code> is set in <code>out.flags()</code>) or at the beginning of the sequence (in all other cases). 
-</dd><dd>Finally, outputs each character from the resulting sequence as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">out.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sputn<span class="br0">&#40;</span>seq, n<span class="br0">&#41;</span></span></span>, where <span class="t-c"><span class="mw-geshi cpp source-cpp">n<span class="sy1">=</span><a href="../../algorithm/max.html"><span class="kw1373">std::<span class="me2">max</span></span></a><span class="br0">&#40;</span>out.<span class="me1">width</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, seq.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">out.<span class="me1">width</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span></span></span> to cancel the effects of <span class="t-lc">std::setw</span>, if any.</div>
+</dd><dd>Finally, outputs each character from the resulting sequence as if by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">out.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>sputn<span class="br0">&#40;</span>seq, n<span class="br0">&#41;</span></span></span>, where <span class="t-c"><span class="mw-geshi cpp source-cpp">n<span class="sy1">=</span><a href="../../algorithm/max.html"><span class="kw1637">std::<span class="me2">max</span></span></a><span class="br0">&#40;</span>out.<span class="me1">width</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, seq.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">out.<span class="me1">width</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span></span></span> to cancel the effects of <span class="t-lc"><a href="setw.html" title="cpp/io/manip/setw">std::setw</a></span>, if any.</div>
 </dd></dl>
-<div class="t-li1"><span class="t-li">3)</span> When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">in <span class="sy1">&gt;&gt;</span> quoted<span class="br0">&#40;</span>s, delim, escape<span class="br0">&#41;</span></span></span>, where <code>in</code> is an input stream with <code>char_type</code> equal to <code>CharT</code> and <code>traits_type</code> equal to <code>Traits</code>, extracts characters from <span class="t-c"><span class="mw-geshi cpp source-cpp">in</span></span>, using <span class="t-lc">std::basic_istream::operator&gt;&gt;</span>, according to the following rules:</div>
+<div class="t-li1"><span class="t-li">4)</span> When used in an expression <span class="t-c"><span class="mw-geshi cpp source-cpp">in <span class="sy1">&gt;&gt;</span> quoted<span class="br0">&#40;</span>s, delim, escape<span class="br0">&#41;</span></span></span>, where <code>in</code> is an input stream with <code>char_type</code> equal to <code>CharT</code> and <code>traits_type</code> equal to <code>Traits</code>, extracts characters from <span class="t-c"><span class="mw-geshi cpp source-cpp">in</span></span>, using <span class="t-lc"><a href="../basic_istream/operator_gtgt.html" title="cpp/io/basic istream/operator gtgt">std::basic_istream::operator&gt;&gt;</a></span>, according to the following rules:</div>
 <div class="t-li2"><span class="t-li">a)</span> If the first character extracted does not equal <code>delim</code> (as determined by the stream's <code>traits_type::eq</code>), then simply performs <span class="t-c"><span class="mw-geshi cpp source-cpp">in <span class="sy1">&gt;&gt;</span> s</span></span>.</div>
 <div class="t-li2"><span class="t-li">b)</span> Otherwise (if the first character is the delimiter):</div>
 <div class="t-li3"><span class="t-li">1)</span> Turns off the <span class="t-lc">skipws</span> flag on the input stream</div>
@@ -411,7 +420,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Returns an object of unspecified type such that the described behavior takes place.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
-<p>Throws <span class="t-lc">std::ios_base::failure</span> if <code>operator&gt;&gt;</code> or <code>operator&lt;&lt;</code> throws.
+<p>Throws <span class="t-lc"><a href="../ios_base/failure.html" title="cpp/io/ios base/failure">std::ios_base::failure</a></span> if <code>operator&gt;&gt;</code> or <code>operator&lt;&lt;</code> throws.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -421,40 +430,40 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_stringstream.html"><span class="kw1460">std::<span class="me2">stringstream</span></span></a> ss<span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> in <span class="sy1">=</span> <span class="st0">&quot;String with spaces, and embedded <span class="es1">\&quot;</span>quotes<span class="es1">\&quot;</span> too&quot;</span><span class="sy4">;</span>
-    <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> out<span class="sy4">;</span>
+    <a href="../basic_stringstream.html"><span class="kw1734">std::<span class="me2">stringstream</span></span></a> ss<span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> in <span class="sy1">=</span> <span class="st0">&quot;String with spaces, and embedded <span class="es1">\&quot;</span>quotes<span class="es1">\&quot;</span> too&quot;</span><span class="sy4">;</span>
+    <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> out<span class="sy4">;</span>
 &#160;
     ss <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">quoted</span><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;in:  '&quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stored as '&quot;</span> <span class="sy1">&lt;&lt;</span> ss.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;read in     [&quot;</span> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]<span class="es1">\n</span>&quot;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;stored as   [&quot;</span> <span class="sy1">&lt;&lt;</span> ss.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     ss <span class="sy1">&gt;&gt;</span> std<span class="sy4">::</span><span class="me2">quoted</span><span class="br0">&#40;</span>out<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;out: '&quot;</span> <span class="sy1">&lt;&lt;</span> out <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;written out [&quot;</span> <span class="sy1">&lt;&lt;</span> out <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;]<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">in:  'String with spaces, and embedded &quot;quotes&quot; too'
-stored as '&quot;String with spaces, and embedded \&quot;quotes\&quot; too&quot;'
-out:  'String with spaces, and embedded &quot;quotes&quot; too'</pre></div></div> 
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">read in     [String with spaces, and embedded &quot;quotes&quot; too]
+stored as   [&quot;String with spaces, and embedded \&quot;quotes\&quot; too&quot;]
+written out [String with spaces, and embedded &quot;quotes&quot; too]</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4580/1000000
-Preprocessor generated node count: 7405/1000000
-Post‐expand include size: 113456/2097152 bytes
-Template argument size: 18856/2097152 bytes
+Preprocessor visited node count: 4723/1000000
+Preprocessor generated node count: 7559/1000000
+Post‐expand include size: 115458/2097152 bytes
+Template argument size: 19649/2097152 bytes
 Highest expansion depth: 16/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12913-0!*!0!!en!*!* and timestamp 20151130160950 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12913-0!*!0!!en!*!* and timestamp 20170330201945 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=69838">http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=69838</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=91261">http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=91261</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -477,7 +486,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="quoted.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/manip/quoted" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/manip/quoted" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=69838" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/manip/quoted" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/manip/quoted" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;oldid=91261" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/manip/quoted&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -485,8 +494,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/manip/quoted" title="cpp/io/manip/quoted" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 27 April 2014, at 13:00.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,532 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 March 2017, at 13:19.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 23,420 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -519,7 +528,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.753 secs. -->
+</script><!-- Served in 0.390 secs. -->
 	</body>
-<!-- Cached 20151130160950 -->
+<!-- Cached 20170330202532 -->
 </html>

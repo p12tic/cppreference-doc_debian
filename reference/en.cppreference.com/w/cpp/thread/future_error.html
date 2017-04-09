@@ -227,10 +227,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -252,6 +254,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -301,10 +304,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class <span class="t-lc">std::future_error</span> defines an exception object that is thrown on failure by the functions in the thread library that deal with asynchronous execution and shared states (<span class="t-lc">std::future</span>, <span class="t-lc">std::promise</span>, etc). Similar to <span class="t-lc">std::system_error</span>, this exception carries an error code compatible with <span class="t-lc">std::error_code</span>.
+<p>The class <span class="t-lc"><strong class="selflink">std::future_error</strong></span> defines an exception object that is thrown on failure by the functions in the thread library that deal with asynchronous execution and shared states (<span class="t-lc"><a href="future.html" title="cpp/thread/future">std::future</a></span>, <span class="t-lc"><a href="promise.html" title="cpp/thread/promise">std::promise</a></span>, etc). Similar to <span class="t-lc"><a href="../error/system_error.html" title="cpp/error/system error">std::system_error</a></span>, this exception carries an error code compatible with <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>.
 </p>
 <div class="t-inheritance-diagram">
-<div class="center"><div class="noresize" style="height: 40px; width: 374px; "><map name="ImageMap_1_1746686494"><area href="../error/exception.html" shape="rect" coords="5,4,107,36" alt="cpp/error/exception" title="cpp/error/exception"/><area href="../error/logic_error/logic_error.html" shape="rect" coords="135,4,238,36" alt="cpp/error/logic error" title="cpp/error/logic error"/></map><img alt="std-future error-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/a/ac/std-future_error-inheritance.svg" width="374" height="40" usemap="#ImageMap_1_1746686494"/><div style="margin-left: 354px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-future_error-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
+<div class="center"><div class="noresize" style="height: 40px; width: 374px; "><map name="ImageMap_1_1753740071"><area href="../error/exception.html" shape="rect" coords="5,4,107,36" alt="cpp/error/exception" title="cpp/error/exception"/><area href="../error/logic_error/logic_error.html" shape="rect" coords="135,4,238,36" alt="cpp/error/logic error" title="cpp/error/logic error"/></map><img alt="std-future error-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/a/ac/std-future_error-inheritance.svg" width="374" height="40" usemap="#ImageMap_1_1753740071"/><div style="margin-left: 354px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-future_error-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
 <div style="text-align:center;">
 <p><span style="font-size:0.7em; line-height:130%">Inheritance diagram</span>
 </p>
@@ -372,12 +375,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="future.html"><span class="kw1858">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> empty<span class="sy4">;</span>
+    <a href="future.html"><span class="kw2177">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> empty<span class="sy4">;</span>
     <span class="kw1">try</span> <span class="br0">&#123;</span>
         <span class="kw4">int</span> n <span class="sy1">=</span> empty.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// The behavior is undefined, but</span>
                              <span class="co1">// some implementations throw std::future_error</span>
     <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">future_error</span><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught a future_error with code <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+        <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught a future_error with code <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>Message: <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> e.<span class="me1">what</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -398,15 +401,15 @@ Message: &quot;No associated state&quot;</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4610/1000000
-Preprocessor generated node count: 9003/1000000
-Post‐expand include size: 148253/2097152 bytes
-Template argument size: 28929/2097152 bytes
+Preprocessor visited node count: 4778/1000000
+Preprocessor generated node count: 9143/1000000
+Post‐expand include size: 155896/2097152 bytes
+Template argument size: 30556/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8550-0!*!0!!en!2!* and timestamp 20151130143104 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8550-0!*!0!!en!2!* and timestamp 20161223000807 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -442,7 +445,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 August 2015, at 18:10.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 11,476 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 21,005 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -475,7 +478,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.411 secs. -->
+</script><!-- Served in 1.281 secs. -->
 	</body>
-<!-- Cached 20151130143104 -->
+<!-- Cached 20161223000807 -->
 </html>

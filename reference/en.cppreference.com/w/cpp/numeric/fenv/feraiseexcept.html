@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -270,7 +275,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Attempts to raise all floating point exceptions listed in <code>excepts</code> (a bitwise OR of the <a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">floating point exception macros</a>). If one of the exceptions is <span class="t-lc">FE_OVERFLOW</span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="FE_exceptions.html"><span class="kw1213">FE_UNDERFLOW</span></a></span></span>, this function may additionally raise <span class="t-lc">FE_INEXACT</span>. The order in which the exceptions are raised is unspecified, except that <span class="t-lc">FE_OVERFLOW</span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="FE_exceptions.html"><span class="kw1213">FE_UNDERFLOW</span></a></span></span> are always raised before <span class="t-lc">FE_INEXACT</span>.
+<p>Attempts to raise all floating point exceptions listed in <code>excepts</code> (a bitwise OR of the <a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">floating point exception macros</a>). If one of the exceptions is <span class="t-lc"><a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_OVERFLOW</a></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="FE_exceptions.html"><span class="kw1462">FE_UNDERFLOW</span></a></span></span>, this function may additionally raise <span class="t-lc"><a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span>. The order in which the exceptions are raised is unspecified, except that <span class="t-lc"><a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_OVERFLOW</a></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="FE_exceptions.html"><span class="kw1462">FE_UNDERFLOW</span></a></span></span> are always raised before <span class="t-lc"><a href="FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INEXACT</a></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -303,25 +308,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="feclearexcept.html"><span class="kw1198">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">int</span> r <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">feraiseexcept</span><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1213">FE_UNDERFLOW</span></a> <span class="sy3">|</span> <a href="FE_exceptions.html"><span class="kw1209">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;Raising divbyzero and underflow simultaneously &quot;</span>
+    <a href="feclearexcept.html"><span class="kw1447">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1457">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> r <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">feraiseexcept</span><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1462">FE_UNDERFLOW</span></a> <span class="sy3">|</span> <a href="FE_exceptions.html"><span class="kw1458">FE_DIVBYZERO</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span>  <span class="st0">&quot;Raising divbyzero and underflow simultaneously &quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="br0">&#40;</span>r<span class="sy4">?</span><span class="st0">&quot;fails&quot;</span><span class="sy4">:</span><span class="st0">&quot;succeeds&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; and results in<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-    <span class="kw4">int</span> e <span class="sy1">=</span> <a href="fetestexcept.html"><span class="kw1199">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1209">FE_DIVBYZERO</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;division by zero<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> e <span class="sy1">=</span> <a href="fetestexcept.html"><span class="kw1448">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="FE_exceptions.html"><span class="kw1457">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1458">FE_DIVBYZERO</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;division by zero<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1210">FE_INEXACT</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1459">FE_INEXACT</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;inexact<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1460">FE_INVALID</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;invalid<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1213">FE_UNDERFLOW</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1462">FE_UNDERFLOW</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1212">FE_OVERFLOW</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;overflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="sy3">&amp;</span> <a href="FE_exceptions.html"><span class="kw1461">FE_OVERFLOW</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;overflow<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -348,15 +353,15 @@ underflow</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2226/1000000
-Preprocessor generated node count: 5833/1000000
-Post‐expand include size: 71834/2097152 bytes
-Template argument size: 14606/2097152 bytes
+Preprocessor visited node count: 2415/1000000
+Preprocessor generated node count: 6008/1000000
+Post‐expand include size: 78950/2097152 bytes
+Template argument size: 15705/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5259-0!*!0!!en!*!* and timestamp 20151130142706 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5259-0!*!0!!en!*!* and timestamp 20161206133402 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -392,7 +397,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:41.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,254 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,833 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -425,7 +430,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.345 secs. -->
+</script><!-- Served in 1.503 secs. -->
 	</body>
-<!-- Cached 20151130142706 -->
+<!-- Cached 20161206133402 -->
 </html>

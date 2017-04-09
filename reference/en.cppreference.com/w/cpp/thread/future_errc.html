@@ -203,10 +203,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -228,6 +230,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -284,7 +287,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The scoped enumeration <code>std::future_errc</code> defines the error codes reported by <span class="t-lc">std::future</span> and related classes in <span class="t-lc">std::future_error</span> exception objects. Only four error codes are required, although the implementation may define additional error codes. Because the appropriate specialization of <span class="t-lc">std::is_error_code_enum</span> is provided, values of type <code>std::future_errc</code> are implicitly convertible to <span class="t-lc">std::error_code</span>. 
+<p>The scoped enumeration <code>std::future_errc</code> defines the error codes reported by <span class="t-lc"><a href="future.html" title="cpp/thread/future">std::future</a></span> and related classes in <span class="t-lc"><a href="future_error.html" title="cpp/thread/future error">std::future_error</a></span> exception objects. Only four error codes are required, although the implementation may define additional error codes. Because the appropriate specialization of <span class="t-lc"><a href="../error/error_code/is_error_code_enum.html" title="cpp/error/error code/is error code enum">std::is_error_code_enum</a></span> is provided, values of type <code>std::future_errc</code> are implicitly convertible to <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>. 
 </p>
  <table class="t-rev-begin">
 <tr class="t-rev t-since-cxx14"><td>
@@ -321,7 +324,7 @@ All error codes are distinct and non-zero.</td>
 <tr class="t-dsc">
 <td>  <code>future_already_retrieved</code>
 </td>
-<td>  the contents of shared state were already accessed through <span class="t-lc">std::future</span>
+<td>  the contents of shared state were already accessed through <span class="t-lc"><a href="future.html" title="cpp/thread/future">std::future</a></span>
 </td></tr>
 
 
@@ -335,7 +338,7 @@ All error codes are distinct and non-zero.</td>
 <tr class="t-dsc">
 <td>  <code>no_state</code>
 </td>
-<td>  attempt to access <span class="t-lc">std::promise</span> or <span class="t-lc">std::future</span> without an associated shared state
+<td>  attempt to access <span class="t-lc"><a href="promise.html" title="cpp/thread/promise">std::promise</a></span> or <span class="t-lc"><a href="future.html" title="cpp/thread/future">std::future</a></span> without an associated shared state
 </td></tr>
 
 </table>
@@ -360,11 +363,11 @@ All error codes are distinct and non-zero.</td>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="future_errc/is_error_code_enum.html" title="cpp/thread/future errc/is error code enum"> <span class="t-lines"><span>is_error_code_enum<span class="t-dsc-small">&lt;std::future_errc&gt;</span></span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
 </td>
-<td>   extends the type trait <span class="t-lc">std::is_error_code_enum</span> to identify future error codes <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/future_errc/dsc_is_error_code_enum&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   extends the type trait <span class="t-lc"><a href="../error/error_code/is_error_code_enum.html" title="cpp/error/error code/is error code enum">std::is_error_code_enum</a></span> to identify future error codes <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/thread/future_errc/dsc_is_error_code_enum&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread/future_errc&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>In C++11, <code>broken_promise</code> was specified to equal zero despite <span class="t-lc">std::error_code</span>/<span class="t-lc">std::error_condition</span> using zero to mean "no error". This was fixed in C++14.
+<p>In C++11, <code>broken_promise</code> was specified to equal zero despite <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>/<span class="t-lc"><a href="../error/error_condition.html" title="cpp/error/error condition">std::error_condition</a></span> using zero to mean "no error". This was fixed in C++14.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/thread/future_errc&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: no example </td></tr></table>
@@ -386,15 +389,15 @@ All error codes are distinct and non-zero.</td>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4606/1000000
-Preprocessor generated node count: 10649/1000000
-Post‐expand include size: 148049/2097152 bytes
-Template argument size: 28067/2097152 bytes
+Preprocessor visited node count: 4774/1000000
+Preprocessor generated node count: 10789/1000000
+Post‐expand include size: 156410/2097152 bytes
+Template argument size: 29960/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8543-0!*!0!!en!*!* and timestamp 20151130143100 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8543-0!*!0!!en!*!* and timestamp 20161223000810 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -430,7 +433,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 22 March 2014, at 13:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,140 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,760 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -463,7 +466,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.322 secs. -->
+</script><!-- Served in 1.085 secs. -->
 	</body>
-<!-- Cached 20151130143100 -->
+<!-- Cached 20161223000810 -->
 </html>

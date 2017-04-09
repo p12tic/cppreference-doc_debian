@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
@@ -235,6 +236,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../wide.html" title="cpp/string/wide"> Wide strings</a> </td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string.html" title="cpp/string/basic string"><span class="t-lines"><span>basic_string</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string_view.html" title="cpp/string/basic string view"><span class="t-lines"><span>basic_string_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../char_traits.html" title="cpp/string/char traits"><span class="t-lines"><span>char_traits</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../byte.html" title="cpp/string/byte"> Null-terminated byte strings</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
@@ -310,7 +312,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Compares two null-terminated byte strings according to the current locale as defined by the <span class="t-lc">LC_COLLATE</span> category.
+<p>Compares two null-terminated byte strings according to the current locale as defined by the <span class="t-lc"><a href="../../locale/LC_categories.html" title="cpp/locale/LC categories">LC_COLLATE</a></span> category.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -348,22 +350,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1717">LC_COLLATE</span></a>, <span class="st0">&quot;cs_CZ.iso88592&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1986">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1990">LC_COLLATE</span></a>, <span class="st0">&quot;cs_CZ.iso88592&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s1 <span class="sy1">=</span> <span class="st0">&quot;hrnec&quot;</span><span class="sy4">;</span>
     <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> s2 <span class="sy1">=</span> <span class="st0">&quot;chrt&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Czech locale: &quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In the Czech locale: &quot;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">strcoll</span><span class="br0">&#40;</span>s1, s2<span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
-         <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-         <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In lexicographical comparison: &quot;</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="strcmp.html"><span class="kw988">std::<span class="me2">strcmp</span></span></a><span class="br0">&#40;</span>s1, s2<span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
-         <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;In lexicographical comparison: &quot;</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="strcmp.html"><span class="kw1143">std::<span class="me2">strcmp</span></span></a><span class="br0">&#40;</span>s1, s2<span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+         <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-         <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+         <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; before &quot;</span> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -399,15 +401,15 @@ In lexicographical comparison: chrt before hrnec</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3895/1000000
-Preprocessor generated node count: 7222/1000000
-Post‐expand include size: 99142/2097152 bytes
-Template argument size: 16506/2097152 bytes
+Preprocessor visited node count: 4002/1000000
+Preprocessor generated node count: 7334/1000000
+Post‐expand include size: 102620/2097152 bytes
+Template argument size: 17113/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4584-0!*!0!!en!*!* and timestamp 20151130151112 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4584-0!*!0!!en!*!* and timestamp 20161206130708 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -443,7 +445,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:25.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,456 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,607 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -476,7 +478,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.215 secs. -->
+</script><!-- Served in 2.205 secs. -->
 	</body>
-<!-- Cached 20151130151112 -->
+<!-- Cached 20161206130708 -->
 </html>

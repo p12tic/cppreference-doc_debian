@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../iterator.html" title="cpp/iterator"> Iterator library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Iterator primitives</td></tr>
@@ -286,8 +287,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl t-until-cxx17">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span>,<br />
-&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1090">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br />
-<span class="kw1">class</span> ostream_iterator <span class="sy4">:</span> <span class="kw1">public</span> <a href="iterator.html"><span class="kw563">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_tags.html"><span class="kw559">std::<span class="me2">output_iterator_tag</span></span></a>,<br />
+&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1263">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br />
+<span class="kw1">class</span> ostream_iterator <span class="sy4">:</span> <span class="kw1">public</span> <a href="iterator.html"><span class="kw657">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_tags.html"><span class="kw653">std::<span class="me2">output_iterator_tag</span></span></a>,<br />
 </p>
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">void</span>, <span class="kw4">void</span>, <span class="kw4">void</span>, <span class="kw4">void</span><span class="sy1">&gt;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -296,7 +297,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl t-since-cxx17">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> CharT <span class="sy1">=</span> <span class="kw4">char</span>,<br />
-&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1090">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;&gt;</span><br />
+&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1263">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;&gt;</span><br />
 </p>
 <span class="kw1">class</span> ostream_iterator<span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -304,9 +305,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><code>std::ostream_iterator</code> is a single-pass <a href="../concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a> that writes successive objects of type <code>T</code> into the <span class="t-lc">std::basic_ostream</span> object for which it was constructed, using <code>operator&lt;&lt;</code>. Optional delimiter string is written to the output stream after every write operation. The write operation is performed when the iterator (whether dereferenced or not) is assigned to. Incrementing the <code>std::ostream_iterator</code> is a no-op.
+<p><code>std::ostream_iterator</code> is a single-pass <a href="../concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a> that writes successive objects of type <code>T</code> into the <span class="t-lc"><a href="../io/basic_ostream.html" title="cpp/io/basic ostream">std::basic_ostream</a></span> object for which it was constructed, using <code>operator&lt;&lt;</code>. Optional delimiter string is written to the output stream after every write operation. The write operation is performed when the iterator (whether dereferenced or not) is assigned to. Incrementing the <code>std::ostream_iterator</code> is a no-op.
 </p><p>In a typical implementation, the only data members of <code>std::ostream_iterator</code> are a pointer to the associated <code>std::basic_ostream</code> and a pointer to the first character in the delimiter string.
-</p><p>When writing characters, <span class="t-lc">std::ostreambuf_iterator</span> is more efficient, since it avoids the overhead of constructing and destructing the sentry object once per character.
+</p><p>When writing characters, <span class="t-lc"><a href="ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator">std::ostreambuf_iterator</a></span> is more efficient, since it avoids the overhead of constructing and destructing the sentry object once per character.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -344,7 +345,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>ostream_type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_ostream.html"><span class="kw1437">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_ostream.html"><span class="kw1711">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
@@ -422,11 +423,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>iterator_category</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_tags.html"><span class="kw559">std::<span class="me2">output_iterator_tag</span></span></a></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_tags.html"><span class="kw653">std::<span class="me2">output_iterator_tag</span></span></a></span></span>
 </td></tr>
 
 </table>
-<p>Note: before C++17, these member types are required to be obtained by inheriting from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator.html"><span class="kw563">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_tags.html"><span class="kw559">std::<span class="me2">output_iterator_tag</span></span></a>,<span class="kw4">void</span>,<span class="kw4">void</span>,<span class="kw4">void</span>,<span class="kw4">void</span><span class="sy1">&gt;</span></span></span>.
+<p>Note: before C++17, these member types are required to be obtained by inheriting from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator.html"><span class="kw657">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_tags.html"><span class="kw653">std::<span class="me2">output_iterator_tag</span></span></a>,<span class="kw4">void</span>,<span class="kw4">void</span>,<span class="kw4">void</span>,<span class="kw4">void</span><span class="sy1">&gt;</span></span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/iterator/ostream_iterator&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -437,10 +438,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../io/basic_istringstream.html"><span class="kw1457">std::<span class="me2">istringstream</span></span></a> str<span class="br0">&#40;</span><span class="st0">&quot;0.1 0.2 0.3 0.4&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../algorithm/partial_sum.html"><span class="kw1385">std::<span class="me2">partial_sum</span></span></a><span class="br0">&#40;</span><a href="istream_iterator.html"><span class="kw573">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>,
-                      <a href="istream_iterator.html"><span class="kw573">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,
-                      std<span class="sy4">::</span><span class="me2">ostream_iterator</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a>, <span class="st0">&quot; &quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/basic_istringstream.html"><span class="kw1731">std::<span class="me2">istringstream</span></span></a> str<span class="br0">&#40;</span><span class="st0">&quot;0.1 0.2 0.3 0.4&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../algorithm/partial_sum.html"><span class="kw1650">std::<span class="me2">partial_sum</span></span></a><span class="br0">&#40;</span><a href="istream_iterator.html"><span class="kw668">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>,
+                      <a href="istream_iterator.html"><span class="kw668">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,
+                      std<span class="sy4">::</span><span class="me2">ostream_iterator</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a>, <span class="st0">&quot; &quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -452,13 +453,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator"> <span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div>
 </td>
-<td>   output iterator that writes to <span class="t-lc">std::basic_streambuf</span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_ostreambuf_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   output iterator that writes to <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_ostreambuf_iterator&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="istream_iterator.html" title="cpp/iterator/istream iterator"> <span class="t-lines"><span>istream_iterator</span></span></a></div></div>
 </td>
-<td>   input iterator that reads from <span class="t-lc">std::basic_istream</span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_istream_iterator&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   input iterator that reads from <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span> <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_istream_iterator&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -471,15 +472,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4493/1000000
-Preprocessor generated node count: 9525/1000000
-Post‐expand include size: 125248/2097152 bytes
-Template argument size: 26313/2097152 bytes
+Preprocessor visited node count: 4509/1000000
+Preprocessor generated node count: 9587/1000000
+Post‐expand include size: 126674/2097152 bytes
+Template argument size: 26564/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4913-0!*!0!!en!*!* and timestamp 20151130144335 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4913-0!*!0!!en!*!* and timestamp 20161205221655 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -515,7 +516,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 29 July 2015, at 18:19.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 28,544 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 50,215 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -548,7 +549,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.138 secs. -->
+</script><!-- Served in 2.144 secs. -->
 	</body>
-<!-- Cached 20151130144335 -->
+<!-- Cached 20161205221657 -->
 </html>

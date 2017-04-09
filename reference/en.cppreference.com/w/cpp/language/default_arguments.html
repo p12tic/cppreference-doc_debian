@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/default_arguments","wgTitle":"cpp/language/default arguments","wgCurRevisionId":80332,"wgArticleId":13509,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/default_arguments","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/default_arguments","wgTitle":"cpp/language/default arguments","wgCurRevisionId":91939,"wgArticleId":13509,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/default_arguments","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="functions.html" title="cpp/language/functions"> Functions</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -358,12 +359,13 @@ C<span class="sy4">::</span><span class="me2">C</span><span class="br0">&#40;</s
     b.<span class="me1">f</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK: calls Derived::f(7) </span>
     d.<span class="me1">f</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// Error: no default </span>
 <span class="br0">&#125;</span></pre></div></div>
-<p>Local variables are not allowed in default arguments:
+<p>Local variables are not allowed in default arguments <span class="t-rev-inl t-since-cxx14"><span>unless used in unevaluated context</span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span> 
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
     <span class="kw4">extern</span> <span class="kw4">void</span> g<span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy1">=</span> n<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// error: local variable cannot be a default</span>
+    <span class="kw4">extern</span> <span class="kw4">void</span> h<span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy1">=</span> sizeof n<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK as of CWG 2082</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>The <a href="this.html" title="cpp/language/this">this</a> pointer is not allowed in default arguments:
 </p>
@@ -379,11 +381,12 @@ C<span class="sy4">::</span><span class="me2">C</span><span class="br0">&#40;</s
   <span class="kw4">int</span> mem2<span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> b<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK: lookup finds X::b, the static member</span>
   <span class="kw4">static</span> <span class="kw4">int</span> b<span class="sy4">;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
-<p>Function parameters are not allowed in default arguments (even if they are not evaluated). Note that parameters that appear earlier in the parameter list are in <a href="scope.html" title="cpp/language/scope">scope</a>:
+<p>Function parameters are not allowed in default arguments <span class="t-rev-inl t-until-cxx14"><span>(even if they are not evaluated)</span> <span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span><span class="t-rev-inl t-since-cxx14"><span>except if they are unevaluated</span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>. Note that parameters that appear earlier in the parameter list are in <a href="scope.html" title="cpp/language/scope">scope</a>:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> a<span class="sy4">;</span>
 <span class="kw4">int</span> f<span class="br0">&#40;</span><span class="kw4">int</span> a, <span class="kw4">int</span> b <span class="sy1">=</span> a<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// Error: the parameter a used in a default argument</span>
-<span class="kw4">int</span> g<span class="br0">&#40;</span><span class="kw4">int</span> a, <span class="kw4">int</span> b <span class="sy1">=</span> sizeof<span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// Error: parameter a is used in a default argument</span></pre></div></div>
+<span class="kw4">int</span> g<span class="br0">&#40;</span><span class="kw4">int</span> a, <span class="kw4">int</span> b <span class="sy1">=</span> sizeof a<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// Error until CWG 2082</span>
+                                <span class="co1">// OK after CWG 2082: use in unevaluated context is OK</span></pre></div></div>
 <p>The default arguments are not part of the function type
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -404,25 +407,54 @@ If a <a href="lambda.html" title="cpp/language/lambda">lambda-expression</a> app
     <span class="kw4">void</span> g4<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy1">=</span> <span class="br0">&#40;</span><span class="br0">&#91;</span><span class="sy1">=</span><span class="br0">&#93;</span><span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>       <span class="co1">// OK: capture-less</span>
     <span class="kw4">void</span> g5<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy1">=</span> <span class="br0">&#40;</span><span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#123;</span> <span class="kw1">return</span> sizeof i<span class="sy4">;</span> <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// OK: capture-less</span>
 <span class="br0">&#125;</span></pre></div></div>
+<p><br />
+Operator functions shall not have default arguments, except for the function call operator.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> C <span class="br0">&#123;</span>
+    <span class="kw4">int</span> operator<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// ill-formed</span>
+    <span class="kw4">int</span> operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// ok</span>
+<span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;action=edit&amp;section=1" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tr>
+<th> DR
+</th>
+<th> Applied to
+</th>
+<th> Behavior as published
+</th>
+<th> Correct behavior
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://open-std.org/JTC1/SC22/WG21/docs/cwg_defects.html#2082">CWG 2082</a>
+</td>
+<td> C++14
+</td>
+<td> default arguments were forbidden to use locals in unevaluated context
+</td>
+<td> unevaluated context use allowed
+</td></tr></table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 1002/1000000
-Preprocessor generated node count: 3030/1000000
-Post‐expand include size: 29341/2097152 bytes
-Template argument size: 7341/2097152 bytes
+Preprocessor visited node count: 1253/1000000
+Preprocessor generated node count: 3519/1000000
+Post‐expand include size: 32133/2097152 bytes
+Template argument size: 8078/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13509-0!*!0!*!*!*!* and timestamp 20150805175401 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13509-0!*!0!*!*!*!* and timestamp 20170331201318 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=80332">http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=80332</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=91939">http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=91939</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
-                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_CWG_DR_marker" title="Category:Pages with unreviewed CWG DR marker">Pages with unreviewed CWG DR marker</a></li></ul></div></div>                    <!-- /catlinks -->
                                                             <div class="visualClear"></div>
                     <!-- debughtml -->
                                         <!-- /debughtml -->
@@ -442,11 +474,11 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="default_arguments.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/default_arguments" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/default_arguments" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=80332" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/default_arguments" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/default_arguments" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;oldid=91939" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/default_arguments&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 5 August 2015, at 10:54.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,577 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 13:13.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 157,146 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -479,7 +511,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.074 secs. -->
+</script><!-- Served in 0.068 secs. -->
 	</body>
-<!-- Cached 20150805180643 -->
+<!-- Cached 20170331201533 -->
 </html>

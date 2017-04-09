@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../regex.html" title="cpp/regex"> Regular expressions library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
@@ -263,11 +264,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT,<br />
 &#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> STraits, <span class="kw1">class</span> SAlloc <span class="sy1">&gt;</span><br />
 OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first, BidirIt last,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -275,11 +276,11 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> OutputIt, <span class="kw1">class</span> BidirIt,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT <span class="sy1">&gt;</span><br />
 OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first, BidirIt last,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <span class="kw4">const</span> CharT<span class="sy2">*</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -287,51 +288,51 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> STraits, <span class="kw1">class</span> SAlloc,<br />
 &#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> FTraits, <span class="kw1">class</span> FAlloc <span class="sy1">&gt;</span><br />
-<a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span> <br />
-&#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,FTraits,FAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+<a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span> <br />
+&#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,FTraits,FAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (3) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> STraits, <span class="kw1">class</span> SAlloc <span class="sy1">&gt;</span><br />
-<a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span> <br />
-&#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+<a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span> <br />
+&#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> s,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> CharT<span class="sy2">*</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (4) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT,<br />
 <p>&#160; &#160; &#160; &#160; &#160; <span class="kw1">class</span> STraits, <span class="kw1">class</span> SAlloc <span class="sy1">&gt;</span><br />
-<a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
+<a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
 &#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> CharT<span class="sy2">*</span> s,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT,STraits,SAlloc<span class="sy1">&gt;</span><span class="sy3">&amp;</span> fmt,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (5) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Traits, <span class="kw1">class</span> CharT <span class="sy1">&gt;</span><br />
-<p><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
+<p><a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
 &#160; &#160; regex_replace<span class="br0">&#40;</span> <span class="kw4">const</span> CharT<span class="sy2">*</span> s,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1723">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="basic_regex.html"><span class="kw1996">std::<span class="me2">basic_regex</span></span></a><span class="sy1">&lt;</span>CharT,Traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> re,<br />
 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> CharT<span class="sy2">*</span> fmt,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1761">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2034">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_flag_type</span></span></a> flags <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw1762">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<a href="match_flag_type.html"><span class="kw2035">std::<span class="me2">regex_constants</span><span class="sy4">::</span><span class="me2">match_default</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (6) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -340,18 +341,18 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 <p><code>regex_replace</code> uses a regular expression to perform substitution on a sequence of characters:
 </p>
 <div class="t-li1"><span class="t-li">1)</span> Copies characters in the range <code>[first,last)</code> to <code>out</code>, replacing any sequences that match <code>re</code> with characters formatted by <code>fmt</code>.  In other words:</div>
-<dl><dd><dl><dd><ul><li> Constructs a <span class="t-lc">std::regex_iterator</span> object <code>i</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="regex_iterator.html"><span class="kw1738">std::<span class="me2">regex_iterator</span></span></a><span class="sy1">&lt;</span>BidirIt, CharT, traits<span class="sy1">&gt;</span> i<span class="br0">&#40;</span>first, last, re, flags<span class="br0">&#41;</span></span></span>, and uses it to step through every match of <code>re</code> within the sequence <code>[first,last)</code>. 
-</li><li> For each such match <code>m</code>, copies the non-matched subsequence (<a href="match_results/prefix.html" title="cpp/regex/match results/prefix"><code>m.prefix()</code></a>) into <code>out</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1315">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>m.<span class="me1">prefix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">first</span>, m.<span class="me1">prefix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">second</span>, out<span class="br0">&#41;</span></span></span> and then replaces the matched subsequence with the formatted replacement string as if by calling <a href="match_results/format.html" title="cpp/regex/match results/format"><span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> m.<span class="me1">format</span><span class="br0">&#40;</span>out, fmt, flags<span class="br0">&#41;</span></span></span></a>. 
-</li><li> When no more matches are found, copies the remaining non-matched characters to <code>out</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1315">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>last_m.<span class="me1">suffix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">first</span>, last_m.<span class="me1">suffix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">second</span>, out<span class="br0">&#41;</span></span></span> where <code>last_m</code> is a copy of the last match found. 
-</li><li> If there are no matches, copies the entire sequence into <code>out</code> as-is, by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1315">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>first, last, out<span class="br0">&#41;</span></span></span>
-</li><li> If <code>flags</code> contains <span class="t-lc">std::regex_constants::format_no_copy</span>, the non-matched subsequences are not copied into <code>out</code>.
-</li><li> If <code>flags</code> contains <span class="t-lc">std::regex_constants::format_first_only</span>, only the first match is replaced.
+<dl><dd><dl><dd><ul><li> Constructs a <span class="t-lc"><a href="regex_iterator.html" title="cpp/regex/regex iterator">std::regex_iterator</a></span> object <code>i</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="regex_iterator.html"><span class="kw2011">std::<span class="me2">regex_iterator</span></span></a><span class="sy1">&lt;</span>BidirIt, CharT, traits<span class="sy1">&gt;</span> i<span class="br0">&#40;</span>first, last, re, flags<span class="br0">&#41;</span></span></span>, and uses it to step through every match of <code>re</code> within the sequence <code>[first,last)</code>. 
+</li><li> For each such match <code>m</code>, copies the non-matched subsequence (<a href="match_results/prefix.html" title="cpp/regex/match results/prefix"><code>m.prefix()</code></a>) into <code>out</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1579">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>m.<span class="me1">prefix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">first</span>, m.<span class="me1">prefix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">second</span>, out<span class="br0">&#41;</span></span></span> and then replaces the matched subsequence with the formatted replacement string as if by calling <a href="match_results/format.html" title="cpp/regex/match results/format"><span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> m.<span class="me1">format</span><span class="br0">&#40;</span>out, fmt, flags<span class="br0">&#41;</span></span></span></a>. 
+</li><li> When no more matches are found, copies the remaining non-matched characters to <code>out</code> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1579">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>last_m.<span class="me1">suffix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">first</span>, last_m.<span class="me1">suffix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">second</span>, out<span class="br0">&#41;</span></span></span> where <code>last_m</code> is a copy of the last match found. 
+</li><li> If there are no matches, copies the entire sequence into <code>out</code> as-is, by <span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> <a href="../algorithm/copy.html"><span class="kw1579">std::<span class="me2">copy</span></span></a><span class="br0">&#40;</span>first, last, out<span class="br0">&#41;</span></span></span>
+</li><li> If <code>flags</code> contains <span class="t-lc"><a href="match_flag_type.html" title="cpp/regex/match flag type">std::regex_constants::format_no_copy</a></span>, the non-matched subsequences are not copied into <code>out</code>.
+</li><li> If <code>flags</code> contains <span class="t-lc"><a href="match_flag_type.html" title="cpp/regex/match flag type">std::regex_constants::format_first_only</a></span>, only the first match is replaced.
 </li></ul>
 </dd></dl>
 </dd></dl>
 <div class="t-li1"><span class="t-li">2)</span> same as 1), but the formatted replacement is performed as if by calling <a href="match_results/format.html" title="cpp/regex/match results/format"><span class="t-c"><span class="mw-geshi cpp source-cpp">out <span class="sy1">=</span> m.<span class="me1">format</span><span class="br0">&#40;</span>out, fmt, fmt <span class="sy2">+</span> char_traits<span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">length</span><span class="br0">&#40;</span>fmt<span class="br0">&#41;</span>, flags<span class="br0">&#41;</span></span></span></a></div>
-<div class="t-li1"><span class="t-li">3-4)</span> Constructs an empty string <code>result</code> of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, ST, SA<span class="sy1">&gt;</span></span></span> and calls <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/back_inserter.html"><span class="kw570">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span>, s.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, s.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, re, fmt, flags<span class="br0">&#41;</span></span></span>.</div>
-<div class="t-li1"><span class="t-li">5-6)</span> Constructs an empty string <code>result</code> of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span> and calls <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/back_inserter.html"><span class="kw570">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span>, s, s <span class="sy2">+</span> <a href="../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">length</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span>, re, fmt, flags<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3-4)</span> Constructs an empty string <code>result</code> of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT, ST, SA<span class="sy1">&gt;</span></span></span> and calls <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/back_inserter.html"><span class="kw665">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span>, s.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, s.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, re, fmt, flags<span class="br0">&#41;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">5-6)</span> Constructs an empty string <code>result</code> of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span></span></span> and calls <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/back_inserter.html"><span class="kw665">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span>, s, s <span class="sy2">+</span> <a href="../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">length</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span>, re, fmt, flags<span class="br0">&#41;</span></span></span>.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="regex_replace.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
@@ -377,21 +378,21 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 </td>
 <td> -
 </td>
-<td>  the input character sequence, represented as <span class="t-lc">std::basic_string</span> or character array
+<td>  the input character sequence, represented as <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::basic_string</a></span> or character array
 </td></tr>
 <tr class="t-par">
 <td>  re
 </td>
 <td> -
 </td>
-<td>  the <span class="t-lc">std::basic_regex</span> that will be matched against the input sequence
+<td>  the <span class="t-lc"><a href="basic_regex.html" title="cpp/regex/basic regex">std::basic_regex</a></span> that will be matched against the input sequence
 </td></tr>
 <tr class="t-par">
 <td>  flags
 </td>
 <td> -
 </td>
-<td>  the match flags of type <span class="t-lc">std::regex_constants::match_flag_type</span>
+<td>  the match flags of type <span class="t-lc"><a href="match_flag_type.html" title="cpp/regex/match flag type">std::regex_constants::match_flag_type</a></span>
 </td></tr>
 <tr class="t-par">
 <td>  fmt
@@ -420,7 +421,7 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 <div class="t-li1"><span class="t-li">1-2)</span> Returns a copy of the output iterator <code>out</code> after all the insertions.</div>
 <div class="t-li1"><span class="t-li">3-6)</span> Returns the string <code>result</code> which contains the output.</div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/regex/regex_replace&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
-<p>May throw <span class="t-lc">std::regex_error</span> to indicate an <a href="error_type.html" title="cpp/regex/error type">error condition</a>.
+<p>May throw <span class="t-lc"><a href="regex_error.html" title="cpp/regex/regex error">std::regex_error</a></span> to indicate an <a href="error_type.html" title="cpp/regex/error type">error condition</a>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/regex/regex_replace&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -431,15 +432,15 @@ OutputIt regex_replace<span class="br0">&#40;</span> OutputIt out, BidirIt first
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-   <a href="../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a> text <span class="sy1">=</span> <span class="st0">&quot;Quick brown fox&quot;</span><span class="sy4">;</span>
-   <a href="basic_regex.html"><span class="kw1724">std::<span class="me2">regex</span></span></a> vowel_re<span class="br0">&#40;</span><span class="st0">&quot;a|e|i|o|u&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+   <a href="../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a> text <span class="sy1">=</span> <span class="st0">&quot;Quick brown fox&quot;</span><span class="sy4">;</span>
+   <a href="basic_regex.html"><span class="kw1997">std::<span class="me2">regex</span></span></a> vowel_re<span class="br0">&#40;</span><span class="st0">&quot;a|e|i|o|u&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
    <span class="co1">// write the results to an output iterator</span>
-   std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/ostreambuf_iterator.html"><span class="kw576">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span>,
+   std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span><a href="../iterator/ostreambuf_iterator.html"><span class="kw671">std::<span class="me2">ostreambuf_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span><a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span>,
                       text.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, text.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, vowel_re, <span class="st0">&quot;*&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
    <span class="co1">// construct a string holding the results</span>
-   <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span>text, vowel_re, <span class="st0">&quot;[$&amp;]&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+   <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">regex_replace</span><span class="br0">&#40;</span>text, vowel_re, <span class="st0">&quot;[$&amp;]&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -464,15 +465,15 @@ Q[u][i]ck br[o]wn f[o]x</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3088/1000000
-Preprocessor generated node count: 7457/1000000
-Post‐expand include size: 75114/2097152 bytes
-Template argument size: 21755/2097152 bytes
+Preprocessor visited node count: 3111/1000000
+Preprocessor generated node count: 7538/1000000
+Post‐expand include size: 76545/2097152 bytes
+Template argument size: 21957/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3270-0!*!0!!en!*!* and timestamp 20151130141705 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3270-0!*!0!!en!*!* and timestamp 20161205222957 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -508,7 +509,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 22 March 2014, at 12:15.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 25,382 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 45,175 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -541,7 +542,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.752 secs. -->
+</script><!-- Served in 2.690 secs. -->
 	</body>
-<!-- Cached 20151130141705 -->
+<!-- Cached 20161205222957 -->
 </html>

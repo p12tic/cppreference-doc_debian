@@ -227,14 +227,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../experimental.html" title="cpp/experimental"> Technical specifications</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../../fs.html" title="cpp/experimental/fs">Filesystem library</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(filesystem TS)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../memory.html" title="cpp/experimental/lib extensions">Library fundamentals</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(library fundamentals TS)</span></td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../lib_extensions_2.html" title="cpp/experimental/lib extensions 2">Library fundamentals 2</a> <span class="t-mark-rev t-since-libfund-2-ts t-mark-ts">(library fundamentals 2 TS)</span></td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(parallelism TS)</span> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-parallelism-ts t-mark-ts">(parallelism TS)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(concurrency TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../ranges.html" title="cpp/experimental/ranges">Ranges</a> <span class="t-mark-rev t-since-ranges-ts t-mark-ts">(ranges TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../special_math.html" title="cpp/experimental/special math">Special mathematical functions</a> <span class="t-mark-rev t-since-special-math-tr t-mark-ts">(special math TR)</span></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../fs.html" title="cpp/experimental/fs"> Filesystem library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h2"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
@@ -389,7 +392,7 @@ path<span class="sy3">&amp;</span> concat<span class="br0">&#40;</span> InputIte
 <div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, except the resulting <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> is a concatenation of the original {<a href="native.html" title="cpp/experimental/fs/path/native">native()</a> and the string <code>str</code></div>
 <div class="t-li1"><span class="t-li">3)</span> Same as <span class="t-v">(1)</span>, except the resulting <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> is a concatenation of the original <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> and the null-terminated string whose first character is pointed to by <code>ptr</code></div>
 <div class="t-li1"><span class="t-li">4)</span> Same as <span class="t-v">(1)</span>, except the resulting <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> is a concatenation of the original <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> and the single character <code>x</code></div>
-<div class="t-li1"><span class="t-li">5)</span> Same as <span class="t-v">(1)</span>, except the resulting <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> is a concatenation of the original <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> and the sequence (which may be in portable or native format) represented by <code>source</code>, which may be <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a></span></span>, null-terminated multicharacter string, or an input iterator pointing to a null-terminated multicharacter sequence.</div>
+<div class="t-li1"><span class="t-li">5)</span> Same as <span class="t-v">(1)</span>, except the resulting <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> is a concatenation of the original <a href="native.html" title="cpp/experimental/fs/path/native">native()</a> and the sequence (which may be in portable or native format) represented by <code>source</code>, which may be <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a></span></span>, null-terminated multicharacter string, or an input iterator pointing to a null-terminated multicharacter sequence.</div>
 <div class="t-li1"><span class="t-li">6)</span> Same as <span class="t-v">(4)</span>, except that character conversion may be performed</div>
 <div class="t-li1"><span class="t-li">7)</span> Same as <span class="t-v">(5)</span></div>
 <div class="t-li1"><span class="t-li">8)</span> Same as <span class="t-v">(5)</span>, except that the sequence is represented by any iterator pair that designates a multicharacter string.</div>
@@ -440,7 +443,7 @@ path<span class="sy3">&amp;</span> concat<span class="br0">&#40;</span> InputIte
 </td>
 <td> -
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../string/basic_string.html"><span class="kw1070">std::<span class="me2">basic_string</span></span></a></span></span>, null-terminated multicharacter string, or an input iterator pointing to a null-terminated multicharacter sequence, which represents a path name (either in portable or in native format)
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../string/basic_string.html"><span class="kw1225">std::<span class="me2">basic_string</span></span></a></span></span>, null-terminated multicharacter string, or an input iterator pointing to a null-terminated multicharacter sequence, which represents a path name (either in portable or in native format)
 </td></tr>
 <tr class="t-par">
 <td>  first, last
@@ -465,10 +468,10 @@ path<span class="sy3">&amp;</span> concat<span class="br0">&#40;</span> InputIte
 <p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
-<p>May throw <a href="../filesystem_error.html" title="cpp/experimental/fs/filesystem error"><tt>filesystem_error</tt></a> on underlying OS API errors or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../memory/new/bad_alloc.html"><span class="kw595">std::<span class="me2">bad_alloc</span></span></a></span></span> if memory allocation fails.
+<p>May throw <a href="../filesystem_error.html" title="cpp/experimental/fs/filesystem error"><tt>filesystem_error</tt></a> on underlying OS API errors or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../memory/new/bad_alloc.html"><span class="kw693">std::<span class="me2">bad_alloc</span></span></a></span></span> if memory allocation fails.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Unlike with <span class="t-lc">append()</span> or <span class="t-lc">operator/=</span>, additional directory separators are never introduced.
+<p>Unlike with <span class="t-lc"><a href="append.html" title="cpp/experimental/fs/path/append">append()</a></span> or <span class="t-lc"><a href="append.html" title="cpp/experimental/fs/path/append">operator/=</a></span>, additional directory separators are never introduced.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -478,9 +481,9 @@ path<span class="sy3">&amp;</span> concat<span class="br0">&#40;</span> InputIte
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
     fs<span class="sy4">::</span><span class="me2">path</span> p1<span class="sy4">;</span> <span class="co1">// empty path</span>
     p1 <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">&quot;var&quot;</span><span class="sy4">;</span> <span class="co1">// does not insert a separator</span>
-    <a href="../../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>var<span class="es1">\&quot;</span> == &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>var<span class="es1">\&quot;</span> == &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     p1 <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">&quot;lib&quot;</span><span class="sy4">;</span> <span class="co1">// does not insert a separator</span>
-    <a href="../../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>var<span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>lib<span class="es1">\&quot;</span> == &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>var<span class="es1">\&quot;</span> + <span class="es1">\&quot;</span>lib<span class="es1">\&quot;</span> == &quot;</span> <span class="sy1">&lt;&lt;</span> p1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -505,15 +508,15 @@ path<span class="sy3">&amp;</span> concat<span class="br0">&#40;</span> InputIte
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6993/1000000
-Preprocessor generated node count: 9801/1000000
-Post‐expand include size: 168753/2097152 bytes
-Template argument size: 32223/2097152 bytes
+Preprocessor visited node count: 7126/1000000
+Preprocessor generated node count: 9958/1000000
+Post‐expand include size: 172336/2097152 bytes
+Template argument size: 32723/2097152 bytes
 Highest expansion depth: 21/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13418-0!*!0!!en!*!* and timestamp 20150825054505 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13418-0!*!0!!en!*!* and timestamp 20161206173452 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -543,8 +546,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/experimental/fs/path/concat" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/experimental/fs/path/concat" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;oldid=78008" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/fs/path/concat&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 April 2015, at 14:07.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 1,792 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 April 2015, at 13:07.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,940 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -577,7 +580,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 4.310 secs. -->
+</script><!-- Served in 3.616 secs. -->
 	</body>
-<!-- Cached 20150825054506 -->
+<!-- Cached 20161206173452 -->
 </html>

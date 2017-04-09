@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -311,7 +312,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fflush<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1600">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> fflush<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1873">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -341,10 +342,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  the file stream to write out
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fflush&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Returns zero on success. Otherwise <span class="t-lc">EOF</span> is returned and the error indicator of the file stream is set.
+<p>Returns zero on success. Otherwise <span class="t-lc"><a href="../c.html" title="cpp/io/c">EOF</a></span> is returned and the error indicator of the file stream is set.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fflush&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>POSIX <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fflush.html">extends the specification of fflush</a> by defining its effects on an input stream, as long as that stream represents a file or another seekable device: in that case the POSIX file pointer is repositioned to match the C stream pointer (which effectively undoes any read buffering) and the effects of any <span class="t-lc">std::ungetc</span> or <span class="t-lc">std::ungetwc</span> that weren't yet read back from the stream are discarded.
+<p>POSIX <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fflush.html">extends the specification of fflush</a> by defining its effects on an input stream, as long as that stream represents a file or another seekable device: in that case the POSIX file pointer is repositioned to match the C stream pointer (which effectively undoes any read buffering) and the effects of any <span class="t-lc"><a href="ungetc.html" title="cpp/io/c/ungetc">std::ungetc</a></span> or <span class="t-lc"><a href="ungetwc.html" title="cpp/io/c/ungetwc">std::ungetwc</a></span> that weren't yet read back from the stream are discarded.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/fflush&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
@@ -369,15 +370,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5199/1000000
-Preprocessor generated node count: 6921/1000000
-Post‐expand include size: 134170/2097152 bytes
-Template argument size: 19574/2097152 bytes
+Preprocessor visited node count: 5230/1000000
+Preprocessor generated node count: 7002/1000000
+Post‐expand include size: 135227/2097152 bytes
+Template argument size: 19692/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:576-0!*!0!!en!*!* and timestamp 20151130140723 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:576-0!*!0!!en!*!* and timestamp 20170319101446 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -412,8 +413,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/fflush" title="cpp/io/c/fflush" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 January 2015, at 13:12.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 15,926 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 23 January 2015, at 14:12.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 22,885 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -446,7 +447,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.317 secs. -->
+</script><!-- Served in 1.123 secs. -->
 	</body>
-<!-- Cached 20151130140725 -->
+<!-- Cached 20170319101446 -->
 </html>

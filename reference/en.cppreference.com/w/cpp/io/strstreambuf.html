@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -261,17 +262,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> strstreambuf <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> strstreambuf <span class="sy4">:</span> <span class="kw1">public</span> <a href="basic_streambuf.html"><span class="kw1663">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark">(deprecated)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><code>std::strstreambuf</code> is a <span class="t-lc">std::basic_streambuf</span> whose associated character sequence is a character array, which may be constant (e.g. a string literal), modifyable but not dynamic (e.g. a stack-allocated array), or dynamic, in which case the <code>std::strstreambuf</code> may be allowed to reallocate the array as necessary to accomodate output (e.g. by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="br0">&#91;</span><span class="br0">&#93;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">new<span class="br0">&#91;</span><span class="br0">&#93;</span></span></span> or user-provided functions).
+<p><code>std::strstreambuf</code> is a <span class="t-lc"><a href="basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> whose associated character sequence is a character array, which may be constant (e.g. a string literal), modifyable but not dynamic (e.g. a stack-allocated array), or dynamic, in which case the <code>std::strstreambuf</code> may be allowed to reallocate the array as necessary to accomodate output (e.g. by calling <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="br0">&#91;</span><span class="br0">&#93;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">new<span class="br0">&#91;</span><span class="br0">&#93;</span></span></span> or user-provided functions).
 </p><p>Typical implementation of a <code>std::strstreambuf</code> holds four private data members:
 </p>
 <div class="t-li1"><span class="t-li">1)</span> buffer state, a bitmask type which can represent any combination of the four values "allocated" (destructor will deallocate), "constant" (output not allowed), "dynamic" (output may reallocate), or "frozen" (deallocation and reallocation are not allowed)</div>
-<div class="t-li1"><span class="t-li">2)</span> allocated buffer size (the beginning of the buffer does not need a special data member, it may be stored in the inherited pointer <span class="t-lc">eback()</span>)</div>
+<div class="t-li1"><span class="t-li">2)</span> allocated buffer size (the beginning of the buffer does not need a special data member, it may be stored in the inherited pointer <span class="t-lc"><a href="basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr">eback()</a></span>)</div>
 <div class="t-li1"><span class="t-li">3)</span> pointer to user-provided allocation function</div>
 <div class="t-li1"><span class="t-li">4)</span> pointer to user-provided deallocation function.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -506,9 +507,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>stossc</span></span></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>stossc</span></span></div><div><span class="t-lines"><span><span class="t-mark">(deprecated)</span> <span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div></div>
 </td>
-<td>   advances the input sequence as if by calling <span class="t-lc">sbumpc()</span> and discarding the result <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_streambuf/dsc_stossc&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   advances the input sequence as if by calling <span class="t-lc"><a href="basic_streambuf/sbumpc.html" title="cpp/io/basic streambuf/sbumpc">sbumpc()</a></span> and discarding the result <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_streambuf/dsc_stossc&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -715,15 +716,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 12132/1000000
-Preprocessor generated node count: 10676/1000000
-Post‐expand include size: 393011/2097152 bytes
-Template argument size: 96133/2097152 bytes
+Preprocessor visited node count: 12180/1000000
+Preprocessor generated node count: 10782/1000000
+Post‐expand include size: 395458/2097152 bytes
+Template argument size: 96782/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4373-0!*!0!!en!*!* and timestamp 20151130143750 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4373-0!*!0!!en!*!* and timestamp 20161205230320 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -759,7 +760,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 28 August 2013, at 11:13.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,053 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 12,541 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -792,7 +793,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 4.011 secs. -->
+</script><!-- Served in 3.575 secs. -->
 	</body>
-<!-- Cached 20151130143753 -->
+<!-- Cached 20161205230320 -->
 </html>

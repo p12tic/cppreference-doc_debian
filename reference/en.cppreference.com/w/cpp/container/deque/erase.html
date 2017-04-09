@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -374,11 +375,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Iterator following the last removed element. If the iterator <code>pos</code> refers to the last element, the <span class="t-lc"><a href="end.html" title="cpp/container/deque/end">end()</a></span> iterator is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/erase&amp;action=edit&amp;section=T-3" title="Template:cpp/container/erase">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
-<p>Does not throw unless an exception is thrown by the copy constructor, move constructor, assignment operator, or move assignment operator of <code>T</code>.
+<p>Does not throw unless an exception is thrown by the assignment operator of <code>T</code>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/erase&amp;action=edit&amp;section=T-4" title="Template:cpp/container/erase">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
-<div class="t-li1"><span class="t-li">1)</span> Linear in the lesser of the distances between <code>pos</code> and either of the ends of the container.</div>
-<div class="t-li1"><span class="t-li">2)</span> Linear in the distance between <code>first</code> and <code>last</code>, plus linear in the lesser of the number of elements before the erased elements and the number of elements after the erased elements.</div>
+<p>Linear: the number of calls to the destructor of T is the same as the number of elements erased, the number of calls to the assignment operator of T is no more than the lesser of the number of elements before the erased elements and the number of elements after the erased elements
+</p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/erase&amp;action=edit&amp;section=T-5" title="Template:cpp/container/erase">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;deque&gt;</span>
@@ -387,25 +388,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span> <span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../deque.html"><span class="kw1095">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> c<span class="br0">&#123;</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">6</span>, <span class="nu0">7</span>, <span class="nu0">8</span>, <span class="nu0">9</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../deque.html"><span class="kw1268">std::<span class="me2">deque</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> c<span class="br0">&#123;</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">6</span>, <span class="nu0">7</span>, <span class="nu0">8</span>, <span class="nu0">9</span><span class="br0">&#125;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     c.<span class="me1">erase</span><span class="br0">&#40;</span>c.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
     c.<span class="me1">erase</span><span class="br0">&#40;</span>c.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">+</span><span class="nu0">2</span>, c.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">+</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> <span class="sy3">&amp;</span>i <span class="sy4">:</span> c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; &quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -425,15 +426,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4327/1000000
-Preprocessor generated node count: 9710/1000000
-Post‐expand include size: 147668/2097152 bytes
-Template argument size: 18388/2097152 bytes
+Preprocessor visited node count: 4354/1000000
+Preprocessor generated node count: 9769/1000000
+Post‐expand include size: 148579/2097152 bytes
+Template argument size: 18494/2097152 bytes
 Highest expansion depth: 23/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:877-0!*!0!!en!*!* and timestamp 20151028044009 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:877-0!*!0!!en!*!* and timestamp 20170330223612 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -469,7 +470,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:29.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 13,724 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 28,360 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -502,7 +503,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.769 secs. -->
+</script><!-- Served in 1.561 secs. -->
 	</body>
-<!-- Cached 20151028044010 -->
+<!-- Cached 20170330223612 -->
 </html>
