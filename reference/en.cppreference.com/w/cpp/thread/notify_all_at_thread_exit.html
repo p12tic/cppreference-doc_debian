@@ -203,10 +203,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -228,6 +230,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -266,8 +269,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl t-since-cxx11">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> notify_all_at_thread_exit<span class="br0">&#40;</span> <a href="condition_variable.html"><span class="kw1849">std::<span class="me2">condition_variable</span></span></a><span class="sy3">&amp;</span> cond,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="unique_lock.html"><span class="kw1845">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw1832">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> notify_all_at_thread_exit<span class="br0">&#40;</span> <a href="condition_variable.html"><span class="kw2168">std::<span class="me2">condition_variable</span></span></a><span class="sy3">&amp;</span> cond,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="unique_lock.html"><span class="kw2164">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw2151">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -281,8 +284,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li></ul>
 <p><span class="t-c"><span class="mw-geshi cpp source-cpp">lk.<span class="me1">unlock</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span><br />
 cond.<span class="me1">notify_all</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span>
-</p><p>The implied <code>lk.unlock</code> is <i>sequenced after</i> (as defined in <span class="t-lc">std::memory_order</span>)  the destruction of all objects with <a href="../keyword/thread_local.html" title="cpp/keyword/thread local">thread local storage duration</a> associated with the current thread.
-</p><p>An equivalent effect may be achieved with the facilities provided by <span class="t-lc">std::promise</span> or <span class="t-lc">std::packaged_task</span>.
+</p><p>The implied <code>lk.unlock</code> is <i>sequenced after</i> (as defined in <span class="t-lc"><a href="../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span>)  the destruction of all objects with <a href="../keyword/thread_local.html" title="cpp/keyword/thread local">thread local storage duration</a> associated with the current thread.
+</p><p>An equivalent effect may be achieved with the facilities provided by <span class="t-lc"><a href="promise.html" title="cpp/thread/promise">std::promise</a></span> or <span class="t-lc"><a href="packaged_task.html" title="cpp/thread/packaged task">std::packaged_task</a></span>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -327,15 +330,15 @@ cond.<span class="me1">notify_all</span><span class="br0">&#40;</span><span clas
 <span class="co2">#include &lt;thread&gt;</span>
 <span class="co2">#include &lt;condition_variable&gt;</span>
 &#160;
-<a href="mutex.html"><span class="kw1832">std::<span class="me2">mutex</span></span></a> m<span class="sy4">;</span>
-<a href="condition_variable.html"><span class="kw1849">std::<span class="me2">condition_variable</span></span></a> cv<span class="sy4">;</span>
+<a href="mutex.html"><span class="kw2151">std::<span class="me2">mutex</span></span></a> m<span class="sy4">;</span>
+<a href="condition_variable.html"><span class="kw2168">std::<span class="me2">condition_variable</span></span></a> cv<span class="sy4">;</span>
 &#160;
 <span class="kw4">bool</span> ready <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
 ComplexType result<span class="sy4">;</span>  <span class="co1">// some arbitrary type</span>
 &#160;
 <span class="kw4">void</span> thread_func<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="unique_lock.html"><span class="kw1845">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw1832">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">&#40;</span>m<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="unique_lock.html"><span class="kw2164">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw2151">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">&#40;</span>m<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="co1">// assign a value to result using thread_local data</span>
     result <span class="sy1">=</span> function_that_uses_thread_locals<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     ready <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
@@ -344,14 +347,14 @@ ComplexType result<span class="sy4">;</span>  <span class="co1">// some arbitrar
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="thread.html"><span class="kw1826">std::<span class="me2">thread</span></span></a> t<span class="br0">&#40;</span>thread_func<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="thread.html"><span class="kw2143">std::<span class="me2">thread</span></span></a> t<span class="br0">&#40;</span>thread_func<span class="br0">&#41;</span><span class="sy4">;</span>
     t.<span class="me1">detach</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// do other work</span>
     <span class="co1">// ...</span>
 &#160;
     <span class="co1">// wait for the detached thread</span>
-    <a href="unique_lock.html"><span class="kw1845">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw1832">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">&#40;</span>m<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="unique_lock.html"><span class="kw2164">std::<span class="me2">unique_lock</span></span></a><span class="sy1">&lt;</span><a href="mutex.html"><span class="kw2151">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lk<span class="br0">&#40;</span>m<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>ready<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         cv.<span class="me1">wait</span><span class="br0">&#40;</span>lk<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
@@ -378,15 +381,15 @@ ComplexType result<span class="sy4">;</span>  <span class="co1">// some arbitrar
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3788/1000000
-Preprocessor generated node count: 7110/1000000
-Post‐expand include size: 121271/2097152 bytes
-Template argument size: 25350/2097152 bytes
+Preprocessor visited node count: 3956/1000000
+Preprocessor generated node count: 7250/1000000
+Post‐expand include size: 128824/2097152 bytes
+Template argument size: 26977/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5086-0!*!0!!en!*!* and timestamp 20151130153813 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5086-0!*!0!!en!*!* and timestamp 20161222235413 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -422,7 +425,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 17 November 2014, at 11:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 12,842 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 21,179 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -455,7 +458,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.414 secs. -->
+</script><!-- Served in 1.350 secs. -->
 	</body>
-<!-- Cached 20151130153813 -->
+<!-- Cached 20161222235413 -->
 </html>

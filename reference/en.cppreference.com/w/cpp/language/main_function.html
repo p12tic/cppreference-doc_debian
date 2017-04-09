@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/main_function","wgTitle":"cpp/language/main function","wgCurRevisionId":78260,"wgArticleId":9805,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/main_function","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/main_function","wgTitle":"cpp/language/main function","wgCurRevisionId":82372,"wgArticleId":9805,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/main_function","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -314,10 +315,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div class="t-li1"><span class="t-li">2)</span> It cannot be predefined and cannot be overloaded: effectively, the name <code>main</code> in the global namespace is reserved for functions (although it can be used to name classes, namespaces, enumerations, and any entity in a non-global namespace<span class="t-rev-inl t-since-cxx17"><span>, except that a function called "main" cannot be declared with C <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a> in any namespace</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>)</div>
 <div class="t-li1"><span class="t-li">3)</span> It cannot be defined as deleted or declared <span class="t-rev-inl t-since-cxx17"><span>with C <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a></span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>, <a href="inline.html" title="cpp/language/inline">inline</a>, <a href="static.html" title="cpp/language/static">static</a>, or <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a></div>
 <div class="t-li1"><span class="t-li">4)</span> The body of the main function does not need to contain the <a href="return.html" title="cpp/language/return">return statement</a>: if control reaches the end of <code>main</code> without encountering a return statement, the effect is that of executing <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span></span></span>.</div>
-<div class="t-li1"><span class="t-li">5)</span> Execution of the return (or the implicit return upon reaching the end of main) is equivalent to first leaving the function normally (which destroys the objects with automatic storage duration) and then calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/exit.html"><span class="kw812">std::<span class="me2">exit</span></span></a></span></span> with the same argument as the argument of the <a href="return.html" title="cpp/language/return">return</a>. (<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/exit.html"><span class="kw812">std::<span class="me2">exit</span></span></a></span></span> then destroys static objects and terminates the program)</div>
+<div class="t-li1"><span class="t-li">5)</span> Execution of the return (or the implicit return upon reaching the end of main) is equivalent to first leaving the function normally (which destroys the objects with automatic storage duration) and then calling <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/exit.html"><span class="kw920">std::<span class="me2">exit</span></span></a></span></span> with the same argument as the argument of the <a href="return.html" title="cpp/language/return">return</a>. (<span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/program/exit.html"><span class="kw920">std::<span class="me2">exit</span></span></a></span></span> then destroys static objects and terminates the program)</div>
 <div class="t-li1"><span class="t-li">6)</span> If the main function is defined with a <a href="function-try-block.html" title="cpp/language/function-try-block">function-try-block</a>, the exceptions thrown by the destructors of static objects (which are destroyed by the implied <span class="t-lc"><a href="../utility/program/exit.html" title="cpp/utility/program/exit">std::exit</a></span>) are not caught by it.</div>
 <div class="t-li1"><span class="t-li">7)</span> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> The return type of the main function cannot be deduced (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>...</span></span> is not allowed)</div>
-<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;action=edit&amp;section=2" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>The manner in which the arguments given at the OS command line are converted into the multibyte arrays referenced by <code>argv</code> may involve implementation-defined processing:
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/17w5ykft.aspx">Parsing C++ Command-Line Arguments</a> MSDN
+</li><li> <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_01">Shell Introduction</a> POSIX
+</li></ul>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
 <tr class="t-dsc">
@@ -328,19 +335,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 1572/1000000
-Preprocessor generated node count: 4309/1000000
-Post‐expand include size: 35290/2097152 bytes
-Template argument size: 7396/2097152 bytes
+Preprocessor visited node count: 1605/1000000
+Preprocessor generated node count: 4369/1000000
+Post‐expand include size: 36256/2097152 bytes
+Template argument size: 7518/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9805-0!*!0!!*!*!* and timestamp 20150512213308 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9805-0!*!0!!*!*!* and timestamp 20160323154245 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=78260">http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=78260</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=82372">http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=82372</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -363,11 +370,11 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="main_function.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/main_function" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/main_function" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=78260" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/main_function" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/main_function" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;oldid=82372" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/main_function&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 12 May 2015, at 14:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 26,519 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 December 2015, at 12:27.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 80,866 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -400,7 +407,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.076 secs. -->
+</script><!-- Served in 2.140 secs. -->
 	</body>
-<!-- Cached 20150512214245 -->
+<!-- Cached 20160323154245 -->
 </html>

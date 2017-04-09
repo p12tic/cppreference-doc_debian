@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -263,7 +264,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Moves the file stream. The source stream becomes of invalid state after the operation. 
+<p>Move assigns the file stream <code>other</code> to <code>*this</code>, effectively move-assigning both the <span class="t-lc"><a href="../basic_iostream.html" title="cpp/io/basic iostream">std::basic_iostream</a></span> base class and the associated <span class="t-lc"><a href="../basic_filebuf.html" title="cpp/io/basic filebuf">std::basic_filebuf</a></span>.
+</p><p><code>other</code> is left with no associated file. Note that the base class move assignment swaps all stream state variables (except for <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf</span></span>) between <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> and <code>other</code>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -282,7 +284,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  file stream to move. <code>other</code> becomes of invalid state after the operation.
+<td>  file stream to move.
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_fstream/operator%3D&amp;action=edit&amp;section=T-2" title="Template:cpp/io/basic fstream/operator=">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
 <p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>
@@ -297,19 +299,31 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td>   swaps two file streams  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_fstream/dsc_swap&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../basic_filebuf/operator=.html" title="cpp/io/basic filebuf/operator="> <span class="t-lines"><span>operator=</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   assigns a basic_filebuf object  <br /> <span class="t-mark">(public member function of <code>std::basic_filebuf</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_filebuf/dsc_operator%3D&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../basic_iostream/operator=.html" title="cpp/io/basic iostream/operator="> <span class="t-lines"><span>operator=</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>   move-assigns another <code>basic_iostream</code>  <br /> <span class="t-mark">(protected member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/basic_iostream/dsc_operator%3D&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3063/1000000
-Preprocessor generated node count: 10345/1000000
-Post‐expand include size: 114140/2097152 bytes
-Template argument size: 12455/2097152 bytes
-Highest expansion depth: 23/40
+Preprocessor visited node count: 3557/1000000
+Preprocessor generated node count: 10951/1000000
+Post‐expand include size: 132726/2097152 bytes
+Template argument size: 15277/2097152 bytes
+Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:491-0!*!0!!en!*!* and timestamp 20150825093910 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:491-0!*!0!!en!*!* and timestamp 20170329162337 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -345,7 +359,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 2 August 2014, at 02:07.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,677 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,586 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -378,7 +392,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.870 secs. -->
+</script><!-- Served in 0.059 secs. -->
 	</body>
-<!-- Cached 20150825093910 -->
+<!-- Cached 20170329165526 -->
 </html>

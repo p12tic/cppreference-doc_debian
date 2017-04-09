@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -364,7 +365,7 @@ string_type get<span class="br0">&#40;</span> catalog cat, <span class="kw4">int
 </td>
 <td> -
 </td>
-<td>  identifier of message catalog obtained from <span class="t-lc">open()</span> and not yet passed to <span class="t-lc">close()</span>
+<td>  identifier of message catalog obtained from <span class="t-lc"><a href="open.html" title="cpp/locale/messages/open">open()</a></span> and not yet passed to <span class="t-lc"><a href="close.html" title="cpp/locale/messages/close">close()</a></span>
 </td></tr>
 <tr class="t-par">
 <td>  set
@@ -401,14 +402,14 @@ string_type get<span class="br0">&#40;</span> catalog cat, <span class="kw4">int
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">auto</span><span class="sy3">&amp;</span> facet <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1621">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../messages.html"><span class="kw1670">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a> loc<span class="br0">&#40;</span><span class="st0">&quot;de_DE.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">auto</span><span class="sy3">&amp;</span> facet <span class="sy1">=</span> <a href="../use_facet.html"><span class="kw1894">std::<span class="me2">use_facet</span></span></a><span class="sy1">&lt;</span><a href="../messages.html"><span class="kw1943">std::<span class="me2">messages</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;&gt;</span><span class="br0">&#40;</span>loc<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">auto</span> cat <span class="sy1">=</span> facet.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;sed&quot;</span>, loc<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span>cat <span class="sy1">&lt;</span> <span class="nu0">0</span> <span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Could not open german <span class="es1">\&quot;</span>sed<span class="es1">\&quot;</span> message catalog<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Could not open german <span class="es1">\&quot;</span>sed<span class="es1">\&quot;</span> message catalog<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw1">else</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>No match<span class="es1">\&quot;</span> in German: &quot;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>No match<span class="es1">\&quot;</span> in German: &quot;</span>
                   <span class="sy1">&lt;&lt;</span> facet.<span class="me1">get</span><span class="br0">&#40;</span>cat, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="st0">&quot;No match&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span>Memory exhausted<span class="es1">\&quot;</span> in German: &quot;</span>
                   <span class="sy1">&lt;&lt;</span> facet.<span class="me1">get</span><span class="br0">&#40;</span>cat, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="st0">&quot;Memory exhausted&quot;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
@@ -425,15 +426,15 @@ string_type get<span class="br0">&#40;</span> catalog cat, <span class="kw4">int
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4491/1000000
-Preprocessor generated node count: 7231/1000000
-Post‐expand include size: 112461/2097152 bytes
-Template argument size: 19056/2097152 bytes
+Preprocessor visited node count: 4530/1000000
+Preprocessor generated node count: 7312/1000000
+Post‐expand include size: 113587/2097152 bytes
+Template argument size: 19233/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9865-0!*!0!!en!*!* and timestamp 20151130140604 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9865-0!*!0!!en!*!* and timestamp 20161206025844 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -464,7 +465,7 @@ Expensive parser function count: 0/100
         </div>
                             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 15 August 2013, at 07:27.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,063 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,638 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -497,7 +498,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.600 secs. -->
+</script><!-- Served in 1.400 secs. -->
 	</body>
-<!-- Cached 20151130140606 -->
+<!-- Cached 20161206025844 -->
 </html>

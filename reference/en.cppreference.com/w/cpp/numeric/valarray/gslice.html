@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -311,7 +316,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p><code>std::gslice</code> is the selector class that identifies a subset of <span class="t-lc">std::valarray</span> indices defined by a multi-level set of strides and sizes. Objects of type <code>std::gslice</code> can be used as indices with valarray's <code>operator[]</code> to select, for example, columns of a multidimensional array represented as a <code>valarray</code>.
+<p><code>std::gslice</code> is the selector class that identifies a subset of <span class="t-lc"><a href="../valarray.html" title="cpp/numeric/valarray">std::valarray</a></span> indices defined by a multi-level set of strides and sizes. Objects of type <code>std::gslice</code> can be used as indices with valarray's <code>operator[]</code> to select, for example, columns of a multidimensional array represented as a <code>valarray</code>.
 </p><p>Given the starting value <span class="texhtml" style="white-space: nowrap;">s</span>, a list of strides <span class="texhtml" style="white-space: nowrap;">i<span class="t-su t-su-b"><br />j</span></span> and a list of sizes <span class="texhtml" style="white-space: nowrap;">d<span class="t-su t-su-b"><br />j</span></span>, a <code>std::gslice</code> constructed from these values selects the set of indices <span class="texhtml" style="white-space: nowrap;">k<span class="t-su t-su-b"><br />j</span>=s+Σ<span class="t-su t-su-b"><br />j</span>(i<span class="t-su t-su-b"><br />j</span>d<span class="t-su t-su-b"><br />j</span>)</span>.
 </p><p>For example, a gslice with starting index <code>3</code>, strides <code>{19,4,1</code>} and lengths <code>{2,4,3} </code> generates the following set of indices:
 </p><p><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="nu0">3</span> <span class="sy2">+</span> <span class="nu0">0</span><span class="sy2">*</span><span class="nu0">19</span> <span class="sy2">+</span> <span class="nu0">0</span><span class="sy2">*</span><span class="nu0">4</span> <span class="sy2">+</span> <span class="nu0">0</span><span class="sy2">*</span><span class="nu0">1</span> <span class="sy1">=</span> <span class="nu0">3</span>,<br />
@@ -368,8 +373,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">gslice<span class="br0">&#40;</span> <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> start, <span class="kw4">const</span> <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> sizes,<br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> strides <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">gslice<span class="br0">&#40;</span> <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> start, <span class="kw4">const</span> <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> sizes,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;<span class="kw4">const</span> <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="sy3">&amp;</span> strides <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -382,7 +387,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody></table>
 <p>Constructs a new generic slice.
 </p>
-<div class="t-li1"><span class="t-li">1)</span> Default constructor. Equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">gslice<span class="br0">&#40;</span><span class="nu0">0</span>, <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>. This constructor exists only to allow construction of arrays of slices.</div>
+<div class="t-li1"><span class="t-li">1)</span> Default constructor. Equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">gslice<span class="br0">&#40;</span><span class="nu0">0</span>, <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>. This constructor exists only to allow construction of arrays of slices.</div>
 <div class="t-li1"><span class="t-li">2)</span> Constructs a new slice with parameters <code>start</code>, <code>sizes</code>, <code>strides</code>.</div>
 <div class="t-li1"><span class="t-li">3)</span> Constructs a copy of <code>other</code>.</div>
 <h3> <span class="mw-headline" id="Parameters">Parameters</span></h3>
@@ -429,12 +434,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
-<td> <div><span class="mw-geshi cpp source-cpp"><a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> stride<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
+<td> <div><span class="mw-geshi cpp source-cpp"><a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> stride<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span><span class="sy4">;</span></span></div></td>
 <td> (3) </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -457,24 +462,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;valarray&gt;</span>
-<span class="kw4">void</span> test_print<span class="br0">&#40;</span><a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> v, <span class="kw4">int</span> rows, <span class="kw4">int</span> cols, <span class="kw4">int</span> planes<span class="br0">&#41;</span>
+<span class="kw4">void</span> test_print<span class="br0">&#40;</span><a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> v, <span class="kw4">int</span> rows, <span class="kw4">int</span> cols, <span class="kw4">int</span> planes<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> r<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> r<span class="sy1">&lt;</span>rows<span class="sy4">;</span> <span class="sy2">++</span>r<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> c<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> c<span class="sy1">&lt;</span>cols<span class="sy4">;</span> <span class="sy2">++</span>c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
             <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> z<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> z<span class="sy1">&lt;</span>planes<span class="sy4">;</span> <span class="sy2">++</span>z<span class="br0">&#41;</span>
-                <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> v<span class="br0">&#91;</span>r<span class="sy2">*</span>cols<span class="sy2">*</span>planes <span class="sy2">+</span> c<span class="sy2">*</span>planes <span class="sy2">+</span> z<span class="br0">&#93;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
-            <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+                <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> v<span class="br0">&#91;</span>r<span class="sy2">*</span>cols<span class="sy2">*</span>planes <span class="sy2">+</span> c<span class="sy2">*</span>planes <span class="sy2">+</span> z<span class="br0">&#93;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+            <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         <span class="br0">&#125;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../valarray.html"><span class="kw1221">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="co1">// 3d array: 2 x 4 x 3 elements</span>
+    <a href="../valarray.html"><span class="kw1470">std::<span class="me2">valarray</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="co1">// 3d array: 2 x 4 x 3 elements</span>
     <span class="br0">&#123;</span> <span class="nu0">111</span>,<span class="nu0">112</span>,<span class="nu0">113</span> , <span class="nu0">121</span>,<span class="nu0">122</span>,<span class="nu0">123</span> , <span class="nu0">131</span>,<span class="nu0">132</span>,<span class="nu0">133</span> , <span class="nu0">141</span>,<span class="nu0">142</span>,<span class="nu0">143</span>,
       <span class="nu0">211</span>,<span class="nu0">212</span>,<span class="nu0">213</span> , <span class="nu0">221</span>,<span class="nu0">222</span>,<span class="nu0">223</span> , <span class="nu0">231</span>,<span class="nu0">232</span>,<span class="nu0">233</span> , <span class="nu0">241</span>,<span class="nu0">242</span>,<span class="nu0">243</span><span class="br0">&#125;</span><span class="sy4">;</span>
     <span class="co1">// int ar3d[2][4][3]</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Initial 2x4x3 array:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Initial 2x4x3 array:<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     test_print<span class="br0">&#40;</span>v, <span class="nu0">2</span>, <span class="nu0">4</span>, <span class="nu0">3</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// update every value in the first columns of both planes</span>
@@ -484,7 +489,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// subtract the third column from the second column in the 1st plane</span>
     v<span class="br0">&#91;</span>std<span class="sy4">::</span><span class="me2">gslice</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">4</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="nu0">4</span><span class="sy2">*</span><span class="nu0">3</span>, <span class="nu0">3</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="sy2">-</span><span class="sy1">=</span> v<span class="br0">&#91;</span>std<span class="sy4">::</span><span class="me2">gslice</span><span class="br0">&#40;</span><span class="nu0">2</span>, <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">4</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="nu0">4</span><span class="sy2">*</span><span class="nu0">3</span>, <span class="nu0">3</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After column operations: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After column operations: <span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     test_print<span class="br0">&#40;</span>v, <span class="nu0">2</span>, <span class="nu0">4</span>, <span class="nu0">3</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -535,15 +540,15 @@ After column operations:
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5383/1000000
-Preprocessor generated node count: 9525/1000000
-Post‐expand include size: 119975/2097152 bytes
-Template argument size: 28233/2097152 bytes
+Preprocessor visited node count: 5628/1000000
+Preprocessor generated node count: 9700/1000000
+Post‐expand include size: 126861/2097152 bytes
+Template argument size: 29332/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5020-0!*!0!!en!*!* and timestamp 20151130141631 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5020-0!*!0!!en!*!* and timestamp 20161206003214 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -579,7 +584,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 5 June 2013, at 22:25.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,080 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,709 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -612,7 +617,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.408 secs. -->
+</script><!-- Served in 2.364 secs. -->
 	</body>
-<!-- Cached 20151130141631 -->
+<!-- Cached 20161206003214 -->
 </html>

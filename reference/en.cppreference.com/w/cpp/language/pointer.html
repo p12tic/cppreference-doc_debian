@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/pointer","wgTitle":"cpp/language/pointer","wgCurRevisionId":80914,"wgArticleId":5596,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/pointer","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/pointer","wgTitle":"cpp/language/pointer","wgCurRevisionId":83586,"wgArticleId":5596,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/pointer","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -331,7 +332,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td colspan="10" class="t-sdsc-sep">
 </td></tr></table>
 <div class="t-li1"><span class="t-li">1)</span> <b>Pointer declarator</b>: the declaration <span class="t-c"><span class="mw-geshi cpp source-cpp">S<span class="sy2">*</span> D<span class="sy4">;</span></span></span> declares <code>D</code> as a pointer to the type determined by <span class="t-spar">decl-specifier-seq</span> <code>S</code>.</div>
-<div class="t-li1"><span class="t-li">2)</span> <b>Pointer to member declarator</b>: the declaration <span class="t-c"><span class="mw-geshi cpp source-cpp">S C<span class="sy4">::</span><span class="sy2">*</span> D<span class="sy4">;</span></span></span> declares <code>D</code> as a pointer to member of <code>C</code> of type determined by <span class="t-spar">decl-specifier-seq</span> <code>S</code>.</div>
+<div class="t-li1"><span class="t-li">2)</span> <b>Pointer to member declarator</b>: the declaration <span class="t-c"><span class="mw-geshi cpp source-cpp">S C<span class="sy4">::</span><span class="sy2">*</span> D<span class="sy4">;</span></span></span> declares <code>D</code> as a pointer to non-static member of <code>C</code> of type determined by <span class="t-spar">decl-specifier-seq</span> <code>S</code>.</div>
 <table class="t-par-begin">
 
 
@@ -384,9 +385,9 @@ S s <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">
 <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&amp;</span>n<span class="sy4">;</span>     <span class="co1">// pointer to n</span>
 <span class="kw4">int</span><span class="sy3">&amp;</span> r <span class="sy1">=</span> <span class="sy2">*</span>p<span class="sy4">;</span>     <span class="co1">// reference is bound to the lvalue expression that identifies n</span>
 r <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span>           <span class="co1">// stores the int 7 in n</span>
-<a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p<span class="sy4">;</span> <span class="co1">// lvalue-to-rvalue implicit conversion reads the value from n</span></pre></div></div>
+<a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p<span class="sy4">;</span> <span class="co1">// lvalue-to-rvalue implicit conversion reads the value from n</span></pre></div></div>
 <p>Pointers to class objects may also appear as the left-hand operands of the member access operators <a href="operator_member_access.html#Built-in_member_access_operators" title="cpp/language/operator member access">operator-&gt;</a> and <a href="operator_member_access.html#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">operator-&gt;*</a>.
-</p><p>Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast">array-to-pointer</a> implicit conversion, pointer to the first element of an array can be initialized with an expression of array type:
+</p><p>Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">array-to-pointer</a> implicit conversion, pointer to the first element of an array can be initialized with an expression of array type:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> a<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
 <span class="kw4">int</span><span class="sy2">*</span> p1 <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// pointer to the first element a[0] (an int) of the array a</span>
@@ -394,7 +395,7 @@ r <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span
 <span class="kw4">int</span> b<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">8</span><span class="br0">&#93;</span><span class="sy4">;</span>
 <span class="kw4">int</span> <span class="br0">&#40;</span><span class="sy2">*</span>p2<span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">8</span><span class="br0">&#93;</span> <span class="sy1">=</span> b<span class="sy4">;</span> <span class="co1">// pointer to the first element b[0] of the array b,</span>
                      <span class="co1">// which is an array of 3 arrays of 8 ints</span></pre></div></div>
-<p>Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast">derived-to-base</a> implicit conversion for pointers, pointer to a base class can be initialized with the address of a derived class:
+<p>Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">derived-to-base</a> implicit conversion for pointers, pointer to a base class can be initialized with the address of a derived class:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
@@ -403,11 +404,11 @@ Derived d<span class="sy4">;</span>
 Base<span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&amp;</span>d<span class="sy4">;</span></pre></div></div>
 <p>If <code>Derived</code> is <a href="objects.html#Polymorphic_objects" title="cpp/language/object">polymorphic</a>, such pointer may be used to make <a href="virtual.html" title="cpp/language/virtual">virtual function calls</a>.
 </p><p>Certain <a href="operator_arithmetic.html#Additive_operators" title="cpp/language/operator arithmetic">addition, subtraction</a>, <a href="operator_incdec.html" title="cpp/language/operator incdec">increment, and decrement</a> operators are defined for pointers to elements of arrays: such pointers satisfy the <a href="../concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a> requirements and allow the C++ library <a href="../algorithm.html" title="cpp/algorithm">algorithms</a> to work with raw arrays.
-</p><p><a href="operator_comparison.html#Pointer_comparison_operators" title="cpp/language/operator comparison">Comparison operators</a> are defined for pointers to objects in some situations: two pointers that represent the same address compare equal, two null pointer values compare equal, pointers to elements of the same array compare the same as the array indexes of those elements, and pointers to non-static class members with the same <a href="access.html" title="cpp/language/access">member access</a> compare in order of declaration of those class members.
+</p><p><a href="operator_comparison.html#Pointer_comparison_operators" title="cpp/language/operator comparison">Comparison operators</a> are defined for pointers to objects in some situations: two pointers that represent the same address compare equal, two null pointer values compare equal, pointers to elements of the same array compare the same as the array indexes of those elements, and pointers to non-static data members with the same <a href="access.html" title="cpp/language/access">member access</a> compare in order of declaration of those members.
 </p><p>Many implementations also provide <a href="http://en.wikipedia.com/wiki/Total_order#Strict_total_order" class="extiw" title="enwiki:Total order">strict total ordering</a> of pointers of random origin, e.g. if they are implemented as addresses within continuous virtual address space. Those implementations that do not (e.g. where not all bits of the pointer are part of a memory address and have to be ignored for comparison, or an additional calculation is required or otherwise pointer and integer is not a 1 to 1 relationship), provide a specialization of <span class="t-lc"><a href="../utility/functional/less.html" title="cpp/utility/functional/less">std::less</a></span> for pointers that has that guarantee. This makes it possible to use all pointers of random origin as keys in standard associative containers such as <span class="t-lc"><a href="../container/set.html" title="cpp/container/set">std::set</a></span> or <span class="t-lc"><a href="../container/map.html" title="cpp/container/map">std::map</a></span>.
 </p>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;section=3" title="Edit section: Pointers to functions">edit</a>]</span> <span class="mw-headline" id="Pointers_to_functions">Pointers to functions</span></h4>
-<p>A pointer to function can be initialized with an address of a non-member function or a static member function. Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast">function-to-pointer</a> implicit conversion, the address-of operator is optional:
+<p>A pointer to function can be initialized with an address of a non-member function or a static member function. Because of the <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">function-to-pointer</a> implicit conversion, the address-of operator is optional:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="kw4">void</span> <span class="br0">&#40;</span><span class="sy2">*</span>p1<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>f<span class="sy4">;</span>
@@ -417,7 +418,7 @@ Base<span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&a
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="kw1">return</span> n <span class="sy2">*</span> n<span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
@@ -446,21 +447,21 @@ p<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;
 <p><a href="operator_comparison.html#Pointer_comparison_operators" title="cpp/language/operator comparison">Equality comparison operators</a> are defined for pointers to functions (they compare equal if pointing to the same function).
 </p>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;section=4" title="Edit section: Pointers to data members">edit</a>]</span> <span class="mw-headline" id="Pointers_to_data_members">Pointers to data members</span></h4>
-<p>A pointer to non-static data member <code>m</code> which is a member of class <code>C</code> can be initialized with the expression <code>&amp;C::m</code> exactly. Expressions such as <code>&amp;(C::m)</code> or <code>&amp;m</code> inside C's member function do not form pointers to members.
+<p>A pointer to non-static member object <code>m</code> which is a member of class <code>C</code> can be initialized with the expression <code>&amp;C::m</code> exactly. Expressions such as <code>&amp;(C::m)</code> or <code>&amp;m</code> inside C's member function do not form pointers to members.
 </p><p>Such pointer may be used as the right-hand operand of the <a href="operator_member_access.html" title="cpp/language/operator member access">pointer-to-member access operators</a> <code>operator.*</code> and <code>operator-&gt;*</code>:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> C <span class="br0">&#123;</span> <span class="kw4">int</span> m<span class="sy4">;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">int</span> C<span class="sy4">::</span><span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&amp;</span>C<span class="sy4">::</span><span class="me2">m</span><span class="sy4">;</span>          <span class="co1">// pointer to member m of class C</span>
+    <span class="kw4">int</span> C<span class="sy4">::</span><span class="sy2">*</span> p <span class="sy1">=</span> <span class="sy3">&amp;</span>C<span class="sy4">::</span><span class="me2">m</span><span class="sy4">;</span>          <span class="co1">// pointer to data member m of class C</span>
     C c <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">7</span><span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c.<span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>   <span class="co1">// prints 7</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c.<span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>   <span class="co1">// prints 7</span>
     C<span class="sy2">*</span> cp <span class="sy1">=</span> <span class="sy3">&amp;</span>c<span class="sy4">;</span>
     cp<span class="sy2">-</span><span class="sy1">&gt;</span>m <span class="sy1">=</span> <span class="nu0">10</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> cp<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 10</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> cp<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 10</span>
 <span class="br0">&#125;</span></pre></div></div>
-<p>Pointer to member of a base class can be <a href="implicit_cast.html" title="cpp/language/implicit cast">implicitly converted</a> to pointer to the same member of a derived class:
+<p>Pointer to data member of an accessible unambiguous non-virtual base class can be <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">implicitly converted</a> to pointer to the same data member of a derived class:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">&#123;</span> <span class="kw4">int</span> m<span class="sy4">;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
@@ -471,9 +472,9 @@ p<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;
     <span class="kw4">int</span> Derived<span class="sy4">::</span><span class="sy2">*</span> dp <span class="sy1">=</span> bp<span class="sy4">;</span>
     Derived d<span class="sy4">;</span>
     d.<span class="me1">m</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>dp <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1 1</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>dp <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1 1</span>
 <span class="br0">&#125;</span></pre></div></div>
-<p>Conversion in the opposite direction, from a pointer to member of a derived class to a pointer to member of an unambiguous non-virtual base class, is allowed with <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> and <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit cast</a>, even if the base class does not have that member (but the most-derived class does, when the pointer is used for access):
+<p>Conversion in the opposite direction, from a pointer to data member of a derived class to a pointer to data member of an unambiguous non-virtual base class, is allowed with <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> and <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit cast</a>, even if the base class does not have that member (but the most-derived class does, when the pointer is used for access):
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">&#123;</span> <span class="kw4">int</span> m<span class="sy4">;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
@@ -485,10 +486,10 @@ p<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;
 &#160;
     Derived d<span class="sy4">;</span>
     d.<span class="me1">m</span> <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// okay: prints 7</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> d.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// okay: prints 7</span>
 &#160;
     Base b<span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> b.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// undefined behavior</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> b.<span class="sy2">*</span>bp <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// undefined behavior</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>The pointed-to type of a pointer-to-member may be a pointer-to-member itself: pointers to members can be multilevel, and can be cv-qualifed differently at every level. Mixed multi-level combinations of pointers and pointers-to-members are also allowed:
 </p>
@@ -501,15 +502,15 @@ p<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="co1">// non-const pointer to member which is a const pointer to non-const member</span>
+    <span class="co1">// non-const pointer to data member which is a const pointer to non-const member</span>
     <span class="kw4">int</span> A<span class="sy4">::</span><span class="sy2">*</span> <span class="kw4">const</span> A<span class="sy4">::</span><span class="sy2">*</span> p1 <span class="sy1">=</span> <span class="sy3">&amp;</span>A<span class="sy4">::</span><span class="me2">p</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">const</span> A a <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="sy3">&amp;</span>A<span class="sy4">::</span><span class="me2">m</span><span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> a.<span class="sy2">*</span><span class="br0">&#40;</span>a.<span class="sy2">*</span>p1<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> a.<span class="sy2">*</span><span class="br0">&#40;</span>a.<span class="sy2">*</span>p1<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span>
 &#160;
     <span class="co1">// regular non-const pointer to a const pointer-to-member</span>
     <span class="kw4">int</span> A<span class="sy4">::</span><span class="sy2">*</span> <span class="kw4">const</span><span class="sy2">*</span> p2 <span class="sy1">=</span> <span class="sy3">&amp;</span>a.<span class="me1">p</span><span class="sy4">;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> a.<span class="sy2">**</span>p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span>
+    <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> a.<span class="sy2">**</span>p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span>
 <span class="br0">&#125;</span></pre></div></div>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;section=5" title="Edit section: Pointers to member functions">edit</a>]</span> <span class="mw-headline" id="Pointers_to_member_functions">Pointers to member functions</span></h4>
 <p>A pointer to non-static member function <code>f</code> which is a member of class <code>C</code> can be initialized with the expression <code>&amp;C::f</code> exactly. Expressions such as <code>&amp;(C::f)</code> or <code>&amp;f</code> inside C's member function do not form pointers to member functions.
@@ -517,23 +518,23 @@ p<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> C
 <span class="br0">&#123;</span>
-    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">void</span> <span class="br0">&#40;</span>C<span class="sy4">::</span><span class="sy2">*</span> p<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>C<span class="sy4">::</span><span class="me2">f</span><span class="sy4">;</span> <span class="co1">// pointer to member f of class C</span>
+    <span class="kw4">void</span> <span class="br0">&#40;</span>C<span class="sy4">::</span><span class="sy2">*</span> p<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>C<span class="sy4">::</span><span class="me2">f</span><span class="sy4">;</span> <span class="co1">// pointer to member function f of class C</span>
     C c<span class="sy4">;</span>
     <span class="br0">&#40;</span>c.<span class="sy2">*</span>p<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>                  <span class="co1">// prints 1</span>
     C<span class="sy2">*</span> cp <span class="sy1">=</span> <span class="sy3">&amp;</span>c<span class="sy4">;</span>
     <span class="br0">&#40;</span>cp<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>p<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>                <span class="co1">// prints 2</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br />
-Pointer to member function of a base class can be <a href="implicit_cast.html" title="cpp/language/implicit cast">implicitly converted</a> to pointer to the same member function of a derived class:
+Pointer to member function of a base class can be <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">implicitly converted</a> to pointer to the same member function of a derived class:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base
 <span class="br0">&#123;</span>
-    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
@@ -550,7 +551,7 @@ Pointer to member function of a base class can be <a href="implicit_cast.html" t
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw1">struct</span> Derived <span class="sy4">:</span> Base
 <span class="br0">&#123;</span>
-    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+    <span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
@@ -574,31 +575,31 @@ Pointer to member function of a base class can be <a href="implicit_cast.html" t
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../container/vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span><span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;ab&quot;</span>, <span class="st0">&quot;abc&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../container/vector.html"><span class="kw1094">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> l<span class="sy4">;</span>
-    transform<span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <a href="../iterator/back_inserter.html"><span class="kw570">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>l<span class="br0">&#41;</span>,
-              <a href="../utility/functional/mem_fn.html"><span class="kw928">std::<span class="me2">mem_fn</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy4">::</span><span class="me2">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../container/vector.html"><span class="kw1159">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1137">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> v <span class="sy1">=</span> <span class="br0">&#123;</span><span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;ab&quot;</span>, <span class="st0">&quot;abc&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../container/vector.html"><span class="kw1159">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a><span class="sy1">&gt;</span> l<span class="sy4">;</span>
+    transform<span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <a href="../iterator/back_inserter.html"><span class="kw642">std::<span class="me2">back_inserter</span></span></a><span class="br0">&#40;</span>l<span class="br0">&#41;</span>,
+              <a href="../utility/functional/mem_fn.html"><span class="kw1006">std::<span class="me2">mem_fn</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy4">::</span><span class="me2">size</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n <span class="sy4">:</span> l<span class="br0">&#41;</span>
-        <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">1 2 3</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;section=6" title="Edit section: Pointers to void">edit</a>]</span> <span class="mw-headline" id="Pointers_to_void">Pointers to void</span></h3>
-<p>Pointer to object of any type can be <a href="implicit_cast.html" title="cpp/language/implicit cast">implicitly converted</a> to pointer to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> (optionally <a href="cv.html" title="cpp/language/cv">cv-qualified</a>). The reverse conversion, which requires <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> or <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit cast</a>, yields the original pointer value:
+<p>Pointer to object of any type can be <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">implicitly converted</a> to pointer to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> (optionally <a href="cv.html" title="cpp/language/cv">cv-qualified</a>). The reverse conversion, which requires <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> or <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit cast</a>, yields the original pointer value:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
 <span class="kw4">int</span><span class="sy2">*</span> p1 <span class="sy1">=</span> <span class="sy3">&amp;</span>n<span class="sy4">;</span>
 <span class="kw4">void</span><span class="sy2">*</span> pv <span class="sy1">=</span> p1<span class="sy4">;</span>
 <span class="kw4">int</span><span class="sy2">*</span> p2 <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>pv<span class="br0">&#41;</span><span class="sy4">;</span>
-<a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span></pre></div></div>
+<a href="../io/cout.html"><span class="kw1552">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 1</span></pre></div></div>
 <p>If the original pointer is pointing to a base class subobject within an object of some polymorphic type, <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a> may be used to obtain a <code>void*</code> that is pointing at the complete object of the most derived type.
 </p><p>Pointers to void are used to pass objects of unknown type, which is common in C interfaces: <span class="t-lc"><a href="../memory/c/malloc.html" title="cpp/memory/c/malloc">std::malloc</a></span> returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>, <span class="t-lc"><a href="../algorithm/qsort.html" title="cpp/algorithm/qsort">std::qsort</a></span> expects a user-provided callback that accepts two <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span></span></span> arguments. <a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_create.html">pthread_create</a> expects a user-provided callback that accepts and returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>. In all cases, it is the caller's responsibility to cast the pointer to the correct type before use.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=edit&amp;section=7" title="Edit section: Null pointers">edit</a>]</span> <span class="mw-headline" id="Null_pointers">Null pointers</span></h3>
 <p>Pointers of every type have a special value known as <i>null pointer value</i> of that type. A pointer whose value is null does not point to an object or a function (dereferencing a null pointer is undefined behavior), and compares equal to all pointers of the same type whose value is also <i>null</i>.
-</p><p>To initialize a pointer to null or to assign the null value to an existing pointer, the null pointer literal <span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>, the null pointer constant <span class="t-lc"><a href="../types/NULL.html" title="cpp/types/NULL">NULL</a></span>, or the <a href="implicit_cast.html" title="cpp/language/implicit cast">implicit conversion</a> from the integer value <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> may be used.
+</p><p>To initialize a pointer to null or to assign the null value to an existing pointer, the null pointer literal <span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>, the null pointer constant <span class="t-lc"><a href="../types/NULL.html" title="cpp/types/NULL">NULL</a></span>, or the <a href="implicit_cast.html" title="cpp/language/implicit cast" class="mw-redirect">implicit conversion</a> from the integer value <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span> may be used.
 </p><p><a href="zero_initialization.html" title="cpp/language/zero initialization">Zero-</a> and <a href="value_initialization.html" title="cpp/language/value initialization">value-initialization</a> also initialize pointers to their null values.
 </p><p>Null pointers can be used to indicate the absence of an object (e.g. <a href="../utility/functional/function/target.html" title="cpp/utility/functional/function/target"><tt>function::target()</tt></a>), or as other error condition indicators (e.g. <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a>). In general, a function that receives a pointer argument almost always needs to check if the value is null and handle that case differently (for example, the <a href="delete.html" title="cpp/language/delete">delete expression</a> does nothing when a null pointer is passed).
 </p>
@@ -652,23 +653,23 @@ cpc<span class="sy2">++</span><span class="sy4">;</span>     <span class="co1">/
 p <span class="sy1">=</span> pc<span class="sy4">;</span>    <span class="co1">// error: pointer to non-const int cannot point to const int</span>
 ppc <span class="sy1">=</span> <span class="sy3">&amp;</span>p<span class="sy4">;</span>  <span class="co1">// error: pointer to pointer to const int cannot point to</span>
            <span class="co1">// pointer to non-const int</span></pre></div></div>
-<p>In general, implicit conversion from one multi-level pointer to another follows the rules described in <a href="implicit_cast.html#Qualification_conversions" title="cpp/language/implicit cast">qualification conversions</a> and in <a href="operator_comparison.html#Pointer_comparison_operators" title="cpp/language/operator comparison">pointer comparison operators</a>.
+<p>In general, implicit conversion from one multi-level pointer to another follows the rules described in <a href="implicit_cast.html#Qualification_conversions" title="cpp/language/implicit cast" class="mw-redirect">qualification conversions</a> and in <a href="operator_comparison.html#Pointer_comparison_operators" title="cpp/language/operator comparison">pointer comparison operators</a>.
 </p>
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2996/1000000
-Preprocessor generated node count: 6884/1000000
-Post‐expand include size: 66102/2097152 bytes
-Template argument size: 17673/2097152 bytes
+Preprocessor visited node count: 3019/1000000
+Preprocessor generated node count: 6922/1000000
+Post‐expand include size: 67051/2097152 bytes
+Template argument size: 17810/2097152 bytes
 Highest expansion depth: 15/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5596-0!*!0!!en!*!* and timestamp 20150916140228 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5596-0!*!0!!en!*!* and timestamp 20160401194523 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=80914">http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=80914</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=83586">http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=83586</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -691,7 +692,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="pointer.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/pointer" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/pointer" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=80914" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/pointer" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/pointer" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;oldid=83586" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/pointer&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -699,8 +700,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/pointer" title="cpp/language/pointer" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 16 September 2015, at 07:02.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 30,367 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 29 February 2016, at 20:08.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 52,594 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -733,7 +734,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.089 secs. -->
+</script><!-- Served in 4.583 secs. -->
 	</body>
-<!-- Cached 20150916140409 -->
+<!-- Cached 20160401194523 -->
 </html>

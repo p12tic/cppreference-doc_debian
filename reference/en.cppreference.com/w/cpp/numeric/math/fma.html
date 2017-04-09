@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -433,16 +438,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Errors are reported as specified in <a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a>
 </p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
 </p>
-<ul><li> If x is zero and y is infinite or if x is infinite and y is zero, and z is not a NaN, then NaN is returned and <span class="t-lc">FE_INVALID</span> is raised
-</li><li> If x is zero and y is infinite or if x is infinite and y is zero, and z is a NaN, then NaN is returned and <span class="t-lc">FE_INVALID</span> may be raised
-</li><li> If x*y is an exact infinity and z is an infinity with the opposite sign, NaN is returned and <span class="t-lc">FE_INVALID</span> is raised
+<ul><li> If x is zero and y is infinite or if x is infinite and y is zero, and z is not a NaN, then NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
+</li><li> If x is zero and y is infinite or if x is infinite and y is zero, and z is a NaN, then NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> may be raised
+</li><li> If x*y is an exact infinity and z is an infinity with the opposite sign, NaN is returned and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
 </li><li> If x or y are NaN, NaN is returned
 </li><li> If z is NaN, and x*y aren't 0*Inf or Inf*0, then NaN is returned (without FE_INVALID)
 </li></ul>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/fma&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>This operation is commonly implemented in hardware as <a href="http://en.wikipedia.com/wiki/Multiply%E2%80%93accumulate_operation" class="extiw" title="enwiki:Multiply–accumulate operation">fused multiply-add</a> CPU instruction. If supported by hardware, the appropriate <code>FP_FAST_FMA*</code> macros are expected to be defined, but many implementations make use of the CPU instruction even when the macros are not defined.
-</p><p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fma.html">POSIX additionally specifies</a> that the situations specified to return <span class="t-lc">FE_INVALID</span> are domain errors.
-</p><p>Due to its infinite intermediate precision, <code>fma</code> is a common building block of other correctly-rounded mathematical operations, such as <span class="t-lc">std::sqrt</span> or even the division (where not provided by the CPU, e.g. Itanium)
+</p><p><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/fma.html">POSIX additionally specifies</a> that the situations specified to return <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> are domain errors.
+</p><p>Due to its infinite intermediate precision, <code>fma</code> is a common building block of other correctly-rounded mathematical operations, such as <span class="t-lc"><a href="sqrt.html" title="cpp/numeric/math/sqrt">std::sqrt</a></span> or even the division (where not provided by the CPU, e.g. Itanium)
 </p><p>As with all floating-point expressions, the expression <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#40;</span>x<span class="sy2">*</span>y<span class="br0">&#41;</span> <span class="sy2">+</span> z</span></span> may be compiled as a fused multiply-add unless the <a href="../../preprocessor/impl.html" title="cpp/preprocessor/impl">#pragma</a> <span class="t-c"><span class="mw-geshi cpp source-cpp">STDC FP_CONTRACT</span></span> is off.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/fma&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -456,28 +461,28 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#123;</span>
     <span class="co1">// demo the difference between fma and built-in operators</span>
     <span class="kw4">double</span> in <span class="sy1">=</span> <span class="nu16">0.1</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.1 double is &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1518">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">23</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> in
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1508">std::<span class="me2">hexfloat</span></span></a> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1509">std::<span class="me2">defaultfloat</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.1 double is &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1792">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">23</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> in
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1782">std::<span class="me2">hexfloat</span></span></a> <span class="sy1">&lt;&lt;</span> in <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1783">std::<span class="me2">defaultfloat</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.1*10 is 1.0000000000000000555112 (0x8.0000000000002p-3), &quot;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;or 1.0 if rounded to double<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="kw4">double</span> expr_result <span class="sy1">=</span> <span class="nu16">0.1</span> <span class="sy2">*</span> <span class="nu0">10</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span>
     <span class="kw4">double</span> fma_result <span class="sy1">=</span> fma<span class="br0">&#40;</span><span class="nu16">0.1</span>, <span class="nu0">10</span>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.1 * 10 - 1 = &quot;</span> <span class="sy1">&lt;&lt;</span> expr_result
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.1 * 10 - 1 = &quot;</span> <span class="sy1">&lt;&lt;</span> expr_result
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;&#160;: 1 subtracted after intermediate rounding<span class="es1">\n</span>&quot;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fma(0.1, 10, -1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1518">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> fma_result <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span>
-              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1508">std::<span class="me2">hexfloat</span></span></a> <span class="sy1">&lt;&lt;</span> fma_result <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1509">std::<span class="me2">defaultfloat</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fma(0.1, 10, -1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1792">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> fma_result <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (&quot;</span>
+              <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1782">std::<span class="me2">hexfloat</span></span></a> <span class="sy1">&lt;&lt;</span> fma_result <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1783">std::<span class="me2">defaultfloat</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// fma is used in double-double arithmetic</span>
     <span class="kw4">double</span> high <span class="sy1">=</span> <span class="nu16">0.1</span> <span class="sy2">*</span> <span class="nu0">10</span><span class="sy4">;</span>
     <span class="kw4">double</span> low <span class="sy1">=</span> fma<span class="br0">&#40;</span><span class="nu16">0.1</span>, <span class="nu0">10</span>, <span class="sy2">-</span>high<span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;in double-double arithmetic, 0.1 * 10 is representable as &quot;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;in double-double arithmetic, 0.1 * 10 is representable as &quot;</span>
               <span class="sy1">&lt;&lt;</span> high <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; + &quot;</span> <span class="sy1">&lt;&lt;</span> low <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// error handling </span>
-    <a href="../fenv/feclearexcept.html"><span class="kw1197">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1208">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fma(+Inf, 10, -Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">fma</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a>, <span class="nu0">10</span>, <span class="sy2">-</span><a href="INFINITY.html"><span class="kw1187">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1198">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1211">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../fenv/feclearexcept.html"><span class="kw1446">std::<span class="me2">feclearexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1457">FE_ALL_EXCEPT</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;fma(+Inf, 10, -Inf) = &quot;</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">fma</span><span class="br0">&#40;</span><a href="INFINITY.html"><span class="kw1373">INFINITY</span></a>, <span class="nu0">10</span>, <span class="sy2">-</span><a href="INFINITY.html"><span class="kw1373">INFINITY</span></a><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><a href="../fenv/fetestexcept.html"><span class="kw1447">std::<span class="me2">fetestexcept</span></span></a><span class="br0">&#40;</span><a href="../fenv/FE_exceptions.html"><span class="kw1460">FE_INVALID</span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;    FE_INVALID raised<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -514,15 +519,15 @@ fma(+Inf, 10, -Inf) = -nan
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7467/1000000
-Preprocessor generated node count: 8830/1000000
-Post‐expand include size: 214738/2097152 bytes
-Template argument size: 42988/2097152 bytes
+Preprocessor visited node count: 7656/1000000
+Preprocessor generated node count: 9005/1000000
+Post‐expand include size: 221906/2097152 bytes
+Template argument size: 44087/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2653-0!*!0!!en!*!* and timestamp 20151130150049 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2653-0!*!0!!en!*!* and timestamp 20161206122909 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -558,7 +563,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 25 October 2015, at 13:20.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,256 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 14,788 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -591,7 +596,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.911 secs. -->
+</script><!-- Served in 3.804 secs. -->
 	</body>
-<!-- Cached 20151130150049 -->
+<!-- Cached 20161206122909 -->
 </html>

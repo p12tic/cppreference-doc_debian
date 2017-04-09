@@ -391,8 +391,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td> -
 </td>
 <td>  pointer to a null-terminated character string specifying how to read the input.
-<p>The format string consists of whitespace characters (any single whitespace character in the format string consumes all available consecutive whitespace characters from the input), non-whitespace multibyte characters except <code><b>%</b></code> (each such character in the format string consumes exactly one identical character from the input) and conversion specifications. Each conversion specification has the following format:
+<p>The format string consists of 
 </p>
+<ul><li> non-whitespace multibyte characters except <code><b>%</b></code>: each such character in the format string consumes exactly one identical character from the input stream, or causes the function to fail if the next character on the stream does not compare equal.
+</li><li> whitespace characters: any single whitespace character in the format string consumes all available consecutive whitespace characters from the input (determined as if by calling <a href="../string/byte/isspace.html" title="c/string/byte/isspace"><tt>isspace</tt></a> in a loop). Note that there is no difference between <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;<span class="es1">\n</span>&quot;</span></span></span>, <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot; &quot;</span></span></span>, <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;<span class="es1">\t</span><span class="es1">\t</span>&quot;</span></span></span>, or other whitespace in the format string.
+</li><li> conversion specifications. Each conversion specification has the following format:
+</li></ul>
 <dl><dd><ul><li> introductory <code><b>%</b></code> character
 </li></ul>
 </dd></dl>
@@ -423,6 +427,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th colspan="2" style="text-align:right; font-weight:normal;"> length modifier
 </th>
 <th> <code>hh</code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code>h</code>
 </th>
@@ -431,12 +437,20 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th> <code><b>l</b></code>
 </th>
 <th> <code><b>ll</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>j</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>z</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>t</b></code>
+<p><span class="t-mark-rev t-since-c99">(C99)</span>
+</p>
 </th>
 <th> <code><b>L</b></code>
 </th></tr>
@@ -548,25 +562,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <th> <code>u</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches a <b>unsigned integer</b>. 
+<dl><dd>matches an unsigned <b>decimal integer</b>. 
 </dd></dl>
-<p>The format of the number is the same as expected by <a href="../string/byte/strtoul.html" title="c/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span> for the <code>base</code> argument (base is determined by the first characters parsed)
+<p>The format of the number is the same as expected by <a href="../string/byte/strtoul.html" title="c/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">10</span></span></span> for the <code>base</code> argument.
 </p>
 </td></tr>
 <tr>
 <th> <code>o</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches an <b>octal integer</b>.
+<dl><dd>matches an unsigned <b>octal integer</b>.
 </dd></dl>
 <p>The format of the number is the same as expected by <a href="../string/byte/strtoul.html" title="c/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">8</span></span></span> for the <code>base</code> argument
 </p>
 </td></tr>
 <tr>
-<th> <code>x</code>
+<th> <code>x</code>, <code>X</code>
 </th>
 <td style="text-align:left;">
-<dl><dd>matches an <b>hexadecimal integer</b>.
+<dl><dd>matches an unsigned <b>hexadecimal integer</b>.
 </dd></dl>
 <p>The format of the number is the same as expected by <a href="../string/byte/strtoul.html" title="c/string/byte/strtoul"><tt>strtoul()</tt></a> with the value <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">16</span></span></span> for the <code>base</code> argument
 </p>
@@ -581,7 +595,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p>
 </td></tr>
 <tr>
-<th> <code>a</code>, <code>A</code><br /> <code>e</code>, <code>E</code><br /> <code>f</code>, <code>F</code><br /> <code>g</code>, <code>G</code>
+<th> <code>a</code>, <code>A</code><span class="t-mark-rev t-since-c99">(C99)</span><br /> <code>e</code>, <code>E</code><br /> <code>f</code>, <code>F</code><br /> <code>g</code>, <code>G</code>
 </th>
 <td style="text-align:left;">
 <dl><dd>matches a <b>floating-point number</b>.
@@ -634,10 +648,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"> <small>N/A</small>
 </td></tr></table>
-<p>All conversion specifiers other than <code>[</code>, <code>c</code>, and <code>n</code> consume and discard all leading whitespace characters (determined as if by calling <a href="../string/byte/isspace.html" title="c/string/byte/isspace"><tt>isspace</tt></a>) before attempting to parse the input. These consumed characters do not count towards the specified maximum field width.
-</p><p>The conversion specifiers <code>lc</code>, <code>ls</code>, and <code>l[</code> perform multibyte-to-wide character conversion as if by calling <a href="../string/multibyte/wcrtomb.html" title="c/string/multibyte/wcrtomb"><tt>wcrtomb()</tt></a> with an <a href="../string/multibyte/mbstate_t.html" title="c/string/multibyte/mbstate t"><tt>mbstate_t</tt></a> object initialized to zero before the first character is converted.
-</p><p>The conversion specifiers <code>s</code> and <code>[</code> always store the null terminator in addition to the matched characters. The size of the destination array must be at least one greater than the specified field width.
-</p><p>The correct conversion specifications for the <a href="../types/integer.html" title="c/types/integer">fixed-width integer types</a> (<code>int8_t</code>, etc) are defined in the header <a href="../../cpp/types/integer.html" title="cpp/types/integer">&lt;cinttypes&gt;</a>(C++) or <a href="../types/integer.html" title="c/types/integer">&lt;inttypes.h&gt;</a> (C) (although <a href="../types/integer.html" title="c/types/integer"><tt>SCNdMAX</tt></a>, <a href="../types/integer.html" title="c/types/integer"><tt>SCNuMAX</tt></a>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+<p>For every conversion specifier other than <code>n</code>, the longest sequence of input characters which does not exceed any speciﬁed ﬁeld width and which either is exactly what the conversion specifier expects or is a prefix of a sequence it would expect, is what's consumed from the stream. The ﬁrst character, if any, after this consumed sequence remains unread. If the consumed sequence has length zero or if the consumed sequence cannot be converted as specified above, the matching failure occurs unless end-of-ﬁle, an encoding error, or a read error prevented input from the stream, in which case it is an input failure.
+</p><p>All conversion specifiers other than <code>[</code>, <code>c</code>, and <code>n</code> consume and discard all leading whitespace characters (determined as if by calling <a href="../string/byte/isspace.html" title="c/string/byte/isspace"><tt>isspace</tt></a>) before attempting to parse the input. These consumed characters do not count towards the specified maximum field width.
+</p><p>The conversion specifiers <code>lc</code>, <code>ls</code>, and <code>l[</code> perform multibyte-to-wide character conversion as if by calling <a href="../string/multibyte/mbrtowc.html" title="c/string/multibyte/mbrtowc"><tt>mbrtowc()</tt></a> with an <a href="../string/multibyte/mbstate_t.html" title="c/string/multibyte/mbstate t"><tt>mbstate_t</tt></a> object initialized to zero before the first character is converted.
+</p><p>The conversion specifiers <code>s</code> and <code>[</code> always store the null terminator in addition to the matched characters. The size of the destination array must be at least one greater than the specified field width. The use of <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span>s</span></span> or <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span><span class="br0">&#91;</span></span></span>, without specifying the destination array size, is as unsafe as <span class="t-lc"><a href="gets.html" title="c/io/gets">gets</a></span>
+</p><p>The correct conversion specifications for the <a href="../types/integer.html" title="c/types/integer">fixed-width integer types</a> (<code>int8_t</code>, etc) are defined in the header <a href="../types/integer.html" title="c/types/integer">&lt;inttypes.h&gt;</a> (although <a href="../types/integer.html" title="c/types/integer"><tt>SCNdMAX</tt></a>, <a href="../types/integer.html" title="c/types/integer"><tt>SCNuMAX</tt></a>, etc is synonymous with <code>%jd</code>, <code>%ju</code>, etc).
+</p><p>There is a <a href="../language/eval_order.html" title="c/language/eval order">sequence point</a> after the action of each conversion specifier; this permits storing multiple fields in the same "sink" variable.
+</p><p>When parsing an incomplete floating-point value that ends in the exponent with no digits, such as parsing <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;100er&quot;</span></span></span> with the conversion specifier <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">%</span>f</span></span>, the sequence <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;100e&quot;</span></span></span> (the longest prefix of a possibly valid floating-point number) is consumed, resulting in a matching error (the consumed sequence cannot be converted to a floating-point number), with <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;r&quot;</span></span></span> remaining. Existing implementations do not follow this rule and roll back to consume only <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;100&quot;</span></span></span>, leaving <span class="t-c"><span class="mw-geshi c source-c"><span class="st0">&quot;er&quot;</span></span></span>, e.g. <a rel="nofollow" class="external text" href="https://sourceware.org/bugzilla/show_bug.cgi?id=1765">glibc bug 1765</a>
 </p><p><br />
 </p>
 </td></tr>
@@ -748,15 +765,15 @@ Parsing '1 a'...failure</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6984/1000000
-Preprocessor generated node count: 10805/1000000
-Post‐expand include size: 206316/2097152 bytes
-Template argument size: 51885/2097152 bytes
+Preprocessor visited node count: 7320/1000000
+Preprocessor generated node count: 11304/1000000
+Post‐expand include size: 214008/2097152 bytes
+Template argument size: 54794/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6223-0!*!0!!en!*!* and timestamp 20151130143826 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6223-0!*!0!!en!*!* and timestamp 20170402185211 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -791,8 +808,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/io/vfscanf" title="c/io/vfscanf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 13 April 2015, at 07:35.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,386 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 13 April 2015, at 08:35.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 12,340 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -825,7 +842,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.072 secs. -->
+</script><!-- Served in 3.040 secs. -->
 	</body>
-<!-- Cached 20151130143826 -->
+<!-- Cached 20170402185211 -->
 </html>

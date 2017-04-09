@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -278,13 +279,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="sy1">&gt;</span><br />
-<span class="kw1">struct</span> is_error_code_enum<span class="sy1">&lt;</span><a href="../io_errc.html"><span class="kw1533">std::<span class="me2">io_errc</span></span></a><span class="sy1">&gt;</span> <span class="sy4">:</span> <span class="kw1">public</span> <a href="../../types/integral_constant.html"><span class="kw555">std::<span class="me2">true_type</span></span></a> <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span></span></div></td>
+<span class="kw1">struct</span> is_error_code_enum<span class="sy1">&lt;</span><a href="../io_errc.html"><span class="kw1807">std::<span class="me2">io_errc</span></span></a><span class="sy1">&gt;</span> <span class="sy4">:</span> <span class="kw1">public</span> <a href="../../types/integral_constant.html"><span class="kw649">std::<span class="me2">true_type</span></span></a> <span class="br0">&#123;</span> <span class="br0">&#125;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>This specialization of <span class="t-lc">std::is_error_code_enum</span> informs other library components that values of type <span class="t-lc">std::io_errc</span> are enumerations that hold error codes, which makes them implicitly convertible and assignable to objects of type <span class="t-lc">std::error_code</span>.
+<p>This specialization of <span class="t-lc"><a href="../../error/error_code/is_error_code_enum.html" title="cpp/error/error code/is error code enum">std::is_error_code_enum</a></span> informs other library components that values of type <span class="t-lc"><a href="../io_errc.html" title="cpp/io/io errc">std::io_errc</a></span> are enumerations that hold error codes, which makes them implicitly convertible and assignable to objects of type <span class="t-lc"><a href="../../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>.
 </p>
 <div class="t-inherited">
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -348,25 +349,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/integral_constant.html"><span class="kw553">std::<span class="me2">integral_constant</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span>, value<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/integral_constant.html"><span class="kw647">std::<span class="me2">integral_constant</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span>, value<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/io_errc/is_error_code_enum&amp;action=edit&amp;section=1" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> The comparison between <span class="t-c"><span class="mw-geshi cpp source-cpp">e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> and <span class="t-lc">std::io_errc::stream</span> compiles because <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/error_code/is_error_code_enum.html"><span class="kw757">std::<span class="me2">is_error_code_enum</span></span></a><span class="sy1">&lt;</span><a href="../io_errc.html"><span class="kw1533">std::<span class="me2">io_errc</span></span></a><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>
+<div class="t-example"><p> The comparison between <span class="t-c"><span class="mw-geshi cpp source-cpp">e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> and <span class="t-lc"><a href="../io_errc.html" title="cpp/io/io errc">std::io_errc::stream</a></span> compiles because <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../error/error_code/is_error_code_enum.html"><span class="kw878">std::<span class="me2">is_error_code_enum</span></span></a><span class="sy1">&lt;</span><a href="../io_errc.html"><span class="kw1807">std::<span class="me2">io_errc</span></span></a><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;fstream&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ifstream.html"><span class="kw1455">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_ifstream.html"><span class="kw1729">std::<span class="me2">ifstream</span></span></a> f<span class="br0">&#40;</span><span class="st0">&quot;doesn't exist&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">try</span> <span class="br0">&#123;</span>
         f.<span class="me1">exceptions</span><span class="br0">&#40;</span>f.<span class="me1">failbit</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="../ios_base/failure.html"><span class="kw1394">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
-        <span class="kw1">if</span><span class="br0">&#40;</span>e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <a href="../io_errc.html"><span class="kw1534">std::<span class="me2">io_errc</span><span class="sy4">::</span><span class="me2">stream</span></span></a><span class="br0">&#41;</span>
-            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The error code is std::io_errc::stream<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span><span class="kw4">const</span> <a href="../ios_base/failure.html"><span class="kw1667">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">failure</span></span></a><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Caught an ios_base::failure.<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>e.<span class="me1">code</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <a href="../io_errc.html"><span class="kw1808">std::<span class="me2">io_errc</span><span class="sy4">::</span><span class="me2">stream</span></span></a><span class="br0">&#41;</span>
+            <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The error code is std::io_errc::stream<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -398,15 +399,15 @@ The error code is std::io_errc::stream</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3277/1000000
-Preprocessor generated node count: 7266/1000000
-Post‐expand include size: 88844/2097152 bytes
-Template argument size: 18195/2097152 bytes
+Preprocessor visited node count: 3300/1000000
+Preprocessor generated node count: 7347/1000000
+Post‐expand include size: 90064/2097152 bytes
+Template argument size: 18351/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4804-0!*!0!!en!*!* and timestamp 20151130160124 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4804-0!*!0!!en!*!* and timestamp 20161206145040 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -442,7 +443,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:35.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,118 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,714 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -475,7 +476,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.723 secs. -->
+</script><!-- Served in 1.608 secs. -->
 	</body>
-<!-- Cached 20151130160124 -->
+<!-- Cached 20161206145040 -->
 </html>

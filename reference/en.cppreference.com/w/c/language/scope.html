@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/scope","wgTitle":"c/language/scope","wgCurRevisionId":81285,"wgArticleId":13746,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/scope","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/scope","wgTitle":"c/language/scope","wgCurRevisionId":83310,"wgArticleId":13746,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/scope","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -220,7 +220,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="c/language/memory model">memory model and data races</a></td></tr>
 </table></div>
 </div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:c/language/basics/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
-<p>Each <a href="identifier.html" title="c/language/identifier">identifier</a> that appears in a C program is only <i>visible</i> (that is, may be used) in some possibly discontiguous portion of the source code called its <i>scope</i>.
+<p>Each <a href="identifier.html" title="c/language/identifier">identifier</a> that appears in a C program is <i>visible</i> (that is, may be used) only in some possibly discontiguous portion of the source code called its <i>scope</i>.
 </p><p>Within a scope, an identifier may designate more than one entity only if the entities are in different <a href="name_space.html" title="c/language/name space">name spaces</a>.
 </p><p>C has four kinds of scopes: 
 </p>
@@ -246,15 +246,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;action=edit&amp;section=1" title="Edit section: Nested scopes">edit</a>]</span> <span class="mw-headline" id="Nested_scopes">Nested scopes</span></h3>
 <p>If two different entities named by the same identifier are in scope at the same time, and they belong to the same <a href="name_space.html" title="c/language/name space">name space</a>, the scopes are nested (no other form of scope overlap is allowed), and the declaration that appears in the inner scope hides the declaration that appears in the outer scope:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co1">// The name space here is ordinary identifiers.</span>
+&#160;
+<span class="kw4">int</span> a<span class="sy4">;</span>   <span class="co1">// file scope of name a begins here</span>
+&#160;
+<span class="kw4">void</span> f<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// the block scope of the name a begins here</span>
+    <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// the block scope of the name a begins here; hides file-scope a</span>
     <span class="br0">&#123;</span>
       <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>         <span class="co1">// the scope of the inner a begins here, outer a is hidden</span>
       <a href="../io/fprintf.html"><span class="kw851">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, a<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// inner a is in scope, prints 2</span>
     <span class="br0">&#125;</span>                    <span class="co1">// the block scope of the inner a ends here</span>
     <a href="../io/fprintf.html"><span class="kw851">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, a<span class="br0">&#41;</span><span class="sy4">;</span>   <span class="co1">// the outer a is in scope, prints 1</span>
-<span class="br0">&#125;</span>                        <span class="co1">// the scope of the outer a ends here</span></pre></div></div>
+<span class="br0">&#125;</span>                        <span class="co1">// the scope of the outer a ends here</span>
+&#160;
+<span class="kw4">void</span> g<span class="br0">&#40;</span><span class="kw4">int</span> a<span class="br0">&#41;</span><span class="sy4">;</span>   <span class="co1">// name a has function prototype scope; hides file-scope a</span></pre></div></div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;action=edit&amp;section=2" title="Edit section: Block scope">edit</a>]</span> <span class="mw-headline" id="Block_scope">Block scope</span></h3>
 <p>The scope of any identifier declared inside a <a href="statements.html#Compound_statements" title="c/language/statements">compound statement</a>, including function bodies, <span class="t-rev-inl t-since-c99"><span>or in any expression, declaration, or statement appearing in <a href="if.html" title="c/language/if">if</a>, <a href="switch.html" title="c/language/switch">switch</a>, <a href="for.html" title="c/language/for">for</a>, <a href="while.html" title="c/language/while">while</a>, or <a href="do.html" title="c/language/do">do-while</a> statement</span> <span><span class="t-mark-rev t-since-c99">(since C99)</span></span></span>, or within the parameter list of a <a href="function_definition.html" title="c/language/function definition">function definition</a> begins at the point of declaration and ends at the end of the block or statement in which it was declared.
 </p>
@@ -321,11 +327,9 @@ label<span class="sy4">:;</span>
 <p>Note that if there are multiple or nested declarators in the declaration, the scope ends at the end of the nearest enclosing function declarator:
 </p>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">void</span> f <span class="br0">&#40;</span> <span class="co1">// function name 'f' is at file scope</span>
- <span class="kw4">long</span> <span class="kw4">double</span> f, <span class="co1">// the identifier 'f' is now in scope, file-scope 'f' is hidden</span>
- <span class="kw4">char</span> <span class="br0">&#40;</span><span class="sy2">**</span>a<span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">10</span> <span class="sy2">*</span> <span class="kw4">sizeof</span> f<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// 'f' refers to the first parameter, which is in scope</span>
-<span class="br0">&#123;</span>
-   <a href="../io/fprintf.html"><span class="kw851">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span>, <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="kw4">sizeof</span> <span class="sy2">**</span>a<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// prints 160</span>
-<span class="br0">&#125;</span>
+ <span class="kw4">long</span> <span class="kw4">double</span> f,            <span class="co1">// the identifier 'f' is now in scope, file-scope 'f' is hidden</span>
+ <span class="kw4">char</span> <span class="br0">&#40;</span><span class="sy2">**</span>a<span class="br0">&#41;</span><span class="br0">&#91;</span><span class="nu0">10</span> <span class="sy2">*</span> <span class="kw4">sizeof</span> f<span class="br0">&#93;</span> <span class="co1">// 'f' refers to the first parameter, which is in scope</span>
+<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
 <span class="kw2">enum</span><span class="br0">&#123;</span> n <span class="sy1">=</span> <span class="nu0">3</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw4">int</span> <span class="br0">&#40;</span><span class="sy2">*</span><span class="br0">&#40;</span><span class="sy2">*</span>g<span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw4">int</span> n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">// the scope of the function parameter 'n'</span>
@@ -416,16 +420,16 @@ NewPP limit report
 Preprocessor visited node count: 1092/1000000
 Preprocessor generated node count: 4202/1000000
 Post‐expand include size: 24493/2097152 bytes
-Template argument size: 6717/2097152 bytes
+Template argument size: 6868/2097152 bytes
 Highest expansion depth: 13/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13746-0!*!0!!en!*!* and timestamp 20151011181458 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13746-0!*!0!!en!*!* and timestamp 20160131131921 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=81285">http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=81285</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=83310">http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=83310</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -448,7 +452,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="scope.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/scope" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/scope" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=81285" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/scope" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/scope" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;oldid=83310" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/scope&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -456,8 +460,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/language/scope" title="c/language/scope" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/language/scope" title="c/language/scope" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/language/scope" title="c/language/scope" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/language/scope" title="c/language/scope" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/language/scope" title="c/language/scope" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/language/scope" title="c/language/scope" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/language/scope" title="c/language/scope" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/language/scope" title="c/language/scope" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/language/scope" title="c/language/scope" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/language/scope" title="c/language/scope" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/language/scope" title="c/language/scope" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/language/scope" title="c/language/scope" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/language/scope" title="c/language/scope" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 11 October 2015, at 11:14.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,614 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 January 2016, at 05:19.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 3,490 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -490,7 +494,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.085 secs. -->
+</script><!-- Served in 0.055 secs. -->
 	</body>
-<!-- Cached 20151011181527 -->
+<!-- Cached 20160131132018 -->
 </html>

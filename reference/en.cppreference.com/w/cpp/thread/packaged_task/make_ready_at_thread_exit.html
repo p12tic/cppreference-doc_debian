@@ -227,10 +227,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../hardware_destructive_interference_size.html" title="cpp/thread/hardware destructive interference size"><span class="t-lines"><span>hardware_destructive_interference_size</span><span>hardware_constructive_interference_size</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -252,6 +254,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
 <tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../scoped_lock.html" title="cpp/thread/scoped lock"><span class="t-lines"><span>scoped_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -345,9 +348,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;functional&gt;</span>
 <span class="co2">#include &lt;utility&gt;</span>
 &#160;
-<span class="kw4">void</span> worker<span class="br0">&#40;</span><a href="../future.html"><span class="kw1858">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> output<span class="br0">&#41;</span>
+<span class="kw4">void</span> worker<span class="br0">&#40;</span><a href="../future.html"><span class="kw2177">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span> output<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../packaged_task.html"><span class="kw1861">std::<span class="me2">packaged_task</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="br0">&#40;</span><span class="kw4">bool</span><span class="sy3">&amp;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> my_task<span class="br0">&#123;</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">bool</span><span class="sy3">&amp;</span> done<span class="br0">&#41;</span> <span class="br0">&#123;</span> done<span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../packaged_task.html"><span class="kw2180">std::<span class="me2">packaged_task</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="br0">&#40;</span><span class="kw4">bool</span><span class="sy3">&amp;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> my_task<span class="br0">&#123;</span> <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">bool</span><span class="sy3">&amp;</span> done<span class="br0">&#41;</span> <span class="br0">&#123;</span> done<span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">auto</span> result <span class="sy1">=</span> my_task.<span class="me1">get_future</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
@@ -355,11 +358,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
     my_task.<span class="me1">make_ready_at_thread_exit</span><span class="br0">&#40;</span>done<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// execute task right away</span>
 &#160;
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;worker: done = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> done <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1514">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;worker: done = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/boolalpha.html"><span class="kw1761">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> done <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1788">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
 &#160;
-    <span class="kw4">auto</span> status <span class="sy1">=</span> result.<span class="me1">wait_for</span><span class="br0">&#40;</span><a href="../../chrono/duration.html"><span class="kw875">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>status <span class="sy1">==</span> <a href="../future_status.html"><span class="kw1868">std::<span class="me2">future_status</span><span class="sy4">::</span><span class="me2">timeout</span></span></a><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;worker: result is not ready yet&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1514">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="kw4">auto</span> status <span class="sy1">=</span> result.<span class="me1">wait_for</span><span class="br0">&#40;</span><a href="../../chrono/duration.html"><span class="kw997">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>status <span class="sy1">==</span> <a href="../future_status.html"><span class="kw2187">std::<span class="me2">future_status</span><span class="sy4">::</span><span class="me2">timeout</span></span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;worker: result is not ready yet&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1788">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
 &#160;
     output <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>result<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
@@ -367,13 +370,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../future.html"><span class="kw1858">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span> result<span class="sy4">;</span>
+    <a href="../future.html"><span class="kw2177">std::<span class="me2">future</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span> result<span class="sy4">;</span>
 &#160;
-    <a href="../thread.html"><span class="kw1826">std::<span class="me2">thread</span></span></a><span class="br0">&#123;</span>worker, <a href="../../utility/functional/ref.html"><span class="kw934">std::<span class="me2">ref</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span><span class="br0">&#125;</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../thread.html"><span class="kw2143">std::<span class="me2">thread</span></span></a><span class="br0">&#123;</span>worker, <a href="../../utility/functional/ref.html"><span class="kw1069">std::<span class="me2">ref</span></span></a><span class="br0">&#40;</span>result<span class="br0">&#41;</span><span class="br0">&#125;</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="kw4">auto</span> status <span class="sy1">=</span> result.<span class="me1">wait_for</span><span class="br0">&#40;</span><a href="../../chrono/duration.html"><span class="kw875">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>status <span class="sy1">==</span> <a href="../future_status.html"><span class="kw1867">std::<span class="me2">future_status</span><span class="sy4">::</span><span class="me2">ready</span></span></a><span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;main: result is ready&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1514">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
+    <span class="kw4">auto</span> status <span class="sy1">=</span> result.<span class="me1">wait_for</span><span class="br0">&#40;</span><a href="../../chrono/duration.html"><span class="kw997">std::<span class="me2">chrono</span><span class="sy4">::</span><span class="me2">seconds</span></span></a><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>status <span class="sy1">==</span> <a href="../future_status.html"><span class="kw2186">std::<span class="me2">future_status</span><span class="sy4">::</span><span class="me2">ready</span></span></a><span class="br0">&#41;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;main: result is ready&quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/endl.html"><span class="kw1788">std::<span class="me2">endl</span></span></a><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -393,15 +396,15 @@ main: result is ready</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4161/1000000
-Preprocessor generated node count: 7992/1000000
-Post‐expand include size: 129604/2097152 bytes
-Template argument size: 26100/2097152 bytes
+Preprocessor visited node count: 4329/1000000
+Preprocessor generated node count: 8132/1000000
+Post‐expand include size: 136997/2097152 bytes
+Template argument size: 27727/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8679-0!*!0!!en!*!* and timestamp 20150825013634 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8679-0!*!0!!en!*!* and timestamp 20161223012758 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -436,8 +439,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/thread/packaged_task/make_ready_at_thread_exit" title="cpp/thread/packaged task/make ready at thread exit" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 24 March 2015, at 20:19.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,407 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 March 2015, at 19:19.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,113 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -470,7 +473,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.639 secs. -->
+</script><!-- Served in 1.434 secs. -->
 	</body>
-<!-- Cached 20150825013635 -->
+<!-- Cached 20161223012759 -->
 </html>

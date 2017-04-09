@@ -207,6 +207,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -247,6 +248,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/unordered map/try emplace"><span class="t-lines"><span>unordered_map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/unordered map/erase"><span class="t-lines"><span>unordered_map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/unordered map/swap"><span class="t-lines"><span>unordered_map::swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="extract.html" title="cpp/container/unordered map/extract"><span class="t-lines"><span>unordered_map::extract</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="merge.html" title="cpp/container/unordered map/merge"><span class="t-lines"><span>unordered_map::merge</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="count.html" title="cpp/container/unordered map/count"><span class="t-lines"><span>unordered_map::count</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find.html" title="cpp/container/unordered map/find"><span class="t-lines"><span>unordered_map::find</span></span></a></div></div></td></tr>
@@ -294,9 +297,9 @@ iterator insert_or_assign<span class="br0">&#40;</span>const_iterator hint, key_
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<div class="t-li1"><span class="t-li">1,3)</span> If a key equivalent to <code>k</code> already exists in the container, assigns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span></span></span> to the <code>mapped_type</code> corresponding to the key <code>k</code>. If the key does not exist, inserts the new value as if by <a href="insert.html" title="cpp/container/unordered map/insert">insert</a>, constructing it from <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type<span class="br0">&#40;</span>k, <a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span></div>
-<div class="t-li1"><span class="t-li">2,4)</span> Same as <span class="t-v">(1,3)</span>, except the mapped value is constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type<span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span>, <a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span></div>
-<p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>.
+<div class="t-li1"><span class="t-li">1,3)</span> If a key equivalent to <code>k</code> already exists in the container, assigns <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw1114">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span></span></span> to the <code>mapped_type</code> corresponding to the key <code>k</code>. If the key does not exist, inserts the new value as if by <a href="insert.html" title="cpp/container/unordered map/insert">insert</a>, constructing it from <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type<span class="br0">&#40;</span>k, <a href="../../utility/forward.html"><span class="kw1114">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span></div>
+<div class="t-li1"><span class="t-li">2,4)</span> Same as <span class="t-v">(1,3)</span>, except the mapped value is constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp">value_type<span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span>, <a href="../../utility/forward.html"><span class="kw1114">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>M<span class="sy1">&gt;</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span></div>
+<p>If rehashing occurs due to the insertion, all iterators are invalidated. Otherwise iterators are not affected. References are not invalidated. Rehashing occurs only if the new number of elements is greater than <span class="t-c"><span class="mw-geshi cpp source-cpp">max_load_factor<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">*</span>bucket_count<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>. <span class="t-rev-inl t-since-cxx17"><span>If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -362,7 +365,7 @@ iterator insert_or_assign<span class="br0">&#40;</span>const_iterator hint, key_
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="insert.html" title="cpp/container/unordered map/insert"> <span class="t-lines"><span>insert</span></span></a></div></div>
 </td>
-<td>   inserts elements  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_insert&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   inserts elements <span class="t-rev-inl t-since-cxx17"><span>or nodes</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span> <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_insert&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -374,15 +377,15 @@ iterator insert_or_assign<span class="br0">&#40;</span>const_iterator hint, key_
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5166/1000000
-Preprocessor generated node count: 12000/1000000
-Post‐expand include size: 173904/2097152 bytes
-Template argument size: 22732/2097152 bytes
+Preprocessor visited node count: 5417/1000000
+Preprocessor generated node count: 12477/1000000
+Post‐expand include size: 186569/2097152 bytes
+Template argument size: 24802/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13854-0!*!0!!en!*!* and timestamp 20151028061531 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13854-0!*!0!!en!*!* and timestamp 20170127142522 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -417,8 +420,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/container/unordered_map/insert_or_assign" title="cpp/container/unordered map/insert or assign" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 17 December 2014, at 11:25.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,803 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 17 December 2014, at 10:25.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 11,810 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -451,7 +454,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.951 secs. -->
+</script><!-- Served in 1.932 secs. -->
 	</body>
-<!-- Cached 20151028061531 -->
+<!-- Cached 20170127142522 -->
 </html>

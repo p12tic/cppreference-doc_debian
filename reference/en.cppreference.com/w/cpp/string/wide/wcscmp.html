@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
@@ -235,6 +236,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../wide.html" title="cpp/string/wide"> Wide strings</a> </td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string.html" title="cpp/string/basic string"><span class="t-lines"><span>basic_string</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string_view.html" title="cpp/string/basic string view"><span class="t-lines"><span>basic_string_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../char_traits.html" title="cpp/string/char traits"><span class="t-lines"><span>char_traits</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../wide.html" title="cpp/string/wide"> Null-terminated wide strings</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
@@ -339,7 +341,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>Positive value if <code>lhs</code> appears after <code>rhs</code> in lexicographical order.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcscmp&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>This function is not locale-sensitive, unlike <span class="t-lc">std::wcscoll</span>, and the order may not be meaningful when characters from different Unicode blocks are used together or when the order of code units does not match collation order.
+<p>This function is not locale-sensitive, unlike <span class="t-lc"><a href="wcscoll.html" title="cpp/string/wide/wcscoll">std::wcscoll</a></span>, and the order may not be meaningful when characters from different Unicode blocks are used together or when the order of code units does not match collation order.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/wide/wcscmp&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -350,17 +352,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../container/vector.html"><span class="kw1093">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span><span class="sy1">&gt;</span> leaders<span class="br0">&#123;</span>L<span class="st0">&quot;Ленин&quot;</span>, L<span class="st0">&quot;Сталин&quot;</span>, L<span class="st0">&quot;Маленков&quot;</span>,
+    <a href="../../container/vector.html"><span class="kw1265">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">wchar_t</span><span class="sy2">*</span><span class="sy1">&gt;</span> leaders<span class="br0">&#123;</span>L<span class="st0">&quot;Ленин&quot;</span>, L<span class="st0">&quot;Сталин&quot;</span>, L<span class="st0">&quot;Маленков&quot;</span>,
         L<span class="st0">&quot;Хрущёв&quot;</span>, L<span class="st0">&quot;Брежнев&quot;</span>, L<span class="st0">&quot;Андропов&quot;</span>, L<span class="st0">&quot;Черненко&quot;</span>, L<span class="st0">&quot;Горбачёв&quot;</span><span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../algorithm/sort.html"><span class="kw1350">std::<span class="me2">sort</span></span></a><span class="br0">&#40;</span>leaders.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, leaders.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">auto</span> strA, <span class="kw4">auto</span> strB<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <a href="../../algorithm/sort.html"><span class="kw1614">std::<span class="me2">sort</span></span></a><span class="br0">&#40;</span>leaders.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, leaders.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">auto</span> strA, <span class="kw4">auto</span> strB<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         <span class="kw1">return</span> std<span class="sy4">::</span><span class="me2">wcscmp</span><span class="br0">&#40;</span>strA, strB<span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="sy4">;</span>
     <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="../../locale/setlocale.html"><span class="kw1713">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1617">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../locale/setlocale.html"><span class="kw1986">std::<span class="me2">setlocale</span></span></a><span class="br0">&#40;</span><a href="../../locale/LC_categories.html"><span class="kw1989">LC_ALL</span></a>, <span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">wcout</span></span></a>.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="../../locale/locale.html"><span class="kw1890">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;en_US.utf8&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">auto</span> leader <span class="sy4">:</span> leaders<span class="br0">&#41;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> leader <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> leader <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -408,15 +410,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3741/1000000
-Preprocessor generated node count: 6604/1000000
-Post‐expand include size: 99120/2097152 bytes
-Template argument size: 16545/2097152 bytes
+Preprocessor visited node count: 3848/1000000
+Preprocessor generated node count: 6716/1000000
+Post‐expand include size: 102596/2097152 bytes
+Template argument size: 17152/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3794-0!*!0!!en!*!* and timestamp 20151130155344 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3794-0!*!0!!en!*!* and timestamp 20161206014803 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -452,7 +454,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 24 February 2015, at 14:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,225 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,144 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -485,7 +487,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.407 secs. -->
+</script><!-- Served in 1.280 secs. -->
 	</body>
-<!-- Cached 20151130155344 -->
+<!-- Cached 20161206014803 -->
 </html>

@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/constexpr","wgTitle":"cpp/language/constexpr","wgCurRevisionId":81689,"wgArticleId":689,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/constexpr","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/constexpr","wgTitle":"cpp/language/constexpr","wgCurRevisionId":91780,"wgArticleId":689,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with unreviewed CWG DR marker"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/constexpr","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div><div style="display:inline-block">
 <div><table class="t-nv-begin" cellpadding="0" style="">
@@ -293,28 +294,27 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </ul>
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=1" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span></h3>
-<p>The <code>constexpr</code> specifier declares that it is possible to evaluate the value of the function or variable at compile time. Such variables and functions can then be used where only compile time <a href="constant_expression.html" title="cpp/language/constant expression">constant expressions</a> are allowed (provided that appropriate function arguments are given). A <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> specifier used in an object declaration implies <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>. A <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> specifier used in a function declaration implies <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">inline</span></span></span>.
+<p>The <code>constexpr</code> specifier declares that it is possible to evaluate the value of the function or variable at compile time. Such variables and functions can then be used where only compile time <a href="constant_expression.html" title="cpp/language/constant expression">constant expressions</a> are allowed (provided that appropriate function arguments are given). A <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> specifier used in an object declaration implies <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>. A <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> specifier used in a function <span class="t-rev-inl t-since-cxx17"><span> or <a href="static.html" title="cpp/language/static">static</a> member variable</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span> declaration implies <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">inline</span></span></span>.
 </p><p>A <b><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> variable</b> must satisfy the following requirements:
 </p>
 <dl><dd><ul><li> its type must be a <a href="../concept/LiteralType.html" title="cpp/concept/LiteralType"><code>LiteralType</code></a>.
-</li><li> it must be immediately constructed or assigned a value.
-</li><li> the constructor parameters or the value to be assigned must contain only literal values, <code>constexpr</code> variables and functions.
-</li><li> the constructor used to construct the object (either implicit or explicit) must satisfy the requirements of <code>constexpr</code> constructor. In the case of explicit constructor, it must have <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> specified. 
+</li><li> it must be immediately initialized
+</li><li> the <a href="eval_order.html" title="cpp/language/eval order">full-expression</a> of its initialization, including all implicit conversions, constructors calls, etc, must be a <a href="constant_expression.html" title="cpp/language/constant expression">constant expression</a>
 </li></ul>
 </dd></dl>
 <p>A <b><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> function</b> must satisfy the following requirements:
 </p>
 <dl><dd><ul><li> it must not be <a href="virtual.html" title="cpp/language/virtual">virtual</a>
 </li><li> its return type must be <a href="../concept/LiteralType.html" title="cpp/concept/LiteralType"><code>LiteralType</code></a>
-</li><li> each of its parameters must be literal type
-</li><li> there exists at least one argument value such that an invocation of the function could be an evaluated subexpression of a <a href="constant_expression.html#Core_constant_expressions" title="cpp/language/constant expression">core constant expression</a> (for constexpr function templates, at least one specialization must satisfy this requirement <span class="t-rev-inl t-since-cxx14"><span>, for constructors, use in a constant initializer is sufficient)</span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>)
+</li><li> each of its parameters must be <a href="../concept/LiteralType.html" title="cpp/concept/LiteralType"><code>LiteralType</code></a>
+</li><li> there exists at least one set of argument values such that an invocation of the function could be an evaluated subexpression of a <a href="constant_expression.html#Core_constant_expressions" title="cpp/language/constant expression">core constant expression</a><span class="t-rev-inl t-since-cxx14"><span> (for constructors, use in a constant initializer is sufficient)</span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>. No diagnostic is required for a violation of this bullet.
 </li></ul>
 </dd></dl>
  <table class="t-rev-begin">
 <tr class="t-rev t-until-cxx14"><td>
 <dl><dd><ul><li> the function body must be either deleted or defaulted or contain only the following:
 </li></ul>
-<dl><dd><ul><li> null statements
+<dl><dd><ul><li> <a href="statements.html#Expression_statements" title="cpp/language/statements">null statements</a> (plain semicolons)
 </li><li> <a href="static_assert.html" title="cpp/language/static assert">static_assert</a> declarations
 </li><li> <a href="typedef.html" title="cpp/language/typedef">typedef</a> declarations and <a href="type_alias.html" title="cpp/language/type alias">alias</a> declarations that do not define classes or enumerations
 </li><li> <a href="namespace.html#Using-declarations" title="cpp/language/namespace">using declarations</a>
@@ -329,6 +329,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li></ul>
 <dl><dd><ul><li> an <a href="asm.html" title="cpp/language/asm">asm declaration</a>
 </li><li> a <a href="goto.html" title="cpp/language/goto">goto</a> statement
+</li><li> a statement with a <a href="statements.html#Labels" title="cpp/language/statements">label</a> other than <code>case</code> and <code>default</code>
 </li><li> a <a href="try_catch.html" title="cpp/language/try catch">try-block</a>
 </li><li> a definition of a variable of non-literal type
 </li><li> a definition of a variable of static or thread <a href="storage_duration.html" title="cpp/language/storage duration">storage duration</a>
@@ -343,7 +344,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </table>
 <p>A <b><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> constructor</b> must satisfy the following requirements:
 </p>
-<dl><dd><ul><li> each of its parameters must be literal type
+<dl><dd><ul><li> each of its parameters must be <a href="../concept/LiteralType.html" title="cpp/concept/LiteralType"><code>LiteralType</code></a>.
 </li><li> the class must have no virtual base classes
 </li><li> the constructor must not have a <a href="function-try-block.html" title="cpp/language/function-try-block">function-try-block</a>
 </li></ul>
@@ -378,6 +379,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td></tr>
 </table>
+<p>For constexpr function templates and constexpr member functions of class templates, at least one specialization must satisfy the abovementioned requirements. Other specializations are still considered as constexpr, even though a call to such a function cannot appear in a constant expression.
+</p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>Because the <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a> operator always returns <code>true</code> for a constant expression, it can be used to check if a particular invocation of a constexpr function takes the constant expression branch:
 </p>
@@ -386,7 +389,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">constexpr</span> <span class="kw4">int</span> f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="kw4">constexpr</span> <span class="kw4">bool</span> b2 <span class="sy1">=</span> <span class="kw1">noexcept</span><span class="br0">&#40;</span>f<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// true, f() is a constant expression</span></pre></div></div>
 <p>Constexpr constructors are permitted for classes that aren't literal types. For example, the default constructor of <span class="t-lc"><a href="../memory/unique_ptr.html" title="cpp/memory/unique ptr">std::unique_ptr</a></span> is constexpr, allowing <a href="constant_initialization.html" title="cpp/language/constant initialization">constant initialization</a>.
+</p><p>Reference variables can be declared constexpr (their initializers have to be <a href="constant_expression.html#Reference_constant_expression" title="cpp/language/constant expression">reference constant expressions</a>):
 </p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">static</span> <span class="kw4">constexpr</span> <span class="kw4">int</span> <span class="kw4">const</span><span class="sy3">&amp;</span> x <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span> <span class="co1">// constexpr reference to a const int object</span>
+                                    <span class="co1">// (the object has static storage duration</span>
+                                    <span class="co1">//  due to life extension by a static reference)</span></pre></div></div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=3" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span></h3>
 <p><a href="../keyword/constexpr.html" title="cpp/keyword/constexpr"><tt>constexpr</tt></a>
 </p>
@@ -417,7 +424,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// in C++11, they must do so from the conditional operator&#160;?:</span>
     <span class="kw4">constexpr</span> <span class="kw4">char</span> operator<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">&#41;</span> <span class="kw4">const</span>
     <span class="br0">&#123;</span>
-        <span class="kw1">return</span> n <span class="sy1">&lt;</span> sz<span class="sy4">?</span> p<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy4">:</span> <span class="kw1">throw</span> <a href="../error/out_of_range/out_of_range.html"><span class="kw648">std::<span class="me2">out_of_range</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> n <span class="sy1">&lt;</span> sz<span class="sy4">?</span> p<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy4">:</span> <span class="kw1">throw</span> <a href="../error/out_of_range/out_of_range.html"><span class="kw768">std::<span class="me2">out_of_range</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
     <span class="kw4">constexpr</span> <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> size<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> sz<span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
@@ -428,7 +435,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                                              <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> c <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw1">return</span> n <span class="sy1">==</span> s.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">?</span> c <span class="sy4">:</span>
-           s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy1">&gt;=</span> <span class="st0">'a'</span> <span class="sy3">&amp;&amp;</span> s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy1">&lt;=</span> <span class="st0">'z'</span><span class="sy4">?</span> countlower<span class="br0">&#40;</span>s, n <span class="sy2">+</span> <span class="nu0">1</span>, c <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy4">:</span>
+           <span class="st0">'a'</span> <span class="sy1">&lt;=</span> s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy3">&amp;&amp;</span> s<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy1">&lt;=</span> <span class="st0">'z'</span><span class="sy4">?</span> countlower<span class="br0">&#40;</span>s, n <span class="sy2">+</span> <span class="nu0">1</span>, c <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy4">:</span>
                                        countlower<span class="br0">&#40;</span>s, n <span class="sy2">+</span> <span class="nu0">1</span>, c<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
@@ -436,18 +443,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> n<span class="sy1">&gt;</span>
 <span class="kw1">struct</span> constN
 <span class="br0">&#123;</span>
-    constN<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
+    constN<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;4! = &quot;</span> <span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;4! = &quot;</span> <span class="sy4">;</span>
     constN<span class="sy1">&lt;</span>factorial<span class="br0">&#40;</span><span class="nu0">4</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> out1<span class="sy4">;</span> <span class="co1">// computed at compile time</span>
 &#160;
     <span class="kw4">volatile</span> <span class="kw4">int</span> k <span class="sy1">=</span> <span class="nu0">8</span><span class="sy4">;</span> <span class="co1">// disallow optimization using volatile</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> k <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;! = &quot;</span> <span class="sy1">&lt;&lt;</span> factorial<span class="br0">&#40;</span>k<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// computed at run time</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> k <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;! = &quot;</span> <span class="sy1">&lt;&lt;</span> factorial<span class="br0">&#40;</span>k<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// computed at run time</span>
 &#160;
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;the number of lowercase letters in <span class="es1">\&quot;</span>Hello, world!<span class="es1">\&quot;</span> is &quot;</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;the number of lowercase letters in <span class="es1">\&quot;</span>Hello, world!<span class="es1">\&quot;</span> is &quot;</span><span class="sy4">;</span>
     constN<span class="sy1">&lt;</span>countlower<span class="br0">&#40;</span><span class="st0">&quot;Hello, world!&quot;</span><span class="br0">&#41;</span><span class="sy1">&gt;</span> out2<span class="sy4">;</span> <span class="co1">// implicitly converted to conststr</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -486,6 +493,15 @@ the number of lowercase letters in &quot;Hello, world!&quot; is 9</pre></div></d
 <td> assignment of a union with a mutable member was allowed in a constant expression
 </td>
 <td> mutable variants disqualify implicit copy/move
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://open-std.org/JTC1/SC22/WG21/docs/cwg_defects.html#2163">CWG 2163</a>
+</td>
+<td> c++14
+</td>
+<td> labels were allowed in constexpr functions even though gotos are prohibited
+</td>
+<td> labels also prohibited
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <ul><li> <a href="constant_expression.html" title="cpp/language/constant expression">constant expression</a>
@@ -493,22 +509,22 @@ the number of lowercase letters in &quot;Hello, world!&quot; is 9</pre></div></d
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2039/1000000
-Preprocessor generated node count: 5339/1000000
-Post‐expand include size: 61499/2097152 bytes
-Template argument size: 16606/2097152 bytes
+Preprocessor visited node count: 2275/1000000
+Preprocessor generated node count: 5781/1000000
+Post‐expand include size: 64463/2097152 bytes
+Template argument size: 17968/2097152 bytes
 Highest expansion depth: 15/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:689-0!*!0!!en!*!* and timestamp 20151104140536 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:689-0!*!0!!en!*!* and timestamp 20170331195746 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=81689">http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=81689</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=91780">http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=91780</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
-                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                    <div id='catlinks' class='catlinks catlinks-allhidden'><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_CWG_DR_marker" title="Category:Pages with unreviewed CWG DR marker">Pages with unreviewed CWG DR marker</a></li></ul></div></div>                    <!-- /catlinks -->
                                                             <div class="visualClear"></div>
                     <!-- debughtml -->
                                         <!-- /debughtml -->
@@ -528,7 +544,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="constexpr.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/constexpr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/constexpr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=81689" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/language/constexpr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/language/constexpr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;oldid=91780" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/language/constexpr&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -536,8 +552,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/language/constexpr" title="cpp/language/constexpr" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 4 November 2015, at 06:05.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 181,589 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 12:57.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 529,934 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -570,7 +586,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.082 secs. -->
+</script><!-- Served in 0.061 secs. -->
 	</body>
-<!-- Cached 20151104140638 -->
+<!-- Cached 20170331195754 -->
 </html>

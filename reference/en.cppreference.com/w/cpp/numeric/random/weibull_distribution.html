@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -453,18 +458,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;cmath&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="random_device.html"><span class="kw1234">std::<span class="me2">random_device</span></span></a> rd<span class="sy4">;</span>
-    <a href="mersenne_twister_engine.html"><span class="kw1237">std::<span class="me2">mt19937</span></span></a> gen<span class="br0">&#40;</span>rd<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="random_device.html"><span class="kw1483">std::<span class="me2">random_device</span></span></a> rd<span class="sy4">;</span>
+    <a href="mersenne_twister_engine.html"><span class="kw1486">std::<span class="me2">mt19937</span></span></a> gen<span class="br0">&#40;</span>rd<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     std<span class="sy4">::</span><span class="me2">weibull_distribution</span><span class="sy1">&lt;&gt;</span> d<span class="sy4">;</span>
 &#160;
-    <a href="../../container/map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> hist<span class="sy4">;</span>
+    <a href="../../container/map.html"><span class="kw1278">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> hist<span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> n<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> n<span class="sy1">&lt;</span><span class="nu0">10000</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <span class="sy2">++</span>hist<span class="br0">&#91;</span><a href="../math/round.html"><span class="kw1164">std::<span class="me2">round</span></span></a><span class="br0">&#40;</span>d<span class="br0">&#40;</span>gen<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        <span class="sy2">++</span>hist<span class="br0">&#91;</span><a href="../math/round.html"><span class="kw1350">std::<span class="me2">round</span></span></a><span class="br0">&#40;</span>d<span class="br0">&#40;</span>gen<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">auto</span> p <span class="sy4">:</span> hist<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1506">std::<span class="me2">fixed</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1518">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setw.html"><span class="kw1519">std::<span class="me2">setw</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
-                  <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>p.<span class="me1">second</span><span class="sy2">/</span><span class="nu0">200</span>, <span class="st0">'*'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1780">std::<span class="me2">fixed</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setprecision.html"><span class="kw1792">std::<span class="me2">setprecision</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/setw.html"><span class="kw1793">std::<span class="me2">setw</span></span></a><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+                  <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span>p.<span class="me1">second</span><span class="sy2">/</span><span class="nu0">200</span>, <span class="st0">'*'</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -486,15 +491,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6031/1000000
-Preprocessor generated node count: 11068/1000000
-Post‐expand include size: 181648/2097152 bytes
-Template argument size: 38728/2097152 bytes
+Preprocessor visited node count: 6220/1000000
+Preprocessor generated node count: 11243/1000000
+Post‐expand include size: 188484/2097152 bytes
+Template argument size: 39827/2097152 bytes
 Highest expansion depth: 29/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3918-0!*!0!!en!*!* and timestamp 20151130160038 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3918-0!*!0!!en!*!* and timestamp 20161205221114 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -530,7 +535,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 4 February 2015, at 19:09.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,308 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 7,966 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -563,7 +568,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.996 secs. -->
+</script><!-- Served in 1.825 secs. -->
 	</body>
-<!-- Cached 20151130160038 -->
+<!-- Cached 20161205221114 -->
 </html>

@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -305,7 +306,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>The class <span class="t-lc">std::money_base</span> provides constants which are inherited and used by the <span class="t-lc">std::moneypunct</span>, <span class="t-lc">std::money_get</span> and <span class="t-lc">std::money_put</span> facets.
+<p>The class <span class="t-lc"><strong class="selflink">std::money_base</strong></span> provides constants which are inherited and used by the <span class="t-lc"><a href="moneypunct.html" title="cpp/locale/moneypunct">std::moneypunct</a></span>, <span class="t-lc"><a href="money_get.html" title="cpp/locale/money get">std::money_get</a></span> and <span class="t-lc"><a href="money_put.html" title="cpp/locale/money put">std::money_put</a></span> facets.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/money_base&amp;action=edit&amp;section=1" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span></h3>
 <table class="t-dsc-begin">
@@ -376,8 +377,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 </table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/money_base&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>The monetary format is an array of four <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>s convertible to <span class="t-lc">std::money_base::part</span>. In that sequence, each of <code>symbol</code>, <code>sign</code>, and <code>value</code> appears exactly once, and either <code>space</code> or <code>none</code> appears in the remaining position. The value <code>none</code>, if present, is not first; the value <code>space</code>, if present, is neither first nor last.
-</p><p>The default format, returned by the standard specializations of <span class="t-lc">std::moneypunct</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#123;</span>symbol, sign, none, value<span class="br0">&#125;</span></span></span>
+<p>The monetary format is an array of four <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>s convertible to <span class="t-lc"><strong class="selflink">std::money_base::part</strong></span>. In that sequence, each of <code>symbol</code>, <code>sign</code>, and <code>value</code> appears exactly once, and either <code>space</code> or <code>none</code> appears in the remaining position. The value <code>none</code>, if present, is not first; the value <code>space</code>, if present, is neither first nor last.
+</p><p>The default format, returned by the standard specializations of <span class="t-lc"><a href="moneypunct.html" title="cpp/locale/moneypunct">std::moneypunct</a></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#123;</span>symbol, sign, none, value<span class="br0">&#125;</span></span></span>
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/money_base&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
@@ -385,7 +386,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="moneypunct.html" title="cpp/locale/moneypunct"> <span class="t-lines"><span>moneypunct</span></span></a></div></div>
 </td>
-<td>   defines monetary formatting parameters used by <span class="t-lc">std::money_get</span> and <span class="t-lc">std::money_put</span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_moneypunct&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   defines monetary formatting parameters used by <span class="t-lc"><a href="money_get.html" title="cpp/locale/money get">std::money_get</a></span> and <span class="t-lc"><a href="money_put.html" title="cpp/locale/money put">std::money_put</a></span>  <br /> <span class="t-mark">(class template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_moneypunct&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -403,15 +404,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4409/1000000
-Preprocessor generated node count: 6710/1000000
-Post‐expand include size: 114274/2097152 bytes
-Template argument size: 17423/2097152 bytes
+Preprocessor visited node count: 4440/1000000
+Preprocessor generated node count: 6791/1000000
+Post‐expand include size: 115931/2097152 bytes
+Template argument size: 17691/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3607-0!*!0!!*!*!* and timestamp 20151130150158 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3607-0!*!0!!*!*!* and timestamp 20161206093002 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -447,7 +448,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 19 April 2014, at 04:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,609 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,662 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -480,7 +481,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.494 secs. -->
+</script><!-- Served in 1.367 secs. -->
 	</body>
-<!-- Cached 20151130150158 -->
+<!-- Cached 20161206093002 -->
 </html>

@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -363,9 +364,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>A copy of the returned string along with the category used in this call to <code>std::setlocale</code> may be used later in the program to restore the locale back to the state at the end of this call.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/locale/setlocale&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>During program startup, the equivalent of <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;C&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span> is executed before any user code is run.
+<p>During program startup, the equivalent of <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1989">LC_ALL</span></a>, <span class="st0">&quot;C&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span></span></span> is executed before any user code is run.
 </p><p>Although the return type is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span><span class="sy2">*</span></span></span>, modifying the pointed-to characters is undefined behavior.
-</p><p>Because <code>setlocale</code> modifies global state which affects execution of locale-dependent functions, it is undefined behavior to call it from one thread, while another thread is executing any of the following functions: <span class="t-lc">std::fprintf</span>, <span class="t-lc">std::isprint</span>, <span class="t-lc">std::iswdigit</span>, <span class="t-lc">std::localeconv</span>, <span class="t-lc">std::tolower</span>, <span class="t-lc">std::fscanf</span>, <span class="t-lc">std::ispunct</span>, <span class="t-lc">std::iswgraph</span>, <span class="t-lc">std::mblen</span>, <span class="t-lc">std::toupper</span>, <span class="t-lc">std::isalnum</span>, <span class="t-lc">std::isspace</span>, <span class="t-lc">std::iswlower</span>, <span class="t-lc">std::mbstowcs</span>, <span class="t-lc">std::towlower</span>, <span class="t-lc">std::isalpha</span>, <span class="t-lc">std::isupper</span>, <span class="t-lc">std::iswprint</span>, <span class="t-lc">std::mbtowc</span>, <span class="t-lc">std::towupper</span>, <span class="t-lc">std::isblank</span>, <span class="t-lc">std::iswalnum</span>, <span class="t-lc">std::iswpunct</span>, <span class="t-lc">std::setlocale</span>, <span class="t-lc">std::wcscoll</span>, <span class="t-lc">std::iscntrl</span>, <span class="t-lc">std::iswalpha</span>, <span class="t-lc">std::iswspace</span>, <span class="t-lc">std::strcoll</span>, <span class="t-lc">std::wcstod</span>, <span class="t-lc">std::isdigit</span>, <span class="t-lc">std::iswblank</span>, <span class="t-lc">std::iswupper</span>, <span class="t-lc">std::strerror</span>, <span class="t-lc">std::wcstombs</span>, <span class="t-lc">std::isgraph</span>, <span class="t-lc">std::iswcntrl</span>, <span class="t-lc">std::iswxdigit</span>, <span class="t-lc">std::strtod</span>, <span class="t-lc">std::wcsxfrm</span>, <span class="t-lc">std::islower</span>, <span class="t-lc">std::iswctype</span>, <span class="t-lc">std::isxdigit</span>.
+</p><p>Because <code>setlocale</code> modifies global state which affects execution of locale-dependent functions, it is undefined behavior to call it from one thread, while another thread is executing any of the following functions: <span class="t-lc"><a href="../io/c/printf.html" title="cpp/io/c/fprintf">std::fprintf</a></span>, <span class="t-lc">std::isprint</span>, <span class="t-lc"><a href="../string/wide/iswdigit.html" title="cpp/string/wide/iswdigit">std::iswdigit</a></span>, <span class="t-lc"><a href="localeconv.html" title="cpp/locale/localeconv">std::localeconv</a></span>, <span class="t-lc">std::tolower</span>, <span class="t-lc"><a href="../io/c/scanf.html" title="cpp/io/c/fscanf">std::fscanf</a></span>, <span class="t-lc">std::ispunct</span>, <span class="t-lc"><a href="../string/wide/iswgraph.html" title="cpp/string/wide/iswgraph">std::iswgraph</a></span>, <span class="t-lc"><a href="../string/multibyte/mblen.html" title="cpp/string/multibyte/mblen">std::mblen</a></span>, <span class="t-lc">std::toupper</span>, <span class="t-lc">std::isalnum</span>, <span class="t-lc">std::isspace</span>, <span class="t-lc"><a href="../string/wide/iswlower.html" title="cpp/string/wide/iswlower">std::iswlower</a></span>, <span class="t-lc"><a href="../string/multibyte/mbstowcs.html" title="cpp/string/multibyte/mbstowcs">std::mbstowcs</a></span>, <span class="t-lc"><a href="../string/wide/towlower.html" title="cpp/string/wide/towlower">std::towlower</a></span>, <span class="t-lc">std::isalpha</span>, <span class="t-lc">std::isupper</span>, <span class="t-lc"><a href="../string/wide/iswprint.html" title="cpp/string/wide/iswprint">std::iswprint</a></span>, <span class="t-lc"><a href="../string/multibyte/mbtowc.html" title="cpp/string/multibyte/mbtowc">std::mbtowc</a></span>, <span class="t-lc"><a href="../string/wide/towupper.html" title="cpp/string/wide/towupper">std::towupper</a></span>, <span class="t-lc">std::isblank</span>, <span class="t-lc"><a href="../string/wide/iswalnum.html" title="cpp/string/wide/iswalnum">std::iswalnum</a></span>, <span class="t-lc"><a href="../string/wide/iswpunct.html" title="cpp/string/wide/iswpunct">std::iswpunct</a></span>, <span class="t-lc"><strong class="selflink">std::setlocale</strong></span>, <span class="t-lc"><a href="../string/wide/wcscoll.html" title="cpp/string/wide/wcscoll">std::wcscoll</a></span>, <span class="t-lc">std::iscntrl</span>, <span class="t-lc"><a href="../string/wide/iswalpha.html" title="cpp/string/wide/iswalpha">std::iswalpha</a></span>, <span class="t-lc"><a href="../string/wide/iswspace.html" title="cpp/string/wide/iswspace">std::iswspace</a></span>, <span class="t-lc"><a href="../string/byte/strcoll.html" title="cpp/string/byte/strcoll">std::strcoll</a></span>, <span class="t-lc"><a href="../string/wide/wcstof.html" title="cpp/string/wide/wcstof">std::wcstod</a></span>, <span class="t-lc">std::isdigit</span>, <span class="t-lc"><a href="../string/wide/iswblank.html" title="cpp/string/wide/iswblank">std::iswblank</a></span>, <span class="t-lc"><a href="../string/wide/iswupper.html" title="cpp/string/wide/iswupper">std::iswupper</a></span>, <span class="t-lc"><a href="../string/byte/strerror.html" title="cpp/string/byte/strerror">std::strerror</a></span>, <span class="t-lc"><a href="../string/multibyte/wcstombs.html" title="cpp/string/multibyte/wcstombs">std::wcstombs</a></span>, <span class="t-lc">std::isgraph</span>, <span class="t-lc"><a href="../string/wide/iswcntrl.html" title="cpp/string/wide/iswcntrl">std::iswcntrl</a></span>, <span class="t-lc"><a href="../string/wide/iswxdigit.html" title="cpp/string/wide/iswxdigit">std::iswxdigit</a></span>, <span class="t-lc"><a href="../string/byte/strtof.html" title="cpp/string/byte/strtof">std::strtod</a></span>, <span class="t-lc"><a href="../string/wide/wcsxfrm.html" title="cpp/string/wide/wcsxfrm">std::wcsxfrm</a></span>, <span class="t-lc">std::islower</span>, <span class="t-lc"><a href="../string/wide/iswctype.html" title="cpp/string/wide/iswctype">std::iswctype</a></span>, <span class="t-lc">std::isxdigit</span>.
 </p><p>POSIX also defines a locale named "POSIX", which is always accessible and is exactly equivalent to the default minimal "C" locale. 
 </p><p>POSIX also specifies that the returned pointer, not just the contents of the pointed-to string, may be invalidated by subsequent calls to setlocale.
 </p>
@@ -381,14 +382,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// the C locale will be UTF-8 enabled English;</span>
     <span class="co1">// decimal dot will be German</span>
     <span class="co1">// date and time formatting will be Japanese</span>
-    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1716">LC_ALL</span></a>, <span class="st0">&quot;en_US.UTF-8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1720">LC_NUMERIC</span></a>, <span class="st0">&quot;de_DE&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1721">LC_TIME</span></a>, <span class="st0">&quot;ja_JP&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1989">LC_ALL</span></a>, <span class="st0">&quot;en_US.UTF-8&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1993">LC_NUMERIC</span></a>, <span class="st0">&quot;de_DE&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">setlocale</span><span class="br0">&#40;</span><a href="LC_categories.html"><span class="kw1994">LC_TIME</span></a>, <span class="st0">&quot;ja_JP&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">wchar_t</span> str<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    <a href="../chrono/c/time_t.html"><span class="kw899">std::<span class="me2">time_t</span></span></a> t <span class="sy1">=</span> <a href="../chrono/c/time.html"><span class="kw888">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><a href="../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../chrono/c/wcsftime.html"><span class="kw893">std::<span class="me2">wcsftime</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">100</span>, L<span class="st0">&quot;%A&#160;%c&quot;</span>, <a href="../chrono/c/localtime.html"><span class="kw895">std::<span class="me2">localtime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../io/c/fwprintf.html"><span class="kw1582">std::<span class="me2">wprintf</span></span></a><span class="br0">&#40;</span>L<span class="st0">&quot;Number:&#160;%.2f<span class="es1">\n</span>Date:&#160;%Ls<span class="es1">\n</span>&quot;</span>, <span class="nu16">3.14</span>, str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../chrono/c/time_t.html"><span class="kw1024">std::<span class="me2">time_t</span></span></a> t <span class="sy1">=</span> <a href="../chrono/c/time.html"><span class="kw1011">std::<span class="me2">time</span></span></a><span class="br0">&#40;</span><a href="../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../chrono/c/wcsftime.html"><span class="kw1018">std::<span class="me2">wcsftime</span></span></a><span class="br0">&#40;</span>str, <span class="nu0">100</span>, L<span class="st0">&quot;%A&#160;%c&quot;</span>, <a href="../chrono/c/localtime.html"><span class="kw1020">std::<span class="me2">localtime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../io/c/fwprintf.html"><span class="kw1856">std::<span class="me2">wprintf</span></span></a><span class="br0">&#40;</span>L<span class="st0">&quot;Number:&#160;%.2f<span class="es1">\n</span>Date:&#160;%Ls<span class="es1">\n</span>&quot;</span>, <span class="nu16">3.14</span>, str<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -401,7 +402,7 @@ Date: 月曜日 2011年12月19日 18時04分40秒</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="LC_categories.html" title="cpp/locale/LC categories"> <span class="t-lines"><span>LC_ALL</span><span>LC_COLLATE</span><span>LC_CTYPE</span><span>LC_MONETARY</span><span>LC_NUMERIC</span><span>LC_TIME</span></span></a></div></div>
 </td>
-<td>   locale categories for <span class="t-lc">std::setlocale</span> <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_LC_categories&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   locale categories for <span class="t-lc"><strong class="selflink">std::setlocale</strong></span> <br /> <span class="t-mark">(macro constant)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/locale/dsc_LC_categories&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -418,15 +419,15 @@ Date: 月曜日 2011年12月19日 18時04分40秒</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4711/1000000
-Preprocessor generated node count: 7849/1000000
-Post‐expand include size: 113271/2097152 bytes
-Template argument size: 18486/2097152 bytes
+Preprocessor visited node count: 4742/1000000
+Preprocessor generated node count: 7930/1000000
+Post‐expand include size: 116072/2097152 bytes
+Template argument size: 18679/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4563-0!*!0!!en!*!* and timestamp 20151130140650 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4563-0!*!0!!en!*!* and timestamp 20161205223637 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -462,7 +463,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 6 November 2014, at 07:55.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 29,289 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 50,959 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -495,7 +496,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.018 secs. -->
+</script><!-- Served in 1.824 secs. -->
 	</body>
-<!-- Cached 20151130140651 -->
+<!-- Cached 20161205223638 -->
 </html>

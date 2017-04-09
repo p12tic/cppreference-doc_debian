@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -276,6 +277,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="try_emplace.html" title="cpp/container/map/try emplace"><span class="t-lines"><span>map::try_emplace</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="erase.html" title="cpp/container/map/erase"><span class="t-lines"><span>map::erase</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/container/map/swap"><span class="t-lines"><span>map::swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="extract.html" title="cpp/container/map/extract"><span class="t-lines"><span>map::extract</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="merge.html" title="cpp/container/map/merge"><span class="t-lines"><span>map::merge</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Lookup</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="count.html" title="cpp/container/map/count"><span class="t-lines"><span>map::count</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find.html" title="cpp/container/map/find"><span class="t-lines"><span>map::find</span></span></a></div></div></td></tr>
@@ -289,15 +292,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">Args</span> <span class="sy1">&gt;</span><br />
-<a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator,<span class="kw4">bool</span><span class="sy1">&gt;</span> emplace<span class="br0">&#40;</span> Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<a href="../../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span>iterator,<span class="kw4">bool</span><span class="sy1">&gt;</span> emplace<span class="br0">&#40;</span> Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Inserts a new element into the container by constructing it in-place with the given <code>args</code>  if there is no element with the key in the container.
+<p>Inserts a new element into the container constructed in-place with the given <code>args</code>  if there is no element with the key in the container.
 </p><p>Careful use of <code>emplace</code> allows the new element to be constructed while avoiding unnecessary copy or move operations.
-The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw936">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw947">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
+The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/pair.html"><span class="kw1096">std::<span class="me2">pair</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Key, T<span class="sy1">&gt;</span></span></span>) is called with exactly the same arguments as supplied to <code>emplace</code>, forwarded via <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/forward.html"><span class="kw1114">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Args<span class="sy1">&gt;</span><span class="br0">&#40;</span>args<span class="br0">&#41;</span>...</span></span>.
+The element may be constructed even if there already is an element with the key in the container, in which case the newly constructed element will be destroyed immediately.
 </p><p>No iterators or references are invalidated.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -322,7 +326,7 @@ The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi
 <td>  arguments to forward to the constructor of the element
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/emplace_assoc&amp;action=edit&amp;section=T-2" title="Template:cpp/container/emplace assoc">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Returns a pair consisting of an iterator to the inserted element, or the already-existing element if no insertion happened, and a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> denoting whether the insertion took place.
+<p>Returns a pair consisting of an iterator to the inserted element, or the already-existing element if no insertion happened, and a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> denoting whether the insertion took place. True for Insertion, False for No Insertion.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/emplace_assoc&amp;action=edit&amp;section=T-3" title="Template:cpp/container/emplace assoc">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <p>If an exception is thrown by any operation, this function has no effect.
@@ -335,28 +339,29 @@ The constructor of the new element (i.e. <span class="t-c"><span class="mw-geshi
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;utility&gt;</span>
 <span class="co2">#include &lt;string&gt;</span>
-&#160;
 <span class="co2">#include &lt;map&gt;</span>
+&#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../map.html"><span class="kw1100">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
+    <a href="../map.html"><span class="kw1278">std::<span class="me2">map</span></span></a><span class="sy1">&lt;</span><a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a>, <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="sy1">&gt;</span> m<span class="sy4">;</span>
 &#160;
     <span class="co1">// uses pair's move constructor</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw937">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>, <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw1097">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span>, <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;a&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// uses pair's converting move constructor</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw937">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;abcd&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/pair/make_pair.html"><span class="kw1097">std::<span class="me2">make_pair</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;abcd&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// uses pair's template constructor</span>
     m.<span class="me1">emplace</span><span class="br0">&#40;</span><span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;ddd&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="co1">// uses pair's piecewise constructor</span>
-    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/piecewise_construct.html"><span class="kw940">std::<span class="me2">piecewise_construct</span></span></a>,
-              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw944">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;c&quot;</span><span class="br0">&#41;</span>,
-              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw944">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span>, <span class="st0">'c'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    m.<span class="me1">emplace</span><span class="br0">&#40;</span><a href="../../utility/piecewise_construct.html"><span class="kw1103">std::<span class="me2">piecewise_construct</span></span></a>,
+              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw1111">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;c&quot;</span><span class="br0">&#41;</span>,
+              <a href="../../utility/tuple/forward_as_tuple.html"><span class="kw1111">std::<span class="me2">forward_as_tuple</span></span></a><span class="br0">&#40;</span><span class="nu0">10</span>, <span class="st0">'c'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="co1">// as of C++17, m.try_emplace(&quot;c&quot;, 10, 'c'); can be used</span>
 &#160;
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">auto</span> <span class="sy3">&amp;</span>p <span class="sy4">:</span> m<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; =&gt; &quot;</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> p.<span class="me1">first</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; =&gt; &quot;</span> <span class="sy1">&lt;&lt;</span> p.<span class="me1">second</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -384,21 +389,21 @@ d =&gt; ddd</pre></div></div>
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="insert.html" title="cpp/container/map/insert"> <span class="t-lines"><span>insert</span></span></a></div></div>
 </td>
-<td>   inserts elements  <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_insert&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   inserts elements <span class="t-rev-inl t-since-cxx17"><span>or nodes</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span> <br /> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_insert&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 </table>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4378/1000000
-Preprocessor generated node count: 9010/1000000
-Post‐expand include size: 159395/2097152 bytes
-Template argument size: 22177/2097152 bytes
+Preprocessor visited node count: 4637/1000000
+Preprocessor generated node count: 9737/1000000
+Post‐expand include size: 169666/2097152 bytes
+Template argument size: 24291/2097152 bytes
 Highest expansion depth: 24/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:963-0!*!0!!en!*!* and timestamp 20151028043916 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:963-0!*!0!!en!*!* and timestamp 20170226051506 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -433,8 +438,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/container/map/emplace" title="cpp/container/map/emplace" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 20:32.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 68,660 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 19:32.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 159,116 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -467,7 +472,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.699 secs. -->
+</script><!-- Served in 0.053 secs. -->
 	</body>
-<!-- Cached 20151028043916 -->
+<!-- Cached 20170226052336 -->
 </html>

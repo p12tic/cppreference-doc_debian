@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -273,7 +274,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div class="t-li2"><span class="t-li">a)</span> First, checks if there is a putback position, and if there isn't, fails.</div>
 <div class="t-li2"><span class="t-li">b)</span> Then checks what character is in the putback position. If the character held there is already equal to <code>c</code>, as determined by <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">eq</span><span class="br0">&#40;</span>to_char_type<span class="br0">&#40;</span>c<span class="br0">&#41;</span>, gptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#91;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span></span></span>, then simply decrements <a href="../basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr"><tt>basic_streambuf::gptr()</tt></a>.</div>
 <div class="t-li2"><span class="t-li">c)</span> Otherwise, if the buffer is open for reading only, fails.</div>
-<div class="t-li2"><span class="t-li">d)</span> Otherwise, if the buffer is open for writing (<span class="t-c"><span class="mw-geshi cpp source-cpp">mode <span class="sy3">&amp;&amp;</span> <a href="../ios_base/openmode.html"><span class="kw1399">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a></span></span> is nonzero), then decrements <a href="../basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr"><tt>basic_streambuf::gptr()</tt></a> and writes <code>c</code> to the location pointed to gptr() after adjustment.</div>
+<div class="t-li2"><span class="t-li">d)</span> Otherwise, if the buffer is open for writing (<span class="t-c"><span class="mw-geshi cpp source-cpp">mode <span class="sy3">&amp;&amp;</span> <a href="../ios_base/openmode.html"><span class="kw1672">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a></span></span> is nonzero), then decrements <a href="../basic_streambuf/gptr.html" title="cpp/io/basic streambuf/gptr"><tt>basic_streambuf::gptr()</tt></a> and writes <code>c</code> to the location pointed to gptr() after adjustment.</div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="pbackfail.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
@@ -335,15 +336,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4523/1000000
-Preprocessor generated node count: 11186/1000000
-Post‐expand include size: 106446/2097152 bytes
-Template argument size: 19828/2097152 bytes
+Preprocessor visited node count: 4554/1000000
+Preprocessor generated node count: 11267/1000000
+Post‐expand include size: 107395/2097152 bytes
+Template argument size: 19946/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9696-0!*!0!!en!*!* and timestamp 20150825093659 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9696-0!*!0!!en!*!* and timestamp 20161206025647 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -373,8 +374,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/basic_stringbuf/pbackfail" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/basic_stringbuf/pbackfail" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_stringbuf/pbackfail&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_stringbuf/pbackfail&amp;oldid=63939" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_stringbuf/pbackfail&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 08:42.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,694 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 07:42.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,589 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -407,7 +408,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.672 secs. -->
+</script><!-- Served in 1.588 secs. -->
 	</body>
-<!-- Cached 20150825093659 -->
+<!-- Cached 20161206025647 -->
 </html>

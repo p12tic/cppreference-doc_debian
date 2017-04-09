@@ -322,10 +322,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0x</b></code> or <code><b>0X</b></code>) indicating hexadecimal base (applies only when the base is <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">16</span></span></span> or <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>)
 </li><li> a sequence of digits
 </li></ul>
-<p>The set of valid digits for base-2 integer is <code>01</code>, for base-3 integer is <code>012</code>, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored.
-</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc">locale</span>.
+<p>The set of valid values for base is {0,2,3,...,36}. The set of valid digits for base-2 integers is <code>{0,1</code>}, for base-3 integers is <code>{0,1,2</code>}, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored.
+</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc"><a href="../../locale/setlocale.html" title="c/locale/setlocale">locale</a></span>.
 </p><p>If the value of base is <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>, the numeric base is auto-detected: if the prefix is <code><b>0</b></code>, the base is octal, if the prefix is <code><b>0x</b></code> or <code><b>0X</b></code>, the base is hexadecimal, otherwise the base is decimal.
-</p><p>If the minus sign was part of the input sequence, the numeric value calculated from the sequence of digits is negated in the result type.
+</p><p>If the minus sign was part of the input sequence, the numeric value calculated from the sequence of digits is negated as if by <a href="../../language/operator_arithmetic.html#Unary_arithmetic" title="c/language/operator arithmetic">unary minus</a> in the result type.
 </p><p>The functions sets the pointer pointed to by <code>endptr</code> to point to the character past the last character interpreted. If <code>endptr</code> is <span class="t-lc"><a href="../../types/NULL.html" title="c/types/NULL">NULL</a></span>, it is ignored.
 </p><p>If the <code>nptr</code> is empty or does not have the expected form, no conversion is performed, and (if <code>enptr</code> is not <span class="t-lc"><a href="../../types/NULL.html" title="c/types/NULL">NULL</a></span>) the value of <code>nptr</code> is stored in the object pointed to by <code>endptr</code>.
 </p>
@@ -449,15 +449,15 @@ Numerical result out of range</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4447/1000000
-Preprocessor generated node count: 7701/1000000
-Post‐expand include size: 117690/2097152 bytes
+Preprocessor visited node count: 4453/1000000
+Preprocessor generated node count: 7779/1000000
+Post‐expand include size: 117842/2097152 bytes
 Template argument size: 21609/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9913-0!*!0!!en!*!* and timestamp 20151130162015 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9913-0!*!0!!en!*!* and timestamp 20170125195121 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -493,7 +493,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 21 February 2015, at 06:18.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,446 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 10,580 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -526,7 +526,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.694 secs. -->
+</script><!-- Served in 1.496 secs. -->
 	</body>
-<!-- Cached 20151130162015 -->
+<!-- Cached 20170125195121 -->
 </html>

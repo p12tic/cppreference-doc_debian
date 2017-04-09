@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -282,7 +283,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">protected</span><span class="sy4">:</span><br />
-<span class="kw1">virtual</span> <a href="../basic_streambuf.html"><span class="kw1390">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> setbuf<span class="br0">&#40;</span> char_type<span class="sy2">*</span> s, <a href="../streamsize.html"><span class="kw1527">std::<span class="me2">streamsize</span></span></a> n <span class="br0">&#41;</span></span></div></td>
+<span class="kw1">virtual</span> <a href="../basic_streambuf.html"><span class="kw1663">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span><span class="sy2">*</span> setbuf<span class="br0">&#40;</span> char_type<span class="sy2">*</span> s, <a href="../streamsize.html"><span class="kw1801">std::<span class="me2">streamsize</span></span></a> n <span class="br0">&#41;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -323,7 +324,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p><span class="t-c"><span class="mw-geshi cpp source-cpp">this</span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_stringbuf/setbuf&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>The deprecated stream buffer <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a></span></span> or the boost.IOStreams device <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array"><code>boost::basic_array</code></a> may be used to implement I/O buffering over a user-provided char array in portable manner.
+<p>The deprecated stream buffer <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../strstreambuf.html"><span class="kw1749">std::<span class="me2">strstreambuf</span></span></a></span></span> or the boost.IOStreams device <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/release/libs/iostreams/doc/classes/array.html#array"><code>boost::basic_array</code></a> may be used to implement I/O buffering over a user-provided char array in portable manner.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/basic_stringbuf/setbuf&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><p> Test for the stringstream's setbuf functionality
@@ -333,11 +334,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostringstream.html"><span class="kw1459">std::<span class="me2">ostringstream</span></span></a> ss<span class="sy4">;</span>
+    <a href="../basic_ostringstream.html"><span class="kw1733">std::<span class="me2">ostringstream</span></span></a> ss<span class="sy4">;</span>
     <span class="kw4">char</span> c<span class="br0">&#91;</span><span class="nu0">1024</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span>
     ss.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pubsetbuf<span class="br0">&#40;</span>c, <span class="nu0">1024</span><span class="br0">&#41;</span><span class="sy4">;</span>
     ss <span class="sy1">&lt;&lt;</span> <span class="nu16">3.14</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -356,15 +357,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3179/1000000
-Preprocessor generated node count: 7546/1000000
-Post‐expand include size: 82614/2097152 bytes
-Template argument size: 14622/2097152 bytes
+Preprocessor visited node count: 3210/1000000
+Preprocessor generated node count: 7627/1000000
+Post‐expand include size: 83563/2097152 bytes
+Template argument size: 14740/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4576-0!*!0!!en!*!* and timestamp 20150825093703 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4576-0!*!0!!en!*!* and timestamp 20161206133246 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -399,8 +400,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_stringbuf/setbuf" title="cpp/io/basic stringbuf/setbuf" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 30 April 2014, at 06:54.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,808 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 30 April 2014, at 05:54.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 6,429 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -433,7 +434,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.377 secs. -->
+</script><!-- Served in 1.351 secs. -->
 	</body>
-<!-- Cached 20150825093703 -->
+<!-- Cached 20161206133246 -->
 </html>

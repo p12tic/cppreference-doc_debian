@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/io/fwrite","wgTitle":"c/io/fwrite","wgCurRevisionId":78941,"wgArticleId":6205,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/io/fwrite","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/io/fwrite","wgTitle":"c/io/fwrite","wgCurRevisionId":85141,"wgArticleId":6205,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/io/fwrite","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -324,7 +324,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tbody><tbody>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Writes <code>count</code> of objects in the given array <code>buffer</code> to the output stream <code>stream</code>. Objects are not interpreted in any way. 
+<p>Writes <code>count</code> of objects from the given array <code>buffer</code> to the output stream <code>stream</code>. The objects are written as if by reinterepreting each object as an array of <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span> and calling <span class="t-lc"><a href="fputc.html" title="c/io/fputc">fputc</a></span> <code>size</code> times for each object to write those <span class="t-c"><span class="mw-geshi c source-c"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>s into <code>stream</code>, in order. The file position indicator for the stream is advanced by the number of characters written.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -344,7 +344,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  pointer to the first object object in the array to be written
+<td>  pointer to the first object in the array to be written
 </td></tr>
 <tr class="t-par">
 <td>  size
@@ -368,46 +368,36 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  pointer to the output stream
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>The number of objects written successfully.
+<p>The number of objects written successfully, which may be less than <code>count</code> if an error occurs.
+</p><p>If <code>size</code> or <code>count</code> is zero, <code>fwrite</code> returns zero and performs no other action.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> fwrite with error checking
-</p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
 <span class="co2">#include &lt;stdlib.h&gt;</span>
-&#160;
+<span class="co2">#include &lt;assert.h&gt;</span>
+<span class="kw2">enum</span> <span class="br0">&#123;</span> SIZE <span class="sy1">=</span> <span class="nu0">5</span> <span class="br0">&#125;</span><span class="sy4">;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="co1">// write buffer to file</span>
-    <a href="../io.html"><span class="kw883">FILE</span></a> <span class="sy2">*</span>f1<span class="sy4">;</span>
-    <span class="kw4">char</span> buffer<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span> <span class="st0">'x'</span> , <span class="st0">'y'</span> , <span class="st0">'z'</span> <span class="br0">&#125;</span><span class="sy4">;</span>
-    f1 <span class="sy1">=</span> <a href="fopen.html"><span class="kw819">fopen</span></a><span class="br0">&#40;</span><span class="st0">&quot;file.bin&quot;</span>, <span class="st0">&quot;wb&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">int</span> ret_code <span class="sy1">=</span> fwrite<span class="br0">&#40;</span>buffer, <span class="kw4">sizeof</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span>, <span class="kw4">sizeof</span><span class="br0">&#40;</span>buffer<span class="br0">&#41;</span>, f1<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span>ret_code <span class="sy1">&lt;</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>buffer<span class="br0">&#41;</span><span class="br0">&#41;</span>
-       <span class="kw1">if</span> <span class="br0">&#40;</span><a href="ferror.html"><span class="kw877">ferror</span></a><span class="br0">&#40;</span>f1<span class="br0">&#41;</span><span class="br0">&#41;</span>
-       <span class="br0">&#123;</span>
-          <a href="perror.html"><span class="kw878">perror</span></a><span class="br0">&#40;</span><span class="st0">&quot;fwrite()&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-          <a href="fprintf.html"><span class="kw851">fprintf</span></a><span class="br0">&#40;</span><a href="../io.html"><span class="kw887">stderr</span></a>,<span class="st0">&quot;fwrite() failed in file&#160;%s at line #&#160;%d<span class="es1">\n</span>&quot;</span>, __FILE__,__LINE__<span class="sy2">-</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy4">;</span>
-          <a href="../program/exit.html"><span class="kw488">exit</span></a><span class="br0">&#40;</span><a href="../program/EXIT_status.html"><span class="kw494">EXIT_FAILURE</span></a><span class="br0">&#41;</span><span class="sy4">;</span>
-       <span class="br0">&#125;</span>
+    <span class="kw4">double</span> a<span class="br0">&#91;</span>SIZE<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <a href="../io.html"><span class="kw883">FILE</span></a> <span class="sy2">*</span>f1 <span class="sy1">=</span> <a href="fopen.html"><span class="kw819">fopen</span></a><span class="br0">&#40;</span><span class="st0">&quot;file.bin&quot;</span>, <span class="st0">&quot;wb&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../error/assert.html"><span class="kw407">assert</span></a><span class="br0">&#40;</span>f1<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> r1 <span class="sy1">=</span> fwrite<span class="br0">&#40;</span>a, <span class="kw4">sizeof</span> a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, SIZE, f1<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;wrote&#160;%d elements out of&#160;%d requested<span class="es1">\n</span>&quot;</span>, r1,  SIZE<span class="br0">&#41;</span><span class="sy4">;</span>
     <a href="fclose.html"><span class="kw822">fclose</span></a><span class="br0">&#40;</span>f1<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <span class="co1">// read the same data and print it to the standard output</span>
-    <a href="../io.html"><span class="kw883">FILE</span></a> <span class="sy2">*</span>f2<span class="sy4">;</span>
-    <span class="kw4">char</span> rbuf<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    f2 <span class="sy1">=</span> <a href="fopen.html"><span class="kw819">fopen</span></a><span class="br0">&#40;</span><span class="st0">&quot;file.bin&quot;</span>, <span class="st0">&quot;rb&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> res <span class="sy1">=</span> <a href="fgets.html"><span class="kw828">fgets</span></a><span class="br0">&#40;</span>rbuf, <span class="kw4">sizeof</span><span class="br0">&#40;</span>rbuf<span class="br0">&#41;</span>, f2<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">double</span> b<span class="br0">&#91;</span>SIZE<span class="br0">&#93;</span><span class="sy4">;</span>
+    <a href="../io.html"><span class="kw883">FILE</span></a> <span class="sy2">*</span>f2 <span class="sy1">=</span> <a href="fopen.html"><span class="kw819">fopen</span></a><span class="br0">&#40;</span><span class="st0">&quot;file.bin&quot;</span>, <span class="st0">&quot;rb&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> r2 <span class="sy1">=</span> <a href="fread.html"><span class="kw825">fread</span></a><span class="br0">&#40;</span>b, <span class="kw4">sizeof</span> b<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, SIZE, f2<span class="br0">&#41;</span><span class="sy4">;</span>
     <a href="fclose.html"><span class="kw822">fclose</span></a><span class="br0">&#40;</span>f2<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
-    <span class="kw1">if</span> <span class="br0">&#40;</span>res<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="co1">// points to rbuf on read success, NULL on failure</span>
-        <a href="puts.html"><span class="kw835">puts</span></a><span class="br0">&#40;</span>res<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span>
-&#160;
-    <span class="kw1">return</span> <a href="../program/EXIT_status.html"><span class="kw493">EXIT_SUCCESS</span></a><span class="sy4">;</span>
+    <a href="fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;read back: &quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> r2<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+        <a href="fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;%f &quot;</span>, b<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">xyz</pre></div></div> 
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">wrote 5 elements out of 5 requested
+read back: 1.000000 2.000000 3.000000 4.000000 5.000000</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
 <div class="t-ref-std-11">
@@ -459,19 +449,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4902/1000000
-Preprocessor generated node count: 8063/1000000
-Post‐expand include size: 160846/2097152 bytes
-Template argument size: 33088/2097152 bytes
+Preprocessor visited node count: 5003/1000000
+Preprocessor generated node count: 8335/1000000
+Post‐expand include size: 161185/2097152 bytes
+Template argument size: 32536/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6205-0!*!0!!en!*!* and timestamp 20151130154405 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6205-0!*!0!!en!*!* and timestamp 20161205224253 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=78941">http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=78941</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=85141">http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=85141</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -494,7 +484,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="fwrite.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/io/fwrite" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/io/fwrite" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=78941" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/io/fwrite" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/io/fwrite" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;oldid=85141" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/io/fwrite&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -502,8 +492,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/io/fwrite" title="c/io/fwrite" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 12 June 2015, at 08:21.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 18,181 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 April 2016, at 11:41.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 33,214 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -536,7 +526,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.450 secs. -->
+</script><!-- Served in 1.118 secs. -->
 	</body>
-<!-- Cached 20151130154405 -->
+<!-- Cached 20161205224253 -->
 </html>

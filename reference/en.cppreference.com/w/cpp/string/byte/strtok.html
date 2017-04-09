@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../string.html" title="cpp/string"> Strings library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Null-terminated strings</td></tr>
@@ -235,6 +236,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../wide.html" title="cpp/string/wide"> Wide strings</a> </td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string.html" title="cpp/string/basic string"><span class="t-lines"><span>basic_string</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../basic_string_view.html" title="cpp/string/basic string view"><span class="t-lines"><span>basic_string_view</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../char_traits.html" title="cpp/string/char traits"><span class="t-lines"><span>char_traits</span></span></a></div></div></td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/string/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../byte.html" title="cpp/string/byte"> Null-terminated byte strings</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
@@ -355,7 +357,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  pointer to the null-terminated byte string identifying delimiters
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtok&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Pointer to the beginning of the next token or <span class="t-lc">NULL</span> if there are no more tokens.
+<p>Pointer to the beginning of the next token or <span class="t-lc"><a href="../../types/NULL.html" title="cpp/types/NULL">NULL</a></span> if there are no more tokens.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/string/byte/strtok&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
 <p>This function is destructive: it writes the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="st0">'<span class="es5">\0</span>'</span></span></span> characters in the elements of the string <code>str</code>. In particular, a <a href="../../language/string_literal.html" title="cpp/language/string literal">string literal</a> cannot be used as the first argument of <code>strtok</code>.
@@ -372,7 +374,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="kw4">char</span> input<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;A bird came down the walk&quot;</span><span class="sy4">;</span>
     <span class="kw4">char</span> <span class="sy2">*</span>token <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">strtok</span><span class="br0">&#40;</span>input, <span class="st0">&quot; &quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">while</span> <span class="br0">&#40;</span>token <span class="sy3">!</span><span class="sy1">=</span> <a href="../../types/NULL.html"><span class="kw103">NULL</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../../io/cout.html"><span class="kw1480">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> token <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1754">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> token <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         token <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">strtok</span><span class="br0">&#40;</span><a href="../../types/NULL.html"><span class="kw103">NULL</span></a>, <span class="st0">&quot; &quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -414,15 +416,15 @@ walk</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3765/1000000
-Preprocessor generated node count: 6789/1000000
-Post‐expand include size: 96015/2097152 bytes
-Template argument size: 14976/2097152 bytes
+Preprocessor visited node count: 3872/1000000
+Preprocessor generated node count: 6901/1000000
+Post‐expand include size: 99473/2097152 bytes
+Template argument size: 15583/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5515-0!*!0!!en!*!* and timestamp 20151130140828 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5515-0!*!0!!en!*!* and timestamp 20161205221840 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -458,7 +460,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 8 January 2015, at 18:12.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 46,608 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 83,241 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -491,7 +493,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.929 secs. -->
+</script><!-- Served in 1.663 secs. -->
 	</body>
-<!-- Cached 20151130140828 -->
+<!-- Cached 20161205221840 -->
 </html>

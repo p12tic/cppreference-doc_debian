@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/operator_arithmetic","wgTitle":"c/language/operator arithmetic","wgCurRevisionId":82029,"wgArticleId":9564,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/operator_arithmetic","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/language/operator_arithmetic","wgTitle":"c/language/operator arithmetic","wgCurRevisionId":90251,"wgArticleId":9564,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/language/operator_arithmetic","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -1012,7 +1012,7 @@ Selecting bits: 0x70</pre></div></div>
 </td></tr></table></div>
 <p>First, <a href="conversion.html" title="c/language/conversion">integer promotions</a> are performed, individually, on each operand (Note: this is unlike other binary arithmetic operators, which all perform usual arithmetic conversions). The type of the result is the type of <span class="t-spar">lhs</span> after promotion. 
 </p><p>For unsigned <span class="t-spar">lhs</span>, the value of <code>LHS &lt;&lt; RHS</code> is the value of <span class="texhtml" style="white-space: nowrap;">LHS * 2<span class="t-su">RHS<br /></span></span>, reduced modulo maximum value of the return type plus 1 (that is, bitwise left shift is performed and the bits that get shifted out of the destination type are discarded). For signed <span class="t-spar">lhs</span>, the value of <code>LHS &lt;&lt; RHS</code> is <span class="texhtml" style="white-space: nowrap;">LHS * 2<span class="t-su">RHS<br /></span></span> if it is representable in the promoted type of <span class="t-spar">lhs</span>, otherwise the behavior is undefined.
-</p><p>For unsigned <span class="t-spar">lhs</span> and for signed <span class="t-spar">lhs</span> with nonnegative values, the value of <code>LHS &gt;&gt; RHS</code> is the integer part of <span class="texhtml" style="white-space: nowrap;">LHS / 2<span class="t-su">RHS<br /></span></span>. For negative <code>LHS</code>, the value of <code>LHS &gt;&gt; RHS</code> is implementation-defined (in most implementations, this performs arithmetic right shift, so that the result remains negative)
+</p><p>For unsigned <span class="t-spar">lhs</span> and for signed <span class="t-spar">lhs</span> with nonnegative values, the value of <code>LHS &gt;&gt; RHS</code> is the integer part of <span class="texhtml" style="white-space: nowrap;">LHS / 2<span class="t-su">RHS<br /></span></span>. For negative <code>LHS</code>, the value of <code>LHS &gt;&gt; RHS</code> is implementation-defined where in most implementations, this performs arithmetic right shift (so that the result remains negative). Thus in most implementations, right shifting a signed <code>LHS</code> fills the new higher-order bits with the original sign bit (i.e. with 0 if it was non-negative and 1 if it was negative).
 </p><p>In any case, the behavior is undefined if <span class="t-spar">rhs</span> is negative or is greater or equal the number of bits in the promoted <span class="t-spar">lhs</span>.
 </p>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -1216,19 +1216,19 @@ _Alignof</span></span> <span class="t-mark-rev t-since-c11">(since C11)</span>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6639/1000000
-Preprocessor generated node count: 13348/1000000
-Post‐expand include size: 98911/2097152 bytes
-Template argument size: 24784/2097152 bytes
+Preprocessor visited node count: 6645/1000000
+Preprocessor generated node count: 13366/1000000
+Post‐expand include size: 98927/2097152 bytes
+Template argument size: 24787/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9564-0!*!0!!en!*!* and timestamp 20151126133021 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9564-0!*!0!!en!*!* and timestamp 20170214222337 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=82029">http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=82029</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=90251">http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=90251</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/w/Category:Todo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul></div></div>                    <!-- /catlinks -->
@@ -1251,7 +1251,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="operator_arithmetic.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/operator_arithmetic" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/operator_arithmetic" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=82029" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/language/operator_arithmetic" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/language/operator_arithmetic" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;oldid=90251" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/language/operator_arithmetic&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -1259,8 +1259,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/language/operator_arithmetic" title="c/language/operator arithmetic" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 26 November 2015, at 05:30.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,401 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 14 February 2017, at 14:23.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,992 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -1293,7 +1293,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.090 secs. -->
+</script><!-- Served in 0.070 secs. -->
 	</body>
-<!-- Cached 20151126133021 -->
+<!-- Cached 20170215013037 -->
 </html>

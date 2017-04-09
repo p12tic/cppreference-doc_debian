@@ -203,14 +203,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -286,7 +291,7 @@ seed_seq<span class="br0">&#40;</span> InputIt begin, InputIt end <span class="b
 </tr>
 <tr class="t-dcl t-since-cxx11">
 <td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span><br />
-seed_seq<span class="br0">&#40;</span> <a href="../../../utility/initializer_list.html"><span class="kw805">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> il <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+seed_seq<span class="br0">&#40;</span> <a href="../../../utility/initializer_list.html"><span class="kw960">std::<span class="me2">initializer_list</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> il <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td> (4) </td>
 <td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
 </tr>
@@ -305,7 +310,7 @@ seed_seq<span class="br0">&#40;</span> <a href="../../../utility/initializer_lis
 </td>
 <td> -
 </td>
-<td>  the initial seed sequence represented as a pair of input iterators whose <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../iterator/iterator_traits.html"><span class="kw530">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">value_type</span></span></span> is an integer type
+<td>  the initial seed sequence represented as a pair of input iterators whose <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../../iterator/iterator_traits.html"><span class="kw651">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;&gt;</span><span class="sy4">::</span><span class="me2">value_type</span></span></span> is an integer type
 </td></tr>
 <tr class="t-par">
 <td>  il
@@ -329,14 +334,14 @@ seed_seq<span class="br0">&#40;</span> <a href="../../../utility/initializer_lis
 <span class="co2">#include &lt;iterator&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../seed_seq.html"><span class="kw1214">std::<span class="me2">seed_seq</span></span></a> s1<span class="sy4">;</span> <span class="co1">// default-constructible</span>
-    <a href="../seed_seq.html"><span class="kw1214">std::<span class="me2">seed_seq</span></span></a> s2<span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// can use list-initialization</span>
-    <a href="../seed_seq.html"><span class="kw1214">std::<span class="me2">seed_seq</span></span></a> s3 <span class="sy1">=</span> <span class="br0">&#123;</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// another form of list-initialization</span>
+    <a href="../seed_seq.html"><span class="kw1498">std::<span class="me2">seed_seq</span></span></a> s1<span class="sy4">;</span> <span class="co1">// default-constructible</span>
+    <a href="../seed_seq.html"><span class="kw1498">std::<span class="me2">seed_seq</span></span></a> s2<span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// can use list-initialization</span>
+    <a href="../seed_seq.html"><span class="kw1498">std::<span class="me2">seed_seq</span></span></a> s3 <span class="sy1">=</span> <span class="br0">&#123;</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">&#125;</span><span class="sy4">;</span> <span class="co1">// another form of list-initialization</span>
     <span class="kw4">int</span> a<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">6</span>, <span class="nu0">7</span>, <span class="nu0">8</span>, <span class="nu0">9</span>, <span class="nu0">10</span><span class="br0">&#125;</span><span class="sy4">;</span>
-    <a href="../seed_seq.html"><span class="kw1214">std::<span class="me2">seed_seq</span></span></a> s4<span class="br0">&#40;</span>a, a <span class="sy2">+</span> <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// can use iterators</span>
-    <a href="../../../io/basic_istringstream.html"><span class="kw1424">std::<span class="me2">istringstream</span></span></a> buf<span class="br0">&#40;</span><span class="st0">&quot;1 2 3 4 5&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> 
-    <a href="../../../iterator/istream_iterator.html"><span class="kw546">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> beg<span class="br0">&#40;</span>buf<span class="br0">&#41;</span>, end<span class="sy4">;</span>
-    <a href="../seed_seq.html"><span class="kw1214">std::<span class="me2">seed_seq</span></span></a> s5<span class="br0">&#40;</span>beg, end<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// even stream input iterators</span>
+    <a href="../seed_seq.html"><span class="kw1498">std::<span class="me2">seed_seq</span></span></a> s4<span class="br0">&#40;</span>a, a <span class="sy2">+</span> <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// can use iterators</span>
+    <a href="../../../io/basic_istringstream.html"><span class="kw1732">std::<span class="me2">istringstream</span></span></a> buf<span class="br0">&#40;</span><span class="st0">&quot;1 2 3 4 5&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+    <a href="../../../iterator/istream_iterator.html"><span class="kw668">std::<span class="me2">istream_iterator</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> beg<span class="br0">&#40;</span>buf<span class="br0">&#41;</span>, end<span class="sy4">;</span>
+    <a href="../seed_seq.html"><span class="kw1498">std::<span class="me2">seed_seq</span></span></a> s5<span class="br0">&#40;</span>beg, end<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// even stream input iterators</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br /> 
 </p>
@@ -344,15 +349,15 @@ seed_seq<span class="br0">&#40;</span> <a href="../../../utility/initializer_lis
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4124/1000000
-Preprocessor generated node count: 7600/1000000
-Post‐expand include size: 124438/2097152 bytes
-Template argument size: 24659/2097152 bytes
+Preprocessor visited node count: 4313/1000000
+Preprocessor generated node count: 7775/1000000
+Post‐expand include size: 131274/2097152 bytes
+Template argument size: 25758/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8940-0!*!0!!*!*!* and timestamp 20150524000408 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8940-0!*!0!!*!*!* and timestamp 20161206034808 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -387,8 +392,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/random/seed_seq/seed_seq" title="cpp/numeric/random/seed seq/seed seq" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 November 2013, at 15:16.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,752 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 November 2013, at 14:16.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,944 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -421,7 +426,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.689 secs. -->
+</script><!-- Served in 1.698 secs. -->
 	</body>
-<!-- Cached 20150524000408 -->
+<!-- Cached 20161206034808 -->
 </html>

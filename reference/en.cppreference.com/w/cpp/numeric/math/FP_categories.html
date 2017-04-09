@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -443,7 +448,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;cfloat&gt;</span>
 &#160;
 <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> show_classification<span class="br0">&#40;</span><span class="kw4">double</span> x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-    <span class="kw1">switch</span><span class="br0">&#40;</span><a href="fpclassify.html"><span class="kw1179">std::<span class="me2">fpclassify</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">switch</span><span class="br0">&#40;</span><a href="fpclassify.html"><span class="kw1365">std::<span class="me2">fpclassify</span></span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
         <span class="kw1">case</span> FP_INFINITE<span class="sy4">:</span>  <span class="kw1">return</span> <span class="st0">&quot;Inf&quot;</span><span class="sy4">;</span>
         <span class="kw1">case</span> FP_NAN<span class="sy4">:</span>       <span class="kw1">return</span> <span class="st0">&quot;NaN&quot;</span><span class="sy4">;</span>
         <span class="kw1">case</span> FP_NORMAL<span class="sy4">:</span>    <span class="kw1">return</span> <span class="st0">&quot;normal&quot;</span><span class="sy4">;</span>
@@ -454,9 +459,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#125;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/cout.html"><span class="kw1476">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1.0/0.0 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy2">/</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+    <a href="../../io/cout.html"><span class="kw1750">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1.0/0.0 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy2">/</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;0.0/0.0 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><span class="nu16">0.0</span><span class="sy2">/</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;DBL_MIN/2 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw409">DBL_MIN</span></a><span class="sy2">/</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;DBL_MIN/2 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><a href="../../types/climits.1.html"><span class="kw412">DBL_MIN</span></a><span class="sy2">/</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;-0.0 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><span class="sy2">-</span><span class="nu16">0.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;1.0 is &quot;</span> <span class="sy1">&lt;&lt;</span> show_classification<span class="br0">&#40;</span><span class="nu16">1.0</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
@@ -485,15 +490,15 @@ DBL_MIN/2 is subnormal
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 6766/1000000
-Preprocessor generated node count: 7679/1000000
-Post‐expand include size: 207824/2097152 bytes
-Template argument size: 39508/2097152 bytes
+Preprocessor visited node count: 6955/1000000
+Preprocessor generated node count: 7854/1000000
+Post‐expand include size: 214660/2097152 bytes
+Template argument size: 40607/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3688-0!*!0!!*!*!* and timestamp 20151130143923 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3688-0!*!0!!*!*!* and timestamp 20161206013326 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -529,7 +534,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 14 October 2014, at 06:50.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 9,115 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,872 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -562,7 +567,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.403 secs. -->
+</script><!-- Served in 2.107 secs. -->
 	</body>
-<!-- Cached 20151130143923 -->
+<!-- Cached 20161206013326 -->
 </html>

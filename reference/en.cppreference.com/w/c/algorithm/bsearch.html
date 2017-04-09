@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/algorithm/bsearch","wgTitle":"c/algorithm/bsearch","wgCurRevisionId":77530,"wgArticleId":6121,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/algorithm/bsearch","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/algorithm/bsearch","wgTitle":"c/algorithm/bsearch","wgCurRevisionId":83396,"wgArticleId":6121,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/algorithm/bsearch","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -149,7 +149,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 	<h5>Namespaces</h5>
 	<ul>
 					<li  id="ca-nstab-main" class="selected"><span><a href="bsearch.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:c/algorithm/bsearch&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.cppreference.com/w/Talk:c/algorithm/bsearch"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
 			</ul>
 </div>
 
@@ -331,7 +331,8 @@ The signature of the comparison function should be equivalent to the following:
 <div class="t-li1"><span class="t-li">1)</span> Pointer to an element in the array that compares equal to <span class="t-c"><span class="mw-geshi c source-c"><span class="sy2">*</span>key</span></span>, or null pointer if such element has not been found.</div>
 <div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, except that the null pointer is also returned on runtime constraints violations.</div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Unlike other bounds-checked functions, <code>bsearch_s</code> does not treat arrays of zero size as a runtime constraint violation and instead indicates element not found (the other function that accepts arrays of zero size is <span class="t-lc">qsort_s</span>).
+<p>Despite the name, neither C nor POSIX standards require this function to be implemented using binary search or make any complexity guarantees.
+</p><p>Unlike other bounds-checked functions, <code>bsearch_s</code> does not treat arrays of zero size as a runtime constraint violation and instead indicates element not found (the other function that accepts arrays of zero size is <span class="t-lc">qsort_s</span>).
 </p><p>Until <code>bsearch_s</code>, users of <code>bsearch</code> often used global variables to pass additional context to the comparison function.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
@@ -350,18 +351,24 @@ The signature of the comparison function should be equivalent to the following:
 <span class="br0">&#123;</span>
     <span class="kw1">struct</span> data <span class="kw4">const</span> <span class="sy2">*</span><span class="kw4">const</span> l <span class="sy1">=</span> lhs<span class="sy4">;</span>
     <span class="kw1">struct</span> data <span class="kw4">const</span> <span class="sy2">*</span><span class="kw4">const</span> r <span class="sy1">=</span> rhs<span class="sy4">;</span>
-    <span class="kw1">return</span> <span class="br0">&#40;</span>l<span class="sy2">-</span><span class="sy1">&gt;</span>nr <span class="sy1">&gt;</span> r<span class="sy2">-</span><span class="sy1">&gt;</span>nr<span class="br0">&#41;</span> <span class="sy2">-</span> <span class="br0">&#40;</span>l<span class="sy2">-</span><span class="sy1">&gt;</span>nr <span class="sy1">&lt;</span> r<span class="sy2">-</span><span class="sy1">&gt;</span>nr<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>l<span class="sy2">-</span><span class="sy1">&gt;</span>nr <span class="sy1">&lt;</span> r<span class="sy2">-</span><span class="sy1">&gt;</span>nr<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>l<span class="sy2">-</span><span class="sy1">&gt;</span>nr <span class="sy1">&gt;</span> r<span class="sy2">-</span><span class="sy1">&gt;</span>nr<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">else</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// return (l-&gt;nr &gt; r-&gt;nr) - (l-&gt;nr &lt; r-&gt;nr); // possible shortcut</span>
+    <span class="co1">// return l-&gt;nr - r-&gt;nr; // erroneous shortcut (fails if INT_MIN is present)</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span> 
 <span class="br0">&#123;</span>
     <span class="kw1">struct</span> data key <span class="sy1">=</span> <span class="br0">&#123;</span> .<span class="me1">nr</span> <span class="sy1">=</span> <span class="nu0">3</span> <span class="br0">&#125;</span><span class="sy4">;</span>
-    <span class="kw1">struct</span> data <span class="kw4">const</span> <span class="sy2">*</span>res <span class="sy1">=</span> bsearch<span class="br0">&#40;</span><span class="sy3">&amp;</span>key, dat, <span class="kw4">sizeof</span><span class="br0">&#40;</span>dat<span class="br0">&#41;</span><span class="sy2">/</span><span class="kw4">sizeof</span><span class="br0">&#40;</span>dat<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span>,
-                                   <span class="kw4">sizeof</span><span class="br0">&#40;</span>dat<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span>, data_cmp<span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>res<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;No&#160;%d not found<span class="es1">\n</span>&quot;</span>, key.<span class="me1">nr</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+    <span class="kw1">struct</span> data <span class="kw4">const</span> <span class="sy2">*</span>res <span class="sy1">=</span> bsearch<span class="br0">&#40;</span><span class="sy3">&amp;</span>key, dat, <span class="kw4">sizeof</span> dat <span class="sy2">/</span> <span class="kw4">sizeof</span> dat<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>,
+                                     <span class="kw4">sizeof</span> dat<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, data_cmp<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>res<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         <a href="../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;No&#160;%d:&#160;%s<span class="es1">\n</span>&quot;</span>, res<span class="sy2">-</span><span class="sy1">&gt;</span>nr, res<span class="sy2">-</span><span class="sy1">&gt;</span>value<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        <a href="../io/fprintf.html"><span class="kw850">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;No&#160;%d not found<span class="es1">\n</span>&quot;</span>, key.<span class="me1">nr</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -409,19 +416,19 @@ The signature of the comparison function should be equivalent to the following:
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 1462/1000000
-Preprocessor generated node count: 6486/1000000
+Preprocessor visited node count: 1470/1000000
+Preprocessor generated node count: 6529/1000000
 Post‐expand include size: 30689/2097152 bytes
-Template argument size: 7897/2097152 bytes
+Template argument size: 8494/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6121-0!*!0!!en!*!* and timestamp 20151130151529 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6121-0!*!0!!en!*!* and timestamp 20161206002358 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=77530">http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=77530</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=83396">http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=83396</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -444,7 +451,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="bsearch.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/algorithm/bsearch" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/algorithm/bsearch" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=77530" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/algorithm/bsearch" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/algorithm/bsearch" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;oldid=83396" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/algorithm/bsearch&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -452,8 +459,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/algorithm/bsearch" title="c/algorithm/bsearch" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 29 March 2015, at 04:11.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,960 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 5 February 2016, at 11:30.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 10,869 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -486,7 +493,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.882 secs. -->
+</script><!-- Served in 0.673 secs. -->
 	</body>
-<!-- Cached 20151130151529 -->
+<!-- Cached 20161206002358 -->
 </html>

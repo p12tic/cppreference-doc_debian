@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -327,13 +328,13 @@ This function is thread-safe; concurrent access by multiple threads does not res
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> charT, <span class="kw1">class</span> traits <span class="sy1">=</span> <a href="../../string/char_traits.html"><span class="kw1091">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
-<span class="kw1">class</span> mystream <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> charT, <span class="kw1">class</span> traits <span class="sy1">=</span> <a href="../../string/char_traits.html"><span class="kw1264">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>charT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span>
+<span class="kw1">class</span> mystream <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_ostream.html"><span class="kw1712">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span>
 <span class="br0">&#123;</span>
  <span class="kw1">public</span><span class="sy4">:</span>
     <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> xindex<span class="sy4">;</span>
-    mystream<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> ostr<span class="br0">&#41;</span> <span class="sy4">:</span>
-        <a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span><span class="br0">&#40;</span>ostr.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    mystream<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1712">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> ostr<span class="br0">&#41;</span> <span class="sy4">:</span>
+        <a href="../basic_ostream.html"><span class="kw1712">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT, traits<span class="sy1">&gt;</span><span class="br0">&#40;</span>ostr.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
          this<span class="sy2">-</span><span class="sy1">&gt;</span>pword<span class="br0">&#40;</span>xindex<span class="br0">&#41;</span> <span class="sy1">=</span> this<span class="sy4">;</span>
     <span class="br0">&#125;</span>
@@ -351,7 +352,7 @@ This function is thread-safe; concurrent access by multiple threads does not res
 <span class="co1">// This I/O manipulator will be able to recognize ostreams that are mystreams</span>
 <span class="co1">// by looking up the pointer stored in pword</span>
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> charT, <span class="kw1">class</span> traits<span class="sy1">&gt;</span>
-<a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> mymanip<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1438">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> os<span class="br0">&#41;</span>
+<a href="../basic_ostream.html"><span class="kw1712">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> mymanip<span class="br0">&#40;</span><a href="../basic_ostream.html"><span class="kw1712">std::<span class="me2">basic_ostream</span></span></a><span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span> os<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
  <span class="kw1">if</span> <span class="br0">&#40;</span>os.<span class="me1">pword</span><span class="br0">&#40;</span>mystream<span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">xindex</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="sy3">&amp;</span>os<span class="br0">&#41;</span> 
     <span class="kw1">static_cast</span><span class="sy1">&lt;</span>mystream<span class="sy1">&lt;</span>charT,traits<span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>os<span class="br0">&#41;</span>.<span class="me1">myfn</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -360,14 +361,14 @@ This function is thread-safe; concurrent access by multiple threads does not res
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cout, narrow-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cout, narrow-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    mystream<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> myout<span class="br0">&#40;</span><a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    mystream<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> myout<span class="br0">&#40;</span><a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     myout <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;myout, narrow-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    <a href="../cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;wcout, wide-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;wcout, wide-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 &#160;
-    mystream<span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span> mywout<span class="br0">&#40;</span><a href="../cout.html"><span class="kw1482">std::<span class="me2">wcout</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+    mystream<span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span> mywout<span class="br0">&#40;</span><a href="../cout.html"><span class="kw1756">std::<span class="me2">wcout</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
     mywout <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;mywout, wide-character test &quot;</span> <span class="sy1">&lt;&lt;</span> mymanip <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -395,15 +396,15 @@ mywout, wide-character test [special handling for mystream]</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4048/1000000
-Preprocessor generated node count: 8220/1000000
-Post‐expand include size: 100396/2097152 bytes
-Template argument size: 20144/2097152 bytes
+Preprocessor visited node count: 4079/1000000
+Preprocessor generated node count: 8301/1000000
+Post‐expand include size: 101345/2097152 bytes
+Template argument size: 20262/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:625-0!*!0!!en!*!* and timestamp 20150825060120 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:625-0!*!0!!en!*!* and timestamp 20161205225509 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -438,8 +439,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/ios_base/xalloc" title="cpp/io/ios base/xalloc" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 5 June 2014, at 03:31.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 5,813 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 5 June 2014, at 02:31.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 9,793 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -472,7 +473,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.900 secs. -->
+</script><!-- Served in 1.754 secs. -->
 	</body>
-<!-- Cached 20150825060120 -->
+<!-- Cached 20161205225509 -->
 </html>

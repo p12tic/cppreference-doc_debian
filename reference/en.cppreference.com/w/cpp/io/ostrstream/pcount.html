@@ -231,6 +231,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -283,7 +284,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Returns the number of characters that were output in the put area of the associated <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../strstreambuf.html"><span class="kw1475">std::<span class="me2">strstreambuf</span></span></a></span></span>. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
+<p>Returns the number of characters that were output in the put area of the associated <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../strstreambuf.html"><span class="kw1749">std::<span class="me2">strstreambuf</span></span></a></span></span>. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">rdbuf<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>pcount<span class="br0">&#40;</span><span class="br0">&#41;</span></span></span>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -306,21 +307,21 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../ostrstream.html"><span class="kw1477">std::<span class="me2">ostrstream</span></span></a> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
-    dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The size of the output is &quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">pcount</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    <a href="../ostrstream.html"><span class="kw1751">std::<span class="me2">ostrstream</span></span></a> dyn<span class="sy4">;</span> <span class="co1">// dynamically-allocated output buffer</span>
+    dyn <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Test: &quot;</span> <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span> <span class="sy1">&lt;&lt;</span> <a href="../manip/ends.html"><span class="kw1786">std::<span class="me2">ends</span></span></a><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The size of the output is &quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">pcount</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
               <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; and it holds <span class="es1">\&quot;</span>&quot;</span> <span class="sy1">&lt;&lt;</span> dyn.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\&quot;</span><span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
     dyn.<span class="me1">freeze</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
     <span class="kw4">char</span> buf<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span>
-    <a href="../ostrstream.html"><span class="kw1477">std::<span class="me2">ostrstream</span></span></a> user<span class="br0">&#40;</span>buf, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// user-provided output buffer</span>
+    <a href="../ostrstream.html"><span class="kw1751">std::<span class="me2">ostrstream</span></span></a> user<span class="br0">&#40;</span>buf, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// user-provided output buffer</span>
     user <span class="sy1">&lt;&lt;</span> <span class="nu16">1.23</span><span class="sy4">;</span> <span class="co1">// note: no std::ends</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a>.<span class="me1">write</span><span class="br0">&#40;</span>buf, user.<span class="me1">pcount</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a>.<span class="me1">write</span><span class="br0">&#40;</span>buf, user.<span class="me1">pcount</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">The size of the output is 10 and it holds &quot;Test: 1.23&quot;
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">The size of the output is 11 and it holds &quot;Test: 1.23&quot;
 1.23</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/strstream/pcount&amp;action=edit&amp;section=T-4" title="Template:cpp/io/strstream/pcount">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
@@ -335,15 +336,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 2672/1000000
-Preprocessor generated node count: 7190/1000000
-Post‐expand include size: 102077/2097152 bytes
-Template argument size: 12180/2097152 bytes
+Preprocessor visited node count: 2703/1000000
+Preprocessor generated node count: 7271/1000000
+Post‐expand include size: 103443/2097152 bytes
+Template argument size: 12337/2097152 bytes
 Highest expansion depth: 35/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9721-0!*!0!!en!*!* and timestamp 20150825102737 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9721-0!*!0!!en!*!* and timestamp 20161206043335 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -373,8 +374,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/io/ostrstream/pcount" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/io/ostrstream/pcount" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/ostrstream/pcount&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/ostrstream/pcount&amp;oldid=63935" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/ostrstream/pcount&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 08:42.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,419 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 August 2013, at 07:42.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,389 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -407,7 +408,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.124 secs. -->
+</script><!-- Served in 1.055 secs. -->
 	</body>
-<!-- Cached 20150825102737 -->
+<!-- Cached 20161206043335 -->
 </html>

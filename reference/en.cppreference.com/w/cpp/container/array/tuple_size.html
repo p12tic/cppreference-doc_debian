@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../container.html" title="cpp/container"> Containers library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../array.html" title="cpp/container/array"><span class="t-lines"><span>array</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
@@ -268,6 +269,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv-h1"><td colspan="5"> Non-member functions</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="get.html" title="cpp/container/array/get"><span class="t-lines"><span>get</span></span></a></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap2.html" title="cpp/container/array/swap2"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator_cmp.html" title="cpp/container/array/operator cmp"><span class="t-lines"><span>operator==</span><span>operator!=</span><span>operator&lt;</span><span>operator&gt;</span><span>operator&lt;=</span><span>operator&gt;=</span></span></a></div></div></td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Helper classes</td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>tuple_size</span></span></strong></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tuple_element.html" title="cpp/container/array/tuple element"><span class="t-lines"><span>tuple_element</span></span></a></div></div></td></tr>
@@ -290,7 +292,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Provides access to the number of elements in an <span class="t-lc">std::array</span> as a compile-time constant expression.
+<p>Provides access to the number of elements in an <span class="t-lc"><a href="../array.html" title="cpp/container/array">std::array</a></span> as a compile-time constant expression.
 </p>
 <div class="t-inherited">
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -354,7 +356,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <code>type</code>
 </td>
-<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/integral_constant.html"><span class="kw553">std::<span class="me2">integral_constant</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a>, value<span class="sy1">&gt;</span></span></span>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/integral_constant.html"><span class="kw647">std::<span class="me2">integral_constant</span></span></a><span class="sy1">&lt;</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a>, value<span class="sy1">&gt;</span></span></span>
 </td></tr>
 
 </table>
@@ -368,12 +370,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">void</span> test<span class="br0">&#40;</span>T t<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">int</span> a<span class="br0">&#91;</span>std<span class="sy4">::</span><span class="me2">tuple_size</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span><span class="br0">&#93;</span><span class="sy4">;</span> <span class="co1">// can be used at compile time</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tuple_size</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">tuple_size</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../array.html"><span class="kw1092">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span><span class="kw4">float</span>, <span class="nu0">3</span><span class="sy1">&gt;</span> arr<span class="sy4">;</span>
+    <a href="../array.html"><span class="kw1265">std::<span class="me2">array</span></span></a><span class="sy1">&lt;</span><span class="kw4">float</span>, <span class="nu0">3</span><span class="sy1">&gt;</span> arr<span class="sy4">;</span>
     test<span class="br0">&#40;</span>arr<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -392,15 +394,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3506/1000000
-Preprocessor generated node count: 7923/1000000
-Post‐expand include size: 84400/2097152 bytes
-Template argument size: 17384/2097152 bytes
+Preprocessor visited node count: 3637/1000000
+Preprocessor generated node count: 8075/1000000
+Post‐expand include size: 87666/2097152 bytes
+Template argument size: 18004/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5127-0!*!0!!en!*!* and timestamp 20151130152448 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5127-0!*!0!!en!*!* and timestamp 20161205221658 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -436,7 +438,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 1 July 2013, at 15:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 7,930 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 12,727 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -469,7 +471,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.352 secs. -->
+</script><!-- Served in 1.195 secs. -->
 	</body>
-<!-- Cached 20151130152448 -->
+<!-- Cached 20161205221658 -->
 </html>

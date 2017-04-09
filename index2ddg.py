@@ -18,7 +18,13 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 '''
 
-import sys, json, os, sys, re, fnmatch
+import argparse
+import fnmatch
+import json
+import os
+import sys
+import re
+
 import lxml.etree as e
 import lxml.html as html
 
@@ -26,32 +32,6 @@ from index_transform import IndexTransform
 from xml_utils import xml_escape
 from build_link_map import build_link_map
 from ddg_parse_html import get_declarations, get_short_description, DdgException
-
-if len(sys.argv) != 3 and not (len(sys.argv) > 2 and sys.argv[2] == 'debug'):
-    print('''Please provide the file name of the index as the first argument
- and the file name of the output as the second ''')
-    sys.exit(1)
-
-MAX_CODE_LINES = 6
-
-# If a the second argument is 'debug', the program switches to debug mode and
-# prints everything to stdout. If the third argument is provided, the program
-# processes only the identifiers that match the provided string
-
-debug = False
-debug_ident = None
-if len(sys.argv) > 2 and sys.argv[2] == 'debug':
-    debug = True
-    if len(sys.argv) > 3:
-        debug_ident = sys.argv[3]
-
-# track the statistics of number of lines used by the entries
-debug_num_lines = [0 for i in range(40)]
-
-index_file = sys.argv[1]
-output_file = sys.argv[2]
-
-items = {}
 
 # Entry types
 # a class or struct
@@ -117,63 +97,75 @@ def get_item_type(el):
         return ITEM_TYPE_ENUM
     return None # not recognized
 
+class DDGDebug:
+
+    def __init__(self, enabled=False, ident_match=None, debug_abstracts_path=None):
+        self.enabled = enabled
+        self.ident_match = ident_match
+        self.stat_line_nums = []
+        self.debug_abstracts_file = sys.stdout
+        if debug_abstracts_path is not None:
+            self.debug_abstracts_file = open(debug_abstracts_path, 'w', encoding='utf-8')
+
+    # track the statistics of number of lines used by the entries
+    def submit_line_num(self, line_num):
+        while len(self.stat_line_nums) <= line_num:
+            self.stat_line_nums.append(0)
+        self.stat_line_nums[line_num] += 1
+
+    def should_skip_ident(self, ident):
+        if self.ident_match is None:
+            return False
+
+        if isinstance(ident, list):
+            for i in ident:
+                if self.ident_match in i:
+                    return False
+        else:
+            if self.ident_match in ident:
+                return False
+        return True
+
 class Index2DuckDuckGoList(IndexTransform):
 
-    def __init__(self):
+    def __init__(self, ident_map):
+        self.ident_map = ident_map
         super(Index2DuckDuckGoList, self).__init__(ignore_typedefs=True)
 
     def process_item_hook(self, el, full_name, full_link):
-        global items
 
         item_type = get_item_type(el)
         if item_type:
-            if full_link in items:
-                items[full_link][full_name] = item_type
+            if full_link in self.ident_map:
+                self.ident_map[full_link][full_name] = item_type
             else:
-                items[full_link] = { full_name : item_type }
+                self.ident_map[full_link] = { full_name : item_type }
         IndexTransform.process_item_hook(self, el, full_name, full_link)
 
-# get a list of pages to analyze
-tr = Index2DuckDuckGoList()
-tr.transform(index_file)
+def get_html_files(root):
+    files = []
+    for dir, dirnames, filenames in os.walk(root):
+        for filename in fnmatch.filter(filenames, '*.html'):
+            files.append(os.path.join(dir, filename))
+    return files
 
-# get a list of existing pages
-html_files = []
-for root, dirnames, filenames in os.walk('reference'):
-    for filename in fnmatch.filter(filenames, '*.html'):
-        html_files.append(os.path.join(root, filename))
+def get_processing_instructions(ident_map, link_map):
+    proc_ins = {}
 
-# get a mapping between titles and pages
-
-# linkmap = dict { title -> filename }
-link_map = build_link_map('reference')
-
-# create a list of processing instructions for each page
-proc_ins = {}
-
-for link in items:
-    if link in link_map:
-        fn = link_map[link]
-        if fn not in proc_ins:
-            proc_ins[fn] = { 'fn': fn, 'link': link, 'idents': {}}
-        for ident in items[link]:
-            proc_ins[fn]['idents'][ident] = { 'ident' : ident,
-                                              'type' : items[link][ident] }
-
-# sort proc_ins to produce ordered output.txt
-proc_ins = [ v for v in proc_ins.values() ]
-proc_ins = sorted(proc_ins, key=lambda x: x['link'])
-
-for page in proc_ins:
-    idents = page['idents']
-    idents = [ v for v in idents.values() ]
-    idents = sorted(idents, key=lambda x: x['ident'])
-    page['idents'] = idents
+    for link in ident_map:
+        if link in link_map.mapping:
+            fn = link_map.mapping[link]
+            if fn not in proc_ins:
+                proc_ins[fn] = { 'fn': fn, 'link': link, 'idents': {}}
+            for ident in ident_map[link]:
+                proc_ins[fn]['idents'][ident] = { 'ident' : ident,
+                                                  'type' : ident_map[link][ident] }
+    return proc_ins
 
 # process the files
 
 # returns the unqualified name of an identifier
-def get_name(ident):
+def get_unqualified_name(ident):
     if ident.find('(') != -1:
         ident = re.sub('\(.*?\)', '', ident)
     if ident.find('<') != -1:
@@ -196,63 +188,69 @@ def get_version(decls):
                 return None
     return rv
 
-def build_abstract(decls, desc):
-    line_limit = MAX_CODE_LINES
-    global debug_num_lines
-    num_lines = 0
+def build_abstract(decls, desc, max_code_lines, split_code_lines, debug=DDGDebug()):
 
     limited = False
-    all_code = ''
+    code_snippets = []
 
     for i,(code,ver) in enumerate(decls):
         code = code.strip()
         code = code.replace('<', '&lt;').replace('>', '&gt;')
-        code = '<pre><code>' + code + '</code></pre>'
         code_num_lines = code.count('\n') + 1
 
         # limit the number of code snippets to be included so that total number
-        # of lines is less than MAX_CODE_LINES. The limit becomes active only
+        # of lines is less than max_code_lines. The limit becomes active only
         # for the second and subsequent snippets.
         first = True if i == 0 else False;
         last = True if i == len(decls)-1 else False;
 
         if not first:
             if last:
-                if code_num_lines > line_limit:
+                if code_num_lines > max_code_lines:
                     limited = True
                     break
             else:
-                if code_num_lines > line_limit - 1:
+                if code_num_lines > max_code_lines - 1:
                     # -1 because we need to take into account
                     # < omitted declarations > message
                     limited = True
                     break
 
-        all_code += code
-        num_lines += 1
-        line_limit -= code_num_lines
+        code_snippets.append(code)
+        max_code_lines -= code_num_lines
+
+    if split_code_lines:
+        code_snippets = ['<pre><code>' + s + '</code></pre>' for s in code_snippets]
+        code_text = ''.join(code_snippets)
+    else:
+        code_text = '<pre><code>' + '\n\n'.join(code_snippets) + '</code></pre>'
 
     if limited:
-        all_code += '<pre><code> &lt; omitted declarations &gt; </code></pre>'
+        code_text += '\n<p><em>Additional declarations have been omitted</em></p>'
 
     # count the number of lines used
-    num_lines += all_code.count('\n')
+    num_lines = code_text.count('\n') + 1 # last line has no newline after it
     if len(desc) > 110:
         num_lines += 2
     else:
         num_lines += 1
-    if limited:
-        num_lines += 1
 
-    debug_num_lines[num_lines] += 1
+    debug.submit_line_num(num_lines)
 
-    if debug and num_lines >= 10:
+    result_lines = [
+        '<section class="prog__container">',
+        '<p>' + desc + '</p>',
+        code_text,
+        '</section>'
+    ]
+    result_text = '\n'.join(result_lines)
+
+    if debug.enabled and num_lines >= 10:
         print("# error : large number of lines: ")
         print("# BEGIN ======")
-        print(all_code + desc)
+        print(result_text)
         print("# END ========")
-
-    return all_code + desc
+    return result_text
 
 ''' Outputs additional redirects for an identifier.
 
@@ -281,10 +279,8 @@ def build_abstract(decls, desc):
                     'priority' -> redirect priority as int
                   }
 '''
-redirects = []
 
-def build_redirects(item_ident, item_type):
-    global redirects
+def build_redirects(redirects, item_ident, item_type):
 
     for ch in [ '(', ')', '<', '>', 'operator' ]:
         if ch in item_ident:
@@ -294,8 +290,7 @@ def build_redirects(item_ident, item_type):
     parts = item_ident.split('::')
 
     # -----
-    def do_parts(parts, prepend='', append=''):
-        global redirects
+    def do_parts(redirects, parts, prepend='', append=''):
         if prepend != '':
             prepend = prepend + ' '
         if append != '':
@@ -324,23 +319,22 @@ def build_redirects(item_ident, item_type):
                       ITEM_TYPE_VARIABLE_INLINEMEM,
                       ITEM_TYPE_ENUM,
                       ITEM_TYPE_ENUM_CONST ]:
-        do_parts(parts)
+        do_parts(redirects, parts)
 
     elif item_type in [ ITEM_TYPE_CONSTRUCTOR,
                         ITEM_TYPE_CONSTRUCTOR_INLINEMEM ]:
         parts.pop()
-        do_parts(parts, prepend='constructor')
-        do_parts(parts, append='constructor')
+        do_parts(redirects, parts, prepend='constructor')
+        do_parts(redirects, parts, append='constructor')
     elif item_type in [ ITEM_TYPE_DESTRUCTOR,
                         ITEM_TYPE_DESTRUCTOR_INLINEMEM ]:
         parts.pop()
-        do_parts(parts, prepend='destructor')
-        do_parts(parts, append='destructor')
+        do_parts(redirects, parts, prepend='destructor')
+        do_parts(redirects, parts, append='destructor')
     else:
         pass    # should not be here
 
-def output_redirects():
-    global redirects
+def output_redirects(out, redirects):
 
     # convert to a convenient data structure
     # dict { title -> dict { priority -> list ( targets ) } }
@@ -385,106 +379,182 @@ def output_redirects():
         line += '\t\t\t\t\t\t\t\t\t\t\n'
         out.write(line)
 
-if debug:
-    out = sys.stdout
-else:
-    out = open(output_file, 'w')
+def process_identifier(out, redirects, root, link, item_ident, item_type,
+                       opts, debug=DDGDebug()):
+    # get the name by extracting the unqualified identifier
+    name = get_unqualified_name(item_ident)
+    debug_verbose = True if debug.enabled and debug.ident_match is not None else False
 
-#i=1
-for page in proc_ins:
-    idents = page['idents']
-    link = page['link']
-    fn = page['fn']
+    try:
+        if item_type == ITEM_TYPE_CLASS:
+            decls = get_declarations(root, name)
+            desc = get_short_description(root, get_version(decls), opts.max_sentences, opts.max_characters,
+                                         opts.max_paren_chars, debug=debug_verbose)
+            abstract = build_abstract(decls, desc, opts.max_code_lines,
+                                      opts.split_code_snippets, debug=debug)
 
-    if debug_ident:
-        ignore = True
-        for ident in idents:
-            if ident['ident'].find(debug_ident) != -1:
-                ignore = False
-                break
-        if ignore:
-            continue
+        elif item_type in [ ITEM_TYPE_FUNCTION,
+                            ITEM_TYPE_CONSTRUCTOR,
+                            ITEM_TYPE_DESTRUCTOR ]:
+            decls = get_declarations(root, name)
+            desc = get_short_description(root, get_version(decls), opts.max_sentences, opts.max_characters,
+                                         opts.max_paren_chars, debug=debug_verbose)
+            abstract = build_abstract(decls, desc, opts.max_code_lines,
+                                      opts.split_code_snippets, debug=debug)
 
-    #print(str(i) + '/' + str(len(proc_ins)) + ': ' + link)
-    #i+=1
+        elif item_type in [ ITEM_TYPE_FUNCTION_INLINEMEM,
+                            ITEM_TYPE_CONSTRUCTOR_INLINEMEM,
+                            ITEM_TYPE_DESTRUCTOR_INLINEMEM ]:
+            raise DdgException("INLINEMEM") # not implemented
+            ''' Implementation notes:
+                * the declarations are possibly versioned
+                * declaration is selected from the member table
+                * the member table is found according to the identifier
+                  (last part after :: is enough, hopefully)
+            '''
 
-    root = e.parse('reference/'+fn, parser=html.HTMLParser())
+        elif item_type in [ ITEM_TYPE_VARIABLE,
+                            ITEM_TYPE_VARIABLE_INLINEMEM,
+                            ITEM_TYPE_ENUM ]:
+            raise DdgException("ENUM")      # not implemented
+            ''' Implementation notes:
+                * the declarations are possibly versioned
+            '''
 
-    for ident in idents:
-        item_ident = ident['ident']
-        item_type = ident['type']
+        elif item_type == ITEM_TYPE_ENUM_CONST:
+            raise DdgException("ENUM_CONST")    # not implemented
+            ''' Implementation notes:
+                * the abstract will come from the const -> definition table,
+                  which is always put before the first heading.
+                * the declaration will come from the dcl template. We need
+                  to split the content at ';' and ',', then search for the
+                  name of the enum. If we find duplicates, signal an error.
+            '''
 
-        # get the name by extracting the unqualified identifier
-        name = get_name(item_ident)
+        if debug.enabled:
+            debug.debug_abstracts_file.write("--------------\n")
+            debug.debug_abstracts_file.write(item_ident + '\n')
+            debug.debug_abstracts_file.write(abstract + '\n')
 
-        try:
-            debug_verbose = True if debug and debug_ident != None else False
-            if item_type == ITEM_TYPE_CLASS:
-                decls = get_declarations(root, name)
-                desc = get_short_description(root, get_version(decls), debug=debug_verbose)
-                abstract = build_abstract(decls, desc)
+        # title
+        line = item_ident + '\t'
+        # type
+        line += 'A\t'
+        # redirect, otheruses, categories, references, see_also,
+        # further_reading, external links, disambiguation, images
+        line += '\t\t\t\t\t\t\t\t\t'
+        # abstract
+        abstract = abstract.replace('\n','\\n')
+        line += abstract + '\t'
+        # source url
+        line += 'http://en.cppreference.com/w/' + link + '\n'
+        out.write(line)
 
-            elif item_type in [ ITEM_TYPE_FUNCTION,
-                                ITEM_TYPE_CONSTRUCTOR,
-                                ITEM_TYPE_DESTRUCTOR ]:
-                decls = get_declarations(root, name)
-                desc = get_short_description(root, get_version(decls), debug=debug_verbose)
-                abstract = build_abstract(decls, desc)
+        build_redirects(redirects, item_ident, item_type)
 
-            elif item_type in [ ITEM_TYPE_FUNCTION_INLINEMEM,
-                                ITEM_TYPE_CONSTRUCTOR_INLINEMEM,
-                                ITEM_TYPE_DESTRUCTOR_INLINEMEM ]:
-                raise DdgException("INLINEMEM") # not implemented
-                ''' Implementation notes:
-                    * the declarations are possibly versioned
-                    * declaration is selected from the member table
-                    * the member table is found according to the identifier
-                      (last part after :: is enough, hopefully)
-                '''
-
-            elif item_type == ITEM_TYPE_VARIABLE:
-            elif item_type == ITEM_TYPE_VARIABLE_INLINEMEM:
-            elif item_type == ITEM_TYPE_ENUM:
-                raise DdgException("ENUM")      # not implemented
-                ''' Implementation notes:
-                    * the declarations are possibly versioned
-                '''
-
-            elif item_type == ITEM_TYPE_ENUM_CONST:
-                raise DdgException("ENUM_CONST")    # not implemented
-                ''' Implementation notes:
-                    * the abstract will come from the const -> definition table,
-                      which is always put before the first heading.
-                    * the declaration will come from the dcl template. We need
-                      to split the content at ';' and ',', then search for the
-                      name of the enum. If we find duplicates, signal an error.
-                '''
-
-            # title
-            line = item_ident + '\t'
-            # type
-            line += 'A\t'
-            # redirect, otheruses, categories, references, see_also,
-            # further_reading, external links, disambiguation, images
-            line += '\t\t\t\t\t\t\t\t\t'
-            # abstract
-            abstract = abstract.replace('\n','\\n')
-            line += abstract + '\t'
-            # source url
-            line += 'http://en.cppreference.com/w/' + link + '\n'
+    except DdgException as err:
+        if debug.enabled:
+            line = '# error (' + str(err) + "): " + link + ": " + item_ident + "\n"
             out.write(line)
 
-            build_redirects(item_ident, item_type)
+def main():
 
-        except DdgException as err:
-            if debug:
-                line = '# error (' + str(err) + "): " + link + ": " + item_ident + "\n"
-                out.write(line)
+    parser = argparse.ArgumentParser(prog='index2ddg.py')
+    parser.add_argument('index', type=str,
+                        help='The path to the XML index containing identifier data')
+    parser.add_argument('output', type=str,
+                        help='The path to destination output.txt file')
+    parser.add_argument('--split_code_snippets', action='store_true', default=False,
+                        help='Puts each declaration into a separate code snippet.')
+    parser.add_argument('--max_code_lines', type=int, default=6,
+                        help='Maximum number of lines of code to show in abstract')
+    parser.add_argument('--max_sentences', type=int, default=1,
+                        help='Maximum number of sentences to use for the description')
+    parser.add_argument('--max_characters', type=int, default=200,
+                        help='Maximum number of characters to use for the description')
+    parser.add_argument('--max_paren_chars', type=int, default=40,
+                        help='Maximum size of parenthesized text in the description. '+
+                        'Parenthesized chunks longer than that is removed, unless '+
+                        'they are within <code>, <b> or <i> tags')
+    parser.add_argument('--debug', action='store_true', default=False,
+                        help='Enables debug mode.')
+    parser.add_argument('--debug_ident', type=str, default=None,
+                        help='Processes only the identifiers that match debug_ident')
+    parser.add_argument('--debug_abstracts_path', type=str, default=None,
+                        help='Path to print the abstracts before newline stripping occurs')
+    args = parser.parse_args()
 
-output_redirects()
+    # If a the second argument is 'debug', the program switches to debug mode and
+    # prints everything to stdout. If the third argument is provided, the program
+    # processes only the identifiers that match the provided string
 
-if debug:
-    print('=============================')
-    print('Numbers of lines used:')
-    for i,l in enumerate(debug_num_lines):
-        print(str(i) + ': ' + str(l) + ' result(s)')
+    debug = DDGDebug(args.debug, args.debug_ident, args.debug_abstracts_path)
+
+    index_file = args.index
+    output_file = args.output
+
+    # a map that stores information about location and type of identifiers
+    # it's two level map: full_link maps to a dict that has full_name map to
+    # ITEM_TYPE_* value
+    ident_map = {}
+
+    # get a list of pages to analyze
+    tr = Index2DuckDuckGoList(ident_map)
+    tr.transform(index_file)
+
+    # get a list of existing pages
+    html_files = get_html_files('reference')
+
+    # get a mapping between titles and pages
+    # linkmap = dict { title -> filename }
+    link_map = build_link_map('reference')
+
+    # create a list of processing instructions for each page
+    proc_ins = get_processing_instructions(ident_map, link_map)
+
+    # sort proc_ins to produce ordered output.txt
+    proc_ins = [ v for v in proc_ins.values() ]
+    proc_ins = sorted(proc_ins, key=lambda x: x['link'])
+
+    for page in proc_ins:
+        idents = page['idents']
+        idents = [ v for v in idents.values() ]
+        idents = sorted(idents, key=lambda x: x['ident'])
+        page['idents'] = idents
+
+    redirects = []
+
+    out = open(output_file, 'w', encoding='utf-8')
+
+    #i=1
+    for page in proc_ins:
+        idents = page['idents']
+        link = page['link']
+        fn = page['fn']
+
+        if debug.should_skip_ident([ i['ident'] for i in idents ]):
+            continue
+
+        #print(str(i) + '/' + str(len(proc_ins)) + ': ' + link)
+        #i+=1
+
+        root = e.parse('reference/'+fn, parser=html.HTMLParser())
+
+        for ident in idents:
+
+            item_ident = ident['ident']
+            item_type = ident['type']
+
+            process_identifier(out, redirects, root, link, item_ident, item_type,
+                               args, debug=debug)
+
+    output_redirects(out, redirects)
+
+    if debug.enabled:
+        print('=============================')
+        print('Numbers of lines used:')
+        for i,l in enumerate(debug.stat_line_nums):
+            print(str(i) + ': ' + str(l) + ' result(s)')
+
+if __name__ == "__main__":
+    main()

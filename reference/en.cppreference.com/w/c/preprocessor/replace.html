@@ -18,7 +18,7 @@
 
 <script src="../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/preprocessor/replace","wgTitle":"c/preprocessor/replace","wgCurRevisionId":79084,"wgArticleId":12671,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/preprocessor/replace","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/preprocessor/replace","wgTitle":"c/preprocessor/replace","wgCurRevisionId":92041,"wgArticleId":12671,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/preprocessor/replace","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -363,10 +363,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Object-like macros replace every occurrence of a defined <span class="t-spar">identifier</span> with <span class="t-spar">replacement-list</span>. Version (1) of the <code>#define</code> directive behaves exactly like that.
 </p>
 <h5><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;action=edit&amp;section=5" title="Edit section: Function-like macros">edit</a>]</span> <span class="mw-headline" id="Function-like_macros">Function-like macros</span></h5>
-<p>Function-like macros replace each occurrence of a defined <span class="t-spar">identifier</span> with <span class="t-spar">replacement-list</span>, additionally taking a number of arguments, which then replace corresponding occurrences of any of the <span class="t-spar">parameters</span> in the <span class="t-spar">replacement-list</span>. The number of arguments must be the same as the number of arguments in the macro definition (<span class="t-spar">parameters</span>) or the program is ill-formed. If the identifier is not in functional-notation, i.e. does not have parentheses after itself, it is not replaced at all.
+<p>Function-like macros replace each occurrence of a defined <span class="t-spar">identifier</span> with <span class="t-spar">replacement-list</span>, additionally taking a number of arguments, which then replace corresponding occurrences of any of the <span class="t-spar">parameters</span> in the <span class="t-spar">replacement-list</span>. 
+</p><p>The syntax of a function-like macro invocation is similar to the syntax of a function call: each instance of the macro name followed by a ( as the next preprocessing token introduces the sequence of tokens that is replaced by the replacement-list. The sequence is terminated by the matching ) token, skipping intervening matched pairs of left and right parentheses.
+</p><p>The number of arguments must be the same as the number of arguments in the macro definition (<span class="t-spar">parameters</span>) or the program is ill-formed. If the identifier is not in functional-notation, i.e. does not have parentheses after itself, it is not replaced at all.
 </p><p>Version (2) of the <code>#define</code> directive defines a simple function-like macro.
 </p><p>Version (3) of the <code>#define</code> directive defines a function-like macro with variable number of arguments. The additional arguments can be accessed using <code>__VA_ARGS__</code> identifier, which is then replaced with arguments, supplied with the identifier to be replaced.
 </p><p>Version (4) of the <code>#define</code> directive defines a function-like macro with variable number of arguments, but no regular arguments. The arguments can be accessed only with <code>__VA_ARGS__</code> identifier, which is then replaced with arguments, supplied with identifier to be replaced.
+</p><p>Note: if an argument of a function-like macro includes commas that are not protected by matched pairs of left and right parentheses (such as <span class="t-c"><span class="mw-geshi c source-c">macro<span class="br0">&#40;</span>array<span class="br0">&#91;</span>x <span class="sy1">=</span> y, x <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span></span></span>), the comma is interpreted as macro argument separator, causing a compilation failure due to argument count mismatch.
 </p>
 <h4><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;action=edit&amp;section=6" title="Edit section: # and ## operators">edit</a>]</span> <span class="mw-headline" id=".23_and_.23.23_operators"><code>#</code> and <code>##</code> operators</span></h4>
 <p>In function-like macros, a <code>#</code> operator before an identifier in the <span class="t-spar">replacement-list</span> runs the identifier through parameter replacement and encloses the result in quotes, effectively creating a string literal. In addition, the preprocessor adds backslashes to escape the quotes surrounding embedded string literals, if any, and doubles the backslashes within the string as necessary. All leading and trailing whitespace is removed, and any sequence of whitespace in the middle of the text (but not inside embedded string literals) is collapsed to a single space. This operation is called "stringification". If the result of stringification is not a valid string literal, the behavior is undefined.
@@ -434,7 +437,7 @@ showlist<span class="br0">&#40;</span><span class="nu0">1</span>, <span class="s
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>__DATE__</span></span></div></div>
 </td>
-<td>   expands to the date of translation, a character string literal of the form "Mmm dd yyyy". The name of the month is as if generated by <span class="t-c"><span class="mw-geshi c source-c"><a href="../chrono/asctime.html"><span class="kw515">asctime</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span></span></span> <br /> <span class="t-mark">(macro constant)</span>
+<td>   expands to the date of translation, a character string literal of the form "Mmm dd yyyy". The name of the month is as if generated by <span class="t-lc"><a href="../chrono/asctime.html" title="c/chrono/asctime">asctime</a></span> and the first character of "dd" is a space if the day of the month is less than 10 <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
@@ -485,9 +488,9 @@ showlist<span class="br0">&#40;</span><span class="nu0">1</span>, <span class="s
 
 
 <tr class="t-dsc">
-<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>__STDC_MB_MIGHT_NEQ_WC__</span></span></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c11">(C11)</span></span></span></div></div>
+<td>  <div class="t-dsc-member-div"><div><span class="t-lines"><span>__STDC_MB_MIGHT_NEQ_WC__</span></span></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-c99">(C99)</span></span></span></div></div>
 </td>
-<td>   expands to <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">1</span></span></span> if wide character encoding of the basic character set may not equal their narrow encoding   <br /> <span class="t-mark">(macro constant)</span>
+<td>   expands to <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">1</span></span></span> if wide character encoding of the basic character set may not equal their narrow encoding, such as on EBCDIC-based systems that use Unicode for wchar_t  <br /> <span class="t-mark">(macro constant)</span>
 </td></tr>
 
 
@@ -611,19 +614,19 @@ million</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4787/1000000
-Preprocessor generated node count: 8181/1000000
-Post‐expand include size: 99243/2097152 bytes
-Template argument size: 31767/2097152 bytes
+Preprocessor visited node count: 4800/1000000
+Preprocessor generated node count: 8209/1000000
+Post‐expand include size: 99751/2097152 bytes
+Template argument size: 32198/2097152 bytes
 Highest expansion depth: 15/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12671-0!*!0!!en!*!* and timestamp 20150825012145 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12671-0!*!0!!en!*!* and timestamp 20170403205337 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=79084">http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=79084</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=92041">http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=92041</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -646,7 +649,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="replace.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/preprocessor/replace" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/preprocessor/replace" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=79084" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/preprocessor/replace" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/preprocessor/replace" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;oldid=92041" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/preprocessor/replace&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -654,8 +657,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/preprocessor/replace" title="c/preprocessor/replace" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 23 June 2015, at 03:50.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 6,319 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 3 April 2017, at 13:53.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 18,921 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -688,7 +691,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.252 secs. -->
+</script><!-- Served in 0.056 secs. -->
 	</body>
-<!-- Cached 20150825012145 -->
+<!-- Cached 20170403215111 -->
 </html>

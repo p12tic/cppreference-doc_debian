@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../concept.html" title="cpp/concept"> C++ concepts</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Basic</td></tr>
@@ -279,7 +280,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/RandomNumberEngine&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)"><span class="t-lines"><span>RandomNumberEngine</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="RandomNumberDistribution.html" title="cpp/concept/RandomNumberDistribution"><span class="t-lines"><span>RandomNumberDistribution</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="UniformRandomNumberGenerator.html" title="cpp/concept/UniformRandomNumberGenerator"><span class="t-lines"><span>UniformRandomNumberGenerator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="UniformRandomBitGenerator.html" title="cpp/concept/UniformRandomBitGenerator"><span class="t-lines"><span>UniformRandomBitGenerator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/RandomNumberEngineAdaptor&amp;action=edit&amp;redlink=1" class="new" title="cpp/concept/RandomNumberEngineAdaptor (page does not exist)"><span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 </table></div></td></tr>
 <tr class="t-nv-h1"><td colspan="5"> Concurrency</td></tr>
@@ -343,16 +344,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td></tr>
 
 </table>
-<p>where <code><b>X::allocator_type</b></code> is identical to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">rebind_alloc</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>,
+<p>where <code><b>X::allocator_type</b></code> is identical to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator_traits.html"><span class="kw674">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">rebind_alloc</span><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>,
 </p><p>the following expression is well-formed: 
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../memory/allocator_traits.html"><span class="kw602">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">construct</span><span class="br0">&#40;</span>m, p, rv<span class="br0">&#41;</span><span class="sy4">;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../memory/allocator_traits.html"><span class="kw674">std::<span class="me2">allocator_traits</span></span></a><span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">construct</span><span class="br0">&#40;</span>m, p, rv<span class="br0">&#41;</span><span class="sy4">;</span></pre></div></div>
 <p>And after evaluation, the value of <code>*p</code> is equivalent to the value formerly held by <code>rv</code> (<code>rv</code> remains valid, but is in an unspecified state.)
-</p><p>If <code><b>X</b></code> is not allocator-aware, the term is defined as if <code><b>A</b></code> were <span class="t-lc">std::allocator&lt;T&gt;</span>, except that no allocator object needs to be created, and user-defined specializations of <span class="t-lc">std::allocator</span> are not instantiated.
+</p><p>If <code><b>X</b></code> is not allocator-aware, the term is defined as if <code><b>A</b></code> were <span class="t-lc">std::allocator&lt;T&gt;</span>, except that no allocator object needs to be created, and user-defined specializations of <span class="t-lc"><a href="../memory/allocator.html" title="cpp/memory/allocator">std::allocator</a></span> are not instantiated.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/MoveInsertable&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>If <code>A</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>, then this will call placement-new, as by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">new</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">void</span><span class="sy2">*</span><span class="br0">&#41;</span>p<span class="br0">&#41;</span> T<span class="br0">&#40;</span>rv<span class="br0">&#41;</span></span></span>.
-</p><p>If <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator.html"><span class="kw601">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span> or a similar allocator is used, a class does not have to implement a <a href="../language/move_constructor.html" title="cpp/language/move constructor">move constructor</a> to satisfy this type requirement: a <a href="../language/copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a> that takes a <code>const T&amp;</code> argument can bind rvalue expressions. If a MoveInsertable class implements a move constructor, it may also implement <a href="../utility/move.html" title="cpp/utility/move">move semantics</a> to take advantage of the fact that the value of <code>rv</code> after construction is unspecified.
+<p>If <code>A</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator.html"><span class="kw673">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span>, then this will call placement-new, as by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">new</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">void</span><span class="sy2">*</span><span class="br0">&#41;</span>p<span class="br0">&#41;</span> T<span class="br0">&#40;</span>rv<span class="br0">&#41;</span></span></span>.
+</p><p>If <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/allocator.html"><span class="kw673">std::<span class="me2">allocator</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span></span></span> or a similar allocator is used, a class does not have to implement a <a href="../language/move_constructor.html" title="cpp/language/move constructor">move constructor</a> to satisfy this type requirement: a <a href="../language/copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a> that takes a <code>const T&amp;</code> argument can bind rvalue expressions. If a MoveInsertable class implements a move constructor, it may also implement <a href="../utility/move.html" title="cpp/utility/move">move semantics</a> to take advantage of the fact that the value of <code>rv</code> after construction is unspecified.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/MoveInsertable&amp;action=edit&amp;section=3" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also">See Also</span></h3>
 <table class="t-dsc-begin">
@@ -365,15 +366,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4968/1000000
-Preprocessor generated node count: 5163/1000000
-Post‐expand include size: 151952/2097152 bytes
-Template argument size: 25491/2097152 bytes
+Preprocessor visited node count: 4976/1000000
+Preprocessor generated node count: 5182/1000000
+Post‐expand include size: 152837/2097152 bytes
+Template argument size: 25571/2097152 bytes
 Highest expansion depth: 16/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9644-0!*!0!!*!*!* and timestamp 20151121002534 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9644-0!*!0!!*!*!* and timestamp 20160624182140 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -403,8 +404,8 @@ Expensive parser function count: 0/100
 <li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/concept/MoveInsertable" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/concept/MoveInsertable" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/MoveInsertable&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/MoveInsertable&amp;oldid=81963" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/concept/MoveInsertable&amp;action=info">Page information</a></li>            </ul>
         </div>
                             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 20 November 2015, at 16:25.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,602 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 20 November 2015, at 17:25.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,777 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -437,7 +438,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 0.078 secs. -->
+</script><!-- Served in 1.311 secs. -->
 	</body>
-<!-- Cached 20151121031134 -->
+<!-- Cached 20160624182140 -->
 </html>

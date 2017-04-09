@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -306,18 +307,18 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;sstream&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
-<span class="kw4">void</span> add_words<span class="br0">&#40;</span><a href="../basic_streambuf.html"><span class="kw1413">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> p<span class="br0">&#41;</span>
+<span class="kw4">void</span> add_words<span class="br0">&#40;</span><a href="../basic_streambuf.html"><span class="kw1721">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> p<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostream.html"><span class="kw1418">std::<span class="me2">ostream</span></span></a> buf<span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// buf shares the buffer with s</span>
+    <a href="../basic_ostream.html"><span class="kw1726">std::<span class="me2">ostream</span></span></a> buf<span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// buf shares the buffer with s</span>
     buf <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is the answer&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span> <span class="co1">// calls the destructor of buf. p remains unaffected</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_ostringstream.html"><span class="kw1425">std::<span class="me2">ostringstream</span></span></a> s<span class="sy4">;</span>
+    <a href="../basic_ostringstream.html"><span class="kw1733">std::<span class="me2">ostringstream</span></span></a> s<span class="sy4">;</span>
     s <span class="sy1">&lt;&lt;</span> <span class="nu0">42</span><span class="sy4">;</span>
     add_words<span class="br0">&#40;</span>s.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     s <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;.&quot;</span><span class="sy4">;</span>
-    <a href="../cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">str</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -326,15 +327,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3107/1000000
-Preprocessor generated node count: 6287/1000000
-Post‐expand include size: 83550/2097152 bytes
-Template argument size: 13360/2097152 bytes
+Preprocessor visited node count: 3138/1000000
+Preprocessor generated node count: 6368/1000000
+Post‐expand include size: 84499/2097152 bytes
+Template argument size: 13478/2097152 bytes
 Highest expansion depth: 17/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:556-0!*!0!*!*!*!* and timestamp 20150523213155 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:556-0!*!0!*!*!*!* and timestamp 20161206174808 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -369,8 +370,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_ostream/%7Ebasic_ostream" title="cpp/io/basic ostream/~basic ostream" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 4 February 2015, at 15:21.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,187 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 February 2015, at 14:21.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,933 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -403,7 +404,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.136 secs. -->
+</script><!-- Served in 1.040 secs. -->
 	</body>
-<!-- Cached 20150523213156 -->
+<!-- Cached 20161206174810 -->
 </html>

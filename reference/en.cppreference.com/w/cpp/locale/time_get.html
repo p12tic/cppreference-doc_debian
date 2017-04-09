@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../locale.html" title="cpp/locale"> Localizations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Locales and facets</td></tr>
@@ -336,7 +337,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <br />
 <p>&#160; &#160; <span class="kw1">class</span> CharT, <br />
-&#160; &#160; <span class="kw1">class</span> InputIt <span class="sy1">=</span> <a href="../iterator/istreambuf_iterator.html"><span class="kw574">std::<span class="me2">istreambuf_iterator</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
+&#160; &#160; <span class="kw1">class</span> InputIt <span class="sy1">=</span> <a href="../iterator/istreambuf_iterator.html"><span class="kw669">std::<span class="me2">istreambuf_iterator</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <br />
 </p>
 <span class="sy1">&gt;</span> <span class="kw1">class</span> time_get<span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
@@ -344,10 +345,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Class template <code>std::time_get</code> encapsulates date and time parsing rules. The I/O manipulator <span class="t-lc">std::get_time</span> uses the <code>std::time_get</code> facet of the I/O stream's locale to convert text input to a <span class="t-lc">std::tm</span> object.
+<p>Class template <code>std::time_get</code> encapsulates date and time parsing rules. The I/O manipulator <span class="t-lc"><a href="../io/manip/get_time.html" title="cpp/io/manip/get time">std::get_time</a></span> uses the <code>std::time_get</code> facet of the I/O stream's locale to convert text input to a <span class="t-lc"><a href="../chrono/c/tm.html" title="cpp/chrono/c/tm">std::tm</a></span> object.
 </p>
 <div class="t-inheritance-diagram">
-<div class="center"><div class="noresize" style="height: 88px; width: 265px; "><map name="ImageMap_1_119464103"><area href="time_base.html" shape="rect" coords="5,4,107,36" alt="cpp/locale/time base" title="cpp/locale/time base"/><area href="locale/facet.html" shape="rect" coords="5,52,107,85" alt="cpp/locale/locale/facet" title="cpp/locale/locale/facet"/></map><img alt="std-time get-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/5/51/std-time_get-inheritance.svg" width="265" height="88" usemap="#ImageMap_1_119464103"/><div style="margin-left: 245px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-time_get-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
+<div class="center"><div class="noresize" style="height: 88px; width: 265px; "><map name="ImageMap_1_922637451"><area href="time_base.html" shape="rect" coords="5,4,107,36" alt="cpp/locale/time base" title="cpp/locale/time base"/><area href="locale/facet.html" shape="rect" coords="5,52,107,85" alt="cpp/locale/locale/facet" title="cpp/locale/locale/facet"/></map><img alt="std-time get-inheritance.svg" src="../../../../upload.cppreference.com/mwiki/images/5/51/std-time_get-inheritance.svg" width="265" height="88" usemap="#ImageMap_1_922637451"/><div style="margin-left: 245px; margin-top: -20px; text-align: left;"><a href="http://en.cppreference.com/w/File:std-time_get-inheritance.svg" title="About this image"><img alt="About this image" src="../../../mwiki/extensions/ImageMap/desc-20.png" style="border: none;"/></a></div></div></div>
 <div style="text-align:center;">
 <p><span style="font-size:0.7em; line-height:130%">Inheritance diagram</span>
 </p>
@@ -582,12 +583,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="co2">#include &lt;iomanip&gt;</span>
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../string/basic_string.html"><span class="kw1074">std::<span class="me2">wstring</span></span></a> input <span class="sy1">=</span> L<span class="st0">&quot;2011-Februar-18 23:12:34&quot;</span><span class="sy4">;</span>
-    <a href="../chrono/c/tm.html"><span class="kw898">std::<span class="me2">tm</span></span></a> t<span class="sy4">;</span>
-    <a href="../io/basic_istringstream.html"><span class="kw1472">std::<span class="me2">wistringstream</span></span></a> ss<span class="br0">&#40;</span>input<span class="br0">&#41;</span><span class="sy4">;</span>
-    ss.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1618">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    ss <span class="sy1">&gt;&gt;</span> <a href="../io/manip/get_time.html"><span class="kw1523">std::<span class="me2">get_time</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t, L<span class="st0">&quot;%Y-%b-%d&#160;%H:%M:%S&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// uses std::time_get&lt;wchar_t&gt;</span>
-    <a href="../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../chrono/c/asctime.html"><span class="kw890">std::<span class="me2">asctime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1229">std::<span class="me2">wstring</span></span></a> input <span class="sy1">=</span> L<span class="st0">&quot;2011-Februar-18 23:12:34&quot;</span><span class="sy4">;</span>
+    <a href="../chrono/c/tm.html"><span class="kw1023">std::<span class="me2">tm</span></span></a> t<span class="sy4">;</span>
+    <a href="../io/basic_istringstream.html"><span class="kw1746">std::<span class="me2">wistringstream</span></span></a> ss<span class="br0">&#40;</span>input<span class="br0">&#41;</span><span class="sy4">;</span>
+    ss.<span class="me1">imbue</span><span class="br0">&#40;</span><a href="locale.html"><span class="kw1891">std::<span class="me2">locale</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;de_DE&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    ss <span class="sy1">&gt;&gt;</span> <a href="../io/manip/get_time.html"><span class="kw1797">std::<span class="me2">get_time</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t, L<span class="st0">&quot;%Y-%b-%d&#160;%H:%M:%S&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// uses std::time_get&lt;wchar_t&gt;</span>
+    <a href="../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../chrono/c/asctime.html"><span class="kw1015">std::<span class="me2">asctime</span></span></a><span class="br0">&#40;</span><span class="sy3">&amp;</span>t<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -599,7 +600,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="time_put.html" title="cpp/locale/time put"> <span class="t-lines"><span>time_put</span></span></a></div></div>
 </td>
-<td>   formats contents of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> <a href="../chrono/c/tm.html"><span class="kw898">std::<span class="me2">tm</span></span></a></span></span> for output as character sequence <br /> <span class="t-mark">(class template)</span>
+<td>   formats contents of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span> <a href="../chrono/c/tm.html"><span class="kw1023">std::<span class="me2">tm</span></span></a></span></span> for output as character sequence <br /> <span class="t-mark">(class template)</span>
 </td></tr>
 
 
@@ -613,15 +614,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 7610/1000000
-Preprocessor generated node count: 11388/1000000
-Post‐expand include size: 200577/2097152 bytes
-Template argument size: 38460/2097152 bytes
+Preprocessor visited node count: 7641/1000000
+Preprocessor generated node count: 11469/1000000
+Post‐expand include size: 201618/2097152 bytes
+Template argument size: 38578/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3567-0!*!0!!en!2!* and timestamp 20151130145150 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3567-0!*!0!!en!2!* and timestamp 20161206014916 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -657,7 +658,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 7 October 2013, at 10:22.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,794 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 16,531 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -690,7 +691,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.462 secs. -->
+</script><!-- Served in 2.450 secs. -->
 	</body>
-<!-- Cached 20151130145150 -->
+<!-- Cached 20161206014916 -->
 </html>

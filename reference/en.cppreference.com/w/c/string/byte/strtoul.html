@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/byte/strtoul","wgTitle":"c/string/byte/strtoul","wgCurRevisionId":78793,"wgArticleId":6125,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/byte/strtoul","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"c/string/byte/strtoul","wgTitle":"c/string/byte/strtoul","wgCurRevisionId":86110,"wgArticleId":6125,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"c/string/byte/strtoul","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -326,14 +326,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Interprets an unsigned integer value in a byte string pointed to by <code>str</code>.
 </p><p>Discards any whitespace characters (as identified by calling <code>isspace()</code>) until the first non-whitespace character is found, then takes as many characters as possible to form a valid <i>base-n</i> (where n=base) unsigned integer number representation and converts them to an  integer value. The valid unsigned  integer value consists of the following parts:
 </p>
-<ul><li> <span class="t-mark">(optional)</span> prefix (<code><b>0</b></code>) indicating octal base (applies only when the base is <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">8</span></span></span> or <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>)
+<ul><li> <span class="t-mark">(optional)</span> plus or minus sign
+</li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0</b></code>) indicating octal base (applies only when the base is <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">8</span></span></span> or <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>)
 </li><li> <span class="t-mark">(optional)</span> prefix (<code><b>0x</b></code> or <code><b>0X</b></code>) indicating hexadecimal base (applies only when the base is <span class="t-c"><span class="mw-geshi c source-c"><span class="nu0">16</span></span></span> or <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>)
 </li><li> a sequence of digits
 </li></ul>
-<p>The set of valid digits for base-2 integer is <code>01</code>, for base-3 integer is <code>012</code>, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored.
-</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc">locale</span>.
+<p>The set of valid values for base is {0,2,3,...,36}. The set of valid digits for base-2 integers is <code>{0,1</code>}, for base-3 integers is <code>{0,1,2</code>}, and so on. For bases larger than <code>10</code>, valid digits include alphabetic characters, starting from <code>Aa</code> for base-11 integer, to <code>Zz</code> for base-36 integer. The case of the characters is ignored.
+</p><p>Additional numeric formats may be accepted by the currently installed C <span class="t-lc"><a href="../../locale/setlocale.html" title="c/locale/setlocale">locale</a></span>.
 </p><p>If the value of base is <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span>, the numeric base is auto-detected: if the prefix is <code><b>0</b></code>, the base is octal, if the prefix is <code><b>0x</b></code> or <code><b>0X</b></code>, the base is hexadecimal, otherwise the base is decimal.
-</p><p>If the minus sign was part of the input sequence, the numeric value calculated from the sequence of digits is negated in the result type.
+</p><p>If the minus sign was part of the input sequence, the numeric value calculated from the sequence of digits is negated as if by <a href="../../language/operator_arithmetic.html#Unary_arithmetic" title="c/language/operator arithmetic">unary minus</a> in the result type, which applies unsigned integer wraparound rules.
 </p><p>The functions sets the pointer pointed to by <code>str_end</code> to point to the character past the last character interpreted. If <code>str_end</code> is <span class="t-lc"><a href="../../types/NULL.html" title="c/types/NULL">NULL</a></span>, it is ignored.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -371,7 +372,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  <i>base</i> of the interpreted integer value
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Integer value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs and <span class="t-lc"><a href="../../types/limits.html" title="c/types/limits">ULONG_MAX</a></span> or <span class="t-lc"><a href="../../types/limits.html" title="c/types/limits">ULLONG_MAX</a></span> is returned. If no conversion can be performed, <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span> is returned.
+<p>Integer value corresponding to the contents of <code>str</code> on success. If the converted value falls out of range of corresponding return type, range error occurs (<span class="t-lc"><a href="../../error/errno.html" title="c/error/errno">errno</a></span> is set to <code>ERANGE</code>) and <span class="t-lc"><a href="../../types/limits.html" title="c/types/limits">ULONG_MAX</a></span> or <span class="t-lc"><a href="../../types/limits.html" title="c/types/limits">ULLONG_MAX</a></span> is returned. If no conversion can be performed, <span class="t-c"><span class="mw-geshi c source-c">​<span class="nu0">0</span>​</span></span> is returned.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -381,7 +382,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>p <span class="sy1">=</span> <span class="st0">&quot;10 200000000000000000000000000000 30 40&quot;</span><span class="sy4">;</span>
+    <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>p <span class="sy1">=</span> <span class="st0">&quot;10 200000000000000000000000000000 30 -40&quot;</span><span class="sy4">;</span>
     <a href="../../io/fprintf.html"><span class="kw849">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Parsing '%s':<span class="es1">\n</span>&quot;</span>, p<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">char</span> <span class="sy2">*</span>end<span class="sy4">;</span>
     <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> i <span class="sy1">=</span> strtoul<span class="br0">&#40;</span>p, <span class="sy3">&amp;</span>end, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy4">;</span>
@@ -399,11 +400,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Parsing '10 200000000000000000000000000000 30 40':
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Parsing '10 200000000000000000000000000000 30 -40':
 '10' -&gt; 10
 ' 200000000000000000000000000000' -&gt; range error, got 18446744073709551615
 ' 30' -&gt; 30
-' 40' -&gt; 40</pre></div></div> 
+' -40' -&gt; 18446744073709551576</pre></div></div> 
 </div>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h3>
 <div class="t-ref-std-11">
@@ -455,19 +456,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4468/1000000
-Preprocessor generated node count: 8014/1000000
-Post‐expand include size: 117020/2097152 bytes
-Template argument size: 20825/2097152 bytes
+Preprocessor visited node count: 4503/1000000
+Preprocessor generated node count: 8132/1000000
+Post‐expand include size: 117521/2097152 bytes
+Template argument size: 20899/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6125-0!*!0!!en!*!* and timestamp 20151130155202 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:6125-0!*!0!!en!*!* and timestamp 20170125191608 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=78793">http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=78793</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=86110">http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=86110</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
                     <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
@@ -490,7 +491,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="strtoul.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/byte/strtoul" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/byte/strtoul" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=78793" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/c/string/byte/strtoul" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/c/string/byte/strtoul" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;oldid=86110" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=c/string/byte/strtoul&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -498,8 +499,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-ar"><a href="http://ar.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="ar" hreflang="ar">العربية</a></li><li class="interwiki-cs"><a href="http://cs.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-ko"><a href="http://ko.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="ko" hreflang="ko">한국어</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="pl" hreflang="pl">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-tr"><a href="http://tr.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="tr" hreflang="tr">Türkçe</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/c/string/byte/strtoul" title="c/string/byte/strtoul" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 June 2015, at 02:33.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,544 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 21 June 2016, at 04:21.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 16,272 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -532,7 +533,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.476 secs. -->
+</script><!-- Served in 1.566 secs. -->
 	</body>
-<!-- Cached 20151130155203 -->
+<!-- Cached 20170125191608 -->
 </html>

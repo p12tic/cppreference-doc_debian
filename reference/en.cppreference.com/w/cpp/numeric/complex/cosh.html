@@ -227,14 +227,19 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../numeric.html" title="cpp/numeric"> Numerics library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../math.html" title="cpp/numeric/math">Common mathematical functions</a> </td></tr>
-<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/numeric/special math">Special mathematical functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fenv.html" title="cpp/numeric/fenv">Floating-point environment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/numeric/complex">Complex numbers</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/numeric/valarray">Numeric arrays</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/numeric/random">Pseudo-random number generation</a> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/numeric/ratio"> Compile-time rational arithmetic</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric algorithms </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../gcd.html" title="cpp/numeric/gcd"><span class="t-lines"><span>gcd</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lcm.html" title="cpp/numeric/lcm"><span class="t-lines"><span>lcm</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
 <tr class="t-nv-h2"><td colspan="5"> Generic numeric operations </td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
 <tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
@@ -335,22 +340,22 @@ complex<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> cosh<span cla
 <p>If no errors occur, complex hyperbolic cosine of <code>z</code> is returned
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/numeric/complex/cosh&amp;action=edit&amp;section=3" title="Edit section: Error handling and special values">edit</a>]</span> <span class="mw-headline" id="Error_handling_and_special_values">Error handling and special values</span></h3>
-<p>Errors are reported consistent with <span class="t-lc">math_errhandling</span>
+<p>Errors are reported consistent with <span class="t-lc"><a href="../math/math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a></span>
 </p><p>If the implementation supports IEEE floating-point arithmetic,
 </p>
-<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">conj</span><span class="br0">&#40;</span>z<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">conj</span><span class="br0">&#40;</span><a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>
-</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span> <span class="sy1">==</span> <a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span>z<span class="br0">&#41;</span></span></span>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">conj</span><span class="br0">&#40;</span>z<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">conj</span><span class="br0">&#40;</span><a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span><span class="br0">&#41;</span></span></span>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span> <span class="sy1">==</span> <a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span><span class="sy2">-</span>z<span class="br0">&#41;</span></span></span>
 </li><li> If <code>z</code> is <code>(+0,+0)</code>, the result is <code>(1,+0)</code>
-</li><li> If <code>z</code> is <code>(+0,+∞)</code>, the result is <code>(NaN,±0)</code> (the sign of the imaginary part is unspecified) and <span class="t-lc">FE_INVALID</span> is raised
+</li><li> If <code>z</code> is <code>(+0,+∞)</code>, the result is <code>(NaN,±0)</code> (the sign of the imaginary part is unspecified) and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
 </li><li> If <code>z</code> is <code>(+0,NaN)</code>, the result is <code>(NaN,±0)</code> (the sign of the imaginary part is unspecified)
-</li><li> If <code>z</code> is <code>(x,+∞)</code> (for any finite non-zero x), the result is <code>(NaN,NaN)</code> and <span class="t-lc">FE_INVALID</span> is raised
-</li><li> If <code>z</code> is <code>(x,NaN)</code> (for any finite non-zero x), the result is <code>(NaN,NaN)</code> and <span class="t-lc">FE_INVALID</span> may be raised
+</li><li> If <code>z</code> is <code>(x,+∞)</code> (for any finite non-zero x), the result is <code>(NaN,NaN)</code> and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
+</li><li> If <code>z</code> is <code>(x,NaN)</code> (for any finite non-zero x), the result is <code>(NaN,NaN)</code> and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> may be raised
 </li><li> If <code>z</code> is <code>(+∞,+0)</code>, the result is <code>(+∞,+0)</code>
 </li><li> If <code>z</code> is <code>(+∞,y)</code> (for any finite non-zero y), the result is <code>(+∞,cis(y))</code>
-</li><li> If <code>z</code> is <code>(+∞,+∞)</code>, the result is <code>(±∞,NaN)</code> (the sign of the real part is unspecified) and <span class="t-lc">FE_INVALID</span> is raised
+</li><li> If <code>z</code> is <code>(+∞,+∞)</code>, the result is <code>(±∞,NaN)</code> (the sign of the real part is unspecified) and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> is raised
 </li><li> If <code>z</code> is <code>(+∞,NaN)</code>, the result is <code>(+∞,NaN)</code>
 </li><li> If <code>z</code> is <code>(NaN,+0)</code>, the result is <code>(NaN,±0)</code> (the sign of the imaginary part is unspecified)
-</li><li> If <code>z</code> is <code>(NaN,+y)</code> (for any finite non-zero y), the result is <code>(NaN,NaN)</code> and <span class="t-lc">FE_INVALID</span> may be raised
+</li><li> If <code>z</code> is <code>(NaN,+y)</code> (for any finite non-zero y), the result is <code>(NaN,NaN)</code> and <span class="t-lc"><a href="../fenv/FE_exceptions.html" title="cpp/numeric/fenv/FE exceptions">FE_INVALID</a></span> may be raised
 </li><li> If <code>z</code> is <code>(NaN,NaN)</code>, the result is <code>(NaN,NaN)</code>
 </li></ul>
 <p>where <span class="texhtml" style="white-space: nowrap;">cis(y)</span> is <span class="texhtml" style="white-space: nowrap;">cos(y) + i sin(y)</span>
@@ -367,14 +372,14 @@ Mathematical definition of hyperbolic cosine is <span class="texhtml" style="whi
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>   
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1507">std::<span class="me2">fixed</span></span></a><span class="sy4">;</span>
-    <a href="../complex.html"><span class="kw1220">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> z<span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// behaves like real cosh along the real line</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cosh&quot;</span> <span class="sy1">&lt;&lt;</span> z <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (cosh(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/fixed.html"><span class="kw1781">std::<span class="me2">fixed</span></span></a><span class="sy4">;</span>
+    <a href="../complex.html"><span class="kw1469">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> z<span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// behaves like real cosh along the real line</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cosh&quot;</span> <span class="sy1">&lt;&lt;</span> z <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z<span class="br0">&#41;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; (cosh(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 &#160;
-    <a href="../complex.html"><span class="kw1220">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> z2<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// behaves like real cosine along the imaginary line</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cosh&quot;</span> <span class="sy1">&lt;&lt;</span> z2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1152">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z2<span class="br0">&#41;</span>
-              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; ( cos(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cos.html"><span class="kw1145">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+    <a href="../complex.html"><span class="kw1469">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> z2<span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// behaves like real cosine along the imaginary line</span>
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;cosh&quot;</span> <span class="sy1">&lt;&lt;</span> z2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cosh.html"><span class="kw1338">std::<span class="me2">cosh</span></span></a><span class="br0">&#40;</span>z2<span class="br0">&#41;</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; ( cos(1) = &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../math/cos.html"><span class="kw1331">std::<span class="me2">cos</span></span></a><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;)<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -411,7 +416,7 @@ cosh(0.000000,1.000000) = (0.540302,0.000000) ( cos(1) = 0.540302)</pre></div></
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../valarray/cosh.html" title="cpp/numeric/valarray/cosh"> <span class="t-lines"><span>cosh<span class="t-dsc-small">(std::valarray)</span></span></span></a></div></div>
 </td>
-<td>   applies the function <span class="t-lc">std::cosh</span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_cosh&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   applies the function <span class="t-lc"><a href="../math/cosh.html" title="cpp/numeric/math/cosh">std::cosh</a></span> to each element of valarray  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_cosh&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -422,15 +427,15 @@ cosh(0.000000,1.000000) = (0.540302,0.000000) ( cos(1) = 0.540302)</pre></div></
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4342/1000000
-Preprocessor generated node count: 9286/1000000
-Post‐expand include size: 118831/2097152 bytes
-Template argument size: 22636/2097152 bytes
+Preprocessor visited node count: 4531/1000000
+Preprocessor generated node count: 9461/1000000
+Post‐expand include size: 126301/2097152 bytes
+Template argument size: 23813/2097152 bytes
 Highest expansion depth: 22/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8516-0!*!0!!en!*!* and timestamp 20151130151339 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8516-0!*!0!!en!*!* and timestamp 20161206105221 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -466,7 +471,7 @@ Expensive parser function count: 0/100
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 17 October 2014, at 17:59.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 3,408 times.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 5,096 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -499,7 +504,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.659 secs. -->
+</script><!-- Served in 1.598 secs. -->
 	</body>
-<!-- Cached 20151130151339 -->
+<!-- Cached 20161206105221 -->
 </html>

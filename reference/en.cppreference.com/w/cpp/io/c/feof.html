@@ -203,6 +203,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -311,7 +312,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td></td>
 </tr>
 <tr class="t-dcl">
-<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> feof<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1600">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> feof<span class="br0">&#40;</span> <a href="../c.html"><span class="kw1873">std::<span class="me2">FILE</span></span></a><span class="sy2">*</span> stream <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -343,8 +344,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p>Nonzero value if the end of the stream has been reached, otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp">​<span class="nu0">0</span>​</span></span>.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/feof&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>This function only reports the stream state as reported by the most recent I/O operation, it does not examine the associated data source. For example, if the most recent I/O was a <span class="t-lc">std::fgetc</span>, which returned the last byte of a file, <code>std::feof</code> returns zero. The next <span class="t-lc">std::fgetc</span> fails and changes the stream state to <i>end-of-file</i>. Only then <code>std::feof</code> returns non-zero.
-</p><p>In typical usage, input stream processing stops on any error; <code>feof</code> and <span class="t-lc">std::ferror</span> are then used to distinguish between different error conditions.
+<p>This function only reports the stream state as reported by the most recent I/O operation, it does not examine the associated data source. For example, if the most recent I/O was a <span class="t-lc"><a href="fgetc.html" title="cpp/io/c/fgetc">std::fgetc</a></span>, which returned the last byte of a file, <code>std::feof</code> returns zero. The next <span class="t-lc"><a href="fgetc.html" title="cpp/io/c/fgetc">std::fgetc</a></span> fails and changes the stream state to <i>end-of-file</i>. Only then <code>std::feof</code> returns non-zero.
+</p><p>In typical usage, input stream processing stops on any error; <code>feof</code> and <span class="t-lc"><a href="ferror.html" title="cpp/io/c/ferror">std::ferror</a></span> are then used to distinguish between different error conditions.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/io/c/feof&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
@@ -353,23 +354,23 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    FILE<span class="sy2">*</span> fp <span class="sy1">=</span> <a href="fopen.html"><span class="kw1536">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    FILE<span class="sy2">*</span> fp <span class="sy1">=</span> <a href="fopen.html"><span class="kw1810">std::<span class="me2">fopen</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;test.txt&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>fp<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="perror.html"><span class="kw1595">std::<span class="me2">perror</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;File opening failed&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">return</span> <a href="../../utility/program/EXIT_status.html"><span class="kw851">EXIT_FAILURE</span></a><span class="sy4">;</span>
+        <a href="perror.html"><span class="kw1869">std::<span class="me2">perror</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;File opening failed&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <a href="../../utility/program/EXIT_status.html"><span class="kw973">EXIT_FAILURE</span></a><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     <span class="kw4">int</span> c<span class="sy4">;</span> <span class="co1">// note: int, not char, required to handle EOF</span>
-    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>c <span class="sy1">=</span> <a href="fgetc.html"><span class="kw1544">std::<span class="me2">fgetc</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <a href="../c.html"><span class="kw1605">EOF</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="co1">// standard C I/O file reading loop</span>
-       <a href="putchar.html"><span class="kw1552">std::<span class="me2">putchar</span></span></a><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>c <span class="sy1">=</span> <a href="fgetc.html"><span class="kw1818">std::<span class="me2">fgetc</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <a href="../c.html"><span class="kw1878">EOF</span></a><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="co1">// standard C I/O file reading loop</span>
+       <a href="putchar.html"><span class="kw1826">std::<span class="me2">putchar</span></span></a><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
-    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="ferror.html"><span class="kw1594">std::<span class="me2">ferror</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="puts.html"><span class="kw1553">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;I/O error when reading&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><a href="ferror.html"><span class="kw1868">std::<span class="me2">ferror</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <a href="puts.html"><span class="kw1827">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;I/O error when reading&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>std<span class="sy4">::</span><span class="me2">feof</span><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="br0">&#41;</span>
-        <a href="puts.html"><span class="kw1553">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;End of file reached successfully&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <a href="puts.html"><span class="kw1827">std::<span class="me2">puts</span></span></a><span class="br0">&#40;</span><span class="st0">&quot;End of file reached successfully&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
-    <a href="fclose.html"><span class="kw1539">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="fclose.html"><span class="kw1813">std::<span class="me2">fclose</span></span></a><span class="br0">&#40;</span>fp<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p><br /> 
 </p>
@@ -392,7 +393,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="perror.html" title="cpp/io/c/perror"> <span class="t-lines"><span>perror</span></span></a></div></div>
 </td>
-<td>   displays a character string corresponding of the current error to <span class="t-lc">stderr</span> <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_perror&amp;action=edit">&#91;edit&#93;</a></span>
+<td>   displays a character string corresponding of the current error to <span class="t-lc"><a href="../c.html" title="cpp/io/c">stderr</a></span> <br /> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/io/c/dsc_perror&amp;action=edit">&#91;edit&#93;</a></span>
 </td></tr>
 
 <tr class="t-dsc">
@@ -409,15 +410,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 5589/1000000
-Preprocessor generated node count: 8225/1000000
-Post‐expand include size: 143878/2097152 bytes
-Template argument size: 22944/2097152 bytes
+Preprocessor visited node count: 5620/1000000
+Preprocessor generated node count: 8306/1000000
+Post‐expand include size: 145047/2097152 bytes
+Template argument size: 23101/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:574-0!*!0!!en!*!* and timestamp 20151130153345 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:574-0!*!0!!en!*!* and timestamp 20170319144830 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -452,8 +453,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-cs"><a href="http://cs.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="cs" hreflang="cs">Česky</a></li><li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/c/feof" title="cpp/io/c/feof" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:00.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 8,700 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 23:00.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 13,413 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -486,7 +487,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.735 secs. -->
+</script><!-- Served in 1.593 secs. -->
 	</body>
-<!-- Cached 20151130153345 -->
+<!-- Cached 20170319144830 -->
 </html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>std::experimental::atomic_weak_ptr::compare_exchange_strong, std::experimental::atomic_weak_ptr::compare_exchange_weak - cppreference.com</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21.2" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit" />
+<link rel="edit" title="Edit" href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit" />
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.cppreference.com/mwiki/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="http://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint%252Cshared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/experimental/atomic_weak_ptr/compare_exchange","wgTitle":"cpp/experimental/atomic weak ptr/compare exchange","wgCurRevisionId":91811,"wgArticleId":15486,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["unconditionally noexcept","Pages with unreviewed unconditional noexcept template","Pages with unreviewed noexcept template"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/experimental/atomic_weak_ptr/compare_exchange","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_experimental_atomic_weak_ptr_compare_exchange skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        <div id="mw-head" class="noprint">
+            <div id="cpp-head-first-base">
+                <div id="cpp-head-first">
+                    <h5><a href="../../../../index.html">
+                        cppreference.com                        </a></h5>
+                    <div id="cpp-head-search">
+                        
+<!-- 0 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://en.cppreference.com/mwiki/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input name="search" title="Search cppreference.com [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="../../../../mwiki/skins/cppreference2/images/search-ltr.png%3F303" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /0 -->
+                    </div>
+                    <div id="cpp-head-personal">
+                        
+<!-- 0 -->
+<div id="p-personal" class="">
+<span id="pt-createaccount"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fexperimental%2Fatomic+weak+ptr%2Fcompare+exchange&amp;type=signup">Create account</a></span>	<div class="menu">
+        <ul>
+<li id="pt-login"><a href="http://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Fexperimental%2Fatomic+weak+ptr%2Fcompare+exchange" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
+    </div>
+</div>
+
+<!-- /0 -->
+                    </div>
+
+                </div>
+            </div>
+            <div id="cpp-head-second-base">
+                <div id="cpp-head-second">
+                    <div id="cpp-head-tools-left">
+                        
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="compare_exchange.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://en.cppreference.com/mwiki/index.php?title=Talk:cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="compare_exchange.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                    <div id="cpp-head-tools-right">
+                        
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="compare_exchange.html" >View</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="compare_exchange.html#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::experimental::atomic_weak_ptr::</span>compare_exchange_strong, <span style="font-size:0.7em; line-height:130%">std::experimental::atomic_weak_ptr::</span>compare_exchange_weak</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../experimental.html" title="cpp/experimental">experimental</a>&lrm; | <a href="../atomic_weak_ptr.html" title="cpp/experimental/atomic weak ptr">atomic weak ptr</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../experimental.html" title="cpp/experimental"> Technical specifications</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../fs.html" title="cpp/experimental/fs">Filesystem library</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(filesystem TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../memory.html" title="cpp/experimental/lib extensions">Library fundamentals</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(library fundamentals TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../lib_extensions_2.html" title="cpp/experimental/lib extensions 2">Library fundamentals 2</a> <span class="t-mark-rev t-since-libfund-2-ts t-mark-ts">(library fundamentals 2 TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-parallelism-ts t-mark-ts">(parallelism TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(concurrency TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ranges.html" title="cpp/experimental/ranges">Ranges</a> <span class="t-mark-rev t-since-ranges-ts t-mark-ts">(ranges TS)</span></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../special_math.html" title="cpp/experimental/special math">Special mathematical functions</a> <span class="t-mark-rev t-since-special-math-tr t-mark-ts">(special math TR)</span></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> std::future extensions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../future.html" title="cpp/experimental/future"><span class="t-lines"><span>experimental::future</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shared_future.html" title="cpp/experimental/shared future"><span class="t-lines"><span>experimental::shared_future</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../when_all.html" title="cpp/experimental/when all"><span class="t-lines"><span>experimental::when_all</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../when_any.html" title="cpp/experimental/when any"><span class="t-lines"><span>experimental::when_any</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../make_ready_future.html" title="cpp/experimental/make ready future"><span class="t-lines"><span>experimental::make_ready_future</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../make_exceptional_future.html" title="cpp/experimental/make exceptional future"><span class="t-lines"><span>experimental::make_exceptional_future</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Latches and barriers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../latch.html" title="cpp/experimental/latch"><span class="t-lines"><span>experimental::latch</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../barrier.html" title="cpp/experimental/barrier"><span class="t-lines"><span>experimental::barrier</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../flex_barrier.html" title="cpp/experimental/flex barrier"><span class="t-lines"><span>experimental::flex_barrier</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Atomic smart pointers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../atomic_shared_ptr.html" title="cpp/experimental/atomic shared ptr"><span class="t-lines"><span>experimental::atomic_shared_ptr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../atomic_weak_ptr.html" title="cpp/experimental/atomic weak ptr"><span class="t-lines"><span>experimental::atomic_weak_ptr</span></span></a></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/concurrency/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../atomic_weak_ptr.html" title="cpp/experimental/atomic weak ptr"><tt>std::experimental::atomic_weak_ptr</tt></a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="atomic_weak_ptr.html" title="cpp/experimental/atomic weak ptr/atomic weak ptr"><span class="t-lines"><span>atomic_weak_ptr::atomic_weak_ptr</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator=.html" title="cpp/experimental/atomic weak ptr/operator="><span class="t-lines"><span>atomic_weak_ptr::operator=</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_lock_free.html" title="cpp/experimental/atomic weak ptr/is lock free"><span class="t-lines"><span>atomic_weak_ptr::is_lock_free</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="store.html" title="cpp/experimental/atomic weak ptr/store"><span class="t-lines"><span>atomic_weak_ptr::store</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="load.html" title="cpp/experimental/atomic weak ptr/load"><span class="t-lines"><span>atomic_weak_ptr::load</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator_weak_ptr.html" title="cpp/experimental/atomic weak ptr/operator weak ptr"><span class="t-lines"><span>atomic_weak_ptr::operator weak_ptr&lt;T&gt;</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="exchange.html" title="cpp/experimental/atomic weak ptr/exchange"><span class="t-lines"><span>atomic_weak_ptr::exchange</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>atomic_weak_ptr::compare_exchange_weak</span><span>atomic_weak_ptr::compare_exchange_strong</span></span></strong></div></div></td></tr>
+</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/experimental/concurrency/atomic_weak_ptr/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <span class="kw4">const</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, &#160;<a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, &#160;<a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <span class="kw4">const</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <a href="../../atomic/memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (3) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <a href="../../atomic/memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <span class="kw4">const</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, &#160;<a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (5) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (6) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <span class="kw4">const</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <a href="../../atomic/memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (7) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> expected, <a href="../../memory/weak_ptr.html"><span class="kw741">std::<span class="me2">weak_ptr</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> desired,<br />
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../../atomic/memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <a href="../../atomic/memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+<td> (8) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Atomically compares the underlying <code>weak_ptr</code> in <code>*this</code> with <code>expected</code>, and if they are equivalent, replaces the former with <code>desired</code> (performs read-modify-write operation). Otherwise, loads the actual value stored in <code>*this</code> into <code>expected</code> (performs load operation). The replacement is performed as if by the copy or move assignment operator of <code>weak_ptr</code>, as appropriate.
+</p><p>Two <code>weak_ptr</code>s are equivalent if and only if they store the same pointer value and share ownership.
+</p><p>The memory models for the read-modify-write and load operations are <code>success</code> and <code>failure</code> respectively. For overloads <span class="t-v">(3-4, 7-8)</span>, <code>order</code> is used for both read-modify-write and load operations, except that <span class="t-lc"><a href="../../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order_acquire</a></span> and <span class="t-lc"><a href="../../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order_relaxed</a></span> are used for the load operation if <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../../atomic/memory_order.html"><span class="kw2094">std::<span class="me2">memory_order_acq_rel</span></span></a></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../../atomic/memory_order.html"><span class="kw2093">std::<span class="me2">memory_order_release</span></span></a></span></span> respectively.
+</p><p>The weak versions <span class="t-v">(1-4)</span> may fail spuriously.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="compare_exchange.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="compare_exchange.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="compare_exchange.html#Exceptions"><span class="tocnumber">3</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="compare_exchange.html#Remarks"><span class="tocnumber">4</span> <span class="toctext">Remarks</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="compare_exchange.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="compare_exchange.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  expected
+</td>
+<td> -
+</td>
+<td>  reference to the value expected to be found in the atomic object
+</td></tr>
+<tr class="t-par">
+<td>  desired
+</td>
+<td> -
+</td>
+<td>  the value to store in the atomic object if it is as expected
+</td></tr>
+<tr class="t-par">
+<td>  success
+</td>
+<td> -
+</td>
+<td>  the memory synchronization ordering for the read-modify-write operation if the comparison succeeds. All values are permitted.
+</td></tr>
+<tr class="t-par">
+<td>  failure
+</td>
+<td> -
+</td>
+<td>  the memory synchronization ordering for the load operation if the comparison fails. Cannot be <span class="t-lc"><a href="../../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order_release</a></span> or <span class="t-lc"><a href="../../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order_acq_rel</a></span> and cannot specify stronger ordering than <code>success</code>
+</td></tr>
+<tr class="t-par">
+<td>  order
+</td>
+<td> -
+</td>
+<td>  the memory synchronization ordering for both operations
+</td></tr></table>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the underlying atomic value was changed, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> otherwise.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<div class="t-noexcept-inline"><a href="../../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> specification:&#160;&#160;<div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span></div>&#160;&#160;</div>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=4" title="Edit section: Remarks">edit</a>]</span> <span class="mw-headline" id="Remarks"> Remarks </span></h3>
+<p>All changes to the <code>atomic_weak_ptr</code> object itself, and all associated <a href="../../memory/weak_ptr/use_count.html" title="cpp/memory/weak ptr/use count"><tt>use_count</tt></a> increments, are guaranteed to be performed atomically. Associated <code>use_count</code> decrements take place after the atomic operation, but are not required to be part of it. Any associated destruction or deallocation operations take place after the atomic operation and are not part of it.
+</p><p>If the compare-exchange operation return <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, <code>expected</code> is not accessed after the atomic update step. If it returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>, <code>expected</code> is updated with the existing value read from the <code>atomic_weak_ptr</code> object in the attempted atomic update. The <code>use_count</code> update corresponding to the write to <code>expected</code> is part of the atomic operation, but the write to <code>expected</code> itself is not required to be part of the atomic operation.
+</p><p>For overloads <span class="t-v">(1,3,5,7)</span>, <code>desired</code> is not accessed after the atomic update step.
+</p><p>For overloads <span class="t-v">(2,4,6,8)</span>, <code>desired</code> is moved from only if the compare-exchange operation returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>; the moving occurs after the atomic update step.
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>The weak forms <span class="t-v">(1-4)</span> of the functions are allowed to fail spuriously, that is, act as if <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">expected</span></span> are not equivalent even when they are. When a compare-and-exchange is in a loop, the weak version will yield better performance on some platforms.
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../memory/shared_ptr/atomic.html" title="cpp/memory/shared ptr/atomic"> <span class="t-lines"><span>std::atomic_is_lock_free<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_load<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_load_explicit<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_store<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_store_explicit<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_exchange<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_exchange_explicit<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_compare_exchange_weak<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_compare_exchange_strong<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_compare_exchange_weak_explicit<span class="t-dsc-small">(std::shared_ptr)</span></span><span>std::atomic_compare_exchange_strong_explicit<span class="t-dsc-small">(std::shared_ptr)</span></span></span></a></div></div>
+</td>
+<td>   specializes atomic operations for <span class="t-lc"><a href="../../memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span>  <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/memory/shared_ptr/dsc_atomic&amp;action=edit">&#91;edit&#93;</a></span>
+</td></tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3512/1000000
+Preprocessor generated node count: 7251/1000000
+Post‐expand include size: 89852/2097152 bytes
+Template argument size: 22630/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:15486-0!*!0!!en!*!* and timestamp 20170331195837 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;oldid=91811">http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;oldid=91811</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/mwiki/index.php?title=Category:unconditionally_noexcept&amp;action=edit&amp;redlink=1" class="new" title="Category:unconditionally noexcept (page does not exist)">unconditionally noexcept</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_unconditional_noexcept_template" title="Category:Pages with unreviewed unconditional noexcept template">Pages with unreviewed unconditional noexcept template</a></li><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_noexcept_template" title="Category:Pages with unreviewed noexcept template">Pages with unreviewed noexcept template</a></li></ul></div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div id="cpp-footer-base" class="noprint">
+            <div id="footer">
+                        <div id="cpp-navigation">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="http://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="http://en.cppreference.com/w/Cppreference:FAQ">FAQ</a></li><li id="n-Offline-version"><a href="http://en.cppreference.com/w/Cppreference:Archives">Offline version</a></li>            </ul>
+        </div>
+                        <div id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="compare_exchange.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/experimental/atomic_weak_ptr/compare_exchange" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/experimental/atomic_weak_ptr/compare_exchange" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;oldid=91811" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/experimental/atomic_weak_ptr/compare_exchange&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 12:58.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 813 times.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="http://en.cppreference.com/w/Cppreference:About" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="http://en.cppreference.com/w/Cppreference:General_disclaimer" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul id="footer-icons" class="noprint">
+                                    <li id="footer-poweredbyico">
+                                            <a href="http://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="../../../../../upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="../../../../../upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.051 secs. -->
+	</body>
+<!-- Cached 20170401120748 -->
+</html>

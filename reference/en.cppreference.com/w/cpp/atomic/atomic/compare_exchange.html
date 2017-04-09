@@ -18,7 +18,7 @@
 
 <script src="../../../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/atomic/atomic/compare_exchange","wgTitle":"cpp/atomic/atomic/compare exchange","wgCurRevisionId":79682,"wgArticleId":5628,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["unconditionally noexcept"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/atomic/atomic/compare_exchange","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/atomic/atomic/compare_exchange","wgTitle":"cpp/atomic/atomic/compare exchange","wgCurRevisionId":91532,"wgArticleId":5628,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["unconditionally noexcept","Pages with unreviewed unconditional noexcept template","Pages with unreviewed noexcept template","Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/atomic/atomic/compare_exchange","wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
 "watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
@@ -289,17 +290,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> success, <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> success, <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -312,17 +313,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span><br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span><br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1822">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_weak<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span><br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span><br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1822">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -335,17 +336,17 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> success, <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> success, <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> success, <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> failure <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
@@ -358,25 +359,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1822">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 <tr class="t-dcl">
 <td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> compare_exchange_strong<span class="br0">&#40;</span> T<span class="sy3">&amp;</span> expected, T desired,<br />
-<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1816">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <br />
+<p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2089">std::<span class="me2">memory_order</span></span></a> order <span class="sy1">=</span> <br />
 </p>
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw1822">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; <a href="../memory_order.html"><span class="kw2095">std::<span class="me2">memory_order_seq_cst</span></span></a> <span class="br0">&#41;</span> <span class="kw4">volatile</span><span class="sy4">;</span></span></div></td>
 <td class="t-dcl-nopad">  </td>
 <td class="t-dcl-nopad">  </td>
 </tr>
 </tbody><tbody>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<p>Atomically compares the <a href="../../language/objects.html" title="cpp/language/object">object representation</a> of <code>*this</code> with the object representation of <code>expected</code>, as if by <span class="t-lc">std::memcmp</span>, and if those are bitwise-equal, replaces the former with <code>desired</code> (performs read-modify-write operation). Otherwise, loads the actual value stored in <code>*this</code> into <code>expected</code> (performs load operation). Copying is performed as if by <span class="t-lc">std::memcpy</span>.
-</p><p>The memory models for the read-modify-write and load operations are <code>success</code> and <code>failure</code> respectively. In the (2) and (4) versions <code>order</code> is used for both read-modify-write and load operations, except that <span class="t-lc">std::memory_order_acquire</span> and <span class="t-lc">std::memory_order_relaxed</span> are used for the load operation if <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../memory_order.html"><span class="kw1821">std::<span class="me2">memory_order_acq_rel</span></span></a></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../memory_order.html"><span class="kw1820">std::<span class="me2">memory_order_release</span></span></a></span></span> respectively.
+<p>Atomically compares the <a href="../../language/objects.html" title="cpp/language/object">object representation</a> of <code>*this</code> with the object representation of <code>expected</code>, as if by <span class="t-lc"><a href="../../string/byte/memcmp.html" title="cpp/string/byte/memcmp">std::memcmp</a></span>, and if those are bitwise-equal, replaces the former with <code>desired</code> (performs read-modify-write operation). Otherwise, loads the actual value stored in <code>*this</code> into <code>expected</code> (performs load operation). Copying is performed as if by <span class="t-lc"><a href="../../string/byte/memcpy.html" title="cpp/string/byte/memcpy">std::memcpy</a></span>.
+</p><p>The memory models for the read-modify-write and load operations are <code>success</code> and <code>failure</code> respectively. In the (2) and (4) versions <code>order</code> is used for both read-modify-write and load operations, except that <span class="t-lc"><a href="../memory_order.html" title="cpp/atomic/memory order">std::memory_order_acquire</a></span> and <span class="t-lc"><a href="../memory_order.html" title="cpp/atomic/memory order">std::memory_order_relaxed</a></span> are used for the load operation if <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../memory_order.html"><span class="kw2094">std::<span class="me2">memory_order_acq_rel</span></span></a></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">order <span class="sy1">==</span> <a href="../memory_order.html"><span class="kw2093">std::<span class="me2">memory_order_release</span></span></a></span></span> respectively.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -418,7 +419,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </td>
 <td> -
 </td>
-<td>  the memory synchronization ordering for the load operation if the comparison fails. Cannot be <span class="t-lc">std::memory_order_release</span> or <span class="t-lc">std::memory_order_acq_rel</span> and cannot specify stronger ordering than <code>success</code>
+<td>  the memory synchronization ordering for the load operation if the comparison fails. Cannot be <span class="t-lc"><a href="../memory_order.html" title="cpp/atomic/memory order">std::memory_order_release</a></span> or <span class="t-lc"><a href="../memory_order.html" title="cpp/atomic/memory order">std::memory_order_acq_rel</a></span><span class="t-rev-inl t-until-cxx17"><span> and cannot specify stronger ordering than <code>success</code></span> <span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span>
 </td></tr>
 <tr class="t-par">
 <td>  order
@@ -428,7 +429,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <td>  the memory synchronization ordering for both operations
 </td></tr></table>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the underlying atomic value was changed, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> otherwise.
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the underlying atomic value was successfully changed, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> otherwise.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
 <div class="t-noexcept-inline"><a href="../../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> specification:&#160;&#160;<div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span></div>&#160;&#160;</div>
@@ -437,7 +438,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </p><p>When a weak compare-and-exchange would require a loop and a strong one would not, the strong one is preferable unless the object representation of <code>T</code> may include padding bits, trap bits, or offers multiple object representations for the same value (e.g. floating-point NaN). In those cases, weak compare-and-exchange typically works because it quickly converges on some stable object representation.
 </p>
 <h3><span class="editsection">[<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
-<div class="t-example"><p> compare and exchange operations are often used as basic building blocks of lockfree data structures
+<div class="t-example"><p> Compare-and-exchange operations are often used as basic building blocks of lockfree data structures
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;atomic&gt;</span>
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
@@ -451,22 +452,22 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
 <span class="kw1">class</span> stack
 <span class="br0">&#123;</span>
-    <a href="../atomic.html"><span class="kw1790">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span>node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span><span class="sy1">&gt;</span> head<span class="sy4">;</span>
+    <a href="../atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span>node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span><span class="sy1">&gt;</span> head<span class="sy4">;</span>
  <span class="kw1">public</span><span class="sy4">:</span>
     <span class="kw4">void</span> push<span class="br0">&#40;</span><span class="kw4">const</span> T<span class="sy3">&amp;</span> data<span class="br0">&#41;</span>
     <span class="br0">&#123;</span>
-        node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span> new_node <span class="sy1">=</span> new node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy4">;</span>
+      node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy2">*</span> new_node <span class="sy1">=</span> new node<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
       <span class="co1">// put the current value of head into new_node-&gt;next</span>
-      new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> head.<span class="me1">load</span><span class="br0">&#40;</span><a href="../memory_order.html"><span class="kw1817">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
+      new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> head.<span class="me1">load</span><span class="br0">&#40;</span><a href="../memory_order.html"><span class="kw2090">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">&#41;</span><span class="sy4">;</span>
 &#160;
       <span class="co1">// now make new_node the new head, but if the head</span>
       <span class="co1">// is no longer what's stored in new_node-&gt;next</span>
       <span class="co1">// (some other thread must have inserted a node just now)</span>
       <span class="co1">// then put that new head into new_node-&gt;next and try again</span>
       <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy3">!</span>head.<span class="me1">compare_exchange_weak</span><span class="br0">&#40;</span>new_node<span class="sy2">-</span><span class="sy1">&gt;</span>next, new_node,
-                                        <a href="../memory_order.html"><span class="kw1820">std::<span class="me2">memory_order_release</span></span></a>,
-                                        <a href="../memory_order.html"><span class="kw1817">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                                        <a href="../memory_order.html"><span class="kw2093">std::<span class="me2">memory_order_release</span></span></a>,
+                                        <a href="../memory_order.html"><span class="kw2090">std::<span class="me2">memory_order_relaxed</span></span></a><span class="br0">&#41;</span><span class="br0">&#41;</span>
           <span class="sy4">;</span> <span class="co1">// the body of the loop is empty</span>
 &#160;
 <span class="co1">// Note: the above use is not thread-safe in at least </span>
@@ -490,12 +491,14 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <p><br /> 
 </p>
 </div>
-<div class="t-example"><p> Demonstrates how compare_exchange_strong either changes the value of the atomic variable or the variable used for comparison.
+<p><br />
+</p>
+<div class="t-example"><p> Demonstrates how compare_exchange_strong either changes the value of the atomic variable or the variable used for comparison.<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete<br />Reason: more practical use of the strong CAS would be nice, such as where Concurrency in Action uses it </td></tr></table>
  </p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;atomic&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<a href="../atomic.html"><span class="kw1790">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span>  ai<span class="sy4">;</span>
+<a href="../atomic.html"><span class="kw2063">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span>  ai<span class="sy4">;</span>
 &#160;
 <span class="kw4">int</span>  tst_val<span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>
 <span class="kw4">int</span>  new_val<span class="sy1">=</span> <span class="nu0">5</span><span class="sy4">;</span>
@@ -503,10 +506,10 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 &#160;
 <span class="kw4">void</span> valsout<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../../io/cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ai= &quot;</span> <span class="sy1">&lt;&lt;</span> ai
+    <a href="../../io/cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;ai= &quot;</span> <span class="sy1">&lt;&lt;</span> ai
 	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  tst_val= &quot;</span> <span class="sy1">&lt;&lt;</span> tst_val
 	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  new_val= &quot;</span> <span class="sy1">&lt;&lt;</span> new_val
-	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  exchanged= &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/boolalpha.html"><span class="kw1487">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> exchanged
+	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;  exchanged= &quot;</span> <span class="sy1">&lt;&lt;</span> <a href="../../io/manip/boolalpha.html"><span class="kw1761">std::<span class="me2">boolalpha</span></span></a> <span class="sy1">&lt;&lt;</span> exchanged
 	      <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
@@ -522,8 +525,6 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <span class="co1">// tst_val == ai   ==&gt;  ai is modified</span>
     exchanged<span class="sy1">=</span> ai.<span class="me1">compare_exchange_strong</span><span class="br0">&#40;</span> tst_val, new_val <span class="br0">&#41;</span><span class="sy4">;</span>
     valsout<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
-    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
 </p>
@@ -543,22 +544,22 @@ ai= 5  tst_val= 3  new_val= 5  exchanged= true</pre></div></div>
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4919/1000000
-Preprocessor generated node count: 8964/1000000
-Post‐expand include size: 132422/2097152 bytes
-Template argument size: 38046/2097152 bytes
+Preprocessor visited node count: 5395/1000000
+Preprocessor generated node count: 12684/1000000
+Post‐expand include size: 138398/2097152 bytes
+Template argument size: 39707/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5628-0!*!0!!en!*!* and timestamp 20151130141847 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5628-0!*!0!!en!*!* and timestamp 20170331194911 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
-                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=79682">http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=79682</a>"                    </div>
+                    Retrieved from "<a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=91532">http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=91532</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
-                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.cppreference.com/mwiki/index.php?title=Category:unconditionally_noexcept&amp;action=edit&amp;redlink=1" class="new" title="Category:unconditionally noexcept (page does not exist)">unconditionally noexcept</a></li></ul></div></div>                    <!-- /catlinks -->
+                    <div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.cppreference.com/w/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://en.cppreference.com/mwiki/index.php?title=Category:unconditionally_noexcept&amp;action=edit&amp;redlink=1" class="new" title="Category:unconditionally noexcept (page does not exist)">unconditionally noexcept</a></li><li><a href="http://en.cppreference.com/w/Category:Todo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_unconditional_noexcept_template" title="Category:Pages with unreviewed unconditional noexcept template">Pages with unreviewed unconditional noexcept template</a></li><li><a href="http://en.cppreference.com/w/Category:Pages_with_unreviewed_noexcept_template" title="Category:Pages with unreviewed noexcept template">Pages with unreviewed noexcept template</a></li></ul></div></div>                    <!-- /catlinks -->
                                                             <div class="visualClear"></div>
                     <!-- debughtml -->
                                         <!-- /debughtml -->
@@ -578,7 +579,7 @@ Expensive parser function count: 0/100
                         <div id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="compare_exchange.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/atomic/atomic/compare_exchange" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/atomic/atomic/compare_exchange" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=79682" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a href="http://en.cppreference.com/w/Special:WhatLinksHere/cpp/atomic/atomic/compare_exchange" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en.cppreference.com/w/Special:RecentChangesLinked/cpp/atomic/atomic/compare_exchange" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="http://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;oldid=91532" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/atomic/compare_exchange&amp;action=info">Page information</a></li>            </ul>
         </div>
                         <div id="cpp-languages">
             <div><ul><li>In other languages</li></ul></div>
@@ -586,8 +587,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/atomic/atomic/compare_exchange" title="cpp/atomic/atomic/compare exchange" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 21 July 2015, at 05:17.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 54,187 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 12:49.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 105,307 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -620,7 +621,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 3.092 secs. -->
+</script><!-- Served in 0.059 secs. -->
 	</body>
-<!-- Cached 20151130141847 -->
+<!-- Cached 20170331195037 -->
 </html>

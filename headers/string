@@ -87,33 +87,33 @@ public:
 #if CPPREFERENCE_SIMPLIFY_TYPEDEFS
     typedef CharT value_type;
 #else
-    typedef Traits::char_type value_type;
+    typedef typename Traits::char_type value_type;
 #endif
     typedef Allocator allocator_type;
 #if CPPREFERENCE_SIMPLIFY_TYPEDEFS
     typedef size_t size_type;
     typedef ptrdiff_t difference_type;
-    typedef T& reference;
-    typedef const T& const_reference;
-    typedef T* pointer;
-    typedef const T* const_pointer;
+    typedef CharT& reference;
+    typedef const CharT& const_reference;
+    typedef CharT* pointer;
+    typedef const CharT* const_pointer;
 #elif CPPREFERENCE_STDVER <2011
-    typedef Allocator::size_type size_type;
-    typedef Allocator::difference_type difference_type;
-    typedef Allocator::reference reference;
-    typedef Allocator::const_reference const_reference;
-    typedef Allocator::pointer pointer;
-    typedef Allocator::const_pointer const_pointer;
+    typedef typename Allocator::size_type size_type;
+    typedef typename Allocator::difference_type difference_type;
+    typedef typename Allocator::reference reference;
+    typedef typename Allocator::const_reference const_reference;
+    typedef typename Allocator::pointer pointer;
+    typedef typename Allocator::const_pointer const_pointer;
 #else
-    typedef std::allocator_traits<Allocator>::size_type size_type;
-    typedef std::allocator_traits<Allocator>::difference_type difference_type;
+    typedef typename std::allocator_traits<Allocator>::size_type size_type;
+    typedef typename std::allocator_traits<Allocator>::difference_type difference_type;
     typedef value_type& reference;
     typedef const value_type& const_reference;
-    typedef std::allocator_traits<Allocator>::pointer pointer;
-    typedef std::allocator_traits<Allocator>::const_pointer const_pointer;
+    typedef typename std::allocator_traits<Allocator>::pointer pointer;
+    typedef typename std::allocator_traits<Allocator>::const_pointer const_pointer;
 #endif
-    typedef T* iterator; // actual type is unspecified
-    typedef const T* const_iterator; // actual type is unspecified
+    typedef CharT* iterator; // actual type is unspecified
+    typedef const CharT* const_iterator; // actual type is unspecified
     typedef std::reverse_iterator<iterator> reverse_iterator;
     typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
@@ -122,7 +122,7 @@ public:
     explicit basic_string(const Allocator& alloc = Allocator());
 #else
     basic_string();
-    explicit basic_string(const Allocator&);
+    explicit basic_string(const Allocator& alloc);
 #endif
 
     basic_string(size_type count,
@@ -185,13 +185,9 @@ public:
     template<class InputIt>
     basic_string& assign(InputIt first, InputIt last);
 
-    basic_string& assign(std::initializer_list<CharT> ilist);
-    template <class InputIt>
-    void assign(InputIt first, InputIt last);
-
 #if CPPREFERENCE_STDVER>= 2011
     basic_string& assign(basic_string&& str);
-    void assign(std::initializer_list<CharT> ilist);
+    basic_string& assign(std::initializer_list<CharT> ilist);
 #endif
 
     allocator_type get_allocator() const;
@@ -386,9 +382,6 @@ public:
     size_type copy(CharT* dest,
                    size_type count,
                    size_type pos = 0) const;
-
-    void resize(size_type count);
-    void resize(size_type count, CharT ch);
 
     void swap(basic_string& other);
 

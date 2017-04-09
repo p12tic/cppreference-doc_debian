@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -366,8 +367,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;sstream&gt;</span>
 &#160;
-<span class="kw1">class</span> null_filter_buf <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a> <span class="br0">&#123;</span>
-    <a href="../basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> src<span class="sy4">;</span>
+<span class="kw1">class</span> null_filter_buf <span class="sy4">:</span> <span class="kw1">public</span> <a href="../basic_streambuf.html"><span class="kw1721">std::<span class="me2">streambuf</span></span></a> <span class="br0">&#123;</span>
+    <a href="../basic_streambuf.html"><span class="kw1721">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> src<span class="sy4">;</span>
     <span class="kw4">char</span> ch<span class="sy4">;</span> <span class="co1">// single-byte buffer</span>
 <span class="kw1">protected</span><span class="sy4">:</span>
     <span class="kw4">int</span> underflow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
@@ -376,25 +377,25 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
         <span class="kw1">return</span> ch<span class="sy4">;</span> <span class="co1">// may return EOF</span>
     <span class="br0">&#125;</span>
 <span class="kw1">public</span><span class="sy4">:</span>
-    null_filter_buf<span class="br0">&#40;</span><a href="../basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> buf<span class="br0">&#41;</span> <span class="sy4">:</span> src<span class="br0">&#40;</span>buf<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    null_filter_buf<span class="br0">&#40;</span><a href="../basic_streambuf.html"><span class="kw1721">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> buf<span class="br0">&#41;</span> <span class="sy4">:</span> src<span class="br0">&#40;</span>buf<span class="br0">&#41;</span> <span class="br0">&#123;</span>
         setg<span class="br0">&#40;</span><span class="sy3">&amp;</span>ch, <span class="sy3">&amp;</span>ch<span class="sy2">+</span><span class="nu0">1</span>, <span class="sy3">&amp;</span>ch<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// buffer is initially full</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
 &#160;
-<span class="kw4">void</span> filtered_read<span class="br0">&#40;</span><a href="../basic_istream.html"><span class="kw1450">std::<span class="me2">istream</span></span></a><span class="sy3">&amp;</span> in<span class="br0">&#41;</span>
+<span class="kw4">void</span> filtered_read<span class="br0">&#40;</span><a href="../basic_istream.html"><span class="kw1724">std::<span class="me2">istream</span></span></a><span class="sy3">&amp;</span> in<span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
-    <a href="../basic_streambuf.html"><span class="kw1447">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> orig <span class="sy1">=</span> in.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_streambuf.html"><span class="kw1721">std::<span class="me2">streambuf</span></span></a><span class="sy2">*</span> orig <span class="sy1">=</span> in.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     null_filter_buf buf<span class="br0">&#40;</span>orig<span class="br0">&#41;</span><span class="sy4">;</span>
     in.<span class="me1">rdbuf</span><span class="br0">&#40;</span><span class="sy3">&amp;</span>buf<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">char</span> c<span class="sy4">;</span> in.<span class="me1">get</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#41;</span>
-            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c<span class="sy4">;</span>
+            <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> c<span class="sy4">;</span>
     in.<span class="me1">rdbuf</span><span class="br0">&#40;</span>orig<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span>
 &#160;
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     <span class="kw4">char</span> a<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;This i<span class="es5">\0</span>s <span class="es5">\0</span>an e<span class="es5">\0</span><span class="es5">\0</span><span class="es5">\0</span>xample&quot;</span><span class="sy4">;</span>
-    <a href="../basic_istringstream.html"><span class="kw1458">std::<span class="me2">istringstream</span></span></a> in<span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><a href="../../iterator/begin.html"><span class="kw581">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw585">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_istringstream.html"><span class="kw1732">std::<span class="me2">istringstream</span></span></a> in<span class="br0">&#40;</span><a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="br0">&#40;</span><a href="../../iterator/begin.html"><span class="kw676">std::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span>, <a href="../../iterator/end.html"><span class="kw680">std::<span class="me2">end</span></span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
     filtered_read<span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Output:
@@ -413,15 +414,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 4901/1000000
-Preprocessor generated node count: 8235/1000000
-Post‐expand include size: 122756/2097152 bytes
-Template argument size: 22869/2097152 bytes
+Preprocessor visited node count: 4932/1000000
+Preprocessor generated node count: 8316/1000000
+Post‐expand include size: 123705/2097152 bytes
+Template argument size: 22987/2097152 bytes
 Highest expansion depth: 20/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4899-0!*!0!!en!*!* and timestamp 20150825093540 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4899-0!*!0!!en!*!* and timestamp 20161206080414 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -456,8 +457,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_streambuf/setg" title="cpp/io/basic streambuf/setg" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 22:59.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 4,628 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 31 May 2013, at 21:59.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 8,532 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -490,7 +491,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 1.555 secs. -->
+</script><!-- Served in 1.513 secs. -->
 	</body>
-<!-- Cached 20150825093540 -->
+<!-- Cached 20161206080414 -->
 </html>

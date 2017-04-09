@@ -227,6 +227,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../filesystem.html" title="cpp/filesystem"> Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span> </td></tr>
 <tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
 </table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="http://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../io.html" title="cpp/io"> Input/output library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
 <tr class="t-nv"><td colspan="5"> <a href="../manip.html" title="cpp/io/manip"> I/O manipulators</a></td></tr>
@@ -315,31 +316,31 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;sstream&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 &#160;
-<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../basic_stringbuf.html"><span class="kw1449">std::<span class="me2">stringbuf</span></span></a>
+<span class="kw1">struct</span> mybuf <span class="sy4">:</span> <a href="../basic_stringbuf.html"><span class="kw1723">std::<span class="me2">stringbuf</span></span></a>
 <span class="br0">&#123;</span>
-    mybuf<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1072">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> new_str,
-          <a href="../ios_base/openmode.html"><span class="kw1395">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">openmode</span></span></a> which <span class="sy1">=</span> <a href="../ios_base/openmode.html"><span class="kw1398">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="sy3">|</span><a href="../ios_base/openmode.html"><span class="kw1399">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a><span class="br0">&#41;</span>
-           <span class="sy4">:</span> <a href="../basic_stringbuf.html"><span class="kw1449">std::<span class="me2">stringbuf</span></span></a><span class="br0">&#40;</span>new_str, which<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+    mybuf<span class="br0">&#40;</span><span class="kw4">const</span> <a href="../../string/basic_string.html"><span class="kw1227">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> new_str,
+          <a href="../ios_base/openmode.html"><span class="kw1668">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">openmode</span></span></a> which <span class="sy1">=</span> <a href="../ios_base/openmode.html"><span class="kw1671">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">in</span></span></a><span class="sy3">|</span><a href="../ios_base/openmode.html"><span class="kw1672">std::<span class="me2">ios_base</span><span class="sy4">::</span><span class="me2">out</span></span></a><span class="br0">&#41;</span>
+           <span class="sy4">:</span> <a href="../basic_stringbuf.html"><span class="kw1723">std::<span class="me2">stringbuf</span></span></a><span class="br0">&#40;</span>new_str, which<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
 &#160;
     int_type overflow<span class="br0">&#40;</span>int_type c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before overflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before overflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; the put area size is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         int_type rc <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">stringbuf</span><span class="sy4">::</span><span class="me2">overflow</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After overflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After overflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; put area size is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         <span class="kw1">return</span> rc<span class="sy4">;</span>
     <span class="br0">&#125;</span>
 &#160;
     int_type underflow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before underflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Before underflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; put area size is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
         int_type ch <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">stringbuf</span><span class="sy4">::</span><span class="me2">underflow</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-        <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After underflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
+        <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;After underflow(): get area size is &quot;</span> <span class="sy1">&lt;&lt;</span> egptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>eback<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span>
                   <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; put area size is &quot;</span> <span class="sy1">&lt;&lt;</span> epptr<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>pbase<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-        <span class="kw1">if</span><span class="br0">&#40;</span>ch <span class="sy1">==</span> <a href="../c.html"><span class="kw1606">EOF</span></a><span class="br0">&#41;</span>
-            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns EOF<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>ch <span class="sy1">==</span> <a href="../c.html"><span class="kw1879">EOF</span></a><span class="br0">&#41;</span>
+            <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns EOF<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">else</span>
-            <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns '&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">char</span><span class="br0">&#40;</span>ch<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
+            <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;underflow() returns '&quot;</span> <span class="sy1">&lt;&lt;</span> <span class="kw4">char</span><span class="br0">&#40;</span>ch<span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;'<span class="es1">\n</span>&quot;</span><span class="sy4">;</span>
         <span class="kw1">return</span> ch<span class="sy4">;</span>
     <span class="br0">&#125;</span>
 <span class="br0">&#125;</span><span class="sy4">;</span>
@@ -347,13 +348,13 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
 <span class="br0">&#123;</span>
     mybuf sbuf<span class="br0">&#40;</span><span class="st0">&quot;123&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// read-write stream</span>
-    <a href="../basic_iostream.html"><span class="kw1454">std::<span class="me2">iostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>sbuf<span class="br0">&#41;</span><span class="sy4">;</span>
+    <a href="../basic_iostream.html"><span class="kw1728">std::<span class="me2">iostream</span></span></a> stream<span class="br0">&#40;</span><span class="sy3">&amp;</span>sbuf<span class="br0">&#41;</span><span class="sy4">;</span>
     <span class="kw4">int</span> n<span class="sy4">;</span>
     stream <span class="sy1">&gt;&gt;</span> n<span class="sy4">;</span> <span class="co1">// calls sgetc() four times</span>
                  <span class="co1">// three calls return the characters '1', '2', '3'</span>
                  <span class="co1">// the fourth call, gptr() == egptr() and underflow() is called</span>
                  <span class="co1">// underflow returns EOF</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
     stream.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// clear the eofbit</span>
 &#160;
     stream <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;123456&quot;</span><span class="sy4">;</span> <span class="co1">// sputc() is called 6 times</span>
@@ -368,7 +369,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
                  <span class="co1">// 3rd sgetc() returns '6'</span>
                  <span class="co1">// 4th sgetc() finds gptr() == egptr(), calls underflow()</span>
                  <span class="co1">// underflow() returns EOF</span>
-    <a href="../cout.html"><span class="kw1481">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <a href="../cout.html"><span class="kw1755">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
 <span class="br0">&#125;</span></pre></div></div>
 <p>Possible output:
 </p>
@@ -416,15 +417,15 @@ underflow() returns EOF
 
 <!-- 
 NewPP limit report
-Preprocessor visited node count: 3903/1000000
-Preprocessor generated node count: 7975/1000000
-Post‐expand include size: 101746/2097152 bytes
-Template argument size: 27009/2097152 bytes
+Preprocessor visited node count: 3934/1000000
+Preprocessor generated node count: 8056/1000000
+Post‐expand include size: 102695/2097152 bytes
+Template argument size: 27127/2097152 bytes
 Highest expansion depth: 32/40
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12870-0!*!0!!en!*!* and timestamp 20150825093653 -->
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12870-0!*!0!!en!*!* and timestamp 20161206170902 -->
 </div>                    <!-- /bodycontent -->
                                         <!-- printfooter -->
                     <div class="printfooter">
@@ -459,8 +460,8 @@ Expensive parser function count: 0/100
 <li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/io/basic_stringbuf/underflow" title="cpp/io/basic stringbuf/underflow" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
-                                    <li id="footer-info-lastmod"> This page was last modified on 9 September 2013, at 10:34.</li>
-                                    <li id="footer-info-viewcount">This page has been accessed 2,840 times.</li>
+                                    <li id="footer-info-lastmod"> This page was last modified on 9 September 2013, at 09:34.</li>
+                                    <li id="footer-info-viewcount">This page has been accessed 4,937 times.</li>
                             </ul>
                     <ul id="footer-places">
                                     <li id="footer-places-privacy"><a href="http://en.cppreference.com/w/Cppreference:Privacy_policy" title="Cppreference:Privacy policy">Privacy policy</a></li>
@@ -493,7 +494,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-2828341-1']);
 _gaq.push(['_setDomainName', 'cppreference.com']);
 _gaq.push(['_trackPageview']);
-</script><!-- Served in 2.464 secs. -->
+</script><!-- Served in 2.603 secs. -->
 	</body>
-<!-- Cached 20150825093654 -->
+<!-- Cached 20161206170902 -->
 </html>

@@ -181,8 +181,8 @@ public:
     typedef BidirIt::value_type value_type;
     typedef ptrdiff_t difference_type;
 #else
-    typedef std::iterator_traits<BidirIt>::value_type value_type;
-    typedef std::iterator_traits<BidirIt>::difference_type difference_type;
+    typedef typename std::iterator_traits<BidirIt>::value_type value_type;
+    typedef typename std::iterator_traits<BidirIt>::difference_type difference_type;
 #endif
     bool matched;
 
@@ -219,9 +219,9 @@ public:
     typedef const value_type& const_reference;
     typedef value_type* const_iterator; // actually impl-defined
     typedef const_iterator iterator;
-    typedef std::iterator_traits<BidirIt>::difference_type difference_type;
-    typedef std::allocator_traits<Alloc>::size_type size_type;
-    typedef std::iterator_traits<BidirIt>::value_type char_type;
+    typedef typename std::iterator_traits<BidirIt>::difference_type difference_type;
+    typedef typename std::allocator_traits<Alloc>::size_type size_type;
+    typedef typename std::iterator_traits<BidirIt>::value_type char_type;
     typedef std::basic_string<char_type> string_type;
 
     explicit match_results(const Allocator& a = Allocator());
@@ -315,11 +315,11 @@ public:
                    std::regex_constants::match_flag_type m =
                        std::regex_constants::match_default);
 
-    regex_iterator(const regex_iterator&);
+    regex_iterator(const regex_iterator& other);
 
 #if CPPREFERENCE_STDVER>= 2014
     regex_iterator(BidirIt, BidirIt,
-                   const regex_type&&,
+                   regex_type&&,
                    std::regex_constants::match_flag_type =
                        std::regex_constants::match_default) = delete;
 #endif
@@ -383,26 +383,26 @@ public:
 
 #if CPPREFERENCE_STDVER>= 2014
     regex_token_iterator(BidirectionalIterator a, BidirectionalIterator b,
-                         const regex_type&& re,
+                         regex_type&& re,
                          int submatch = 0,
                          std::regex_constants::match_flag_type m =
                              std::regex_constants::match_default) = delete;
 
     regex_token_iterator(BidirectionalIterator a, BidirectionalIterator b,
-                         const regex_type&& re,
+                         regex_type&& re,
                          const std::vector<int>& submatches,
                          std::regex_constants::match_flag_type m =
                              std::regex_constants::match_default) = delete;
 
     regex_token_iterator(BidirectionalIterator a, BidirectionalIterator b,
-                         const regex_type&& re,
+                         regex_type&& re,
                          std::initializer_list<int> submatches,
                          std::regex_constants::match_flag_type m =
                              std::regex_constants::match_default) = delete;
 
     template <std::size_t N>
     regex_token_iterator(BidirectionalIterator a, BidirectionalIterator b,
-                         const regex_type&& re,
+                         regex_type&& re,
                          const int (&submatches)[N],
                          std::regex_constants::match_flag_type m =
                              std::regex_constants::match_default) = delete;
